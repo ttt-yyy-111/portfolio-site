@@ -1802,7 +1802,10 @@ function DetailView({
       </div>
 
       {/* 底部 Previous / Next：始终固定在可视区域底部（sticky），白底，第一/最后一件时对应按钮变灰不可点 */}
-      <div className="sticky bottom-0 bg-white border-t border-neutral-100 px-6 md:px-10 py-4 flex items-center justify-between">
+      <div
+        className="sticky bottom-3 bg-white border-t border-neutral-100 px-6 md:px-10 py-4 flex items-center justify-between"
+        style={{ fontFamily: "'IBM Plex Sans', -apple-system, Arial, 'PingFang SC', sans-serif" }}
+      >
         <button
           onClick={() => prevWork && onGoToWork(prevWork.id)}
           disabled={!prevWork}
