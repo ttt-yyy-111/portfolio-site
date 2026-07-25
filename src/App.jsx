@@ -663,6 +663,13 @@ export default function Portfolio() {
   const nextWork =
     selectedIndex >= 0 ? data.works[(selectedIndex + 1) % data.works.length] : null;
 
+  // 详情页底部的 Previous / Next：不循环，到第一个/最后一个就是 null（对应按钮变灰不可点）
+  const detailPrevWork = selectedIndex > 0 ? data.works[selectedIndex - 1] : null;
+  const detailNextWork =
+    selectedIndex >= 0 && selectedIndex < data.works.length - 1
+      ? data.works[selectedIndex + 1]
+      : null;
+
   const typography = data.typography || DEFAULT_TYPOGRAPHY;
 
   const fontOptions = FONT_PRESETS;
@@ -1450,6 +1457,9 @@ export default function Portfolio() {
             onReplaceImage={(i, file) => replaceDetailImage(selectedWork.id, i, file)}
             onRemoveImage={(i) => removeDetailImage(selectedWork.id, i)}
             isMobile={isMobile}
+            prevWork={detailPrevWork}
+            nextWork={detailNextWork}
+            onGoToWork={goToWork}
           />
         )}
       </main>
@@ -1716,62 +1726,127 @@ function InfoView({ info, editMode, titleStyle, descriptionStyle, onChangeInfo, 
   );
 }
 
-function DetailView({ work, editMode, titleStyle, descriptionStyle, imageGap = 16, onUpdate, onAddImage, onReplaceImage, onRemoveImage, isMobile }) {
+function DetailView({
+  work,
+  editMode,
+  titleStyle,
+  descriptionStyle,
+  imageGap = 16,
+  onUpdate,
+  onAddImage,
+  onReplaceImage,
+  onRemoveImage,
+  isMobile,
+  prevWork,
+  nextWork,
+  onGoToWork,
+}) {
   return (
-    <div className="px-6 md:px-10 pb-10 max-w-6xl" style={{ paddingTop: isMobile ? 24 : 40 }}>
-      <div className="flex items-start justify-between mb-6 gap-4">
-        <Editable
-          as="h2"
-          value={work.title}
-          editMode={editMode}
-          onChange={(v) => onUpdate({ title: v })}
-          style={titleStyle}
-        />
-        <Editable
-          as="span"
-          value={work.date}
-          editMode={editMode}
-          onChange={(v) => onUpdate({ date: v })}
-          className="text-xs md:text-sm font-mono text-neutral-400 whitespace-nowrap mt-1"
-        />
-      </div>
-
-      <Editable
-        as="p"
-        value={work.description}
-        editMode={editMode}
-        onChange={(v) => onUpdate({ description: v })}
-        className="text-neutral-900 mb-10 max-w-4xl block"
-        style={descriptionStyle}
-      />
-
-      <div className="grid grid-cols-1 sm:grid-cols-2" style={{ gap: imageGap }}>
-        {work.images.map((src, i) => (
-          <DetailImage
-            key={i}
-            src={src}
-            alt={`${work.title} ${i + 1}`}
+    <>
+      <div
+        className="px-6 md:px-10 max-w-6xl"
+        style={{ paddingTop: isMobile ? 24 : 40, paddingBottom: 96 }}
+      >
+        <div className="flex items-start justify-between mb-6 gap-4">
+          <Editable
+            as="h2"
+            value={work.title}
             editMode={editMode}
-            onReplaceImage={(file) => onReplaceImage(i, file)}
-            onRemoveImage={() => onRemoveImage(i)}
+            onChange={(v) => onUpdate({ title: v })}
+            style={titleStyle}
           />
-        ))}
+          <Editable
+            as="span"
+            value={work.date}
+            editMode={editMode}
+            onChange={(v) => onUpdate({ date: v })}
+            className="text-xs md:text-sm font-mono text-neutral-400 whitespace-nowrap mt-1"
+          />
+        </div>
 
-        {editMode && (
-          <label className="flex items-center justify-center rounded-xl border-2 border-dashed border-neutral-300 text-neutral-400 hover:text-neutral-600 hover:border-neutral-400 cursor-pointer min-h-[200px] text-sm">
-            + 添加图片
-            <input
-              type="file"
-              accept="image/*"
-              className="hidden"
-              onChange={(e) => {
-                if (e.target.files?.[0]) onAddImage(e.target.files[0]);
-              }}
+        <Editable
+          as="p"
+          value={work.description}
+          editMode={editMode}
+          onChange={(v) => onUpdate({ description: v })}
+          className="text-neutral-900 mb-10 max-w-4xl block"
+          style={descriptionStyle}
+        />
+
+        <div className="grid grid-cols-1 sm:grid-cols-2" style={{ gap: imageGap }}>
+          {work.images.map((src, i) => (
+            <DetailImage
+              key={i}
+              src={src}
+              alt={`${work.title} ${i + 1}`}
+              editMode={editMode}
+              onReplaceImage={(file) => onReplaceImage(i, file)}
+              onRemoveImage={() => onRemoveImage(i)}
             />
-          </label>
-        )}
+          ))}
+
+          {editMode && (
+            <label className="flex items-center justify-center rounded-xl border-2 border-dashed border-neutral-300 text-neutral-400 hover:text-neutral-600 hover:border-neutral-400 cursor-pointer min-h-[200px] text-sm">
+              + 添加图片
+              <input
+                type="file"
+                accept="image/*"
+                className="hidden"
+                onChange={(e) => {
+                  if (e.target.files?.[0]) onAddImage(e.target.files[0]);
+                }}
+              />
+            </label>
+          )}
+        </div>
       </div>
-    </div>
+
+      {/* 底部 Previous / Next：始终固定在可视区域底部（sticky），白底，第一/最后一件时对应按钮变灰不可点 */}
+      <div className="sticky bottom-0 bg-white border-t border-neutral-100 px-6 md:px-10 py-4 flex items-center justify-between">
+        <button
+          onClick={() => prevWork && onGoToWork(prevWork.id)}
+          disabled={!prevWork}
+          className={`flex items-center gap-2 font-bold ${
+            prevWork ? "text-neutral-900" : "text-neutral-300 cursor-not-allowed"
+          }`}
+        >
+          <svg
+            viewBox="0 0 24 24"
+            width="14"
+            height="14"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="3"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <polyline points="15 6 9 12 15 18" />
+          </svg>
+          Previous
+        </button>
+        <button
+          onClick={() => nextWork && onGoToWork(nextWork.id)}
+          disabled={!nextWork}
+          className={`flex items-center gap-2 font-bold ${
+            nextWork ? "text-neutral-900" : "text-neutral-300 cursor-not-allowed"
+          }`}
+        >
+          Next
+          <svg
+            viewBox="0 0 24 24"
+            width="14"
+            height="14"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="3"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <polyline points="9 6 15 12 9 18" />
+          </svg>
+        </button>
+      </div>
+    </>
   );
 }
 
