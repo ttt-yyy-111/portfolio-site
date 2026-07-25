@@ -685,7 +685,7 @@ export default function Portfolio() {
   const artistNameStyle = styleFor("artistName");
   const mobileArtistNameStyle = {
     ...artistNameStyle,
-    fontSize: `${Math.max(22, parseFloat(artistNameStyle.fontSize) || 24)}px`,
+    fontSize: `${Math.max(30, parseFloat(artistNameStyle.fontSize) || 24)}px`,
   };
   const yearStyle = styleFor("year");
   const workTitleStyle = styleFor("workTitle");
@@ -1081,7 +1081,7 @@ export default function Portfolio() {
 
           {yearGroups.map((group) => {
             const entries = groupWorksBySeries(group.works);
-            const yearOpen = !isMobile || !!expandedYears[group.year];
+            const yearOpen = !isMobile || expandedYears[group.year] !== false;
             return (
               <div key={group.year} className="mb-8">
                 {isMobile ? (
