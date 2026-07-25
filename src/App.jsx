@@ -1172,7 +1172,7 @@ export default function Portfolio() {
                           <button
                             onClick={() => toggleSeries(seriesKey)}
                             style={workTitleStyle}
-                            className="relative flex-1 flex items-center text-left text-neutral-800 hover:text-neutral-500 transition-colors"
+                            className="relative flex-1 flex items-center text-left text-neutral-800 active:opacity-50 transition-opacity duration-150"
                           >
                             <span className="absolute -left-3 inset-y-0 flex items-center" aria-hidden>
                               <svg
@@ -1222,7 +1222,7 @@ export default function Portfolio() {
                                   onClick={() =>
                                     addToSeries(group.year, entry.series, entry.works.length)
                                   }
-                                  className="mt-1 text-xs text-neutral-400 hover:text-neutral-900"
+                                  className="mt-1 text-xs text-neutral-400 active:opacity-50 transition-opacity duration-150"
                                 >
                                   + 添加下一件（自动编号）
                                 </button>
@@ -1238,7 +1238,7 @@ export default function Portfolio() {
                   <div className="mt-2 flex flex-col items-start gap-1">
                     <button
                       onClick={() => addWork(group.year)}
-                      className="text-xs text-neutral-400 hover:text-neutral-900"
+                      className="text-xs text-neutral-400 active:opacity-50 transition-opacity duration-150"
                     >
                       + 在 {group.year} 年添加作品
                     </button>
@@ -1247,7 +1247,7 @@ export default function Portfolio() {
                         setSeriesDraft({ name: "", count: 3 });
                         setNewSeriesForm(newSeriesForm === group.year ? null : group.year);
                       }}
-                      className="text-xs text-neutral-400 hover:text-neutral-900"
+                      className="text-xs text-neutral-400 active:opacity-50 transition-opacity duration-150"
                     >
                       + 新建系列作品
                     </button>
@@ -1292,7 +1292,7 @@ export default function Portfolio() {
                           </button>
                           <button
                             onClick={() => setNewSeriesForm(null)}
-                            className="text-xs px-3 py-1 rounded-full text-neutral-500 hover:text-neutral-900"
+                            className="text-xs px-3 py-1 rounded-full text-neutral-500 active:opacity-50 transition-opacity duration-150"
                           >
                             取消
                           </button>
@@ -1309,7 +1309,7 @@ export default function Portfolio() {
           {editMode && (
             <button
               onClick={addYear}
-              className="text-xs text-neutral-400 hover:text-neutral-900"
+              className="text-xs text-neutral-400 active:opacity-50 transition-opacity duration-150"
             >
               + 添加新年份 / 新作品
             </button>
@@ -1325,14 +1325,14 @@ export default function Portfolio() {
             >
               <button
                 onClick={goToGallery}
-                className="hover:text-neutral-500 transition-colors"
+                className="active:opacity-50 transition-opacity duration-150"
               >
                 Index
               </button>
               {selectedWork && (
                 <button
                   onClick={() => goToWork(nextWork.id)}
-                  className="hover:text-neutral-500 transition-colors flex items-center gap-1"
+                  className="active:opacity-50 transition-opacity duration-150 flex items-center gap-1"
                 >
                   Next <span aria-hidden>→</span>
                 </button>
@@ -1358,7 +1358,7 @@ export default function Portfolio() {
           >
             <button
               onClick={goToInfo}
-              className={`hover:text-neutral-900 transition-colors ${
+              className={`active:opacity-50 transition-opacity duration-150 ${
                 showInfo ? "text-neutral-900 underline underline-offset-2" : ""
               }`}
             >
@@ -1371,7 +1371,7 @@ export default function Portfolio() {
                 onClick={(e) => {
                   if (editMode) e.preventDefault();
                 }}
-                className="hover:text-neutral-900 transition-colors"
+                className="active:opacity-50 transition-opacity duration-150"
               >
                 Email
               </a>
@@ -1398,7 +1398,7 @@ export default function Portfolio() {
                 onClick={(e) => {
                   if (editMode) e.preventDefault();
                 }}
-                className="hover:text-neutral-900 transition-colors"
+                className="active:opacity-50 transition-opacity duration-150"
               >
                 Instagram
               </a>
@@ -1512,7 +1512,7 @@ function WorkListItem({
         onClick={() => !editMode && onSelect()}
         style={bodyTextStyle}
         data-measure-line="true"
-        className={`text-left hover:text-neutral-500 transition-colors whitespace-nowrap ${
+        className={`text-left active:opacity-50 transition-opacity duration-150 whitespace-nowrap ${
           selectedId === w.id
             ? "text-neutral-900 underline underline-offset-2"
             : "text-neutral-800"
@@ -1565,7 +1565,7 @@ function Editable({ value, onChange, className = "", as = "span", editMode, styl
         (editMode
           ? " outline-dashed outline-1 outline-offset-2 outline-neutral-300 focus:outline-neutral-900 rounded cursor-text"
           : !editMode && onClick
-          ? " cursor-pointer hover:text-neutral-500 transition-colors"
+          ? " cursor-pointer active:opacity-50 transition-opacity duration-150"
           : "")
       }
       {...rest}
