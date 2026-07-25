@@ -1026,7 +1026,7 @@ export default function Portfolio() {
           <button
             onClick={() => setMobileMenuOpen(true)}
             aria-label="打开菜单"
-            className="flex flex-col gap-1.5 p-2 -mr-2"
+            className="flex flex-col gap-1.5 p-2 -mr-2 active:scale-90 transition-transform duration-200 ease-[cubic-bezier(0.34,1.56,0.64,1)]"
           >
             <span className="block w-5 h-0.5 bg-neutral-900" />
             <span className="block w-5 h-0.5 bg-neutral-900" />
@@ -1053,7 +1053,7 @@ export default function Portfolio() {
             <button
               onClick={() => setMobileMenuOpen(false)}
               aria-label="关闭菜单"
-              className="relative p-2 -mr-2 w-9 h-9 flex items-center justify-center"
+              className="relative p-2 -mr-2 w-9 h-9 flex items-center justify-center active:scale-90 transition-transform duration-200 ease-[cubic-bezier(0.34,1.56,0.64,1)]"
             >
               <span className="absolute w-5 h-0.5 bg-neutral-900 rotate-45" />
               <span className="absolute w-5 h-0.5 bg-neutral-900 -rotate-45" />
@@ -1087,7 +1087,7 @@ export default function Portfolio() {
                 {isMobile ? (
                   <button
                     onClick={() => !editMode && toggleYear(group.year)}
-                    className="relative w-full flex items-center justify-between mb-2"
+                    className="relative w-full flex items-center justify-between mb-2 active:scale-[0.98] transition-transform duration-200 ease-[cubic-bezier(0.34,1.56,0.64,1)]"
                   >
                     <span style={yearStyle} data-measure-line="true">
                       {editMode ? (
@@ -1172,7 +1172,7 @@ export default function Portfolio() {
                           <button
                             onClick={() => toggleSeries(seriesKey)}
                             style={workTitleStyle}
-                            className="relative flex-1 flex items-center text-left text-neutral-800 active:opacity-50 transition-opacity duration-150"
+                            className="relative flex-1 flex items-center text-left text-neutral-800 active:scale-95 transition-transform duration-200 ease-[cubic-bezier(0.34,1.56,0.64,1)]"
                           >
                             <span className="absolute -left-3 inset-y-0 flex items-center" aria-hidden>
                               <svg
@@ -1222,7 +1222,7 @@ export default function Portfolio() {
                                   onClick={() =>
                                     addToSeries(group.year, entry.series, entry.works.length)
                                   }
-                                  className="mt-1 text-xs text-neutral-400 active:opacity-50 transition-opacity duration-150"
+                                  className="mt-1 text-xs text-neutral-400 active:scale-95 transition-transform duration-200 ease-[cubic-bezier(0.34,1.56,0.64,1)]"
                                 >
                                   + 添加下一件（自动编号）
                                 </button>
@@ -1238,7 +1238,7 @@ export default function Portfolio() {
                   <div className="mt-2 flex flex-col items-start gap-1">
                     <button
                       onClick={() => addWork(group.year)}
-                      className="text-xs text-neutral-400 active:opacity-50 transition-opacity duration-150"
+                      className="text-xs text-neutral-400 active:scale-95 transition-transform duration-200 ease-[cubic-bezier(0.34,1.56,0.64,1)]"
                     >
                       + 在 {group.year} 年添加作品
                     </button>
@@ -1247,7 +1247,7 @@ export default function Portfolio() {
                         setSeriesDraft({ name: "", count: 3 });
                         setNewSeriesForm(newSeriesForm === group.year ? null : group.year);
                       }}
-                      className="text-xs text-neutral-400 active:opacity-50 transition-opacity duration-150"
+                      className="text-xs text-neutral-400 active:scale-95 transition-transform duration-200 ease-[cubic-bezier(0.34,1.56,0.64,1)]"
                     >
                       + 新建系列作品
                     </button>
@@ -1292,7 +1292,7 @@ export default function Portfolio() {
                           </button>
                           <button
                             onClick={() => setNewSeriesForm(null)}
-                            className="text-xs px-3 py-1 rounded-full text-neutral-500 active:opacity-50 transition-opacity duration-150"
+                            className="text-xs px-3 py-1 rounded-full text-neutral-500 active:scale-95 transition-transform duration-200 ease-[cubic-bezier(0.34,1.56,0.64,1)]"
                           >
                             取消
                           </button>
@@ -1309,7 +1309,7 @@ export default function Portfolio() {
           {editMode && (
             <button
               onClick={addYear}
-              className="text-xs text-neutral-400 active:opacity-50 transition-opacity duration-150"
+              className="text-xs text-neutral-400 active:scale-95 transition-transform duration-200 ease-[cubic-bezier(0.34,1.56,0.64,1)]"
             >
               + 添加新年份 / 新作品
             </button>
@@ -1325,14 +1325,14 @@ export default function Portfolio() {
             >
               <button
                 onClick={goToGallery}
-                className="active:opacity-50 transition-opacity duration-150"
+                className="active:scale-95 transition-transform duration-200 ease-[cubic-bezier(0.34,1.56,0.64,1)]"
               >
                 Index
               </button>
               {selectedWork && (
                 <button
                   onClick={() => goToWork(nextWork.id)}
-                  className="active:opacity-50 transition-opacity duration-150 flex items-center gap-1"
+                  className="active:scale-95 transition-transform duration-200 ease-[cubic-bezier(0.34,1.56,0.64,1)] flex items-center gap-1"
                 >
                   Next <span aria-hidden>→</span>
                 </button>
@@ -1358,7 +1358,7 @@ export default function Portfolio() {
           >
             <button
               onClick={goToInfo}
-              className={`active:opacity-50 transition-opacity duration-150 ${
+              className={`active:scale-95 transition-transform duration-200 ease-[cubic-bezier(0.34,1.56,0.64,1)] ${
                 showInfo ? "text-neutral-900 underline underline-offset-2" : ""
               }`}
             >
@@ -1371,7 +1371,7 @@ export default function Portfolio() {
                 onClick={(e) => {
                   if (editMode) e.preventDefault();
                 }}
-                className="active:opacity-50 transition-opacity duration-150"
+                className="active:scale-95 transition-transform duration-200 ease-[cubic-bezier(0.34,1.56,0.64,1)]"
               >
                 Email
               </a>
@@ -1398,7 +1398,7 @@ export default function Portfolio() {
                 onClick={(e) => {
                   if (editMode) e.preventDefault();
                 }}
-                className="active:opacity-50 transition-opacity duration-150"
+                className="active:scale-95 transition-transform duration-200 ease-[cubic-bezier(0.34,1.56,0.64,1)]"
               >
                 Instagram
               </a>
@@ -1512,7 +1512,7 @@ function WorkListItem({
         onClick={() => !editMode && onSelect()}
         style={bodyTextStyle}
         data-measure-line="true"
-        className={`text-left active:opacity-50 transition-opacity duration-150 whitespace-nowrap ${
+        className={`text-left active:scale-95 transition-transform duration-200 ease-[cubic-bezier(0.34,1.56,0.64,1)] whitespace-nowrap ${
           selectedId === w.id
             ? "text-neutral-900 underline underline-offset-2"
             : "text-neutral-800"
@@ -1565,7 +1565,7 @@ function Editable({ value, onChange, className = "", as = "span", editMode, styl
         (editMode
           ? " outline-dashed outline-1 outline-offset-2 outline-neutral-300 focus:outline-neutral-900 rounded cursor-text"
           : !editMode && onClick
-          ? " cursor-pointer active:opacity-50 transition-opacity duration-150"
+          ? " cursor-pointer active:scale-95 transition-transform duration-200 ease-[cubic-bezier(0.34,1.56,0.64,1)]"
           : "")
       }
       {...rest}
@@ -1682,12 +1682,12 @@ function GalleryImage({ w, editMode, onSelect, onReplaceCover }) {
     >
       <button
         onClick={() => !editMode && onSelect(w.id)}
-        className="block w-full focus:outline-none"
+        className="block w-full focus:outline-none active:scale-95 transition-transform duration-200 ease-[cubic-bezier(0.34,1.56,0.64,1)]"
       >
         <img
           src={w.cover}
           alt={w.title}
-          className="w-full h-auto object-cover opacity-95 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-300"
+          className="w-full h-auto object-cover opacity-95 transition-opacity duration-300"
         />
       </button>
       {editMode && (
