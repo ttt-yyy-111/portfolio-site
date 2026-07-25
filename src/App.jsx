@@ -227,6 +227,17 @@ export default function Portfolio() {
     typeof window !== "undefined" ? window.innerWidth < MOBILE_BREAKPOINT : false
   );
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [expandedYears, setExpandedYears] = useState({}); // 手机端：年份默认折叠，key 是年份，true 才展开
+  const toggleYear = (year) => {
+    setExpandedYears((prev) => ({ ...prev, [year]: !prev[year] }));
+  };
+
+  // 首次挂载时不要播放抽屉的滑入滑出过渡动画，否则页面刚打开就会看到菜单"一闪而过"
+  // （因为元素一开始还没被判定为"关闭状态"，会先按默认位置画一帧，再突然过渡过去）
+  const [hasMounted, setHasMounted] = useState(false);
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
 
   useEffect(() => {
     const onResize = () => setIsMobile(window.innerWidth < MOBILE_BREAKPOINT);
@@ -1030,24 +1041,15 @@ export default function Portfolio() {
       <aside
         className={
           isMobile
-            ? `fixed inset-0 z-40 bg-white flex flex-col transition-transform duration-300 ease-in-out ${
-                mobileMenuOpen ? "translate-x-0" : "translate-x-full pointer-events-none"
-              }`
+            ? `fixed inset-0 z-40 bg-white flex flex-col ${
+                hasMounted ? "transition-transform duration-300 ease-in-out" : ""
+              } ${mobileMenuOpen ? "translate-x-0" : "translate-x-full pointer-events-none"}`
             : "relative flex-shrink-0 h-full flex flex-col"
         }
         style={isMobile ? undefined : { width: sidebarWidth }}
       >
         {isMobile && (
-          <div className="flex items-center justify-between px-4 py-3 border-b border-neutral-100 flex-shrink-0">
-            <Editable
-              as="span"
-              editMode={editMode}
-              value={data.artistName}
-              onChange={(v) => updateData((prev) => ({ ...prev, artistName: v }))}
-              onClick={goToGallery}
-              className="font-bold tracking-tight whitespace-nowrap"
-              style={mobileArtistNameStyle}
-            />
+          <div className="flex items-center justify-end px-4 py-3 border-b border-neutral-100 flex-shrink-0">
             <button
               onClick={() => setMobileMenuOpen(false)}
               aria-label="关闭菜单"
@@ -1079,17 +1081,54 @@ export default function Portfolio() {
 
           {yearGroups.map((group) => {
             const entries = groupWorksBySeries(group.works);
+            const yearOpen = !isMobile || !!expandedYears[group.year];
             return (
               <div key={group.year} className="mb-8">
-                <Editable
-                  as="h2"
-                  editMode={editMode}
-                  value={String(group.year)}
-                  onChange={(v) => updateYear(group.year, v)}
-                  className="mb-2 whitespace-nowrap inline-block"
-                  style={yearStyle}
-                  data-measure-line="true"
-                />
+                {isMobile ? (
+                  <button
+                    onClick={() => !editMode && toggleYear(group.year)}
+                    className="relative w-full flex items-center justify-between mb-2"
+                  >
+                    <span style={yearStyle} data-measure-line="true">
+                      {editMode ? (
+                        <Editable
+                          as="span"
+                          editMode={editMode}
+                          value={String(group.year)}
+                          onChange={(v) => updateYear(group.year, v)}
+                          className="inline-block whitespace-nowrap"
+                        />
+                      ) : (
+                        group.year
+                      )}
+                    </span>
+                    <svg
+                      viewBox="0 0 24 24"
+                      width="12"
+                      height="12"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="3"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="text-neutral-400 transition-transform flex-shrink-0"
+                      style={{ transform: yearOpen ? "rotate(90deg)" : "rotate(0deg)" }}
+                    >
+                      <polyline points="9 18 15 12 9 6" />
+                    </svg>
+                  </button>
+                ) : (
+                  <Editable
+                    as="h2"
+                    editMode={editMode}
+                    value={String(group.year)}
+                    onChange={(v) => updateYear(group.year, v)}
+                    className="mb-2 whitespace-nowrap inline-block"
+                    style={yearStyle}
+                    data-measure-line="true"
+                  />
+                )}
+                <AccordionContent isOpen={yearOpen}>
                 <ul>
                   {entries.map((entry, entryIndex) => {
                     if (entry.type === "single") {
@@ -1262,6 +1301,7 @@ export default function Portfolio() {
                     )}
                   </div>
                 )}
+                </AccordionContent>
               </div>
             );
           })}
