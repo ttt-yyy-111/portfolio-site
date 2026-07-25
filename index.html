@@ -24,6 +24,17 @@
       * {
         -webkit-tap-highlight-color: transparent;
       }
+      /* 按下时出现的描边：从清晰、贴合原本大小，自己慢慢放大一点、同时淡出消失 */
+      @keyframes pressRing {
+        0% {
+          opacity: 1;
+          transform: scale(1);
+        }
+        100% {
+          opacity: 0;
+          transform: scale(1.06);
+        }
+      }
     </style>
   </head>
   <body>
