@@ -1585,6 +1585,40 @@ function distributeIntoColumns(items, numCols) {
 const GALLERY_3COL_MIN_WIDTH = 520;
 const GALLERY_2COL_MIN_WIDTH = 320;
 
+// 通用的"滚动进入视野时向上渐隐出现"动画：元素刚进入可视范围时，从稍微偏下、透明的状态
+// 过渡到正常位置、完全不透明，只触发一次（滚回去不会消失，滚回来也不会重播）。
+// 页面刚打开时，一开始就在屏幕内的图片也会播放这个动画（因为它们本来就会被判定为"进入视野"）。
+function useRevealAnimation() {
+  const ref = useRef(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return undefined;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.unobserve(el);
+        }
+      },
+      { threshold: 0.08, rootMargin: "0px 0px -40px 0px" }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  return {
+    ref,
+    style: {
+      opacity: visible ? 1 : 0,
+      transform: visible ? "translateY(0)" : "translateY(28px)",
+      transition: "opacity 700ms ease-out, transform 700ms ease-out",
+    },
+  };
+}
+
 function GalleryGrid({ works, editMode, onSelect, onReplaceCover, imageGap = 16 }) {
   const containerRef = useRef(null);
   const [columnCount, setColumnCount] = useState(3);
@@ -1621,38 +1655,51 @@ function GalleryGrid({ works, editMode, onSelect, onReplaceCover, imageGap = 16 
           style={{ gap: imageGap }}
         >
           {colWorks.map((w) => (
-            <div
+            <GalleryImage
               key={w.id}
-              className="relative w-full rounded-xl overflow-hidden group"
-              style={{ backgroundColor: w.tone }}
-            >
-              <button
-                onClick={() => !editMode && onSelect(w.id)}
-                className="block w-full focus:outline-none"
-              >
-                <img
-                  src={w.cover}
-                  alt={w.title}
-                  className="w-full h-auto object-cover opacity-95 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-300"
-                />
-              </button>
-              {editMode && (
-                <label className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer text-white text-xs font-bold">
-                  更换封面图
-                  <input
-                    type="file"
-                    accept="image/*"
-                    className="hidden"
-                    onChange={(e) => {
-                      if (e.target.files?.[0]) onReplaceCover(w.id, e.target.files[0]);
-                    }}
-                  />
-                </label>
-              )}
-            </div>
+              w={w}
+              editMode={editMode}
+              onSelect={onSelect}
+              onReplaceCover={onReplaceCover}
+            />
           ))}
         </div>
       ))}
+    </div>
+  );
+}
+
+function GalleryImage({ w, editMode, onSelect, onReplaceCover }) {
+  const { ref, style } = useRevealAnimation();
+  return (
+    <div
+      ref={ref}
+      style={{ backgroundColor: w.tone, ...style }}
+      className="relative w-full rounded-xl overflow-hidden group"
+    >
+      <button
+        onClick={() => !editMode && onSelect(w.id)}
+        className="block w-full focus:outline-none"
+      >
+        <img
+          src={w.cover}
+          alt={w.title}
+          className="w-full h-auto object-cover opacity-95 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-300"
+        />
+      </button>
+      {editMode && (
+        <label className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer text-white text-xs font-bold">
+          更换封面图
+          <input
+            type="file"
+            accept="image/*"
+            className="hidden"
+            onChange={(e) => {
+              if (e.target.files?.[0]) onReplaceCover(w.id, e.target.files[0]);
+            }}
+          />
+        </label>
+      )}
     </div>
   );
 }
@@ -1707,30 +1754,14 @@ function DetailView({ work, editMode, titleStyle, descriptionStyle, imageGap = 1
 
       <div className="grid grid-cols-1 sm:grid-cols-2" style={{ gap: imageGap }}>
         {work.images.map((src, i) => (
-          <div key={i} className="relative rounded-xl overflow-hidden bg-neutral-100 group">
-            <img src={src} alt={`${work.title} ${i + 1}`} className="w-full h-auto object-cover" />
-            {editMode && (
-              <>
-                <label className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer text-white text-xs font-bold">
-                  更换图片
-                  <input
-                    type="file"
-                    accept="image/*"
-                    className="hidden"
-                    onChange={(e) => {
-                      if (e.target.files?.[0]) onReplaceImage(i, e.target.files[0]);
-                    }}
-                  />
-                </label>
-                <button
-                  onClick={() => onRemoveImage(i)}
-                  className="absolute top-2 right-2 bg-black/60 text-white w-6 h-6 rounded-full text-xs opacity-0 group-hover:opacity-100 transition-opacity"
-                >
-                  ✕
-                </button>
-              </>
-            )}
-          </div>
+          <DetailImage
+            key={i}
+            src={src}
+            alt={`${work.title} ${i + 1}`}
+            editMode={editMode}
+            onReplaceImage={(file) => onReplaceImage(i, file)}
+            onRemoveImage={() => onRemoveImage(i)}
+          />
         ))}
 
         {editMode && (
@@ -1747,6 +1778,36 @@ function DetailView({ work, editMode, titleStyle, descriptionStyle, imageGap = 1
           </label>
         )}
       </div>
+    </div>
+  );
+}
+
+function DetailImage({ src, alt, editMode, onReplaceImage, onRemoveImage }) {
+  const { ref, style } = useRevealAnimation();
+  return (
+    <div ref={ref} style={style} className="relative rounded-xl overflow-hidden bg-neutral-100 group">
+      <img src={src} alt={alt} className="w-full h-auto object-cover" />
+      {editMode && (
+        <>
+          <label className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer text-white text-xs font-bold">
+            更换图片
+            <input
+              type="file"
+              accept="image/*"
+              className="hidden"
+              onChange={(e) => {
+                if (e.target.files?.[0]) onReplaceImage(e.target.files[0]);
+              }}
+            />
+          </label>
+          <button
+            onClick={onRemoveImage}
+            className="absolute top-2 right-2 bg-black/60 text-white w-6 h-6 rounded-full text-xs opacity-0 group-hover:opacity-100 transition-opacity"
+          >
+            ✕
+          </button>
+        </>
+      )}
     </div>
   );
 }
