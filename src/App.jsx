@@ -672,6 +672,10 @@ export default function Portfolio() {
   };
 
   const artistNameStyle = styleFor("artistName");
+  const mobileArtistNameStyle = {
+    ...artistNameStyle,
+    fontSize: `${Math.max(22, parseFloat(artistNameStyle.fontSize) || 24)}px`,
+  };
   const yearStyle = styleFor("year");
   const workTitleStyle = styleFor("workTitle");
   const detailTitleStyle = styleFor("detailTitle");
@@ -1006,10 +1010,7 @@ export default function Portfolio() {
             onChange={(v) => updateData((prev) => ({ ...prev, artistName: v }))}
             onClick={goToGallery}
             className="font-bold tracking-tight whitespace-nowrap"
-            style={{
-              ...artistNameStyle,
-              fontSize: `${Math.max(22, parseFloat(artistNameStyle.fontSize) || 24)}px`,
-            }}
+            style={mobileArtistNameStyle}
           />
           <button
             onClick={() => setMobileMenuOpen(true)}
@@ -1024,27 +1025,39 @@ export default function Portfolio() {
       )}
 
       {/* ---------- 左侧：姓名 + 年份 + 作品列表 ---------- */}
-      {/* 电脑上是常驻的左栏；手机上变成点击菜单按钮才弹出的全屏抽屉 */}
-      {(!isMobile || mobileMenuOpen) && (
-        <aside
-          className={
-            isMobile
-              ? "fixed inset-0 z-40 bg-white flex flex-col"
-              : "relative flex-shrink-0 h-full flex flex-col"
-          }
-          style={isMobile ? undefined : { width: sidebarWidth }}
-        >
-          {isMobile && (
-            <div className="flex items-center justify-end px-4 py-3 border-b border-neutral-100 flex-shrink-0">
-              <button
-                onClick={() => setMobileMenuOpen(false)}
-                aria-label="关闭菜单"
-                className="p-2 -mr-2 text-2xl leading-none text-neutral-500"
-              >
-                ✕
-              </button>
-            </div>
-          )}
+      {/* 电脑上是常驻的左栏；手机上变成点击菜单按钮才弹出的全屏抽屉，用 transform 做滑入滑出动画，
+          始终挂载在页面里（不再是条件渲染），这样开关的时候才有过渡动画，而不是瞬间出现/消失 */}
+      <aside
+        className={
+          isMobile
+            ? `fixed inset-0 z-40 bg-white flex flex-col transition-transform duration-300 ease-in-out ${
+                mobileMenuOpen ? "translate-x-0" : "translate-x-full pointer-events-none"
+              }`
+            : "relative flex-shrink-0 h-full flex flex-col"
+        }
+        style={isMobile ? undefined : { width: sidebarWidth }}
+      >
+        {isMobile && (
+          <div className="flex items-center justify-between px-4 py-3 border-b border-neutral-100 flex-shrink-0">
+            <Editable
+              as="span"
+              editMode={editMode}
+              value={data.artistName}
+              onChange={(v) => updateData((prev) => ({ ...prev, artistName: v }))}
+              onClick={goToGallery}
+              className="font-bold tracking-tight whitespace-nowrap"
+              style={mobileArtistNameStyle}
+            />
+            <button
+              onClick={() => setMobileMenuOpen(false)}
+              aria-label="关闭菜单"
+              className="relative p-2 -mr-2 w-9 h-9 flex items-center justify-center"
+            >
+              <span className="absolute w-5 h-0.5 bg-neutral-900 rotate-45" />
+              <span className="absolute w-5 h-0.5 bg-neutral-900 -rotate-45" />
+            </button>
+          </div>
+        )}
           <div
             ref={sidebarContentRef}
             className={`flex-1 min-h-0 overflow-y-auto overflow-x-hidden px-6 pb-6 ${
@@ -1366,7 +1379,6 @@ export default function Portfolio() {
           </div>
         </div>
       </aside>
-      )}
 
       {/* ---------- 右侧：画廊网格 / 详情页 / 艺术家信息（占剩余约 3/4 宽度） ---------- */}
       <main
