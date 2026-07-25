@@ -1742,9 +1742,9 @@ function DetailView({
   onGoToWork,
 }) {
   return (
-    <>
+    <div className="flex flex-col min-h-full">
       <div
-        className="px-6 md:px-10 max-w-6xl"
+        className="px-6 md:px-10 max-w-6xl flex-1"
         style={{ paddingTop: isMobile ? 24 : 40, paddingBottom: 96 }}
       >
         <div className="flex items-start justify-between mb-6 gap-4">
@@ -1846,7 +1846,7 @@ function DetailView({
           </svg>
         </button>
       </div>
-    </>
+    </div>
   );
 }
 
