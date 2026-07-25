@@ -219,6 +219,21 @@ export default function Portfolio() {
     return new URLSearchParams(window.location.search).get("edit") === "1";
   });
 
+  // ---------- 手机端适配 ----------
+  // 屏幕比较窄的时候（大致对应手机/竖屏平板），切换成"顶部栏 + 抽屉式菜单"的移动版布局，
+  // 电脑上宽屏还是维持左右两栏。
+  const MOBILE_BREAKPOINT = 768;
+  const [isMobile, setIsMobile] = useState(
+    typeof window !== "undefined" ? window.innerWidth < MOBILE_BREAKPOINT : false
+  );
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const onResize = () => setIsMobile(window.innerWidth < MOBILE_BREAKPOINT);
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+
   // ---------- 左栏宽度：直接按内容需要固定下来 ----------
   // 说明二：手风琴展开动画那一层用了 overflow: hidden（配合 grid-template-rows 做高度过渡），
   // 而 overflow:hidden 会把它内部子元素的溢出宽度"挡"在自己这一层，不会再往上传给祖先元素的
@@ -266,14 +281,17 @@ export default function Portfolio() {
   const goToGallery = () => {
     setSelectedId(null);
     setShowInfo(false);
+    setMobileMenuOpen(false);
   };
   const goToWork = (id) => {
     setShowInfo(false);
     setSelectedId(id);
+    setMobileMenuOpen(false);
   };
   const goToInfo = () => {
     setSelectedId(null);
     setShowInfo(true);
+    setMobileMenuOpen(false);
   };
   const [typoPanelOpen, setTypoPanelOpen] = useState(false);
   const [openFontId, setOpenFontId] = useState(null); // 当前展开字重下拉的字体 id
@@ -670,7 +688,9 @@ export default function Portfolio() {
 
   return (
     <div
-      className="w-full h-screen flex flex-row bg-white text-neutral-900 overflow-hidden relative"
+      className={`w-full h-screen flex ${
+        isMobile ? "flex-col" : "flex-row"
+      } bg-white text-neutral-900 overflow-hidden relative`}
       style={{ fontFamily: "-apple-system, 'Helvetica Neue', Arial, sans-serif" }}
     >
       {googleFontFamilies.length > 0 && (
@@ -976,12 +996,52 @@ export default function Portfolio() {
         </span>
       )}
 
+      {/* ---------- 手机端顶部栏：姓名 + 菜单按钮，只在窄屏时显示 ---------- */}
+      {isMobile && (
+        <div className="flex items-center justify-between px-4 py-3 border-b border-neutral-100 flex-shrink-0 relative z-30 bg-white">
+          <Editable
+            as="span"
+            editMode={editMode}
+            value={data.artistName}
+            onChange={(v) => updateData((prev) => ({ ...prev, artistName: v }))}
+            onClick={goToGallery}
+            className="font-bold tracking-tight whitespace-nowrap"
+            style={artistNameStyle}
+          />
+          <button
+            onClick={() => setMobileMenuOpen(true)}
+            aria-label="打开菜单"
+            className="flex flex-col gap-1.5 p-2 -mr-2"
+          >
+            <span className="block w-5 h-0.5 bg-neutral-900" />
+            <span className="block w-5 h-0.5 bg-neutral-900" />
+          </button>
+        </div>
+      )}
+
       {/* ---------- 左侧：姓名 + 年份 + 作品列表 ---------- */}
-      <aside
-        className="relative flex-shrink-0 h-full flex flex-col"
-        style={{ width: sidebarWidth }}
-      >
-        <div ref={sidebarContentRef} className="flex-1 min-h-0 overflow-y-auto overflow-x-hidden px-6 pt-8 pb-6">
+      {/* 电脑上是常驻的左栏；手机上变成点击菜单按钮才弹出的全屏抽屉 */}
+      {(!isMobile || mobileMenuOpen) && (
+        <aside
+          className={
+            isMobile
+              ? "fixed inset-0 z-40 bg-white flex flex-col"
+              : "relative flex-shrink-0 h-full flex flex-col"
+          }
+          style={isMobile ? undefined : { width: sidebarWidth }}
+        >
+          {isMobile && (
+            <div className="flex items-center justify-end px-4 py-3 border-b border-neutral-100 flex-shrink-0">
+              <button
+                onClick={() => setMobileMenuOpen(false)}
+                aria-label="关闭菜单"
+                className="p-2 -mr-2 text-2xl leading-none text-neutral-500"
+              >
+                ✕
+              </button>
+            </div>
+          )}
+          <div ref={sidebarContentRef} className="flex-1 min-h-0 overflow-y-auto overflow-x-hidden px-6 pt-8 pb-6">
           <Editable
             as="h1"
             editMode={editMode}
@@ -1281,9 +1341,15 @@ export default function Portfolio() {
           </div>
         </div>
       </aside>
+      )}
 
       {/* ---------- 右侧：画廊网格 / 详情页 / 艺术家信息（占剩余约 3/4 宽度） ---------- */}
-      <main ref={mainRef} className="flex-1 h-full overflow-y-auto overflow-x-hidden min-w-0">
+      <main
+        ref={mainRef}
+        className={`flex-1 overflow-y-auto overflow-x-hidden min-w-0 ${
+          isMobile ? "min-h-0 w-full" : "h-full"
+        }`}
+      >
         {showInfo ? (
           <InfoView
             info={data.info || ""}
