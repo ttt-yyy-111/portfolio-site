@@ -1434,6 +1434,7 @@ export default function Portfolio() {
             titleStyle={detailTitleStyle}
             descriptionStyle={detailDescriptionStyle}
             onChangeInfo={(v) => updateData((prev) => ({ ...prev, info: v }))}
+            isMobile={isMobile}
           />
         ) : !selectedWork ? (
           <GalleryGrid
@@ -1442,6 +1443,7 @@ export default function Portfolio() {
             onSelect={goToWork}
             onReplaceCover={replaceCover}
             imageGap={data.imageGap ?? 16}
+            isMobile={isMobile}
           />
         ) : (
           <DetailView
@@ -1454,6 +1456,7 @@ export default function Portfolio() {
             onAddImage={(file) => addDetailImage(selectedWork.id, file)}
             onReplaceImage={(i, file) => replaceDetailImage(selectedWork.id, i, file)}
             onRemoveImage={(i) => removeDetailImage(selectedWork.id, i)}
+            isMobile={isMobile}
           />
         )}
       </main>
@@ -1619,7 +1622,7 @@ function useRevealAnimation() {
   };
 }
 
-function GalleryGrid({ works, editMode, onSelect, onReplaceCover, imageGap = 16 }) {
+function GalleryGrid({ works, editMode, onSelect, onReplaceCover, imageGap = 16, isMobile }) {
   const containerRef = useRef(null);
   const [columnCount, setColumnCount] = useState(3);
 
@@ -1646,7 +1649,7 @@ function GalleryGrid({ works, editMode, onSelect, onReplaceCover, imageGap = 16 
     <div
       ref={containerRef}
       className="px-4 md:px-6 pb-6 flex"
-      style={{ paddingTop: 40, gap: imageGap }}
+      style={{ paddingTop: isMobile ? 16 : 40, gap: imageGap }}
     >
       {columns.map((colWorks, colIdx) => (
         <div
@@ -1705,9 +1708,9 @@ function GalleryImage({ w, editMode, onSelect, onReplaceCover }) {
 }
 
 // 艺术家信息页：点击左下角 "Information" 进入
-function InfoView({ info, editMode, titleStyle, descriptionStyle, onChangeInfo }) {
+function InfoView({ info, editMode, titleStyle, descriptionStyle, onChangeInfo, isMobile }) {
   return (
-    <div className="px-6 md:px-10 pb-10 max-w-3xl" style={{ paddingTop: 40 }}>
+    <div className="px-6 md:px-10 pb-10 max-w-3xl" style={{ paddingTop: isMobile ? 24 : 40 }}>
       <h2 className="mb-6" style={titleStyle}>
         Information
       </h2>
@@ -1723,9 +1726,9 @@ function InfoView({ info, editMode, titleStyle, descriptionStyle, onChangeInfo }
   );
 }
 
-function DetailView({ work, editMode, titleStyle, descriptionStyle, imageGap = 16, onUpdate, onAddImage, onReplaceImage, onRemoveImage }) {
+function DetailView({ work, editMode, titleStyle, descriptionStyle, imageGap = 16, onUpdate, onAddImage, onReplaceImage, onRemoveImage, isMobile }) {
   return (
-    <div className="px-6 md:px-10 pb-10 max-w-6xl" style={{ paddingTop: 40 }}>
+    <div className="px-6 md:px-10 pb-10 max-w-6xl" style={{ paddingTop: isMobile ? 24 : 40 }}>
       <div className="flex items-start justify-between mb-6 gap-4">
         <Editable
           as="h2"
