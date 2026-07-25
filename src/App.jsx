@@ -1023,17 +1023,15 @@ export default function Portfolio() {
             className="font-bold tracking-tight whitespace-nowrap"
             style={mobileArtistNameStyle}
           />
-          <PressFeedback
-            as="button"
+          <button
             onClick={() => setMobileMenuOpen(true)}
             aria-label="打开菜单"
-            rounded="rounded-full"
             className="flex flex-col gap-1.5 p-2 -mr-2"
           >
             <span className="block w-5 h-0.5 bg-neutral-900" />
             <span className="block w-5 h-0.5 bg-neutral-900" />
             <span className="block w-5 h-0.5 bg-neutral-900" />
-          </PressFeedback>
+          </button>
         </div>
       )}
 
@@ -1052,16 +1050,14 @@ export default function Portfolio() {
       >
         {isMobile && (
           <div className="flex items-center justify-end px-4 py-3 border-b border-neutral-100 flex-shrink-0">
-            <PressFeedback
-              as="button"
+            <button
               onClick={() => setMobileMenuOpen(false)}
               aria-label="关闭菜单"
-              rounded="rounded-full"
               className="relative p-2 -mr-2 w-9 h-9 flex items-center justify-center"
             >
               <span className="absolute w-5 h-0.5 bg-neutral-900 rotate-45" />
               <span className="absolute w-5 h-0.5 bg-neutral-900 -rotate-45" />
-            </PressFeedback>
+            </button>
           </div>
         )}
           <div
@@ -1089,11 +1085,9 @@ export default function Portfolio() {
             return (
               <div key={group.year} className="mb-8">
                 {isMobile ? (
-                  <PressFeedback
-                    as="button"
+                  <button
                     onClick={() => !editMode && toggleYear(group.year)}
-                    rounded="rounded-md"
-                    className="w-full flex items-center justify-between mb-2"
+                    className="relative w-full flex items-center justify-between mb-2"
                   >
                     <span style={yearStyle} data-measure-line="true">
                       {editMode ? (
@@ -1122,7 +1116,7 @@ export default function Portfolio() {
                     >
                       <polyline points="9 18 15 12 9 6" />
                     </svg>
-                  </PressFeedback>
+                  </button>
                 ) : (
                   <Editable
                     as="h2"
@@ -1175,12 +1169,10 @@ export default function Portfolio() {
                           >
                             ⠿
                           </span>
-                          <PressFeedback
-                            as="button"
+                          <button
                             onClick={() => toggleSeries(seriesKey)}
                             style={workTitleStyle}
-                            rounded="rounded-md"
-                            className="flex-1 flex items-center text-left text-neutral-800"
+                            className="relative flex-1 flex items-center text-left text-neutral-800"
                           >
                             <span className="absolute -left-3 inset-y-0 flex items-center" aria-hidden>
                               <svg
@@ -1202,7 +1194,7 @@ export default function Portfolio() {
                               </svg>
                             </span>
                             <span className="min-w-0 whitespace-nowrap" data-measure-line="true">{entry.series}</span>
-                          </PressFeedback>
+                          </button>
                         </div>
 
                         <AccordionContent isOpen={isOpen}>
@@ -1230,7 +1222,7 @@ export default function Portfolio() {
                                   onClick={() =>
                                     addToSeries(group.year, entry.series, entry.works.length)
                                   }
-                                  className="mt-1 text-xs text-neutral-400 active:opacity-40 transition-opacity duration-150"
+                                  className="mt-1 text-xs text-neutral-400"
                                 >
                                   + 添加下一件（自动编号）
                                 </button>
@@ -1246,7 +1238,7 @@ export default function Portfolio() {
                   <div className="mt-2 flex flex-col items-start gap-1">
                     <button
                       onClick={() => addWork(group.year)}
-                      className="text-xs text-neutral-400 active:opacity-40 transition-opacity duration-150"
+                      className="text-xs text-neutral-400"
                     >
                       + 在 {group.year} 年添加作品
                     </button>
@@ -1255,7 +1247,7 @@ export default function Portfolio() {
                         setSeriesDraft({ name: "", count: 3 });
                         setNewSeriesForm(newSeriesForm === group.year ? null : group.year);
                       }}
-                      className="text-xs text-neutral-400 active:opacity-40 transition-opacity duration-150"
+                      className="text-xs text-neutral-400"
                     >
                       + 新建系列作品
                     </button>
@@ -1300,7 +1292,7 @@ export default function Portfolio() {
                           </button>
                           <button
                             onClick={() => setNewSeriesForm(null)}
-                            className="text-xs px-3 py-1 rounded-full text-neutral-500 active:opacity-40 transition-opacity duration-150"
+                            className="text-xs px-3 py-1 rounded-full text-neutral-500"
                           >
                             取消
                           </button>
@@ -1317,7 +1309,7 @@ export default function Portfolio() {
           {editMode && (
             <button
               onClick={addYear}
-              className="text-xs text-neutral-400 active:opacity-40 transition-opacity duration-150"
+              className="text-xs text-neutral-400"
             >
               + 添加新年份 / 新作品
             </button>
@@ -1331,22 +1323,16 @@ export default function Portfolio() {
               className="px-6 pt-4 flex items-center gap-6 whitespace-nowrap"
               style={indexNavStyle}
             >
-              <PressFeedback
-                as="button"
-                onClick={goToGallery}
-                rounded="rounded-md"
-              >
+              <button onClick={goToGallery}>
                 Index
-              </PressFeedback>
+              </button>
               {selectedWork && (
-                <PressFeedback
-                  as="button"
+                <button
                   onClick={() => goToWork(nextWork.id)}
-                  rounded="rounded-md"
                   className="flex items-center gap-1"
                 >
                   Next <span aria-hidden>→</span>
-                </PressFeedback>
+                </button>
               )}
             </div>
           )}
@@ -1367,26 +1353,22 @@ export default function Portfolio() {
                 : footerLinksStyle
             }
           >
-            <PressFeedback
-              as="button"
+            <button
               onClick={goToInfo}
-              rounded="rounded-md"
               className={showInfo ? "text-neutral-900 underline underline-offset-2" : ""}
             >
               Information
-            </PressFeedback>
+            </button>
 
             <div className="flex items-center gap-1">
-              <PressFeedback
-                as="a"
+              <a
                 href={editMode ? undefined : `mailto:${data.contact?.email || ""}`}
                 onClick={(e) => {
                   if (editMode) e.preventDefault();
                 }}
-                rounded="rounded-md"
               >
                 Email
-              </PressFeedback>
+              </a>
               {editMode && (
                 <input
                   type="text"
@@ -1403,18 +1385,16 @@ export default function Portfolio() {
             </div>
 
             <div className="flex items-center gap-1">
-              <PressFeedback
-                as="a"
+              <a
                 href={editMode ? undefined : data.contact?.instagram || "#"}
                 target={editMode ? undefined : "_blank"}
                 rel="noopener noreferrer"
                 onClick={(e) => {
                   if (editMode) e.preventDefault();
                 }}
-                rounded="rounded-md"
               >
                 Instagram
-              </PressFeedback>
+              </a>
               {editMode && (
                 <input
                   type="text"
@@ -1521,12 +1501,10 @@ function WorkListItem({
       >
         ⠿
       </span>
-      <PressFeedback
-        as="button"
+      <button
         onClick={() => !editMode && onSelect()}
         style={bodyTextStyle}
         data-measure-line="true"
-        rounded="rounded-md"
         className={`text-left whitespace-nowrap ${
           selectedId === w.id
             ? "text-neutral-900 underline underline-offset-2"
@@ -1538,7 +1516,7 @@ function WorkListItem({
         ) : (
           w.title
         )}
-      </PressFeedback>
+      </button>
       {editMode && (
         <button
           onClick={onDelete}
@@ -1549,33 +1527,6 @@ function WorkListItem({
         </button>
       )}
     </li>
-  );
-}
-
-// 按压反馈：按下瞬间出现一圈描边，随后自己放大一点、淡出消失，不依赖 :hover，
-// 也不需要等松手才播放，触屏和鼠标点击都适用。rounded 参数用来让描边的圆角
-// 跟被包裹的内容（比如图片）保持一致。
-function PressFeedback({ children, as: Tag = "div", className = "", rounded = "rounded-lg", onPointerDown, ...rest }) {
-  const [pulseId, setPulseId] = useState(0);
-  return (
-    <Tag
-      {...rest}
-      onPointerDown={(e) => {
-        setPulseId((id) => id + 1);
-        onPointerDown?.(e);
-      }}
-      className={`relative ${className}`}
-    >
-      {children}
-      {pulseId > 0 && (
-        <span
-          key={pulseId}
-          aria-hidden
-          className={`pointer-events-none absolute inset-0 ${rounded} border-2 border-current`}
-          style={{ animation: "pressRing 500ms ease-out forwards" }}
-        />
-      )}
-    </Tag>
   );
 }
 
@@ -1607,7 +1558,7 @@ function Editable({ value, onChange, className = "", as = "span", editMode, styl
         (editMode
           ? " outline-dashed outline-1 outline-offset-2 outline-neutral-300 focus:outline-neutral-900 rounded cursor-text"
           : !editMode && onClick
-          ? " cursor-pointer active:opacity-40 transition-opacity duration-150"
+          ? " cursor-pointer"
           : "")
       }
       {...rest}
@@ -1718,11 +1669,9 @@ function GalleryImage({ w, editMode, onSelect, onReplaceCover }) {
   const { ref, style } = useRevealAnimation();
   return (
     <div ref={ref} style={style} className="relative w-full group">
-      <PressFeedback
-        as="button"
+      <button
         onClick={() => !editMode && onSelect(w.id)}
         style={{ backgroundColor: w.tone }}
-        rounded="rounded-xl"
         className="block w-full rounded-xl overflow-hidden focus:outline-none"
       >
         <img
@@ -1730,7 +1679,7 @@ function GalleryImage({ w, editMode, onSelect, onReplaceCover }) {
           alt={w.title}
           className="w-full h-auto object-cover opacity-95 transition-opacity duration-300"
         />
-      </PressFeedback>
+      </button>
       {editMode && (
         <label className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer text-white text-xs font-bold rounded-xl overflow-hidden">
           更换封面图
