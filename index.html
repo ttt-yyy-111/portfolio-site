@@ -5,10 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio</title>
     <!-- 用 CDN 引入 Tailwind，简单省事，不需要额外的构建配置 -->
+    <script>
+      // 必须在加载 Tailwind 之前配置：让所有 hover: 样式（鼠标悬停变色/变灰这些）
+      // 只在真正支持"悬停"的设备（比如带鼠标的电脑）上生效。
+      // 手机是触屏，没有真正的悬停概念，浏览器会把"点一下"误判成"悬停"，
+      // 而且这个状态不会像鼠标移开那样自动清除，就会一直卡在"变灰"的样子——
+      // 加了这个配置之后，触屏设备完全不会触发 hover: 样式，从根上不会再卡住。
+      window.tailwind = window.tailwind || {};
+      tailwind.config = {
+        future: {
+          hoverOnlyWhenSupported: true,
+        },
+      };
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-      /* 去掉手机浏览器点击时自带的灰色高亮提示——就是点了不消失、卡在那里的那个灰色，
-         这是手机浏览器的默认行为，不是代码逻辑问题，加这一句就能去掉 */
+      /* 去掉手机浏览器点击时自带的灰色高亮提示 */
       * {
         -webkit-tap-highlight-color: transparent;
       }
