@@ -1006,13 +1006,17 @@ export default function Portfolio() {
             onChange={(v) => updateData((prev) => ({ ...prev, artistName: v }))}
             onClick={goToGallery}
             className="font-bold tracking-tight whitespace-nowrap"
-            style={artistNameStyle}
+            style={{
+              ...artistNameStyle,
+              fontSize: `${Math.max(22, parseFloat(artistNameStyle.fontSize) || 24)}px`,
+            }}
           />
           <button
             onClick={() => setMobileMenuOpen(true)}
             aria-label="打开菜单"
             className="flex flex-col gap-1.5 p-2 -mr-2"
           >
+            <span className="block w-5 h-0.5 bg-neutral-900" />
             <span className="block w-5 h-0.5 bg-neutral-900" />
             <span className="block w-5 h-0.5 bg-neutral-900" />
           </button>
@@ -1041,17 +1045,24 @@ export default function Portfolio() {
               </button>
             </div>
           )}
-          <div ref={sidebarContentRef} className="flex-1 min-h-0 overflow-y-auto overflow-x-hidden px-6 pt-8 pb-6">
-          <Editable
-            as="h1"
-            editMode={editMode}
-            value={data.artistName}
-            onChange={(v) => updateData((prev) => ({ ...prev, artistName: v }))}
-            onClick={goToGallery}
-            className="tracking-tight mb-8 inline-block whitespace-nowrap"
-            style={artistNameStyle}
-            data-measure-line="true"
-          />
+          <div
+            ref={sidebarContentRef}
+            className={`flex-1 min-h-0 overflow-y-auto overflow-x-hidden px-6 pb-6 ${
+              isMobile ? "pt-2" : "pt-8"
+            }`}
+          >
+          {!isMobile && (
+            <Editable
+              as="h1"
+              editMode={editMode}
+              value={data.artistName}
+              onChange={(v) => updateData((prev) => ({ ...prev, artistName: v }))}
+              onClick={goToGallery}
+              className="tracking-tight mb-8 inline-block whitespace-nowrap"
+              style={artistNameStyle}
+              data-measure-line="true"
+            />
+          )}
 
           {yearGroups.map((group) => {
             const entries = groupWorksBySeries(group.works);
@@ -1252,31 +1263,45 @@ export default function Portfolio() {
           )}
         </div>
 
-        {/* Index / Next 导航条：作为独立的 flex 子项，永远贴在左栏最底部 */}
+        {/* Index / Next 导航条：桌面端常驻在左栏最底部；手机端菜单里不需要，直接隐藏 */}
         <div ref={sidebarFooterRef} className="flex-shrink-0 w-full bg-white">
-          <div
-            className="px-6 pt-4 flex items-center gap-6 whitespace-nowrap"
-            style={indexNavStyle}
-          >
-            <button
-              onClick={goToGallery}
-              className="hover:text-neutral-500 transition-colors"
+          {!isMobile && (
+            <div
+              className="px-6 pt-4 flex items-center gap-6 whitespace-nowrap"
+              style={indexNavStyle}
             >
-              Index
-            </button>
-            {selectedWork && (
               <button
-                onClick={() => goToWork(nextWork.id)}
-                className="hover:text-neutral-500 transition-colors flex items-center gap-1"
+                onClick={goToGallery}
+                className="hover:text-neutral-500 transition-colors"
               >
-                Next <span aria-hidden>→</span>
+                Index
               </button>
-            )}
-          </div>
+              {selectedWork && (
+                <button
+                  onClick={() => goToWork(nextWork.id)}
+                  className="hover:text-neutral-500 transition-colors flex items-center gap-1"
+                >
+                  Next <span aria-hidden>→</span>
+                </button>
+              )}
+            </div>
+          )}
 
           <div
-            className="px-6 py-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-neutral-500"
-            style={footerLinksStyle}
+            className={
+              isMobile
+                ? "px-6 py-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-neutral-900"
+                : "px-6 py-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-neutral-500"
+            }
+            style={
+              isMobile
+                ? {
+                    ...footerLinksStyle,
+                    fontSize: `${Math.max(18, parseFloat(footerLinksStyle.fontSize) || 12)}px`,
+                    fontWeight: 700,
+                  }
+                : footerLinksStyle
+            }
           >
             <button
               onClick={goToInfo}
