@@ -264,6 +264,12 @@ export default function Portfolio() {
     if (sidebarContentRef.current) sidebarContentRef.current.scrollLeft = 0;
   }, [editMode, data, showInfo, selectedId]);
 
+  // 切换到新的一页内容时（选了别的作品、进了信息页、回到画廊），把纵向滚动也重置回顶部，
+  // 不然会保留上一屏的滚动位置，新页面看起来像是"从中间开始"的，还得自己往上滑。
+  useLayoutEffect(() => {
+    if (mainRef.current) mainRef.current.scrollTop = 0;
+  }, [selectedId, showInfo]);
+
   const recalcSidebarWidth = useCallback(() => {
     const contentEl = sidebarContentRef.current;
     const footerEl = sidebarFooterRef.current;
