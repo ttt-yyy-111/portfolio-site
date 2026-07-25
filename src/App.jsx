@@ -1675,14 +1675,11 @@ function GalleryGrid({ works, editMode, onSelect, onReplaceCover, imageGap = 16,
 function GalleryImage({ w, editMode, onSelect, onReplaceCover }) {
   const { ref, style } = useRevealAnimation();
   return (
-    <div
-      ref={ref}
-      style={{ backgroundColor: w.tone, ...style }}
-      className="relative w-full rounded-xl overflow-hidden group"
-    >
+    <div ref={ref} style={style} className="relative w-full group">
       <button
         onClick={() => !editMode && onSelect(w.id)}
-        className="block w-full focus:outline-none active:scale-95 transition-transform duration-200 ease-[cubic-bezier(0.34,1.56,0.64,1)]"
+        style={{ backgroundColor: w.tone }}
+        className="block w-full rounded-xl overflow-hidden focus:outline-none active:scale-95 transition-transform duration-200 ease-[cubic-bezier(0.34,1.56,0.64,1)]"
       >
         <img
           src={w.cover}
@@ -1691,7 +1688,7 @@ function GalleryImage({ w, editMode, onSelect, onReplaceCover }) {
         />
       </button>
       {editMode && (
-        <label className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer text-white text-xs font-bold">
+        <label className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer text-white text-xs font-bold rounded-xl overflow-hidden">
           更换封面图
           <input
             type="file"
