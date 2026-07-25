@@ -6,6 +6,13 @@
     <title>Portfolio</title>
     <!-- 用 CDN 引入 Tailwind，简单省事，不需要额外的构建配置 -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* 去掉手机浏览器点击时自带的灰色高亮提示——就是点了不消失、卡在那里的那个灰色，
+         这是手机浏览器的默认行为，不是代码逻辑问题，加这一句就能去掉 */
+      * {
+        -webkit-tap-highlight-color: transparent;
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>
