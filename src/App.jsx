@@ -1183,7 +1183,7 @@ export default function Portfolio() {
       {/* ---------- 手机端顶部栏：姓名 + 语言切换 + 菜单按钮，只在窄屏时显示 ---------- */}
       {isMobile && (
         <div className="flex items-center justify-between px-4 py-3 border-b border-neutral-100 flex-shrink-0 relative z-30 bg-white">
-          <div className="flex items-center gap-4 min-w-0">
+          <div className="flex items-center gap-8 min-w-0">
             <Editable
               as="span"
               editMode={editMode}
@@ -1991,6 +1991,8 @@ function DetailView({
       ? "slideInFromLeft"
       : "none";
 
+  const [lightboxIndex, setLightboxIndex] = useState(null);
+
   return (
     <div className="flex flex-col min-h-full">
       <div
@@ -2042,6 +2044,7 @@ function DetailView({
               editMode={editMode}
               onReplaceImage={(file) => onReplaceImage(i, file)}
               onRemoveImage={() => onRemoveImage(i)}
+              onOpen={() => setLightboxIndex(i)}
             />
           ))}
 
@@ -2109,14 +2112,31 @@ function DetailView({
           </svg>
         </button>
       </div>
+      {lightboxIndex !== null && (
+        <ImageLightbox
+          images={work.images}
+          index={lightboxIndex}
+          alt={work.title}
+          onClose={() => setLightboxIndex(null)}
+          onPrev={() => setLightboxIndex((i) => Math.max(0, i - 1))}
+          onNext={() => setLightboxIndex((i) => Math.min(work.images.length - 1, i + 1))}
+        />
+      )}
     </div>
   );
 }
 
-function DetailImage({ src, alt, editMode, onReplaceImage, onRemoveImage }) {
+function DetailImage({ src, alt, editMode, onReplaceImage, onRemoveImage, onOpen }) {
   const { ref, style } = useRevealAnimation();
   return (
-    <div ref={ref} style={style} className="relative rounded-xl overflow-hidden bg-neutral-100 group">
+    <div
+      ref={ref}
+      style={style}
+      onClick={() => !editMode && onOpen()}
+      className={`relative rounded-xl overflow-hidden bg-neutral-100 group ${
+        editMode ? "" : "cursor-zoom-in"
+      }`}
+    >
       <img
         src={src}
         alt={alt}
@@ -2146,6 +2166,84 @@ function DetailImage({ src, alt, editMode, onReplaceImage, onRemoveImage }) {
             ✕
           </button>
         </>
+      )}
+    </div>
+  );
+}
+
+// 图片放大预览：比整个页面稍微小一点，左右箭头切换同一件作品下的图片，右上角关闭
+function ImageLightbox({ images, index, onClose, onPrev, onNext, alt }) {
+  useEffect(() => {
+    const onKeyDown = (e) => {
+      if (e.key === "Escape") onClose();
+      else if (e.key === "ArrowLeft") onPrev();
+      else if (e.key === "ArrowRight") onNext();
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [onClose, onPrev, onNext]);
+
+  const hasPrev = index > 0;
+  const hasNext = index < images.length - 1;
+
+  return (
+    <div
+      className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-6 md:p-10"
+      onClick={onClose}
+    >
+      <img
+        src={images[index]}
+        alt={`${alt} ${index + 1}`}
+        draggable={false}
+        onContextMenu={(e) => e.preventDefault()}
+        onDragStart={(e) => e.preventDefault()}
+        onClick={(e) => e.stopPropagation()}
+        className="max-w-[88vw] max-h-[85vh] w-auto h-auto object-contain select-none rounded"
+        style={{ WebkitTouchCallout: "none" }}
+      />
+
+      {/* 关闭：右上角 */}
+      <button
+        onClick={onClose}
+        aria-label="关闭"
+        className="absolute top-4 right-4 md:top-6 md:right-6 w-9 h-9 md:w-10 md:h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors"
+      >
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+          <line x1="6" y1="6" x2="18" y2="18" />
+          <line x1="18" y1="6" x2="6" y2="18" />
+        </svg>
+      </button>
+
+      {/* 上一张 */}
+      {hasPrev && (
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            onPrev();
+          }}
+          aria-label="上一张"
+          className="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 w-9 h-9 md:w-11 md:h-11 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors"
+        >
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="15 6 9 12 15 18" />
+          </svg>
+        </button>
+      )}
+
+      {/* 下一张 */}
+      {hasNext && (
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            onNext();
+          }}
+          aria-label="下一张"
+          className="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 w-9 h-9 md:w-11 md:h-11 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors"
+        >
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="9 6 15 12 9 18" />
+          </svg>
+        </button>
       )}
     </div>
   );
