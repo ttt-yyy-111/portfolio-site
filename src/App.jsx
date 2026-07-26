@@ -15,7 +15,7 @@ const FONT_WEIGHT_OPTIONS = [
 
 const FONT_CATEGORIES = [
   { key: "sans-serif", label: "Sans Serif" },
-  { key: "serif", label: "Serif" }, // 目前还是空的，之后可以往这里加衬线字体
+  { key: "serif", label: "Serif" },
 ];
 
 // 拼出 Google Fonts css2 接口需要的查询片段，hasItalic 为 true 时会连真正的斜体字重一起请求
@@ -104,6 +104,68 @@ const FONT_PRESETS = [
     googleFont: buildGoogleFontQuery("Space+Grotesk", SANS_WEIGHTS, false),
     weights: FONT_WEIGHT_OPTIONS,
     // 没有真正的宽度轴，靠代码模拟
+    widthRange: { min: 50, max: 100, default: 100 },
+  },
+  // 思源黑体系列（Google Fonts 上叫 Noto Sans SC/TC/JP），中日韩字体一般没有真正的斜体字形
+  {
+    id: "source-han-sans-sc",
+    label: "思源黑体",
+    category: "sans-serif",
+    family: "'Noto Sans SC', -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif",
+    italic: false,
+    googleFont: buildGoogleFontQuery("Noto+Sans+SC", SANS_WEIGHTS, false),
+    weights: FONT_WEIGHT_OPTIONS,
+    widthRange: { min: 50, max: 100, default: 100 },
+  },
+  {
+    id: "source-han-sans-tc",
+    label: "思源黑體",
+    category: "sans-serif",
+    family: "'Noto Sans TC', -apple-system, 'PingFang TC', 'Microsoft JhengHei', sans-serif",
+    italic: false,
+    googleFont: buildGoogleFontQuery("Noto+Sans+TC", SANS_WEIGHTS, false),
+    weights: FONT_WEIGHT_OPTIONS,
+    widthRange: { min: 50, max: 100, default: 100 },
+  },
+  {
+    id: "source-han-sans-jp",
+    label: "源ノ角ゴシック",
+    category: "sans-serif",
+    family: "'Noto Sans JP', -apple-system, 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif",
+    italic: false,
+    googleFont: buildGoogleFontQuery("Noto+Sans+JP", SANS_WEIGHTS, false),
+    weights: FONT_WEIGHT_OPTIONS,
+    widthRange: { min: 50, max: 100, default: 100 },
+  },
+  // 思源宋体系列（Google Fonts 上叫 Noto Serif SC/TC/JP）
+  {
+    id: "source-han-serif-sc",
+    label: "思源宋体",
+    category: "serif",
+    family: "'Noto Serif SC', 'Songti SC', 'SimSun', serif",
+    italic: false,
+    googleFont: buildGoogleFontQuery("Noto+Serif+SC", SANS_WEIGHTS, false),
+    weights: FONT_WEIGHT_OPTIONS,
+    widthRange: { min: 50, max: 100, default: 100 },
+  },
+  {
+    id: "source-han-serif-tc",
+    label: "思源宋體",
+    category: "serif",
+    family: "'Noto Serif TC', 'Songti TC', 'PMingLiU', serif",
+    italic: false,
+    googleFont: buildGoogleFontQuery("Noto+Serif+TC", SANS_WEIGHTS, false),
+    weights: FONT_WEIGHT_OPTIONS,
+    widthRange: { min: 50, max: 100, default: 100 },
+  },
+  {
+    id: "source-han-serif-jp",
+    label: "源ノ明朝",
+    category: "serif",
+    family: "'Noto Serif JP', 'Hiragino Mincho ProN', 'Yu Mincho', serif",
+    italic: false,
+    googleFont: buildGoogleFontQuery("Noto+Serif+JP", SANS_WEIGHTS, false),
+    weights: FONT_WEIGHT_OPTIONS,
     widthRange: { min: 50, max: 100, default: 100 },
   },
 ];
