@@ -341,6 +341,7 @@ export default function Portfolio() {
   // scrollWidth——所以不能只测量最外层容器的 scrollWidth，得直接测量每一行文字自己
   // （带 data-measure-line 标记）的 scrollWidth，再加上它相对左边缘的偏移量，
   // 这样不管中间隔了多少层 overflow:hidden 都不受影响。
+  const sidebarHeaderRef = useRef(null); // 姓名 + 返回图标那一块，固定在顶部不滚动
   const sidebarContentRef = useRef(null);
   const sidebarFooterRef = useRef(null);
   const mainRef = useRef(null);
@@ -370,18 +371,24 @@ export default function Portfolio() {
   }, [selectedId, showInfo]);
 
   const recalcSidebarWidth = useCallback(() => {
+    const headerEl = sidebarHeaderRef.current;
     const contentEl = sidebarContentRef.current;
     const footerEl = sidebarFooterRef.current;
     if (!contentEl) return;
 
-    const containerRect = contentEl.getBoundingClientRect();
     let contentWidth = 0;
-    contentEl.querySelectorAll("[data-measure-line]").forEach((el) => {
-      const rect = el.getBoundingClientRect();
-      const offsetLeft = rect.left - containerRect.left;
-      const required = offsetLeft + el.scrollWidth;
-      if (required > contentWidth) contentWidth = required;
-    });
+    const measureWithin = (containerEl) => {
+      if (!containerEl) return;
+      const containerRect = containerEl.getBoundingClientRect();
+      containerEl.querySelectorAll("[data-measure-line]").forEach((el) => {
+        const rect = el.getBoundingClientRect();
+        const offsetLeft = rect.left - containerRect.left;
+        const required = offsetLeft + el.scrollWidth;
+        if (required > contentWidth) contentWidth = required;
+      });
+    };
+    measureWithin(headerEl);
+    measureWithin(contentEl);
     contentWidth += 64; // 右侧多留一点空间，让左栏整体宽松一些
 
     const footerWidth = footerEl ? footerEl.scrollWidth : 0;
@@ -450,11 +457,13 @@ export default function Portfolio() {
   // 内容区域自身尺寸变化时（比如字体异步加载完成后文字变宽）也重新量一次，
   // 窗口大小变化时重新量一次 1/4 比例应该是多宽
   useEffect(() => {
+    const headerEl = sidebarHeaderRef.current;
     const contentEl = sidebarContentRef.current;
     const footerEl = sidebarFooterRef.current;
     if (!contentEl) return;
 
     const ro = new ResizeObserver(() => recalcSidebarWidth());
+    if (headerEl) ro.observe(headerEl);
     ro.observe(contentEl);
     if (footerEl) ro.observe(footerEl);
     window.addEventListener("resize", recalcSidebarWidth);
@@ -1229,13 +1238,10 @@ export default function Portfolio() {
             </button>
           </div>
         )}
-          <div
-            ref={sidebarContentRef}
-            className={`flex-1 min-h-0 overflow-y-auto overflow-x-hidden px-6 pb-6 ${
-              isMobile ? "pt-2" : "pt-8"
-            }`}
-          >
-          {!isMobile && (
+
+        {/* 姓名 + 返回图标：单独固定在顶部，不随下面的年份/作品列表滚动 */}
+        {!isMobile && (
+          <div ref={sidebarHeaderRef} className="flex-shrink-0 px-6 pt-8">
             <div className="w-full flex items-center justify-between mb-8">
               <Editable
                 as="h1"
@@ -1269,7 +1275,15 @@ export default function Portfolio() {
                 </button>
               )}
             </div>
-          )}
+          </div>
+        )}
+
+          <div
+            ref={sidebarContentRef}
+            className={`flex-1 min-h-0 overflow-y-auto overflow-x-hidden px-6 pb-6 ${
+              isMobile ? "pt-2" : "pt-0"
+            }`}
+          >
 
           {yearGroups.map((group) => {
             const entries = groupWorksBySeries(group.works);
