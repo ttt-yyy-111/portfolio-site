@@ -1183,7 +1183,7 @@ export default function Portfolio() {
       {/* ---------- 手机端顶部栏：姓名 + 语言切换 + 菜单按钮，只在窄屏时显示 ---------- */}
       {isMobile && (
         <div className="flex items-center justify-between px-4 py-3 border-b border-neutral-100 flex-shrink-0 relative z-30 bg-white">
-          <div className="flex items-center gap-2 min-w-0">
+          <div className="flex items-center gap-4 min-w-0">
             <Editable
               as="span"
               editMode={editMode}
