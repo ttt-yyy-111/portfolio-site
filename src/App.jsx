@@ -1183,15 +1183,38 @@ export default function Portfolio() {
       {/* ---------- 手机端顶部栏：姓名 + 语言切换 + 菜单按钮，只在窄屏时显示 ---------- */}
       {isMobile && (
         <div className="flex items-center justify-between px-4 py-3 border-b border-neutral-100 flex-shrink-0 relative z-30 bg-white">
-          <Editable
-            as="span"
-            editMode={editMode}
-            value={data.artistName}
-            onChange={(v) => updateData((prev) => ({ ...prev, artistName: v }))}
-            onClick={goToGallery}
-            className="font-bold tracking-tight whitespace-nowrap"
-            style={mobileArtistNameStyle}
-          />
+          <div className="flex items-center gap-2 min-w-0">
+            <Editable
+              as="span"
+              editMode={editMode}
+              value={data.artistName}
+              onChange={(v) => updateData((prev) => ({ ...prev, artistName: v }))}
+              onClick={goToGallery}
+              className="font-bold tracking-tight whitespace-nowrap"
+              style={mobileArtistNameStyle}
+            />
+            {selectedWork && (
+              <button
+                onClick={goBackToGallery}
+                aria-label={isZh ? "返回" : "Back"}
+                title={isZh ? "返回" : "Back"}
+                className="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center bg-neutral-900 text-white hover:bg-neutral-700 transition-colors"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  width="14"
+                  height="14"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <polyline points="15 18 9 12 15 6" />
+                </svg>
+              </button>
+            )}
+          </div>
           <div className="flex items-center gap-2">
             <button
               onClick={toggleLanguage}
@@ -1981,29 +2004,6 @@ function DetailView({
       >
         <div className="flex items-start justify-between mb-6 gap-4">
           <div className="flex items-center gap-3 min-w-0">
-            {/* 返回按钮：只在手机端显示（电脑端已经放进左侧栏了，手机端左侧栏收在抽屉里，
-                详情页看不到，所以手机端还是留在这里方便点）。
-                点了回到画廊，并恢复到进入详情页之前画廊滚动到的那个位置（不是统一回到顶部） */}
-            {isMobile && (
-              <button
-                onClick={onBack}
-                aria-label="返回"
-                className="flex-shrink-0 w-8 h-8 rounded-full bg-white shadow-sm border border-neutral-100 flex items-center justify-center text-neutral-600 hover:text-neutral-900 transition-colors"
-              >
-                <svg
-                  viewBox="0 0 24 24"
-                  width="14"
-                  height="14"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <polyline points="15 18 9 12 15 6" />
-                </svg>
-              </button>
-            )}
             <Editable
               as="h2"
               value={displayTitle}
