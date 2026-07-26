@@ -1240,9 +1240,13 @@ export default function Portfolio() {
           <div className="flex items-center justify-between px-3 py-3 flex-shrink-0">
             <span
               className="text-5xl font-bold tracking-tight"
-              style={{ fontFamily: "'IBM Plex Sans', -apple-system, Arial, 'PingFang SC', sans-serif" }}
+              style={{
+                fontFamily: isZh
+                  ? "'Noto Sans JP', -apple-system, 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif"
+                  : "'IBM Plex Sans', -apple-system, Arial, 'PingFang SC', sans-serif",
+              }}
             >
-              {isZh ? "目录" : "Index"}
+              {isZh ? "索引" : "Index"}
             </span>
             <button
               onClick={() => setMobileMenuOpen(false)}
