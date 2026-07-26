@@ -847,7 +847,15 @@ export default function Portfolio() {
     fontSize: `${Math.max(46, parseFloat(artistNameStyle.fontSize) || 24)}px`,
   };
   const yearStyle = styleFor("year");
+  const mobileYearStyle = {
+    ...yearStyle,
+    fontSize: `${(parseFloat(yearStyle.fontSize) || 20) * 1.3}px`,
+  };
   const workTitleStyle = styleFor("workTitle");
+  const mobileWorkTitleStyle = {
+    ...workTitleStyle,
+    fontSize: `${(parseFloat(workTitleStyle.fontSize) || 15) * 1.3}px`,
+  };
   const detailTitleStyle = styleFor("detailTitle");
   const detailDescriptionStyle = styleFor("detailDescription");
   const footerLinksStyle = styleFor("footerLinks");
@@ -1231,7 +1239,7 @@ export default function Portfolio() {
         {isMobile && (
           <div className="flex items-center justify-between px-3 py-3 flex-shrink-0">
             <span
-              className="text-4xl font-bold tracking-tight"
+              className="text-5xl font-bold tracking-tight"
               style={{ fontFamily: "'IBM Plex Sans', -apple-system, Arial, 'PingFang SC', sans-serif" }}
             >
               {isZh ? "目录" : "Index"}
@@ -1239,10 +1247,10 @@ export default function Portfolio() {
             <button
               onClick={() => setMobileMenuOpen(false)}
               aria-label="关闭菜单"
-              className="relative p-2 -mr-2 w-9 h-9 flex items-center justify-center"
+              className="relative p-2 -mr-2 w-12 h-12 flex items-center justify-center"
             >
-              <span className="absolute w-5 h-0.5 bg-neutral-900 rotate-45" />
-              <span className="absolute w-5 h-0.5 bg-neutral-900 -rotate-45" />
+              <span className="absolute w-7 h-0.5 bg-neutral-900 rotate-45" />
+              <span className="absolute w-7 h-0.5 bg-neutral-900 -rotate-45" />
             </button>
           </div>
         )}
@@ -1303,7 +1311,7 @@ export default function Portfolio() {
                     onClick={() => !editMode && toggleYear(group.year)}
                     className="relative w-full flex items-center justify-between mb-2"
                   >
-                    <span style={yearStyle} data-measure-line="true">
+                    <span style={isMobile ? mobileYearStyle : yearStyle} data-measure-line="true">
                       {editMode ? (
                         <Editable
                           as="span"
@@ -1354,7 +1362,7 @@ export default function Portfolio() {
                           displayTitle={tField(w, "title")}
                           selectedId={selectedId}
                           editMode={editMode}
-                          bodyTextStyle={workTitleStyle}
+                          bodyTextStyle={isMobile ? mobileWorkTitleStyle : workTitleStyle}
                           onSelect={() => goToWork(w.id)}
                           onChangeTitle={(v) => updateWork(w.id, { [langKey("title")]: v })}
                           onDelete={() => deleteWork(w.id)}
@@ -1389,7 +1397,7 @@ export default function Portfolio() {
                           </span>
                           <button
                             onClick={() => !editMode && toggleSeries(seriesKey)}
-                            style={workTitleStyle}
+                            style={isMobile ? mobileWorkTitleStyle : workTitleStyle}
                             className="relative flex-1 flex items-center text-left text-neutral-800"
                           >
                             <span className="absolute -left-3 inset-y-0 flex items-center" aria-hidden>
@@ -1437,7 +1445,7 @@ export default function Portfolio() {
                                 displayTitle={tField(w, "title")}
                                 selectedId={selectedId}
                                 editMode={editMode}
-                                bodyTextStyle={workTitleStyle}
+                                bodyTextStyle={isMobile ? mobileWorkTitleStyle : workTitleStyle}
                                 onSelect={() => goToWork(w.id)}
                                 onChangeTitle={(v) => updateWork(w.id, { [langKey("title")]: v })}
                                 onDelete={() => deleteWork(w.id)}
