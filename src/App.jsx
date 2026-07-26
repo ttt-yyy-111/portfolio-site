@@ -219,6 +219,34 @@ export default function Portfolio() {
     return new URLSearchParams(window.location.search).get("edit") === "1";
   });
 
+  // ---------- 中英文切换 ----------
+  // 默认英文；记住访客上次选择的语言（存在浏览器本地，下次打开这个网站还是他选过的语言）
+  const [language, setLanguage] = useState(() => {
+    if (typeof window === "undefined") return "en";
+    return window.localStorage.getItem("portfolio-language") || "en";
+  });
+  const isZh = language === "zh";
+  const toggleLanguage = () => {
+    setLanguage((prev) => {
+      const next = prev === "zh" ? "en" : "zh";
+      try {
+        window.localStorage.setItem("portfolio-language", next);
+      } catch (err) {
+        // 隐私模式等场景下 localStorage 可能不可用，静默忽略即可，不影响本次切换
+      }
+      return next;
+    });
+  };
+  // 取某个字段的当前语言版本：中文模式下优先用 xxxZh 字段，没填就自动退回英文原文，
+  // 不会因为漏填中文翻译就显示空白。
+  const tField = (obj, key) => {
+    if (!obj) return "";
+    if (isZh) return obj[`${key}Zh`] || obj[key] || "";
+    return obj[key] || "";
+  };
+  // 编辑模式下，根据当前语言决定这次改动要写回哪个字段（英文原文字段，还是对应的xxxZh字段）
+  const langKey = (key) => (isZh ? `${key}Zh` : key);
+
   // ---------- 手机端适配 ----------
   // 屏幕比较窄的时候（大致对应手机/竖屏平板），切换成"顶部栏 + 抽屉式菜单"的移动版布局，
   // 电脑上宽屏还是维持左右两栏。
@@ -730,10 +758,10 @@ export default function Portfolio() {
         />
       )}
 
-      {/* 顶部工具按钮：只有网址带 ?edit=1 才会显示，正式访问的人看到的是干净的展示页 */}
-      {canEdit && (
+      {/* 顶部工具按钮：中英文切换所有人都能看到；编辑相关的按钮只有网址带 ?edit=1 才会显示 */}
+      {!isMobile && (
         <div className="absolute top-3 right-3 z-20 flex items-center gap-2">
-          {editMode && (
+          {canEdit && editMode && (
             <>
               <button
                 onClick={exportContent}
@@ -755,28 +783,39 @@ export default function Portfolio() {
               </button>
             </>
           )}
+          {canEdit && (
+            <button
+              onClick={() => setTypoPanelOpen((v) => !v)}
+              className={`text-xs font-bold px-3 py-1.5 rounded-full transition-colors ${
+                typoPanelOpen
+                  ? "bg-neutral-900 text-white"
+                  : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
+              }`}
+            >
+              Aa 文字样式
+            </button>
+          )}
+          {canEdit && (
+            <button
+              onClick={() => {
+                setEditMode((v) => !v);
+                setTypoPanelOpen(false);
+              }}
+              className={`text-xs font-bold px-3 py-1.5 rounded-full transition-colors ${
+                editMode
+                  ? "bg-neutral-900 text-white"
+                  : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
+              }`}
+            >
+              {editMode ? "完成编辑" : "编辑页面"}
+            </button>
+          )}
           <button
-            onClick={() => setTypoPanelOpen((v) => !v)}
-            className={`text-xs font-bold px-3 py-1.5 rounded-full transition-colors ${
-              typoPanelOpen
-                ? "bg-neutral-900 text-white"
-                : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
-            }`}
+            onClick={toggleLanguage}
+            title={isZh ? "Switch to English" : "切换到中文"}
+            className="text-xs font-bold px-3 py-1.5 rounded-full bg-neutral-100 text-neutral-600 hover:bg-neutral-200 transition-colors"
           >
-            Aa 文字样式
-          </button>
-          <button
-            onClick={() => {
-              setEditMode((v) => !v);
-              setTypoPanelOpen(false);
-            }}
-            className={`text-xs font-bold px-3 py-1.5 rounded-full transition-colors ${
-              editMode
-                ? "bg-neutral-900 text-white"
-                : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
-            }`}
-          >
-            {editMode ? "完成编辑" : "编辑页面"}
+            {isZh ? "EN" : "中"}
           </button>
         </div>
       )}
@@ -1024,27 +1063,36 @@ export default function Portfolio() {
         </span>
       )}
 
-      {/* ---------- 手机端顶部栏：姓名 + 菜单按钮，只在窄屏时显示 ---------- */}
+      {/* ---------- 手机端顶部栏：姓名 + 语言切换 + 菜单按钮，只在窄屏时显示 ---------- */}
       {isMobile && (
         <div className="flex items-center justify-between px-4 py-3 border-b border-neutral-100 flex-shrink-0 relative z-30 bg-white">
           <Editable
             as="span"
             editMode={editMode}
-            value={data.artistName}
-            onChange={(v) => updateData((prev) => ({ ...prev, artistName: v }))}
+            value={tField(data, "artistName")}
+            onChange={(v) => updateData((prev) => ({ ...prev, [langKey("artistName")]: v }))}
             onClick={goToGallery}
             className="font-bold tracking-tight whitespace-nowrap"
             style={mobileArtistNameStyle}
           />
-          <button
-            onClick={() => setMobileMenuOpen(true)}
-            aria-label="打开菜单"
-            className="flex flex-col gap-1.5 p-2 -mr-2"
-          >
-            <span className="block w-5 h-0.5 bg-neutral-900" />
-            <span className="block w-5 h-0.5 bg-neutral-900" />
-            <span className="block w-5 h-0.5 bg-neutral-900" />
-          </button>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={toggleLanguage}
+              title={isZh ? "Switch to English" : "切换到中文"}
+              className="text-xs font-bold px-2.5 py-1 rounded-full bg-neutral-100 text-neutral-600"
+            >
+              {isZh ? "EN" : "中"}
+            </button>
+            <button
+              onClick={() => setMobileMenuOpen(true)}
+              aria-label="打开菜单"
+              className="flex flex-col gap-1.5 p-2 -mr-2"
+            >
+              <span className="block w-5 h-0.5 bg-neutral-900" />
+              <span className="block w-5 h-0.5 bg-neutral-900" />
+              <span className="block w-5 h-0.5 bg-neutral-900" />
+            </button>
+          </div>
         </div>
       )}
 
@@ -1083,8 +1131,8 @@ export default function Portfolio() {
             <Editable
               as="h1"
               editMode={editMode}
-              value={data.artistName}
-              onChange={(v) => updateData((prev) => ({ ...prev, artistName: v }))}
+              value={tField(data, "artistName")}
+              onChange={(v) => updateData((prev) => ({ ...prev, [langKey("artistName")]: v }))}
               onClick={goToGallery}
               className="tracking-tight mb-8 inline-block whitespace-nowrap"
               style={artistNameStyle}
@@ -1150,11 +1198,12 @@ export default function Portfolio() {
                         <WorkListItem
                           key={w.id}
                           w={w}
+                          displayTitle={tField(w, "title")}
                           selectedId={selectedId}
                           editMode={editMode}
                           bodyTextStyle={workTitleStyle}
                           onSelect={() => goToWork(w.id)}
-                          onChangeTitle={(v) => updateWork(w.id, { title: v })}
+                          onChangeTitle={(v) => updateWork(w.id, { [langKey("title")]: v })}
                           onDelete={() => deleteWork(w.id)}
                           dragHandlers={makeEntryDragHandlers(group.year, entryIndex)}
                         />
@@ -1216,11 +1265,12 @@ export default function Portfolio() {
                               <WorkListItem
                                 key={w.id}
                                 w={w}
+                                displayTitle={tField(w, "title")}
                                 selectedId={selectedId}
                                 editMode={editMode}
                                 bodyTextStyle={workTitleStyle}
                                 onSelect={() => goToWork(w.id)}
-                                onChangeTitle={(v) => updateWork(w.id, { title: v })}
+                                onChangeTitle={(v) => updateWork(w.id, { [langKey("title")]: v })}
                                 onDelete={() => deleteWork(w.id)}
                                 dragHandlers={makeMemberDragHandlers(
                                   group.year,
@@ -1350,7 +1400,7 @@ export default function Portfolio() {
               onClick={goToInfo}
               className={showInfo ? "text-neutral-900 underline underline-offset-2" : ""}
             >
-              Information
+              {isZh ? "简介" : "Information"}
             </button>
 
             <div className="flex items-center gap-1">
@@ -1415,12 +1465,13 @@ export default function Portfolio() {
       >
         {showInfo ? (
           <InfoView
-            info={data.info || ""}
+            info={tField(data, "info")}
             editMode={editMode}
             titleStyle={detailTitleStyle}
             descriptionStyle={detailDescriptionStyle}
-            onChangeInfo={(v) => updateData((prev) => ({ ...prev, info: v }))}
+            onChangeInfo={(v) => updateData((prev) => ({ ...prev, [langKey("info")]: v }))}
             isMobile={isMobile}
+            isZh={isZh}
           />
         ) : !selectedWork ? (
           <GalleryGrid
@@ -1434,6 +1485,9 @@ export default function Portfolio() {
         ) : (
           <DetailView
             work={selectedWork}
+            displayTitle={tField(selectedWork, "title")}
+            displayDescription={tField(selectedWork, "description")}
+            langKey={langKey}
             editMode={editMode}
             titleStyle={detailTitleStyle}
             descriptionStyle={detailDescriptionStyle}
@@ -1447,6 +1501,7 @@ export default function Portfolio() {
             nextWork={detailNextWork}
             onGoToWork={goToWork}
             navDirection={navDirection}
+            isZh={isZh}
           />
         )}
       </main>
@@ -1476,6 +1531,7 @@ function AccordionContent({ isOpen, children }) {
 
 function WorkListItem({
   w,
+  displayTitle,
   selectedId,
   editMode,
   bodyTextStyle,
@@ -1509,9 +1565,9 @@ function WorkListItem({
         }`}
       >
         {editMode ? (
-          <Editable value={w.title} editMode={editMode} onChange={onChangeTitle} />
+          <Editable value={displayTitle} editMode={editMode} onChange={onChangeTitle} />
         ) : (
-          w.title
+          displayTitle
         )}
       </button>
       {editMode && (
@@ -1695,11 +1751,11 @@ function GalleryImage({ w, editMode, onSelect, onReplaceCover }) {
 }
 
 // 艺术家信息页：点击左下角 "Information" 进入
-function InfoView({ info, editMode, titleStyle, descriptionStyle, onChangeInfo, isMobile }) {
+function InfoView({ info, editMode, titleStyle, descriptionStyle, onChangeInfo, isMobile, isZh }) {
   return (
     <div className="px-6 md:px-10 pb-10 max-w-3xl" style={{ paddingTop: isMobile ? 24 : 40 }}>
       <h2 className="mb-6" style={titleStyle}>
-        Information
+        {isZh ? "简介" : "Information"}
       </h2>
       <Editable
         as="p"
@@ -1715,6 +1771,9 @@ function InfoView({ info, editMode, titleStyle, descriptionStyle, onChangeInfo, 
 
 function DetailView({
   work,
+  displayTitle,
+  displayDescription,
+  langKey,
   editMode,
   titleStyle,
   descriptionStyle,
@@ -1728,6 +1787,7 @@ function DetailView({
   nextWork,
   onGoToWork,
   navDirection,
+  isZh,
 }) {
   const slideAnimation =
     navDirection === "next"
@@ -1750,9 +1810,9 @@ function DetailView({
         <div className="flex items-start justify-between mb-6 gap-4">
           <Editable
             as="h2"
-            value={work.title}
+            value={displayTitle}
             editMode={editMode}
-            onChange={(v) => onUpdate({ title: v })}
+            onChange={(v) => onUpdate({ [langKey("title")]: v })}
             style={titleStyle}
           />
           <Editable
@@ -1766,9 +1826,9 @@ function DetailView({
 
         <Editable
           as="p"
-          value={work.description}
+          value={displayDescription}
           editMode={editMode}
-          onChange={(v) => onUpdate({ description: v })}
+          onChange={(v) => onUpdate({ [langKey("description")]: v })}
           className="text-neutral-900 mb-10 max-w-4xl block"
           style={descriptionStyle}
         />
@@ -1825,7 +1885,7 @@ function DetailView({
           >
             <polyline points="15 6 9 12 15 18" />
           </svg>
-          Previous
+          {isZh ? "上一个" : "Previous"}
         </button>
         <button
           onClick={() => nextWork && onGoToWork(nextWork.id, "next")}
@@ -1834,7 +1894,7 @@ function DetailView({
             nextWork ? "text-neutral-900" : "text-neutral-300 cursor-not-allowed"
           }`}
         >
-          Next
+          {isZh ? "下一个" : "Next"}
           <svg
             viewBox="0 0 24 24"
             width="14"

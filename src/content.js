@@ -8,6 +8,17 @@
  *  2) 打开网站加上 ?edit=1（比如 http://localhost:5173/?edit=1），
  *     进入可视化编辑模式，点哪改哪，改完点导出内容，
  *     下载到的 content.js 直接替换掉这个文件就行
+ *
+ *  ---- 中英文切换 ----
+ *  网站右上角（手机上是顶部栏）有个中英文切换按钮，默认显示英文。
+ *  想让某段文字也有中文版本，就在对应字段后面加一个 "Zh" 结尾的新字段：
+ *    title      → titleZh
+ *    description→ descriptionZh
+ *    artistName → artistNameZh
+ *    info       → infoZh
+ *  没写 xxxZh 的内容，切到中文的时候会自动显示英文原文，不会空白。
+ *  年份、系列名称（比如 "Good Medicine Tastes Bitter"）、日期、Email/Instagram
+ *  这几项目前没有做中英文区分，两种语言下显示的都是同一份内容。
  * ============================================================
  */
 export const DEFAULT_TYPOGRAPHY = {
@@ -22,11 +33,13 @@ export const DEFAULT_TYPOGRAPHY = {
 
 export const DEFAULT_DATA = {
   artistName: "YU TIANTIAN",
+  artistNameZh: "于田田", // 示例：中文模式下姓名可以显示不一样的内容，不需要的话删掉这一行就行
   typography: DEFAULT_TYPOGRAPHY,
   info: "点击这里编辑你的艺术家简介、创作理念、经历或展览履历。",
+  infoZh: "点击这里编辑你的艺术家简介、创作理念、经历或展览履历（中文版）。",
   imageGap: 16, // 右侧栏图片之间的间距（px），画廊网格和详情页大图都用这个值
   contact: {
-    email: "hello@example.com",
+    email: "847187284tina@gmail.com",
     instagram: "https://www.instagram.com/yutiantiano.o/",
   },
   works: [
@@ -34,9 +47,12 @@ export const DEFAULT_DATA = {
       id: "growth-marks",
       year: 2026,
       title: "Growth Marks",
+      titleZh: "生长的痕迹",
       date: "Tue Jul 19 2022",
       description:
         "点击这段文字可以直接修改——写上这件作品的创作背景、材料、想表达的概念。",
+      descriptionZh:
+        "点击这段文字可以直接修改——这里是这件作品的中文介绍，写上创作背景、材料、想表达的概念。",
       cover: "https://picsum.photos/seed/growth-marks/700/900",
       images: ["https://picsum.photos/seed/growth-marks-1/1200/1500"],
       tone: "#4a4a4a",
