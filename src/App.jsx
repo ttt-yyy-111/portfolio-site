@@ -1309,28 +1309,7 @@ export default function Portfolio() {
             }`}
           >
 
-          {isMobile && !editMode && (
-            <ol className="space-y-3 mb-8">
-              {data.works.map((w, i) => (
-                <li key={w.id}>
-                  <button
-                    onClick={() => goToWork(w.id)}
-                    style={workTitleStyle}
-                    className="text-left font-bold text-neutral-900 flex items-baseline gap-2"
-                  >
-                    <span>
-                      {i + 1}. {tField(w, "title")}
-                    </span>
-                    <span className="text-xs font-normal text-neutral-400 flex-shrink-0">
-                      {w.year}
-                    </span>
-                  </button>
-                </li>
-              ))}
-            </ol>
-          )}
-
-          {(!isMobile || editMode) && yearGroups.map((group) => {
+          {yearGroups.map((group) => {
             const entries = groupWorksBySeries(group.works);
             const yearOpen = !isMobile || expandedYears[group.year] !== false;
             return (
@@ -1589,14 +1568,14 @@ export default function Portfolio() {
           <div
             className={
               isMobile
-                ? "px-6 py-6 flex flex-col items-start gap-2 text-neutral-900"
+                ? "px-6 py-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-neutral-900"
                 : "px-6 py-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-neutral-500"
             }
             style={
               isMobile
                 ? {
                     ...footerLinksStyle,
-                    fontSize: `${Math.max(15, parseFloat(footerLinksStyle.fontSize) || 12)}px`,
+                    fontSize: `${Math.max(18, parseFloat(footerLinksStyle.fontSize) || 12)}px`,
                     fontWeight: 700,
                   }
                 : footerLinksStyle
