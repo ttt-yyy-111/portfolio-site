@@ -1927,31 +1927,6 @@ function DetailView({
 
   return (
     <div className="flex flex-col min-h-full">
-      {/* 返回按钮：一直固定在右侧栏可视区域的左侧垂直居中，点了回到画廊，
-          并且画廊会恢复到进入详情页之前滚动到的位置（不是统一回到顶部）。
-          用一个高度为 0 的 sticky 锚点定位，不占用下面 flex 布局的空间，
-          按钮本身再用绝对定位摆到锚点位置，这样不会影响到底部 Previous/Next 的 sticky 效果。 */}
-      <div className="sticky top-1/2 z-10" style={{ height: 0 }}>
-        <button
-          onClick={onBack}
-          aria-label="返回"
-          className="absolute -translate-y-1/2 left-2 md:left-4 w-9 h-9 md:w-10 md:h-10 rounded-full bg-white shadow-md border border-neutral-100 flex items-center justify-center text-neutral-600 hover:text-neutral-900 transition-colors"
-        >
-          <svg
-            viewBox="0 0 24 24"
-            width="16"
-            height="16"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <polyline points="15 18 9 12 15 6" />
-          </svg>
-        </button>
-      </div>
-
       <div
         key={work.id}
         className="px-6 md:px-10 max-w-6xl flex-1"
@@ -1962,13 +1937,35 @@ function DetailView({
         }}
       >
         <div className="flex items-start justify-between mb-6 gap-4">
-          <Editable
-            as="h2"
-            value={displayTitle}
-            editMode={editMode}
-            onChange={(v) => onUpdate({ [langKey("title")]: v })}
-            style={titleStyle}
-          />
+          <div className="flex items-center gap-3">
+            {/* 返回按钮：跟标题放在同一行、垂直对齐，回到画廊时会恢复到进入详情页之前
+                画廊滚动到的那个位置（不是统一回到顶部） */}
+            <button
+              onClick={onBack}
+              aria-label="返回"
+              className="flex-shrink-0 w-8 h-8 rounded-full bg-white shadow-sm border border-neutral-100 flex items-center justify-center text-neutral-600 hover:text-neutral-900 transition-colors"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                width="14"
+                height="14"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <polyline points="15 18 9 12 15 6" />
+              </svg>
+            </button>
+            <Editable
+              as="h2"
+              value={displayTitle}
+              editMode={editMode}
+              onChange={(v) => onUpdate({ [langKey("title")]: v })}
+              style={titleStyle}
+            />
+          </div>
           <Editable
             as="span"
             value={String(work.year)}
