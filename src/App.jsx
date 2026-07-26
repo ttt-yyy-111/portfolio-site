@@ -356,8 +356,17 @@ export default function Portfolio() {
 
   // 切换到新的一页内容时（选了别的作品、进了信息页、回到画廊），把纵向滚动也重置回顶部，
   // 不然会保留上一屏的滚动位置，新页面看起来像是"从中间开始"的，还得自己往上滑。
+  // ——除了一种情况：详情页左侧的"返回"按钮，点了要恢复回画廊原来滚动到的位置，不是回到顶部。
+  const galleryScrollRef = useRef(0); // 离开画廊之前，记一下画廊滚动到哪了
+  const restoreGalleryScrollRef = useRef(false); // 这次回画廊是不是要恢复位置（点了"返回"才是true）
   useLayoutEffect(() => {
-    if (mainRef.current) mainRef.current.scrollTop = 0;
+    if (!mainRef.current) return;
+    if (!selectedId && !showInfo && restoreGalleryScrollRef.current) {
+      mainRef.current.scrollTop = galleryScrollRef.current;
+      restoreGalleryScrollRef.current = false;
+    } else {
+      mainRef.current.scrollTop = 0;
+    }
   }, [selectedId, showInfo]);
 
   const recalcSidebarWidth = useCallback(() => {
@@ -392,10 +401,23 @@ export default function Portfolio() {
     setNavDirection(null);
   };
   const goToWork = (id, direction = null) => {
+    // 如果现在正在画廊页，先记一下画廊滚动到哪了，方便详情页的"返回"按钮能回到这个位置
+    if (!selectedId && !showInfo && mainRef.current) {
+      galleryScrollRef.current = mainRef.current.scrollTop;
+    }
     setShowInfo(false);
     setSelectedId(id);
     setMobileMenuOpen(false);
     setNavDirection(direction);
+  };
+  // 详情页左侧"返回"按钮专用：回到画廊，并恢复到进入详情页之前画廊滚动到的那个位置，
+  // 不是统一回到画廊顶部（这个跟点姓名/Index回首页的 goToGallery 是分开的，互不影响）
+  const goBackToGallery = () => {
+    restoreGalleryScrollRef.current = true;
+    setSelectedId(null);
+    setShowInfo(false);
+    setMobileMenuOpen(false);
+    setNavDirection(null);
   };
   const goToInfo = () => {
     setSelectedId(null);
@@ -1603,6 +1625,7 @@ export default function Portfolio() {
             onGoToWork={goToWork}
             navDirection={navDirection}
             isZh={isZh}
+            onBack={goBackToGallery}
           />
         )}
       </main>
@@ -1893,6 +1916,7 @@ function DetailView({
   onGoToWork,
   navDirection,
   isZh,
+  onBack,
 }) {
   const slideAnimation =
     navDirection === "next"
@@ -1903,6 +1927,31 @@ function DetailView({
 
   return (
     <div className="flex flex-col min-h-full">
+      {/* 返回按钮：一直固定在右侧栏可视区域的左侧垂直居中，点了回到画廊，
+          并且画廊会恢复到进入详情页之前滚动到的位置（不是统一回到顶部）。
+          用一个高度为 0 的 sticky 锚点定位，不占用下面 flex 布局的空间，
+          按钮本身再用绝对定位摆到锚点位置，这样不会影响到底部 Previous/Next 的 sticky 效果。 */}
+      <div className="sticky top-1/2 z-10" style={{ height: 0 }}>
+        <button
+          onClick={onBack}
+          aria-label="返回"
+          className="absolute -translate-y-1/2 left-2 md:left-4 w-9 h-9 md:w-10 md:h-10 rounded-full bg-white shadow-md border border-neutral-100 flex items-center justify-center text-neutral-600 hover:text-neutral-900 transition-colors"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            width="16"
+            height="16"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <polyline points="15 18 9 12 15 6" />
+          </svg>
+        </button>
+      </div>
+
       <div
         key={work.id}
         className="px-6 md:px-10 max-w-6xl flex-1"
