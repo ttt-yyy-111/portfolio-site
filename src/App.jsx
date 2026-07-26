@@ -1926,35 +1926,39 @@ function DetailView({
       : "none";
 
   return (
-    <div className="flex flex-col min-h-full relative">
-      {/* 返回按钮：放在整个右侧栏最左边（不是内容区那圈内边距里面），
-          高度上跟标题大致对齐；点了回到画廊，并恢复到进入详情页之前
-          画廊滚动到的那个位置（不是统一回到顶部） */}
-      <button
-        onClick={onBack}
-        aria-label="返回"
-        className="absolute left-2 md:left-4 w-8 h-8 rounded-full bg-white shadow-sm border border-neutral-100 flex items-center justify-center text-neutral-600 hover:text-neutral-900 transition-colors z-10"
-        style={{ top: isMobile ? 24 : 40 }}
+    <div className="flex flex-col min-h-full">
+      {/* 返回按钮：自己单独一行，放在标题正上方，左边距比正文内容更小，
+          这样肯定不会跟标题文字挤在一起、盖住文字。点了回到画廊，并恢复到
+          进入详情页之前画廊滚动到的那个位置（不是统一回到顶部） */}
+      <div
+        className="px-2 md:px-4"
+        style={{ paddingTop: isMobile ? 16 : 28 }}
       >
-        <svg
-          viewBox="0 0 24 24"
-          width="14"
-          height="14"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
+        <button
+          onClick={onBack}
+          aria-label="返回"
+          className="w-8 h-8 rounded-full bg-white shadow-sm border border-neutral-100 flex items-center justify-center text-neutral-600 hover:text-neutral-900 transition-colors"
         >
-          <polyline points="15 18 9 12 15 6" />
-        </svg>
-      </button>
+          <svg
+            viewBox="0 0 24 24"
+            width="14"
+            height="14"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <polyline points="15 18 9 12 15 6" />
+          </svg>
+        </button>
+      </div>
 
       <div
         key={work.id}
         className="px-6 md:px-10 max-w-6xl flex-1"
         style={{
-          paddingTop: isMobile ? 24 : 40,
+          paddingTop: isMobile ? 12 : 16,
           paddingBottom: 96,
           animation: `${slideAnimation} 350ms ease-out both`,
         }}
