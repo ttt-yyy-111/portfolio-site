@@ -1927,50 +1927,45 @@ function DetailView({
 
   return (
     <div className="flex flex-col min-h-full">
-      {/* 返回按钮：自己单独一行，放在标题正上方，左边距比正文内容更小，
-          这样肯定不会跟标题文字挤在一起、盖住文字。点了回到画廊，并恢复到
-          进入详情页之前画廊滚动到的那个位置（不是统一回到顶部） */}
-      <div
-        className="px-2 md:px-4"
-        style={{ paddingTop: isMobile ? 16 : 28 }}
-      >
-        <button
-          onClick={onBack}
-          aria-label="返回"
-          className="w-8 h-8 rounded-full bg-white shadow-sm border border-neutral-100 flex items-center justify-center text-neutral-600 hover:text-neutral-900 transition-colors"
-        >
-          <svg
-            viewBox="0 0 24 24"
-            width="14"
-            height="14"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <polyline points="15 18 9 12 15 6" />
-          </svg>
-        </button>
-      </div>
-
       <div
         key={work.id}
         className="px-6 md:px-10 max-w-6xl flex-1"
         style={{
-          paddingTop: isMobile ? 12 : 16,
+          paddingTop: isMobile ? 24 : 40,
           paddingBottom: 96,
           animation: `${slideAnimation} 350ms ease-out both`,
         }}
       >
         <div className="flex items-start justify-between mb-6 gap-4">
-          <Editable
-            as="h2"
-            value={displayTitle}
-            editMode={editMode}
-            onChange={(v) => onUpdate({ [langKey("title")]: v })}
-            style={titleStyle}
-          />
+          <div className="flex items-center gap-3 min-w-0">
+            {/* 返回按钮：跟标题同一行、紧挨在标题左边，用 flex 间距隔开，不会跟文字重叠。
+                点了回到画廊，并恢复到进入详情页之前画廊滚动到的那个位置（不是统一回到顶部） */}
+            <button
+              onClick={onBack}
+              aria-label="返回"
+              className="flex-shrink-0 w-8 h-8 rounded-full bg-white shadow-sm border border-neutral-100 flex items-center justify-center text-neutral-600 hover:text-neutral-900 transition-colors"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                width="14"
+                height="14"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <polyline points="15 18 9 12 15 6" />
+              </svg>
+            </button>
+            <Editable
+              as="h2"
+              value={displayTitle}
+              editMode={editMode}
+              onChange={(v) => onUpdate({ [langKey("title")]: v })}
+              style={titleStyle}
+            />
+          </div>
           <Editable
             as="span"
             value={String(work.year)}
