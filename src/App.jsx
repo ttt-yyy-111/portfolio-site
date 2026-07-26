@@ -844,7 +844,7 @@ export default function Portfolio() {
   const artistNameStyle = styleFor("artistName");
   const mobileArtistNameStyle = {
     ...artistNameStyle,
-    fontSize: `${Math.max(30, parseFloat(artistNameStyle.fontSize) || 24)}px`,
+    fontSize: `${Math.max(38, parseFloat(artistNameStyle.fontSize) || 24)}px`,
   };
   const yearStyle = styleFor("year");
   const workTitleStyle = styleFor("workTitle");
@@ -1182,7 +1182,7 @@ export default function Portfolio() {
 
       {/* ---------- 手机端顶部栏：姓名 + 语言切换 + 菜单按钮，只在窄屏时显示 ---------- */}
       {isMobile && (
-        <div className="flex items-center justify-between px-4 py-3 border-b border-neutral-100 flex-shrink-0 relative z-30 bg-white">
+        <div className="flex items-center justify-between px-3 py-3 flex-shrink-0 relative z-30 bg-white">
           <div className="flex items-center gap-8 min-w-0">
             <Editable
               as="span"
@@ -1250,7 +1250,7 @@ export default function Portfolio() {
         style={isMobile ? undefined : { width: sidebarWidth }}
       >
         {isMobile && (
-          <div className="flex items-center justify-between px-4 py-3 flex-shrink-0">
+          <div className="flex items-center justify-between px-3 py-3 flex-shrink-0">
             <span className="text-2xl font-bold tracking-tight">{isZh ? "目录" : "Index"}</span>
             <button
               onClick={() => setMobileMenuOpen(false)}
@@ -1304,8 +1304,8 @@ export default function Portfolio() {
 
           <div
             ref={sidebarContentRef}
-            className={`flex-1 min-h-0 overflow-y-auto overflow-x-hidden px-6 pb-6 ${
-              isMobile ? "pt-2" : "pt-0"
+            className={`flex-1 min-h-0 overflow-y-auto overflow-x-hidden pb-6 ${
+              isMobile ? "px-4 pt-2" : "px-6 pt-0"
             }`}
           >
 
@@ -1568,7 +1568,7 @@ export default function Portfolio() {
           <div
             className={
               isMobile
-                ? "px-6 py-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-neutral-900"
+                ? "px-4 py-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-neutral-900"
                 : "px-6 py-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-neutral-500"
             }
             style={
@@ -1660,7 +1660,10 @@ export default function Portfolio() {
         ) : !selectedWork ? (
           <>
             {isMobile && (
-              <div className="px-4 pt-5 pb-1 flex flex-col gap-2">
+              <div
+                className="px-3 pt-5 pb-1 flex flex-col gap-2"
+                style={{ fontFamily: "'IBM Plex Sans', -apple-system, Arial, 'PingFang SC', sans-serif" }}
+              >
                 <button
                   onClick={goToInfo}
                   className="flex items-center gap-2 font-bold text-neutral-900 text-left"
@@ -1915,7 +1918,7 @@ function GalleryGrid({ works, editMode, onSelect, onReplaceCover, imageGap = 16,
   return (
     <div
       ref={containerRef}
-      className="px-4 md:px-6 pb-6 flex"
+      className="px-3 md:px-6 pb-6 flex"
       style={{ paddingTop: isMobile ? 16 : 40, gap: imageGap }}
     >
       {columns.map((colWorks, colIdx) => (
@@ -1974,7 +1977,7 @@ function GalleryImage({ w, editMode, onSelect, onReplaceCover }) {
 // 艺术家信息页：点击左下角 "Information" 进入
 function InfoView({ info, editMode, titleStyle, descriptionStyle, onChangeInfo, isMobile }) {
   return (
-    <div className="px-6 md:px-10 pb-10 max-w-3xl" style={{ paddingTop: isMobile ? 24 : 40 }}>
+    <div className="px-4 md:px-10 pb-10 max-w-3xl" style={{ paddingTop: isMobile ? 24 : 40 }}>
       <h2 className="mb-6" style={titleStyle}>
         Information
       </h2>
@@ -2024,7 +2027,7 @@ function DetailView({
     <div className="flex flex-col min-h-full">
       <div
         key={work.id}
-        className="px-6 md:px-10 max-w-6xl flex-1"
+        className="px-4 md:px-10 max-w-6xl flex-1"
         style={{
           paddingTop: isMobile ? 24 : 40,
           paddingBottom: 96,
@@ -2093,7 +2096,7 @@ function DetailView({
 
       {/* 底部 Previous / Next：始终固定在可视区域底部（sticky），白底，第一/最后一件时对应按钮变灰不可点 */}
       <div
-        className="sticky bottom-0 bg-white border-t border-neutral-100 px-6 md:px-10 py-4 flex items-center justify-between"
+        className="sticky bottom-0 bg-white border-t border-neutral-100 px-4 md:px-10 py-4 flex items-center justify-between"
         style={{ fontFamily: "'IBM Plex Sans', -apple-system, Arial, 'PingFang SC', sans-serif" }}
       >
         <button
