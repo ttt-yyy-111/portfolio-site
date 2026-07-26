@@ -1252,12 +1252,12 @@ export default function Portfolio() {
                   onClick={goBackToGallery}
                   aria-label={isZh ? "返回" : "Back"}
                   title={isZh ? "返回" : "Back"}
-                  className="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-neutral-500 hover:text-neutral-900 hover:bg-neutral-100 transition-colors"
+                  className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center bg-neutral-900 text-white hover:bg-neutral-700 transition-colors"
                 >
                   <svg
                     viewBox="0 0 24 24"
-                    width="14"
-                    height="14"
+                    width="16"
+                    height="16"
                     fill="none"
                     stroke="currentColor"
                     strokeWidth="3"
