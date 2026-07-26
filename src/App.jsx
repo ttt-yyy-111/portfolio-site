@@ -670,8 +670,6 @@ export default function Portfolio() {
 
   const selectedIndex = data.works.findIndex((w) => w.id === selectedId);
   const selectedWork = selectedIndex >= 0 ? data.works[selectedIndex] : null;
-  const nextWork =
-    selectedIndex >= 0 ? data.works[(selectedIndex + 1) % data.works.length] : null;
 
   // 详情页底部的 Previous / Next：不循环，到第一个/最后一个就是 null（对应按钮变灰不可点）
   const detailPrevWork = selectedIndex > 0 ? data.works[selectedIndex - 1] : null;
@@ -1333,7 +1331,7 @@ export default function Portfolio() {
           )}
         </div>
 
-        {/* Index / Next 导航条：桌面端常驻在左栏最底部；手机端菜单里不需要，直接隐藏 */}
+        {/* Index 导航：桌面端常驻在左栏最底部；手机端菜单里不需要，直接隐藏 */}
         <div ref={sidebarFooterRef} className="flex-shrink-0 w-full bg-white">
           {!isMobile && (
             <div
@@ -1343,14 +1341,6 @@ export default function Portfolio() {
               <button onClick={goToGallery}>
                 Index
               </button>
-              {selectedWork && (
-                <button
-                  onClick={() => goToWork(nextWork.id)}
-                  className="flex items-center gap-1"
-                >
-                  Next <span aria-hidden>→</span>
-                </button>
-              )}
             </div>
           )}
 
@@ -1827,7 +1817,7 @@ function DetailView({
 
       {/* 底部 Previous / Next：始终固定在可视区域底部（sticky），白底，第一/最后一件时对应按钮变灰不可点 */}
       <div
-        className="sticky bottom-3 bg-white border-t border-neutral-100 px-6 md:px-10 py-4 flex items-center justify-between"
+        className="sticky bottom-0 bg-white border-t border-neutral-100 px-6 md:px-10 py-4 flex items-center justify-between"
         style={{ fontFamily: "'IBM Plex Sans', -apple-system, Arial, 'PingFang SC', sans-serif" }}
       >
         <button
