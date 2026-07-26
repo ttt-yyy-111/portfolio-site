@@ -1836,6 +1836,9 @@ function GalleryGrid({ works, editMode, onSelect, onReplaceCover, imageGap = 16,
     return () => ro.disconnect();
   }, []);
 
+  // 按列轮流分配：第1张进第1列、第2张进第2列、第3张进第3列，第4张再回到第1列……
+  // 这样每一列内部的图片编号始终是严格递增的，整体顺序趋势跟作品顺序基本一致，
+  // 只是因为每张图高度不一样，相邻列之间偶尔会有一两张的视觉顺序交错，不会完全精确对应。
   const columns = useMemo(() => distributeIntoColumns(works, columnCount), [works, columnCount]);
 
   return (
@@ -1845,11 +1848,7 @@ function GalleryGrid({ works, editMode, onSelect, onReplaceCover, imageGap = 16,
       style={{ paddingTop: isMobile ? 16 : 40, gap: imageGap }}
     >
       {columns.map((colWorks, colIdx) => (
-        <div
-          key={colIdx}
-          className="flex-1 flex flex-col min-w-0"
-          style={{ gap: imageGap }}
-        >
+        <div key={colIdx} className="flex-1 flex flex-col min-w-0" style={{ gap: imageGap }}>
           {colWorks.map((w) => (
             <GalleryImage
               key={w.id}
