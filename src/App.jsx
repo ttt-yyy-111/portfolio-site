@@ -844,7 +844,7 @@ export default function Portfolio() {
   const artistNameStyle = styleFor("artistName");
   const mobileArtistNameStyle = {
     ...artistNameStyle,
-    fontSize: `${Math.max(38, parseFloat(artistNameStyle.fontSize) || 24)}px`,
+    fontSize: `${Math.max(46, parseFloat(artistNameStyle.fontSize) || 24)}px`,
   };
   const yearStyle = styleFor("year");
   const workTitleStyle = styleFor("workTitle");
@@ -1550,13 +1550,13 @@ export default function Portfolio() {
 
         <div ref={sidebarFooterRef} className="flex-shrink-0 w-full bg-white">
           {isMobile ? (
-            <div className="px-4 py-6">
+            <div className="px-4 py-6 text-center">
               <button
                 onClick={goToGallery}
-                className="font-bold text-neutral-900 text-lg"
+                className="font-bold text-neutral-900 text-3xl"
                 style={{ fontFamily: "'IBM Plex Sans', -apple-system, Arial, 'PingFang SC', sans-serif" }}
               >
-                {isZh ? "首页" : "Home"}
+                Home
               </button>
             </div>
           ) : (
@@ -1645,14 +1645,14 @@ export default function Portfolio() {
           <>
             {isMobile && (
               <div
-                className="px-3 pt-5 pb-6 flex flex-col gap-3 text-lg"
+                className="px-3 pt-5 pb-10 flex flex-col gap-1 text-2xl"
                 style={{ fontFamily: "'IBM Plex Sans', -apple-system, Arial, 'PingFang SC', sans-serif" }}
               >
                 <button
                   onClick={goToInfo}
                   className="flex items-center gap-2 font-bold text-neutral-900 text-left"
                 >
-                  <span aria-hidden>→</span> {isZh ? "简介" : "Information"}
+                  <span aria-hidden>→</span> Information
                 </button>
                 <a
                   href={`mailto:${data.contact?.email || ""}`}
@@ -1899,14 +1899,17 @@ function GalleryGrid({ works, editMode, onSelect, onReplaceCover, imageGap = 16,
   // 只是因为每张图高度不一样，相邻列之间偶尔会有一两张的视觉顺序交错，不会完全精确对应。
   const columns = useMemo(() => distributeIntoColumns(works, columnCount), [works, columnCount]);
 
+  // 手机端图片间距要跟页边距（px-3，12px）保持一致；桌面端还是用可以在编辑模式里调整的 imageGap
+  const effectiveGap = isMobile ? 12 : imageGap;
+
   return (
     <div
       ref={containerRef}
       className="px-3 md:px-6 pb-6 flex"
-      style={{ paddingTop: isMobile ? 16 : 40, gap: imageGap }}
+      style={{ paddingTop: isMobile ? 16 : 40, gap: effectiveGap }}
     >
       {columns.map((colWorks, colIdx) => (
-        <div key={colIdx} className="flex-1 flex flex-col min-w-0" style={{ gap: imageGap }}>
+        <div key={colIdx} className="flex-1 flex flex-col min-w-0" style={{ gap: effectiveGap }}>
           {colWorks.map((w) => (
             <GalleryImage
               key={w.id}
@@ -2011,7 +2014,7 @@ function DetailView({
     <div className="flex flex-col min-h-full">
       <div
         key={work.id}
-        className="px-4 md:px-10 max-w-6xl flex-1"
+        className="px-3 md:px-10 max-w-6xl flex-1"
         style={{
           paddingTop: isMobile ? 24 : 40,
           paddingBottom: 96,
@@ -2080,7 +2083,7 @@ function DetailView({
 
       {/* 底部 Previous / Next：始终固定在可视区域底部（sticky），白底，第一/最后一件时对应按钮变灰不可点 */}
       <div
-        className="sticky bottom-0 bg-white border-t border-neutral-100 px-4 md:px-10 py-4 flex items-center justify-between"
+        className="sticky bottom-0 bg-white border-t border-neutral-100 px-3 md:px-10 py-4 flex items-center justify-between"
         style={{ fontFamily: "'IBM Plex Sans', -apple-system, Arial, 'PingFang SC', sans-serif" }}
       >
         <button
