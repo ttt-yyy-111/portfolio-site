@@ -1922,9 +1922,12 @@ function DetailView({
           />
           <Editable
             as="span"
-            value={work.date}
+            value={String(work.year)}
             editMode={editMode}
-            onChange={(v) => onUpdate({ date: v })}
+            onChange={(v) => {
+              const parsed = Number(v);
+              if (Number.isInteger(parsed) && v.trim() !== "") onUpdate({ year: parsed });
+            }}
             className="text-xs md:text-sm font-mono text-neutral-400 whitespace-nowrap mt-1"
           />
         </div>
