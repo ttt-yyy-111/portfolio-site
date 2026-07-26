@@ -211,6 +211,7 @@ export default function Portfolio() {
   const [editMode, setEditMode] = useState(false);
   const [selectedId, setSelectedId] = useState(null);
   const [showInfo, setShowInfo] = useState(false);
+  const [navDirection, setNavDirection] = useState(null); // 'prev' | 'next' | null，只有点详情页的Previous/Next才会设置
 
   // 只有网址带 ?edit=1 的时候才会显示编辑相关的按钮，这样正式访问网站的人看到的是干净的展示页面，
   // 你自己想编辑的时候打开 你的网址/?edit=1 就行
@@ -299,16 +300,19 @@ export default function Portfolio() {
     setSelectedId(null);
     setShowInfo(false);
     setMobileMenuOpen(false);
+    setNavDirection(null);
   };
-  const goToWork = (id) => {
+  const goToWork = (id, direction = null) => {
     setShowInfo(false);
     setSelectedId(id);
     setMobileMenuOpen(false);
+    setNavDirection(direction);
   };
   const goToInfo = () => {
     setSelectedId(null);
     setShowInfo(true);
     setMobileMenuOpen(false);
+    setNavDirection(null);
   };
   const [typoPanelOpen, setTypoPanelOpen] = useState(false);
   const [openFontId, setOpenFontId] = useState(null); // 当前展开字重下拉的字体 id
@@ -1433,47 +1437,42 @@ export default function Portfolio() {
           isMobile ? "min-h-0 w-full" : "h-full"
         }`}
       >
-        <div
-          key={showInfo ? "info" : selectedWork ? selectedWork.id : "gallery"}
-          className="h-full"
-          style={{ animation: "pageFadeIn 350ms ease-out both" }}
-        >
-          {showInfo ? (
-            <InfoView
-              info={data.info || ""}
-              editMode={editMode}
-              titleStyle={detailTitleStyle}
-              descriptionStyle={detailDescriptionStyle}
-              onChangeInfo={(v) => updateData((prev) => ({ ...prev, info: v }))}
-              isMobile={isMobile}
-            />
-          ) : !selectedWork ? (
-            <GalleryGrid
-              works={data.works}
-              editMode={editMode}
-              onSelect={goToWork}
-              onReplaceCover={replaceCover}
-              imageGap={data.imageGap ?? 16}
-              isMobile={isMobile}
-            />
-          ) : (
-            <DetailView
-              work={selectedWork}
-              editMode={editMode}
-              titleStyle={detailTitleStyle}
-              descriptionStyle={detailDescriptionStyle}
-              imageGap={data.imageGap ?? 16}
-              onUpdate={(patch) => updateWork(selectedWork.id, patch)}
-              onAddImage={(file) => addDetailImage(selectedWork.id, file)}
-              onReplaceImage={(i, file) => replaceDetailImage(selectedWork.id, i, file)}
-              onRemoveImage={(i) => removeDetailImage(selectedWork.id, i)}
-              isMobile={isMobile}
-              prevWork={detailPrevWork}
-              nextWork={detailNextWork}
-              onGoToWork={goToWork}
-            />
-          )}
-        </div>
+        {showInfo ? (
+          <InfoView
+            info={data.info || ""}
+            editMode={editMode}
+            titleStyle={detailTitleStyle}
+            descriptionStyle={detailDescriptionStyle}
+            onChangeInfo={(v) => updateData((prev) => ({ ...prev, info: v }))}
+            isMobile={isMobile}
+          />
+        ) : !selectedWork ? (
+          <GalleryGrid
+            works={data.works}
+            editMode={editMode}
+            onSelect={goToWork}
+            onReplaceCover={replaceCover}
+            imageGap={data.imageGap ?? 16}
+            isMobile={isMobile}
+          />
+        ) : (
+          <DetailView
+            work={selectedWork}
+            editMode={editMode}
+            titleStyle={detailTitleStyle}
+            descriptionStyle={detailDescriptionStyle}
+            imageGap={data.imageGap ?? 16}
+            onUpdate={(patch) => updateWork(selectedWork.id, patch)}
+            onAddImage={(file) => addDetailImage(selectedWork.id, file)}
+            onReplaceImage={(i, file) => replaceDetailImage(selectedWork.id, i, file)}
+            onRemoveImage={(i) => removeDetailImage(selectedWork.id, i)}
+            isMobile={isMobile}
+            prevWork={detailPrevWork}
+            nextWork={detailNextWork}
+            onGoToWork={goToWork}
+            navDirection={navDirection}
+          />
+        )}
       </main>
     </div>
   );
@@ -1752,12 +1751,25 @@ function DetailView({
   prevWork,
   nextWork,
   onGoToWork,
+  navDirection,
 }) {
+  const slideAnimation =
+    navDirection === "next"
+      ? "slideInFromRight"
+      : navDirection === "prev"
+      ? "slideInFromLeft"
+      : "none";
+
   return (
     <div className="flex flex-col min-h-full">
       <div
+        key={work.id}
         className="px-6 md:px-10 max-w-6xl flex-1"
-        style={{ paddingTop: isMobile ? 24 : 40, paddingBottom: 96 }}
+        style={{
+          paddingTop: isMobile ? 24 : 40,
+          paddingBottom: 96,
+          animation: `${slideAnimation} 350ms ease-out both`,
+        }}
       >
         <div className="flex items-start justify-between mb-6 gap-4">
           <Editable
@@ -1819,7 +1831,7 @@ function DetailView({
         style={{ fontFamily: "'IBM Plex Sans', -apple-system, Arial, 'PingFang SC', sans-serif" }}
       >
         <button
-          onClick={() => prevWork && onGoToWork(prevWork.id)}
+          onClick={() => prevWork && onGoToWork(prevWork.id, "prev")}
           disabled={!prevWork}
           className={`flex items-center gap-2 font-bold ${
             prevWork ? "text-neutral-900" : "text-neutral-300 cursor-not-allowed"
@@ -1840,7 +1852,7 @@ function DetailView({
           Previous
         </button>
         <button
-          onClick={() => nextWork && onGoToWork(nextWork.id)}
+          onClick={() => nextWork && onGoToWork(nextWork.id, "next")}
           disabled={!nextWork}
           className={`flex items-center gap-2 font-bold ${
             nextWork ? "text-neutral-900" : "text-neutral-300 cursor-not-allowed"

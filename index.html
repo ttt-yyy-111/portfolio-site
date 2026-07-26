@@ -24,15 +24,26 @@
       * {
         -webkit-tap-highlight-color: transparent;
       }
-      /* 进入详情页/信息页/回到画廊时播放的简短过渡动画：只用透明度淡入，
-         不用 transform 位移——因为 transform 会让浏览器把它当成一个新的"定位基准"，
-         干扰到详情页里 Previous/Next 那个 sticky 固定定位的效果 */
-      @keyframes pageFadeIn {
+      /* 详情页点 Next：内容从右边滑入 */
+      @keyframes slideInFromRight {
         from {
           opacity: 0;
+          transform: translateX(24px);
         }
         to {
           opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      /* 详情页点 Previous：内容从左边滑入 */
+      @keyframes slideInFromLeft {
+        from {
+          opacity: 0;
+          transform: translateX(-24px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
         }
       }
     </style>
