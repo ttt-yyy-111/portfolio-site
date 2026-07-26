@@ -1250,7 +1250,8 @@ export default function Portfolio() {
         style={isMobile ? undefined : { width: sidebarWidth }}
       >
         {isMobile && (
-          <div className="flex items-center justify-end px-4 py-3 border-b border-neutral-100 flex-shrink-0">
+          <div className="flex items-center justify-between px-4 py-3 flex-shrink-0">
+            <span className="text-2xl font-bold tracking-tight">{isZh ? "目录" : "Index"}</span>
             <button
               onClick={() => setMobileMenuOpen(false)}
               aria-label="关闭菜单"
@@ -1308,7 +1309,28 @@ export default function Portfolio() {
             }`}
           >
 
-          {yearGroups.map((group) => {
+          {isMobile && !editMode && (
+            <ol className="space-y-3 mb-8">
+              {data.works.map((w, i) => (
+                <li key={w.id}>
+                  <button
+                    onClick={() => goToWork(w.id)}
+                    style={workTitleStyle}
+                    className="text-left font-bold text-neutral-900 flex items-baseline gap-2"
+                  >
+                    <span>
+                      {i + 1}. {tField(w, "title")}
+                    </span>
+                    <span className="text-xs font-normal text-neutral-400 flex-shrink-0">
+                      {w.year}
+                    </span>
+                  </button>
+                </li>
+              ))}
+            </ol>
+          )}
+
+          {(!isMobile || editMode) && yearGroups.map((group) => {
             const entries = groupWorksBySeries(group.works);
             const yearOpen = !isMobile || expandedYears[group.year] !== false;
             return (
@@ -1567,14 +1589,14 @@ export default function Portfolio() {
           <div
             className={
               isMobile
-                ? "px-6 py-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-neutral-900"
+                ? "px-6 py-6 flex flex-col items-start gap-2 text-neutral-900"
                 : "px-6 py-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-neutral-500"
             }
             style={
               isMobile
                 ? {
                     ...footerLinksStyle,
-                    fontSize: `${Math.max(18, parseFloat(footerLinksStyle.fontSize) || 12)}px`,
+                    fontSize: `${Math.max(15, parseFloat(footerLinksStyle.fontSize) || 12)}px`,
                     fontWeight: 700,
                   }
                 : footerLinksStyle
@@ -1657,14 +1679,40 @@ export default function Portfolio() {
             isMobile={isMobile}
           />
         ) : !selectedWork ? (
-          <GalleryGrid
-            works={data.works}
-            editMode={editMode}
-            onSelect={goToWork}
-            onReplaceCover={replaceCover}
-            imageGap={data.imageGap ?? 16}
-            isMobile={isMobile}
-          />
+          <>
+            {isMobile && (
+              <div className="px-4 pt-5 pb-1 flex flex-col gap-2">
+                <button
+                  onClick={goToInfo}
+                  className="flex items-center gap-2 font-bold text-neutral-900 text-left"
+                >
+                  <span aria-hidden>→</span> {isZh ? "简介" : "Information"}
+                </button>
+                <a
+                  href={`mailto:${data.contact?.email || ""}`}
+                  className="flex items-center gap-2 font-bold text-neutral-900"
+                >
+                  <span aria-hidden>→</span> Email
+                </a>
+                <a
+                  href={data.contact?.instagram || "#"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 font-bold text-neutral-900"
+                >
+                  <span aria-hidden>↗</span> Instagram
+                </a>
+              </div>
+            )}
+            <GalleryGrid
+              works={data.works}
+              editMode={editMode}
+              onSelect={goToWork}
+              onReplaceCover={replaceCover}
+              imageGap={data.imageGap ?? 16}
+              isMobile={isMobile}
+            />
+          </>
         ) : (
           <DetailView
             work={selectedWork}
@@ -1871,14 +1919,14 @@ function GalleryGrid({ works, editMode, onSelect, onReplaceCover, imageGap = 16,
     if (!el) return;
 
     const updateColumnCount = () => {
-      setColumnCount(getGalleryColumnCount(el.clientWidth));
+      setColumnCount(isMobile ? 1 : getGalleryColumnCount(el.clientWidth));
     };
 
     updateColumnCount();
     const ro = new ResizeObserver(updateColumnCount);
     ro.observe(el);
     return () => ro.disconnect();
-  }, []);
+  }, [isMobile]);
 
   // 按列轮流分配：第1张进第1列、第2张进第2列、第3张进第3列，第4张再回到第1列……
   // 这样每一列内部的图片编号始终是严格递增的，整体顺序趋势跟作品顺序基本一致，
