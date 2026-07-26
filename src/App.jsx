@@ -1783,11 +1783,21 @@ function Editable({ value, onChange, className = "", as = "span", editMode, styl
 }
 
 // 把作品按顺序轮流分配到 N 个等宽列里，每列内部再按图片自身高度依次往下排
-// 宽度阈值：右侧栏实际可用宽度达到多少时用几列。
+// 宽度阈值：右侧栏实际可用宽度达到多少时用几列，最多 6 列（超宽屏用）。
 // 用容器自身的实际宽度而不是视口宽度来判断，因为左栏宽度是可变的，
 // 右侧栏能用的空间不等于整个页面的宽度。
-const GALLERY_3COL_MIN_WIDTH = 520;
-const GALLERY_2COL_MIN_WIDTH = 320;
+const GALLERY_COLUMN_BREAKPOINTS = [
+  { minWidth: 1720, columns: 6 },
+  { minWidth: 1400, columns: 5 },
+  { minWidth: 1080, columns: 4 },
+  { minWidth: 520, columns: 3 },
+  { minWidth: 320, columns: 2 },
+  { minWidth: 0, columns: 1 },
+];
+function getGalleryColumnCount(width) {
+  const match = GALLERY_COLUMN_BREAKPOINTS.find((bp) => width >= bp.minWidth);
+  return match ? match.columns : 1;
+}
 
 // 通用的"滚动进入视野时向上渐隐出现"动画：元素刚进入可视范围时，从稍微偏下、透明的状态
 // 过渡到正常位置、完全不透明，只触发一次（滚回去不会消失，滚回来也不会重播）。
@@ -1838,10 +1848,7 @@ function GalleryGrid({ works, editMode, onSelect, onReplaceCover, imageGap = 16,
     if (!el) return;
 
     const updateColumnCount = () => {
-      const width = el.clientWidth;
-      if (width >= GALLERY_3COL_MIN_WIDTH) setColumnCount(3);
-      else if (width >= GALLERY_2COL_MIN_WIDTH) setColumnCount(2);
-      else setColumnCount(1);
+      setColumnCount(getGalleryColumnCount(el.clientWidth));
     };
 
     updateColumnCount();
