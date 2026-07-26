@@ -1763,6 +1763,12 @@ function useRevealAnimation() {
   };
 }
 
+function distributeIntoColumns(items, numCols) {
+  const cols = Array.from({ length: numCols }, () => []);
+  items.forEach((item, i) => cols[i % numCols].push(item));
+  return cols;
+}
+
 function GalleryGrid({ works, editMode, onSelect, onReplaceCover, imageGap = 16, isMobile }) {
   const containerRef = useRef(null);
   const [columnCount, setColumnCount] = useState(3);
@@ -1784,27 +1790,29 @@ function GalleryGrid({ works, editMode, onSelect, onReplaceCover, imageGap = 16,
     return () => ro.disconnect();
   }, []);
 
+  const columns = useMemo(() => distributeIntoColumns(works, columnCount), [works, columnCount]);
+
   return (
     <div
       ref={containerRef}
-      className="px-4 md:px-6 pb-6 grid"
-      style={{
-        paddingTop: isMobile ? 16 : 40,
-        gap: imageGap,
-        gridTemplateColumns: `repeat(${columnCount}, minmax(0, 1fr))`,
-      }}
+      className="px-4 md:px-6 pb-6 flex"
+      style={{ paddingTop: isMobile ? 16 : 40, gap: imageGap }}
     >
-      {/* 直接按 works 数组本身的顺序渲染，配合 CSS Grid 默认的"从左到右、排满一行再换下一行"，
-          保证图片顺序严格等于作品顺序——编辑模式里拖拽调整了作品顺序，这里会跟着变。
-          用 align-items: start 让每张图保持自己原本的高度，不会被同一行里最高的那张撑开拉伸。 */}
-      {works.map((w) => (
-        <div key={w.id} className="self-start">
-          <GalleryImage
-            w={w}
-            editMode={editMode}
-            onSelect={onSelect}
-            onReplaceCover={onReplaceCover}
-          />
+      {columns.map((colWorks, colIdx) => (
+        <div
+          key={colIdx}
+          className="flex-1 flex flex-col min-w-0"
+          style={{ gap: imageGap }}
+        >
+          {colWorks.map((w) => (
+            <GalleryImage
+              key={w.id}
+              w={w}
+              editMode={editMode}
+              onSelect={onSelect}
+              onReplaceCover={onReplaceCover}
+            />
+          ))}
         </div>
       ))}
     </div>
