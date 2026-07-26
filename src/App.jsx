@@ -1193,27 +1193,6 @@ export default function Portfolio() {
               className="font-bold tracking-tight whitespace-nowrap"
               style={mobileArtistNameStyle}
             />
-            {selectedWork && (
-              <button
-                onClick={goBackToGallery}
-                aria-label={isZh ? "返回" : "Back"}
-                title={isZh ? "返回" : "Back"}
-                className="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center bg-neutral-900 text-white hover:bg-neutral-700 transition-colors"
-              >
-                <svg
-                  viewBox="0 0 24 24"
-                  width="14"
-                  height="14"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <polyline points="15 18 9 12 15 6" />
-                </svg>
-              </button>
-            )}
           </div>
           <div className="flex items-center gap-2">
             <button
@@ -1251,7 +1230,12 @@ export default function Portfolio() {
       >
         {isMobile && (
           <div className="flex items-center justify-between px-3 py-3 flex-shrink-0">
-            <span className="text-2xl font-bold tracking-tight">{isZh ? "目录" : "Index"}</span>
+            <span
+              className="text-4xl font-bold tracking-tight"
+              style={{ fontFamily: "'IBM Plex Sans', -apple-system, Arial, 'PingFang SC', sans-serif" }}
+            >
+              {isZh ? "目录" : "Index"}
+            </span>
             <button
               onClick={() => setMobileMenuOpen(false)}
               aria-label="关闭菜单"
@@ -1565,79 +1549,79 @@ export default function Portfolio() {
         </div>
 
         <div ref={sidebarFooterRef} className="flex-shrink-0 w-full bg-white">
-          <div
-            className={
-              isMobile
-                ? "px-4 py-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-neutral-900"
-                : "px-6 py-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-neutral-500"
-            }
-            style={
-              isMobile
-                ? {
-                    ...footerLinksStyle,
-                    fontSize: `${Math.max(18, parseFloat(footerLinksStyle.fontSize) || 12)}px`,
-                    fontWeight: 700,
-                  }
-                : footerLinksStyle
-            }
-          >
-            <button
-              onClick={goToInfo}
-              className={showInfo ? "text-neutral-900 underline underline-offset-2" : ""}
+          {isMobile ? (
+            <div className="px-4 py-6">
+              <button
+                onClick={goToGallery}
+                className="font-bold text-neutral-900 text-lg"
+                style={{ fontFamily: "'IBM Plex Sans', -apple-system, Arial, 'PingFang SC', sans-serif" }}
+              >
+                {isZh ? "首页" : "Home"}
+              </button>
+            </div>
+          ) : (
+            <div
+              className="px-6 py-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-neutral-500"
+              style={footerLinksStyle}
             >
-              Information
-            </button>
-
-            <div className="flex items-center gap-1">
-              <a
-                href={editMode ? undefined : `mailto:${data.contact?.email || ""}`}
-                onClick={(e) => {
-                  if (editMode) e.preventDefault();
-                }}
+              <button
+                onClick={goToInfo}
+                className={showInfo ? "text-neutral-900 underline underline-offset-2" : ""}
               >
-                Email
-              </a>
-              {editMode && (
-                <input
-                  type="text"
-                  value={data.contact?.email || ""}
-                  onChange={(e) =>
-                    updateData((prev) => ({
-                      ...prev,
-                      contact: { ...(prev.contact || {}), email: e.target.value },
-                    }))
-                  }
-                  className="w-24 flex-shrink-0 text-[10px] text-neutral-400 bg-transparent border-b border-dashed border-neutral-300 focus:outline-none focus:border-neutral-900"
-                />
-              )}
-            </div>
+                Information
+              </button>
 
-            <div className="flex items-center gap-1">
-              <a
-                href={editMode ? undefined : data.contact?.instagram || "#"}
-                target={editMode ? undefined : "_blank"}
-                rel="noopener noreferrer"
-                onClick={(e) => {
-                  if (editMode) e.preventDefault();
-                }}
-              >
-                Instagram
-              </a>
-              {editMode && (
-                <input
-                  type="text"
-                  value={data.contact?.instagram || ""}
-                  onChange={(e) =>
-                    updateData((prev) => ({
-                      ...prev,
-                      contact: { ...(prev.contact || {}), instagram: e.target.value },
-                    }))
-                  }
-                  className="w-24 flex-shrink-0 text-[10px] text-neutral-400 bg-transparent border-b border-dashed border-neutral-300 focus:outline-none focus:border-neutral-900"
-                />
-              )}
+              <div className="flex items-center gap-1">
+                <a
+                  href={editMode ? undefined : `mailto:${data.contact?.email || ""}`}
+                  onClick={(e) => {
+                    if (editMode) e.preventDefault();
+                  }}
+                >
+                  Email
+                </a>
+                {editMode && (
+                  <input
+                    type="text"
+                    value={data.contact?.email || ""}
+                    onChange={(e) =>
+                      updateData((prev) => ({
+                        ...prev,
+                        contact: { ...(prev.contact || {}), email: e.target.value },
+                      }))
+                    }
+                    className="w-24 flex-shrink-0 text-[10px] text-neutral-400 bg-transparent border-b border-dashed border-neutral-300 focus:outline-none focus:border-neutral-900"
+                  />
+                )}
+              </div>
+
+              <div className="flex items-center gap-1">
+                <a
+                  href={editMode ? undefined : data.contact?.instagram || "#"}
+                  target={editMode ? undefined : "_blank"}
+                  rel="noopener noreferrer"
+                  onClick={(e) => {
+                    if (editMode) e.preventDefault();
+                  }}
+                >
+                  Instagram
+                </a>
+                {editMode && (
+                  <input
+                    type="text"
+                    value={data.contact?.instagram || ""}
+                    onChange={(e) =>
+                      updateData((prev) => ({
+                        ...prev,
+                        contact: { ...(prev.contact || {}), instagram: e.target.value },
+                      }))
+                    }
+                    className="w-24 flex-shrink-0 text-[10px] text-neutral-400 bg-transparent border-b border-dashed border-neutral-300 focus:outline-none focus:border-neutral-900"
+                  />
+                )}
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </aside>
 
@@ -1661,7 +1645,7 @@ export default function Portfolio() {
           <>
             {isMobile && (
               <div
-                className="px-3 pt-5 pb-1 flex flex-col gap-2"
+                className="px-3 pt-5 pb-6 flex flex-col gap-3 text-lg"
                 style={{ fontFamily: "'IBM Plex Sans', -apple-system, Arial, 'PingFang SC', sans-serif" }}
               >
                 <button
