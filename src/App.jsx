@@ -1236,17 +1236,28 @@ export default function Portfolio() {
             }`}
           >
           {!isMobile && (
-            <>
+            <div className="w-full flex items-center justify-between mb-8">
+              <Editable
+                as="h1"
+                editMode={editMode}
+                value={data.artistName}
+                onChange={(v) => updateData((prev) => ({ ...prev, artistName: v }))}
+                onClick={goToGallery}
+                className="tracking-tight inline-block whitespace-nowrap"
+                style={artistNameStyle}
+                data-measure-line="true"
+              />
               {selectedWork && (
                 <button
                   onClick={goBackToGallery}
-                  data-measure-line="true"
-                  className="flex items-center gap-1.5 mb-4 text-xs font-bold text-neutral-500 hover:text-neutral-900 transition-colors"
+                  aria-label={isZh ? "返回" : "Back"}
+                  title={isZh ? "返回" : "Back"}
+                  className="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-neutral-500 hover:text-neutral-900 hover:bg-neutral-100 transition-colors"
                 >
                   <svg
                     viewBox="0 0 24 24"
-                    width="12"
-                    height="12"
+                    width="14"
+                    height="14"
                     fill="none"
                     stroke="currentColor"
                     strokeWidth="3"
@@ -1255,20 +1266,9 @@ export default function Portfolio() {
                   >
                     <polyline points="15 18 9 12 15 6" />
                   </svg>
-                  {isZh ? "返回" : "Back"}
                 </button>
               )}
-              <Editable
-                as="h1"
-                editMode={editMode}
-                value={data.artistName}
-                onChange={(v) => updateData((prev) => ({ ...prev, artistName: v }))}
-                onClick={goToGallery}
-                className="tracking-tight mb-8 inline-block whitespace-nowrap"
-                style={artistNameStyle}
-                data-measure-line="true"
-              />
-            </>
+            </div>
           )}
 
           {yearGroups.map((group) => {
