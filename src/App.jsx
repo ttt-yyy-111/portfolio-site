@@ -1236,16 +1236,39 @@ export default function Portfolio() {
             }`}
           >
           {!isMobile && (
-            <Editable
-              as="h1"
-              editMode={editMode}
-              value={data.artistName}
-              onChange={(v) => updateData((prev) => ({ ...prev, artistName: v }))}
-              onClick={goToGallery}
-              className="tracking-tight mb-8 inline-block whitespace-nowrap"
-              style={artistNameStyle}
-              data-measure-line="true"
-            />
+            <>
+              {selectedWork && (
+                <button
+                  onClick={goBackToGallery}
+                  data-measure-line="true"
+                  className="flex items-center gap-1.5 mb-4 text-xs font-bold text-neutral-500 hover:text-neutral-900 transition-colors"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="12"
+                    height="12"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="3"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <polyline points="15 18 9 12 15 6" />
+                  </svg>
+                  {isZh ? "返回" : "Back"}
+                </button>
+              )}
+              <Editable
+                as="h1"
+                editMode={editMode}
+                value={data.artistName}
+                onChange={(v) => updateData((prev) => ({ ...prev, artistName: v }))}
+                onClick={goToGallery}
+                className="tracking-tight mb-8 inline-block whitespace-nowrap"
+                style={artistNameStyle}
+                data-measure-line="true"
+              />
+            </>
           )}
 
           {yearGroups.map((group) => {
@@ -1938,26 +1961,29 @@ function DetailView({
       >
         <div className="flex items-start justify-between mb-6 gap-4">
           <div className="flex items-center gap-3 min-w-0">
-            {/* 返回按钮：跟标题同一行、紧挨在标题左边，用 flex 间距隔开，不会跟文字重叠。
+            {/* 返回按钮：只在手机端显示（电脑端已经放进左侧栏了，手机端左侧栏收在抽屉里，
+                详情页看不到，所以手机端还是留在这里方便点）。
                 点了回到画廊，并恢复到进入详情页之前画廊滚动到的那个位置（不是统一回到顶部） */}
-            <button
-              onClick={onBack}
-              aria-label="返回"
-              className="flex-shrink-0 w-8 h-8 rounded-full bg-white shadow-sm border border-neutral-100 flex items-center justify-center text-neutral-600 hover:text-neutral-900 transition-colors"
-            >
-              <svg
-                viewBox="0 0 24 24"
-                width="14"
-                height="14"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
+            {isMobile && (
+              <button
+                onClick={onBack}
+                aria-label="返回"
+                className="flex-shrink-0 w-8 h-8 rounded-full bg-white shadow-sm border border-neutral-100 flex items-center justify-center text-neutral-600 hover:text-neutral-900 transition-colors"
               >
-                <polyline points="15 18 9 12 15 6" />
-              </svg>
-            </button>
+                <svg
+                  viewBox="0 0 24 24"
+                  width="14"
+                  height="14"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <polyline points="15 18 9 12 15 6" />
+                </svg>
+              </button>
+            )}
             <Editable
               as="h2"
               value={displayTitle}
