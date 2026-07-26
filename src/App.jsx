@@ -1433,41 +1433,47 @@ export default function Portfolio() {
           isMobile ? "min-h-0 w-full" : "h-full"
         }`}
       >
-        {showInfo ? (
-          <InfoView
-            info={data.info || ""}
-            editMode={editMode}
-            titleStyle={detailTitleStyle}
-            descriptionStyle={detailDescriptionStyle}
-            onChangeInfo={(v) => updateData((prev) => ({ ...prev, info: v }))}
-            isMobile={isMobile}
-          />
-        ) : !selectedWork ? (
-          <GalleryGrid
-            works={data.works}
-            editMode={editMode}
-            onSelect={goToWork}
-            onReplaceCover={replaceCover}
-            imageGap={data.imageGap ?? 16}
-            isMobile={isMobile}
-          />
-        ) : (
-          <DetailView
-            work={selectedWork}
-            editMode={editMode}
-            titleStyle={detailTitleStyle}
-            descriptionStyle={detailDescriptionStyle}
-            imageGap={data.imageGap ?? 16}
-            onUpdate={(patch) => updateWork(selectedWork.id, patch)}
-            onAddImage={(file) => addDetailImage(selectedWork.id, file)}
-            onReplaceImage={(i, file) => replaceDetailImage(selectedWork.id, i, file)}
-            onRemoveImage={(i) => removeDetailImage(selectedWork.id, i)}
-            isMobile={isMobile}
-            prevWork={detailPrevWork}
-            nextWork={detailNextWork}
-            onGoToWork={goToWork}
-          />
-        )}
+        <div
+          key={showInfo ? "info" : selectedWork ? selectedWork.id : "gallery"}
+          className="min-h-full"
+          style={{ animation: "pageFadeIn 350ms ease-out both" }}
+        >
+          {showInfo ? (
+            <InfoView
+              info={data.info || ""}
+              editMode={editMode}
+              titleStyle={detailTitleStyle}
+              descriptionStyle={detailDescriptionStyle}
+              onChangeInfo={(v) => updateData((prev) => ({ ...prev, info: v }))}
+              isMobile={isMobile}
+            />
+          ) : !selectedWork ? (
+            <GalleryGrid
+              works={data.works}
+              editMode={editMode}
+              onSelect={goToWork}
+              onReplaceCover={replaceCover}
+              imageGap={data.imageGap ?? 16}
+              isMobile={isMobile}
+            />
+          ) : (
+            <DetailView
+              work={selectedWork}
+              editMode={editMode}
+              titleStyle={detailTitleStyle}
+              descriptionStyle={detailDescriptionStyle}
+              imageGap={data.imageGap ?? 16}
+              onUpdate={(patch) => updateWork(selectedWork.id, patch)}
+              onAddImage={(file) => addDetailImage(selectedWork.id, file)}
+              onReplaceImage={(i, file) => replaceDetailImage(selectedWork.id, i, file)}
+              onRemoveImage={(i) => removeDetailImage(selectedWork.id, i)}
+              isMobile={isMobile}
+              prevWork={detailPrevWork}
+              nextWork={detailNextWork}
+              onGoToWork={goToWork}
+            />
+          )}
+        </div>
       </main>
     </div>
   );

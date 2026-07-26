@@ -24,6 +24,17 @@
       * {
         -webkit-tap-highlight-color: transparent;
       }
+      /* 进入详情页/信息页/回到画廊时播放的简短过渡动画：从稍微偏下、透明，回到正常位置、完全不透明 */
+      @keyframes pageFadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(12px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
     </style>
   </head>
   <body>
