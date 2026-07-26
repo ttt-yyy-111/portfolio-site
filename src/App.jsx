@@ -1926,7 +1926,30 @@ function DetailView({
       : "none";
 
   return (
-    <div className="flex flex-col min-h-full">
+    <div className="flex flex-col min-h-full relative">
+      {/* 返回按钮：放在整个右侧栏最左边（不是内容区那圈内边距里面），
+          高度上跟标题大致对齐；点了回到画廊，并恢复到进入详情页之前
+          画廊滚动到的那个位置（不是统一回到顶部） */}
+      <button
+        onClick={onBack}
+        aria-label="返回"
+        className="absolute left-2 md:left-4 w-8 h-8 rounded-full bg-white shadow-sm border border-neutral-100 flex items-center justify-center text-neutral-600 hover:text-neutral-900 transition-colors z-10"
+        style={{ top: isMobile ? 24 : 40 }}
+      >
+        <svg
+          viewBox="0 0 24 24"
+          width="14"
+          height="14"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <polyline points="15 18 9 12 15 6" />
+        </svg>
+      </button>
+
       <div
         key={work.id}
         className="px-6 md:px-10 max-w-6xl flex-1"
@@ -1937,35 +1960,13 @@ function DetailView({
         }}
       >
         <div className="flex items-start justify-between mb-6 gap-4">
-          <div className="flex items-center gap-3">
-            {/* 返回按钮：跟标题放在同一行、垂直对齐，回到画廊时会恢复到进入详情页之前
-                画廊滚动到的那个位置（不是统一回到顶部） */}
-            <button
-              onClick={onBack}
-              aria-label="返回"
-              className="flex-shrink-0 w-8 h-8 rounded-full bg-white shadow-sm border border-neutral-100 flex items-center justify-center text-neutral-600 hover:text-neutral-900 transition-colors"
-            >
-              <svg
-                viewBox="0 0 24 24"
-                width="14"
-                height="14"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <polyline points="15 18 9 12 15 6" />
-              </svg>
-            </button>
-            <Editable
-              as="h2"
-              value={displayTitle}
-              editMode={editMode}
-              onChange={(v) => onUpdate({ [langKey("title")]: v })}
-              style={titleStyle}
-            />
-          </div>
+          <Editable
+            as="h2"
+            value={displayTitle}
+            editMode={editMode}
+            onChange={(v) => onUpdate({ [langKey("title")]: v })}
+            style={titleStyle}
+          />
           <Editable
             as="span"
             value={String(work.year)}
