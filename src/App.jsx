@@ -1769,7 +1769,11 @@ function GalleryImage({ w, editMode, onSelect, onReplaceCover }) {
         <img
           src={w.cover}
           alt={w.title}
-          className="w-full h-auto object-cover opacity-95 transition-opacity duration-300"
+          draggable={false}
+          onContextMenu={(e) => !editMode && e.preventDefault()}
+          onDragStart={(e) => e.preventDefault()}
+          className="w-full h-auto object-cover opacity-95 transition-opacity duration-300 select-none pointer-events-none"
+          style={{ WebkitTouchCallout: "none" }}
         />
       </button>
       {editMode && (
@@ -1956,7 +1960,15 @@ function DetailImage({ src, alt, editMode, onReplaceImage, onRemoveImage }) {
   const { ref, style } = useRevealAnimation();
   return (
     <div ref={ref} style={style} className="relative rounded-xl overflow-hidden bg-neutral-100 group">
-      <img src={src} alt={alt} className="w-full h-auto object-cover" />
+      <img
+        src={src}
+        alt={alt}
+        draggable={false}
+        onContextMenu={(e) => !editMode && e.preventDefault()}
+        onDragStart={(e) => e.preventDefault()}
+        className="w-full h-auto object-cover select-none pointer-events-none"
+        style={{ WebkitTouchCallout: "none" }}
+      />
       {editMode && (
         <>
           <label className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer text-white text-xs font-bold">

@@ -46,6 +46,14 @@
           transform: translateX(0);
         }
       }
+      /* 图片保护：禁止拖拽把图片存到桌面、禁止选中、禁止手机长按弹出"保存图片"菜单。
+         提前说明：这只能挡住大部分"随手右键/长按存图"的情况，没有任何纯前端手段能
+         100% 防住截图或者用浏览器"开发者工具"看网络请求这类操作。 */
+      img {
+        -webkit-user-drag: none;
+        -webkit-touch-callout: none;
+        user-select: none;
+      }
     </style>
   </head>
   <body>
