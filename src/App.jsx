@@ -2044,7 +2044,7 @@ function DetailView({
               editMode={editMode}
               onReplaceImage={(file) => onReplaceImage(i, file)}
               onRemoveImage={() => onRemoveImage(i)}
-              onOpen={() => setLightboxIndex(i)}
+              onOpen={isMobile ? undefined : () => setLightboxIndex(i)}
             />
           ))}
 
@@ -2132,7 +2132,7 @@ function DetailImage({ src, alt, editMode, onReplaceImage, onRemoveImage, onOpen
     <div
       ref={ref}
       style={style}
-      onClick={() => !editMode && onOpen()}
+      onClick={() => !editMode && onOpen && onOpen()}
       className={`relative rounded-xl overflow-hidden bg-neutral-100 group ${
         editMode ? "" : "cursor-zoom-in"
       }`}
