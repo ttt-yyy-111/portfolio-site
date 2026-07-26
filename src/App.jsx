@@ -473,6 +473,30 @@ export default function Portfolio() {
     }));
   };
 
+  // 编辑系列名称：把这个系列下所有作品的名称一起改掉。分组用的"系列key"永远认英文名，
+  // 中文模式下改的只是 seriesZh（展示用），不会影响分组；英文模式下改的是真正的 series
+  // 字段，这种情况下手风琴的展开状态也要跟着把 key 换一下，不然会意外收起来。
+  const updateSeriesName = (year, oldSeriesName, rawValue) => {
+    const newName = rawValue.trim();
+    if (!newName) return;
+    const fieldKey = isZh ? "seriesZh" : "series";
+    updateData((prev) => ({
+      ...prev,
+      works: prev.works.map((w) =>
+        w.year === year && w.series === oldSeriesName ? { ...w, [fieldKey]: newName } : w
+      ),
+    }));
+    if (!isZh && newName !== oldSeriesName) {
+      setExpandedSeries((prev) => {
+        const oldKey = `${year}::${oldSeriesName}`;
+        if (!(oldKey in prev)) return prev;
+        const newKey = `${year}::${newName}`;
+        const { [oldKey]: val, ...rest } = prev;
+        return { ...rest, [newKey]: val };
+      });
+    }
+  };
+
   const addToSeries = (year, seriesName, existingCount) => {
     const nextNumber = existingCount + 1;
     const newWork = {
@@ -1069,8 +1093,8 @@ export default function Portfolio() {
           <Editable
             as="span"
             editMode={editMode}
-            value={tField(data, "artistName")}
-            onChange={(v) => updateData((prev) => ({ ...prev, [langKey("artistName")]: v }))}
+            value={data.artistName}
+            onChange={(v) => updateData((prev) => ({ ...prev, artistName: v }))}
             onClick={goToGallery}
             className="font-bold tracking-tight whitespace-nowrap"
             style={mobileArtistNameStyle}
@@ -1131,8 +1155,8 @@ export default function Portfolio() {
             <Editable
               as="h1"
               editMode={editMode}
-              value={tField(data, "artistName")}
-              onChange={(v) => updateData((prev) => ({ ...prev, [langKey("artistName")]: v }))}
+              value={data.artistName}
+              onChange={(v) => updateData((prev) => ({ ...prev, artistName: v }))}
               onClick={goToGallery}
               className="tracking-tight mb-8 inline-block whitespace-nowrap"
               style={artistNameStyle}
@@ -1213,6 +1237,9 @@ export default function Portfolio() {
                     // entry.type === "series"：可折叠的系列分组
                     const seriesKey = `${group.year}::${entry.series}`;
                     const isOpen = !!expandedSeries[seriesKey];
+                    const displaySeriesName = isZh
+                      ? entry.works[0]?.seriesZh || entry.series
+                      : entry.series;
                     const { isDragOver: headerIsDragOver, ...headerDragProps } =
                       makeEntryDragHandlers(group.year, entryIndex);
                     return (
@@ -1232,7 +1259,7 @@ export default function Portfolio() {
                             ⠿
                           </span>
                           <button
-                            onClick={() => toggleSeries(seriesKey)}
+                            onClick={() => !editMode && toggleSeries(seriesKey)}
                             style={workTitleStyle}
                             className="relative flex-1 flex items-center text-left text-neutral-800"
                           >
@@ -1255,7 +1282,20 @@ export default function Portfolio() {
                                 <polyline points="9 18 15 12 9 6" />
                               </svg>
                             </span>
-                            <span className="min-w-0 whitespace-nowrap" data-measure-line="true">{entry.series}</span>
+                            {editMode ? (
+                              <Editable
+                                as="span"
+                                editMode={editMode}
+                                value={displaySeriesName}
+                                onChange={(v) => updateSeriesName(group.year, entry.series, v)}
+                                className="min-w-0 whitespace-nowrap"
+                                data-measure-line="true"
+                              />
+                            ) : (
+                              <span className="min-w-0 whitespace-nowrap" data-measure-line="true">
+                                {displaySeriesName}
+                              </span>
+                            )}
                           </button>
                         </div>
 
@@ -1400,7 +1440,7 @@ export default function Portfolio() {
               onClick={goToInfo}
               className={showInfo ? "text-neutral-900 underline underline-offset-2" : ""}
             >
-              {isZh ? "简介" : "Information"}
+              Information
             </button>
 
             <div className="flex items-center gap-1">
@@ -1471,7 +1511,6 @@ export default function Portfolio() {
             descriptionStyle={detailDescriptionStyle}
             onChangeInfo={(v) => updateData((prev) => ({ ...prev, [langKey("info")]: v }))}
             isMobile={isMobile}
-            isZh={isZh}
           />
         ) : !selectedWork ? (
           <GalleryGrid
@@ -1751,11 +1790,11 @@ function GalleryImage({ w, editMode, onSelect, onReplaceCover }) {
 }
 
 // 艺术家信息页：点击左下角 "Information" 进入
-function InfoView({ info, editMode, titleStyle, descriptionStyle, onChangeInfo, isMobile, isZh }) {
+function InfoView({ info, editMode, titleStyle, descriptionStyle, onChangeInfo, isMobile }) {
   return (
     <div className="px-6 md:px-10 pb-10 max-w-3xl" style={{ paddingTop: isMobile ? 24 : 40 }}>
       <h2 className="mb-6" style={titleStyle}>
-        {isZh ? "简介" : "Information"}
+        Information
       </h2>
       <Editable
         as="p"

@@ -14,11 +14,11 @@
  *  想让某段文字也有中文版本，就在对应字段后面加一个 "Zh" 结尾的新字段：
  *    title      → titleZh
  *    description→ descriptionZh
- *    artistName → artistNameZh
+ *    series     → seriesZh（系列作品的名称，比如 "Good Medicine Tastes Bitter"）
  *    info       → infoZh
  *  没写 xxxZh 的内容，切到中文的时候会自动显示英文原文，不会空白。
- *  年份、系列名称（比如 "Good Medicine Tastes Bitter"）、日期、Email/Instagram
- *  这几项目前没有做中英文区分，两种语言下显示的都是同一份内容。
+ *  姓名（YU TIANTIAN）、年份、日期、Information/Email/Instagram 这几项
+ *  中英文下显示的是同一份内容，没有做区分。
  * ============================================================
  */
 export const DEFAULT_TYPOGRAPHY = {
@@ -33,7 +33,6 @@ export const DEFAULT_TYPOGRAPHY = {
 
 export const DEFAULT_DATA = {
   artistName: "YU TIANTIAN",
-  artistNameZh: "于田田", // 示例：中文模式下姓名可以显示不一样的内容，不需要的话删掉这一行就行
   typography: DEFAULT_TYPOGRAPHY,
   info: "点击这里编辑你的艺术家简介、创作理念、经历或展览履历。",
   infoZh: "点击这里编辑你的艺术家简介、创作理念、经历或展览履历（中文版）。",
@@ -101,6 +100,7 @@ export const DEFAULT_DATA = {
       id: "good-medicine-i",
       year: 2025,
       series: "Good Medicine Tastes Bitter",
+      seriesZh: "良药苦口",
       title: "Good Medicine Tastes Bitter I",
       date: "Mon Feb 10 2022",
       description: "点击这段文字可以直接修改。",
@@ -112,6 +112,7 @@ export const DEFAULT_DATA = {
       id: "good-medicine-ii",
       year: 2025,
       series: "Good Medicine Tastes Bitter",
+      seriesZh: "良药苦口",
       title: "Good Medicine Tastes Bitter II",
       date: "Wed Feb 26 2022",
       description: "点击这段文字可以直接修改。",
@@ -123,6 +124,7 @@ export const DEFAULT_DATA = {
       id: "good-medicine-iii",
       year: 2026,
       series: "Good Medicine Tastes Bitter",
+      seriesZh: "良药苦口",
       title: "Good Medicine Tastes Bitter III",
       date: "Mon Jan 12 2026",
       description: "点击这段文字可以直接修改。",
@@ -134,6 +136,7 @@ export const DEFAULT_DATA = {
       id: "good-medicine-iv",
       year: 2026,
       series: "Good Medicine Tastes Bitter",
+      seriesZh: "良药苦口",
       title: "Good Medicine Tastes Bitter IV",
       date: "Thu Jan 29 2026",
       description: "点击这段文字可以直接修改。",
@@ -145,6 +148,7 @@ export const DEFAULT_DATA = {
       id: "good-medicine-v",
       year: 2026,
       series: "Good Medicine Tastes Bitter",
+      seriesZh: "良药苦口",
       title: "Good Medicine Tastes Bitter V",
       date: "Tue Feb 17 2026",
       description: "点击这段文字可以直接修改。",
@@ -156,6 +160,7 @@ export const DEFAULT_DATA = {
       id: "good-medicine-vi",
       year: 2026,
       series: "Good Medicine Tastes Bitter",
+      seriesZh: "良药苦口",
       title: "Good Medicine Tastes Bitter VI",
       date: "Fri Mar 06 2026",
       description: "点击这段文字可以直接修改。",
@@ -167,6 +172,7 @@ export const DEFAULT_DATA = {
       id: "good-medicine-vii",
       year: 2026,
       series: "Good Medicine Tastes Bitter",
+      seriesZh: "良药苦口",
       title: "Good Medicine Tastes Bitter VII",
       date: "Mon Mar 23 2026",
       description: "点击这段文字可以直接修改。",
