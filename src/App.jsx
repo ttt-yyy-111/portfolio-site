@@ -115,7 +115,6 @@ const TYPOGRAPHY_TARGETS = [
   { key: "workTitle", label: "作品名称（左侧列表）" },
   { key: "detailTitle", label: "详情页标题" },
   { key: "detailDescription", label: "详情页介绍文字" },
-  { key: "indexNav", label: "Index / Next" },
   { key: "footerLinks", label: "Information / Email / Instagram" },
 ];
 
@@ -706,7 +705,6 @@ export default function Portfolio() {
   const workTitleStyle = styleFor("workTitle");
   const detailTitleStyle = styleFor("detailTitle");
   const detailDescriptionStyle = styleFor("detailDescription");
-  const indexNavStyle = styleFor("indexNav");
   const footerLinksStyle = styleFor("footerLinks");
 
   const activeTypoValue = typography[activeTypoTarget] || DEFAULT_TYPOGRAPHY[activeTypoTarget];
@@ -1331,19 +1329,7 @@ export default function Portfolio() {
           )}
         </div>
 
-        {/* Index 导航：桌面端常驻在左栏最底部；手机端菜单里不需要，直接隐藏 */}
         <div ref={sidebarFooterRef} className="flex-shrink-0 w-full bg-white">
-          {!isMobile && (
-            <div
-              className="px-6 pt-4 flex items-center gap-6 whitespace-nowrap"
-              style={indexNavStyle}
-            >
-              <button onClick={goToGallery}>
-                Index
-              </button>
-            </div>
-          )}
-
           <div
             className={
               isMobile
