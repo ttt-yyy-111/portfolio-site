@@ -1435,7 +1435,7 @@ export default function Portfolio() {
       >
         <div
           key={showInfo ? "info" : selectedWork ? selectedWork.id : "gallery"}
-          className="min-h-full"
+          className="h-full"
           style={{ animation: "pageFadeIn 350ms ease-out both" }}
         >
           {showInfo ? (
