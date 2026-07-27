@@ -1295,13 +1295,6 @@ export default function Portfolio() {
               </button>
             )}
             <button
-              onClick={toggleLanguage}
-              title={isZh ? "Switch to English" : "切换到中文"}
-              className="text-xs font-bold px-2.5 py-1 rounded-full bg-neutral-100 text-neutral-600"
-            >
-              {isZh ? "EN" : "中"}
-            </button>
-            <button
               onClick={() => setMobileMenuOpen(true)}
               aria-label="打开菜单"
               className="flex flex-col gap-1.5 p-2 -mr-2"
@@ -1395,14 +1388,23 @@ export default function Portfolio() {
             >
               {isZh ? "索引" : "Index"}
             </span>
-            <button
-              onClick={() => setMobileMenuOpen(false)}
-              aria-label="关闭菜单"
-              className="relative p-2 -mr-2 w-12 h-12 flex items-center justify-center"
-            >
-              <span className="absolute w-7 h-0.5 bg-neutral-900 rotate-45" />
-              <span className="absolute w-7 h-0.5 bg-neutral-900 -rotate-45" />
-            </button>
+            <div className="flex items-center gap-2">
+              <button
+                onClick={toggleLanguage}
+                title={isZh ? "Switch to English" : "切换到中文"}
+                className="text-xs font-bold px-2.5 py-1 rounded-full bg-neutral-100 text-neutral-600"
+              >
+                {isZh ? "EN" : "中"}
+              </button>
+              <button
+                onClick={() => setMobileMenuOpen(false)}
+                aria-label="关闭菜单"
+                className="relative p-2 -mr-2 w-12 h-12 flex items-center justify-center"
+              >
+                <span className="absolute w-7 h-0.5 bg-neutral-900 rotate-45" />
+                <span className="absolute w-7 h-0.5 bg-neutral-900 -rotate-45" />
+              </button>
+            </div>
           </div>
         )}
 
