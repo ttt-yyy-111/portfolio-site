@@ -2,7 +2,7 @@
 
 export const DEFAULT_TYPOGRAPHY = {
   "artistName": {
-    "fontSize": 30,
+    "fontSize": 40,
     "lineHeight": 1.2,
     "fontFamily": "ibm-plex-sans",
     "fontWeight": 700,
@@ -11,7 +11,7 @@ export const DEFAULT_TYPOGRAPHY = {
     "fontWidth": 100
   },
   "year": {
-    "fontSize": 20,
+    "fontSize": 25,
     "lineHeight": 1.3,
     "fontFamily": "ibm-plex-sans",
     "fontWeight": 700,
@@ -20,10 +20,10 @@ export const DEFAULT_TYPOGRAPHY = {
     "fontWidth": 100
   },
   "workTitle": {
-    "fontSize": 15,
-    "lineHeight": 1.75,
+    "fontSize": 18,
+    "lineHeight": 1.5,
     "fontFamily": "ibm-plex-sans",
-    "fontWeight": 400,
+    "fontWeight": 500,
     "italic": true,
     "letterSpacing": 0,
     "fontWidth": 100
@@ -56,7 +56,7 @@ export const DEFAULT_TYPOGRAPHY = {
     "fontWidth": 100
   },
   "footerLinks": {
-    "fontSize": 12,
+    "fontSize": 15,
     "lineHeight": 1.5,
     "fontFamily": "ibm-plex-sans",
     "fontWeight": 400,
@@ -70,7 +70,7 @@ export const DEFAULT_DATA = {
   "artistName": "YU TIANTIAN",
   "typography": {
     "artistName": {
-      "fontSize": 30,
+      "fontSize": 40,
       "lineHeight": 1.2,
       "fontFamily": "ibm-plex-sans",
       "fontWeight": 700,
@@ -79,7 +79,7 @@ export const DEFAULT_DATA = {
       "fontWidth": 100
     },
     "year": {
-      "fontSize": 20,
+      "fontSize": 25,
       "lineHeight": 1.3,
       "fontFamily": "ibm-plex-sans",
       "fontWeight": 700,
@@ -88,10 +88,10 @@ export const DEFAULT_DATA = {
       "fontWidth": 100
     },
     "workTitle": {
-      "fontSize": 15,
-      "lineHeight": 1.75,
+      "fontSize": 18,
+      "lineHeight": 1.5,
       "fontFamily": "ibm-plex-sans",
-      "fontWeight": 400,
+      "fontWeight": 500,
       "italic": true,
       "letterSpacing": 0,
       "fontWidth": 100
@@ -124,7 +124,7 @@ export const DEFAULT_DATA = {
       "fontWidth": 100
     },
     "footerLinks": {
-      "fontSize": 12,
+      "fontSize": 15,
       "lineHeight": 1.5,
       "fontFamily": "ibm-plex-sans",
       "fontWeight": 400,
