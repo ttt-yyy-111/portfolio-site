@@ -268,6 +268,10 @@ function reorderList(list, fromIndex, toIndex) {
 
 export default function Portfolio() {
   const [data, setData] = useState(DEFAULT_DATA); // 直接用 content.js 里的内容做初始值，内存里编辑
+  const dataRef = useRef(data);
+  useLayoutEffect(() => {
+    dataRef.current = data;
+  }, [data]);
   const [hasUnexportedChanges, setHasUnexportedChanges] = useState(false);
   const [editMode, setEditMode] = useState(false);
   const [selectedId, setSelectedId] = useState(null);
@@ -371,6 +375,17 @@ export default function Portfolio() {
   }, [selectedId, showInfo]);
 
   const recalcSidebarWidth = useCallback(() => {
+    // 如果之前手动拖拽调整过宽度、并且保存下来了，就一直用这个手动设置的宽度，不再自动测量
+    // （同样限制一下上下限，避免窗口变窄之后手动设置的宽度显得过大）
+    if (dataRef.current?.sidebarWidthOverride) {
+      const max = Math.max(SIDEBAR_MIN_WIDTH, window.innerWidth * 0.6);
+      const clamped = Math.round(
+        Math.min(max, Math.max(SIDEBAR_MIN_WIDTH, dataRef.current.sidebarWidthOverride))
+      );
+      setSidebarWidth((prev) => (prev === clamped ? prev : clamped));
+      return;
+    }
+
     const headerEl = sidebarHeaderRef.current;
     const contentEl = sidebarContentRef.current;
     const footerEl = sidebarFooterRef.current;
@@ -545,7 +560,7 @@ export default function Portfolio() {
       images: [],
       tone: "#454545",
     };
-    updateData((prev) => ({ ...prev, works: [newWork, ...prev.works] }));
+    updateData((prev) => ({ ...prev, works: [...prev.works, newWork] }));
     goToWork(newWork.id);
   };
 
@@ -1636,6 +1651,50 @@ export default function Portfolio() {
           )}
         </div>
       </aside>
+
+      {/* 拖拽调整左栏宽度的分隔条：只在编辑模式下显示，拖拽松手后会把这个宽度记下来保存，
+          以后就一直用这个手动设置的宽度，不再自动测量；双击可以清除手动设置、恢复自动宽度 */}
+      {!isMobile && canEdit && editMode && (
+        <div
+          onMouseDown={(e) => {
+            e.preventDefault();
+            const startX = e.clientX;
+            const startWidth = sidebarWidth;
+            const onMouseMove = (moveEvent) => {
+              const delta = moveEvent.clientX - startX;
+              const max = Math.max(SIDEBAR_MIN_WIDTH, window.innerWidth * 0.6);
+              const next = Math.round(
+                Math.min(max, Math.max(SIDEBAR_MIN_WIDTH, startWidth + delta))
+              );
+              setSidebarWidth(next);
+            };
+            const onMouseUp = (upEvent) => {
+              window.removeEventListener("mousemove", onMouseMove);
+              window.removeEventListener("mouseup", onMouseUp);
+              const delta = upEvent.clientX - startX;
+              const max = Math.max(SIDEBAR_MIN_WIDTH, window.innerWidth * 0.6);
+              const finalWidth = Math.round(
+                Math.min(max, Math.max(SIDEBAR_MIN_WIDTH, startWidth + delta))
+              );
+              updateData((prev) => ({ ...prev, sidebarWidthOverride: finalWidth }));
+            };
+            window.addEventListener("mousemove", onMouseMove);
+            window.addEventListener("mouseup", onMouseUp);
+          }}
+          onDoubleClick={() => {
+            // 双击清除手动设置的宽度，恢复成自动根据内容测量宽度
+            updateData((prev) => {
+              const { sidebarWidthOverride, ...rest } = prev;
+              return rest;
+            });
+            requestAnimationFrame(() => recalcSidebarWidth());
+          }}
+          title="拖拽调整左栏宽度，双击恢复自动宽度"
+          className="w-1 flex-shrink-0 cursor-col-resize bg-transparent hover:bg-neutral-300 active:bg-neutral-400 transition-colors relative z-10"
+        >
+          <div className="absolute inset-y-0 -left-1 -right-1" />
+        </div>
+      )}
 
       {/* ---------- 右侧：画廊网格 / 详情页 / 艺术家信息（占剩余约 3/4 宽度） ---------- */}
       <main
