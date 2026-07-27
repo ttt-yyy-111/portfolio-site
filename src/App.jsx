@@ -1388,7 +1388,7 @@ export default function Portfolio() {
             >
               {isZh ? "索引" : "Index"}
             </span>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-6">
               <button
                 onClick={toggleLanguage}
                 title={isZh ? "Switch to English" : "切换到中文"}
