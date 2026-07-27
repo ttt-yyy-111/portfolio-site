@@ -43,12 +43,12 @@ export const DEFAULT_TYPOGRAPHY = {
     "fontFamily": "ibm-plex-sans",
     "fontWeight": 400,
     "italic": false,
-    "letterSpacing": -0.5,
+    "letterSpacing": 0,
     "fontWidth": 100
   },
   "detailDimensions": {
-    "fontSize": 18,
-    "lineHeight": 1.6,
+    "fontSize": 20,
+    "lineHeight": 1,
     "fontFamily": "ibm-plex-sans",
     "fontWeight": 500,
     "italic": false,
@@ -56,8 +56,8 @@ export const DEFAULT_TYPOGRAPHY = {
     "fontWidth": 100
   },
   "detailYear": {
-    "fontSize": 18,
-    "lineHeight": 1.6,
+    "fontSize": 20,
+    "lineHeight": 1,
     "fontFamily": "ibm-plex-sans",
     "fontWeight": 500,
     "italic": false,
@@ -138,12 +138,12 @@ export const DEFAULT_DATA = {
       "fontFamily": "ibm-plex-sans",
       "fontWeight": 400,
       "italic": false,
-      "letterSpacing": -0.5,
+      "letterSpacing": 0,
       "fontWidth": 100
     },
     "detailDimensions": {
-      "fontSize": 18,
-      "lineHeight": 1.6,
+      "fontSize": 20,
+      "lineHeight": 1,
       "fontFamily": "ibm-plex-sans",
       "fontWeight": 500,
       "italic": false,
@@ -151,8 +151,8 @@ export const DEFAULT_DATA = {
       "fontWidth": 100
     },
     "detailYear": {
-      "fontSize": 18,
-      "lineHeight": 1.6,
+      "fontSize": 20,
+      "lineHeight": 1,
       "fontFamily": "ibm-plex-sans",
       "fontWeight": 500,
       "italic": false,
@@ -237,7 +237,7 @@ export const DEFAULT_DATA = {
       "fontSize": 20,
       "lineHeight": 1.6,
       "fontFamily": "ibm-plex-sans",
-      "fontWeight": 500,
+      "fontWeight": 600,
       "italic": false,
       "letterSpacing": 0,
       "fontWidth": 100
@@ -246,7 +246,7 @@ export const DEFAULT_DATA = {
       "fontSize": 20,
       "lineHeight": 1.6,
       "fontFamily": "ibm-plex-sans",
-      "fontWeight": 500,
+      "fontWeight": 600,
       "italic": false,
       "letterSpacing": 0,
       "fontWidth": 100
