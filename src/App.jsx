@@ -173,10 +173,13 @@ const FONT_PRESETS = [
 // 可以分别调整字体样式/字号/行距的 5 个元素
 const TYPOGRAPHY_TARGETS = [
   { key: "artistName", label: "姓名" },
-  { key: "year", label: "年份" },
+  { key: "year", label: "年份（左侧列表）" },
   { key: "workTitle", label: "作品名称（左侧列表）" },
   { key: "detailTitle", label: "详情页标题" },
-  { key: "detailDescription", label: "详情页介绍文字" },
+  { key: "detailMaterials", label: "详情页材料" },
+  { key: "detailDimensions", label: "详情页尺寸" },
+  { key: "detailYear", label: "详情页年份" },
+  { key: "detailDescription", label: "Information 页正文" },
   { key: "footerLinks", label: "Information / Email / Instagram" },
 ];
 
@@ -884,7 +887,10 @@ export default function Portfolio() {
   const yearStyle = styleFor("year");
   const workTitleStyle = styleFor("workTitle");
   const detailTitleStyle = styleFor("detailTitle");
-  const detailDescriptionStyle = styleFor("detailDescription");
+  const detailMaterialsStyle = styleFor("detailMaterials");
+  const detailDimensionsStyle = styleFor("detailDimensions");
+  const detailYearStyle = styleFor("detailYear");
+  const infoDescriptionStyle = styleFor("detailDescription");
   const footerLinksStyle = styleFor("footerLinks");
 
   const activeTypoValue = typography[activeTypoTarget] || DEFAULT_TYPOGRAPHY[activeTypoTarget];
@@ -1806,7 +1812,7 @@ export default function Portfolio() {
             info={tField(data, "info")}
             editMode={editMode}
             titleStyle={detailTitleStyle}
-            descriptionStyle={detailDescriptionStyle}
+            descriptionStyle={infoDescriptionStyle}
             onChangeInfo={(v) => updateData((prev) => ({ ...prev, [langKey("info")]: v }))}
             isMobile={isMobile}
           />
@@ -1852,11 +1858,14 @@ export default function Portfolio() {
           <DetailView
             work={selectedWork}
             displayTitle={tField(selectedWork, "title")}
-            displayDescription={tField(selectedWork, "description")}
+            displayMaterials={tField(selectedWork, "materials")}
+            displayDimensions={tField(selectedWork, "dimensions")}
             langKey={langKey}
             editMode={editMode}
             titleStyle={detailTitleStyle}
-            descriptionStyle={detailDescriptionStyle}
+            materialsStyle={detailMaterialsStyle}
+            dimensionsStyle={detailDimensionsStyle}
+            yearStyle={detailYearStyle}
             imageGap={data.imageGap ?? 16}
             onUpdate={(patch) => updateWork(selectedWork.id, patch)}
             onAddImage={(file) => addDetailImage(selectedWork.id, file)}
@@ -2170,11 +2179,14 @@ function InfoView({ info, editMode, titleStyle, descriptionStyle, onChangeInfo, 
 function DetailView({
   work,
   displayTitle,
-  displayDescription,
+  displayMaterials,
+  displayDimensions,
   langKey,
   editMode,
   titleStyle,
-  descriptionStyle,
+  materialsStyle,
+  dimensionsStyle,
+  yearStyle,
   imageGap = 16,
   onUpdate,
   onAddImage,
@@ -2238,36 +2250,48 @@ function DetailView({
           animation: `${slideAnimation} 350ms ease-out both`,
         }}
       >
-        <div className="flex items-start justify-between mb-6 gap-4">
-          <div className="flex items-center gap-3 min-w-0">
-            <Editable
-              as="h2"
-              value={displayTitle}
-              editMode={editMode}
-              onChange={(v) => onUpdate({ [langKey("title")]: v })}
-              style={titleStyle}
-            />
-          </div>
+        <div className="mb-6">
           <Editable
-            as="span"
+            as="h2"
+            value={displayTitle}
+            editMode={editMode}
+            onChange={(v) => onUpdate({ [langKey("title")]: v })}
+            style={titleStyle}
+          />
+        </div>
+
+        {/* 材料 / 尺寸 / 年份：三个各自独立可编辑、独立调整字号字体行距的文字块。
+            两端对齐（最后一行自动变回左对齐，这是 text-align: justify 的标准行为），
+            不设置 max-width，宽度跟下面的图片网格对齐到同一个边缘。 */}
+        <div className="mb-10 space-y-2">
+          <Editable
+            as="p"
+            value={displayMaterials}
+            editMode={editMode}
+            onChange={(v) => onUpdate({ [langKey("materials")]: v })}
+            className="text-neutral-900 block"
+            style={{ ...materialsStyle, textAlign: "justify" }}
+          />
+          <Editable
+            as="p"
+            value={displayDimensions}
+            editMode={editMode}
+            onChange={(v) => onUpdate({ [langKey("dimensions")]: v })}
+            className="text-neutral-900 block"
+            style={{ ...dimensionsStyle, textAlign: "justify" }}
+          />
+          <Editable
+            as="p"
             value={String(work.year)}
             editMode={editMode}
             onChange={(v) => {
               const parsed = Number(v);
               if (Number.isInteger(parsed) && v.trim() !== "") onUpdate({ year: parsed });
             }}
-            className="text-xs md:text-sm font-mono text-neutral-400 whitespace-nowrap mt-1"
+            className="text-neutral-900 block"
+            style={{ ...yearStyle, textAlign: "justify" }}
           />
         </div>
-
-        <Editable
-          as="p"
-          value={displayDescription}
-          editMode={editMode}
-          onChange={(v) => onUpdate({ [langKey("description")]: v })}
-          className="text-neutral-900 mb-10 max-w-4xl block"
-          style={descriptionStyle}
-        />
 
         <div className="grid grid-cols-1 sm:grid-cols-2" style={{ gap: imageGap }}>
           {work.images.map((src, i) => (
