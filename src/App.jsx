@@ -177,8 +177,7 @@ const TYPOGRAPHY_TARGETS = [
   { key: "workTitle", label: "作品名称（左侧列表）" },
   { key: "detailTitle", label: "详情页标题" },
   { key: "detailMaterials", label: "详情页材料" },
-  { key: "detailDimensions", label: "详情页尺寸" },
-  { key: "detailYear", label: "详情页年份" },
+  { key: "detailDimensions", label: "详情页尺寸 / 年份" },
   { key: "detailDescription", label: "Information 页正文" },
   { key: "footerLinks", label: "Information / Email / Instagram" },
 ];
@@ -459,6 +458,23 @@ export default function Portfolio() {
     setNavDirection(null);
   };
   const [typoPanelOpen, setTypoPanelOpen] = useState(false);
+  const typoPanelRef = useRef(null);
+  // 点击"Aa 文字样式"面板以外的地方（切换按钮本身除外，不然会跟按钮自己的开关逻辑打架）时，自动关闭面板
+  useEffect(() => {
+    if (!typoPanelOpen) return undefined;
+    const onPointerDown = (e) => {
+      if (e.target.closest("[data-typo-toggle]")) return;
+      if (typoPanelRef.current && !typoPanelRef.current.contains(e.target)) {
+        setTypoPanelOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", onPointerDown);
+    document.addEventListener("touchstart", onPointerDown);
+    return () => {
+      document.removeEventListener("mousedown", onPointerDown);
+      document.removeEventListener("touchstart", onPointerDown);
+    };
+  }, [typoPanelOpen]);
   const [openFontId, setOpenFontId] = useState(null); // 当前展开字重下拉的字体 id
   const [activeTypoTarget, setActiveTypoTarget] = useState("workTitle");
   const [expandedSeries, setExpandedSeries] = useState({}); // key: `${year}::${series}` -> boolean
@@ -889,7 +905,6 @@ export default function Portfolio() {
   const detailTitleStyle = styleFor("detailTitle");
   const detailMaterialsStyle = styleFor("detailMaterials");
   const detailDimensionsStyle = styleFor("detailDimensions");
-  const detailYearStyle = styleFor("detailYear");
   const infoDescriptionStyle = styleFor("detailDescription");
   const footerLinksStyle = styleFor("footerLinks");
 
@@ -946,6 +961,7 @@ export default function Portfolio() {
           {canEdit && (
             <button
               onClick={() => setTypoPanelOpen((v) => !v)}
+              data-typo-toggle="true"
               className={`text-xs font-bold px-3 py-1.5 rounded-full transition-colors ${
                 typoPanelOpen
                   ? "bg-neutral-900 text-white"
@@ -1002,7 +1018,10 @@ export default function Portfolio() {
       )}
 
       {typoPanelOpen && (
-        <div className="absolute top-12 right-3 z-30 w-72 max-h-[80vh] overflow-y-auto bg-white border border-neutral-200 rounded-xl shadow-lg p-4 space-y-4">
+        <div
+          ref={typoPanelRef}
+          className="absolute top-12 right-3 z-30 w-72 max-h-[80vh] overflow-y-auto bg-white border border-neutral-200 rounded-xl shadow-lg p-4 space-y-4"
+        >
           <div>
             <div className="text-xs text-neutral-500 mb-2">调整对象</div>
             <select
@@ -1311,6 +1330,7 @@ export default function Portfolio() {
           </div>
           <button
             onClick={() => setTypoPanelOpen((v) => !v)}
+            data-typo-toggle="true"
             className={`text-xs font-bold px-3 py-1.5 rounded-full transition-colors flex-shrink-0 whitespace-nowrap ${
               typoPanelOpen
                 ? "bg-neutral-900 text-white"
@@ -1865,7 +1885,7 @@ export default function Portfolio() {
             titleStyle={detailTitleStyle}
             materialsStyle={detailMaterialsStyle}
             dimensionsStyle={detailDimensionsStyle}
-            yearStyle={detailYearStyle}
+            yearStyle={detailDimensionsStyle}
             imageGap={data.imageGap ?? 16}
             onUpdate={(patch) => updateWork(selectedWork.id, patch)}
             onAddImage={(file) => addDetailImage(selectedWork.id, file)}
