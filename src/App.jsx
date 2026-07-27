@@ -563,11 +563,12 @@ export default function Portfolio() {
   };
 
   const updateTypography = (targetKey, patch) => {
-    const fieldKey = isMobile ? "typographyMobile" : "typography";
+    const fieldKey = `typography${isMobile ? "Mobile" : ""}${isZh ? "Zh" : ""}`;
+    const deviceBaseKey = isMobile ? "typographyMobile" : "typography";
     updateData((prev) => {
-      // 手机端排版设置：如果还没单独设置过，先从桌面端那份复制一份出来做起点，
+      // 如果这个"设备+语言"组合还没单独调整过，先从同设备的英文版本复制一份出来做起点，
       // 而不是从系统默认值开始（这样调整起来更连贯，不会突然跳回默认大小）
-      const basisTypography = prev.typography || DEFAULT_TYPOGRAPHY;
+      const basisTypography = prev[deviceBaseKey] || DEFAULT_TYPOGRAPHY;
       const prevTypography = prev[fieldKey] || basisTypography;
       const prevTarget = prevTypography[targetKey] || basisTypography[targetKey] || DEFAULT_TYPOGRAPHY[targetKey];
       return {
@@ -876,11 +877,15 @@ export default function Portfolio() {
       ? data.works[selectedIndex + 1]
       : null;
 
-  // 手机端和电脑端的字体样式是分开的两份设置：手机端如果还没单独调整过（没有 typographyMobile），
-  // 就先用桌面端那份 typography 顶替显示，这样不会因为"还没配置"就直接掉回系统默认样式。
-  const typography = isMobile
-    ? data.typographyMobile || data.typography || DEFAULT_TYPOGRAPHY
-    : data.typography || DEFAULT_TYPOGRAPHY;
+  // 排版设置分成四份，按"设备（电脑/手机）× 语言（中文/英文）"两个维度独立：
+  // typography（电脑·英文，也是默认基准）、typographyZh（电脑·中文）、
+  // typographyMobile（手机·英文）、typographyMobileZh（手机·中文）。
+  // 某一份如果还没单独调整过，依次退回同设备的英文版本，再退回系统默认值，
+  // 这样不会因为"还没配置某个组合"就突然掉回一个完全不一样的默认样式。
+  const typographyFieldKey = `typography${isMobile ? "Mobile" : ""}${isZh ? "Zh" : ""}`;
+  const typographyDeviceBaseKey = isMobile ? "typographyMobile" : "typography";
+  const typography =
+    data[typographyFieldKey] || data[typographyDeviceBaseKey] || DEFAULT_TYPOGRAPHY;
 
   const fontOptions = FONT_PRESETS;
 
@@ -1022,6 +1027,9 @@ export default function Portfolio() {
           ref={typoPanelRef}
           className="absolute top-12 right-3 z-30 w-72 max-h-[80vh] overflow-y-auto bg-white border border-neutral-200 rounded-xl shadow-lg p-4 space-y-4"
         >
+          <div className="text-xs font-bold px-2 py-1 rounded bg-neutral-100 text-neutral-600 inline-block">
+            正在编辑：{isMobile ? "手机端" : "电脑端"} · {isZh ? "中文" : "英文"}
+          </div>
           <div>
             <div className="text-xs text-neutral-500 mb-2">调整对象</div>
             <select
