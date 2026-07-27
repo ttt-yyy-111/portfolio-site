@@ -235,7 +235,7 @@ export const DEFAULT_DATA = {
     },
     "detailDimensions": {
       "fontSize": 20,
-      "lineHeight": 1.6,
+      "lineHeight": 1,
       "fontFamily": "ibm-plex-sans",
       "fontWeight": 600,
       "italic": false,
@@ -244,7 +244,7 @@ export const DEFAULT_DATA = {
     },
     "detailYear": {
       "fontSize": 20,
-      "lineHeight": 1.6,
+      "lineHeight": 1,
       "fontFamily": "ibm-plex-sans",
       "fontWeight": 600,
       "italic": false,
