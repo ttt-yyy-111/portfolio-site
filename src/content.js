@@ -225,8 +225,8 @@ export const DEFAULT_DATA = {
       "fontWidth": 100
     },
     "detailMaterials": {
-      "fontSize": 16,
-      "lineHeight": 1.6,
+      "fontSize": 18,
+      "lineHeight": 1.5,
       "fontFamily": "ibm-plex-sans",
       "fontWeight": 500,
       "italic": false,
@@ -234,7 +234,7 @@ export const DEFAULT_DATA = {
       "fontWidth": 100
     },
     "detailDimensions": {
-      "fontSize": 16,
+      "fontSize": 20,
       "lineHeight": 1.6,
       "fontFamily": "ibm-plex-sans",
       "fontWeight": 500,
@@ -243,7 +243,7 @@ export const DEFAULT_DATA = {
       "fontWidth": 100
     },
     "detailYear": {
-      "fontSize": 16,
+      "fontSize": 20,
       "lineHeight": 1.6,
       "fontFamily": "ibm-plex-sans",
       "fontWeight": 500,
