@@ -2,7 +2,7 @@
 
 export const DEFAULT_TYPOGRAPHY = {
   "artistName": {
-    "fontSize": 24,
+    "fontSize": 40,
     "lineHeight": 1.2,
     "fontFamily": "ibm-plex-sans",
     "fontWeight": 700,
@@ -70,7 +70,7 @@ export const DEFAULT_DATA = {
   "artistName": "YU TIANTIAN",
   "typography": {
     "artistName": {
-      "fontSize": 24,
+      "fontSize": 40,
       "lineHeight": 1.2,
       "fontFamily": "ibm-plex-sans",
       "fontWeight": 700,
