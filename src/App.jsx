@@ -801,7 +801,15 @@ export default function Portfolio() {
 
   const replaceCover = async (workId, file) => {
     const dataUrl = await resizeImageToDataUrl(file);
-    updateWork(workId, { cover: dataUrl });
+    updateData((prev) => ({
+      ...prev,
+      works: prev.works.map((w) => {
+        if (w.id !== workId) return w;
+        const images = w.images ? [...w.images] : [];
+        images[0] = dataUrl;
+        return { ...w, images, cover: dataUrl };
+      }),
+    }));
   };
 
   const replaceDetailImage = async (workId, index, file) => {
@@ -2114,7 +2122,7 @@ function GalleryImage({ w, editMode, onSelect, onReplaceCover }) {
         className="block w-full rounded-xl overflow-hidden focus:outline-none"
       >
         <img
-          src={w.cover}
+          src={w.images?.[0] || w.cover}
           alt={w.title}
           draggable={false}
           onContextMenu={(e) => !editMode && e.preventDefault()}
