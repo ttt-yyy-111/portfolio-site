@@ -320,6 +320,9 @@ export default function Portfolio() {
   const [isMobile, setIsMobile] = useState(
     typeof window !== "undefined" ? window.innerWidth < MOBILE_BREAKPOINT : false
   );
+  // 编辑模式下可以手动切换"电脑预览 / 手机预览"，这时候不看实际屏幕宽度，直接按手动选的来，
+  // 这样在电脑浏览器上也能预览、编辑手机端的样子。为 null 表示没有手动切换过，跟着屏幕宽度走。
+  const [editPreviewMode, setEditPreviewMode] = useState(null); // null | 'mobile' | 'desktop'
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [expandedYears, setExpandedYears] = useState({}); // 手机端：年份默认折叠，key 是年份，true 才展开
   const toggleYear = (year) => {
@@ -334,10 +337,15 @@ export default function Portfolio() {
   }, []);
 
   useEffect(() => {
+    if (editPreviewMode !== null) {
+      setIsMobile(editPreviewMode === "mobile");
+      return undefined;
+    }
     const onResize = () => setIsMobile(window.innerWidth < MOBILE_BREAKPOINT);
+    onResize();
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);
-  }, []);
+  }, [editPreviewMode]);
 
   // ---------- 左栏宽度：直接按内容需要固定下来 ----------
   // 说明二：手风琴展开动画那一层用了 overflow: hidden（配合 grid-template-rows 做高度过渡），
@@ -536,12 +544,16 @@ export default function Portfolio() {
   };
 
   const updateTypography = (targetKey, patch) => {
+    const fieldKey = isMobile ? "typographyMobile" : "typography";
     updateData((prev) => {
-      const prevTypography = prev.typography || DEFAULT_TYPOGRAPHY;
-      const prevTarget = prevTypography[targetKey] || DEFAULT_TYPOGRAPHY[targetKey];
+      // 手机端排版设置：如果还没单独设置过，先从桌面端那份复制一份出来做起点，
+      // 而不是从系统默认值开始（这样调整起来更连贯，不会突然跳回默认大小）
+      const basisTypography = prev.typography || DEFAULT_TYPOGRAPHY;
+      const prevTypography = prev[fieldKey] || basisTypography;
+      const prevTarget = prevTypography[targetKey] || basisTypography[targetKey] || DEFAULT_TYPOGRAPHY[targetKey];
       return {
         ...prev,
-        typography: {
+        [fieldKey]: {
           ...prevTypography,
           [targetKey]: { ...prevTarget, ...patch },
         },
@@ -837,7 +849,11 @@ export default function Portfolio() {
       ? data.works[selectedIndex + 1]
       : null;
 
-  const typography = data.typography || DEFAULT_TYPOGRAPHY;
+  // 手机端和电脑端的字体样式是分开的两份设置：手机端如果还没单独调整过（没有 typographyMobile），
+  // 就先用桌面端那份 typography 顶替显示，这样不会因为"还没配置"就直接掉回系统默认样式。
+  const typography = isMobile
+    ? data.typographyMobile || data.typography || DEFAULT_TYPOGRAPHY
+    : data.typography || DEFAULT_TYPOGRAPHY;
 
   const fontOptions = FONT_PRESETS;
 
@@ -857,20 +873,8 @@ export default function Portfolio() {
   };
 
   const artistNameStyle = styleFor("artistName");
-  const mobileArtistNameStyle = {
-    ...artistNameStyle,
-    fontSize: `${Math.max(46, parseFloat(artistNameStyle.fontSize) || 24)}px`,
-  };
   const yearStyle = styleFor("year");
-  const mobileYearStyle = {
-    ...yearStyle,
-    fontSize: `${(parseFloat(yearStyle.fontSize) || 20) * 1.3}px`,
-  };
   const workTitleStyle = styleFor("workTitle");
-  const mobileWorkTitleStyle = {
-    ...workTitleStyle,
-    fontSize: `${(parseFloat(workTitleStyle.fontSize) || 15) * 1.3}px`,
-  };
   const detailTitleStyle = styleFor("detailTitle");
   const detailDescriptionStyle = styleFor("detailDescription");
   const footerLinksStyle = styleFor("footerLinks");
@@ -882,9 +886,11 @@ export default function Portfolio() {
   // 内置预设里如果标了 googleFont，就去 Google Fonts 加载对应的字重
   const googleFontFamilies = FONT_PRESETS.filter((f) => f.googleFont).map((f) => f.googleFont);
 
-  return (
+  const showPhoneFrame = canEdit && editMode && editPreviewMode === "mobile";
+
+  const appRoot = (
     <div
-      className={`w-full h-screen flex ${
+      className={`w-full ${showPhoneFrame ? "h-full" : "h-screen"} flex ${
         isMobile ? "flex-col" : "flex-row"
       } bg-white text-neutral-900 overflow-hidden relative`}
       style={{ fontFamily: "-apple-system, 'Helvetica Neue', Arial, sans-serif" }}
@@ -899,7 +905,7 @@ export default function Portfolio() {
       )}
 
       {/* 顶部工具按钮：中英文切换所有人都能看到；编辑相关的按钮只有网址带 ?edit=1 才会显示 */}
-      {!isMobile && (
+      {(!isMobile || (canEdit && editMode)) && (
         <div className="absolute top-3 right-3 z-20 flex items-center gap-2">
           {canEdit && editMode && (
             <>
@@ -935,11 +941,32 @@ export default function Portfolio() {
               Aa 文字样式
             </button>
           )}
+          {canEdit && editMode && (
+            <div className="flex items-center rounded-full bg-neutral-100 p-0.5 text-xs font-bold">
+              <button
+                onClick={() => setEditPreviewMode("desktop")}
+                className={`px-3 py-1 rounded-full transition-colors ${
+                  isMobile ? "text-neutral-500 hover:text-neutral-900" : "bg-neutral-900 text-white"
+                }`}
+              >
+                电脑预览
+              </button>
+              <button
+                onClick={() => setEditPreviewMode("mobile")}
+                className={`px-3 py-1 rounded-full transition-colors ${
+                  isMobile ? "bg-neutral-900 text-white" : "text-neutral-500 hover:text-neutral-900"
+                }`}
+              >
+                手机预览
+              </button>
+            </div>
+          )}
           {canEdit && (
             <button
               onClick={() => {
                 setEditMode((v) => !v);
                 setTypoPanelOpen(false);
+                setEditPreviewMode(null);
               }}
               className={`text-xs font-bold px-3 py-1.5 rounded-full transition-colors ${
                 editMode
@@ -1214,7 +1241,7 @@ export default function Portfolio() {
               onChange={(v) => updateData((prev) => ({ ...prev, artistName: v }))}
               onClick={goToGallery}
               className="font-bold tracking-tight whitespace-nowrap"
-              style={mobileArtistNameStyle}
+              style={artistNameStyle}
             />
           </div>
           <div className="flex items-center gap-2">
@@ -1330,7 +1357,7 @@ export default function Portfolio() {
                     onClick={() => !editMode && toggleYear(group.year)}
                     className="relative w-full flex items-center justify-between mb-2"
                   >
-                    <span style={isMobile ? mobileYearStyle : yearStyle} data-measure-line="true">
+                    <span style={yearStyle} data-measure-line="true">
                       {editMode ? (
                         <Editable
                           as="span"
@@ -1381,7 +1408,7 @@ export default function Portfolio() {
                           displayTitle={tField(w, "title")}
                           selectedId={selectedId}
                           editMode={editMode}
-                          bodyTextStyle={isMobile ? mobileWorkTitleStyle : workTitleStyle}
+                          bodyTextStyle={workTitleStyle}
                           onSelect={() => goToWork(w.id)}
                           onChangeTitle={(v) => updateWork(w.id, { [langKey("title")]: v })}
                           onDelete={() => deleteWork(w.id)}
@@ -1416,7 +1443,7 @@ export default function Portfolio() {
                           </span>
                           <button
                             onClick={() => !editMode && toggleSeries(seriesKey)}
-                            style={isMobile ? mobileWorkTitleStyle : workTitleStyle}
+                            style={workTitleStyle}
                             className="relative flex-1 flex items-center text-left text-neutral-800"
                           >
                             <span className="absolute -left-3 inset-y-0 flex items-center" aria-hidden>
@@ -1464,7 +1491,7 @@ export default function Portfolio() {
                                 displayTitle={tField(w, "title")}
                                 selectedId={selectedId}
                                 editMode={editMode}
-                                bodyTextStyle={isMobile ? mobileWorkTitleStyle : workTitleStyle}
+                                bodyTextStyle={workTitleStyle}
                                 onSelect={() => goToWork(w.id)}
                                 onChangeTitle={(v) => updateWork(w.id, { [langKey("title")]: v })}
                                 onDelete={() => deleteWork(w.id)}
@@ -1776,6 +1803,24 @@ export default function Portfolio() {
       </main>
     </div>
   );
+
+  // 手动切到"手机预览"、但实际浏览器窗口本身是宽屏的情况下，套一个模拟手机宽度的边框，
+  // 这样在电脑上编辑的时候也能看到手机端真实的排版效果（如果本来就是窄屏手机在看，
+  // 不需要再多套一层，直接显示就行）
+  if (showPhoneFrame) {
+    return (
+      <div className="w-full h-screen flex items-center justify-center bg-neutral-200 overflow-auto py-6">
+        <div
+          className="bg-white shadow-2xl overflow-hidden flex-shrink-0"
+          style={{ width: 430, height: 900, borderRadius: 36, border: "10px solid #1a1a1a" }}
+        >
+          {appRoot}
+        </div>
+      </div>
+    );
+  }
+
+  return appRoot;
 }
 
 // 可编辑文本：非编辑模式下就是普通文字，编辑模式下点击即可修改，失焦自动保存
