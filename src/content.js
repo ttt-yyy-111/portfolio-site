@@ -135,7 +135,7 @@ export const DEFAULT_DATA = {
   },
   "info": "点击这里编辑你的艺术家简介、创作理念、经历或展览履历。",
   "infoZh": "点击这里编辑你的艺术家简介、创作理念、经历或展览履历（中文版）。",
-  "imageGap": 16,
+  "imageGap": 10,
   "contact": {
     "email": "847187284tina@gmail.com",
     "instagram": "https://www.instagram.com/yutiantiano.o/"
