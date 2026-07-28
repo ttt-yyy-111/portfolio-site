@@ -2366,7 +2366,7 @@ function InfoView({
               editMode={editMode}
               onChange={(v) => onUpdateSection(section.id, { [langKey("body")]: v })}
               className={`font-medium text-neutral-900 whitespace-pre-line block ${
-                section.columns === 2 ? "sm:columns-2 sm:gap-x-8" : ""
+                section.columns === 2 ? "sm:columns-2 sm:gap-x-16" : ""
               }`}
               style={bodyStyle}
             />
