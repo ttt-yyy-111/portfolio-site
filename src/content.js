@@ -634,16 +634,16 @@ export const DEFAULT_DATA = {
       "fontWidth": 100
     },
     "detailTitle": {
-      "fontSize": 28,
+      "fontSize": 35,
       "lineHeight": 1.2,
       "fontFamily": "ibm-plex-sans",
       "fontWeight": 700,
       "italic": false,
-      "letterSpacing": 0,
+      "letterSpacing": 3,
       "fontWidth": 100
     },
     "detailMaterials": {
-      "fontSize": 16,
+      "fontSize": 20,
       "lineHeight": 1.6,
       "fontFamily": "source-han-sans-tc",
       "fontWeight": 400,
@@ -652,8 +652,8 @@ export const DEFAULT_DATA = {
       "fontWidth": 100
     },
     "detailDimensions": {
-      "fontSize": 16,
-      "lineHeight": 1.6,
+      "fontSize": 25,
+      "lineHeight": 1,
       "fontFamily": "ibm-plex-sans",
       "fontWeight": 600,
       "italic": false,
