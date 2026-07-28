@@ -1868,11 +1868,11 @@ export default function Portfolio() {
                 <Editable
                   as="span"
                   editMode={editMode}
-                  value={data.contact?.informationLabel || "Information"}
+                  value={tField(data.contact || {}, "informationLabel") || "Information"}
                   onChange={(v) =>
                     updateData((prev) => ({
                       ...prev,
-                      contact: { ...(prev.contact || {}), informationLabel: v },
+                      contact: { ...(prev.contact || {}), [langKey("informationLabel")]: v },
                     }))
                   }
                 />
@@ -1888,11 +1888,11 @@ export default function Portfolio() {
                   <Editable
                     as="span"
                     editMode={editMode}
-                    value={data.contact?.emailLabel || "Email"}
+                    value={tField(data.contact || {}, "emailLabel") || "Email"}
                     onChange={(v) =>
                       updateData((prev) => ({
                         ...prev,
-                        contact: { ...(prev.contact || {}), emailLabel: v },
+                        contact: { ...(prev.contact || {}), [langKey("emailLabel")]: v },
                       }))
                     }
                   />
@@ -1925,11 +1925,11 @@ export default function Portfolio() {
                   <Editable
                     as="span"
                     editMode={editMode}
-                    value={data.contact?.instagramLabel || "Instagram"}
+                    value={tField(data.contact || {}, "instagramLabel") || "Instagram"}
                     onChange={(v) =>
                       updateData((prev) => ({
                         ...prev,
-                        contact: { ...(prev.contact || {}), instagramLabel: v },
+                        contact: { ...(prev.contact || {}), [langKey("instagramLabel")]: v },
                       }))
                     }
                   />
@@ -1962,11 +1962,11 @@ export default function Portfolio() {
                   <Editable
                     as="span"
                     editMode={editMode}
-                    value={data.contact?.redNoteLabel || "RedNote"}
+                    value={tField(data.contact || {}, "redNoteLabel") || "RedNote"}
                     onChange={(v) =>
                       updateData((prev) => ({
                         ...prev,
-                        contact: { ...(prev.contact || {}), redNoteLabel: v },
+                        contact: { ...(prev.contact || {}), [langKey("redNoteLabel")]: v },
                       }))
                     }
                   />
@@ -2075,11 +2075,11 @@ export default function Portfolio() {
                   <Editable
                     as="span"
                     editMode={editMode}
-                    value={data.contact?.informationLabel || "Information"}
+                    value={tField(data.contact || {}, "informationLabel") || "Information"}
                     onChange={(v) =>
                       updateData((prev) => ({
                         ...prev,
-                        contact: { ...(prev.contact || {}), informationLabel: v },
+                        contact: { ...(prev.contact || {}), [langKey("informationLabel")]: v },
                       }))
                     }
                   />
@@ -2096,11 +2096,11 @@ export default function Portfolio() {
                     <Editable
                       as="span"
                       editMode={editMode}
-                      value={data.contact?.emailLabel || "Email"}
+                      value={tField(data.contact || {}, "emailLabel") || "Email"}
                       onChange={(v) =>
                         updateData((prev) => ({
                           ...prev,
-                          contact: { ...(prev.contact || {}), emailLabel: v },
+                          contact: { ...(prev.contact || {}), [langKey("emailLabel")]: v },
                         }))
                       }
                     />
@@ -2134,11 +2134,11 @@ export default function Portfolio() {
                     <Editable
                       as="span"
                       editMode={editMode}
-                      value={data.contact?.instagramLabel || "Instagram"}
+                      value={tField(data.contact || {}, "instagramLabel") || "Instagram"}
                       onChange={(v) =>
                         updateData((prev) => ({
                           ...prev,
-                          contact: { ...(prev.contact || {}), instagramLabel: v },
+                          contact: { ...(prev.contact || {}), [langKey("instagramLabel")]: v },
                         }))
                       }
                     />
@@ -2172,11 +2172,11 @@ export default function Portfolio() {
                     <Editable
                       as="span"
                       editMode={editMode}
-                      value={data.contact?.redNoteLabel || "RedNote"}
+                      value={tField(data.contact || {}, "redNoteLabel") || "RedNote"}
                       onChange={(v) =>
                         updateData((prev) => ({
                           ...prev,
-                          contact: { ...(prev.contact || {}), redNoteLabel: v },
+                          contact: { ...(prev.contact || {}), [langKey("redNoteLabel")]: v },
                         }))
                       }
                     />

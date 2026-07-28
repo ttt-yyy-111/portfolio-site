@@ -102,7 +102,8 @@ export const DEFAULT_DATA = {
   ],
   imageGap: 16, // 右侧栏图片之间的间距（px），画廊网格和详情页大图都用这个值
   // Information/Email/Instagram/RedNote 这几个按钮上显示的文字，都可以在编辑模式里直接点击修改
-  // （对应 informationLabel/emailLabel/instagramLabel/redNoteLabel，不填就显示这里的默认值）
+  // （对应 informationLabel/emailLabel/instagramLabel/redNoteLabel，不填就显示这里的默认值，
+  //  这几个也支持中文/西班牙语单独版本，比如 informationLabelZh、informationLabelEs）
   contact: {
     email: "847187284tina@gmail.com",
     instagram: "https://www.instagram.com/yutiantiano.o/",
