@@ -1862,10 +1862,20 @@ export default function Portfolio() {
               style={footerLinksStyle}
             >
               <button
-                onClick={goToInfo}
+                onClick={() => !editMode && goToInfo()}
                 className={showInfo ? "text-neutral-900 underline underline-offset-2" : ""}
               >
-                Information
+                <Editable
+                  as="span"
+                  editMode={editMode}
+                  value={data.contact?.informationLabel || "Information"}
+                  onChange={(v) =>
+                    updateData((prev) => ({
+                      ...prev,
+                      contact: { ...(prev.contact || {}), informationLabel: v },
+                    }))
+                  }
+                />
               </button>
 
               <div className="flex items-center gap-1">
@@ -1875,7 +1885,17 @@ export default function Portfolio() {
                     if (editMode) e.preventDefault();
                   }}
                 >
-                  Email
+                  <Editable
+                    as="span"
+                    editMode={editMode}
+                    value={data.contact?.emailLabel || "Email"}
+                    onChange={(v) =>
+                      updateData((prev) => ({
+                        ...prev,
+                        contact: { ...(prev.contact || {}), emailLabel: v },
+                      }))
+                    }
+                  />
                 </a>
                 {editMode && (
                   <input
@@ -1887,6 +1907,7 @@ export default function Portfolio() {
                         contact: { ...(prev.contact || {}), email: e.target.value },
                       }))
                     }
+                    placeholder="邮箱地址"
                     className="w-24 flex-shrink-0 text-[10px] text-neutral-400 bg-transparent border-b border-dashed border-neutral-300 focus:outline-none focus:border-neutral-900"
                   />
                 )}
@@ -1901,7 +1922,17 @@ export default function Portfolio() {
                     if (editMode) e.preventDefault();
                   }}
                 >
-                  Instagram
+                  <Editable
+                    as="span"
+                    editMode={editMode}
+                    value={data.contact?.instagramLabel || "Instagram"}
+                    onChange={(v) =>
+                      updateData((prev) => ({
+                        ...prev,
+                        contact: { ...(prev.contact || {}), instagramLabel: v },
+                      }))
+                    }
+                  />
                 </a>
                 {editMode && (
                   <input
@@ -1913,6 +1944,44 @@ export default function Portfolio() {
                         contact: { ...(prev.contact || {}), instagram: e.target.value },
                       }))
                     }
+                    placeholder="Instagram 链接"
+                    className="w-24 flex-shrink-0 text-[10px] text-neutral-400 bg-transparent border-b border-dashed border-neutral-300 focus:outline-none focus:border-neutral-900"
+                  />
+                )}
+              </div>
+
+              <div className="flex items-center gap-1">
+                <a
+                  href={editMode ? undefined : data.contact?.redNote || "#"}
+                  target={editMode ? undefined : "_blank"}
+                  rel="noopener noreferrer"
+                  onClick={(e) => {
+                    if (editMode) e.preventDefault();
+                  }}
+                >
+                  <Editable
+                    as="span"
+                    editMode={editMode}
+                    value={data.contact?.redNoteLabel || "RedNote"}
+                    onChange={(v) =>
+                      updateData((prev) => ({
+                        ...prev,
+                        contact: { ...(prev.contact || {}), redNoteLabel: v },
+                      }))
+                    }
+                  />
+                </a>
+                {editMode && (
+                  <input
+                    type="text"
+                    value={data.contact?.redNote || ""}
+                    onChange={(e) =>
+                      updateData((prev) => ({
+                        ...prev,
+                        contact: { ...(prev.contact || {}), redNote: e.target.value },
+                      }))
+                    }
+                    placeholder="小红书链接"
                     className="w-24 flex-shrink-0 text-[10px] text-neutral-400 bg-transparent border-b border-dashed border-neutral-300 focus:outline-none focus:border-neutral-900"
                   />
                 )}
@@ -1999,25 +2068,134 @@ export default function Portfolio() {
                 style={{ fontFamily: "'IBM Plex Sans', -apple-system, Arial, 'PingFang SC', sans-serif" }}
               >
                 <button
-                  onClick={goToInfo}
+                  onClick={() => !editMode && goToInfo()}
                   className="flex items-center gap-2 font-bold text-neutral-900 text-left"
                 >
-                  <span aria-hidden>→</span> Information
+                  <span aria-hidden>→</span>
+                  <Editable
+                    as="span"
+                    editMode={editMode}
+                    value={data.contact?.informationLabel || "Information"}
+                    onChange={(v) =>
+                      updateData((prev) => ({
+                        ...prev,
+                        contact: { ...(prev.contact || {}), informationLabel: v },
+                      }))
+                    }
+                  />
                 </button>
-                <a
-                  href={`mailto:${data.contact?.email || ""}`}
-                  className="flex items-center gap-2 font-bold text-neutral-900"
-                >
-                  <span aria-hidden>→</span> Email
-                </a>
-                <a
-                  href={data.contact?.instagram || "#"}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 font-bold text-neutral-900"
-                >
-                  <span aria-hidden>↗</span> Instagram
-                </a>
+                <div className="flex items-center gap-2">
+                  <a
+                    href={editMode ? undefined : `mailto:${data.contact?.email || ""}`}
+                    onClick={(e) => {
+                      if (editMode) e.preventDefault();
+                    }}
+                    className="flex items-center gap-2 font-bold text-neutral-900"
+                  >
+                    <span aria-hidden>→</span>
+                    <Editable
+                      as="span"
+                      editMode={editMode}
+                      value={data.contact?.emailLabel || "Email"}
+                      onChange={(v) =>
+                        updateData((prev) => ({
+                          ...prev,
+                          contact: { ...(prev.contact || {}), emailLabel: v },
+                        }))
+                      }
+                    />
+                  </a>
+                  {editMode && (
+                    <input
+                      type="text"
+                      value={data.contact?.email || ""}
+                      onChange={(e) =>
+                        updateData((prev) => ({
+                          ...prev,
+                          contact: { ...(prev.contact || {}), email: e.target.value },
+                        }))
+                      }
+                      placeholder="邮箱地址"
+                      className="text-xs font-normal text-neutral-400 bg-transparent border-b border-dashed border-neutral-300 focus:outline-none focus:border-neutral-900 flex-1 min-w-0"
+                    />
+                  )}
+                </div>
+                <div className="flex items-center gap-2">
+                  <a
+                    href={editMode ? undefined : data.contact?.instagram || "#"}
+                    target={editMode ? undefined : "_blank"}
+                    rel="noopener noreferrer"
+                    onClick={(e) => {
+                      if (editMode) e.preventDefault();
+                    }}
+                    className="flex items-center gap-2 font-bold text-neutral-900"
+                  >
+                    <span aria-hidden>↗</span>
+                    <Editable
+                      as="span"
+                      editMode={editMode}
+                      value={data.contact?.instagramLabel || "Instagram"}
+                      onChange={(v) =>
+                        updateData((prev) => ({
+                          ...prev,
+                          contact: { ...(prev.contact || {}), instagramLabel: v },
+                        }))
+                      }
+                    />
+                  </a>
+                  {editMode && (
+                    <input
+                      type="text"
+                      value={data.contact?.instagram || ""}
+                      onChange={(e) =>
+                        updateData((prev) => ({
+                          ...prev,
+                          contact: { ...(prev.contact || {}), instagram: e.target.value },
+                        }))
+                      }
+                      placeholder="Instagram 链接"
+                      className="text-xs font-normal text-neutral-400 bg-transparent border-b border-dashed border-neutral-300 focus:outline-none focus:border-neutral-900 flex-1 min-w-0"
+                    />
+                  )}
+                </div>
+                <div className="flex items-center gap-2">
+                  <a
+                    href={editMode ? undefined : data.contact?.redNote || "#"}
+                    target={editMode ? undefined : "_blank"}
+                    rel="noopener noreferrer"
+                    onClick={(e) => {
+                      if (editMode) e.preventDefault();
+                    }}
+                    className="flex items-center gap-2 font-bold text-neutral-900"
+                  >
+                    <span aria-hidden>↗</span>
+                    <Editable
+                      as="span"
+                      editMode={editMode}
+                      value={data.contact?.redNoteLabel || "RedNote"}
+                      onChange={(v) =>
+                        updateData((prev) => ({
+                          ...prev,
+                          contact: { ...(prev.contact || {}), redNoteLabel: v },
+                        }))
+                      }
+                    />
+                  </a>
+                  {editMode && (
+                    <input
+                      type="text"
+                      value={data.contact?.redNote || ""}
+                      onChange={(e) =>
+                        updateData((prev) => ({
+                          ...prev,
+                          contact: { ...(prev.contact || {}), redNote: e.target.value },
+                        }))
+                      }
+                      placeholder="小红书链接"
+                      className="text-xs font-normal text-neutral-400 bg-transparent border-b border-dashed border-neutral-300 focus:outline-none focus:border-neutral-900 flex-1 min-w-0"
+                    />
+                  )}
+                </div>
               </div>
             )}
             <GalleryGrid
