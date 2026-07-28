@@ -2345,14 +2345,16 @@ function InfoView({
           <div key={section.id} className="group relative">
             {editMode && (
               <div className="flex items-center gap-3 mb-2">
-                <button
-                  onClick={() =>
-                    onUpdateSection(section.id, { columns: section.columns === 2 ? 1 : 2 })
-                  }
-                  className="text-[11px] font-bold px-2.5 py-1 rounded-full bg-neutral-100 text-neutral-500 hover:bg-neutral-200 transition-colors"
-                >
-                  {section.columns === 2 ? "两栏显示" : "一栏显示"}
-                </button>
+                {!isMobile && (
+                  <button
+                    onClick={() =>
+                      onUpdateSection(section.id, { columns: section.columns === 2 ? 1 : 2 })
+                    }
+                    className="text-[11px] font-bold px-2.5 py-1 rounded-full bg-neutral-100 text-neutral-500 hover:bg-neutral-200 transition-colors"
+                  >
+                    {section.columns === 2 ? "两栏显示" : "一栏显示"}
+                  </button>
+                )}
                 <button
                   onClick={() => onDeleteSection(section.id)}
                   className="text-[11px] font-bold px-2.5 py-1 rounded-full bg-neutral-100 text-neutral-400 hover:bg-red-50 hover:text-red-500 transition-colors"
@@ -2375,7 +2377,7 @@ function InfoView({
               editMode={editMode}
               onChange={(v) => onUpdateSection(section.id, { [langKey("body")]: v })}
               className={`font-medium text-neutral-900 whitespace-pre-line block ${
-                section.columns === 2 ? "sm:columns-2 sm:gap-x-16" : ""
+                !isMobile && section.columns === 2 ? "sm:columns-2 sm:gap-x-16" : ""
               }`}
               style={bodyStyle}
             />
