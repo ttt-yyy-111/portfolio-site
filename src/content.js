@@ -486,5 +486,6 @@ export const DEFAULT_DATA = {
       ],
       "tone": "#444444"
     }
-  ]
+  ],
+  "sidebarWidthOverride": 330
 };
