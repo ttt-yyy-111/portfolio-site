@@ -968,10 +968,25 @@ export default function Portfolio() {
   const styleFor = (targetKey) => {
     const t = typography[targetKey] || DEFAULT_TYPOGRAPHY[targetKey];
     const preset = fontOptions.find((f) => f.id === t.fontFamily) || fontOptions[0];
+
+    // 中文模式下，不管字体样式面板里具体选的是哪一款字体，只要它属于 Sans Serif 大类，
+    // 标点符号和英文字符就统一固定用 IBM Plex Sans（英文）+ 思源黑体（标点、以及选中字体
+    // 本身没有的中文字形），保证不同西文字体切换的时候，中文部分的观感始终一致；
+    // 如果属于 Serif 大类，只固定标点符号用思源宋体，英文还是用选中那款字体本身的西文字形。
+    let fontFamily = preset.family;
+    if (isZh) {
+      if (preset.category === "sans-serif") {
+        fontFamily = "'IBM Plex Sans', 'Noto Sans SC', -apple-system, Arial, sans-serif";
+      } else if (preset.category === "serif") {
+        const primaryFont = preset.family.split(",")[0];
+        fontFamily = `${primaryFont}, 'Noto Serif SC', serif`;
+      }
+    }
+
     return {
       fontSize: `${t.fontSize}px`,
       lineHeight: t.lineHeight,
-      fontFamily: preset.family,
+      fontFamily,
       fontWeight: t.fontWeight ?? 400,
       fontStyle: t.italic ? "italic" : "normal",
       letterSpacing: `${t.letterSpacing ?? 0}px`,
