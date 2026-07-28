@@ -1961,7 +1961,6 @@ export default function Portfolio() {
           <InfoView
             sections={data.infoSections || []}
             editMode={editMode}
-            pageTitleStyle={detailTitleStyle}
             titleStyle={infoTitleStyle}
             bodyStyle={infoBodyStyle}
             tField={tField}
@@ -2317,7 +2316,6 @@ function GalleryImage({ w, editMode, onSelect, onReplaceCover }) {
 function InfoView({
   sections,
   editMode,
-  pageTitleStyle,
   titleStyle,
   bodyStyle,
   tField,
@@ -2328,11 +2326,7 @@ function InfoView({
   isMobile,
 }) {
   return (
-    <div className="px-4 md:px-10 pb-10 max-w-3xl" style={{ paddingTop: isMobile ? 24 : 40 }}>
-      <h2 className="mb-8" style={pageTitleStyle}>
-        Information
-      </h2>
-
+    <div className="px-3 md:px-10 max-w-6xl pb-10" style={{ paddingTop: isMobile ? 24 : 40 }}>
       {sections.length === 0 && !editMode && (
         <p className="text-neutral-400 text-sm">还没有添加任何内容。</p>
       )}
