@@ -287,16 +287,22 @@ export default function Portfolio() {
     return new URLSearchParams(window.location.search).get("edit") === "1";
   });
 
-  // ---------- 中英文切换 ----------
+  // ---------- 语言切换：英文 / 中文 / 西班牙语 ----------
   // 默认英文；记住访客上次选择的语言（存在浏览器本地，下次打开这个网站还是他选过的语言）
+  const LANGUAGE_CYCLE = ["en", "zh", "es"];
   const [language, setLanguage] = useState(() => {
     if (typeof window === "undefined") return "en";
-    return window.localStorage.getItem("portfolio-language") || "en";
+    const saved = window.localStorage.getItem("portfolio-language");
+    return LANGUAGE_CYCLE.includes(saved) ? saved : "en";
   });
   const isZh = language === "zh";
+  const isEs = language === "es";
+  // 内容字段（标题、材料、尺寸、简介、系列名称）用的语言后缀：中文是 Zh，西班牙语是 Es，英文没有后缀
+  const contentLangSuffix = isZh ? "Zh" : isEs ? "Es" : "";
   const toggleLanguage = () => {
     setLanguage((prev) => {
-      const next = prev === "zh" ? "en" : "zh";
+      const idx = LANGUAGE_CYCLE.indexOf(prev);
+      const next = LANGUAGE_CYCLE[(idx + 1) % LANGUAGE_CYCLE.length];
       try {
         window.localStorage.setItem("portfolio-language", next);
       } catch (err) {
@@ -305,15 +311,25 @@ export default function Portfolio() {
       return next;
     });
   };
-  // 取某个字段的当前语言版本：中文模式下优先用 xxxZh 字段，没填就自动退回英文原文，
-  // 不会因为漏填中文翻译就显示空白。
+  // 语言按钮上显示的文字/提示：按下去会切换到的下一个语言
+  const nextLanguage = LANGUAGE_CYCLE[(LANGUAGE_CYCLE.indexOf(language) + 1) % LANGUAGE_CYCLE.length];
+  const LANGUAGE_BUTTON_LABEL = { en: "EN", zh: "中", es: "ES" };
+  const LANGUAGE_SWITCH_TITLE = {
+    en: "Switch to English",
+    zh: "切换到中文",
+    es: "Cambiar a español",
+  };
+  const languageButtonLabel = LANGUAGE_BUTTON_LABEL[nextLanguage];
+  const languageSwitchTitle = LANGUAGE_SWITCH_TITLE[nextLanguage];
+  // 取某个字段的当前语言版本：中文/西班牙语模式下优先用 xxxZh / xxxEs 字段，没填就自动退回英文原文，
+  // 不会因为漏填翻译就显示空白。
   const tField = (obj, key) => {
     if (!obj) return "";
-    if (isZh) return obj[`${key}Zh`] || obj[key] || "";
+    if (contentLangSuffix) return obj[`${key}${contentLangSuffix}`] || obj[key] || "";
     return obj[key] || "";
   };
-  // 编辑模式下，根据当前语言决定这次改动要写回哪个字段（英文原文字段，还是对应的xxxZh字段）
-  const langKey = (key) => (isZh ? `${key}Zh` : key);
+  // 编辑模式下，根据当前语言决定这次改动要写回哪个字段（英文原文字段，还是对应的 xxxZh / xxxEs 字段）
+  const langKey = (key) => (contentLangSuffix ? `${key}${contentLangSuffix}` : key);
 
   // ---------- 手机端适配 ----------
   // 屏幕比较窄的时候（大致对应手机/竖屏平板），切换成"顶部栏 + 抽屉式菜单"的移动版布局，
@@ -614,19 +630,19 @@ export default function Portfolio() {
   };
 
   // 编辑系列名称：把这个系列下所有作品的名称一起改掉。分组用的"系列key"永远认英文名，
-  // 中文模式下改的只是 seriesZh（展示用），不会影响分组；英文模式下改的是真正的 series
-  // 字段，这种情况下手风琴的展开状态也要跟着把 key 换一下，不然会意外收起来。
+  // 中文/西班牙语模式下改的只是 seriesZh / seriesEs（展示用），不会影响分组；英文模式下改的是
+  // 真正的 series 字段，这种情况下手风琴的展开状态也要跟着把 key 换一下，不然会意外收起来。
   const updateSeriesName = (year, oldSeriesName, rawValue) => {
     const newName = rawValue.trim();
     if (!newName) return;
-    const fieldKey = isZh ? "seriesZh" : "series";
+    const fieldKey = contentLangSuffix ? `series${contentLangSuffix}` : "series";
     updateData((prev) => ({
       ...prev,
       works: prev.works.map((w) =>
         w.year === year && w.series === oldSeriesName ? { ...w, [fieldKey]: newName } : w
       ),
     }));
-    if (!isZh && newName !== oldSeriesName) {
+    if (!contentLangSuffix && newName !== oldSeriesName) {
       setExpandedSeries((prev) => {
         const oldKey = `${year}::${oldSeriesName}`;
         if (!(oldKey in prev)) return prev;
@@ -1014,10 +1030,10 @@ export default function Portfolio() {
           )}
           <button
             onClick={toggleLanguage}
-            title={isZh ? "Switch to English" : "切换到中文"}
+            title={languageSwitchTitle}
             className="text-xs font-bold px-3 py-1.5 rounded-full bg-neutral-100 text-neutral-600 hover:bg-neutral-200 transition-colors"
           >
-            {isZh ? "EN" : "中"}
+            {languageButtonLabel}
           </button>
         </div>
       )}
@@ -1386,15 +1402,15 @@ export default function Portfolio() {
                   : "'IBM Plex Sans', -apple-system, Arial, 'PingFang SC', sans-serif",
               }}
             >
-              {isZh ? "索引" : "Index"}
+              {isZh ? "索引" : isEs ? "Índice" : "Index"}
             </span>
             <div className="flex items-center gap-6">
               <button
                 onClick={toggleLanguage}
-                title={isZh ? "Switch to English" : "切换到中文"}
+                title={languageSwitchTitle}
                 className="text-xs font-bold px-2.5 py-1 rounded-full bg-neutral-100 text-neutral-600"
               >
-                {isZh ? "EN" : "中"}
+                {languageButtonLabel}
               </button>
               <button
                 onClick={() => setMobileMenuOpen(false)}
@@ -1425,8 +1441,8 @@ export default function Portfolio() {
               {selectedWork && (
                 <button
                   onClick={goBackToGallery}
-                  aria-label={isZh ? "返回" : "Back"}
-                  title={isZh ? "返回" : "Back"}
+                  aria-label={isZh ? "返回" : isEs ? "Atrás" : "Back"}
+                  title={isZh ? "返回" : isEs ? "Atrás" : "Back"}
                   className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center bg-neutral-900 text-white hover:bg-neutral-700 transition-colors"
                 >
                   <svg
@@ -1527,8 +1543,8 @@ export default function Portfolio() {
                     // entry.type === "series"：可折叠的系列分组
                     const seriesKey = `${group.year}::${entry.series}`;
                     const isOpen = !!expandedSeries[seriesKey];
-                    const displaySeriesName = isZh
-                      ? entry.works[0]?.seriesZh || entry.series
+                    const displaySeriesName = contentLangSuffix
+                      ? entry.works[0]?.[`series${contentLangSuffix}`] || entry.series
                       : entry.series;
                     const { isDragOver: headerIsDragOver, ...headerDragProps } =
                       makeEntryDragHandlers(group.year, entryIndex);
@@ -1907,6 +1923,7 @@ export default function Portfolio() {
             onGoToWork={goToWork}
             navDirection={navDirection}
             isZh={isZh}
+            isEs={isEs}
             onBack={goBackToGallery}
           />
         )}
@@ -2228,6 +2245,7 @@ function DetailView({
   onGoToWork,
   navDirection,
   isZh,
+  isEs,
   onBack,
 }) {
   const slideAnimation =
@@ -2376,7 +2394,7 @@ function DetailView({
           >
             <polyline points="15 6 9 12 15 18" />
           </svg>
-          {isZh ? "上一个" : "Previous"}
+          {isZh ? "上一个" : isEs ? "Anterior" : "Previous"}
         </button>
         <button
           onClick={() => nextWork && onGoToWork(nextWork.id, "next")}
@@ -2385,7 +2403,7 @@ function DetailView({
             nextWork ? "text-neutral-900" : "text-neutral-300 cursor-not-allowed"
           }`}
         >
-          {isZh ? "下一个" : "Next"}
+          {isZh ? "下一个" : isEs ? "Siguiente" : "Next"}
           <svg
             viewBox="0 0 24 24"
             width="14"

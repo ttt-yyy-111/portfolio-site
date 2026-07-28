@@ -9,27 +9,30 @@
  *     进入可视化编辑模式，点哪改哪，改完点导出内容，
  *     下载到的 content.js 直接替换掉这个文件就行
  *
- *  ---- 中英文切换 ----
- *  网站右上角（手机上是顶部栏）有个中英文切换按钮，默认显示英文。
- *  想让某段文字也有中文版本，就在对应字段后面加一个 "Zh" 结尾的新字段：
- *    title      → titleZh
- *    materials  → materialsZh（材料）
- *    dimensions → dimensionsZh（尺寸）
- *    series     → seriesZh（系列作品的名称，比如 "Good Medicine Tastes Bitter"）
- *    info       → infoZh
- *  没写 xxxZh 的内容，切到中文的时候会自动显示英文原文，不会空白。
+ *  ---- 中文 / 西班牙语切换 ----
+ *  网站右上角（手机上是菜单页里）有个语言切换按钮，循环切换 英文 → 中文 → 西班牙语。
+ *  想让某段文字也有对应语言的版本，就在对应字段后面加一个 "Zh"（中文）或 "Es"（西班牙语）
+ *  结尾的新字段：
+ *    title      → titleZh / titleEs
+ *    materials  → materialsZh / materialsEs（材料）
+ *    dimensions → dimensionsZh / dimensionsEs（尺寸）
+ *    series     → seriesZh / seriesEs（系列作品的名称，比如 "Good Medicine Tastes Bitter"）
+ *    info       → infoZh / infoEs
+ *  没写 xxxZh / xxxEs 的内容，切到对应语言的时候会自动显示英文原文，不会空白。
  *  姓名（YU TIANTIAN）、年份、日期、Information/Email/Instagram 这几项
- *  中英文下显示的是同一份内容，没有做区分。
- *  ---- 电脑端 / 手机端、中文 / 英文，字体样式一共四份独立设置 ----
- *  编辑模式下，右上角"电脑预览 / 手机预览"切换正在编辑哪个设备，"中 / EN"切换正在编辑哪个语言，
+ *  三种语言下显示的是同一份内容，没有做区分。
+ *  ---- 电脑端 / 手机端、中文 / 英文，字体样式一共四份独立设置（西班牙语固定沿用英文那份）----
+ *  编辑模式下，右上角"电脑预览 / 手机预览"切换正在编辑哪个设备，语言按钮切换正在编辑哪个语言，
  *  两个开关组合起来一共对应四份完全独立的字体样式：
- *    typography          电脑端 · 英文（默认基准）
+ *    typography          电脑端 · 英文（默认基准，西班牙语模式下显示效果也是用这份）
  *    typographyZh        电脑端 · 中文
- *    typographyMobile    手机端 · 英文
+ *    typographyMobile    手机端 · 英文（西班牙语模式下显示效果也是用这份）
  *    typographyMobileZh  手机端 · 中文
+ *  西班牙语没有独立的字体样式——设计上就是让西班牙语内容直接沿用英文的字号/字体/行距，
+ *  编辑的时候只需要专心填西班牙语的文字内容，不用再单独调一遍样式。
  *  这四份字号/字体/行距这些可以分别单独调，互不影响；某一份如果还没单独调过，
  *  会先顶替显示同设备的英文版本，不会因为"还没配置"就突然掉回完全不一样的默认样式。
- *  文字和图片内容（标题、材料、尺寸、图片本身）不受这个影响，四种组合永远是同一份内容。
+ *  文字和图片内容（标题、材料、尺寸、图片本身）不受这个影响，三种语言永远是同一份内容。
  * ============================================================
  */
 export const DEFAULT_TYPOGRAPHY = {
@@ -64,6 +67,7 @@ export const DEFAULT_DATA = {
   typographyMobile: DEFAULT_TYPOGRAPHY_MOBILE,
   info: "点击这里编辑你的艺术家简介、创作理念、经历或展览履历。",
   infoZh: "点击这里编辑你的艺术家简介、创作理念、经历或展览履历（中文版）。",
+  infoEs: "Haz clic aquí para editar tu biografía de artista, filosofía creativa, trayectoria o exposiciones.",
   imageGap: 16, // 右侧栏图片之间的间距（px），画廊网格和详情页大图都用这个值
   contact: {
     email: "847187284tina@gmail.com",
@@ -75,11 +79,14 @@ export const DEFAULT_DATA = {
       year: 2026,
       title: "Growth Marks",
       titleZh: "生长的痕迹",
+      titleEs: "Marcas de Crecimiento",
       date: "Tue Jul 19 2022",
       materials: "Acrylic and collage on canvas",
       materialsZh: "布面丙烯拼贴",
+      materialsEs: "Acrílico y collage sobre lienzo",
       dimensions: "120 x 90 cm",
       dimensionsZh: "120 x 90 厘米",
+      dimensionsEs: "120 x 90 cm",
       cover: "https://picsum.photos/seed/growth-marks/700/900",
       images: ["https://picsum.photos/seed/growth-marks-1/1200/1500"],
       tone: "#4a4a4a",
