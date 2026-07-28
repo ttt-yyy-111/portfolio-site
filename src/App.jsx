@@ -289,38 +289,50 @@ export default function Portfolio() {
 
   // ---------- 语言切换：英文 / 中文 / 西班牙语 ----------
   // 默认英文；记住访客上次选择的语言（存在浏览器本地，下次打开这个网站还是他选过的语言）
-  const LANGUAGE_CYCLE = ["en", "zh", "es"];
+  const LANGUAGE_OPTIONS = [
+    { code: "en", label: "EN", name: "English" },
+    { code: "zh", label: "中", name: "中文" },
+    { code: "es", label: "ES", name: "Español" },
+  ];
   const [language, setLanguage] = useState(() => {
     if (typeof window === "undefined") return "en";
     const saved = window.localStorage.getItem("portfolio-language");
-    return LANGUAGE_CYCLE.includes(saved) ? saved : "en";
+    return LANGUAGE_OPTIONS.some((l) => l.code === saved) ? saved : "en";
   });
   const isZh = language === "zh";
   const isEs = language === "es";
   // 内容字段（标题、材料、尺寸、简介、系列名称）用的语言后缀：中文是 Zh，西班牙语是 Es，英文没有后缀
   const contentLangSuffix = isZh ? "Zh" : isEs ? "Es" : "";
-  const toggleLanguage = () => {
-    setLanguage((prev) => {
-      const idx = LANGUAGE_CYCLE.indexOf(prev);
-      const next = LANGUAGE_CYCLE[(idx + 1) % LANGUAGE_CYCLE.length];
-      try {
-        window.localStorage.setItem("portfolio-language", next);
-      } catch (err) {
-        // 隐私模式等场景下 localStorage 可能不可用，静默忽略即可，不影响本次切换
+  // 点击语言按钮弹出的下拉菜单是否展开
+  const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
+  const languageMenuRef = useRef(null);
+  // 点击下拉菜单以外的地方（语言按钮本身除外）自动关闭菜单，跟"Aa 文字样式"面板是同一套逻辑
+  useEffect(() => {
+    if (!languageMenuOpen) return undefined;
+    const onPointerDown = (e) => {
+      if (e.target.closest("[data-language-toggle]")) return;
+      if (languageMenuRef.current && !languageMenuRef.current.contains(e.target)) {
+        setLanguageMenuOpen(false);
       }
-      return next;
-    });
+    };
+    document.addEventListener("mousedown", onPointerDown);
+    document.addEventListener("touchstart", onPointerDown);
+    return () => {
+      document.removeEventListener("mousedown", onPointerDown);
+      document.removeEventListener("touchstart", onPointerDown);
+    };
+  }, [languageMenuOpen]);
+  const selectLanguage = (code) => {
+    setLanguage(code);
+    setLanguageMenuOpen(false);
+    try {
+      window.localStorage.setItem("portfolio-language", code);
+    } catch (err) {
+      // 隐私模式等场景下 localStorage 可能不可用，静默忽略即可，不影响本次切换
+    }
   };
-  // 语言按钮上显示的文字/提示：按下去会切换到的下一个语言
-  const nextLanguage = LANGUAGE_CYCLE[(LANGUAGE_CYCLE.indexOf(language) + 1) % LANGUAGE_CYCLE.length];
-  const LANGUAGE_BUTTON_LABEL = { en: "EN", zh: "中", es: "ES" };
-  const LANGUAGE_SWITCH_TITLE = {
-    en: "Switch to English",
-    zh: "切换到中文",
-    es: "Cambiar a español",
-  };
-  const languageButtonLabel = LANGUAGE_BUTTON_LABEL[nextLanguage];
-  const languageSwitchTitle = LANGUAGE_SWITCH_TITLE[nextLanguage];
+  // 语言按钮上显示的是当前语言（不是切换后的语言）
+  const languageButtonLabel = LANGUAGE_OPTIONS.find((l) => l.code === language)?.label || "EN";
   // 取某个字段的当前语言版本：中文/西班牙语模式下优先用 xxxZh / xxxEs 字段，没填就自动退回英文原文，
   // 不会因为漏填翻译就显示空白。
   const tField = (obj, key) => {
@@ -1028,13 +1040,35 @@ export default function Portfolio() {
               {editMode ? "完成编辑" : "编辑页面"}
             </button>
           )}
-          <button
-            onClick={toggleLanguage}
-            title={languageSwitchTitle}
-            className="text-xs font-bold px-3 py-1.5 rounded-full bg-neutral-100 text-neutral-600 hover:bg-neutral-200 transition-colors"
-          >
-            {languageButtonLabel}
-          </button>
+          <div className="relative">
+            <button
+              onClick={() => setLanguageMenuOpen((v) => !v)}
+              data-language-toggle="true"
+              className="text-xs font-bold px-3 py-1.5 rounded-full bg-neutral-100 text-neutral-600 hover:bg-neutral-200 transition-colors"
+            >
+              {languageButtonLabel}
+            </button>
+            {languageMenuOpen && (
+              <div
+                ref={languageMenuRef}
+                className="absolute top-9 right-0 z-30 bg-white border border-neutral-200 rounded-lg shadow-lg py-1 w-28"
+              >
+                {LANGUAGE_OPTIONS.map((opt) => (
+                  <button
+                    key={opt.code}
+                    onClick={() => selectLanguage(opt.code)}
+                    className={`w-full text-left text-xs px-3 py-1.5 transition-colors ${
+                      opt.code === language
+                        ? "font-bold text-neutral-900 bg-neutral-100"
+                        : "text-neutral-600 hover:bg-neutral-50"
+                    }`}
+                  >
+                    {opt.name}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
       )}
 
@@ -1405,13 +1439,35 @@ export default function Portfolio() {
               {isZh ? "索引" : isEs ? "Índice" : "Index"}
             </span>
             <div className="flex items-center gap-6">
-              <button
-                onClick={toggleLanguage}
-                title={languageSwitchTitle}
-                className="text-xs font-bold px-2.5 py-1 rounded-full bg-neutral-100 text-neutral-600"
-              >
-                {languageButtonLabel}
-              </button>
+              <div className="relative">
+                <button
+                  onClick={() => setLanguageMenuOpen((v) => !v)}
+                  data-language-toggle="true"
+                  className="text-xs font-bold px-2.5 py-1 rounded-full bg-neutral-100 text-neutral-600"
+                >
+                  {languageButtonLabel}
+                </button>
+                {languageMenuOpen && (
+                  <div
+                    ref={languageMenuRef}
+                    className="absolute top-9 right-0 z-30 bg-white border border-neutral-200 rounded-lg shadow-lg py-1 w-32"
+                  >
+                    {LANGUAGE_OPTIONS.map((opt) => (
+                      <button
+                        key={opt.code}
+                        onClick={() => selectLanguage(opt.code)}
+                        className={`w-full text-left text-sm px-3 py-2 transition-colors ${
+                          opt.code === language
+                            ? "font-bold text-neutral-900 bg-neutral-100"
+                            : "text-neutral-600 hover:bg-neutral-50"
+                        }`}
+                      >
+                        {opt.name}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
               <button
                 onClick={() => setMobileMenuOpen(false)}
                 aria-label="关闭菜单"
