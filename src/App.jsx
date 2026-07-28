@@ -385,6 +385,7 @@ export default function Portfolio() {
   // （带 data-measure-line 标记）的 scrollWidth，再加上它相对左边缘的偏移量，
   // 这样不管中间隔了多少层 overflow:hidden 都不受影响。
   const sidebarHeaderRef = useRef(null); // 姓名 + 返回图标那一块，固定在顶部不滚动
+  const isDraggingSidebarRef = useRef(false); // 正在手动拖拽调整左栏宽度的时候，暂停自动重新测量，避免两边打架闪烁
   const sidebarContentRef = useRef(null);
   const sidebarFooterRef = useRef(null);
   const mainRef = useRef(null);
@@ -537,7 +538,9 @@ export default function Portfolio() {
     const footerEl = sidebarFooterRef.current;
     if (!contentEl) return;
 
-    const ro = new ResizeObserver(() => recalcSidebarWidth());
+    const ro = new ResizeObserver(() => {
+      if (!isDraggingSidebarRef.current) recalcSidebarWidth();
+    });
     if (headerEl) ro.observe(headerEl);
     ro.observe(contentEl);
     if (footerEl) ro.observe(footerEl);
@@ -1925,6 +1928,7 @@ export default function Portfolio() {
         <div
           onMouseDown={(e) => {
             e.preventDefault();
+            isDraggingSidebarRef.current = true;
             const startX = e.clientX;
             const startWidth = sidebarWidth;
             const onMouseMove = (moveEvent) => {
@@ -1944,6 +1948,10 @@ export default function Portfolio() {
                 Math.min(max, Math.max(SIDEBAR_MIN_WIDTH, startWidth + delta))
               );
               updateData((prev) => ({ ...prev, sidebarWidthOverride: finalWidth }));
+              // 数据更新之后再解除拖拽标记，避免中间那一帧 ResizeObserver 抢先重新算了一次导致跳动
+              requestAnimationFrame(() => {
+                isDraggingSidebarRef.current = false;
+              });
             };
             window.addEventListener("mousemove", onMouseMove);
             window.addEventListener("mouseup", onMouseUp);
