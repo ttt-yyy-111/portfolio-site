@@ -25,7 +25,7 @@
  *    materials  → materialsZh / materialsEs（材料）
  *    dimensions → dimensionsZh / dimensionsEs（尺寸）
  *    series     → seriesZh / seriesEs（系列作品的名称，比如 "Good Medicine Tastes Bitter"）
- *    info       → infoZh / infoEs
+ *    Information 页每一段的 title / body → titleZh/titleEs、bodyZh/bodyEs（在 infoSections 数组里）
  *  没写 xxxZh / xxxEs 的内容，切到对应语言的时候会自动显示英文原文，不会空白。
  *  姓名（YU TIANTIAN）、年份、日期、Information/Email/Instagram 这几项
  *  三种语言下显示的是同一份内容，没有做区分。
@@ -50,7 +50,8 @@ export const DEFAULT_TYPOGRAPHY = {
   detailTitle: { fontSize: 28, lineHeight: 1.2, fontFamily: "ibm-plex-sans", fontWeight: 700, italic: false, letterSpacing: 0, fontWidth: 100 },
   detailMaterials: { fontSize: 16, lineHeight: 1.6, fontFamily: "ibm-plex-sans", fontWeight: 500, italic: false, letterSpacing: 0, fontWidth: 100 },
   detailDimensions: { fontSize: 16, lineHeight: 1.6, fontFamily: "ibm-plex-sans", fontWeight: 500, italic: false, letterSpacing: 0, fontWidth: 100 },
-  detailDescription: { fontSize: 19, lineHeight: 1.6, fontFamily: "ibm-plex-sans", fontWeight: 500, italic: false, letterSpacing: 0, fontWidth: 100 },
+  infoTitle: { fontSize: 18, lineHeight: 1.3, fontFamily: "ibm-plex-sans", fontWeight: 700, italic: false, letterSpacing: 0, fontWidth: 100 },
+  infoBody: { fontSize: 16, lineHeight: 1.7, fontFamily: "ibm-plex-sans", fontWeight: 400, italic: false, letterSpacing: 0, fontWidth: 100 },
   indexNav: { fontSize: 18, lineHeight: 1.3, fontFamily: "ibm-plex-sans", fontWeight: 700, italic: false, letterSpacing: 0, fontWidth: 100 },
   footerLinks: { fontSize: 12, lineHeight: 1.5, fontFamily: "ibm-plex-sans", fontWeight: 400, italic: false, letterSpacing: 0, fontWidth: 100 },
 };
@@ -64,7 +65,8 @@ export const DEFAULT_TYPOGRAPHY_MOBILE = {
   detailTitle: { fontSize: 28, lineHeight: 1.2, fontFamily: "ibm-plex-sans", fontWeight: 700, italic: false, letterSpacing: 0, fontWidth: 100 },
   detailMaterials: { fontSize: 16, lineHeight: 1.6, fontFamily: "ibm-plex-sans", fontWeight: 500, italic: false, letterSpacing: 0, fontWidth: 100 },
   detailDimensions: { fontSize: 16, lineHeight: 1.6, fontFamily: "ibm-plex-sans", fontWeight: 500, italic: false, letterSpacing: 0, fontWidth: 100 },
-  detailDescription: { fontSize: 19, lineHeight: 1.6, fontFamily: "ibm-plex-sans", fontWeight: 500, italic: false, letterSpacing: 0, fontWidth: 100 },
+  infoTitle: { fontSize: 18, lineHeight: 1.3, fontFamily: "ibm-plex-sans", fontWeight: 700, italic: false, letterSpacing: 0, fontWidth: 100 },
+  infoBody: { fontSize: 16, lineHeight: 1.7, fontFamily: "ibm-plex-sans", fontWeight: 400, italic: false, letterSpacing: 0, fontWidth: 100 },
   indexNav: { fontSize: 18, lineHeight: 1.3, fontFamily: "ibm-plex-sans", fontWeight: 700, italic: false, letterSpacing: 0, fontWidth: 100 },
   footerLinks: { fontSize: 12, lineHeight: 1.5, fontFamily: "ibm-plex-sans", fontWeight: 400, italic: false, letterSpacing: 0, fontWidth: 100 },
 };
@@ -73,9 +75,31 @@ export const DEFAULT_DATA = {
   artistName: "YU TIANTIAN",
   typography: DEFAULT_TYPOGRAPHY,
   typographyMobile: DEFAULT_TYPOGRAPHY_MOBILE,
-  info: "点击这里编辑你的艺术家简介、创作理念、经历或展览履历。",
-  infoZh: "点击这里编辑你的艺术家简介、创作理念、经历或展览履历（中文版）。",
-  infoEs: "Haz clic aquí para editar tu biografía de artista, filosofía creativa, trayectoria o exposiciones.",
+  // Information 页由一段一段组成，每段有自己的标题（title）和详细内容（body），
+  // body 还可以选择 columns: 1（一栏）或 columns: 2（两栏），互相独立。
+  // 想加新段落，直接在编辑模式里点"+ 添加段落"就行，也支持中文/西班牙语（titleZh/bodyZh、titleEs/bodyEs）
+  infoSections: [
+    {
+      id: "bio",
+      title: "Biography",
+      titleZh: "简介",
+      titleEs: "Biografía",
+      body: "点击这里编辑你的艺术家简介、创作理念、经历。",
+      bodyZh: "点击这里编辑你的艺术家简介、创作理念、经历（中文版）。",
+      bodyEs: "Haz clic aquí para editar tu biografía, filosofía creativa y trayectoria.",
+      columns: 1,
+    },
+    {
+      id: "exhibitions",
+      title: "Exhibitions",
+      titleZh: "展览履历",
+      titleEs: "Exposiciones",
+      body: "点击这里编辑你的展览履历，比如：\n2026  个展《XXX》，某某美术馆\n2025  群展《XXX》，某某画廊",
+      bodyZh: "点击这里编辑你的展览履历（中文版）。",
+      bodyEs: "Haz clic aquí para editar tu trayectoria de exposiciones.",
+      columns: 2,
+    },
+  ],
   imageGap: 16, // 右侧栏图片之间的间距（px），画廊网格和详情页大图都用这个值
   contact: {
     email: "847187284tina@gmail.com",

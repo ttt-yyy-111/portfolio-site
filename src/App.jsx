@@ -178,7 +178,8 @@ const TYPOGRAPHY_TARGETS = [
   { key: "detailTitle", label: "详情页标题" },
   { key: "detailMaterials", label: "详情页材料" },
   { key: "detailDimensions", label: "详情页尺寸 / 年份" },
-  { key: "detailDescription", label: "Information 页正文" },
+  { key: "infoTitle", label: "Information 页段落标题" },
+  { key: "infoBody", label: "Information 页详细内容" },
   { key: "footerLinks", label: "Information / Email / Instagram" },
 ];
 
@@ -904,6 +905,32 @@ export default function Portfolio() {
     }));
   };
 
+  // Information 页段落：每段有自己的标题+详细内容，详细内容可以选一栏或两栏显示
+  const addInfoSection = () => {
+    const newSection = {
+      id: uid(),
+      title: "新段落标题",
+      body: "点击这里填写详细内容。",
+      columns: 1,
+    };
+    updateData((prev) => ({
+      ...prev,
+      infoSections: [...(prev.infoSections || []), newSection],
+    }));
+  };
+  const updateInfoSection = (id, patch) => {
+    updateData((prev) => ({
+      ...prev,
+      infoSections: (prev.infoSections || []).map((s) => (s.id === id ? { ...s, ...patch } : s)),
+    }));
+  };
+  const deleteInfoSection = (id) => {
+    updateData((prev) => ({
+      ...prev,
+      infoSections: (prev.infoSections || []).filter((s) => s.id !== id),
+    }));
+  };
+
   const yearGroups = useMemo(() => {
     if (!data) return [];
     const years = [...new Set(data.works.map((w) => w.year))].sort(
@@ -958,7 +985,8 @@ export default function Portfolio() {
   const detailTitleStyle = styleFor("detailTitle");
   const detailMaterialsStyle = styleFor("detailMaterials");
   const detailDimensionsStyle = styleFor("detailDimensions");
-  const infoDescriptionStyle = styleFor("detailDescription");
+  const infoTitleStyle = styleFor("infoTitle");
+  const infoBodyStyle = styleFor("infoBody");
   const footerLinksStyle = styleFor("footerLinks");
 
   const activeTypoValue = typography[activeTypoTarget] || DEFAULT_TYPOGRAPHY[activeTypoTarget];
@@ -1931,11 +1959,16 @@ export default function Portfolio() {
       >
         {showInfo ? (
           <InfoView
-            info={tField(data, "info")}
+            sections={data.infoSections || []}
             editMode={editMode}
-            titleStyle={detailTitleStyle}
-            descriptionStyle={infoDescriptionStyle}
-            onChangeInfo={(v) => updateData((prev) => ({ ...prev, [langKey("info")]: v }))}
+            pageTitleStyle={detailTitleStyle}
+            titleStyle={infoTitleStyle}
+            bodyStyle={infoBodyStyle}
+            tField={tField}
+            langKey={langKey}
+            onUpdateSection={updateInfoSection}
+            onAddSection={addInfoSection}
+            onDeleteSection={deleteInfoSection}
             isMobile={isMobile}
           />
         ) : !selectedWork ? (
@@ -2281,20 +2314,80 @@ function GalleryImage({ w, editMode, onSelect, onReplaceCover }) {
 }
 
 // 艺术家信息页：点击左下角 "Information" 进入
-function InfoView({ info, editMode, titleStyle, descriptionStyle, onChangeInfo, isMobile }) {
+function InfoView({
+  sections,
+  editMode,
+  pageTitleStyle,
+  titleStyle,
+  bodyStyle,
+  tField,
+  langKey,
+  onUpdateSection,
+  onAddSection,
+  onDeleteSection,
+  isMobile,
+}) {
   return (
     <div className="px-4 md:px-10 pb-10 max-w-3xl" style={{ paddingTop: isMobile ? 24 : 40 }}>
-      <h2 className="mb-6" style={titleStyle}>
+      <h2 className="mb-8" style={pageTitleStyle}>
         Information
       </h2>
-      <Editable
-        as="p"
-        value={info}
-        editMode={editMode}
-        onChange={onChangeInfo}
-        className="font-medium text-neutral-900 whitespace-pre-line block"
-        style={descriptionStyle}
-      />
+
+      {sections.length === 0 && !editMode && (
+        <p className="text-neutral-400 text-sm">还没有添加任何内容。</p>
+      )}
+
+      <div className="space-y-10">
+        {sections.map((section) => (
+          <div key={section.id} className="group relative">
+            {editMode && (
+              <div className="flex items-center gap-3 mb-2">
+                <button
+                  onClick={() =>
+                    onUpdateSection(section.id, { columns: section.columns === 2 ? 1 : 2 })
+                  }
+                  className="text-[11px] font-bold px-2.5 py-1 rounded-full bg-neutral-100 text-neutral-500 hover:bg-neutral-200 transition-colors"
+                >
+                  {section.columns === 2 ? "两栏显示" : "一栏显示"}
+                </button>
+                <button
+                  onClick={() => onDeleteSection(section.id)}
+                  className="text-[11px] font-bold px-2.5 py-1 rounded-full bg-neutral-100 text-neutral-400 hover:bg-red-50 hover:text-red-500 transition-colors"
+                >
+                  删除这个段落
+                </button>
+              </div>
+            )}
+            <Editable
+              as="h3"
+              value={tField(section, "title")}
+              editMode={editMode}
+              onChange={(v) => onUpdateSection(section.id, { [langKey("title")]: v })}
+              className="mb-3 block"
+              style={titleStyle}
+            />
+            <Editable
+              as="p"
+              value={tField(section, "body")}
+              editMode={editMode}
+              onChange={(v) => onUpdateSection(section.id, { [langKey("body")]: v })}
+              className={`font-medium text-neutral-900 whitespace-pre-line block ${
+                section.columns === 2 ? "sm:columns-2 sm:gap-x-8" : ""
+              }`}
+              style={bodyStyle}
+            />
+          </div>
+        ))}
+      </div>
+
+      {editMode && (
+        <button
+          onClick={onAddSection}
+          className="mt-10 text-xs font-bold px-3 py-1.5 rounded-full bg-neutral-100 text-neutral-500 hover:bg-neutral-200 transition-colors"
+        >
+          + 添加段落
+        </button>
+      )}
     </div>
   );
 }
