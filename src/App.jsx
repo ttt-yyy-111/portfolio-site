@@ -884,6 +884,20 @@ export default function Portfolio() {
     }));
   };
 
+  // 详情页图片两两一行的时候，拖拽中间的分隔线调整这一行两张图片的宽度比例，
+  // rowIndex 是第几行（从 0 开始），ratio 是第一张图占这一行的宽度比例（0~1）
+  const updateImageRatio = (workId, rowIndex, ratio) => {
+    updateData((prev) => ({
+      ...prev,
+      works: prev.works.map((w) => {
+        if (w.id !== workId) return w;
+        const imageRatios = [...(w.imageRatios || [])];
+        imageRatios[rowIndex] = ratio;
+        return { ...w, imageRatios };
+      }),
+    }));
+  };
+
   const yearGroups = useMemo(() => {
     if (!data) return [];
     const years = [...new Set(data.works.map((w) => w.year))].sort(
@@ -1973,6 +1987,7 @@ export default function Portfolio() {
             onAddImage={(file) => addDetailImage(selectedWork.id, file)}
             onReplaceImage={(i, file) => replaceDetailImage(selectedWork.id, i, file)}
             onRemoveImage={(i) => removeDetailImage(selectedWork.id, i)}
+            onChangeImageRatio={(rowIndex, ratio) => updateImageRatio(selectedWork.id, rowIndex, ratio)}
             isMobile={isMobile}
             prevWork={detailPrevWork}
             nextWork={detailNextWork}
@@ -2295,6 +2310,7 @@ function DetailView({
   onAddImage,
   onReplaceImage,
   onRemoveImage,
+  onChangeImageRatio,
   isMobile,
   prevWork,
   nextWork,
@@ -2397,33 +2413,59 @@ function DetailView({
           />
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2" style={{ gap: imageGap }}>
-          {work.images.map((src, i) => (
-            <DetailImage
-              key={i}
-              src={src}
-              alt={`${work.title} ${i + 1}`}
-              editMode={editMode}
-              onReplaceImage={(file) => onReplaceImage(i, file)}
-              onRemoveImage={() => onRemoveImage(i)}
-              onOpen={isMobile ? undefined : () => setLightboxIndex(i)}
-            />
-          ))}
-
-          {editMode && (
-            <label className="flex items-center justify-center rounded-xl border-2 border-dashed border-neutral-300 text-neutral-400 hover:text-neutral-600 hover:border-neutral-400 cursor-pointer min-h-[200px] text-sm">
-              + 添加图片
-              <input
-                type="file"
-                accept="image/*"
-                className="hidden"
-                onChange={(e) => {
-                  if (e.target.files?.[0]) onAddImage(e.target.files[0]);
-                }}
+        {isMobile ? (
+          <div className="grid grid-cols-1" style={{ gap: imageGap }}>
+            {work.images.map((src, i) => (
+              <DetailImage
+                key={i}
+                src={src}
+                alt={`${work.title} ${i + 1}`}
+                editMode={editMode}
+                onReplaceImage={(file) => onReplaceImage(i, file)}
+                onRemoveImage={() => onRemoveImage(i)}
+                onOpen={undefined}
               />
-            </label>
-          )}
-        </div>
+            ))}
+          </div>
+        ) : (
+          <div className="flex flex-col" style={{ gap: imageGap }}>
+            {/* 电脑端：两张图片一行，同一行高度对齐，中间的分隔线可以拖拽调整两张图的宽度比例，
+                每一行的比例是各自独立存起来的（work.imageRatios，按行号索引） */}
+            {Array.from({ length: Math.ceil(work.images.length / 2) }).map((_, rowIndex) => {
+              const startIndex = rowIndex * 2;
+              const rowImages = work.images.slice(startIndex, startIndex + 2);
+              return (
+                <DetailImageRow
+                  key={rowIndex}
+                  images={rowImages}
+                  startIndex={startIndex}
+                  workTitle={work.title}
+                  ratio={work.imageRatios?.[rowIndex]}
+                  onChangeRatio={(ratio) => onChangeImageRatio(rowIndex, ratio)}
+                  editMode={editMode}
+                  imageGap={imageGap}
+                  onReplaceImage={onReplaceImage}
+                  onRemoveImage={onRemoveImage}
+                  onOpen={(i) => setLightboxIndex(i)}
+                />
+              );
+            })}
+          </div>
+        )}
+
+        {editMode && (
+          <label className="flex items-center justify-center rounded-xl border-2 border-dashed border-neutral-300 text-neutral-400 hover:text-neutral-600 hover:border-neutral-400 cursor-pointer h-16 text-sm mt-4">
+            + 添加图片
+            <input
+              type="file"
+              accept="image/*"
+              className="hidden"
+              onChange={(e) => {
+                if (e.target.files?.[0]) onAddImage(e.target.files[0]);
+              }}
+            />
+          </label>
+        )}
       </div>
 
       {/* 底部 Previous / Next：始终固定在可视区域底部（sticky），白底，第一/最后一件时对应按钮变灰不可点 */}
@@ -2488,12 +2530,113 @@ function DetailView({
   );
 }
 
-function DetailImage({ src, alt, editMode, onReplaceImage, onRemoveImage, onOpen }) {
-  const { ref, style } = useRevealAnimation();
+// 电脑端详情页：两张图片一行，同行高度对齐，中间的分隔线可以左右拖拽调整两张图各占的宽度比例。
+// 用固定的行高（按容器宽度用 aspect-ratio 自动换算，宽度不同高度也会跟着等比例缩放，不是写死的像素值）
+// 加上 object-cover 裁切来让两张不同比例的图片始终填满各自分到的宽度、保持同样高度。
+function DetailImageRow({
+  images,
+  startIndex,
+  workTitle,
+  ratio,
+  onChangeRatio,
+  editMode,
+  imageGap,
+  onReplaceImage,
+  onRemoveImage,
+  onOpen,
+}) {
+  const containerRef = useRef(null);
+  const [dragging, setDragging] = useState(false);
+  const effectiveRatio = typeof ratio === "number" ? ratio : 0.5;
+
+  // 只有一张图（图片总数是单数，最后落单的那一张）：单独占满一整行，保持原来的自然高宽比
+  if (images.length === 1) {
+    return (
+      <DetailImage
+        src={images[0]}
+        alt={`${workTitle} ${startIndex + 1}`}
+        editMode={editMode}
+        onReplaceImage={(file) => onReplaceImage(startIndex, file)}
+        onRemoveImage={() => onRemoveImage(startIndex)}
+        onOpen={() => onOpen(startIndex)}
+      />
+    );
+  }
+
+  const handleMouseDown = (e) => {
+    e.preventDefault();
+    const container = containerRef.current;
+    if (!container) return;
+    setDragging(true);
+    const onMouseMove = (moveEvent) => {
+      const rect = container.getBoundingClientRect();
+      let next = (moveEvent.clientX - rect.left) / rect.width;
+      next = Math.min(0.85, Math.max(0.15, next));
+      onChangeRatio(next);
+    };
+    const onMouseUp = () => {
+      setDragging(false);
+      window.removeEventListener("mousemove", onMouseMove);
+      window.removeEventListener("mouseup", onMouseUp);
+    };
+    window.addEventListener("mousemove", onMouseMove);
+    window.addEventListener("mouseup", onMouseUp);
+  };
+
+  const handleWidth = Math.max(imageGap, 8);
+
+  return (
+    <div
+      ref={containerRef}
+      className="flex w-full"
+      style={{ aspectRatio: 2.2 }}
+    >
+      <DetailImage
+        src={images[0]}
+        alt={`${workTitle} ${startIndex + 1}`}
+        editMode={editMode}
+        onReplaceImage={(file) => onReplaceImage(startIndex, file)}
+        onRemoveImage={() => onRemoveImage(startIndex)}
+        onOpen={() => onOpen(startIndex)}
+        fillHeight
+        style={{ width: `calc(${effectiveRatio * 100}% - ${handleWidth / 2}px)` }}
+      />
+      {editMode ? (
+        <div
+          onMouseDown={handleMouseDown}
+          title="拖拽调整这一行两张图片的宽度比例"
+          className="flex-shrink-0 cursor-col-resize flex items-center justify-center"
+          style={{ width: handleWidth }}
+        >
+          <div
+            className={`w-1 h-10 rounded-full transition-colors ${
+              dragging ? "bg-neutral-900" : "bg-neutral-300 hover:bg-neutral-500"
+            }`}
+          />
+        </div>
+      ) : (
+        <div className="flex-shrink-0" style={{ width: handleWidth }} />
+      )}
+      <DetailImage
+        src={images[1]}
+        alt={`${workTitle} ${startIndex + 2}`}
+        editMode={editMode}
+        onReplaceImage={(file) => onReplaceImage(startIndex + 1, file)}
+        onRemoveImage={() => onRemoveImage(startIndex + 1)}
+        onOpen={() => onOpen(startIndex + 1)}
+        fillHeight
+        style={{ width: `calc(${(1 - effectiveRatio) * 100}% - ${handleWidth / 2}px)` }}
+      />
+    </div>
+  );
+}
+
+function DetailImage({ src, alt, editMode, onReplaceImage, onRemoveImage, onOpen, fillHeight, style }) {
+  const { ref, style: revealStyle } = useRevealAnimation();
   return (
     <div
       ref={ref}
-      style={style}
+      style={{ ...revealStyle, ...style, flexShrink: fillHeight ? 0 : undefined }}
       onClick={() => !editMode && onOpen && onOpen()}
       className={`relative rounded-xl overflow-hidden bg-neutral-100 group ${
         editMode ? "" : "cursor-zoom-in"
@@ -2505,7 +2648,11 @@ function DetailImage({ src, alt, editMode, onReplaceImage, onRemoveImage, onOpen
         draggable={false}
         onContextMenu={(e) => !editMode && e.preventDefault()}
         onDragStart={(e) => e.preventDefault()}
-        className="w-full h-auto object-cover select-none pointer-events-none"
+        className={
+          fillHeight
+            ? "w-full h-full object-cover select-none pointer-events-none"
+            : "w-full h-auto object-cover select-none pointer-events-none"
+        }
         style={{ WebkitTouchCallout: "none" }}
       />
       {editMode && (
