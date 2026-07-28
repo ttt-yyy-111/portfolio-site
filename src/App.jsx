@@ -1543,8 +1543,8 @@ export default function Portfolio() {
 
         {/* 姓名 + 返回图标：单独固定在顶部，不随下面的年份/作品列表滚动 */}
         {!isMobile && (
-          <div ref={sidebarHeaderRef} className="flex-shrink-0 px-6 pr-8 pt-8">
-            <div className="w-full flex items-center justify-between mb-8">
+          <div ref={sidebarHeaderRef} className="flex-shrink-0 px-6 pt-8">
+            <div className="w-full flex items-center justify-between mb-8 -mr-6">
               <Editable
                 as="h1"
                 editMode={editMode}
