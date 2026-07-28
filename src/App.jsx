@@ -969,12 +969,25 @@ export default function Portfolio() {
     const t = typography[targetKey] || DEFAULT_TYPOGRAPHY[targetKey];
     const preset = fontOptions.find((f) => f.id === t.fontFamily) || fontOptions[0];
 
-    // 中文模式下，不管字体样式面板里具体选的是哪一款字体，只要它属于 Sans Serif 大类，
-    // 标点符号和英文字符就统一固定用 IBM Plex Sans（英文）+ 思源黑体（标点、以及选中字体
-    // 本身没有的中文字形），保证不同西文字体切换的时候，中文部分的观感始终一致；
-    // 如果属于 Serif 大类，只固定标点符号用思源宋体，英文还是用选中那款字体本身的西文字形。
+    // 中文模式下的字体覆盖规则：
+    // ——如果选中的字体本身就是中文/日文字体（思源黑体/思源黑體/源ノ角ゴシック/
+    //    思源宋体/思源宋體/源ノ明朝），完全尊重这个选择，不做任何覆盖。
+    // ——如果选中的是没有中文字形的纯西文字体（IBM Plex Sans、DM Sans、
+    //    Bricolage Grotesque、Space Grotesk 这些），才按大类做统一替换：
+    //    属于 Sans Serif 大类的话，标点符号和英文字符统一固定用
+    //    IBM Plex Sans（英文）+ 思源黑体（标点），保证换着西文字体看的时候中文部分
+    //    观感始终一致；属于 Serif 大类的话，只固定标点符号用思源宋体，
+    //    英文还是用选中那款字体本身的西文字形。
+    const CJK_FONT_IDS = [
+      "source-han-sans-sc",
+      "source-han-sans-tc",
+      "source-han-sans-jp",
+      "source-han-serif-sc",
+      "source-han-serif-tc",
+      "source-han-serif-jp",
+    ];
     let fontFamily = preset.family;
-    if (isZh) {
+    if (isZh && !CJK_FONT_IDS.includes(preset.id)) {
       if (preset.category === "sans-serif") {
         fontFamily = "'IBM Plex Sans', 'Noto Sans SC', -apple-system, Arial, sans-serif";
       } else if (preset.category === "serif") {
