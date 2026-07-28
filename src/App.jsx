@@ -2672,8 +2672,7 @@ function DetailView({
           />
         </div>
 
-        {/* 材料 / 尺寸 / 年份：三个各自独立可编辑、独立调整字号字体行距的文字块。
-            两端对齐（最后一行自动变回左对齐，这是 text-align: justify 的标准行为），
+        {/* 材料 / 尺寸 / 年份：三个各自独立可编辑、独立调整字号字体行距的文字块，左对齐，
             不设置 max-width，宽度跟下面的图片网格对齐到同一个边缘。 */}
         <div className="mb-10">
           <Editable
@@ -2682,7 +2681,7 @@ function DetailView({
             editMode={editMode}
             onChange={(v) => onUpdate({ [langKey("materials")]: v })}
             className="text-neutral-900 block mb-6"
-            style={{ ...materialsStyle, textAlign: "justify", overflowWrap: "break-word" }}
+            style={{ ...materialsStyle, overflowWrap: "break-word" }}
           />
           <Editable
             as="p"
@@ -2690,7 +2689,7 @@ function DetailView({
             editMode={editMode}
             onChange={(v) => onUpdate({ [langKey("dimensions")]: v })}
             className="text-neutral-900 block mb-2"
-            style={{ ...dimensionsStyle, textAlign: "justify", overflowWrap: "break-word" }}
+            style={{ ...dimensionsStyle, overflowWrap: "break-word" }}
           />
           <Editable
             as="p"
@@ -2701,7 +2700,7 @@ function DetailView({
               if (Number.isInteger(parsed) && v.trim() !== "") onUpdate({ year: parsed });
             }}
             className="text-neutral-900 block"
-            style={{ ...yearStyle, textAlign: "justify", overflowWrap: "break-word" }}
+            style={{ ...yearStyle, overflowWrap: "break-word" }}
           />
         </div>
 
