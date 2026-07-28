@@ -1,0 +1,48 @@
+/**
+ * ============================================================
+ *  思源黑体 / 思源黑體 —— 本地字体文件（可变字体，Variable Font）
+ *  文件放在 public/fonts/ 下，跟 Google Fonts 那些不一样，是直接打包进网站的。
+ *
+ *  这里声明了三个"字体"：
+ *  1. Source Han Sans SC Full —— 完整的思源黑体（简体），覆盖全部字符
+ *  2. Source Han Sans TC Full —— 完整的思源黑體（繁体），覆盖全部字符
+ *  3. Source Han Sans SC Punctuation —— 同一份简体字体文件，但用 unicode-range
+ *     限定只在"中文标点符号"这一小段范围内生效（浏览器只会在这个范围内的字符
+ *     找不到更靠前字体的字形时，才会用到这个"迷你字体"）
+ *
+ *  中文模式下选择思源黑体/思源黑體时，App.jsx 里会把这三个按顺序拼成一个字体栈：
+ *    IBM Plex Sans → Source Han Sans SC Punctuation → Source Han Sans SC/TC Full
+ *  实现"标点固定用思源黑体的字形、英文固定用 IBM Plex Sans、汉字本身按实际选择显示"。
+ * ============================================================
+ */
+
+@font-face {
+  font-family: "Source Han Sans SC Full";
+  src: url("/fonts/SourceHanSansSC-VF.woff2") format("woff2-variations"),
+    url("/fonts/SourceHanSansSC-VF.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Source Han Sans TC Full";
+  src: url("/fonts/SourceHanSansTC-VF.woff2") format("woff2-variations"),
+    url("/fonts/SourceHanSansTC-VF.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 中文标点符号 + 中文/全角符号常用范围：句号、逗号、顿号、引号书名号、括号、省略号、
+   连接号、间隔号，以及全角数字/字母/标点（U+FF00-FFEF）这些 */
+@font-face {
+  font-family: "Source Han Sans SC Punctuation";
+  src: url("/fonts/SourceHanSansSC-VF.woff2") format("woff2-variations"),
+    url("/fonts/SourceHanSansSC-VF.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+3000-303F, U+FF00-FFEF, U+2018-201F, U+2026, U+2013-2014,
+    U+3008-3011, U+300C-300F, U+FE30-FE4F;
+}
