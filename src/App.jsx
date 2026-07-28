@@ -1504,7 +1504,7 @@ export default function Portfolio() {
                 <button
                   onClick={() => setLanguageMenuOpen((v) => !v)}
                   data-language-toggle="true"
-                  className="text-xs font-bold px-2.5 py-1 rounded-full bg-neutral-100 text-neutral-600"
+                  className="text-sm font-bold px-3.5 py-2 rounded-full bg-neutral-100 text-neutral-600"
                 >
                   {languageButtonLabel}
                 </button>
