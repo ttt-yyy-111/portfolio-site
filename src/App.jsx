@@ -1543,7 +1543,7 @@ export default function Portfolio() {
 
         {/* 姓名 + 返回图标：单独固定在顶部，不随下面的年份/作品列表滚动 */}
         {!isMobile && (
-          <div ref={sidebarHeaderRef} className="flex-shrink-0 px-6 pt-8">
+          <div ref={sidebarHeaderRef} className="flex-shrink-0 px-6 pr-8 pt-8">
             <div className="w-full flex items-center justify-between mb-8">
               <Editable
                 as="h1"
@@ -1612,8 +1612,8 @@ export default function Portfolio() {
                     </span>
                     <svg
                       viewBox="0 0 24 24"
-                      width="12"
-                      height="12"
+                      width={Math.round((parseFloat(yearStyle.fontSize) || 20) * 0.7)}
+                      height={Math.round((parseFloat(yearStyle.fontSize) || 20) * 0.7)}
                       fill="none"
                       stroke="currentColor"
                       strokeWidth="3"
@@ -1689,8 +1689,8 @@ export default function Portfolio() {
                             <span className="absolute -left-3 inset-y-0 flex items-center" aria-hidden>
                               <svg
                                 viewBox="0 0 24 24"
-                                width="9"
-                                height="9"
+                                width={Math.round((parseFloat(workTitleStyle.fontSize) || 15) * 0.7)}
+                                height={Math.round((parseFloat(workTitleStyle.fontSize) || 15) * 0.7)}
                                 fill="none"
                                 stroke="currentColor"
                                 strokeWidth="3"
