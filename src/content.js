@@ -561,7 +561,7 @@ export const DEFAULT_DATA = {
     },
     "detailDimensions": {
       "fontSize": 20,
-      "lineHeight": 1.6,
+      "lineHeight": 1,
       "fontFamily": "ibm-plex-sans",
       "fontWeight": 500,
       "italic": false,
@@ -627,23 +627,23 @@ export const DEFAULT_DATA = {
     "workTitle": {
       "fontSize": 19,
       "lineHeight": 1.75,
-      "fontFamily": "ibm-plex-sans",
-      "fontWeight": 400,
-      "italic": true,
+      "fontFamily": "source-han-sans-tc",
+      "fontWeight": 500,
+      "italic": false,
       "letterSpacing": 0,
       "fontWidth": 100
     },
     "detailTitle": {
       "fontSize": 35,
       "lineHeight": 1.2,
-      "fontFamily": "ibm-plex-sans",
+      "fontFamily": "source-han-sans-tc",
       "fontWeight": 700,
       "italic": false,
       "letterSpacing": 3,
       "fontWidth": 100
     },
     "detailMaterials": {
-      "fontSize": 20,
+      "fontSize": 18,
       "lineHeight": 1.6,
       "fontFamily": "source-han-sans-tc",
       "fontWeight": 400,
@@ -652,7 +652,7 @@ export const DEFAULT_DATA = {
       "fontWidth": 100
     },
     "detailDimensions": {
-      "fontSize": 25,
+      "fontSize": 22,
       "lineHeight": 1,
       "fontFamily": "ibm-plex-sans",
       "fontWeight": 600,
