@@ -2650,7 +2650,7 @@ function DetailImage({ src, alt, editMode, onReplaceImage, onRemoveImage, onOpen
         onDragStart={(e) => e.preventDefault()}
         className={
           fillHeight
-            ? "w-full h-full object-cover select-none pointer-events-none"
+            ? "w-full h-full object-contain select-none pointer-events-none"
             : "w-full h-auto object-cover select-none pointer-events-none"
         }
         style={{ WebkitTouchCallout: "none" }}
