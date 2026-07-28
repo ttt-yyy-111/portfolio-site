@@ -838,37 +838,56 @@ export default function Portfolio() {
   };
 
   const addDetailImage = async (workId, file) => {
-    const dataUrl = await resizeImageToDataUrl(file);
+    const [displayUrl, fullUrl] = await Promise.all([
+      resizeImageToDataUrl(file, 1200, 0.82),
+      resizeImageToDataUrl(file, 2600, 0.9),
+    ]);
     updateData((prev) => ({
       ...prev,
       works: prev.works.map((w) =>
-        w.id === workId ? { ...w, images: [...w.images, dataUrl] } : w
+        w.id === workId
+          ? {
+              ...w,
+              images: [...w.images, displayUrl],
+              imagesFull: [...(w.imagesFull || w.images), fullUrl],
+            }
+          : w
       ),
     }));
   };
 
   const replaceCover = async (workId, file) => {
-    const dataUrl = await resizeImageToDataUrl(file);
+    const [displayUrl, fullUrl] = await Promise.all([
+      resizeImageToDataUrl(file, 1200, 0.82),
+      resizeImageToDataUrl(file, 2600, 0.9),
+    ]);
     updateData((prev) => ({
       ...prev,
       works: prev.works.map((w) => {
         if (w.id !== workId) return w;
         const images = w.images ? [...w.images] : [];
-        images[0] = dataUrl;
-        return { ...w, images, cover: dataUrl };
+        const imagesFull = w.imagesFull ? [...w.imagesFull] : [...images];
+        images[0] = displayUrl;
+        imagesFull[0] = fullUrl;
+        return { ...w, images, imagesFull, cover: displayUrl };
       }),
     }));
   };
 
   const replaceDetailImage = async (workId, index, file) => {
-    const dataUrl = await resizeImageToDataUrl(file);
+    const [displayUrl, fullUrl] = await Promise.all([
+      resizeImageToDataUrl(file, 1200, 0.82),
+      resizeImageToDataUrl(file, 2600, 0.9),
+    ]);
     updateData((prev) => ({
       ...prev,
       works: prev.works.map((w) => {
         if (w.id !== workId) return w;
         const images = [...w.images];
-        images[index] = dataUrl;
-        return { ...w, images };
+        const imagesFull = w.imagesFull ? [...w.imagesFull] : [...images];
+        images[index] = displayUrl;
+        imagesFull[index] = fullUrl;
+        return { ...w, images, imagesFull };
       }),
     }));
   };
@@ -879,7 +898,8 @@ export default function Portfolio() {
       works: prev.works.map((w) => {
         if (w.id !== workId) return w;
         const images = w.images.filter((_, i) => i !== index);
-        return { ...w, images };
+        const imagesFull = (w.imagesFull || w.images).filter((_, i) => i !== index);
+        return { ...w, images, imagesFull };
       }),
     }));
   };
@@ -2500,7 +2520,7 @@ function DetailView({
       </div>
       {lightboxIndex !== null && (
         <ImageLightbox
-          images={work.images}
+          images={work.imagesFull || work.images}
           index={lightboxIndex}
           alt={work.title}
           onClose={() => setLightboxIndex(null)}
@@ -2650,6 +2670,12 @@ function DetailImage({
 
 // 图片放大预览：比整个页面稍微小一点，左右箭头切换同一件作品下的图片，右上角关闭
 function ImageLightbox({ images, index, onClose, onPrev, onNext, alt }) {
+  const [zoom, setZoom] = useState(100);
+  // 换到另一张图片的时候，缩放比例重置回 100%
+  useEffect(() => {
+    setZoom(100);
+  }, [index]);
+
   useEffect(() => {
     const onKeyDown = (e) => {
       if (e.key === "Escape") onClose();
@@ -2665,19 +2691,47 @@ function ImageLightbox({ images, index, onClose, onPrev, onNext, alt }) {
 
   return (
     <div
-      className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-6 md:p-10"
+      className="fixed inset-0 z-50 bg-black/90 flex flex-col items-center justify-center"
       onClick={onClose}
     >
-      <img
-        src={images[index]}
-        alt={`${alt} ${index + 1}`}
-        draggable={false}
-        onContextMenu={(e) => e.preventDefault()}
-        onDragStart={(e) => e.preventDefault()}
+      <div className="flex-1 w-full min-h-0 flex items-center justify-center overflow-auto px-6 md:px-10 pt-6 md:pt-10 pb-2">
+        <img
+          src={images[index]}
+          alt={`${alt} ${index + 1}`}
+          draggable={false}
+          onContextMenu={(e) => e.preventDefault()}
+          onDragStart={(e) => e.preventDefault()}
+          onClick={(e) => e.stopPropagation()}
+          className="max-w-[88vw] max-h-[80vh] w-auto h-auto object-contain select-none rounded flex-shrink-0"
+          style={{
+            WebkitTouchCallout: "none",
+            transform: `scale(${zoom / 100})`,
+            transition: "transform 150ms ease-out",
+          }}
+        />
+      </div>
+
+      {/* 缩放滑块：底部居中，实时显示百分比，最大放大到 200% */}
+      <div
         onClick={(e) => e.stopPropagation()}
-        className="max-w-[88vw] max-h-[85vh] w-auto h-auto object-contain select-none rounded"
-        style={{ WebkitTouchCallout: "none" }}
-      />
+        className="flex-shrink-0 flex items-center gap-3 bg-white/10 rounded-full px-4 py-2 mb-4 md:mb-6"
+      >
+        <span className="text-white text-sm select-none" aria-hidden>
+          −
+        </span>
+        <input
+          type="range"
+          min={100}
+          max={200}
+          value={zoom}
+          onChange={(e) => setZoom(Number(e.target.value))}
+          className="w-40 md:w-56 accent-white"
+        />
+        <span className="text-white text-sm select-none" aria-hidden>
+          +
+        </span>
+        <span className="text-white text-xs font-bold w-11 text-center select-none">{zoom}%</span>
+      </div>
 
       {/* 关闭：右上角 */}
       <button
