@@ -2671,9 +2671,14 @@ function DetailImage({
 // 图片放大预览：比整个页面稍微小一点，左右箭头切换同一件作品下的图片，右上角关闭
 function ImageLightbox({ images, index, onClose, onPrev, onNext, alt }) {
   const [zoom, setZoom] = useState(100);
-  // 换到另一张图片的时候，缩放比例重置回 100%
+  const [pan, setPan] = useState({ x: 0, y: 0 });
+  const dragRef = useRef(null);
+  const isDraggingRef = useRef(false);
+
+  // 换到另一张图片的时候，缩放比例和拖拽位置都重置回初始状态
   useEffect(() => {
     setZoom(100);
+    setPan({ x: 0, y: 0 });
   }, [index]);
 
   useEffect(() => {
@@ -2686,15 +2691,61 @@ function ImageLightbox({ images, index, onClose, onPrev, onNext, alt }) {
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [onClose, onPrev, onNext]);
 
+  const applyZoom = (next) => {
+    const clamped = Math.round(Math.min(500, Math.max(100, next)));
+    setZoom(clamped);
+    if (clamped <= 100) setPan({ x: 0, y: 0 }); // 缩回 100% 及以下就没必要再偏移了，顺手复位
+  };
+
+  // 滚轮缩放：触控板双指捏合手势在浏览器里也是 wheel 事件，会带上 ctrlKey，
+  // 灵敏度跟普通鼠标滚轮不太一样，分开给一个系数；鼠标滚轮往上滑（deltaY 为负）放大，往下滑缩小。
+  const handleWheel = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    const sensitivity = e.ctrlKey ? 2.2 : 0.35;
+    applyZoom(zoom - e.deltaY * sensitivity);
+  };
+
+  // 放大超过 100% 之后，按住图片拖拽可以平移查看超出屏幕范围的部分
+  const handleImageMouseDown = (e) => {
+    if (zoom <= 100) return;
+    e.preventDefault();
+    e.stopPropagation();
+    isDraggingRef.current = true;
+    dragRef.current = { startX: e.clientX, startY: e.clientY, startPan: pan };
+    const onMouseMove = (moveEvent) => {
+      if (!dragRef.current) return;
+      const dx = moveEvent.clientX - dragRef.current.startX;
+      const dy = moveEvent.clientY - dragRef.current.startY;
+      setPan({ x: dragRef.current.startPan.x + dx, y: dragRef.current.startPan.y + dy });
+    };
+    const onMouseUp = () => {
+      dragRef.current = null;
+      // 稍微延迟一点点再允许点击事件生效，避免拖拽松手的那一下被当成"点击背景关闭"
+      setTimeout(() => {
+        isDraggingRef.current = false;
+      }, 0);
+      window.removeEventListener("mousemove", onMouseMove);
+      window.removeEventListener("mouseup", onMouseUp);
+    };
+    window.addEventListener("mousemove", onMouseMove);
+    window.addEventListener("mouseup", onMouseUp);
+  };
+
   const hasPrev = index > 0;
   const hasNext = index < images.length - 1;
 
   return (
     <div
       className="fixed inset-0 z-50 bg-black/90 flex flex-col items-center justify-center"
-      onClick={onClose}
+      onClick={() => {
+        if (!isDraggingRef.current) onClose();
+      }}
     >
-      <div className="flex-1 w-full min-h-0 flex items-center justify-center overflow-auto px-6 md:px-10 pt-6 md:pt-10 pb-2">
+      <div
+        className="flex-1 w-full min-h-0 flex items-center justify-center overflow-hidden px-6 md:px-10 pt-6 md:pt-10 pb-2"
+        onWheel={handleWheel}
+      >
         <img
           src={images[index]}
           alt={`${alt} ${index + 1}`}
@@ -2702,16 +2753,19 @@ function ImageLightbox({ images, index, onClose, onPrev, onNext, alt }) {
           onContextMenu={(e) => e.preventDefault()}
           onDragStart={(e) => e.preventDefault()}
           onClick={(e) => e.stopPropagation()}
-          className="max-w-[88vw] max-h-[80vh] w-auto h-auto object-contain select-none rounded flex-shrink-0"
+          onMouseDown={handleImageMouseDown}
+          className={`max-w-[88vw] max-h-[80vh] w-auto h-auto object-contain select-none rounded flex-shrink-0 ${
+            zoom > 100 ? "cursor-grab active:cursor-grabbing" : ""
+          }`}
           style={{
             WebkitTouchCallout: "none",
-            transform: `scale(${zoom / 100})`,
-            transition: "transform 150ms ease-out",
+            transform: `translate(${pan.x}px, ${pan.y}px) scale(${zoom / 100})`,
+            transition: dragRef.current ? "none" : "transform 150ms ease-out",
           }}
         />
       </div>
 
-      {/* 缩放滑块：底部居中，实时显示百分比，最大放大到 200% */}
+      {/* 缩放滑块：底部居中，实时显示百分比，最大放大到 500% */}
       <div
         onClick={(e) => e.stopPropagation()}
         className="flex-shrink-0 flex items-center gap-3 bg-white/10 rounded-full px-4 py-2 mb-4 md:mb-6"
@@ -2722,9 +2776,9 @@ function ImageLightbox({ images, index, onClose, onPrev, onNext, alt }) {
         <input
           type="range"
           min={100}
-          max={200}
+          max={500}
           value={zoom}
-          onChange={(e) => setZoom(Number(e.target.value))}
+          onChange={(e) => applyZoom(Number(e.target.value))}
           className="w-40 md:w-56 accent-white"
         />
         <span className="text-white text-sm select-none" aria-hidden>
