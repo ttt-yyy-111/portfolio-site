@@ -481,6 +481,10 @@ export default function Portfolio() {
     setNavDirection(null);
   };
   const goToInfo = () => {
+    // 如果现在正在画廊页，先记一下画廊滚动到哪了，方便Information页的"返回"按钮能回到这个位置
+    if (!selectedId && !showInfo && mainRef.current) {
+      galleryScrollRef.current = mainRef.current.scrollTop;
+    }
     setSelectedId(null);
     setShowInfo(true);
     setMobileMenuOpen(false);
@@ -1551,7 +1555,7 @@ export default function Portfolio() {
                 style={artistNameStyle}
                 data-measure-line="true"
               />
-              {selectedWork && (
+              {(selectedWork || showInfo) && (
                 <button
                   onClick={goBackToGallery}
                   aria-label={isZh ? "返回" : isEs ? "Atrás" : "Back"}
