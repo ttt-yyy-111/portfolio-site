@@ -972,6 +972,22 @@ export default function Portfolio() {
   const fontOptions = FONT_PRESETS;
 
   // 把某个元素的排版设置转成实际可用的内联 style
+  // 选中字体对应的语言标注：光靠"用哪个字体文件"选不出正确的简繁字形，
+  // 思源黑体/思源宋体这类字体的简繁差异是靠 OpenType 的"本地化替换"实现的，
+  // 必须同时在元素上标出 lang="zh-Hans"/"zh-Hant" 之类的语言，浏览器才会触发对应的替换。
+  const CJK_LANG_BY_FONT_ID = {
+    "source-han-sans-sc": "zh-Hans",
+    "source-han-sans-tc": "zh-Hant",
+    "source-han-sans-jp": "ja",
+    "source-han-serif-sc": "zh-Hans",
+    "source-han-serif-tc": "zh-Hant",
+    "source-han-serif-jp": "ja",
+  };
+  const langFor = (targetKey) => {
+    const t = typography[targetKey] || DEFAULT_TYPOGRAPHY[targetKey];
+    return isZh ? CJK_LANG_BY_FONT_ID[t.fontFamily] : undefined;
+  };
+
   const styleFor = (targetKey) => {
     const t = typography[targetKey] || DEFAULT_TYPOGRAPHY[targetKey];
     const preset = fontOptions.find((f) => f.id === t.fontFamily) || fontOptions[0];
@@ -1006,14 +1022,23 @@ export default function Portfolio() {
   };
 
   const artistNameStyle = styleFor("artistName");
+  const artistNameLang = langFor("artistName");
   const yearStyle = styleFor("year");
+  const yearLang = langFor("year");
   const workTitleStyle = styleFor("workTitle");
+  const workTitleLang = langFor("workTitle");
   const detailTitleStyle = styleFor("detailTitle");
+  const detailTitleLang = langFor("detailTitle");
   const detailMaterialsStyle = styleFor("detailMaterials");
+  const detailMaterialsLang = langFor("detailMaterials");
   const detailDimensionsStyle = styleFor("detailDimensions");
+  const detailDimensionsLang = langFor("detailDimensions");
   const infoTitleStyle = styleFor("infoTitle");
+  const infoTitleLang = langFor("infoTitle");
   const infoBodyStyle = styleFor("infoBody");
+  const infoBodyLang = langFor("infoBody");
   const footerLinksStyle = styleFor("footerLinks");
+  const footerLinksLang = langFor("footerLinks");
 
   const activeTypoValue = typography[activeTypoTarget] || DEFAULT_TYPOGRAPHY[activeTypoTarget];
   const activeTypoPreset =
@@ -1407,6 +1432,7 @@ export default function Portfolio() {
               onClick={goToGallery}
               className="font-bold tracking-tight whitespace-nowrap"
               style={artistNameStyle}
+              lang={artistNameLang}
             />
           </div>
           <div className="flex items-center gap-2">
@@ -1566,6 +1592,7 @@ export default function Portfolio() {
                 onClick={goToGallery}
                 className="tracking-tight inline-block whitespace-nowrap"
                 style={artistNameStyle}
+                lang={artistNameLang}
                 data-measure-line="true"
               />
               {(selectedWork || showInfo) && (
@@ -1610,7 +1637,7 @@ export default function Portfolio() {
                     onClick={() => !editMode && toggleYear(group.year)}
                     className="relative w-full flex items-center justify-between mb-2"
                   >
-                    <span style={yearStyle} data-measure-line="true">
+                    <span style={yearStyle} lang={yearLang} data-measure-line="true">
                       {editMode ? (
                         <Editable
                           as="span"
@@ -1646,6 +1673,7 @@ export default function Portfolio() {
                     onChange={(v) => updateYear(group.year, v)}
                     className="mb-2 whitespace-nowrap inline-block"
                     style={yearStyle}
+                    lang={yearLang}
                     data-measure-line="true"
                   />
                 )}
@@ -1662,6 +1690,7 @@ export default function Portfolio() {
                           selectedId={selectedId}
                           editMode={editMode}
                           bodyTextStyle={workTitleStyle}
+                          bodyTextLang={workTitleLang}
                           onSelect={() => goToWork(w.id)}
                           onChangeTitle={(v) => updateWork(w.id, { [langKey("title")]: v })}
                           onDelete={() => deleteWork(w.id)}
@@ -1697,6 +1726,7 @@ export default function Portfolio() {
                           <button
                             onClick={() => !editMode && toggleSeries(seriesKey)}
                             style={workTitleStyle}
+                            lang={workTitleLang}
                             className="relative flex-1 flex items-center text-left text-neutral-800"
                           >
                             <span className="absolute -left-3 inset-y-0 flex items-center" aria-hidden>
@@ -1745,6 +1775,7 @@ export default function Portfolio() {
                                 selectedId={selectedId}
                                 editMode={editMode}
                                 bodyTextStyle={workTitleStyle}
+                          bodyTextLang={workTitleLang}
                                 onSelect={() => goToWork(w.id)}
                                 onChangeTitle={(v) => updateWork(w.id, { [langKey("title")]: v })}
                                 onDelete={() => deleteWork(w.id)}
@@ -1870,6 +1901,7 @@ export default function Portfolio() {
             <div
               className="px-6 py-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-neutral-500"
               style={footerLinksStyle}
+              lang={footerLinksLang}
             >
               <button
                 onClick={() => !editMode && goToInfo()}
@@ -2062,7 +2094,9 @@ export default function Portfolio() {
             sections={data.infoSections || []}
             editMode={editMode}
             titleStyle={infoTitleStyle}
+            titleLang={infoTitleLang}
             bodyStyle={infoBodyStyle}
+            bodyLang={infoBodyLang}
             tField={tField}
             langKey={langKey}
             onUpdateSection={updateInfoSection}
@@ -2226,9 +2260,13 @@ export default function Portfolio() {
             langKey={langKey}
             editMode={editMode}
             titleStyle={detailTitleStyle}
+            titleLang={detailTitleLang}
             materialsStyle={detailMaterialsStyle}
+            materialsLang={detailMaterialsLang}
             dimensionsStyle={detailDimensionsStyle}
+            dimensionsLang={detailDimensionsLang}
             yearStyle={detailDimensionsStyle}
+            yearLang={detailDimensionsLang}
             imageGap={data.imageGap ?? 16}
             onUpdate={(patch) => updateWork(selectedWork.id, patch)}
             onAddImage={(file) => addDetailImage(selectedWork.id, file)}
@@ -2293,6 +2331,7 @@ function WorkListItem({
   selectedId,
   editMode,
   bodyTextStyle,
+  bodyTextLang,
   onSelect,
   onChangeTitle,
   onDelete,
@@ -2315,6 +2354,7 @@ function WorkListItem({
       <button
         onClick={() => !editMode && onSelect()}
         style={bodyTextStyle}
+        lang={bodyTextLang}
         data-measure-line="true"
         className={`text-left whitespace-nowrap ${
           selectedId === w.id
@@ -2526,7 +2566,9 @@ function InfoView({
   sections,
   editMode,
   titleStyle,
+  titleLang,
   bodyStyle,
+  bodyLang,
   tField,
   langKey,
   onUpdateSection,
@@ -2570,6 +2612,7 @@ function InfoView({
               onChange={(v) => onUpdateSection(section.id, { [langKey("title")]: v })}
               className="mb-3 block"
               style={{ ...titleStyle, overflowWrap: "break-word" }}
+              lang={titleLang}
             />
             <Editable
               as="p"
@@ -2580,6 +2623,7 @@ function InfoView({
                 !isMobile && section.columns === 2 ? "sm:columns-2 sm:gap-x-16" : ""
               }`}
               style={{ ...bodyStyle, overflowWrap: "break-word" }}
+              lang={bodyLang}
             />
           </div>
         ))}
@@ -2605,9 +2649,13 @@ function DetailView({
   langKey,
   editMode,
   titleStyle,
+  titleLang,
   materialsStyle,
+  materialsLang,
   dimensionsStyle,
+  dimensionsLang,
   yearStyle,
+  yearLang,
   imageGap = 16,
   onUpdate,
   onAddImage,
@@ -2679,6 +2727,7 @@ function DetailView({
             editMode={editMode}
             onChange={(v) => onUpdate({ [langKey("title")]: v })}
             style={{ ...titleStyle, overflowWrap: "break-word" }}
+            lang={titleLang}
           />
         </div>
 
@@ -2692,6 +2741,7 @@ function DetailView({
             onChange={(v) => onUpdate({ [langKey("materials")]: v })}
             className="text-neutral-900 block mb-6"
             style={{ ...materialsStyle, overflowWrap: "break-word" }}
+            lang={materialsLang}
           />
           <Editable
             as="p"
@@ -2700,6 +2750,7 @@ function DetailView({
             onChange={(v) => onUpdate({ [langKey("dimensions")]: v })}
             className="text-neutral-900 block mb-2"
             style={{ ...dimensionsStyle, overflowWrap: "break-word" }}
+            lang={dimensionsLang}
           />
           <Editable
             as="p"
@@ -2711,6 +2762,7 @@ function DetailView({
             }}
             className="text-neutral-900 block"
             style={{ ...yearStyle, overflowWrap: "break-word" }}
+            lang={yearLang}
           />
         </div>
 
