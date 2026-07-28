@@ -2559,7 +2559,7 @@ function InfoView({
               editMode={editMode}
               onChange={(v) => onUpdateSection(section.id, { [langKey("title")]: v })}
               className="mb-3 block"
-              style={titleStyle}
+              style={{ ...titleStyle, overflowWrap: "break-word" }}
             />
             <Editable
               as="p"
@@ -2569,7 +2569,7 @@ function InfoView({
               className={`font-medium text-neutral-900 whitespace-pre-line block ${
                 !isMobile && section.columns === 2 ? "sm:columns-2 sm:gap-x-16" : ""
               }`}
-              style={bodyStyle}
+              style={{ ...bodyStyle, overflowWrap: "break-word" }}
             />
           </div>
         ))}
@@ -2668,7 +2668,7 @@ function DetailView({
             value={displayTitle}
             editMode={editMode}
             onChange={(v) => onUpdate({ [langKey("title")]: v })}
-            style={titleStyle}
+            style={{ ...titleStyle, overflowWrap: "break-word" }}
           />
         </div>
 
@@ -2682,7 +2682,7 @@ function DetailView({
             editMode={editMode}
             onChange={(v) => onUpdate({ [langKey("materials")]: v })}
             className="text-neutral-900 block mb-6"
-            style={{ ...materialsStyle, textAlign: "justify" }}
+            style={{ ...materialsStyle, textAlign: "justify", overflowWrap: "break-word" }}
           />
           <Editable
             as="p"
@@ -2690,7 +2690,7 @@ function DetailView({
             editMode={editMode}
             onChange={(v) => onUpdate({ [langKey("dimensions")]: v })}
             className="text-neutral-900 block mb-2"
-            style={{ ...dimensionsStyle, textAlign: "justify" }}
+            style={{ ...dimensionsStyle, textAlign: "justify", overflowWrap: "break-word" }}
           />
           <Editable
             as="p"
@@ -2701,7 +2701,7 @@ function DetailView({
               if (Number.isInteger(parsed) && v.trim() !== "") onUpdate({ year: parsed });
             }}
             className="text-neutral-900 block"
-            style={{ ...yearStyle, textAlign: "justify" }}
+            style={{ ...yearStyle, textAlign: "justify", overflowWrap: "break-word" }}
           />
         </div>
 
