@@ -985,7 +985,7 @@ export const DEFAULT_DATA = {
     },
     "workTitle": {
       "fontSize": 18,
-      "lineHeight": 1.5,
+      "lineHeight": 1,
       "fontFamily": "source-han-sans-tc",
       "fontWeight": 600,
       "italic": false,
@@ -1077,7 +1077,7 @@ export const DEFAULT_DATA = {
     },
     "workTitle": {
       "fontSize": 19,
-      "lineHeight": 1.75,
+      "lineHeight": 1,
       "fontFamily": "source-han-sans-tc",
       "fontWeight": 500,
       "italic": false,
