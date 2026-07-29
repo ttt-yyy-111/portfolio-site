@@ -289,17 +289,13 @@ export default function Portfolio() {
   });
 
   // ---------- 语言切换：英文 / 中文 / 西班牙语 ----------
-  // 默认英文；记住访客上次选择的语言（存在浏览器本地，下次打开这个网站还是他选过的语言）
+  // 每次打开网站都固定显示英文，不记住上次关闭时选的是哪个语言
   const LANGUAGE_OPTIONS = [
     { code: "en", label: "EN", name: "English" },
     { code: "zh", label: "中", name: "中文" },
     { code: "es", label: "ES", name: "Español" },
   ];
-  const [language, setLanguage] = useState(() => {
-    if (typeof window === "undefined") return "en";
-    const saved = window.localStorage.getItem("portfolio-language");
-    return LANGUAGE_OPTIONS.some((l) => l.code === saved) ? saved : "en";
-  });
+  const [language, setLanguage] = useState("en");
   const isZh = language === "zh";
   const isEs = language === "es";
   // 内容字段（标题、材料、尺寸、简介、系列名称）用的语言后缀：中文是 Zh，西班牙语是 Es，英文没有后缀
@@ -326,11 +322,6 @@ export default function Portfolio() {
   const selectLanguage = (code) => {
     setLanguage(code);
     setLanguageMenuOpen(false);
-    try {
-      window.localStorage.setItem("portfolio-language", code);
-    } catch (err) {
-      // 隐私模式等场景下 localStorage 可能不可用，静默忽略即可，不影响本次切换
-    }
   };
   // 语言按钮上显示的是当前语言（不是切换后的语言）
   const languageButtonLabel = LANGUAGE_OPTIONS.find((l) => l.code === language)?.label || "EN";
@@ -2355,8 +2346,7 @@ function WorkListItem({
         onClick={() => !editMode && onSelect()}
         style={bodyTextStyle}
         lang={bodyTextLang}
-        data-measure-line="true"
-        className={`text-left whitespace-nowrap ${
+        className={`text-left min-w-0 flex-1 ${
           selectedId === w.id
             ? "text-neutral-900 underline underline-offset-2"
             : "text-neutral-800"
