@@ -782,7 +782,7 @@ export const DEFAULT_DATA = {
       "fontFamily": "source-han-sans-tc",
       "fontWeight": 700,
       "italic": false,
-      "letterSpacing": 3,
+      "letterSpacing": 0,
       "fontWidth": 100
     },
     "detailMaterials": {
