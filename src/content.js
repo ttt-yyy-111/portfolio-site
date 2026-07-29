@@ -198,7 +198,7 @@ export const DEFAULT_DATA = {
       "fontWidth": 100
     },
     "year": {
-      "fontSize": 26,
+      "fontSize": 30,
       "lineHeight": 1.3,
       "fontFamily": "ibm-plex-sans",
       "fontWeight": 700,
@@ -207,11 +207,11 @@ export const DEFAULT_DATA = {
       "fontWidth": 100
     },
     "workTitle": {
-      "fontSize": 19,
+      "fontSize": 20,
       "lineHeight": 1.75,
       "fontFamily": "ibm-plex-sans",
-      "fontWeight": 400,
-      "italic": true,
+      "fontWeight": 500,
+      "italic": false,
       "letterSpacing": 0,
       "fontWidth": 100
     },
