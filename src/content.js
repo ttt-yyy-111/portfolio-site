@@ -317,7 +317,7 @@ export const DEFAULT_DATA = {
       "id": "growth-marks",
       "year": 2026,
       "title": "Growth Marks",
-      "titleZh": "生长的痕迹",
+      "titleZh": "生长纹路",
       "titleEs": "Marcas de Crecimiento",
       "date": "Tue Jul 19 2022",
       "materials": "Acrylic and collage on canvas",
@@ -378,7 +378,9 @@ export const DEFAULT_DATA = {
       "images": [
         "https://picsum.photos/seed/wedding-1/1200/1500"
       ],
-      "tone": "#454545"
+      "tone": "#454545",
+      "titleZh": "草地婚礼",
+      "titleEs": "Una boda en el césped"
     },
     {
       "id": "swaying-softness",
@@ -449,7 +451,8 @@ export const DEFAULT_DATA = {
       "images": [
         "https://picsum.photos/seed/gmtb-3b/1400/1400"
       ],
-      "tone": "#3e3e3e"
+      "tone": "#3e3e3e",
+      "seriesEs": "La buena medicina tiene un sabor amargo"
     },
     {
       "id": "good-medicine-iv",
@@ -464,7 +467,8 @@ export const DEFAULT_DATA = {
       "images": [
         "https://picsum.photos/seed/gmtb-4b/1200/1500"
       ],
-      "tone": "#464646"
+      "tone": "#464646",
+      "seriesEs": "La buena medicina tiene un sabor amargo"
     },
     {
       "id": "good-medicine-v",
@@ -479,7 +483,8 @@ export const DEFAULT_DATA = {
       "images": [
         "https://picsum.photos/seed/gmtb-5b/1200/1450"
       ],
-      "tone": "#414141"
+      "tone": "#414141",
+      "seriesEs": "La buena medicina tiene un sabor amargo"
     },
     {
       "id": "good-medicine-vi",
@@ -494,7 +499,8 @@ export const DEFAULT_DATA = {
       "images": [
         "https://picsum.photos/seed/gmtb-6b/1400/1200"
       ],
-      "tone": "#494949"
+      "tone": "#494949",
+      "seriesEs": "La buena medicina tiene un sabor amargo"
     },
     {
       "id": "good-medicine-vii",
@@ -509,7 +515,134 @@ export const DEFAULT_DATA = {
       "images": [
         "https://picsum.photos/seed/gmtb-7b/1200/1500"
       ],
-      "tone": "#444444"
+      "tone": "#444444",
+      "seriesEs": "La buena medicina tiene un sabor amargo"
+    },
+    {
+      "id": "8vl1win0rroms61wpjp",
+      "year": 2026,
+      "title": "Afterparty",
+      "date": "Wed Jul 29 2026",
+      "description": "点击这里填写作品介绍。",
+      "cover": "https://picsum.photos/seed/qb02wkf9cdpms61wpjp/700/700",
+      "images": [],
+      "tone": "#454545",
+      "titleZh": "之后的派对",
+      "titleEs": "Fiesta posterior"
+    },
+    {
+      "id": "d6qd3xnatr6ms62107f",
+      "year": 2026,
+      "series": "Honesty is the Best Policy",
+      "title": "Honesty is the Best Policy I",
+      "date": "Wed Jul 29 2026",
+      "description": "点击这里填写作品介绍。",
+      "cover": "https://picsum.photos/seed/a3bi3sgt884ms62107g/700/700",
+      "images": [],
+      "tone": "#454545",
+      "seriesZh": "拾金不昧",
+      "titleZh": "拾金不昧 I",
+      "seriesEs": "La honestidad es la mejor política",
+      "titleEs": "La honestidad es la mejor política I"
+    },
+    {
+      "id": "trisflzkx2rms62107g",
+      "year": 2026,
+      "series": "Honesty is the Best Policy",
+      "title": "Honesty is the Best Policy II",
+      "date": "Wed Jul 29 2026",
+      "description": "点击这里填写作品介绍。",
+      "cover": "https://picsum.photos/seed/mz11ousm798ms62107g/700/700",
+      "images": [],
+      "tone": "#454545",
+      "seriesZh": "拾金不昧",
+      "titleZh": "拾金不昧 II",
+      "seriesEs": "La honestidad es la mejor política",
+      "titleEs": "La honestidad es la mejor política II"
+    },
+    {
+      "id": "1gz5x7d37nnims622tsk",
+      "year": 2026,
+      "series": "A Dead Letter",
+      "title": "A Dead Letter I",
+      "date": "Wed Jul 29 2026",
+      "description": "点击这里填写作品介绍。",
+      "cover": "https://picsum.photos/seed/e76wizc3miqms622tsk/700/700",
+      "images": [],
+      "tone": "#454545",
+      "seriesZh": "一纸空文",
+      "titleZh": "一纸空文 I",
+      "seriesEs": "Una letra muerta",
+      "titleEs": "Una letra muerta I"
+    },
+    {
+      "id": "7m2levc26rims622tsk",
+      "year": 2026,
+      "series": "A Dead Letter",
+      "title": "A Dead Letter II",
+      "date": "Wed Jul 29 2026",
+      "description": "点击这里填写作品介绍。",
+      "cover": "https://picsum.photos/seed/a3z08ccjgbdms622tsk/700/700",
+      "images": [],
+      "tone": "#454545",
+      "seriesZh": "一纸空文",
+      "titleZh": "一纸空文 II",
+      "seriesEs": "Una letra muerta",
+      "titleEs": "Una letra muerta II"
+    },
+    {
+      "id": "3k3wmco031lms623nha",
+      "year": 2026,
+      "title": "A Shadow Makes Two",
+      "date": "Wed Jul 29 2026",
+      "description": "点击这里填写作品介绍。",
+      "cover": "https://picsum.photos/seed/ql4ixmvu05pms623nha/700/700",
+      "images": [],
+      "tone": "#454545",
+      "titleZh": "对影成双",
+      "titleEs": "Una sombra hace dos"
+    },
+    {
+      "id": "awatfu6b4ms623zsj",
+      "year": 2026,
+      "series": "Shelter of One's Arm",
+      "title": "Shelter of One's Arm I",
+      "date": "Wed Jul 29 2026",
+      "description": "点击这里填写作品介绍。",
+      "cover": "https://picsum.photos/seed/g3wxzsquosms623zsj/700/700",
+      "images": [],
+      "tone": "#454545",
+      "seriesZh": "臂弯",
+      "titleZh": "臂弯 I",
+      "seriesEs": "Refugio del brazo",
+      "titleEs": "Refugio del brazo I"
+    },
+    {
+      "id": "5rh5uzb9bfms623zsj",
+      "year": 2026,
+      "series": "Shelter of One's Arm",
+      "title": "Shelter of One's Arm II",
+      "date": "Wed Jul 29 2026",
+      "description": "点击这里填写作品介绍。",
+      "cover": "https://picsum.photos/seed/4roo1qpk7lms623zsj/700/700",
+      "images": [],
+      "tone": "#454545",
+      "seriesZh": "臂弯",
+      "titleZh": "臂弯 II",
+      "seriesEs": "Refugio del brazo",
+      "titleEs": "Refugio del brazo II"
+    },
+    {
+      "id": "b3lhylins9mms6245qv",
+      "year": 2026,
+      "title": "A Cluster of Small Flowers",
+      "date": "Wed Jul 29 2026",
+      "description": "点击这里填写作品介绍。",
+      "cover": "https://picsum.photos/seed/mu1hp0hdj4dms6245qv/700/700",
+      "images": [],
+      "tone": "#454545",
+      "titleZh": "一簇小花",
+      "titleEs": "Un racimo de flores pequeñas"
     }
   ],
   "sidebarWidthOverride": 396,
@@ -536,7 +669,7 @@ export const DEFAULT_DATA = {
       "fontSize": 18,
       "lineHeight": 1.5,
       "fontFamily": "source-han-sans-tc",
-      "fontWeight": 500,
+      "fontWeight": 600,
       "italic": false,
       "letterSpacing": 0,
       "fontWidth": 100
@@ -547,7 +680,7 @@ export const DEFAULT_DATA = {
       "fontFamily": "source-han-sans-tc",
       "fontWeight": 700,
       "italic": false,
-      "letterSpacing": 3,
+      "letterSpacing": 1,
       "fontWidth": 100
     },
     "detailMaterials": {
@@ -560,10 +693,10 @@ export const DEFAULT_DATA = {
       "fontWidth": 100
     },
     "detailDimensions": {
-      "fontSize": 20,
+      "fontSize": 25,
       "lineHeight": 1,
       "fontFamily": "ibm-plex-sans",
-      "fontWeight": 500,
+      "fontWeight": 600,
       "italic": false,
       "letterSpacing": 0,
       "fontWidth": 100
