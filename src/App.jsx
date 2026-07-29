@@ -2305,13 +2305,13 @@ export default function Portfolio() {
 function AccordionContent({ isOpen, children }) {
   return (
     <div
-      className="grid transition-[grid-template-rows,opacity] duration-200 ease-in-out"
+      className="grid min-w-0 transition-[grid-template-rows,opacity] duration-200 ease-in-out"
       style={{
         gridTemplateRows: isOpen ? "1fr" : "0fr",
         opacity: isOpen ? 1 : 0,
       }}
     >
-      <div className="overflow-hidden min-h-0">{children}</div>
+      <div className="overflow-hidden min-h-0 min-w-0">{children}</div>
     </div>
   );
 }
