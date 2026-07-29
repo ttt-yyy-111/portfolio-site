@@ -395,7 +395,11 @@ export const DEFAULT_DATA = {
       "images": [],
       "tone": "#454545",
       "titleZh": "之后的派对",
-      "titleEs": "Fiesta posterior"
+      "titleEs": "Fiesta posterior",
+      "materials": "Pins, Buttons, Artificial Pearls, Glitter Sequins, Crystal Glass Beads, Iron Beads, Plastic Beads, Transparent UV Free Resin, Hot Glue Purchased from Taobao; Dry Grass, Branches, US Dollar Coins, Newspapers Gathered in Providence; Various Screws Collected in RISD Printmaking Class; Woodblock Purchased at A Japanese Art Supply Store",
+      "materialsEs": "Alfileres, botones, perlas artificiales, lentejuelas brillantes, cuentas de cristal, cuentas de hierro, cuentas de plástico, resina transparente sin rayos UV, pegamento caliente comprado en Taobao; Hierba seca, ramas, monedas de dólares estadounidenses y periódicos reunidos en Providence; Varios tornillos recopilados en la clase de grabado de RISD; Xilografía comprada en una tienda de artículos de arte japonesa.",
+      "materialsZh": "网购的大头针、按钉、仿珍珠、闪光片、水晶玻璃珠、铁珠、塑料珠、透明UV自由树脂、热熔胶，普罗维登斯捡拾的干草、树枝、美元硬币、报纸，RISD课程中收集的各式螺丝钉，日本购得的版画木板",
+      "dimensions": "22 × 16 cm"
     },
     {
       "id": "good-medicine-iii",
@@ -404,8 +408,8 @@ export const DEFAULT_DATA = {
       "seriesZh": "良药苦口",
       "title": "Good Medicine Tastes Bitter III",
       "date": "Mon Jan 12 2026",
-      "materials": "点击这里填写材料，比如 Oil on canvas",
-      "dimensions": "点击这里填写尺寸，比如 100 x 80 cm",
+      "materials": "Stainless Steel Plate, Miniature House",
+      "dimensions": "6.5 × 6.5 × 1.5 cm",
       "cover": "https://picsum.photos/seed/gmtb-3/700/700",
       "images": [
         "https://picsum.photos/seed/gmtb-3b/1400/1400"
@@ -413,7 +417,10 @@ export const DEFAULT_DATA = {
       "tone": "#3e3e3e",
       "seriesEs": "La buena medicina tiene un sabor amargo",
       "titleZh": "良药苦口 III",
-      "titleEs": "La buena medicina tiene un sabor amargo III"
+      "titleEs": "La buena medicina tiene un sabor amargo III",
+      "materialsZh": "不锈钢盘、微缩房子",
+      "materialsEs": "Placa de acero inoxidable, casa en miniatura.",
+      "dimensionsZh": "6.5 × 6.5 × 1.5 cm"
     },
     {
       "id": "good-medicine-iv",
