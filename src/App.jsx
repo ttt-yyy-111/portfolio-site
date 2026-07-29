@@ -711,6 +711,18 @@ export default function Portfolio() {
     if (selectedId === id) setSelectedId(null);
   };
 
+  // 删除整个系列：把这个系列下所有作品一起删掉
+  const deleteSeries = (year, seriesName) => {
+    const removedIds = data.works
+      .filter((w) => w.year === year && w.series === seriesName)
+      .map((w) => w.id);
+    updateData((prev) => ({
+      ...prev,
+      works: prev.works.filter((w) => !(w.year === year && w.series === seriesName)),
+    }));
+    if (removedIds.includes(selectedId)) setSelectedId(null);
+  };
+
   // 把某一年里的顶层条目（单个作品 或 整个系列分组）从 fromIndex 拖到 toIndex
   const reorderEntryLevel = (year, fromIndex, toIndex) => {
     updateData((prev) => {
@@ -1718,7 +1730,7 @@ export default function Portfolio() {
                             onClick={() => !editMode && toggleSeries(seriesKey)}
                             style={workTitleStyle}
                             lang={workTitleLang}
-                            className="relative flex-1 flex items-center text-left text-neutral-800"
+                            className="relative flex items-center min-w-0 text-left text-neutral-800"
                           >
                             <span className="absolute -left-3 inset-y-0 flex items-center" aria-hidden>
                               <svg
@@ -1745,12 +1757,21 @@ export default function Portfolio() {
                                 editMode={editMode}
                                 value={displaySeriesName}
                                 onChange={(v) => updateSeriesName(group.year, entry.series, v)}
-                                className="min-w-0 flex-1"
+                                className="min-w-0"
                               />
                             ) : (
-                              <span className="min-w-0 flex-1">{displaySeriesName}</span>
+                              <span className="min-w-0">{displaySeriesName}</span>
                             )}
                           </button>
+                          {editMode && (
+                            <button
+                              onClick={() => deleteSeries(group.year, entry.series)}
+                              className="opacity-0 group-hover:opacity-100 text-neutral-300 hover:text-red-500 text-xs transition-opacity shrink-0"
+                              title="删除整个系列"
+                            >
+                              ✕
+                            </button>
+                          )}
                         </div>
 
                         <AccordionContent isOpen={isOpen}>
@@ -2343,7 +2364,7 @@ function WorkListItem({
         onClick={() => !editMode && onSelect()}
         style={bodyTextStyle}
         lang={bodyTextLang}
-        className={`text-left min-w-0 flex-1 ${
+        className={`text-left min-w-0 ${
           selectedId === w.id
             ? "text-neutral-900 underline underline-offset-2"
             : "text-neutral-800"
@@ -2358,7 +2379,7 @@ function WorkListItem({
       {editMode && (
         <button
           onClick={onDelete}
-          className="ml-auto opacity-0 group-hover:opacity-100 text-neutral-300 hover:text-red-500 text-xs transition-opacity shrink-0"
+          className="opacity-0 group-hover:opacity-100 text-neutral-300 hover:text-red-500 text-xs transition-opacity shrink-0"
           title="删除这件作品"
         >
           ✕
