@@ -608,7 +608,7 @@ export default function Portfolio() {
     });
   };
 
-  const addWork = (year) => {
+  const addWork = (year, position = "top") => {
     const newWork = {
       id: uid(),
       year,
@@ -619,14 +619,27 @@ export default function Portfolio() {
       images: [],
       tone: "#454545",
     };
-    updateData((prev) => ({ ...prev, works: [...prev.works, newWork] }));
+    updateData((prev) => ({
+      ...prev,
+      works: position === "top" ? [newWork, ...prev.works] : [...prev.works, newWork],
+    }));
     goToWork(newWork.id);
   };
 
+  // 左侧栏年份/作品是按时间从新到旧、从上到下排列的：
+  // "添加新年份/新作品" 在列表最上方插入（比现有最新的年份还新一年）；
+  // "添加旧年份/旧作品" 在列表最下方插入（比现有最旧的年份还旧一年）。
+  // 右侧栏图片顺序跟着这个数组顺序走，新作品自然排在前面、旧作品排在后面。
   const addYear = () => {
     const existingYears = data.works.map((w) => w.year);
     const nextYear = existingYears.length > 0 ? Math.max(...existingYears) + 1 : new Date().getFullYear();
-    addWork(nextYear);
+    addWork(nextYear, "top");
+  };
+
+  const addOldYear = () => {
+    const existingYears = data.works.map((w) => w.year);
+    const prevYear = existingYears.length > 0 ? Math.min(...existingYears) - 1 : new Date().getFullYear();
+    addWork(prevYear, "bottom");
   };
 
   // 编辑年份：把这个年份分组下所有作品的 year 字段一起改成新的年份。
@@ -1881,12 +1894,14 @@ export default function Portfolio() {
           })}
 
           {editMode && (
-            <button
-              onClick={addYear}
-              className="text-xs text-neutral-400"
-            >
-              + 添加新年份 / 新作品
-            </button>
+            <div className="flex flex-col items-start gap-1">
+              <button onClick={addYear} className="text-xs text-neutral-400">
+                + 添加新年份 / 新作品
+              </button>
+              <button onClick={addOldYear} className="text-xs text-neutral-400">
+                + 添加旧年份 / 旧作品
+              </button>
+            </div>
           )}
         </div>
 
