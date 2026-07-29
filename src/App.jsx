@@ -1614,7 +1614,7 @@ export default function Portfolio() {
           <div
             ref={sidebarContentRef}
             className={`flex-1 min-h-0 overflow-y-auto overflow-x-hidden pb-6 ${
-              isMobile ? "px-4 pt-2" : "px-6 pt-0"
+              isMobile ? "px-4 pt-2" : "pl-6 pr-2 pt-0"
             }`}
           >
 
@@ -2069,7 +2069,7 @@ export default function Portfolio() {
           title="拖拽调整左栏宽度，双击恢复自动宽度"
           className="w-1 flex-shrink-0 cursor-col-resize bg-transparent hover:bg-neutral-300 active:bg-neutral-400 transition-colors relative z-10"
         >
-          <div className="absolute inset-y-0 -left-1 -right-1" />
+          <div className="absolute inset-y-0 left-0 -right-1" />
         </div>
       )}
 
