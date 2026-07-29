@@ -3,11 +3,11 @@
 export const DEFAULT_TYPOGRAPHY = {
   "artistName": {
     "fontSize": 40,
-    "lineHeight": 1.2,
+    "lineHeight": 1,
     "fontFamily": "ibm-plex-sans",
     "fontWeight": 700,
     "italic": false,
-    "letterSpacing": 0,
+    "letterSpacing": -1,
     "fontWidth": 100
   },
   "year": {
@@ -98,11 +98,11 @@ export const DEFAULT_DATA = {
   "typography": {
     "artistName": {
       "fontSize": 40,
-      "lineHeight": 1.2,
+      "lineHeight": 1,
       "fontFamily": "ibm-plex-sans",
       "fontWeight": 700,
       "italic": false,
-      "letterSpacing": 0,
+      "letterSpacing": -1,
       "fontWidth": 100
     },
     "year": {
@@ -301,7 +301,7 @@ export const DEFAULT_DATA = {
       "columns": 2
     }
   ],
-  "imageGap": 16,
+  "imageGap": 10,
   "contact": {
     "email": "847187284tina@gmail.com",
     "instagram": "https://www.instagram.com/yutiantiano.o/",
@@ -383,60 +383,16 @@ export const DEFAULT_DATA = {
       "titleEs": "Una boda en el césped"
     },
     {
-      "id": "swaying-softness",
-      "year": 2025,
-      "title": "Swaying Softness",
-      "date": "Tue Mar 15 2022",
-      "materials": "点击这里填写材料，比如 Oil on canvas",
-      "dimensions": "点击这里填写尺寸，比如 100 x 80 cm",
-      "cover": "https://picsum.photos/seed/swaying/700/850",
-      "images": [
-        "https://picsum.photos/seed/swaying-b/1200/1450"
-      ],
-      "tone": "#424242"
-    },
-    {
-      "id": "river",
-      "year": 2025,
-      "title": "River",
-      "date": "Sat May 21 2022",
-      "materials": "点击这里填写材料，比如 Oil on canvas",
-      "dimensions": "点击这里填写尺寸，比如 100 x 80 cm",
-      "cover": "https://picsum.photos/seed/river/700/900",
-      "images": [
-        "https://picsum.photos/seed/river-b/1200/1500"
-      ],
-      "tone": "#474747"
-    },
-    {
-      "id": "good-medicine-i",
-      "year": 2025,
-      "series": "Good Medicine Tastes Bitter",
-      "seriesZh": "良药苦口",
-      "title": "Good Medicine Tastes Bitter I",
-      "date": "Mon Feb 10 2022",
-      "materials": "点击这里填写材料，比如 Oil on canvas",
-      "dimensions": "点击这里填写尺寸，比如 100 x 80 cm",
-      "cover": "https://picsum.photos/seed/gmtb-1/700/800",
-      "images": [
-        "https://picsum.photos/seed/gmtb-1b/1200/1400"
-      ],
-      "tone": "#404040"
-    },
-    {
-      "id": "good-medicine-ii",
-      "year": 2025,
-      "series": "Good Medicine Tastes Bitter",
-      "seriesZh": "良药苦口",
-      "title": "Good Medicine Tastes Bitter II",
-      "date": "Wed Feb 26 2022",
-      "materials": "点击这里填写材料，比如 Oil on canvas",
-      "dimensions": "点击这里填写尺寸，比如 100 x 80 cm",
-      "cover": "https://picsum.photos/seed/gmtb-2/700/850",
-      "images": [
-        "https://picsum.photos/seed/gmtb-2b/1200/1450"
-      ],
-      "tone": "#434343"
+      "id": "8vl1win0rroms61wpjp",
+      "year": 2026,
+      "title": "Afterparty",
+      "date": "Wed Jul 29 2026",
+      "description": "点击这里填写作品介绍。",
+      "cover": "https://picsum.photos/seed/qb02wkf9cdpms61wpjp/700/700",
+      "images": [],
+      "tone": "#454545",
+      "titleZh": "之后的派对",
+      "titleEs": "Fiesta posterior"
     },
     {
       "id": "good-medicine-iii",
@@ -529,46 +485,16 @@ export const DEFAULT_DATA = {
       "titleEs": "La buena medicina tiene un sabor amargo VII"
     },
     {
-      "id": "8vl1win0rroms61wpjp",
+      "id": "b3lhylins9mms6245qv",
       "year": 2026,
-      "title": "Afterparty",
+      "title": "A Cluster of Small Flowers",
       "date": "Wed Jul 29 2026",
       "description": "点击这里填写作品介绍。",
-      "cover": "https://picsum.photos/seed/qb02wkf9cdpms61wpjp/700/700",
+      "cover": "https://picsum.photos/seed/mu1hp0hdj4dms6245qv/700/700",
       "images": [],
       "tone": "#454545",
-      "titleZh": "之后的派对",
-      "titleEs": "Fiesta posterior"
-    },
-    {
-      "id": "d6qd3xnatr6ms62107f",
-      "year": 2026,
-      "series": "Honesty is the Best Policy",
-      "title": "Honesty is the Best Policy I",
-      "date": "Wed Jul 29 2026",
-      "description": "点击这里填写作品介绍。",
-      "cover": "https://picsum.photos/seed/a3bi3sgt884ms62107g/700/700",
-      "images": [],
-      "tone": "#454545",
-      "seriesZh": "拾金不昧",
-      "titleZh": "拾金不昧 I",
-      "seriesEs": "La honestidad es la mejor política",
-      "titleEs": "La honestidad es la mejor política I"
-    },
-    {
-      "id": "trisflzkx2rms62107g",
-      "year": 2026,
-      "series": "Honesty is the Best Policy",
-      "title": "Honesty is the Best Policy II",
-      "date": "Wed Jul 29 2026",
-      "description": "点击这里填写作品介绍。",
-      "cover": "https://picsum.photos/seed/mz11ousm798ms62107g/700/700",
-      "images": [],
-      "tone": "#454545",
-      "seriesZh": "拾金不昧",
-      "titleZh": "拾金不昧 II",
-      "seriesEs": "La honestidad es la mejor política",
-      "titleEs": "La honestidad es la mejor política II"
+      "titleZh": "一簇小花",
+      "titleEs": "Un racimo de flores pequeñas"
     },
     {
       "id": "1gz5x7d37nnims622tsk",
@@ -599,6 +525,36 @@ export const DEFAULT_DATA = {
       "titleZh": "一纸空文 II",
       "seriesEs": "Una letra muerta",
       "titleEs": "Una letra muerta II"
+    },
+    {
+      "id": "d6qd3xnatr6ms62107f",
+      "year": 2026,
+      "series": "Honesty is the Best Policy",
+      "title": "Honesty is the Best Policy I",
+      "date": "Wed Jul 29 2026",
+      "description": "点击这里填写作品介绍。",
+      "cover": "https://picsum.photos/seed/a3bi3sgt884ms62107g/700/700",
+      "images": [],
+      "tone": "#454545",
+      "seriesZh": "拾金不昧",
+      "titleZh": "拾金不昧 I",
+      "seriesEs": "La honestidad es la mejor política",
+      "titleEs": "La honestidad es la mejor política I"
+    },
+    {
+      "id": "trisflzkx2rms62107g",
+      "year": 2026,
+      "series": "Honesty is the Best Policy",
+      "title": "Honesty is the Best Policy II",
+      "date": "Wed Jul 29 2026",
+      "description": "点击这里填写作品介绍。",
+      "cover": "https://picsum.photos/seed/mz11ousm798ms62107g/700/700",
+      "images": [],
+      "tone": "#454545",
+      "seriesZh": "拾金不昧",
+      "titleZh": "拾金不昧 II",
+      "seriesEs": "La honestidad es la mejor política",
+      "titleEs": "La honestidad es la mejor política II"
     },
     {
       "id": "3k3wmco031lms623nha",
@@ -641,21 +597,9 @@ export const DEFAULT_DATA = {
       "titleZh": "臂弯 II",
       "seriesEs": "Refugio del brazo",
       "titleEs": "Refugio del brazo II"
-    },
-    {
-      "id": "b3lhylins9mms6245qv",
-      "year": 2026,
-      "title": "A Cluster of Small Flowers",
-      "date": "Wed Jul 29 2026",
-      "description": "点击这里填写作品介绍。",
-      "cover": "https://picsum.photos/seed/mu1hp0hdj4dms6245qv/700/700",
-      "images": [],
-      "tone": "#454545",
-      "titleZh": "一簇小花",
-      "titleEs": "Un racimo de flores pequeñas"
     }
   ],
-  "sidebarWidthOverride": 419,
+  "sidebarWidthOverride": 414,
   "typographyZh": {
     "artistName": {
       "fontSize": 40,
