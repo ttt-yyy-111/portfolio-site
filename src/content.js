@@ -606,11 +606,11 @@ export const DEFAULT_DATA = {
   "typographyZh": {
     "artistName": {
       "fontSize": 40,
-      "lineHeight": 1.2,
+      "lineHeight": 1,
       "fontFamily": "ibm-plex-sans",
       "fontWeight": 700,
       "italic": false,
-      "letterSpacing": 0,
+      "letterSpacing": -1,
       "fontWidth": 100
     },
     "year": {
