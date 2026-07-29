@@ -320,12 +320,12 @@ export const DEFAULT_DATA = {
       "titleZh": "生长纹路",
       "titleEs": "Marcas de Crecimiento",
       "date": "Tue Jul 19 2022",
-      "materials": "Acrylic and collage on canvas",
-      "materialsZh": "布面丙烯拼贴",
-      "materialsEs": "Acrílico y collage sobre lienzo",
-      "dimensions": "120 x 90 cm",
-      "dimensionsZh": "120 x 90 厘米",
-      "dimensionsEs": "120 x 90 cm",
+      "materials": "Bamboo Strips, Metal Floral Ornaments, Plastic Pieces, Lead Weights, Fishing Line",
+      "materialsZh": "竹丝、铁质花、塑料片、铅块、鱼线",
+      "materialsEs": "Tiras de bambú, adornos florales de metal, piezas de plástico, plomos, hilo de pescar",
+      "dimensions": "Variable Dimensions",
+      "dimensionsZh": "尺寸可变",
+      "dimensionsEs": "Dimensiones Variables",
       "cover": "https://picsum.photos/seed/growth-marks/700/900",
       "images": [
         "https://picsum.photos/seed/growth-marks-1/1200/1500"
