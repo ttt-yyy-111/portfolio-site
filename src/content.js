@@ -917,7 +917,7 @@ export const DEFAULT_DATA = {
       "fontWidth": 100
     },
     "workTitle": {
-      "fontSize": 19,
+      "fontSize": 20,
       "lineHeight": 1,
       "fontFamily": "source-han-sans-tc",
       "fontWeight": 500,
