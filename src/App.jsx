@@ -690,7 +690,7 @@ export default function Portfolio() {
       images: [],
       tone: "#454545",
     };
-    updateData((prev) => ({ ...prev, works: [...prev.works, newWork] }));
+    updateData((prev) => ({ ...prev, works: [newWork, ...prev.works] }));
     goToWork(newWork.id);
     setExpandedSeries((prev) => ({ ...prev, [`${year}::${seriesName}`]: true }));
   };
@@ -710,7 +710,7 @@ export default function Portfolio() {
       images: [],
       tone: "#454545",
     }));
-    updateData((prev) => ({ ...prev, works: [...prev.works, ...newWorks] }));
+    updateData((prev) => ({ ...prev, works: [...newWorks, ...prev.works] }));
     setExpandedSeries((prev) => ({ ...prev, [`${year}::${name}`]: true }));
     setNewSeriesForm(null);
     setSeriesDraft({ name: "", count: 3 });
@@ -2357,9 +2357,18 @@ function WorkListItem({
   dragHandlers,
 }) {
   const { isDragOver, ...dragProps } = dragHandlers || {};
+  // 不同作品之间的间距，要始终比同一个标题换行后、行与行之间的间距更大——
+  // 不管标题字号/行距在 Aa 面板里被调成多少，这里都在"这一行文字本身的行高"基础上
+  // 再额外加一截 margin-bottom，保证作品跟作品之间看起来始终是分开的一组一组，
+  // 而不是跟同一个标题换行后的效果混在一起分不清。
+  const titleLineHeightPx =
+    (parseFloat(bodyTextStyle?.fontSize) || 15) * (parseFloat(bodyTextStyle?.lineHeight) || 1.3);
+  const itemSpacing = Math.round(titleLineHeightPx * 0.6);
+
   return (
     <li
       {...dragProps}
+      style={{ marginBottom: itemSpacing }}
       className={`flex items-center gap-1 group rounded transition-colors ${
         isDragOver ? "bg-neutral-100" : ""
       } ${editMode ? "cursor-grab active:cursor-grabbing" : ""}`}
