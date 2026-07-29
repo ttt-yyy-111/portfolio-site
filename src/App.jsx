@@ -756,6 +756,22 @@ export default function Portfolio() {
     if (removedIds.includes(selectedId)) setSelectedId(null);
   };
 
+  // 删除整个年份：这个年份下所有作品（包括系列作品）一起删掉，删之前弹窗确认，防止手滑误删
+  const deleteYear = (year) => {
+    const yearWorks = data.works.filter((w) => w.year === year);
+    if (yearWorks.length === 0) return;
+    const confirmed = window.confirm(
+      `确定要删除 ${year} 年吗？这个年份下的 ${yearWorks.length} 件作品会一起被删除，此操作无法撤销。`
+    );
+    if (!confirmed) return;
+    const removedIds = yearWorks.map((w) => w.id);
+    updateData((prev) => ({
+      ...prev,
+      works: prev.works.filter((w) => w.year !== year),
+    }));
+    if (removedIds.includes(selectedId)) setSelectedId(null);
+  };
+
   // 把某一年里的顶层条目（单个作品 或 整个系列分组）从 fromIndex 拖到 toIndex
   const reorderEntryLevel = (year, fromIndex, toIndex) => {
     updateData((prev) => {
@@ -1668,11 +1684,12 @@ export default function Portfolio() {
             const entries = groupWorksBySeries(group.works);
             const yearOpen = !isMobile || expandedYears[group.year] !== false;
             return (
-              <div key={group.year} className="mb-8">
+              <div key={group.year} className="mb-8 group/year">
+                <div className="relative flex items-center gap-1 mb-2">
                 {isMobile ? (
                   <button
                     onClick={() => !editMode && toggleYear(group.year)}
-                    className="relative w-full flex items-center justify-between mb-2"
+                    className="relative flex-1 min-w-0 flex items-center justify-between"
                   >
                     <span style={yearStyle} lang={yearLang} data-measure-line="true">
                       {editMode ? (
@@ -1708,12 +1725,22 @@ export default function Portfolio() {
                     editMode={editMode}
                     value={String(group.year)}
                     onChange={(v) => updateYear(group.year, v)}
-                    className="mb-2 whitespace-nowrap inline-block"
+                    className="whitespace-nowrap inline-block"
                     style={yearStyle}
                     lang={yearLang}
                     data-measure-line="true"
                   />
                 )}
+                {editMode && (
+                  <button
+                    onClick={() => deleteYear(group.year)}
+                    className="opacity-0 group-hover/year:opacity-100 text-neutral-300 hover:text-red-500 text-xs transition-opacity shrink-0"
+                    title="删除这个年份（连同这个年份下所有作品）"
+                  >
+                    ✕
+                  </button>
+                )}
+                </div>
                 <AccordionContent isOpen={yearOpen}>
                 <ul>
                   {entries.map((entry, entryIndex) => {
