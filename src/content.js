@@ -452,7 +452,9 @@ export const DEFAULT_DATA = {
         "https://picsum.photos/seed/gmtb-3b/1400/1400"
       ],
       "tone": "#3e3e3e",
-      "seriesEs": "La buena medicina tiene un sabor amargo"
+      "seriesEs": "La buena medicina tiene un sabor amargo",
+      "titleZh": "良药苦口 III",
+      "titleEs": "La buena medicina tiene un sabor amargo III"
     },
     {
       "id": "good-medicine-iv",
@@ -468,7 +470,9 @@ export const DEFAULT_DATA = {
         "https://picsum.photos/seed/gmtb-4b/1200/1500"
       ],
       "tone": "#464646",
-      "seriesEs": "La buena medicina tiene un sabor amargo"
+      "seriesEs": "La buena medicina tiene un sabor amargo",
+      "titleZh": "良药苦口 IV",
+      "titleEs": "La buena medicina tiene un sabor amargo IV"
     },
     {
       "id": "good-medicine-v",
@@ -484,7 +488,9 @@ export const DEFAULT_DATA = {
         "https://picsum.photos/seed/gmtb-5b/1200/1450"
       ],
       "tone": "#414141",
-      "seriesEs": "La buena medicina tiene un sabor amargo"
+      "seriesEs": "La buena medicina tiene un sabor amargo",
+      "titleZh": "良药苦口 V",
+      "titleEs": "La buena medicina tiene un sabor amargo V"
     },
     {
       "id": "good-medicine-vi",
@@ -500,7 +506,9 @@ export const DEFAULT_DATA = {
         "https://picsum.photos/seed/gmtb-6b/1400/1200"
       ],
       "tone": "#494949",
-      "seriesEs": "La buena medicina tiene un sabor amargo"
+      "seriesEs": "La buena medicina tiene un sabor amargo",
+      "titleZh": "良药苦口 VI",
+      "titleEs": "La buena medicina tiene un sabor amargo VI"
     },
     {
       "id": "good-medicine-vii",
@@ -516,7 +524,9 @@ export const DEFAULT_DATA = {
         "https://picsum.photos/seed/gmtb-7b/1200/1500"
       ],
       "tone": "#444444",
-      "seriesEs": "La buena medicina tiene un sabor amargo"
+      "seriesEs": "La buena medicina tiene un sabor amargo",
+      "titleZh": "良药苦口 VII",
+      "titleEs": "La buena medicina tiene un sabor amargo VII"
     },
     {
       "id": "8vl1win0rroms61wpjp",
@@ -645,7 +655,7 @@ export const DEFAULT_DATA = {
       "titleEs": "Un racimo de flores pequeñas"
     }
   ],
-  "sidebarWidthOverride": 396,
+  "sidebarWidthOverride": 419,
   "typographyZh": {
     "artistName": {
       "fontSize": 40,
