@@ -208,11 +208,11 @@ export const DEFAULT_DATA = {
     },
     "workTitle": {
       "fontSize": 20,
-      "lineHeight": 1.75,
+      "lineHeight": 1.5,
       "fontFamily": "ibm-plex-sans",
       "fontWeight": 500,
       "italic": false,
-      "letterSpacing": 0,
+      "letterSpacing": -0.5,
       "fontWidth": 100
     },
     "detailTitle": {
