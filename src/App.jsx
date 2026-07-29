@@ -1038,6 +1038,12 @@ export default function Portfolio() {
   const yearLang = langFor("year");
   const workTitleStyle = styleFor("workTitle");
   const workTitleLang = langFor("workTitle");
+  // 左侧栏"作品跟作品之间"（不管是单独作品还是系列条目）的间距，统一用这个算出来的值，
+  // 保证始终比标题换行后、行与行之间的间距更大，不管字号/行距在 Aa 面板里被调成多少。
+  const workTitleLineHeightPx =
+    (parseFloat(workTitleStyle.fontSize) || 15) * (parseFloat(workTitleStyle.lineHeight) || 1.3);
+  const workItemSpacing = Math.round(workTitleLineHeightPx * 0.6);
+  const workItemSpacingHalf = Math.round(workTitleLineHeightPx * 0.3);
   const detailTitleStyle = styleFor("detailTitle");
   const detailTitleLang = langFor("detailTitle");
   const detailMaterialsStyle = styleFor("detailMaterials");
@@ -1719,7 +1725,7 @@ export default function Portfolio() {
                     const { isDragOver: headerIsDragOver, ...headerDragProps } =
                       makeEntryDragHandlers(group.year, entryIndex);
                     return (
-                      <li key={seriesKey}>
+                      <li key={seriesKey} style={{ marginBottom: workItemSpacing }}>
                         <div
                           {...headerDragProps}
                           className={`flex items-center gap-1 group rounded transition-colors ${
@@ -1783,7 +1789,7 @@ export default function Portfolio() {
                         </div>
 
                         <AccordionContent isOpen={isOpen}>
-                          <ul className="ml-1.5 pt-0.5">
+                          <ul className="ml-1.5" style={{ paddingTop: workItemSpacingHalf }}>
                             {entry.works.map((w, memberIndex) => (
                               <WorkListItem
                                 key={w.id}
