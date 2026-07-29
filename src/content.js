@@ -365,22 +365,25 @@ export const DEFAULT_DATA = {
       ],
       "titleZh": "片刻静谧",
       "titleEs": "Un momento de quietud",
-      "materialsEs": "Gasa ligera de agua líquida, alfileres, marco para pintura al óleo comprados en Taobao; ramas, agujas de pino, monedas de dólares estadounidenses, periódicos recogidos en Providence; varios tornillos recogidos en la clase de grabado de RISD; papel de aluminio de cocina, cajas de papel de folletos de medicamentos, marco para pintura al óleo comprado en una tienda de artículos de arte japonesa"
+      "materialsEs": "Gasa ligera de agua líquida, alfileres, marco para pintura al óleo comprados en Taobao; ramas, agujas de pino, monedas de dólares estadounidenses, periódicos recogidos en Providence; varios tornillos recogidos en la clase de grabado de RISD; papel de aluminio de cocina, cajas de papel de folletos de medicamentos, marco para pintura al óleo comprado en una tienda de artículos de arte japonesa."
     },
     {
       "id": "wedding-on-the-grass",
       "year": 2026,
       "title": "A Wedding on the Grass",
       "date": "Fri Sep 02 2022",
-      "materials": "点击这里填写材料，比如 Oil on canvas",
-      "dimensions": "点击这里填写尺寸，比如 100 x 80 cm",
+      "materials": "Pins, Glitter Sequins, Velvet Knit Fabric, Jacquard Silk Satin, Transparent UV Free Resin, Hot Glue Purchased from Taobao; Branches, Pine Needles, Newspapers Gathered in Providence; Kitchen Tin Foil, Medicine Leaflet Paper Boxes, Oil Painting Frame Purchased at A Japanese Art Supply Store",
+      "dimensions": "17.5 × 9 cm",
       "cover": "https://picsum.photos/seed/wedding-grass/700/900",
       "images": [
         "https://picsum.photos/seed/wedding-1/1200/1500"
       ],
       "tone": "#454545",
       "titleZh": "草地婚礼",
-      "titleEs": "Una boda en el césped"
+      "titleEs": "Una boda en el césped",
+      "materialsEs": "Alfileres, lentejuelas brillantes, tejido de punto de terciopelo, satén de seda jacquard, resina transparente sin rayos UV, pegamento caliente comprado en Taobao; Ramas, agujas de pino, periódicos reunidos en Providence; Papel de aluminio para cocina, cajas de papel para folletos de medicamentos, marco para pintura al óleo comprado en una tienda japonesa de artículos de arte.",
+      "materialsZh": "网购的大头针、闪光片、长绒针织布料、提花绸缎、透明UV自由树脂、热熔胶，普罗维登斯捡拾的树枝、松树针、报纸，厨房用锡纸，药物说明纸盒，日本购得的油画框",
+      "dimensionsZh": "17.5 × 9 cm"
     },
     {
       "id": "8vl1win0rroms61wpjp",
