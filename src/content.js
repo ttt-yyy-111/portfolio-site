@@ -190,11 +190,11 @@ export const DEFAULT_DATA = {
   "typographyMobile": {
     "artistName": {
       "fontSize": 46,
-      "lineHeight": 1.15,
+      "lineHeight": 1,
       "fontFamily": "ibm-plex-sans",
       "fontWeight": 700,
       "italic": false,
-      "letterSpacing": 0,
+      "letterSpacing": -1,
       "fontWidth": 100
     },
     "year": {
