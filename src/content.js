@@ -314,6 +314,185 @@ export const DEFAULT_DATA = {
   },
   "works": [
     {
+      "id": "5s10os6uu7yms6dh3cs",
+      "year": 2025,
+      "title": "Triumphant in Spring's Breeze, Hooves Fly Fast (Series)",
+      "date": "Wed Jul 29 2026",
+      "description": "点击这里填写作品介绍。",
+      "cover": "https://picsum.photos/seed/x0u1d8fix4bms6dh3cs/700/700",
+      "images": [],
+      "tone": "#454545"
+    },
+    {
+      "id": "hatdp80l0zpms6dgtyi",
+      "year": 2025,
+      "title": "Silently Stretching Out (Series)",
+      "date": "Wed Jul 29 2026",
+      "description": "点击这里填写作品介绍。",
+      "cover": "https://picsum.photos/seed/2v08ffebx3ms6dgtyi/700/700",
+      "images": [],
+      "tone": "#454545"
+    },
+    {
+      "id": "sx6b9fzyjkms6dgjqj",
+      "year": 2025,
+      "title": "Lay Bare (Series)",
+      "date": "Wed Jul 29 2026",
+      "description": "点击这里填写作品介绍。",
+      "cover": "https://picsum.photos/seed/x9o4yxxbp5lms6dgjqj/700/700",
+      "images": [],
+      "tone": "#454545"
+    },
+    {
+      "id": "tlzo9yyvs4jms6dg52u",
+      "year": 2025,
+      "title": "An Entwined Embrace (Series)",
+      "date": "Wed Jul 29 2026",
+      "description": "点击这里填写作品介绍。",
+      "cover": "https://picsum.photos/seed/6ommz1e1bwsms6dg52u/700/700",
+      "images": [],
+      "tone": "#454545"
+    },
+    {
+      "id": "654fr6jvsm6ms6dftsh",
+      "year": 2025,
+      "title": "Small Flowers and Plants",
+      "date": "Wed Jul 29 2026",
+      "description": "点击这里填写作品介绍。",
+      "cover": "https://picsum.photos/seed/7w0hn20qkkms6dftsh/700/700",
+      "images": [],
+      "tone": "#454545"
+    },
+    {
+      "id": "gthm4j9mjqfms6df474",
+      "year": 2025,
+      "series": "Good Medicine Tastes Bitter",
+      "title": "Good Medicine Tastes Bitter I",
+      "date": "Wed Jul 29 2026",
+      "description": "点击这里填写作品介绍。",
+      "cover": "https://picsum.photos/seed/lgqslvd9dfhms6df474/700/700",
+      "images": [],
+      "tone": "#454545"
+    },
+    {
+      "id": "xdm2thfqnfms6df474",
+      "year": 2025,
+      "series": "Good Medicine Tastes Bitter",
+      "title": "Good Medicine Tastes Bitter II",
+      "date": "Wed Jul 29 2026",
+      "description": "点击这里填写作品介绍。",
+      "cover": "https://picsum.photos/seed/5n44jf49n6vms6df474/700/700",
+      "images": [],
+      "tone": "#454545"
+    },
+    {
+      "id": "w5wojihmr4ms6dea8k",
+      "year": 2025,
+      "series": "Suffocating Love",
+      "title": "Suffocating Love I",
+      "date": "Wed Jul 29 2026",
+      "description": "点击这里填写作品介绍。",
+      "cover": "https://picsum.photos/seed/duxju8bz8jums6dea8k/700/700",
+      "images": [],
+      "tone": "#454545"
+    },
+    {
+      "id": "hz65jna4hqgms6dea8k",
+      "year": 2025,
+      "series": "Suffocating Love",
+      "title": "Suffocating Love II",
+      "date": "Wed Jul 29 2026",
+      "description": "点击这里填写作品介绍。",
+      "cover": "https://picsum.photos/seed/fih9lv6r60ims6dea8k/700/700",
+      "images": [],
+      "tone": "#454545"
+    },
+    {
+      "id": "5nuz4afr3oims6dea8k",
+      "year": 2025,
+      "series": "Suffocating Love",
+      "title": "Suffocating Love III",
+      "date": "Wed Jul 29 2026",
+      "description": "点击这里填写作品介绍。",
+      "cover": "https://picsum.photos/seed/1b3b5bjzi0mms6dea8k/700/700",
+      "images": [],
+      "tone": "#454545"
+    },
+    {
+      "id": "a6lztkzghmqms6dea8k",
+      "year": 2025,
+      "series": "Suffocating Love",
+      "title": "Suffocating Love IV",
+      "date": "Wed Jul 29 2026",
+      "description": "点击这里填写作品介绍。",
+      "cover": "https://picsum.photos/seed/t34gebq4eesms6dea8k/700/700",
+      "images": [],
+      "tone": "#454545"
+    },
+    {
+      "id": "oridgr8vwwlms6ddeiq",
+      "year": 2025,
+      "series": "A Night Entangled",
+      "title": "A Night Entangled I",
+      "date": "Wed Jul 29 2026",
+      "description": "点击这里填写作品介绍。",
+      "cover": "https://picsum.photos/seed/e3p8r9zbovtms6ddeiq/700/700",
+      "images": [],
+      "tone": "#454545"
+    },
+    {
+      "id": "ajs9yv25yunms6ddeiq",
+      "year": 2025,
+      "series": "A Night Entangled",
+      "title": "A Night Entangled II",
+      "date": "Wed Jul 29 2026",
+      "description": "点击这里填写作品介绍。",
+      "cover": "https://picsum.photos/seed/u3oawysvdvsms6ddeiq/700/700",
+      "images": [],
+      "tone": "#454545"
+    },
+    {
+      "id": "f0kw8ovehllms6ddeiq",
+      "year": 2025,
+      "series": "A Night Entangled",
+      "title": "A Night Entangled III",
+      "date": "Wed Jul 29 2026",
+      "description": "点击这里填写作品介绍。",
+      "cover": "https://picsum.photos/seed/g7168w4v2ipms6ddeiq/700/700",
+      "images": [],
+      "tone": "#454545"
+    },
+    {
+      "id": "sfu08xkdfoqms6dcys3",
+      "year": 2025,
+      "title": "Swing",
+      "date": "Wed Jul 29 2026",
+      "description": "点击这里填写作品介绍。",
+      "cover": "https://picsum.photos/seed/av6ljmnljdems6dcys3/700/700",
+      "images": [],
+      "tone": "#454545"
+    },
+    {
+      "id": "vvsub55l36sms6dcrj9",
+      "year": 2025,
+      "title": "Attempting to Stand Solemnly",
+      "date": "Wed Jul 29 2026",
+      "description": "点击这里填写作品介绍。",
+      "cover": "https://picsum.photos/seed/dcjcubfotfnms6dcrj9/700/700",
+      "images": [],
+      "tone": "#454545"
+    },
+    {
+      "id": "sc033qidcoms6dcjy2",
+      "year": 2025,
+      "title": "A Pool of Clear Lake Water",
+      "date": "Wed Jul 29 2026",
+      "description": "点击这里填写作品介绍。",
+      "cover": "https://picsum.photos/seed/401gs3t0dzgms6dcjy2/700/700",
+      "images": [],
+      "tone": "#454545"
+    },
+    {
       "id": "growth-marks",
       "year": 2026,
       "title": "Growth Marks",
@@ -682,6 +861,106 @@ export const DEFAULT_DATA = {
       "materials": "Collected Fragments of a Concrete Sculpture, Wire, Bamboo Strips, Fishing Line, UV Soft Resin, Hot-Melt Adhesive, Mica Powder, Silver Leaf, Plastic Floral Beads, Plastic Polarizing Film",
       "materialsEs": "Fragmentos recopilados de una escultura de hormigón, alambre, tiras de bambú, hilo de pescar, resina blanda con protección UV, adhesivo termofusible, polvo de mica, pan de plata, cuentas florales de plástico, película polarizadora de plástico.",
       "materialsZh": "捡拾水泥雕塑块、铁丝、竹丝、鱼线、UV软树脂、热熔胶、云母粉、银箔、塑料花珠、塑料偏光片"
+    },
+    {
+      "id": "nem342kkhvms6dcdm5",
+      "year": 2025,
+      "title": "A Faint Fragrance from Among the Blooms",
+      "date": "Wed Jul 29 2026",
+      "description": "点击这里填写作品介绍。",
+      "cover": "https://picsum.photos/seed/vooji094lfms6dcdm5/700/700",
+      "images": [],
+      "tone": "#454545"
+    },
+    {
+      "id": "1ejk7kbbrkcms6dc3lp",
+      "year": 2025,
+      "title": "A Face in the Night Fog",
+      "date": "Wed Jul 29 2026",
+      "description": "点击这里填写作品介绍。",
+      "cover": "https://picsum.photos/seed/74wbmi716kjms6dc3lp/700/700",
+      "images": [],
+      "tone": "#454545"
+    },
+    {
+      "id": "zf858p76tcms6dc0ce",
+      "year": 2025,
+      "title": "As Cold as Frost",
+      "date": "Wed Jul 29 2026",
+      "description": "点击这里填写作品介绍。",
+      "cover": "https://picsum.photos/seed/ziw0k92tgx9ms6dc0ce/700/700",
+      "images": [],
+      "tone": "#454545"
+    },
+    {
+      "id": "j0s6m8t9zjsms6dbtcs",
+      "year": 2025,
+      "title": "River",
+      "date": "Wed Jul 29 2026",
+      "description": "点击这里填写作品介绍。",
+      "cover": "https://picsum.photos/seed/9ey6lswf2ebms6dbtcs/700/700",
+      "images": [],
+      "tone": "#454545"
+    },
+    {
+      "id": "w81tbqmp2nms6dbkhg",
+      "year": 2025,
+      "title": "Exaltation in Stillness",
+      "date": "Wed Jul 29 2026",
+      "description": "点击这里填写作品介绍。",
+      "cover": "https://picsum.photos/seed/5sjazuh0mfxms6dbkhg/700/700",
+      "images": [],
+      "tone": "#454545"
+    },
+    {
+      "id": "vosdkiyiaufms6dbe6t",
+      "year": 2025,
+      "title": "Nectar in the Center",
+      "date": "Wed Jul 29 2026",
+      "description": "点击这里填写作品介绍。",
+      "cover": "https://picsum.photos/seed/05aoc0exorrnms6dbe6t/700/700",
+      "images": [],
+      "tone": "#454545"
+    },
+    {
+      "id": "dm0t27o70gmms6db7oi",
+      "year": 2025,
+      "title": "Sun Basking",
+      "date": "Wed Jul 29 2026",
+      "description": "点击这里填写作品介绍。",
+      "cover": "https://picsum.photos/seed/clhaq1l67xms6db7oi/700/700",
+      "images": [],
+      "tone": "#454545"
+    },
+    {
+      "id": "yku1kuwlm89ms6dazw3",
+      "year": 2025,
+      "title": "The Tenderness of Dewdrops",
+      "date": "Wed Jul 29 2026",
+      "description": "点击这里填写作品介绍。",
+      "cover": "https://picsum.photos/seed/otje0zjfkucms6dazw3/700/700",
+      "images": [],
+      "tone": "#454545"
+    },
+    {
+      "id": "novsxaxummms6dal31",
+      "year": 2025,
+      "title": "A Gentle Breeze",
+      "date": "Wed Jul 29 2026",
+      "description": "点击这里填写作品介绍。",
+      "cover": "https://picsum.photos/seed/9p4i4g0rjtms6dal31/700/700",
+      "images": [],
+      "tone": "#454545"
+    },
+    {
+      "id": "j3axdhtf4pms6d9g6b",
+      "year": 2025,
+      "title": "Swaying Softness",
+      "date": "Wed Jul 29 2026",
+      "description": "点击这里填写作品介绍。",
+      "cover": "https://picsum.photos/seed/nnj3emnt2vkms6d9g6b/700/700",
+      "images": [],
+      "tone": "#454545"
     }
   ],
   "sidebarWidthOverride": 414,
