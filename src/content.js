@@ -429,8 +429,8 @@ export const DEFAULT_DATA = {
       "seriesZh": "良药苦口",
       "title": "Good Medicine Tastes Bitter IV",
       "date": "Thu Jan 29 2026",
-      "materials": "点击这里填写材料，比如 Oil on canvas",
-      "dimensions": "点击这里填写尺寸，比如 100 x 80 cm",
+      "materials": "Portable Medicine Box, Miniature Horse, Miniature Pig, Tin Foil, Plush Ball for Cat Toys",
+      "dimensions": "11 × 13.5 × 8 cm (Approximately)",
       "cover": "https://picsum.photos/seed/gmtb-4/700/900",
       "images": [
         "https://picsum.photos/seed/gmtb-4b/1200/1500"
@@ -438,7 +438,11 @@ export const DEFAULT_DATA = {
       "tone": "#464646",
       "seriesEs": "La buena medicina tiene un sabor amargo",
       "titleZh": "良药苦口 IV",
-      "titleEs": "La buena medicina tiene un sabor amargo IV"
+      "titleEs": "La buena medicina tiene un sabor amargo IV",
+      "materialsEs": "Pastillero portátil, caballo miniatura, cerdo miniatura, papel de aluminio, bola de peluche para juguetes de gato.",
+      "materialsZh": "便携药盒、微缩马、微缩猪、锡纸、逗猫玩具毛绒球",
+      "dimensionsZh": "11 × 13.5 × 8 cm (约)",
+      "dimensionsEs": "11 × 13.5 × 8 cm (Aproximadamente)"
     },
     {
       "id": "good-medicine-v",
@@ -447,8 +451,8 @@ export const DEFAULT_DATA = {
       "seriesZh": "良药苦口",
       "title": "Good Medicine Tastes Bitter V",
       "date": "Tue Feb 17 2026",
-      "materials": "点击这里填写材料，比如 Oil on canvas",
-      "dimensions": "点击这里填写尺寸，比如 100 x 80 cm",
+      "materials": "Tin Foil Mold Miniature Egg Tray, UV Transparent Resin Mold Miniature Egg Tray, Miniature Egg, Acrylic Beads",
+      "dimensions": "16 × 10 × 2 cm (Approximately)",
       "cover": "https://picsum.photos/seed/gmtb-5/700/850",
       "images": [
         "https://picsum.photos/seed/gmtb-5b/1200/1450"
@@ -456,7 +460,11 @@ export const DEFAULT_DATA = {
       "tone": "#414141",
       "seriesEs": "La buena medicina tiene un sabor amargo",
       "titleZh": "良药苦口 V",
-      "titleEs": "La buena medicina tiene un sabor amargo V"
+      "titleEs": "La buena medicina tiene un sabor amargo V",
+      "materialsEs": "Bandeja de huevos en miniatura con molde de papel de aluminio, bandeja de huevos en miniatura con molde de resina transparente UV, huevo en miniatura, cuentas acrílicas.",
+      "materialsZh": "锡纸翻模微缩鸡蛋托、UV透明树脂翻模微缩鸡蛋托、微缩蛋、亚克力珠子",
+      "dimensionsZh": "16 × 10 × 2 cm (约)",
+      "dimensionsEs": "16 × 10 × 2 cm (Aproximadamente)"
     },
     {
       "id": "good-medicine-vi",
@@ -465,8 +473,8 @@ export const DEFAULT_DATA = {
       "seriesZh": "良药苦口",
       "title": "Good Medicine Tastes Bitter VI",
       "date": "Fri Mar 06 2026",
-      "materials": "点击这里填写材料，比如 Oil on canvas",
-      "dimensions": "点击这里填写尺寸，比如 100 x 80 cm",
+      "materials": "Medicine Dispenser, Miniature Egg, 1960s Blue Glazed Fruit Dish with Double-Fish and \"Double Happiness\" Character",
+      "dimensions": "26.5 × 26.5 × 9.5 cm",
       "cover": "https://picsum.photos/seed/gmtb-6/700/600",
       "images": [
         "https://picsum.photos/seed/gmtb-6b/1400/1200"
@@ -474,7 +482,9 @@ export const DEFAULT_DATA = {
       "tone": "#494949",
       "seriesEs": "La buena medicina tiene un sabor amargo",
       "titleZh": "良药苦口 VI",
-      "titleEs": "La buena medicina tiene un sabor amargo VI"
+      "titleEs": "La buena medicina tiene un sabor amargo VI",
+      "materialsEs": "Dispensador de medicamentos, huevo en miniatura, frutero esmaltado en azul de los años 60 con diseño de doble pez y el carácter de la \"Doble Felicidad\".",
+      "materialsZh": "分药器、微缩蛋、60年代蓝琉璃双鱼喜字果盘"
     },
     {
       "id": "good-medicine-vii",
@@ -483,8 +493,8 @@ export const DEFAULT_DATA = {
       "seriesZh": "良药苦口",
       "title": "Good Medicine Tastes Bitter VII",
       "date": "Mon Mar 23 2026",
-      "materials": "点击这里填写材料，比如 Oil on canvas",
-      "dimensions": "点击这里填写尺寸，比如 100 x 80 cm",
+      "materials": "Plastic Dustpan Toy, Miniature House",
+      "dimensions": "7 × 4 × 2 cm",
       "cover": "https://picsum.photos/seed/gmtb-7/700/900",
       "images": [
         "https://picsum.photos/seed/gmtb-7b/1200/1500"
@@ -492,7 +502,9 @@ export const DEFAULT_DATA = {
       "tone": "#444444",
       "seriesEs": "La buena medicina tiene un sabor amargo",
       "titleZh": "良药苦口 VII",
-      "titleEs": "La buena medicina tiene un sabor amargo VII"
+      "titleEs": "La buena medicina tiene un sabor amargo VII",
+      "materialsZh": "塑料簸箕玩具、微缩房子",
+      "materialsEs": "Recogedor de juguete de plástico, casa en miniatura."
     },
     {
       "id": "b3lhylins9mms6245qv",
@@ -504,7 +516,10 @@ export const DEFAULT_DATA = {
       "images": [],
       "tone": "#454545",
       "titleZh": "一簇小花",
-      "titleEs": "Un racimo de flores pequeñas"
+      "titleEs": "Un racimo de flores pequeñas",
+      "materials": "Wooden Plank, Nail, Tin Foil, Steel Wire Rope, Paper, Printing Ink, UV Clay",
+      "materialsEs": "Tablón de madera, clavo, papel de aluminio, cuerda de alambre de acero, papel, tinta de impresión, arcilla UV.",
+      "materialsZh": "木板、钉子、锡箔、钢丝绳、纸、版画油墨、UV软树脂"
     },
     {
       "id": "1gz5x7d37nnims622tsk",
@@ -519,7 +534,10 @@ export const DEFAULT_DATA = {
       "seriesZh": "一纸空文",
       "titleZh": "一纸空文 I",
       "seriesEs": "Una letra muerta",
-      "titleEs": "Una letra muerta I"
+      "titleEs": "Una letra muerta I",
+      "materials": "Glass, Pharmaceutical Packaging Paper, Stone, Glue",
+      "materialsEs": "Vidrio, Papel para embalaje farmacéutico, Piedra, Pegamento",
+      "materialsZh": "玻璃、药剂包装纸、石头、胶水"
     },
     {
       "id": "7m2levc26rims622tsk",
@@ -534,7 +552,10 @@ export const DEFAULT_DATA = {
       "seriesZh": "一纸空文",
       "titleZh": "一纸空文 II",
       "seriesEs": "Una letra muerta",
-      "titleEs": "Una letra muerta II"
+      "titleEs": "Una letra muerta II",
+      "materials": "Glass, Medication Instruction, Stone, Glue",
+      "materialsEs": "Vidrio, Instrucciones de medicación, Piedra, Pegamento",
+      "materialsZh": "玻璃、药剂说明书、石头、胶水"
     },
     {
       "id": "d6qd3xnatr6ms62107f",
@@ -549,7 +570,12 @@ export const DEFAULT_DATA = {
       "seriesZh": "拾金不昧",
       "titleZh": "拾金不昧 I",
       "seriesEs": "La honestidad es la mejor política",
-      "titleEs": "La honestidad es la mejor política I"
+      "titleEs": "La honestidad es la mejor política I",
+      "materials": "US Dollar Bill, Hot Glue, Nail, Thumbtack, Wire, Fishing Line, Plastic Crystal Bead, Pine Branch, Bird Feather",
+      "materialsEs": "Billete de un dólar estadounidense, pegamento caliente, clavo, chincheta, alambre, hilo de pescar, cuentas de cristal de plástico, rama de pino, pluma de pájaro",
+      "materialsZh": "美元纸币、热熔胶、钉子、大头针、铁丝、鱼线、塑料水晶珠、松树枝、鸟类羽毛",
+      "dimensionsZh": "6 × 11 × 3 cm",
+      "dimensions": "6 × 11 × 3 cm"
     },
     {
       "id": "trisflzkx2rms62107g",
@@ -564,7 +590,10 @@ export const DEFAULT_DATA = {
       "seriesZh": "拾金不昧",
       "titleZh": "拾金不昧 II",
       "seriesEs": "La honestidad es la mejor política",
-      "titleEs": "La honestidad es la mejor política II"
+      "titleEs": "La honestidad es la mejor política II",
+      "materials": "US Dollar Coins, Fragment of Cola Packaging, Hot Glue",
+      "materialsEs": "Monedas de un dólar estadounidense, fragmento de envase de refresco de cola, adhesivo termofusible.",
+      "materialsZh": "美元硬币、可乐包装碎片、热熔胶"
     },
     {
       "id": "3k3wmco031lms623nha",
@@ -576,7 +605,10 @@ export const DEFAULT_DATA = {
       "images": [],
       "tone": "#454545",
       "titleZh": "对影成双",
-      "titleEs": "Una sombra hace dos"
+      "titleEs": "Una sombra hace dos",
+      "materials": "Tree Branches, Plastic Polarizing Film, UV Soft Resin, Hot-Melt Adhesive, Acrylic Balls, Pins, Screws, Silver Foil, Tin Foil, Wire",
+      "materialsEs": "Ramas de árbol, película polarizadora de plástico, resina blanda UV, adhesivo termofusible, bolas de acrílico, alfileres, tornillos, lámina de plata, papel de estaño, alambre.",
+      "materialsZh": "树枝、塑料偏光片，UV软树脂、热熔胶、亚克力球、大头针、螺丝钉、银箔、锡箔、铁丝"
     },
     {
       "id": "awatfu6b4ms623zsj",
@@ -591,7 +623,10 @@ export const DEFAULT_DATA = {
       "seriesZh": "臂弯",
       "titleZh": "臂弯 I",
       "seriesEs": "Refugio del brazo",
-      "titleEs": "Refugio del brazo I"
+      "titleEs": "Refugio del brazo I",
+      "materials": "Collected Fragments of a Concrete Sculpture, Wire, Bamboo Strips, Pine Branches, Hot-Melt Adhesive, Large-Headed Pins, Thumbtacks, Plastic Crystal Beads, Aluminum Foil, Printmaking Ink",
+      "materialsEs": "Fragmentos recolectados de una escultura de hormigón, alambre, tiras de bambú, ramas de pino, adhesivo termofusible, alfileres de cabeza grande, chinchetas, cuentas de plástico transparente, papel de aluminio, tinta de grabado.",
+      "materialsZh": "捡拾的水泥雕塑块、铁丝、竹丝、松树枝、热熔胶、大头钉、按钉、塑料水晶珠、锡纸、版画油墨"
     },
     {
       "id": "5rh5uzb9bfms623zsj",
@@ -606,7 +641,10 @@ export const DEFAULT_DATA = {
       "seriesZh": "臂弯",
       "titleZh": "臂弯 II",
       "seriesEs": "Refugio del brazo",
-      "titleEs": "Refugio del brazo II"
+      "titleEs": "Refugio del brazo II",
+      "materials": "Collected Fragments of a Concrete Sculpture, Wire, Bamboo Strips, Fishing Line, UV Soft Resin, Hot-Melt Adhesive, Mica Powder, Silver Leaf, Plastic Floral Beads, Plastic Polarizing Film",
+      "materialsEs": "Fragmentos recopilados de una escultura de hormigón, alambre, tiras de bambú, hilo de pescar, resina blanda con protección UV, adhesivo termofusible, polvo de mica, pan de plata, cuentas florales de plástico, película polarizadora de plástico.",
+      "materialsZh": "捡拾水泥雕塑块、铁丝、竹丝、鱼线、UV软树脂、热熔胶、云母粉、银箔、塑料花珠、塑料偏光片"
     }
   ],
   "sidebarWidthOverride": 414,
