@@ -21,7 +21,7 @@ export const DEFAULT_TYPOGRAPHY = {
   },
   "workTitle": {
     "fontSize": 18,
-    "lineHeight": 1.5,
+    "lineHeight": 1,
     "fontFamily": "ibm-plex-sans",
     "fontWeight": 500,
     "italic": false,
@@ -116,7 +116,7 @@ export const DEFAULT_DATA = {
     },
     "workTitle": {
       "fontSize": 18,
-      "lineHeight": 1.5,
+      "lineHeight": 1,
       "fontFamily": "ibm-plex-sans",
       "fontWeight": 500,
       "italic": false,
@@ -208,7 +208,7 @@ export const DEFAULT_DATA = {
     },
     "workTitle": {
       "fontSize": 20,
-      "lineHeight": 1.5,
+      "lineHeight": 1,
       "fontFamily": "ibm-plex-sans",
       "fontWeight": 500,
       "italic": false,
