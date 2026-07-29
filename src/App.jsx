@@ -505,6 +505,8 @@ export default function Portfolio() {
   const [expandedSeries, setExpandedSeries] = useState({}); // key: `${year}::${series}` -> boolean
   const [newSeriesForm, setNewSeriesForm] = useState(null); // 当前展开"新建系列"表单的年份，null 表示都不展开
   const [seriesDraft, setSeriesDraft] = useState({ name: "", count: 3 });
+  const [customYearFormOpen, setCustomYearFormOpen] = useState(false); // "添加指定年份"这个小表单是否展开
+  const [customYearInput, setCustomYearInput] = useState("");
 
   // ---------- 拖拽调整作品顺序 ----------
   const [dragState, setDragState] = useState(null); // { year, type: 'entry'|'member', seriesName?, index }
@@ -648,6 +650,36 @@ export default function Portfolio() {
     const existingYears = data.works.map((w) => w.year);
     const prevYear = existingYears.length > 0 ? Math.min(...existingYears) - 1 : new Date().getFullYear();
     addWork(prevYear, "bottom");
+  };
+
+  // 添加一个指定的年份/作品，自动插入到正确的位置（数组本身是按年份从新到旧排列的）：
+  // 如果这个年份已经存在，就插到那个年份块的最前面；如果是全新的年份（比如已经有
+  // 2026 和 2024，想插入 2025），就自动找到第一个"比它更旧"的作品，插在那前面，
+  // 这样年份还是保持从新到旧排列，2025 会正好卡在 2026 和 2024 中间。
+  const addWorkAtYear = (year) => {
+    const newWork = {
+      id: uid(),
+      year,
+      title: "新作品标题",
+      date: new Date().toDateString(),
+      description: "点击这里填写作品介绍。",
+      cover: "https://picsum.photos/seed/" + uid() + "/700/700",
+      images: [],
+      tone: "#454545",
+    };
+    updateData((prev) => {
+      const exactIdx = prev.works.findIndex((w) => w.year === year);
+      const works = [...prev.works];
+      if (exactIdx !== -1) {
+        works.splice(exactIdx, 0, newWork);
+        return { ...prev, works };
+      }
+      const insertIdx = prev.works.findIndex((w) => w.year < year);
+      if (insertIdx === -1) works.push(newWork);
+      else works.splice(insertIdx, 0, newWork);
+      return { ...prev, works };
+    });
+    goToWork(newWork.id);
   };
 
   // 编辑年份：把这个年份分组下所有作品的 year 字段一起改成新的年份。
@@ -1954,6 +1986,55 @@ export default function Portfolio() {
               <button onClick={addOldYear} className="text-xs text-neutral-400">
                 + 添加旧年份 / 旧作品
               </button>
+              {customYearFormOpen ? (
+                <div className="flex items-center gap-1.5 mt-0.5">
+                  <input
+                    type="number"
+                    autoFocus
+                    value={customYearInput}
+                    onChange={(e) => setCustomYearInput(e.target.value)}
+                    onKeyDown={(e) => {
+                      if (e.key !== "Enter") return;
+                      const parsed = Number(customYearInput);
+                      if (!Number.isInteger(parsed)) return;
+                      addWorkAtYear(parsed);
+                      setCustomYearInput("");
+                      setCustomYearFormOpen(false);
+                    }}
+                    placeholder="比如 2025"
+                    className="w-20 text-xs px-1.5 py-0.5 rounded border border-neutral-300 focus:outline-none focus:border-neutral-900"
+                  />
+                  <button
+                    onClick={() => {
+                      const parsed = Number(customYearInput);
+                      if (!Number.isInteger(parsed)) return;
+                      addWorkAtYear(parsed);
+                      setCustomYearInput("");
+                      setCustomYearFormOpen(false);
+                    }}
+                    className="text-xs font-bold text-neutral-600 hover:text-neutral-900"
+                  >
+                    添加
+                  </button>
+                  <button
+                    onClick={() => {
+                      setCustomYearFormOpen(false);
+                      setCustomYearInput("");
+                    }}
+                    className="text-xs text-neutral-400 hover:text-neutral-600"
+                  >
+                    取消
+                  </button>
+                </div>
+              ) : (
+                <button
+                  onClick={() => setCustomYearFormOpen(true)}
+                  className="text-xs text-neutral-400"
+                  title="比如已经有 2026 和 2024，想插入 2025，就用这个"
+                >
+                  + 添加指定年份 / 作品（插入到对应位置）
+                </button>
+              )}
             </div>
           )}
         </div>
