@@ -1716,7 +1716,7 @@ export default function Portfolio() {
             const entries = groupWorksBySeries(group.works);
             const yearOpen = !isMobile || expandedYears[group.year] !== false;
             return (
-              <div key={group.year} className="mb-8 group/year">
+              <div key={group.year} className="mb-4 group/year">
                 <div className="relative flex items-center gap-1 mb-2">
                 {isMobile ? (
                   <button
