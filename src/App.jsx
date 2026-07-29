@@ -1745,13 +1745,10 @@ export default function Portfolio() {
                                 editMode={editMode}
                                 value={displaySeriesName}
                                 onChange={(v) => updateSeriesName(group.year, entry.series, v)}
-                                className="min-w-0 whitespace-nowrap"
-                                data-measure-line="true"
+                                className="min-w-0 flex-1"
                               />
                             ) : (
-                              <span className="min-w-0 whitespace-nowrap" data-measure-line="true">
-                                {displaySeriesName}
-                              </span>
+                              <span className="min-w-0 flex-1">{displaySeriesName}</span>
                             )}
                           </button>
                         </div>
