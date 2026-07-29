@@ -908,7 +908,7 @@ export const DEFAULT_DATA = {
       "fontWidth": 100
     },
     "year": {
-      "fontSize": 26,
+      "fontSize": 30,
       "lineHeight": 1.3,
       "fontFamily": "ibm-plex-sans",
       "fontWeight": 700,
@@ -920,7 +920,7 @@ export const DEFAULT_DATA = {
       "fontSize": 20,
       "lineHeight": 1,
       "fontFamily": "source-han-sans-tc",
-      "fontWeight": 500,
+      "fontWeight": 600,
       "italic": false,
       "letterSpacing": 0,
       "fontWidth": 100
