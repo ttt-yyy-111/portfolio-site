@@ -997,20 +997,15 @@ export default function Portfolio() {
 
     // 中文模式下的字体规则：
     // ——选中思源黑体（简体）或思源黑體（繁体）时，用本地字体文件拼一个复合字体栈：
-    //   英文固定用 IBM Plex Sans，中文标点固定用思源黑体（简体）的标点字形，
-    //   汉字本身按实际选择显示简体或繁体字形。
-    // ——选中其他 Sans Serif 字体（没有对应本地字体文件）时，只固定英文用 IBM Plex Sans，
-    //   中文字符还是用选中那款字体自己的字形（大多会自动退回系统默认中文字体）。
-    // ——Serif 大类、以及英文/西班牙语模式，都完全按选中的字体显示，不做任何覆盖。
+    //   中文标点固定用思源黑体（简体）的标点字形，英文和汉字本身都按实际选择的
+    //   字体显示（选中字体自带的西文字形 + 简体/繁体字形）。
+    // ——选中其他 Sans Serif / Serif 字体（没有对应本地字体文件）时，完全按选中的字体显示，
+    //   不做任何覆盖。英文/西班牙语模式同样完全按选中的字体显示。
     let fontFamily = preset.family;
     if (isZh && preset.id === "source-han-sans-sc") {
-      fontFamily =
-        "'IBM Plex Sans', 'Source Han Sans SC Punctuation', 'Source Han Sans SC Full', sans-serif";
+      fontFamily = "'Source Han Sans SC Punctuation', 'Source Han Sans SC Full', sans-serif";
     } else if (isZh && preset.id === "source-han-sans-tc") {
-      fontFamily =
-        "'IBM Plex Sans', 'Source Han Sans SC Punctuation', 'Source Han Sans TC Full', sans-serif";
-    } else if (isZh && preset.category === "sans-serif") {
-      fontFamily = `'IBM Plex Sans', ${preset.family}`;
+      fontFamily = "'Source Han Sans SC Punctuation', 'Source Han Sans TC Full', sans-serif";
     }
 
     return {
