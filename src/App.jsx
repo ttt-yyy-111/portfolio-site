@@ -619,10 +619,18 @@ export default function Portfolio() {
       images: [],
       tone: "#454545",
     };
-    updateData((prev) => ({
-      ...prev,
-      works: position === "top" ? [newWork, ...prev.works] : [...prev.works, newWork],
-    }));
+    updateData((prev) => {
+      if (position === "top") return { ...prev, works: [newWork, ...prev.works] };
+      if (position === "bottom") return { ...prev, works: [...prev.works, newWork] };
+      // "year-top"：插到这个年份现有作品块的最前面，而不是整个数组的最前面——
+      // 不然在一个比较旧的年份里加作品，图片会跑到画廊最前头去，跟这个年份实际的
+      //新旧位置对不上。如果这个年份原本还没有任何作品，就退回到整个数组最前面。
+      const idx = prev.works.findIndex((w) => w.year === year);
+      if (idx === -1) return { ...prev, works: [newWork, ...prev.works] };
+      const works = [...prev.works];
+      works.splice(idx, 0, newWork);
+      return { ...prev, works };
+    });
     goToWork(newWork.id);
   };
 
@@ -690,7 +698,13 @@ export default function Portfolio() {
       images: [],
       tone: "#454545",
     };
-    updateData((prev) => ({ ...prev, works: [newWork, ...prev.works] }));
+    updateData((prev) => {
+      const idx = prev.works.findIndex((w) => w.year === year);
+      if (idx === -1) return { ...prev, works: [newWork, ...prev.works] };
+      const works = [...prev.works];
+      works.splice(idx, 0, newWork);
+      return { ...prev, works };
+    });
     goToWork(newWork.id);
     setExpandedSeries((prev) => ({ ...prev, [`${year}::${seriesName}`]: true }));
   };
@@ -710,7 +724,13 @@ export default function Portfolio() {
       images: [],
       tone: "#454545",
     }));
-    updateData((prev) => ({ ...prev, works: [...newWorks, ...prev.works] }));
+    updateData((prev) => {
+      const idx = prev.works.findIndex((w) => w.year === year);
+      if (idx === -1) return { ...prev, works: [...newWorks, ...prev.works] };
+      const works = [...prev.works];
+      works.splice(idx, 0, ...newWorks);
+      return { ...prev, works };
+    });
     setExpandedSeries((prev) => ({ ...prev, [`${year}::${name}`]: true }));
     setNewSeriesForm(null);
     setSeriesDraft({ name: "", count: 3 });
@@ -1830,7 +1850,7 @@ export default function Portfolio() {
                 {editMode && (
                   <div className="mt-2 flex flex-col items-start gap-1">
                     <button
-                      onClick={() => addWork(group.year)}
+                      onClick={() => addWork(group.year, "year-top")}
                       className="text-xs text-neutral-400"
                     >
                       + 在 {group.year} 年添加作品
