@@ -3622,19 +3622,45 @@ function ImageLightbox({ images, index, onClose, onPrev, onNext, alt }) {
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [onClose, onPrev, onNext]);
 
-  const applyZoom = (next) => {
+  const containerRef = useRef(null);
+
+  // 以某个屏幕位置（手指/鼠标所在的点）为中心缩放，而不是固定死图片正中心——
+  // 缩放前后，这个点底下对应的图片内容要保持不动，图片是"以这个点为锚点"放大/缩小的，
+  // 不然放大的时候图片会整个跟着偏移，很难对准想看的细节。
+  // 数学上：把这个点换算成"图片自身坐标系里的位置"（不受当前缩放/平移影响），
+  // 缩放变化后，重新计算需要多少 pan 才能让这个位置还是落在同一个屏幕点上。
+  const applyZoomAtPoint = (next, focalPoint) => {
     const clamped = Math.round(Math.max(20, next)); // 不设上限，只留一个很低的下限，避免图片缩没了
+    if (clamped <= 100) {
+      setZoom(clamped);
+      setPan({ x: 0, y: 0 }); // 缩回 100% 及以下就没必要再偏移了，顺手复位
+      return;
+    }
+    if (focalPoint && containerRef.current) {
+      const rect = containerRef.current.getBoundingClientRect();
+      const center = { x: rect.left + rect.width / 2, y: rect.top + rect.height / 2 };
+      const oldScale = zoom / 100;
+      const newScale = clamped / 100;
+      const localX = (focalPoint.x - center.x - pan.x) / oldScale;
+      const localY = (focalPoint.y - center.y - pan.y) / oldScale;
+      setPan({
+        x: focalPoint.x - center.x - localX * newScale,
+        y: focalPoint.y - center.y - localY * newScale,
+      });
+    }
     setZoom(clamped);
-    if (clamped <= 100) setPan({ x: 0, y: 0 }); // 缩回 100% 及以下就没必要再偏移了，顺手复位
   };
+  // 没有具体锚点的场景（比如拖底部滑块）就只改缩放比例，不额外调整平移
+  const applyZoom = (next) => applyZoomAtPoint(next, null);
 
   // 滚轮缩放：触控板双指捏合手势在浏览器里也是 wheel 事件，会带上 ctrlKey，
   // 灵敏度跟普通鼠标滚轮不太一样，分开给一个系数；鼠标滚轮往上滑（deltaY 为负）放大，往下滑缩小。
+  // 缩放锚点是鼠标当前所在位置。
   const handleWheel = (e) => {
     e.preventDefault();
     e.stopPropagation();
     const sensitivity = e.ctrlKey ? 2.2 : 0.35;
-    applyZoom(zoom - e.deltaY * sensitivity);
+    applyZoomAtPoint(zoom - e.deltaY * sensitivity, { x: e.clientX, y: e.clientY });
   };
 
   // 放大超过 100% 之后，按住图片拖拽可以平移查看超出屏幕范围的部分
@@ -3663,14 +3689,19 @@ function ImageLightbox({ images, index, onClose, onPrev, onNext, alt }) {
     window.addEventListener("mouseup", onMouseUp);
   };
 
-  // 手机端手势：双指捏合缩放、单指拖拽平移（放大后才能拖），跟鼠标滚轮/拖拽共用同一套
-  // zoom/pan 状态，逻辑上是一回事。touchRef 记录这次手势开始时的状态，方便算相对位移/缩放比例。
+  // 手机端手势：双指捏合缩放（以两指中点为锚点）、单指拖拽平移（放大后才能拖），
+  // 跟鼠标滚轮/拖拽共用同一套 zoom/pan 状态，逻辑上是一回事。touchRef 记录这次手势开始时
+  // 的状态，方便算相对位移/缩放比例。
   const touchRef = useRef(null);
   const touchDistance = (touches) => {
     const dx = touches[0].clientX - touches[1].clientX;
     const dy = touches[0].clientY - touches[1].clientY;
     return Math.hypot(dx, dy);
   };
+  const touchMidpoint = (touches) => ({
+    x: (touches[0].clientX + touches[1].clientX) / 2,
+    y: (touches[0].clientY + touches[1].clientY) / 2,
+  });
 
   const handleTouchStart = (e) => {
     if (e.touches.length === 2) {
@@ -3698,7 +3729,7 @@ function ImageLightbox({ images, index, onClose, onPrev, onNext, alt }) {
       e.preventDefault();
       isDraggingRef.current = true;
       const scale = touchDistance(e.touches) / state.startDistance;
-      applyZoom(state.startZoom * scale);
+      applyZoomAtPoint(state.startZoom * scale, touchMidpoint(e.touches));
     } else if (state.mode === "pan" && e.touches.length === 1) {
       e.preventDefault();
       isDraggingRef.current = true;
@@ -3736,6 +3767,7 @@ function ImageLightbox({ images, index, onClose, onPrev, onNext, alt }) {
       }}
     >
       <div
+        ref={containerRef}
         className="flex-1 w-full min-h-0 flex items-center justify-center overflow-hidden px-6 md:px-10 pt-6 md:pt-10 pb-2"
         onWheel={handleWheel}
         onTouchStart={handleTouchStart}
