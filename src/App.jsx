@@ -2731,96 +2731,112 @@ function GalleryImage({ w, editMode, onSelect, onReplaceCover }) {
 
 // 艺术家信息页：点击左下角 "Information" 进入
 // 把 **加粗** / *斜体* 这种简单标记解析成真正的 <strong>/<em>，用于非编辑模式下展示
-function renderFormattedText(text) {
-  if (!text) return null;
-  const nodes = [];
-  const regex = /\*\*(.+?)\*\*|\*(.+?)\*/g;
-  let lastIndex = 0;
-  let match;
-  let key = 0;
-  while ((match = regex.exec(text))) {
-    if (match.index > lastIndex) nodes.push(text.slice(lastIndex, match.index));
-    if (match[1] !== undefined) nodes.push(<strong key={key++}>{match[1]}</strong>);
-    else if (match[2] !== undefined) nodes.push(<em key={key++}>{match[2]}</em>);
-    lastIndex = regex.lastIndex;
-  }
-  if (lastIndex < text.length) nodes.push(text.slice(lastIndex));
-  return nodes;
+// 把一段可能带 <br> 换行的 HTML，按行拆开；每行再拆成"第一个不带空格的词（年份）"
+// 和"剩下的部分（名称）"两截，同时保留里面可能有的加粗/斜体格式（用 Range API 在真实 DOM
+// 结构上做切割，而不是简单粗暴地按字符位置切字符串，这样才不会把 <strong>/<em> 标签切坏）。
+// 兼容旧数据：之前的标题/正文存的是纯文本（用 \n 换行、**/* 这种简单标记），
+// 现在改成存真的 HTML 了。如果读到的内容里已经有 HTML 标签，说明是新格式，原样返回；
+// 否则就是老格式，转义一下特殊字符、把 \n 换成 <br>，这样老内容不用重新编辑也能正常显示。
+function ensureHtmlBody(raw) {
+  if (!raw) return "";
+  if (/<[a-z][\s\S]*>/i.test(raw)) return raw;
+  const escaped = raw.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  return escaped.replace(/\n/g, "<br>");
 }
 
-// 可以框选文字、加粗/斜体的编辑框：编辑模式下选中一段文字会弹出一个小工具条，
-// 点击"加粗"/"斜体"就会在选中的文字两边加上 **/* 这种标记（存的还是纯文本，
-// 不是真的 HTML，简单可靠）；非编辑模式下用 renderFormattedText 把标记解析成真正的粗体/斜体。
-function RichEditableField({ value, onChange, as: Tag = "p", editMode, className, style, lang }) {
-  const ref = useRef(null);
-  const [hasSelection, setHasSelection] = useState(false);
+function splitLeadingToken(html) {
+  const container = document.createElement("div");
+  container.innerHTML = html;
+  const walker = document.createTreeWalker(container, NodeFilter.SHOW_TEXT);
+  const positions = [];
+  let plain = "";
+  let node;
+  while ((node = walker.nextNode())) {
+    positions.push({ node, start: plain.length });
+    plain += node.nodeValue;
+  }
+  const match = plain.match(/^(\S+)(\s+)([\s\S]*)$/);
+  if (!match) return { yearHtml: "", nameHtml: html };
+  const yearEnd = match[1].length;
+  const nameStart = match[1].length + match[2].length;
 
-  const checkSelection = () => {
-    const el = ref.current;
-    const sel = window.getSelection();
-    if (!el || !sel || sel.rangeCount === 0 || sel.isCollapsed) {
-      setHasSelection(false);
-      return;
+  const findPoint = (charIndex) => {
+    for (const p of positions) {
+      if (charIndex <= p.start + p.node.nodeValue.length) {
+        return { node: p.node, offset: charIndex - p.start };
+      }
     }
-    const range = sel.getRangeAt(0);
-    setHasSelection(el.contains(range.commonAncestorContainer));
+    const last = positions[positions.length - 1];
+    return { node: last.node, offset: last.node.nodeValue.length };
   };
 
-  const applyMarker = (marker) => {
+  const yearPoint = findPoint(yearEnd);
+  const yearRange = document.createRange();
+  yearRange.setStart(container, 0);
+  yearRange.setEnd(yearPoint.node, yearPoint.offset);
+  const yearDiv = document.createElement("div");
+  yearDiv.appendChild(yearRange.cloneContents());
+
+  const namePoint = findPoint(nameStart);
+  const nameRange = document.createRange();
+  nameRange.setStart(namePoint.node, namePoint.offset);
+  nameRange.setEnd(container, container.childNodes.length);
+  const nameDiv = document.createElement("div");
+  nameDiv.appendChild(nameRange.cloneContents());
+
+  return { yearHtml: yearDiv.innerHTML, nameHtml: nameDiv.innerHTML };
+}
+
+// 真正"所见即所得"的加粗/斜体编辑框：直接用浏览器自带的富文本编辑能力（contentEditable +
+// execCommand），点加粗/斜体按钮的一瞬间文字就会真的变粗/变斜（不用等切到预览模式才看得到），
+// 而且加粗、斜体是各自独立生效的，同一段文字可以同时又粗又斜。存的是真的 HTML
+// （比如 <strong>加粗</strong>），不是自己拼的 markdown 标记，好处是浏览器自己就能正确处理
+// "加粗里面套斜体"这种叠加情况，不用自己写解析逻辑。
+function RichEditableField({ value, onChange, as: Tag = "p", editMode, className, style, lang }) {
+  const ref = useRef(null);
+
+  const runCommand = (command) => {
     const el = ref.current;
-    const sel = window.getSelection();
-    if (!el || !sel || sel.rangeCount === 0) return;
-    const range = sel.getRangeAt(0);
-    if (!el.contains(range.commonAncestorContainer)) return;
-    // 用一个辅助 Range 算出选区在纯文本里的起止字符位置，不用管里面具体是什么 DOM 结构
-    const preRange = document.createRange();
-    preRange.selectNodeContents(el);
-    preRange.setEnd(range.startContainer, range.startOffset);
-    const start = preRange.toString().length;
-    const end = start + range.toString().length;
-    if (start === end) return;
-    const newValue = value.slice(0, start) + marker + value.slice(start, end) + marker + value.slice(end);
-    onChange(newValue);
-    setHasSelection(false);
+    if (!el) return;
+    el.focus();
+    document.execCommand(command, false, null);
+    onChange(el.innerHTML);
+  };
+
+  const handleFocus = () => {
+    // 让浏览器按 Enter 换行的时候用 <br>，不要用 <div>/<p> 包一层，这样换行判断更简单可靠
+    document.execCommand("defaultParagraphSeparator", false, "br");
   };
 
   const handleBlur = () => {
-    setTimeout(() => setHasSelection(false), 150); // 留一点时间给工具条按钮的 onMouseDown 先触发
-    const text = ref.current.innerText;
-    if (text !== value) onChange(text);
+    const html = ref.current.innerHTML;
+    if (html !== value) onChange(html);
   };
 
   if (!editMode) {
-    return (
-      <Tag className={className} style={style} lang={lang}>
-        {renderFormattedText(value)}
-      </Tag>
-    );
+    return <Tag className={className} style={style} lang={lang} dangerouslySetInnerHTML={{ __html: value || "" }} />;
   }
 
   return (
-    <div className="relative">
-      {hasSelection && (
-        <div
-          className="absolute -top-9 left-0 z-20 flex items-center gap-1 bg-neutral-900 rounded-full px-1.5 py-1 shadow-lg"
-          onMouseDown={(e) => e.preventDefault()} // 防止点按钮的时候先把文字选区弄丢了
+    <div>
+      <div className="flex items-center gap-1 mb-1.5">
+        <button
+          onMouseDown={(e) => e.preventDefault()} // 防止点按钮的时候先把编辑框的焦点/选区弄丢了
+          onClick={() => runCommand("bold")}
+          className="text-[11px] font-bold w-6 h-6 rounded border border-neutral-300 text-neutral-600 hover:bg-neutral-100 transition-colors"
+          title="加粗选中的文字"
         >
-          <button
-            onClick={() => applyMarker("**")}
-            className="text-white text-xs font-bold w-6 h-6 rounded-full hover:bg-white/20 transition-colors"
-            title="加粗选中的文字"
-          >
-            B
-          </button>
-          <button
-            onClick={() => applyMarker("*")}
-            className="text-white text-xs italic w-6 h-6 rounded-full hover:bg-white/20 transition-colors"
-            title="斜体选中的文字"
-          >
-            I
-          </button>
-        </div>
-      )}
+          B
+        </button>
+        <button
+          onMouseDown={(e) => e.preventDefault()}
+          onClick={() => runCommand("italic")}
+          className="text-[11px] italic font-serif w-6 h-6 rounded border border-neutral-300 text-neutral-600 hover:bg-neutral-100 transition-colors"
+          title="斜体选中的文字"
+        >
+          I
+        </button>
+      </div>
       <Tag
         ref={ref}
         contentEditable
@@ -2831,12 +2847,10 @@ function RichEditableField({ value, onChange, as: Tag = "p", editMode, className
         }
         style={style}
         lang={lang}
-        onMouseUp={checkSelection}
-        onKeyUp={checkSelection}
+        onFocus={handleFocus}
         onBlur={handleBlur}
-      >
-        {value}
-      </Tag>
+        dangerouslySetInnerHTML={{ __html: value || "" }}
+      />
     </div>
   );
 }
@@ -2904,7 +2918,7 @@ function InfoView({
               )}
               <RichEditableField
                 as="h3"
-                value={tField(section, "title")}
+                value={ensureHtmlBody(tField(section, "title"))}
                 editMode={editMode}
                 onChange={(v) => onUpdateSection(section.id, { [langKey("title")]: v })}
                 className="mb-3 block"
@@ -2914,10 +2928,10 @@ function InfoView({
               {editMode ? (
                 <RichEditableField
                   as="div"
-                  value={tField(section, "body")}
+                  value={ensureHtmlBody(tField(section, "body"))}
                   editMode={editMode}
                   onChange={(v) => onUpdateSection(section.id, { [langKey("body")]: v })}
-                  className={`font-medium text-neutral-900 whitespace-pre-line block ${
+                  className={`font-medium text-neutral-900 block ${
                     isExhibition
                       ? ""
                       : !isMobile && section.columns === 2
@@ -2941,17 +2955,15 @@ function InfoView({
                   }}
                   lang={bodyLang}
                 >
-                  {tField(section, "body")
-                    .split("\n")
-                    .filter((line) => line.trim() !== "")
+                  {ensureHtmlBody(tField(section, "body"))
+                    .split(/<br\s*\/?>/i)
+                    .filter((line) => line.replace(/<[^>]+>/g, "").trim() !== "")
                     .map((line, i) => {
-                      const match = line.match(/^(\S+)\s+(.*)$/);
-                      const yearPart = match ? match[1] : "";
-                      const namePart = match ? match[2] : line;
+                      const { yearHtml, nameHtml } = splitLeadingToken(line);
                       return (
                         <React.Fragment key={i}>
-                          <span>{renderFormattedText(yearPart)}</span>
-                          <span>{renderFormattedText(namePart)}</span>
+                          <span dangerouslySetInnerHTML={{ __html: yearHtml }} />
+                          <span dangerouslySetInnerHTML={{ __html: nameHtml }} />
                         </React.Fragment>
                       );
                     })}
@@ -2964,9 +2976,9 @@ function InfoView({
                   style={{ ...bodyStyle, overflowWrap: "break-word" }}
                   lang={bodyLang}
                 >
-                  {tField(section, "body")
-                    .split("\n")
-                    .filter((para) => para.trim() !== "")
+                  {ensureHtmlBody(tField(section, "body"))
+                    .split(/<br\s*\/?>/i)
+                    .filter((para) => para.replace(/<[^>]+>/g, "").trim() !== "")
                     .map((para, i) => (
                       <p
                         key={i}
@@ -2981,9 +2993,8 @@ function InfoView({
                                 }px`,
                               }
                         }
-                      >
-                        {renderFormattedText(para)}
-                      </p>
+                        dangerouslySetInnerHTML={{ __html: para }}
+                      />
                     ))}
                 </div>
               )}
