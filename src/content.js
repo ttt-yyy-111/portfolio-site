@@ -92,8 +92,8 @@ export const DEFAULT_TYPOGRAPHY = {
     "fontWidth": 100
   },
   "infoBodyExhibition": {
-    "fontSize": 20,
-    "lineHeight": 1.5,
+    "fontSize": 18,
+    "lineHeight": 1,
     "fontFamily": "ibm-plex-sans",
     "fontWeight": 400,
     "italic": false,
@@ -196,8 +196,8 @@ export const DEFAULT_DATA = {
       "fontWidth": 100
     },
     "infoBodyExhibition": {
-      "fontSize": 20,
-      "lineHeight": 1.5,
+      "fontSize": 18,
+      "lineHeight": 1,
       "fontFamily": "ibm-plex-sans",
       "fontWeight": 400,
       "italic": false,
@@ -321,11 +321,11 @@ export const DEFAULT_DATA = {
     {
       "id": "exhibitions",
       "title": "Exhibitions/Events",
-      "titleZh": "展览履历",
-      "titleEs": "Exposiciones",
-      "body": "(Solo) Cloudy to Clear, a Hint of Breeze, SOOFA SUHE, Shanghai, China\nLight Chaser: Special Exhibition for the Year of the Horse 2026, Gravity Art Museum, Beijing, China\nPlanetarity: Friction, Fossils and the Future, Glemgallery, Providence, USA\nART021 Shanghai Contemporary Art Fair, Shanghai, China\nNeither Anchor Nor Shore Anaya, Qinhuangdao, China\n(Solo) A Glimpse Admist Slender, AYE gallery, Beijing, China\n(Solo) Fragrance of the Mind, Oumuamua Art Museum, Beijing, China\nUpright Walking, Dongguli Art Park, Beijing, China\nSummer Art Festival, Shibuya Fashion & Art College, Tokyo, Japan\nFuture Earth Guardian Project, Beijing Chaoyang UNIJOY Fashion District, Beijing, China",
-      "bodyZh": "点击这里编辑你的展览履历（中文版）。",
-      "bodyEs": "Haz clic aquí para editar tu trayectoria de exposiciones.",
+      "titleZh": "展览/活动",
+      "titleEs": "Exposiciones/Eventos",
+      "body": "(Solo) *Cloudy to Clear, a Hint of Breeze*, SOOFA SUHE, Shanghai, China\n*Light Chaser: Special Exhibition for the Year of the Horse 2026*, Gravity Art Museum, Beijing, China\n*Planetarity: Friction, Fossils and the Future*, Glemgallery, Providence, USA\n*ART021 Shanghai Contemporary Art Fair*, Shanghai, China\n*Neither Anchor Nor Shore Anaya*, Qinhuangdao, China\n(Solo) *A Glimpse Admist Slender*, AYE gallery, Beijing, China\n(Solo) *Fragrance of the Mind*, Oumuamua Art Museum, Beijing, China\n*Upright Walking*, Dongguli Art Park, Beijing, China\n*Summer Art Festival*, Shibuya Fashion & Art College, Tokyo, Japan\n*Future Earth Guardian Project*, Beijing Chaoyang UNIJOY Fashion District, Beijing, China",
+      "bodyZh": "（个展）「多云转晴风不定」，SOOFA SUHE，上海，中国\n「逐光：2026丙午马年特展」，重美术馆，北京，中国\n「Planetarity: Friction, Fossils and the Future」，Gelman Gallery，普罗维登斯，美国\n   ART021上海廿一当代艺术博览会，上海，中国\n「随波逐流」，阿那亚，秦皇岛\n（个展）「窥见于纤弱之间」，AYE Gallery，北京，中国\n（个展）「臆想的芬芳」，奥木木美术馆，北京，中国\n「直立行走」，东古里艺术园区，北京，中国\n「夏の芸术祭」，渋谷ファッション＆アート専門学校，东京，日本\n「未来地球守卫者计划」，北京朝阳UNIJOY潮流街区，北京，中国",
+      "bodyEs": "(Solo) *Cloudy to Clear, a Hint of Breeze*, SOOFA SUHE, Shanghai, China\n*Light Chaser: Special Exhibition for the Year of the Horse 2026*, Gravity Art Museum, Beijing, China\n*Planetarity: Friction, Fossils and the Future*, Glemgallery, Providence, USA\n*ART021 Shanghai Contemporary Art Fair*, Shanghai, China\n*Neither Anchor Nor Shore Anaya*, Qinhuangdao, China\n(Solo) *A Glimpse Admist Slender*, AYE gallery, Beijing, China\n(Solo) *Fragrance of the Mind*, Oumuamua Art Museum, Beijing, China\n*Upright Walking*, Dongguli Art Park, Beijing, China\n*Summer Art Festival*, Shibuya Fashion & Art College, Tokyo, Japan\n*Future Earth Guardian Project*, Beijing Chaoyang UNIJOY Fashion District, Beijing, China",
       "columns": 1,
       "category": "exhibition"
     }
@@ -1217,7 +1217,7 @@ export const DEFAULT_DATA = {
       "fontWidth": 100
     },
     "infoBodyExhibition": {
-      "fontSize": 20,
+      "fontSize": 18,
       "lineHeight": 1.7,
       "fontFamily": "ibm-plex-sans",
       "fontWeight": 400,
