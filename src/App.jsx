@@ -3623,7 +3623,7 @@ function ImageLightbox({ images, index, onClose, onPrev, onNext, alt }) {
   }, [onClose, onPrev, onNext]);
 
   const applyZoom = (next) => {
-    const clamped = Math.round(Math.min(500, Math.max(100, next)));
+    const clamped = Math.round(Math.max(20, next)); // 不设上限，只留一个很低的下限，避免图片缩没了
     setZoom(clamped);
     if (clamped <= 100) setPan({ x: 0, y: 0 }); // 缩回 100% 及以下就没必要再偏移了，顺手复位
   };
@@ -3762,10 +3762,10 @@ function ImageLightbox({ images, index, onClose, onPrev, onNext, alt }) {
         />
       </div>
 
-      {/* 缩放滑块：底部居中，实时显示百分比，最大放大到 500% */}
+      {/* 缩放滑块：底部居中，实时显示百分比。手机端靠手势缩放，不需要这个，只在电脑端显示 */}
       <div
         onClick={(e) => e.stopPropagation()}
-        className="flex-shrink-0 flex items-center gap-3 bg-white/10 rounded-full px-4 py-2 mb-4 md:mb-6"
+        className="hidden md:flex flex-shrink-0 items-center gap-3 bg-white/10 rounded-full px-4 py-2 mb-4 md:mb-6"
       >
         <span className="text-white text-sm select-none" aria-hidden>
           −
