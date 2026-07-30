@@ -3072,6 +3072,7 @@ function InfoView({
                 </div>
               )}
               <RichEditableField
+                key={`title-${editMode}`}
                 as="h3"
                 value={ensureHtmlBody(tField(section, "title"))}
                 editMode={editMode}
