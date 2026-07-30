@@ -56,7 +56,7 @@ export const DEFAULT_TYPOGRAPHY = {
     "fontWidth": 100
   },
   "infoTitle": {
-    "fontSize": 25,
+    "fontSize": 30,
     "lineHeight": 1.3,
     "fontFamily": "ibm-plex-sans",
     "fontWeight": 700,
@@ -66,11 +66,11 @@ export const DEFAULT_TYPOGRAPHY = {
   },
   "infoBody": {
     "fontSize": 20,
-    "lineHeight": 1.7,
+    "lineHeight": 1.5,
     "fontFamily": "ibm-plex-sans",
     "fontWeight": 400,
     "italic": false,
-    "letterSpacing": 0,
+    "letterSpacing": -0.5,
     "fontWidth": 100
   },
   "indexNav": {
@@ -151,7 +151,7 @@ export const DEFAULT_DATA = {
       "fontWidth": 100
     },
     "infoTitle": {
-      "fontSize": 25,
+      "fontSize": 30,
       "lineHeight": 1.3,
       "fontFamily": "ibm-plex-sans",
       "fontWeight": 700,
@@ -161,11 +161,11 @@ export const DEFAULT_DATA = {
     },
     "infoBody": {
       "fontSize": 20,
-      "lineHeight": 1.7,
+      "lineHeight": 1.5,
       "fontFamily": "ibm-plex-sans",
       "fontWeight": 400,
       "italic": false,
-      "letterSpacing": 0,
+      "letterSpacing": -0.5,
       "fontWidth": 100
     },
     "indexNav": {
@@ -243,7 +243,7 @@ export const DEFAULT_DATA = {
       "fontWidth": 100
     },
     "infoTitle": {
-      "fontSize": 18,
+      "fontSize": 30,
       "lineHeight": 1.3,
       "fontFamily": "ibm-plex-sans",
       "fontWeight": 700,
@@ -252,8 +252,8 @@ export const DEFAULT_DATA = {
       "fontWidth": 100
     },
     "infoBody": {
-      "fontSize": 16,
-      "lineHeight": 1.7,
+      "fontSize": 18,
+      "lineHeight": 1.5,
       "fontFamily": "ibm-plex-sans",
       "fontWeight": 400,
       "italic": false,
@@ -285,10 +285,10 @@ export const DEFAULT_DATA = {
       "title": "Biography",
       "titleZh": "简介",
       "titleEs": "Biografía",
-      "body": "Yutian Tian is an experimental visual artist born in Heilongjiang, China, in 1996. She currently lives and works in Beijing. She received her bachelor's degree from the Central Academy of Fine Arts in 2018 and later went to Japan to study mineral pigments.\nTian has lived and worked across China, Japan, and the United States. During her undergraduate studies in Animation at CAFA, she worked as a producer and illustrator, contributing to several art documentaries and moving-image projects. She subsequently traveled to Japan to study traditional mineral pigments and pursued further studies in printmaking in the United States. These cross-cultural and interdisciplinary experiences form the material foundation of her practice.\nHer practice moves between painting, printmaking, and mixed-media installation, using foraging and collecting as conceptual starting points. In her work, low-cost, mass-produced everyday disposables—found objects left on the street, children's toys, aluminum foil, plastic wrap, and various textiles—are juxtaposed and layered with traditional media laden with cultural memory, such as mineral pigments, ink, and antique silk, creating a realm where multiple temporal dimensions coexist.\nRefusing to reduce materials to mere tools for expression, Tian regards them as extensions of the senses, exploring how the innate energy of matter manifests naturally through physical processes of layering, draping, and seepage. Her work revolves around materiality, identity, and transformation, continuously tracing material politics, cultural identity, and self-edification, while testing the possibilities of bodily perception as a methodology. Through processes of layering, transferring, and reconfiguring, she expands the boundaries of the marginalized and overlooked, giving form to works intertwined with themes of connection and change.",
-      "bodyZh": "点击这里编辑你的艺术家简介、创作理念、经历（中文版）。",
+      "body": "Yu Tiantian is an experimental visual artist born in Heilongjiang, China, in 1996. She currently lives and works in Beijing. She received her bachelor's degree from the Central Academy of Fine Arts in 2018 and later went to Japan to study mineral pigments.\nTiantian has lived and worked across China, Japan, and the United States. During her undergraduate studies in Animation at CAFA, she worked as a producer and illustrator, contributing to several art documentaries and moving-image projects. She subsequently traveled to Japan to study traditional mineral pigments and pursued further studies in printmaking in the United States. These cross-cultural and interdisciplinary experiences form the material foundation of her practice.\nHer practice moves between painting, printmaking, and mixed-media installation, using foraging and collecting as conceptual starting points. In her work, low-cost, mass-produced everyday disposables—found objects left on the street, children's toys, aluminum foil, plastic wrap, and various textiles—are juxtaposed and layered with traditional media laden with cultural memory, such as mineral pigments, ink, and antique silk, creating a realm where multiple temporal dimensions coexist.\nRefusing to reduce materials to mere tools for expression, Tiantian regards them as extensions of the senses, exploring how the innate energy of matter manifests naturally through physical processes of layering, draping, and seepage. Her work revolves around materiality, identity, and transformation, continuously tracing material politics, cultural identity, and self-edification, while testing the possibilities of bodily perception as a methodology. Through processes of layering, transferring, and reconfiguring, she expands the boundaries of the marginalized and overlooked, giving form to works intertwined with themes of connection and change.",
+      "bodyZh": "于田田，实验视觉艺术家，1996年出生于中国黑龙江，现工作生活于北京。她于2018年毕业于中央美术学院并获得学士学位，后赴日本研习矿物颜料。\n\n于田田先后在中国、日本及美国学习与工作。在央美修读动画专业期间，她曾担任制片人与插画师，参与多部艺术纪录片与影像项目的制作；此后赴日研习传统矿物颜料，并于美国深造版画。这些跨越文化与媒介的履历，构成了其艺术实践的材料基底。\n\n她的创作游移于绘画、版画与混合媒介装置之间，常以“捡拾”与“采集”作为逻辑起点。在实践中，廉价且工业化量产的日常消耗品——街头遗落的拾得物、儿童玩具、锡纸、保鲜膜及各类织物——与矿物颜料、墨水、古绢等承载文化记忆的传统媒介被并置与叠加，构筑出多重时间维度共存的场域。\n\n于田田拒绝将材料简化为表达的工具，而是将其视为感官的延伸，探索物质自身的能量如何在叠层、悬垂与渗透的物理过程中自然显发。她的创作围绕材料性、身份与转变展开，持续追溯物质政治、文化身份与自我教化，并试炼“身体感知”作为创作方法论的可能性。通过叠加、转移与重构等工序，她不断拓宽那些被边缘化或被忽视之物的边界，呈现交织着联系与演变的主题。",
       "bodyEs": "Haz clic aquí para editar tu biografía, filosofía creativa y trayectoria.",
-      "columns": 1
+      "columns": 2
     },
     {
       "id": "exhibitions",
@@ -1118,8 +1118,8 @@ export const DEFAULT_DATA = {
     "workTitle": {
       "fontSize": 18,
       "lineHeight": 1,
-      "fontFamily": "source-han-sans-tc",
-      "fontWeight": 600,
+      "fontFamily": "ibm-plex-sans",
+      "fontWeight": 500,
       "italic": false,
       "letterSpacing": 0,
       "fontWidth": 100
@@ -1127,7 +1127,7 @@ export const DEFAULT_DATA = {
     "detailTitle": {
       "fontSize": 40,
       "lineHeight": 1.2,
-      "fontFamily": "source-han-sans-tc",
+      "fontFamily": "ibm-plex-sans",
       "fontWeight": 700,
       "italic": false,
       "letterSpacing": 1,
@@ -1136,7 +1136,7 @@ export const DEFAULT_DATA = {
     "detailMaterials": {
       "fontSize": 20,
       "lineHeight": 1.6,
-      "fontFamily": "source-han-sans-tc",
+      "fontFamily": "ibm-plex-sans",
       "fontWeight": 400,
       "italic": false,
       "letterSpacing": 0,
@@ -1152,7 +1152,7 @@ export const DEFAULT_DATA = {
       "fontWidth": 100
     },
     "infoTitle": {
-      "fontSize": 18,
+      "fontSize": 30,
       "lineHeight": 1.3,
       "fontFamily": "ibm-plex-sans",
       "fontWeight": 700,
@@ -1161,8 +1161,8 @@ export const DEFAULT_DATA = {
       "fontWidth": 100
     },
     "infoBody": {
-      "fontSize": 16,
-      "lineHeight": 1.7,
+      "fontSize": 18,
+      "lineHeight": 1.6,
       "fontFamily": "ibm-plex-sans",
       "fontWeight": 400,
       "italic": false,
