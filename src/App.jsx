@@ -179,7 +179,8 @@ const TYPOGRAPHY_TARGETS = [
   { key: "detailMaterials", label: "详情页材料" },
   { key: "detailDimensions", label: "详情页尺寸 / 年份" },
   { key: "infoTitle", label: "Information 页段落标题" },
-  { key: "infoBody", label: "Information 页详细内容" },
+  { key: "infoBodyInfo", label: "Information 页详细内容 · 信息类" },
+  { key: "infoBodyExhibition", label: "Information 页详细内容 · 展览类" },
   { key: "footerLinks", label: "Information / Email / Instagram" },
 ];
 
@@ -997,10 +998,11 @@ export default function Portfolio() {
   };
 
   // Information 页段落：每段有自己的标题+详细内容，详细内容可以选一栏或两栏显示
-  const addInfoSection = () => {
+  const addInfoSection = (category = "info") => {
     const newSection = {
       id: uid(),
-      title: "新段落标题",
+      category,
+      title: category === "exhibition" ? "新展览" : "新段落标题",
       body: "点击这里填写详细内容。",
       columns: 1,
     };
@@ -1120,8 +1122,10 @@ export default function Portfolio() {
   const detailDimensionsLang = langFor("detailDimensions");
   const infoTitleStyle = styleFor("infoTitle");
   const infoTitleLang = langFor("infoTitle");
-  const infoBodyStyle = styleFor("infoBody");
-  const infoBodyLang = langFor("infoBody");
+  const infoBodyInfoStyle = styleFor("infoBodyInfo");
+  const infoBodyInfoLang = langFor("infoBodyInfo");
+  const infoBodyExhibitionStyle = styleFor("infoBodyExhibition");
+  const infoBodyExhibitionLang = langFor("infoBodyExhibition");
   const footerLinksStyle = styleFor("footerLinks");
   const footerLinksLang = langFor("footerLinks");
 
@@ -2248,8 +2252,10 @@ export default function Portfolio() {
             editMode={editMode}
             titleStyle={infoTitleStyle}
             titleLang={infoTitleLang}
-            bodyStyle={infoBodyStyle}
-            bodyLang={infoBodyLang}
+            bodyInfoStyle={infoBodyInfoStyle}
+            bodyInfoLang={infoBodyInfoLang}
+            bodyExhibitionStyle={infoBodyExhibitionStyle}
+            bodyExhibitionLang={infoBodyExhibitionLang}
             isZh={isZh}
             tField={tField}
             langKey={langKey}
@@ -2724,13 +2730,126 @@ function GalleryImage({ w, editMode, onSelect, onReplaceCover }) {
 }
 
 // 艺术家信息页：点击左下角 "Information" 进入
+// 把 **加粗** / *斜体* 这种简单标记解析成真正的 <strong>/<em>，用于非编辑模式下展示
+function renderFormattedText(text) {
+  if (!text) return null;
+  const nodes = [];
+  const regex = /\*\*(.+?)\*\*|\*(.+?)\*/g;
+  let lastIndex = 0;
+  let match;
+  let key = 0;
+  while ((match = regex.exec(text))) {
+    if (match.index > lastIndex) nodes.push(text.slice(lastIndex, match.index));
+    if (match[1] !== undefined) nodes.push(<strong key={key++}>{match[1]}</strong>);
+    else if (match[2] !== undefined) nodes.push(<em key={key++}>{match[2]}</em>);
+    lastIndex = regex.lastIndex;
+  }
+  if (lastIndex < text.length) nodes.push(text.slice(lastIndex));
+  return nodes;
+}
+
+// 可以框选文字、加粗/斜体的编辑框：编辑模式下选中一段文字会弹出一个小工具条，
+// 点击"加粗"/"斜体"就会在选中的文字两边加上 **/* 这种标记（存的还是纯文本，
+// 不是真的 HTML，简单可靠）；非编辑模式下用 renderFormattedText 把标记解析成真正的粗体/斜体。
+function RichEditableField({ value, onChange, as: Tag = "p", editMode, className, style, lang }) {
+  const ref = useRef(null);
+  const [hasSelection, setHasSelection] = useState(false);
+
+  const checkSelection = () => {
+    const el = ref.current;
+    const sel = window.getSelection();
+    if (!el || !sel || sel.rangeCount === 0 || sel.isCollapsed) {
+      setHasSelection(false);
+      return;
+    }
+    const range = sel.getRangeAt(0);
+    setHasSelection(el.contains(range.commonAncestorContainer));
+  };
+
+  const applyMarker = (marker) => {
+    const el = ref.current;
+    const sel = window.getSelection();
+    if (!el || !sel || sel.rangeCount === 0) return;
+    const range = sel.getRangeAt(0);
+    if (!el.contains(range.commonAncestorContainer)) return;
+    // 用一个辅助 Range 算出选区在纯文本里的起止字符位置，不用管里面具体是什么 DOM 结构
+    const preRange = document.createRange();
+    preRange.selectNodeContents(el);
+    preRange.setEnd(range.startContainer, range.startOffset);
+    const start = preRange.toString().length;
+    const end = start + range.toString().length;
+    if (start === end) return;
+    const newValue = value.slice(0, start) + marker + value.slice(start, end) + marker + value.slice(end);
+    onChange(newValue);
+    setHasSelection(false);
+  };
+
+  const handleBlur = () => {
+    setTimeout(() => setHasSelection(false), 150); // 留一点时间给工具条按钮的 onMouseDown 先触发
+    const text = ref.current.innerText;
+    if (text !== value) onChange(text);
+  };
+
+  if (!editMode) {
+    return (
+      <Tag className={className} style={style} lang={lang}>
+        {renderFormattedText(value)}
+      </Tag>
+    );
+  }
+
+  return (
+    <div className="relative">
+      {hasSelection && (
+        <div
+          className="absolute -top-9 left-0 z-20 flex items-center gap-1 bg-neutral-900 rounded-full px-1.5 py-1 shadow-lg"
+          onMouseDown={(e) => e.preventDefault()} // 防止点按钮的时候先把文字选区弄丢了
+        >
+          <button
+            onClick={() => applyMarker("**")}
+            className="text-white text-xs font-bold w-6 h-6 rounded-full hover:bg-white/20 transition-colors"
+            title="加粗选中的文字"
+          >
+            B
+          </button>
+          <button
+            onClick={() => applyMarker("*")}
+            className="text-white text-xs italic w-6 h-6 rounded-full hover:bg-white/20 transition-colors"
+            title="斜体选中的文字"
+          >
+            I
+          </button>
+        </div>
+      )}
+      <Tag
+        ref={ref}
+        contentEditable
+        suppressContentEditableWarning
+        className={
+          className +
+          " outline-dashed outline-1 outline-offset-2 outline-neutral-300 focus:outline-neutral-900 rounded cursor-text"
+        }
+        style={style}
+        lang={lang}
+        onMouseUp={checkSelection}
+        onKeyUp={checkSelection}
+        onBlur={handleBlur}
+      >
+        {value}
+      </Tag>
+    </div>
+  );
+}
+
 function InfoView({
   sections,
   editMode,
   titleStyle,
   titleLang,
-  bodyStyle,
-  bodyLang,
+  bodyInfoStyle,
+  bodyInfoLang,
+  bodyExhibitionStyle,
+  bodyExhibitionLang,
   isZh,
   tField,
   langKey,
@@ -2746,91 +2865,115 @@ function InfoView({
       )}
 
       <div className="space-y-10">
-        {sections.map((section) => (
-          <div key={section.id} className="group relative">
-            {editMode && (
-              <div className="flex items-center gap-3 mb-2">
-                {!isMobile && (
+        {sections.map((section) => {
+          const isExhibition = section.category === "exhibition";
+          const bodyStyle = isExhibition ? bodyExhibitionStyle : bodyInfoStyle;
+          const bodyLang = isExhibition ? bodyExhibitionLang : bodyInfoLang;
+          return (
+            <div key={section.id} className="group relative">
+              {editMode && (
+                <div className="flex items-center gap-3 mb-2 flex-wrap">
                   <button
                     onClick={() =>
-                      onUpdateSection(section.id, { columns: section.columns === 2 ? 1 : 2 })
+                      onUpdateSection(section.id, {
+                        category: isExhibition ? "info" : "exhibition",
+                      })
                     }
                     className="text-[11px] font-bold px-2.5 py-1 rounded-full bg-neutral-100 text-neutral-500 hover:bg-neutral-200 transition-colors"
+                    title="切换这个段落属于信息类还是展览类，两类各自有独立的字体样式"
                   >
-                    {section.columns === 2 ? "两栏显示" : "一栏显示"}
+                    {isExhibition ? "展览类" : "信息类"}
                   </button>
-                )}
-                <button
-                  onClick={() => onDeleteSection(section.id)}
-                  className="text-[11px] font-bold px-2.5 py-1 rounded-full bg-neutral-100 text-neutral-400 hover:bg-red-50 hover:text-red-500 transition-colors"
-                >
-                  删除这个段落
-                </button>
-              </div>
-            )}
-            <Editable
-              as="h3"
-              value={tField(section, "title")}
-              editMode={editMode}
-              onChange={(v) => onUpdateSection(section.id, { [langKey("title")]: v })}
-              className="mb-3 block"
-              style={{ ...titleStyle, overflowWrap: "break-word" }}
-              lang={titleLang}
-            />
-            {editMode ? (
-              <Editable
-                as="p"
-                value={tField(section, "body")}
-                editMode={editMode}
-                onChange={(v) => onUpdateSection(section.id, { [langKey("body")]: v })}
-                className={`font-medium text-neutral-900 whitespace-pre-line block ${
-                  !isMobile && section.columns === 2 ? "sm:columns-2 sm:gap-x-16" : ""
-                }`}
-                style={{ ...bodyStyle, overflowWrap: "break-word" }}
-                lang={bodyLang}
-              />
-            ) : (
-              <div
-                className={`font-medium text-neutral-900 ${
-                  !isMobile && section.columns === 2 ? "sm:columns-2 sm:gap-x-16" : ""
-                }`}
-                style={{ ...bodyStyle, overflowWrap: "break-word" }}
-                lang={bodyLang}
-              >
-                {tField(section, "body")
-                  .split("\n")
-                  .filter((para) => para.trim() !== "")
-                  .map((para, i) => (
-                    <p
-                      key={i}
-                      style={
-                        isZh
-                          ? { textIndent: "2em" }
-                          : {
-                              marginBottom: `${
-                                (parseFloat(bodyStyle.fontSize) || 16) *
-                                (parseFloat(bodyStyle.lineHeight) || 1.6) *
-                                0.6
-                              }px`,
-                            }
+                  {!isMobile && (
+                    <button
+                      onClick={() =>
+                        onUpdateSection(section.id, { columns: section.columns === 2 ? 1 : 2 })
                       }
+                      className="text-[11px] font-bold px-2.5 py-1 rounded-full bg-neutral-100 text-neutral-500 hover:bg-neutral-200 transition-colors"
                     >
-                      {para}
-                    </p>
-                  ))}
-              </div>
-            )}
-          </div>
-        ))}
+                      {section.columns === 2 ? "两栏显示" : "一栏显示"}
+                    </button>
+                  )}
+                  <button
+                    onClick={() => onDeleteSection(section.id)}
+                    className="text-[11px] font-bold px-2.5 py-1 rounded-full bg-neutral-100 text-neutral-400 hover:bg-red-50 hover:text-red-500 transition-colors"
+                  >
+                    删除这个段落
+                  </button>
+                </div>
+              )}
+              <RichEditableField
+                as="h3"
+                value={tField(section, "title")}
+                editMode={editMode}
+                onChange={(v) => onUpdateSection(section.id, { [langKey("title")]: v })}
+                className="mb-3 block"
+                style={{ ...titleStyle, overflowWrap: "break-word" }}
+                lang={titleLang}
+              />
+              {editMode ? (
+                <RichEditableField
+                  as="div"
+                  value={tField(section, "body")}
+                  editMode={editMode}
+                  onChange={(v) => onUpdateSection(section.id, { [langKey("body")]: v })}
+                  className={`font-medium text-neutral-900 whitespace-pre-line block ${
+                    !isMobile && section.columns === 2 ? "sm:columns-2 sm:gap-x-16" : ""
+                  }`}
+                  style={{ ...bodyStyle, overflowWrap: "break-word" }}
+                  lang={bodyLang}
+                />
+              ) : (
+                <div
+                  className={`font-medium text-neutral-900 ${
+                    !isMobile && section.columns === 2 ? "sm:columns-2 sm:gap-x-16" : ""
+                  }`}
+                  style={{ ...bodyStyle, overflowWrap: "break-word" }}
+                  lang={bodyLang}
+                >
+                  {tField(section, "body")
+                    .split("\n")
+                    .filter((para) => para.trim() !== "")
+                    .map((para, i) => (
+                      <p
+                        key={i}
+                        style={
+                          isZh
+                            ? { textIndent: "2em" }
+                            : {
+                                marginBottom: `${
+                                  (parseFloat(bodyStyle.fontSize) || 16) *
+                                  (parseFloat(bodyStyle.lineHeight) || 1.6) *
+                                  0.6
+                                }px`,
+                              }
+                        }
+                      >
+                        {renderFormattedText(para)}
+                      </p>
+                    ))}
+                </div>
+              )}
+            </div>
+          );
+        })}
       </div>
 
       {editMode && (
-        <button
-          onClick={onAddSection}
-          className="mt-10 text-xs font-bold px-3 py-1.5 rounded-full bg-neutral-100 text-neutral-500 hover:bg-neutral-200 transition-colors"
-        >
-          + 添加段落
-        </button>
+        <div className="mt-10 flex items-center gap-2">
+          <button
+            onClick={() => onAddSection("info")}
+            className="text-xs font-bold px-3 py-1.5 rounded-full bg-neutral-100 text-neutral-500 hover:bg-neutral-200 transition-colors"
+          >
+            + 添加信息段落
+          </button>
+          <button
+            onClick={() => onAddSection("exhibition")}
+            className="text-xs font-bold px-3 py-1.5 rounded-full bg-neutral-100 text-neutral-500 hover:bg-neutral-200 transition-colors"
+          >
+            + 添加展览段落
+          </button>
+        </div>
       )}
     </div>
   );
