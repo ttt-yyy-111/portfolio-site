@@ -1219,7 +1219,7 @@ export const DEFAULT_DATA = {
     "detailTitle": {
       "fontSize": 35,
       "lineHeight": 1.2,
-      "fontFamily": "source-han-sans-tc",
+      "fontFamily": "ibm-plex-sans",
       "fontWeight": 700,
       "italic": false,
       "letterSpacing": 0,
@@ -1228,7 +1228,7 @@ export const DEFAULT_DATA = {
     "detailMaterials": {
       "fontSize": 18,
       "lineHeight": 1.6,
-      "fontFamily": "source-han-sans-tc",
+      "fontFamily": "ibm-plex-sans",
       "fontWeight": 400,
       "italic": false,
       "letterSpacing": 0,
