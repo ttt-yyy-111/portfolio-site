@@ -284,25 +284,6 @@ function Portfolio() {
     dataRef.current = data;
   }, [data]);
 
-  // 详情页里点开图片能看到的"高清大图"（imagesFull）单独存在另一个文件里，不算在
-  // 首次打开要下载的 content.json 里面——先用分辨率没那么高、但小得多的普通图把页面渲染出来，
-  // 高清图放到后台单独异步加载，加载完了再悄悄合并进数据里。加载完成之前点开大图看到的
-  // 还是普通分辨率的图（自动降级，不会出错、也不会空白），加载好了自动补上，用户不会感觉到卡顿。
-  useEffect(() => {
-    fetch("/content-images-full.json")
-      .then((res) => (res.ok ? res.json() : null))
-      .then((fullImagesMap) => {
-        if (!fullImagesMap || Object.keys(fullImagesMap).length === 0) return;
-        setData((prev) => ({
-          ...prev,
-          works: prev.works.map((w) =>
-            fullImagesMap[w.id] ? { ...w, imagesFull: fullImagesMap[w.id] } : w
-          ),
-        }));
-      })
-      .catch(() => {}); // 高清图没加载到就算了，详情页会自动退回用普通分辨率的图，不影响使用
-  }, []);
-
   const [hasUnexportedChanges, setHasUnexportedChanges] = useState(false);
   const [editMode, setEditMode] = useState(false);
   const [selectedId, setSelectedId] = useState(null);
@@ -583,33 +564,50 @@ function Portfolio() {
   }, []);
 
   // 把当前内容拆成两个文件导出：
-  // - content.json：不含"高清大图"（imagesFull），体积小很多，网站一打开就要下载这个
-  // - content-images-full.json：单独存放每件作品的高清大图，网站后台异步加载，不影响首次打开的速度
-  // 下载下来，两个都要放进项目的 public 文件夹（替换掉旧的）
-  const exportContent = useCallback(() => {
-    const worksWithoutFullImages = data.works.map(({ imagesFull, ...rest }) => rest);
-    const mainData = { ...data, works: worksWithoutFullImages };
-    const mainJson = JSON.stringify({ typography: data.typography, data: mainData }, null, 2);
+  // 导出内容：把图片从"直接写在文字里"（base64）转换成真正独立的图片文件，跟 content.json
+  // 一起打包成一个 zip 下载。这样浏览器打开网站的时候，图片能像正常网站一样并行加载、
+  // 用得到的时候才去下载、加载过一次以后还能被浏览器缓存住，比之前那种方式快很多。
+  // 已经是文件路径的图片（之前导出过、这次没改动过的）不会重复打包，只打包新增/替换过的。
+  const exportContent = useCallback(async () => {
+    const { default: JSZip } = await import("jszip");
+    const zip = new JSZip();
+    const imagesFolder = zip.folder("images");
 
-    const fullImagesMap = {};
-    data.works.forEach((w) => {
-      if (w.imagesFull && w.imagesFull.length > 0) fullImagesMap[w.id] = w.imagesFull;
-    });
-    const fullImagesJson = JSON.stringify(fullImagesMap, null, 2);
-
-    const download = (content, filename) => {
-      const blob = new Blob([content], { type: "application/json" });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = filename;
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-      URL.revokeObjectURL(url);
+    const extOf = (dataUrl) => {
+      const match = /^data:image\/(\w+);base64,/.exec(dataUrl);
+      if (!match) return "jpg";
+      const type = match[1].toLowerCase();
+      return type === "jpeg" ? "jpg" : type;
     };
-    download(mainJson, "content.json");
-    download(fullImagesJson, "content-images-full.json");
+
+    const toFileRef = (value, workId, tag) => {
+      if (!value || typeof value !== "string" || !value.startsWith("data:image")) return value;
+      const filename = `${workId}-${tag}.${extOf(value)}`;
+      imagesFolder.file(filename, value.split(",")[1], { base64: true });
+      return `/images/${filename}`;
+    };
+
+    const newWorks = data.works.map((w) => ({
+      ...w,
+      cover: toFileRef(w.cover, w.id, "cover"),
+      images: (w.images || []).map((img, i) => toFileRef(img, w.id, `img-${i}`)),
+      imagesFull: (w.imagesFull || []).map((img, i) => toFileRef(img, w.id, `full-${i}`)),
+    }));
+    const newData = { ...data, works: newWorks };
+
+    zip.file("content.json", JSON.stringify({ typography: data.typography, data: newData }, null, 2));
+
+    const blob = await zip.generateAsync({ type: "blob" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "portfolio-content.zip";
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(url);
+
+    setData(newData); // 当前这次编辑也同步换成路径引用，避免下次导出又把同样的图片再打包一遍
     setHasUnexportedChanges(false);
   }, [data]);
 
@@ -1201,7 +1199,7 @@ function Portfolio() {
             <>
               <button
                 onClick={exportContent}
-                title="把当前内容导出成 content.json 和 content-images-full.json 两个文件，下载后都放进项目的 public 文件夹替换掉旧的"
+                title="把当前内容导出成一个 zip 压缩包（content.json + images 文件夹），解压后放进项目的 public 文件夹替换掉旧的"
                 className={`text-xs font-bold px-3 py-1.5 rounded-full transition-colors ${
                   hasUnexportedChanges
                     ? "bg-amber-100 text-amber-700 hover:bg-amber-200"
@@ -2746,6 +2744,8 @@ function GalleryImage({ w, editMode, onSelect, onReplaceCover }) {
           src={w.images?.[0] || w.cover}
           alt={w.title}
           draggable={false}
+          loading="lazy"
+          decoding="async"
           onContextMenu={(e) => !editMode && e.preventDefault()}
           onDragStart={(e) => e.preventDefault()}
           className="w-full h-auto object-cover opacity-95 transition-opacity duration-300 select-none pointer-events-none"
@@ -3400,6 +3400,8 @@ function DetailImage({
         src={src}
         alt={alt}
         draggable={false}
+        loading="lazy"
+        decoding="async"
         onContextMenu={(e) => !editMode && e.preventDefault()}
         onDragStart={(e) => e.preventDefault()}
         onLoad={
@@ -3628,7 +3630,7 @@ export default function App() {
   if (status === "loading") {
     return (
       <div className="min-h-screen flex items-center justify-center bg-white text-neutral-400 text-sm">
-        加载中…
+        Loading…
       </div>
     );
   }
@@ -3636,12 +3638,12 @@ export default function App() {
   if (status === "error") {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center bg-white text-neutral-500 text-sm gap-3 px-6 text-center">
-        <p>内容加载失败，请检查网络后刷新页面重试。</p>
+        <p>Something went wrong loading this site. Please check your connection and try again.</p>
         <button
           onClick={() => window.location.reload()}
           className="px-4 py-2 rounded-full bg-neutral-900 text-white text-xs"
         >
-          刷新页面
+          Reload
         </button>
       </div>
     );
