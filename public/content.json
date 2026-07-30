@@ -76,7 +76,7 @@
       "fontSize": 13,
       "lineHeight": 1.5,
       "fontFamily": "ibm-plex-sans",
-      "fontWeight": 400,
+      "fontWeight": 500,
       "italic": false,
       "letterSpacing": 0,
       "fontWidth": 100
@@ -179,7 +179,7 @@
         "fontSize": 13,
         "lineHeight": 1.5,
         "fontFamily": "ibm-plex-sans",
-        "fontWeight": 400,
+        "fontWeight": 500,
         "italic": false,
         "letterSpacing": 0,
         "fontWidth": 100
@@ -1316,8 +1316,8 @@
       "footerLinks": {
         "fontSize": 13,
         "lineHeight": 1.5,
-        "fontFamily": "source-han-sans-tc",
-        "fontWeight": 400,
+        "fontFamily": "ibm-plex-sans",
+        "fontWeight": 500,
         "italic": false,
         "letterSpacing": 0,
         "fontWidth": 100
