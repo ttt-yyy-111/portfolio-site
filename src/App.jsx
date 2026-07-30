@@ -3356,7 +3356,7 @@ function DetailView({
                 editMode={editMode}
                 onReplaceImage={(file) => onReplaceImage(i, file)}
                 onRemoveImage={() => onRemoveImage(i)}
-                onOpen={undefined}
+                onOpen={() => setLightboxIndex(i)}
               />
             ))}
           </div>
@@ -3663,6 +3663,68 @@ function ImageLightbox({ images, index, onClose, onPrev, onNext, alt }) {
     window.addEventListener("mouseup", onMouseUp);
   };
 
+  // 手机端手势：双指捏合缩放、单指拖拽平移（放大后才能拖），跟鼠标滚轮/拖拽共用同一套
+  // zoom/pan 状态，逻辑上是一回事。touchRef 记录这次手势开始时的状态，方便算相对位移/缩放比例。
+  const touchRef = useRef(null);
+  const touchDistance = (touches) => {
+    const dx = touches[0].clientX - touches[1].clientX;
+    const dy = touches[0].clientY - touches[1].clientY;
+    return Math.hypot(dx, dy);
+  };
+
+  const handleTouchStart = (e) => {
+    if (e.touches.length === 2) {
+      touchRef.current = {
+        mode: "pinch",
+        startDistance: touchDistance(e.touches),
+        startZoom: zoom,
+      };
+    } else if (e.touches.length === 1 && zoom > 100) {
+      touchRef.current = {
+        mode: "pan",
+        startX: e.touches[0].clientX,
+        startY: e.touches[0].clientY,
+        startPan: pan,
+      };
+    } else {
+      touchRef.current = null;
+    }
+  };
+
+  const handleTouchMove = (e) => {
+    const state = touchRef.current;
+    if (!state) return;
+    if (state.mode === "pinch" && e.touches.length === 2) {
+      e.preventDefault();
+      isDraggingRef.current = true;
+      const scale = touchDistance(e.touches) / state.startDistance;
+      applyZoom(state.startZoom * scale);
+    } else if (state.mode === "pan" && e.touches.length === 1) {
+      e.preventDefault();
+      isDraggingRef.current = true;
+      const dx = e.touches[0].clientX - state.startX;
+      const dy = e.touches[0].clientY - state.startY;
+      setPan({ x: state.startPan.x + dx, y: state.startPan.y + dy });
+    }
+  };
+
+  const handleTouchEnd = (e) => {
+    touchRef.current = null;
+    // 双指捏合松开一根手指之后，如果还剩一根手指按着且当前是放大状态，转成拖拽平移，
+    // 体验上更连贯（不会一松开某根手指就整个手势直接结束）。
+    if (e.touches.length === 1 && zoom > 100) {
+      touchRef.current = {
+        mode: "pan",
+        startX: e.touches[0].clientX,
+        startY: e.touches[0].clientY,
+        startPan: pan,
+      };
+    }
+    setTimeout(() => {
+      isDraggingRef.current = false;
+    }, 0);
+  };
+
   const hasPrev = index > 0;
   const hasNext = index < images.length - 1;
 
@@ -3676,6 +3738,10 @@ function ImageLightbox({ images, index, onClose, onPrev, onNext, alt }) {
       <div
         className="flex-1 w-full min-h-0 flex items-center justify-center overflow-hidden px-6 md:px-10 pt-6 md:pt-10 pb-2"
         onWheel={handleWheel}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+        style={{ touchAction: "none" }}
       >
         <img
           src={images[index]}
@@ -3691,7 +3757,7 @@ function ImageLightbox({ images, index, onClose, onPrev, onNext, alt }) {
           style={{
             WebkitTouchCallout: "none",
             transform: `translate(${pan.x}px, ${pan.y}px) scale(${zoom / 100})`,
-            transition: dragRef.current ? "none" : "transform 150ms ease-out",
+            transition: dragRef.current || touchRef.current ? "none" : "transform 150ms ease-out",
           }}
         />
       </div>
