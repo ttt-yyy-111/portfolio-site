@@ -56,7 +56,7 @@ export const DEFAULT_TYPOGRAPHY = {
     "fontWidth": 100
   },
   "infoTitle": {
-    "fontSize": 18,
+    "fontSize": 25,
     "lineHeight": 1.3,
     "fontFamily": "ibm-plex-sans",
     "fontWeight": 700,
@@ -65,7 +65,7 @@ export const DEFAULT_TYPOGRAPHY = {
     "fontWidth": 100
   },
   "infoBody": {
-    "fontSize": 16,
+    "fontSize": 20,
     "lineHeight": 1.7,
     "fontFamily": "ibm-plex-sans",
     "fontWeight": 400,
@@ -151,7 +151,7 @@ export const DEFAULT_DATA = {
       "fontWidth": 100
     },
     "infoTitle": {
-      "fontSize": 18,
+      "fontSize": 25,
       "lineHeight": 1.3,
       "fontFamily": "ibm-plex-sans",
       "fontWeight": 700,
@@ -160,7 +160,7 @@ export const DEFAULT_DATA = {
       "fontWidth": 100
     },
     "infoBody": {
-      "fontSize": 16,
+      "fontSize": 20,
       "lineHeight": 1.7,
       "fontFamily": "ibm-plex-sans",
       "fontWeight": 400,
@@ -285,7 +285,7 @@ export const DEFAULT_DATA = {
       "title": "Biography",
       "titleZh": "简介",
       "titleEs": "Biografía",
-      "body": "点击这里编辑你的艺术家简介、创作理念、经历。",
+      "body": "Yutian Tian is an experimental visual artist born in Heilongjiang, China, in 1996. She currently lives and works in Beijing. She received her bachelor's degree from the Central Academy of Fine Arts in 2018 and later went to Japan to study mineral pigments.\nTian has lived and worked across China, Japan, and the United States. During her undergraduate studies in Animation at CAFA, she worked as a producer and illustrator, contributing to several art documentaries and moving-image projects. She subsequently traveled to Japan to study traditional mineral pigments and pursued further studies in printmaking in the United States. These cross-cultural and interdisciplinary experiences form the material foundation of her practice.\nHer practice moves between painting, printmaking, and mixed-media installation, using foraging and collecting as conceptual starting points. In her work, low-cost, mass-produced everyday disposables—found objects left on the street, children's toys, aluminum foil, plastic wrap, and various textiles—are juxtaposed and layered with traditional media laden with cultural memory, such as mineral pigments, ink, and antique silk, creating a realm where multiple temporal dimensions coexist.\nRefusing to reduce materials to mere tools for expression, Tian regards them as extensions of the senses, exploring how the innate energy of matter manifests naturally through physical processes of layering, draping, and seepage. Her work revolves around materiality, identity, and transformation, continuously tracing material politics, cultural identity, and self-edification, while testing the possibilities of bodily perception as a methodology. Through processes of layering, transferring, and reconfiguring, she expands the boundaries of the marginalized and overlooked, giving form to works intertwined with themes of connection and change.",
       "bodyZh": "点击这里编辑你的艺术家简介、创作理念、经历（中文版）。",
       "bodyEs": "Haz clic aquí para editar tu biografía, filosofía creativa y trayectoria.",
       "columns": 1
