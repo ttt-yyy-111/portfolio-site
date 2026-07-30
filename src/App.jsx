@@ -2844,11 +2844,14 @@ function GalleryImage({ w, editMode, onSelect, onReplaceCover }) {
 // 和"剩下的部分（名称）"两截，同时保留里面可能有的加粗/斜体格式（用 Range API 在真实 DOM
 // 结构上做切割，而不是简单粗暴地按字符位置切字符串，这样才不会把 <strong>/<em> 标签切坏）。
 // 兼容旧数据：之前的标题/正文存的是纯文本（用 \n 换行、**/* 这种简单标记），
-// 现在改成存真的 HTML 了。如果读到的内容里已经有 HTML 标签，说明是新格式，原样返回；
-// 否则就是老格式，转义一下特殊字符、把 \n 换成 <br>，这样老内容不用重新编辑也能正常显示。
+// 现在改成存真的 HTML 了。如果读到的内容里已经有 HTML 标签、或者已经是转义过的实体符号
+// （比如 &amp;），说明已经是新格式处理过的内容了，原样返回，不要再转义一遍——不然像
+// "Fashion & Art" 这种带 & 的文字，转义过一次变成 "Fashion &amp; Art" 以后，
+// 再被当成"老格式"重新转义，就会变成错误的 "Fashion &amp;amp; Art"。
+// 否则就是没处理过的老格式，转义一下特殊字符、把 \n 换成 <br>，这样老内容不用重新编辑也能正常显示。
 function ensureHtmlBody(raw) {
   if (!raw) return "";
-  if (/<[a-z][\s\S]*>/i.test(raw)) return raw;
+  if (/<[a-z][\s\S]*>/i.test(raw) || /&(amp|lt|gt|quot|#39|#\d+|#x[0-9a-f]+);/i.test(raw)) return raw;
   const escaped = raw.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
   return escaped.replace(/\n/g, "<br>");
 }
