@@ -1412,8 +1412,8 @@ function Portfolio() {
             </div>
             <input
               type="range"
-              min={1.0}
-              max={2.4}
+              min={0}
+              max={2}
               step={0.1}
               value={activeTypoValue.lineHeight}
               onChange={(e) =>
@@ -2901,7 +2901,16 @@ function splitLeadingToken(html) {
 // 而且加粗、斜体是各自独立生效的，同一段文字可以同时又粗又斜。存的是真的 HTML
 // （比如 <strong>加粗</strong>），不是自己拼的 markdown 标记，好处是浏览器自己就能正确处理
 // "加粗里面套斜体"这种叠加情况，不用自己写解析逻辑。
-function RichEditableField({ value, onChange, as: Tag = "p", editMode, className, style, lang }) {
+function RichEditableField({
+  value,
+  onChange,
+  as: Tag = "p",
+  editMode,
+  className,
+  style,
+  lang,
+  showFormatButtons = true,
+}) {
   const ref = useRef(null);
   const [formatState, setFormatState] = useState({ bold: false, italic: false });
 
@@ -2913,7 +2922,7 @@ function RichEditableField({ value, onChange, as: Tag = "p", editMode, className
     if (!el) return;
     const html = value || "";
     if (el.innerHTML !== html) el.innerHTML = html;
-  }, [value]);
+  }, [value, editMode]);
 
   const updateFormatState = () => {
     try {
@@ -2959,24 +2968,26 @@ function RichEditableField({ value, onChange, as: Tag = "p", editMode, className
 
   return (
     <div>
-      <div className="flex items-center gap-1 mb-1.5">
-        <button
-          onMouseDown={(e) => e.preventDefault()} // 防止点按钮的时候先把编辑框的焦点/选区弄丢了
-          onClick={() => runCommand("bold")}
-          className={btnClass(formatState.bold) + " font-bold"}
-          title="加粗选中的文字"
-        >
-          B
-        </button>
-        <button
-          onMouseDown={(e) => e.preventDefault()}
-          onClick={() => runCommand("italic")}
-          className={btnClass(formatState.italic) + " italic font-serif"}
-          title="斜体选中的文字"
-        >
-          I
-        </button>
-      </div>
+      {showFormatButtons && (
+        <div className="flex items-center gap-1 mb-1.5">
+          <button
+            onMouseDown={(e) => e.preventDefault()} // 防止点按钮的时候先把编辑框的焦点/选区弄丢了
+            onClick={() => runCommand("bold")}
+            className={btnClass(formatState.bold) + " font-bold"}
+            title="加粗选中的文字"
+          >
+            B
+          </button>
+          <button
+            onMouseDown={(e) => e.preventDefault()}
+            onClick={() => runCommand("italic")}
+            className={btnClass(formatState.italic) + " italic font-serif"}
+            title="斜体选中的文字"
+          >
+            I
+          </button>
+        </div>
+      )}
       <Tag
         ref={ref}
         contentEditable
@@ -3068,6 +3079,7 @@ function InfoView({
                 className="mb-3 block"
                 style={{ ...titleStyle, overflowWrap: "break-word" }}
                 lang={titleLang}
+                showFormatButtons={false}
               />
               {isExhibition ? (
                 editMode ? (
