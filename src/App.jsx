@@ -2250,6 +2250,7 @@ export default function Portfolio() {
             titleLang={infoTitleLang}
             bodyStyle={infoBodyStyle}
             bodyLang={infoBodyLang}
+            isZh={isZh}
             tField={tField}
             langKey={langKey}
             onUpdateSection={updateInfoSection}
@@ -2730,6 +2731,7 @@ function InfoView({
   titleLang,
   bodyStyle,
   bodyLang,
+  isZh,
   tField,
   langKey,
   onUpdateSection,
@@ -2775,17 +2777,49 @@ function InfoView({
               style={{ ...titleStyle, overflowWrap: "break-word" }}
               lang={titleLang}
             />
-            <Editable
-              as="p"
-              value={tField(section, "body")}
-              editMode={editMode}
-              onChange={(v) => onUpdateSection(section.id, { [langKey("body")]: v })}
-              className={`font-medium text-neutral-900 whitespace-pre-line block ${
-                !isMobile && section.columns === 2 ? "sm:columns-2 sm:gap-x-16" : ""
-              }`}
-              style={{ ...bodyStyle, overflowWrap: "break-word" }}
-              lang={bodyLang}
-            />
+            {editMode ? (
+              <Editable
+                as="p"
+                value={tField(section, "body")}
+                editMode={editMode}
+                onChange={(v) => onUpdateSection(section.id, { [langKey("body")]: v })}
+                className={`font-medium text-neutral-900 whitespace-pre-line block ${
+                  !isMobile && section.columns === 2 ? "sm:columns-2 sm:gap-x-16" : ""
+                }`}
+                style={{ ...bodyStyle, overflowWrap: "break-word" }}
+                lang={bodyLang}
+              />
+            ) : (
+              <div
+                className={`font-medium text-neutral-900 ${
+                  !isMobile && section.columns === 2 ? "sm:columns-2 sm:gap-x-16" : ""
+                }`}
+                style={{ ...bodyStyle, overflowWrap: "break-word" }}
+                lang={bodyLang}
+              >
+                {tField(section, "body")
+                  .split("\n")
+                  .filter((para) => para.trim() !== "")
+                  .map((para, i) => (
+                    <p
+                      key={i}
+                      style={
+                        isZh
+                          ? { textIndent: "2em" }
+                          : {
+                              marginBottom: `${
+                                (parseFloat(bodyStyle.fontSize) || 16) *
+                                (parseFloat(bodyStyle.lineHeight) || 1.6) *
+                                0.6
+                              }px`,
+                            }
+                      }
+                    >
+                      {para}
+                    </p>
+                  ))}
+              </div>
+            )}
           </div>
         ))}
       </div>
