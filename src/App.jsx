@@ -2884,7 +2884,7 @@ function InfoView({
                   >
                     {isExhibition ? "展览类" : "信息类"}
                   </button>
-                  {!isMobile && (
+                  {!isMobile && !isExhibition && (
                     <button
                       onClick={() =>
                         onUpdateSection(section.id, { columns: section.columns === 2 ? 1 : 2 })
@@ -2918,11 +2918,44 @@ function InfoView({
                   editMode={editMode}
                   onChange={(v) => onUpdateSection(section.id, { [langKey("body")]: v })}
                   className={`font-medium text-neutral-900 whitespace-pre-line block ${
-                    !isMobile && section.columns === 2 ? "sm:columns-2 sm:gap-x-16" : ""
+                    isExhibition
+                      ? ""
+                      : !isMobile && section.columns === 2
+                      ? "sm:columns-2 sm:gap-x-16"
+                      : ""
                   }`}
                   style={{ ...bodyStyle, overflowWrap: "break-word" }}
                   lang={bodyLang}
                 />
+              ) : isExhibition ? (
+                // 展览类：每一行按"年份 + 空格 + 展览名称"拆成两栏对应显示，
+                // 年份栏窄、名称栏宽，两栏之间留一点间距；不额外加大段落间距，也不做首行缩进。
+                <div
+                  className="font-medium text-neutral-900"
+                  style={{
+                    ...bodyStyle,
+                    overflowWrap: "break-word",
+                    display: "grid",
+                    gridTemplateColumns: "auto 1fr",
+                    columnGap: "1.5em",
+                  }}
+                  lang={bodyLang}
+                >
+                  {tField(section, "body")
+                    .split("\n")
+                    .filter((line) => line.trim() !== "")
+                    .map((line, i) => {
+                      const match = line.match(/^(\S+)\s+(.*)$/);
+                      const yearPart = match ? match[1] : "";
+                      const namePart = match ? match[2] : line;
+                      return (
+                        <React.Fragment key={i}>
+                          <span>{renderFormattedText(yearPart)}</span>
+                          <span>{renderFormattedText(namePart)}</span>
+                        </React.Fragment>
+                      );
+                    })}
+                </div>
               ) : (
                 <div
                   className={`font-medium text-neutral-900 ${
