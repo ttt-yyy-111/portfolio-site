@@ -1,5 +1,12 @@
 import React, { useState, useEffect, useLayoutEffect, useRef, useMemo, useCallback } from "react";
-import { DEFAULT_TYPOGRAPHY, DEFAULT_DATA } from "./content.js";
+
+// 网站的实际内容（文字、图片）不再直接打包进这个 JS 文件里了——之前图片全是以数据的形式
+// 直接写在 content.js 里，作品一多这个文件会涨到十几 MB，手机打开的时候要先把这么大一个文件
+// 下载解析完才能看到页面，很容易卡死在白屏/转圈。现在改成打开网页之后单独去请求
+// public/content.json 这份数据（见下面的 App 组件），核心代码本身能秒开，内容异步加载进来，
+// 手机端体验会好很多。这两个变量在数据加载完成之前是空的，Portfolio 组件要等加载完了才会挂载。
+let DEFAULT_TYPOGRAPHY = {};
+let DEFAULT_DATA = {};
 
 const SIDEBAR_MIN_WIDTH = 260; // 左栏最小宽度（像素）
 
@@ -184,7 +191,7 @@ const TYPOGRAPHY_TARGETS = [
   { key: "footerLinks", label: "Information / Email / Instagram" },
 ];
 
-// 不再需要 STORAGE_KEY —— 内容改动只存在浏览器内存里，靠"导出内容"按钮导出成 content.js
+// 不再需要 STORAGE_KEY —— 内容改动只存在浏览器内存里，靠"导出内容"按钮导出成 content.json
 
 // 把上传的图片压缩到合理大小，避免存储超限
 function resizeImageToDataUrl(file, maxDim = 1400, quality = 0.82) {
@@ -270,8 +277,8 @@ function reorderList(list, fromIndex, toIndex) {
   return next;
 }
 
-export default function Portfolio() {
-  const [data, setData] = useState(DEFAULT_DATA); // 直接用 content.js 里的内容做初始值，内存里编辑
+function Portfolio() {
+  const [data, setData] = useState(DEFAULT_DATA); // 直接用 content.json 里的内容做初始值，内存里编辑
   const dataRef = useRef(data);
   useLayoutEffect(() => {
     dataRef.current = data;
@@ -555,17 +562,14 @@ export default function Portfolio() {
     setHasUnexportedChanges(true);
   }, []);
 
-  // 把当前内容导出成 content.js，下载下来直接替换项目里的 src/content.js 就行
+  // 把当前内容导出成 content.json，下载下来直接替换项目里的 public/content.json 就行
   const exportContent = useCallback(() => {
-    const code =
-      `// 这个文件是从"编辑模式"里导出的，直接替换掉项目里的 src/content.js 就行\n\n` +
-      `export const DEFAULT_TYPOGRAPHY = ${JSON.stringify(data.typography, null, 2)};\n\n` +
-      `export const DEFAULT_DATA = ${JSON.stringify(data, null, 2)};\n`;
-    const blob = new Blob([code], { type: "text/javascript" });
+    const json = JSON.stringify({ typography: data.typography, data }, null, 2);
+    const blob = new Blob([json], { type: "application/json" });
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = "content.js";
+    a.download = "content.json";
     document.body.appendChild(a);
     a.click();
     a.remove();
@@ -1161,7 +1165,7 @@ export default function Portfolio() {
             <>
               <button
                 onClick={exportContent}
-                title="把当前内容导出成 content.js，下载后替换项目里的 src/content.js"
+                title="把当前内容导出成 content.json，下载后替换项目里的 public/content.json"
                 className={`text-xs font-bold px-3 py-1.5 rounded-full transition-colors ${
                   hasUnexportedChanges
                     ? "bg-amber-100 text-amber-700 hover:bg-amber-200"
@@ -3563,4 +3567,49 @@ function ImageLightbox({ images, index, onClose, onPrev, onNext, alt }) {
       )}
     </div>
   );
+}
+
+// 网站真正打开时的入口：先异步加载 public/content.json 里的实际内容，
+// 加载完成之前显示一个很轻量的加载提示（不依赖任何图片/数据，秒开），
+// 加载好了、加载失败了各自显示对应的状态，避免手机端卡死在白屏。
+export default function App() {
+  const [status, setStatus] = useState("loading"); // "loading" | "ready" | "error"
+
+  useEffect(() => {
+    fetch("/content.json")
+      .then((res) => {
+        if (!res.ok) throw new Error("network response was not ok");
+        return res.json();
+      })
+      .then((json) => {
+        DEFAULT_TYPOGRAPHY = json.typography || {};
+        DEFAULT_DATA = json.data || {};
+        setStatus("ready");
+      })
+      .catch(() => setStatus("error"));
+  }, []);
+
+  if (status === "loading") {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-white text-neutral-400 text-sm">
+        加载中…
+      </div>
+    );
+  }
+
+  if (status === "error") {
+    return (
+      <div className="min-h-screen flex flex-col items-center justify-center bg-white text-neutral-500 text-sm gap-3 px-6 text-center">
+        <p>内容加载失败，请检查网络后刷新页面重试。</p>
+        <button
+          onClick={() => window.location.reload()}
+          className="px-4 py-2 rounded-full bg-neutral-900 text-white text-xs"
+        >
+          刷新页面
+        </button>
+      </div>
+    );
+  }
+
+  return <Portfolio />;
 }
