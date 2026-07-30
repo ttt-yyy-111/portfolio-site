@@ -963,13 +963,27 @@
         "date": "Thu Jul 30 2026",
         "description": "点击这里填写作品介绍。",
         "cover": "https://picsum.photos/seed/ct1w4pz7ujbms75ba4p/700/700",
-        "images": [],
+        "images": [
+          "/images/427i5eybhtwms75ba4p-img-0.jpg",
+          "/images/427i5eybhtwms75ba4p-img-1.jpg",
+          "/images/427i5eybhtwms75ba4p-img-2.jpg",
+          "/images/427i5eybhtwms75ba4p-img-3.jpg",
+          "/images/427i5eybhtwms75ba4p-img-4.jpg",
+          "/images/427i5eybhtwms75ba4p-img-5.jpg"
+        ],
         "tone": "#454545",
         "seriesEs": "Una Noche Enredada",
         "titleEs": "Una Noche Enredada I",
         "seriesZh": "缠绕的夜",
         "titleZh": "缠绕的夜 I",
-        "imagesFull": []
+        "imagesFull": [
+          "/images/427i5eybhtwms75ba4p-full-0.jpg",
+          "/images/427i5eybhtwms75ba4p-full-1.jpg",
+          "/images/427i5eybhtwms75ba4p-full-2.jpg",
+          "/images/427i5eybhtwms75ba4p-full-3.jpg",
+          "/images/427i5eybhtwms75ba4p-full-4.jpg",
+          "/images/427i5eybhtwms75ba4p-full-5.jpg"
+        ]
       },
       {
         "id": "drffgm74sjjms75ba4p",
@@ -979,13 +993,27 @@
         "date": "Thu Jul 30 2026",
         "description": "点击这里填写作品介绍。",
         "cover": "https://picsum.photos/seed/sm6mu4q7puhms75ba4p/700/700",
-        "images": [],
+        "images": [
+          "/images/drffgm74sjjms75ba4p-img-0.jpg",
+          "/images/drffgm74sjjms75ba4p-img-1.jpg",
+          "/images/drffgm74sjjms75ba4p-img-2.jpg",
+          "/images/drffgm74sjjms75ba4p-img-3.jpg",
+          "/images/drffgm74sjjms75ba4p-img-4.jpg",
+          "/images/drffgm74sjjms75ba4p-img-5.jpg"
+        ],
         "tone": "#454545",
         "seriesEs": "Una Noche Enredada",
         "titleEs": "Una Noche Enredada II",
         "seriesZh": "缠绕的夜",
         "titleZh": "缠绕的夜 II",
-        "imagesFull": []
+        "imagesFull": [
+          "/images/drffgm74sjjms75ba4p-full-0.jpg",
+          "/images/drffgm74sjjms75ba4p-full-1.jpg",
+          "/images/drffgm74sjjms75ba4p-full-2.jpg",
+          "/images/drffgm74sjjms75ba4p-full-3.jpg",
+          "/images/drffgm74sjjms75ba4p-full-4.jpg",
+          "/images/drffgm74sjjms75ba4p-full-5.jpg"
+        ]
       },
       {
         "id": "t7yh9cersims75ba4p",
@@ -995,13 +1023,31 @@
         "date": "Thu Jul 30 2026",
         "description": "点击这里填写作品介绍。",
         "cover": "https://picsum.photos/seed/yecj7et8pjcms75ba4p/700/700",
-        "images": [],
+        "images": [
+          "/images/t7yh9cersims75ba4p-img-0.jpg",
+          "/images/t7yh9cersims75ba4p-img-1.jpg",
+          "/images/t7yh9cersims75ba4p-img-2.jpg",
+          "/images/t7yh9cersims75ba4p-img-3.jpg",
+          "/images/t7yh9cersims75ba4p-img-4.jpg",
+          "/images/t7yh9cersims75ba4p-img-5.jpg",
+          "/images/t7yh9cersims75ba4p-img-6.jpg",
+          "/images/t7yh9cersims75ba4p-img-7.jpg"
+        ],
         "tone": "#454545",
         "seriesEs": "Una Noche Enredada",
         "titleEs": "Una Noche Enredada III",
         "seriesZh": "缠绕的夜",
         "titleZh": "缠绕的夜 III",
-        "imagesFull": []
+        "imagesFull": [
+          "/images/t7yh9cersims75ba4p-full-0.jpg",
+          "/images/t7yh9cersims75ba4p-full-1.jpg",
+          "/images/t7yh9cersims75ba4p-full-2.jpg",
+          "/images/t7yh9cersims75ba4p-full-3.jpg",
+          "/images/t7yh9cersims75ba4p-full-4.jpg",
+          "/images/t7yh9cersims75ba4p-full-5.jpg",
+          "/images/t7yh9cersims75ba4p-full-6.jpg",
+          "/images/t7yh9cersims75ba4p-full-7.jpg"
+        ]
       },
       {
         "id": "z9gbw2pfyt9ms75azft",
@@ -1023,11 +1069,29 @@
         "date": "Thu Jul 30 2026",
         "description": "点击这里填写作品介绍。",
         "cover": "https://picsum.photos/seed/ntawt1v4v9ms75attk/700/700",
-        "images": [],
+        "images": [
+          "/images/bka6djp3g5mms75attk-img-0.jpg",
+          "/images/bka6djp3g5mms75attk-img-1.jpg",
+          "/images/bka6djp3g5mms75attk-img-2.jpg",
+          "/images/bka6djp3g5mms75attk-img-3.jpg",
+          "/images/bka6djp3g5mms75attk-img-4.jpg",
+          "/images/bka6djp3g5mms75attk-img-5.jpg",
+          "/images/bka6djp3g5mms75attk-img-6.jpg",
+          "/images/bka6djp3g5mms75attk-img-7.jpg"
+        ],
         "tone": "#454545",
         "titleEs": "Intentando Mantenerse De Pie Solemnemente",
         "titleZh": "企图肃立",
-        "imagesFull": []
+        "imagesFull": [
+          "/images/bka6djp3g5mms75attk-full-0.jpg",
+          "/images/bka6djp3g5mms75attk-full-1.jpg",
+          "/images/bka6djp3g5mms75attk-full-2.jpg",
+          "/images/bka6djp3g5mms75attk-full-3.jpg",
+          "/images/bka6djp3g5mms75attk-full-4.jpg",
+          "/images/bka6djp3g5mms75attk-full-5.jpg",
+          "/images/bka6djp3g5mms75attk-full-6.jpg",
+          "/images/bka6djp3g5mms75attk-full-7.jpg"
+        ]
       },
       {
         "id": "ejh7b9jpiadms75anw2",
@@ -1036,11 +1100,21 @@
         "date": "Thu Jul 30 2026",
         "description": "点击这里填写作品介绍。",
         "cover": "https://picsum.photos/seed/4l60qff25jqms75anw2/700/700",
-        "images": [],
+        "images": [
+          "/images/ejh7b9jpiadms75anw2-img-0.jpg",
+          "/images/ejh7b9jpiadms75anw2-img-1.jpg",
+          "/images/ejh7b9jpiadms75anw2-img-2.jpg",
+          "/images/ejh7b9jpiadms75anw2-img-3.jpg"
+        ],
         "tone": "#454545",
         "titleEs": "Un Remanso de Agua Clara del Lago",
         "titleZh": "一汪澄净湖水",
-        "imagesFull": []
+        "imagesFull": [
+          "/images/ejh7b9jpiadms75anw2-full-0.jpg",
+          "/images/ejh7b9jpiadms75anw2-full-1.jpg",
+          "/images/ejh7b9jpiadms75anw2-full-2.jpg",
+          "/images/ejh7b9jpiadms75anw2-full-3.jpg"
+        ]
       },
       {
         "id": "1md6qdiivdnms75aicj",
