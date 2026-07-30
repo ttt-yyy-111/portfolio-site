@@ -1,1 +1,1428 @@
-{"typography": {"artistName": {"fontSize": 40, "lineHeight": 1, "fontFamily": "ibm-plex-sans", "fontWeight": 700, "italic": false, "letterSpacing": -1, "fontWidth": 100}, "year": {"fontSize": 25, "lineHeight": 1.3, "fontFamily": "ibm-plex-sans", "fontWeight": 700, "italic": false, "letterSpacing": 0, "fontWidth": 100}, "workTitle": {"fontSize": 18, "lineHeight": 1, "fontFamily": "ibm-plex-sans", "fontWeight": 500, "italic": false, "letterSpacing": -0.5, "fontWidth": 100}, "detailTitle": {"fontSize": 40, "lineHeight": 1.2, "fontFamily": "ibm-plex-sans", "fontWeight": 700, "italic": true, "letterSpacing": 0, "fontWidth": 100}, "detailMaterials": {"fontSize": 20, "lineHeight": 1.6, "fontFamily": "ibm-plex-sans", "fontWeight": 400, "italic": false, "letterSpacing": 0, "fontWidth": 100}, "detailDimensions": {"fontSize": 25, "lineHeight": 1, "fontFamily": "ibm-plex-sans", "fontWeight": 600, "italic": false, "letterSpacing": 0, "fontWidth": 100}, "infoTitle": {"fontSize": 30, "lineHeight": 1.3, "fontFamily": "ibm-plex-sans", "fontWeight": 700, "italic": false, "letterSpacing": 0, "fontWidth": 100}, "indexNav": {"fontSize": 18, "lineHeight": 1.3, "fontFamily": "ibm-plex-sans", "fontWeight": 700, "italic": false, "letterSpacing": 0, "fontWidth": 100}, "footerLinks": {"fontSize": 13, "lineHeight": 1.5, "fontFamily": "ibm-plex-sans", "fontWeight": 400, "italic": false, "letterSpacing": 0, "fontWidth": 100}, "infoBodyInfo": {"fontSize": 20, "lineHeight": 1.5, "fontFamily": "ibm-plex-sans", "fontWeight": 400, "italic": false, "letterSpacing": -0.5, "fontWidth": 100}, "infoBodyExhibition": {"fontSize": 20, "lineHeight": 1.5, "fontFamily": "ibm-plex-sans", "fontWeight": 400, "italic": false, "letterSpacing": -0.5, "fontWidth": 100}}, "data": {"artistName": "YU TIANTIAN", "typography": {"artistName": {"fontSize": 40, "lineHeight": 1, "fontFamily": "ibm-plex-sans", "fontWeight": 700, "italic": false, "letterSpacing": -1, "fontWidth": 100}, "year": {"fontSize": 25, "lineHeight": 1.3, "fontFamily": "ibm-plex-sans", "fontWeight": 700, "italic": false, "letterSpacing": 0, "fontWidth": 100}, "workTitle": {"fontSize": 18, "lineHeight": 1, "fontFamily": "ibm-plex-sans", "fontWeight": 500, "italic": false, "letterSpacing": -0.5, "fontWidth": 100}, "detailTitle": {"fontSize": 40, "lineHeight": 1.2, "fontFamily": "ibm-plex-sans", "fontWeight": 700, "italic": true, "letterSpacing": 0, "fontWidth": 100}, "detailMaterials": {"fontSize": 20, "lineHeight": 1.6, "fontFamily": "ibm-plex-sans", "fontWeight": 400, "italic": false, "letterSpacing": 0, "fontWidth": 100}, "detailDimensions": {"fontSize": 25, "lineHeight": 1, "fontFamily": "ibm-plex-sans", "fontWeight": 600, "italic": false, "letterSpacing": 0, "fontWidth": 100}, "infoTitle": {"fontSize": 30, "lineHeight": 1.3, "fontFamily": "ibm-plex-sans", "fontWeight": 700, "italic": false, "letterSpacing": 0, "fontWidth": 100}, "indexNav": {"fontSize": 18, "lineHeight": 1.3, "fontFamily": "ibm-plex-sans", "fontWeight": 700, "italic": false, "letterSpacing": 0, "fontWidth": 100}, "footerLinks": {"fontSize": 13, "lineHeight": 1.5, "fontFamily": "ibm-plex-sans", "fontWeight": 400, "italic": false, "letterSpacing": 0, "fontWidth": 100}, "infoBodyInfo": {"fontSize": 20, "lineHeight": 1.5, "fontFamily": "ibm-plex-sans", "fontWeight": 400, "italic": false, "letterSpacing": -0.5, "fontWidth": 100}, "infoBodyExhibition": {"fontSize": 20, "lineHeight": 1.5, "fontFamily": "ibm-plex-sans", "fontWeight": 400, "italic": false, "letterSpacing": -0.5, "fontWidth": 100}}, "typographyMobile": {"artistName": {"fontSize": 46, "lineHeight": 1, "fontFamily": "ibm-plex-sans", "fontWeight": 700, "italic": false, "letterSpacing": -1, "fontWidth": 100}, "year": {"fontSize": 30, "lineHeight": 1.3, "fontFamily": "ibm-plex-sans", "fontWeight": 700, "italic": false, "letterSpacing": 0, "fontWidth": 100}, "workTitle": {"fontSize": 20, "lineHeight": 1, "fontFamily": "ibm-plex-sans", "fontWeight": 500, "italic": false, "letterSpacing": -0.5, "fontWidth": 100}, "detailTitle": {"fontSize": 30, "lineHeight": 1.2, "fontFamily": "ibm-plex-sans", "fontWeight": 700, "italic": true, "letterSpacing": 0, "fontWidth": 100}, "detailMaterials": {"fontSize": 16, "lineHeight": 1.6, "fontFamily": "ibm-plex-sans", "fontWeight": 400, "italic": false, "letterSpacing": 0, "fontWidth": 100}, "detailDimensions": {"fontSize": 20, "lineHeight": 1, "fontFamily": "ibm-plex-sans", "fontWeight": 600, "italic": false, "letterSpacing": 0, "fontWidth": 100}, "infoTitle": {"fontSize": 30, "lineHeight": 1.3, "fontFamily": "ibm-plex-sans", "fontWeight": 700, "italic": false, "letterSpacing": 0, "fontWidth": 100}, "indexNav": {"fontSize": 18, "lineHeight": 1.3, "fontFamily": "ibm-plex-sans", "fontWeight": 700, "italic": false, "letterSpacing": 0, "fontWidth": 100}, "footerLinks": {"fontSize": 12, "lineHeight": 1.5, "fontFamily": "ibm-plex-sans", "fontWeight": 400, "italic": false, "letterSpacing": 0, "fontWidth": 100}, "infoBodyInfo": {"fontSize": 18, "lineHeight": 1.5, "fontFamily": "ibm-plex-sans", "fontWeight": 400, "italic": false, "letterSpacing": 0, "fontWidth": 100}, "infoBodyExhibition": {"fontSize": 18, "lineHeight": 1.5, "fontFamily": "ibm-plex-sans", "fontWeight": 400, "italic": false, "letterSpacing": 0, "fontWidth": 100}}, "infoSections": [{"id": "bio", "title": "Biography", "titleZh": "简介", "titleEs": "Biografía", "body": "Yu Tiantian is an experimental visual artist born in Heilongjiang, China, in 1996. She currently lives and works in Beijing. She received her bachelor's degree from the Central Academy of Fine Arts in 2018 and later went to Japan to study mineral pigments.\nTiantian has lived and worked across China, Japan, and the United States. During her undergraduate studies in Animation at CAFA, she worked as a producer and illustrator, contributing to several art documentaries and moving-image projects. She subsequently traveled to Japan to study traditional mineral pigments and pursued further studies in printmaking in the United States. These cross-cultural and interdisciplinary experiences form the material foundation of her practice.\nHer practice moves between painting, printmaking, and mixed-media installation, using foraging and collecting as conceptual starting points. In her work, low-cost, mass-produced everyday disposables—found objects left on the street, children's toys, aluminum foil, plastic wrap, and various textiles—are juxtaposed and layered with traditional media laden with cultural memory, such as mineral pigments, ink, and antique silk, creating a realm where multiple temporal dimensions coexist.\nRefusing to reduce materials to mere tools for expression, Tiantian regards them as extensions of the senses, exploring how the innate energy of matter manifests naturally through physical processes of layering, draping, and seepage. Her work revolves around materiality, identity, and transformation, continuously tracing material politics, cultural identity, and self-edification, while testing the possibilities of bodily perception as a methodology. Through processes of layering, transferring, and reconfiguring, she expands the boundaries of the marginalized and overlooked, giving form to works intertwined with themes of connection and change.", "bodyZh": "于田田，实验视觉艺术家，1996年出生于中国黑龙江，现工作生活于北京。她于2018年毕业于中央美术学院并获得学士学位，后赴日本研习矿物颜料。\n\n于田田先后在中国、日本及美国学习与工作。在央美修读动画专业期间，她曾担任制片人与插画师，参与多部艺术纪录片与影像项目的制作；此后赴日研习传统矿物颜料，并于美国深造版画。这些跨越文化与媒介的履历，构成了其艺术实践的材料基底。\n\n她的创作游移于绘画、版画与混合媒介装置之间，常以“捡拾”与“采集”作为逻辑起点。在实践中，廉价且工业化量产的日常消耗品——街头遗落的拾得物、儿童玩具、锡纸、保鲜膜及各类织物——与矿物颜料、墨水、古绢等承载文化记忆的传统媒介被并置与叠加，构筑出多重时间维度共存的场域。\n\n于田田拒绝将材料简化为表达的工具，而是将其视为感官的延伸，探索物质自身的能量如何在叠层、悬垂与渗透的物理过程中自然显发。她的创作围绕材料性、身份与转变展开，持续追溯物质政治、文化身份与自我教化，并试炼“身体感知”作为创作方法论的可能性。通过叠加、转移与重构等工序，她不断拓宽那些被边缘化或被忽视之物的边界，呈现交织着联系与演变的主题。", "bodyEs": "Yu Tiantian es una artista visual experimental nacida en Heilongjiang, China, en 1996. Actualmente vive y trabaja en Pekín. En 2018 obtuvo su licenciatura en la Academia Central de Bellas Artes (CAFA) y posteriormente viajó a Japón para estudiar pigmentos minerales.\n\nTiantian ha estudiado y trabajado en China, Japón y Estados Unidos. Durante sus estudios de grado en Animación en la CAFA, trabajó como productora e ilustradora, participando en la creación de múltiples documentales de arte y proyectos audiovisuales. Más tarde se trasladó a Japón para profundizar en los pigmentos minerales tradicionales y continuó su formación en grabado en los Estados Unidos. Esta trayectoria, que atraviesa distintas culturas y lenguajes artísticos, constituye la base material de su práctica.\n\nSu obra se desplaza entre la pintura, el grabado y las instalaciones de técnica mixta, tomando la recolección y el hallazgo de objetos como punto de partida conceptual. En su proceso creativo, materiales cotidianos de producción en masa y bajo costo —objetos encontrados en la calle, juguetes infantiles, papel de aluminio, film transparente y diversos tejidos— se yuxtaponen y superponen con medios tradicionales cargados de memoria cultural, como pigmentos minerales, tinta y seda antigua, configurando un espacio donde coexisten múltiples dimensiones temporales.\n\nRenuente a reducir la materia a un mero instrumento de expresión, Tiantian la concibe como una extensión de los sentidos, explorando cómo la energía intrínseca de los materiales se manifiesta de forma natural mediante procesos físicos de superposición, caída y permeación. Su práctica gira en torno a la materialidad, la identidad y la transformación, rastreando de manera continua la política de los materiales, la identidad cultural y la autoeducación, al tiempo que pone a prueba la percepción corporal como metodología de creación. A través de la superposición, la transferencia y la reconfiguración, la artista expande los límites de aquello que ha sido relegado a la periferia o ignorado, dando forma a obras que entrelazan temas de conexión y constante evolución.", "columns": 1, "category": "info"}, {"id": "exhibitions", "title": "Exhibitions/Events", "titleZh": "展览履历", "titleEs": "Exposiciones", "body": "(Solo) Cloudy to Clear, a Hint of Breeze, SOOFA SUHE, Shanghai, China\nLight Chaser: Special Exhibition for the Year of the Horse 2026, Gravity Art Museum, Beijing, China\nPlanetarity: Friction, Fossils and the Future, Glemgallery, Providence, USA\nART021 Shanghai Contemporary Art Fair, Shanghai, China\nNeither Anchor Nor Shore Anaya, Qinhuangdao, China\n(Solo) A Glimpse Admist Slender, AYE gallery, Beijing, China\n(Solo) Fragrance of the Mind, Oumuamua Art Museum, Beijing, China\nUpright Walking, Dongguli Art Park, Beijing, China\nSummer Art Festival, Shibuya Fashion & Art College, Tokyo, Japan\nFuture Earth Guardian Project, Beijing Chaoyang UNIJOY Fashion District, Beijing, China", "bodyZh": "点击这里编辑你的展览履历（中文版）。", "bodyEs": "Haz clic aquí para editar tu trayectoria de exposiciones.", "columns": 1, "category": "exhibition"}], "imageGap": 10, "contact": {"email": "847187284tina@gmail.com", "instagram": "https://www.instagram.com/yutiantiano.o/", "redNote": "https://www.xiaohongshu.com/user/profile/5620fff63397db266fe7c2d5", "emailLabelEs": "Correo electrónico", "informationLabelZh": "信息", "emailLabelZh": "邮箱", "redNoteLabelZh": "小红书", "informationLabelEs": "Información"}, "works": [{"id": "growth-marks", "year": 2026, "title": "Growth Marks", "titleZh": "生长纹路", "titleEs": "Marcas de Crecimiento", "date": "Tue Jul 19 2022", "materials": "Bamboo Strips, Metal Floral Ornaments, Plastic Pieces, Lead Weights, Fishing Line", "materialsZh": "竹丝、铁质花、塑料片、铅块、鱼线", "materialsEs": "Tiras de Bambú, Adornos Florales de Metal, Piezas de Plástico, Pesas de Plomo, Hilo de Pesca", "dimensions": "Variable Dimensions", "dimensionsZh": "尺寸可变", "dimensionsEs": "Dimensiones Variables", "cover": "https://picsum.photos/seed/growth-marks/700/900", "images": ["/images/growth-marks-img-0.jpg", "/images/growth-marks-img-1.jpg", "/images/growth-marks-img-2.jpg", "/images/growth-marks-img-3.jpg"], "tone": "#4a4a4a", "imagesFull": ["/images/growth-marks-full-0.jpg", "/images/growth-marks-full-1.jpg", "/images/growth-marks-full-2.jpg", "/images/growth-marks-full-3.jpg"]}, {"id": "moment-of-stillness", "year": 2026, "title": "A Moment of Stillness", "date": "Wed Aug 03 2022", "materials": "Liquid Water-Light Gauze, Pins, Oil Painting Frame Purchased from Taobao; Branches, Pine Needles, US Dollar Coins, Newspapers Gathered in Providence; Various Screws Collected in RISD Printmaking Class; Kitchen Tin Foil, Medicine Leaflet Paper Boxes, Oil Painting Frame Purchased at A Japanese Art Supply Store", "dimensions": "30 × 60 cm", "cover": "https://picsum.photos/seed/stillness/700/500", "images": ["/images/moment-of-stillness-img-0.jpg", "/images/moment-of-stillness-img-1.jpg", "/images/moment-of-stillness-img-2.jpg", "/images/moment-of-stillness-img-3.jpg", "/images/moment-of-stillness-img-4.jpg", "/images/moment-of-stillness-img-5.jpg", "/images/moment-of-stillness-img-6.jpg", "/images/moment-of-stillness-img-7.jpg"], "tone": "#3f3f3f", "materialsZh": "网购的液态水光纱、大头针、油画框，普罗维登斯捡拾的树枝、松树针、美元硬币、报纸，RISD版画课程中收集的各式螺丝钉，厨房用锡纸，药物说明纸盒，日本购得的油画框", "dimensionsZh": "30 × 60 cm", "titleZh": "片刻静谧", "titleEs": "Un Momento de Calma", "materialsEs": "Gasa Líquida Transparente de Agua, Alfileres, Marco de Pintura al Óleo Comprado en Taobao; Ramas, Agujas de Pino, Monedas de Dólar Estadounidense, Periódicos Recogidos en Providence; Varios Tornillos Recogidos en la Clase de Grabado de RISD; Papel de Aluminio de Cocina, Cajas de Papel de Prospectos de Medicamentos, Marco de Pintura al Óleo Comprado en una Tienda de Suministros de Arte Japonesa", "imagesFull": ["/images/moment-of-stillness-full-0.jpg", "/images/moment-of-stillness-full-1.jpg", "/images/moment-of-stillness-full-2.jpg", "/images/moment-of-stillness-full-3.jpg", "/images/moment-of-stillness-full-4.jpg", "/images/moment-of-stillness-full-5.jpg", "/images/moment-of-stillness-full-6.jpg", "/images/moment-of-stillness-full-7.jpg"]}, {"id": "wedding-on-the-grass", "year": 2026, "title": "A Wedding on the Grass", "date": "Fri Sep 02 2022", "materials": "Pins, Glitter Sequins, Velvet Knit Fabric, Jacquard Silk Satin, Transparent UV Free Resin, Hot Glue Purchased from Taobao; Branches, Pine Needles, Newspapers Gathered in Providence; Kitchen Tin Foil, Medicine Leaflet Paper Boxes, Oil Painting Frame Purchased at A Japanese Art Supply Store", "dimensions": "17.5 × 9 cm", "cover": "https://picsum.photos/seed/wedding-grass/700/900", "images": ["/images/wedding-on-the-grass-img-0.jpg", "/images/wedding-on-the-grass-img-1.jpg", "/images/wedding-on-the-grass-img-2.jpg", "/images/wedding-on-the-grass-img-3.jpg", "/images/wedding-on-the-grass-img-4.jpg", "/images/wedding-on-the-grass-img-5.jpg"], "tone": "#454545", "titleZh": "草地婚礼", "titleEs": "Una Boda en el Césped", "materialsEs": "Alfileres, Lentejuelas Brillantes, Tejido de Terciopelo de Punto, Satén de Seda Jacquard, Resina Transparente Resistente a los Rayos UV, Silicona Caliente Comprados en Taobao; Ramas, Agujas de Pino, Periódicos Recogidos en Providence; Papel de Aluminio de Cocina, Cajas de Papel de Prospectos de Medicamentos, Marco de Pintura al Óleo Comprado en una Tienda de Suministros de Arte Japonesa", "materialsZh": "网购的大头针、闪光片、长绒针织布料、提花绸缎、透明UV自由树脂、热熔胶，普罗维登斯捡拾的树枝、松树针、报纸，厨房用锡纸，药物说明纸盒，日本购得的油画框", "dimensionsZh": "17.5 × 9 cm", "imagesFull": ["/images/wedding-on-the-grass-full-0.jpg", "/images/wedding-on-the-grass-full-1.jpg", "/images/wedding-on-the-grass-full-2.jpg", "/images/wedding-on-the-grass-full-3.jpg", "/images/wedding-on-the-grass-full-4.jpg", "/images/wedding-on-the-grass-full-5.jpg"]}, {"id": "8vl1win0rroms61wpjp", "year": 2026, "title": "Afterparty", "date": "Wed Jul 29 2026", "description": "点击这里填写作品介绍。", "cover": "https://picsum.photos/seed/qb02wkf9cdpms61wpjp/700/700", "images": ["/images/8vl1win0rroms61wpjp-img-0.jpg", "/images/8vl1win0rroms61wpjp-img-1.jpg", "/images/8vl1win0rroms61wpjp-img-2.jpg", "/images/8vl1win0rroms61wpjp-img-3.jpg", "/images/8vl1win0rroms61wpjp-img-4.jpg", "/images/8vl1win0rroms61wpjp-img-5.jpg"], "tone": "#454545", "titleZh": "之后的派对", "titleEs": "Fiesta Posterior", "materials": "Pins, Buttons, Artificial Pearls, Glitter Sequins, Crystal Glass Beads, Iron Beads, Plastic Beads, Transparent UV Free Resin, Hot Glue Purchased from Taobao; Dry Grass, Branches, US Dollar Coins, Newspapers Gathered in Providence; Various Screws Collected in RISD Printmaking Class; Woodblock Purchased at A Japanese Art Supply Store", "materialsEs": "Alfileres, Botones, Perlas Artificiales, Lentejuelas Brillantes, Cuentas de Cristal de Vidrio, Cuentas de Hierro, Cuentas de Plástico, Resina Transparente Resistente a los Rayos UV, Silicona Caliente Comprados en Taobao; Hierba Seca, Ramas, Monedas de Dólar Estadounidense, Periódicos Recogidos en Providence; Varios Tornillos Recogidos en la Clase de Grabado de RISD; Xilografía Comprada en una Tienda de Suministros de Arte Japonesa", "materialsZh": "网购的大头针、按钉、仿珍珠、闪光片、水晶玻璃珠、铁珠、塑料珠、透明UV自由树脂、热熔胶，普罗维登斯捡拾的干草、树枝、美元硬币、报纸，RISD课程中收集的各式螺丝钉，日本购得的版画木板", "dimensions": "22 × 16 cm", "imagesFull": ["/images/8vl1win0rroms61wpjp-full-0.jpg", "/images/8vl1win0rroms61wpjp-full-1.jpg", "/images/8vl1win0rroms61wpjp-full-2.jpg", "/images/8vl1win0rroms61wpjp-full-3.jpg", "/images/8vl1win0rroms61wpjp-full-4.jpg", "/images/8vl1win0rroms61wpjp-full-5.jpg"]}, {"id": "good-medicine-iii", "year": 2026, "series": "Good Medicine Tastes Bitter", "seriesZh": "良药苦口", "title": "Good Medicine Tastes Bitter III", "date": "Mon Jan 12 2026", "materials": "Stainless Steel Plate, Miniature House", "dimensions": "6.5 × 6.5 × 1.5 cm", "cover": "https://picsum.photos/seed/gmtb-3/700/700", "images": ["https://picsum.photos/seed/gmtb-3b/1400/1400"], "tone": "#3e3e3e", "seriesEs": "La Buena Medicina Sabe Amarga", "titleZh": "良药苦口 III", "titleEs": "La Buena Medicina Sabe Amarga III", "materialsZh": "不锈钢盘、微缩房子", "materialsEs": "Placa de Acero Inoxidable, Casa en Miniatura", "dimensionsZh": "6.5 × 6.5 × 1.5 cm", "imagesFull": []}, {"id": "good-medicine-iv", "year": 2026, "series": "Good Medicine Tastes Bitter", "seriesZh": "良药苦口", "title": "Good Medicine Tastes Bitter IV", "date": "Thu Jan 29 2026", "materials": "Portable Medicine Box, Miniature Horse, Miniature Pig, Tin Foil, Plush Ball for Cat Toys", "dimensions": "11 × 13.5 × 8 cm (Approximately)", "cover": "https://picsum.photos/seed/gmtb-4/700/900", "images": ["https://picsum.photos/seed/gmtb-4b/1200/1500"], "tone": "#464646", "seriesEs": "La Buena Medicina Sabe Amarga", "titleZh": "良药苦口 IV", "titleEs": "La Buena Medicina Sabe Amarga IV", "materialsEs": "Caja de Medicamentos Portátil, Caballo en Miniatura, Cerdo en Miniatura, Papel de Aluminio, Bola de Peluche para Juguetes de Gato", "materialsZh": "便携药盒、微缩马、微缩猪、锡纸、逗猫玩具毛绒球", "dimensionsZh": "11 × 13.5 × 8 cm (约)", "dimensionsEs": "11 × 13.5 × 8 cm (Aproximadamente)", "imagesFull": []}, {"id": "good-medicine-v", "year": 2026, "series": "Good Medicine Tastes Bitter", "seriesZh": "良药苦口", "title": "Good Medicine Tastes Bitter V", "date": "Tue Feb 17 2026", "materials": "Tin Foil Mold Miniature Egg Tray, UV Transparent Resin Mold Miniature Egg Tray, Miniature Egg, Acrylic Beads", "dimensions": "16 × 10 × 2 cm (Approximately)", "cover": "https://picsum.photos/seed/gmtb-5/700/850", "images": ["https://picsum.photos/seed/gmtb-5b/1200/1450"], "tone": "#414141", "seriesEs": "La Buena Medicina Sabe Amarga", "titleZh": "良药苦口 V", "titleEs": "La Buena Medicina Sabe Amarga V", "materialsEs": "Molde de Papel de Aluminio para Bandeja de Huevos en Miniatura, Molde de Resina Transparente UV para Bandeja de Huevos en Miniatura, Huevo en Miniatura, Cuentas de Acrílico", "materialsZh": "锡纸翻模微缩鸡蛋托、UV透明树脂翻模微缩鸡蛋托、微缩蛋、亚克力珠子", "dimensionsZh": "16 × 10 × 2 cm (约)", "dimensionsEs": "16 × 10 × 2 cm (Aproximadamente)", "imagesFull": []}, {"id": "good-medicine-vi", "year": 2026, "series": "Good Medicine Tastes Bitter", "seriesZh": "良药苦口", "title": "Good Medicine Tastes Bitter VI", "date": "Fri Mar 06 2026", "materials": "Medicine Dispenser, Miniature Egg, 1960s Blue Glazed Fruit Dish with Double-Fish and \"Double Happiness\" Character", "dimensions": "26.5 × 26.5 × 9.5 cm", "cover": "https://picsum.photos/seed/gmtb-6/700/600", "images": ["https://picsum.photos/seed/gmtb-6b/1400/1200"], "tone": "#494949", "seriesEs": "La Buena Medicina Sabe Amarga", "titleZh": "良药苦口 VI", "titleEs": "La Buena Medicina Sabe Amarga VI", "materialsEs": "Dispensador de Medicamentos, Huevo en Miniatura, Frutero Azulado de los Años 60 con Doble Pez y Carácter de \"Doble Felicidad\"", "materialsZh": "分药器、微缩蛋、60年代蓝琉璃双鱼喜字果盘", "imagesFull": []}, {"id": "good-medicine-vii", "year": 2026, "series": "Good Medicine Tastes Bitter", "seriesZh": "良药苦口", "title": "Good Medicine Tastes Bitter VII", "date": "Mon Mar 23 2026", "materials": "Plastic Dustpan Toy, Miniature House", "dimensions": "7 × 4 × 2 cm", "cover": "https://picsum.photos/seed/gmtb-7/700/900", "images": ["https://picsum.photos/seed/gmtb-7b/1200/1500"], "tone": "#444444", "seriesEs": "La Buena Medicina Sabe Amarga", "titleZh": "良药苦口 VII", "titleEs": "La Buena Medicina Sabe Amarga VII", "materialsZh": "塑料簸箕玩具、微缩房子", "materialsEs": "Recogedor de Plástico de Juguete, Casa en Miniatura", "imagesFull": []}, {"id": "b3lhylins9mms6245qv", "year": 2026, "title": "A Cluster of Small Flowers", "date": "Wed Jul 29 2026", "description": "点击这里填写作品介绍。", "cover": "https://picsum.photos/seed/mu1hp0hdj4dms6245qv/700/700", "images": [], "tone": "#454545", "titleZh": "一簇小花", "titleEs": "Un Cúmulo de Flores Pequeñas", "materials": "Wooden Plank, Nail, Tin Foil, Steel Wire Rope, Paper, Printing Ink, UV Clay", "materialsEs": "Tabla de Madera, Clavo, Papel de Aluminio, Cable de Acero, Papel, Tinta de Impresión, Arcilla UV", "materialsZh": "木板、钉子、锡箔、钢丝绳、纸、版画油墨、UV软树脂", "imagesFull": []}, {"id": "1gz5x7d37nnims622tsk", "year": 2026, "series": "A Dead Letter", "title": "A Dead Letter I", "date": "Wed Jul 29 2026", "description": "点击这里填写作品介绍。", "cover": "https://picsum.photos/seed/e76wizc3miqms622tsk/700/700", "images": [], "tone": "#454545", "seriesZh": "一纸空文", "titleZh": "一纸空文 I", "seriesEs": "Una Carta Muerta", "titleEs": "Una Carta Muerta I", "materials": "Glass, Pharmaceutical Packaging Paper, Stone, Glue", "materialsEs": "Vidrio, Papel de Embalaje Farmacéutico, Piedra, Pegamento", "materialsZh": "玻璃、药剂包装纸、石头、胶水", "imagesFull": []}, {"id": "7m2levc26rims622tsk", "year": 2026, "series": "A Dead Letter", "title": "A Dead Letter II", "date": "Wed Jul 29 2026", "description": "点击这里填写作品介绍。", "cover": "https://picsum.photos/seed/a3z08ccjgbdms622tsk/700/700", "images": [], "tone": "#454545", "seriesZh": "一纸空文", "titleZh": "一纸空文 II", "seriesEs": "Una Carta Muerta", "titleEs": "Una Carta Muerta II", "materials": "Glass, Medication Instruction, Stone, Glue", "materialsEs": "Vidrio, Prospecto de Medicamentos, Piedra, Pegamento", "materialsZh": "玻璃、药剂说明书、石头、胶水", "imagesFull": []}, {"id": "d6qd3xnatr6ms62107f", "year": 2026, "series": "Honesty is the Best Policy", "title": "Honesty is the Best Policy I", "date": "Wed Jul 29 2026", "description": "点击这里填写作品介绍。", "cover": "https://picsum.photos/seed/a3bi3sgt884ms62107g/700/700", "images": [], "tone": "#454545", "seriesZh": "拾金不昧", "titleZh": "拾金不昧 I", "seriesEs": "La Honestidad es la Mejor Política", "titleEs": "La Honestidad es la Mejor Política I", "materials": "US Dollar Bill, Hot Glue, Nail, Thumbtack, Wire, Fishing Line, Plastic Crystal Bead, Pine Branch, Bird Feather", "materialsEs": "Billetes de Dólar Estadounidense, Silicona Caliente, Clavo, Chincheta, Alambre, Hilo de Pesca, Cuenta de Cristal de Plástico, Rama de Pino, Pluma de Ave", "materialsZh": "美元纸币、热熔胶、钉子、大头针、铁丝、鱼线、塑料水晶珠、松树枝、鸟类羽毛", "dimensionsZh": "6 × 11 × 3 cm", "dimensions": "6 × 11 × 3 cm", "imagesFull": []}, {"id": "trisflzkx2rms62107g", "year": 2026, "series": "Honesty is the Best Policy", "title": "Honesty is the Best Policy II", "date": "Wed Jul 29 2026", "description": "点击这里填写作品介绍。", "cover": "https://picsum.photos/seed/mz11ousm798ms62107g/700/700", "images": [], "tone": "#454545", "seriesZh": "拾金不昧", "titleZh": "拾金不昧 II", "seriesEs": "La Honestidad es la Mejor Política", "titleEs": "La Honestidad es la Mejor Política II", "materials": "US Dollar Coins, Fragment of Cola Packaging, Hot Glue", "materialsEs": "Monedas de Dólar Estadounidense, Fragmento de Envase de Refresco de Cola, Silicona Caliente", "materialsZh": "美元硬币、可乐包装碎片、热熔胶", "imagesFull": []}, {"id": "3k3wmco031lms623nha", "year": 2026, "title": "A Shadow Makes Two", "date": "Wed Jul 29 2026", "description": "点击这里填写作品介绍。", "cover": "https://picsum.photos/seed/ql4ixmvu05pms623nha/700/700", "images": [], "tone": "#454545", "titleZh": "对影成双", "titleEs": "Una sombra hace dos", "materials": "Tree Branches, Plastic Polarizing Film, UV Soft Resin, Hot-Melt Adhesive, Acrylic Balls, Pins, Screws, Silver Foil, Tin Foil, Wire", "materialsEs": "Ramas de Árbol, Película Polarizadora de Plástico, Resina Blanda UV, Adhesivo Termofusible, Bolas de Acrílico, Alfileres, Tornillos, Papel de Plata, Papel de Aluminio, Alambre", "materialsZh": "树枝、塑料偏光片，UV软树脂、热熔胶、亚克力球、大头针、螺丝钉、银箔、锡箔、铁丝", "imagesFull": []}, {"id": "awatfu6b4ms623zsj", "year": 2026, "series": "Shelter of One's Arm", "title": "Shelter of One's Arm I", "date": "Wed Jul 29 2026", "description": "点击这里填写作品介绍。", "cover": "https://picsum.photos/seed/g3wxzsquosms623zsj/700/700", "images": [], "tone": "#454545", "seriesZh": "臂弯", "titleZh": "臂弯 I", "seriesEs": "El Refugio de un Brazo", "titleEs": "El Refugio de un Brazo I", "materials": "Collected Fragments of a Concrete Sculpture, Wire, Bamboo Strips, Pine Branches, Hot-Melt Adhesive, Large-Headed Pins, Thumbtacks, Plastic Crystal Beads, Aluminum Foil, Printmaking Ink", "materialsEs": "Fragmentos Recogidos de una Escultura de Hormigón, Alambre, Tiras de Bambú, Ramas de Pino, Adhesivo Termofusible, Alfileres de Cabeza Grande, Chinchetas, Cuentas de Cristal de Plástico, Papel de Aluminio, Tinta de Grabado", "materialsZh": "捡拾的水泥雕塑块、铁丝、竹丝、松树枝、热熔胶、大头钉、按钉、塑料水晶珠、锡纸、版画油墨", "imagesFull": []}, {"id": "5rh5uzb9bfms623zsj", "year": 2026, "series": "Shelter of One's Arm", "title": "Shelter of One's Arm II", "date": "Wed Jul 29 2026", "description": "点击这里填写作品介绍。", "cover": "https://picsum.photos/seed/4roo1qpk7lms623zsj/700/700", "images": [], "tone": "#454545", "seriesZh": "臂弯", "titleZh": "臂弯 II", "seriesEs": "El Refugio de un Brazo", "titleEs": "El Refugio de un Brazo II", "materials": "Collected Fragments of a Concrete Sculpture, Wire, Bamboo Strips, Fishing Line, UV Soft Resin, Hot-Melt Adhesive, Mica Powder, Silver Leaf, Plastic Floral Beads, Plastic Polarizing Film", "materialsEs": "Fragmentos Recogidos de una Escultura de Hormigón, Alambre, Tiras de Bambú, Hilo de Pesca, Resina Blanda UV, Adhesivo Termofusible, Polvo de Mica, Pan de Plata, Cuentas Florales de Plástico, Película Polarizadora de Plástico", "materialsZh": "捡拾水泥雕塑块、铁丝、竹丝、鱼线、UV软树脂、热熔胶、云母粉、银箔、塑料花珠、塑料偏光片", "imagesFull": []}, {"id": "flwk9vrfrzpms75deqb", "year": 2025, "title": "Triumphant in Spring's Breeze, Hooves Fly Fast (Series)", "date": "Thu Jul 30 2026", "description": "点击这里填写作品介绍。", "cover": "https://picsum.photos/seed/4xlqqdq1iewms75deqc/700/700", "images": [], "tone": "#454545", "titleEs": "Trunfos en la Brisa Primaveral, los Cascos Vuelan Rápidos (Serie)", "titleZh": "春风得意马蹄疾 系列", "imagesFull": []}, {"id": "pal85ge6ccbms75d579", "year": 2025, "title": "Silently Stretching Out (Series)", "date": "Thu Jul 30 2026", "description": "点击这里填写作品介绍。", "cover": "https://picsum.photos/seed/s68mo7chqapms75d579/700/700", "images": [], "tone": "#454545", "titleEs": "Estirándose en Silencio (Serie)", "titleZh": "沉默地伸展 系列", "imagesFull": []}, {"id": "xkn9f1glz8kms75cw8t", "year": 2025, "title": "Lay Bare (Series)", "date": "Thu Jul 30 2026", "description": "点击这里填写作品介绍。", "cover": "https://picsum.photos/seed/3kxfp4kasq3ms75cw8t/700/700", "images": [], "tone": "#454545", "titleEs": "Exponerse (Serie)", "titleZh": "袒露 系列", "imagesFull": []}, {"id": "8y3cqcibt9ams75cjar", "year": 2025, "title": "An Entwined Embrace (Series)", "date": "Thu Jul 30 2026", "description": "点击这里填写作品介绍。", "cover": "https://picsum.photos/seed/37pzhzegryxms75cjar/700/700", "images": [], "tone": "#454545", "titleEs": "Un Abrazo Entrelazado (Serie)", "titleZh": "缠绕着拥抱 系列", "imagesFull": []}, {"id": "upryx4vhqyms75c85o", "year": 2025, "title": "Small Flowers and Plants", "date": "Thu Jul 30 2026", "description": "点击这里填写作品介绍。", "cover": "https://picsum.photos/seed/z7ja4ogs92lms75c85o/700/700", "images": [], "tone": "#454545", "titleEs": "Flores y Plantas Pequeñas", "titleZh": "小花草", "imagesFull": []}, {"id": "kl1y3rg8c28ms75bzvu", "year": 2025, "series": "Good Medicine Tastes Bitter", "title": "Good Medicine Tastes Bitter I", "date": "Thu Jul 30 2026", "description": "点击这里填写作品介绍。", "cover": "https://picsum.photos/seed/ajua3com2zdms75bzvu/700/700", "images": [], "tone": "#454545", "seriesEs": "La Buena Medicina Sabe Amarga", "titleEs": "La Buena Medicina Sabe Amarga I", "seriesZh": "良药苦口", "titleZh": "良药苦口 I", "imagesFull": []}, {"id": "w3eq8wwzqdhms75bzvu", "year": 2025, "series": "Good Medicine Tastes Bitter", "title": "Good Medicine Tastes Bitter II", "date": "Thu Jul 30 2026", "description": "点击这里填写作品介绍。", "cover": "https://picsum.photos/seed/i4w4vmdoy2kms75bzvu/700/700", "images": [], "tone": "#454545", "seriesEs": "La Buena Medicina Sabe Amarga", "titleEs": "La Buena Medicina Sabe Amarga II", "seriesZh": "良药苦口", "titleZh": "良药苦口 II", "imagesFull": []}, {"id": "247dx3l6tscms75bo3h", "year": 2025, "series": "Suffocating Love", "title": "Suffocating Love I", "date": "Thu Jul 30 2026", "description": "点击这里填写作品介绍。", "cover": "https://picsum.photos/seed/l0tpx6ejmwms75bo3h/700/700", "images": [], "tone": "#454545", "seriesEs": "Amor Asfixiante", "titleEs": "Amor Asfixiante I", "seriesZh": "窒息的爱", "titleZh": "窒息的爱 I", "imagesFull": []}, {"id": "738ek2bwp8xms75bo3h", "year": 2025, "series": "Suffocating Love", "title": "Suffocating Love II", "date": "Thu Jul 30 2026", "description": "点击这里填写作品介绍。", "cover": "https://picsum.photos/seed/ue7o3wroe8mms75bo3h/700/700", "images": [], "tone": "#454545", "seriesEs": "Amor Asfixiante", "titleEs": "Amor Asfixiante II", "seriesZh": "窒息的爱", "titleZh": "窒息的爱 II", "imagesFull": []}, {"id": "0vole1owmdqms75bo3h", "year": 2025, "series": "Suffocating Love", "title": "Suffocating Love III", "date": "Thu Jul 30 2026", "description": "点击这里填写作品介绍。", "cover": "https://picsum.photos/seed/rqfwdzindjmms75bo3h/700/700", "images": [], "tone": "#454545", "seriesEs": "Amor Asfixiante", "titleEs": "Amor Asfixiante III", "seriesZh": "窒息的爱", "titleZh": "窒息的爱 III", "imagesFull": []}, {"id": "dw7oo2nd6ipms75bo3h", "year": 2025, "series": "Suffocating Love", "title": "Suffocating Love IV", "date": "Thu Jul 30 2026", "description": "点击这里填写作品介绍。", "cover": "https://picsum.photos/seed/b1a0j40gi5pms75bo3h/700/700", "images": [], "tone": "#454545", "seriesEs": "Amor Asfixiante", "titleEs": "Amor Asfixiante IV", "seriesZh": "窒息的爱", "titleZh": "窒息的爱 IV", "imagesFull": []}, {"id": "427i5eybhtwms75ba4p", "year": 2025, "series": "A Night Entangled", "title": "A Night Entangled I", "date": "Thu Jul 30 2026", "description": "点击这里填写作品介绍。", "cover": "https://picsum.photos/seed/ct1w4pz7ujbms75ba4p/700/700", "images": [], "tone": "#454545", "seriesEs": "Una Noche Enredada", "titleEs": "Una Noche Enredada I", "seriesZh": "缠绕的夜", "titleZh": "缠绕的夜 I", "imagesFull": []}, {"id": "drffgm74sjjms75ba4p", "year": 2025, "series": "A Night Entangled", "title": "A Night Entangled II", "date": "Thu Jul 30 2026", "description": "点击这里填写作品介绍。", "cover": "https://picsum.photos/seed/sm6mu4q7puhms75ba4p/700/700", "images": [], "tone": "#454545", "seriesEs": "Una Noche Enredada", "titleEs": "Una Noche Enredada II", "seriesZh": "缠绕的夜", "titleZh": "缠绕的夜 II", "imagesFull": []}, {"id": "t7yh9cersims75ba4p", "year": 2025, "series": "A Night Entangled", "title": "A Night Entangled III", "date": "Thu Jul 30 2026", "description": "点击这里填写作品介绍。", "cover": "https://picsum.photos/seed/yecj7et8pjcms75ba4p/700/700", "images": [], "tone": "#454545", "seriesEs": "Una Noche Enredada", "titleEs": "Una Noche Enredada III", "seriesZh": "缠绕的夜", "titleZh": "缠绕的夜 III", "imagesFull": []}, {"id": "z9gbw2pfyt9ms75azft", "year": 2025, "title": "Swing", "date": "Thu Jul 30 2026", "description": "点击这里填写作品介绍。", "cover": "https://picsum.photos/seed/088e5r65y8pjms75azft/700/700", "images": [], "tone": "#454545", "titleEs": "Balancearse", "titleZh": "秋千", "imagesFull": []}, {"id": "bka6djp3g5mms75attk", "year": 2025, "title": "Attempting to Stand Solemnly", "date": "Thu Jul 30 2026", "description": "点击这里填写作品介绍。", "cover": "https://picsum.photos/seed/ntawt1v4v9ms75attk/700/700", "images": [], "tone": "#454545", "titleEs": "Intentando Mantenerse De Pie Solemnemente", "titleZh": "企图肃立", "imagesFull": []}, {"id": "ejh7b9jpiadms75anw2", "year": 2025, "title": "A Pool of Clear Lake Water", "date": "Thu Jul 30 2026", "description": "点击这里填写作品介绍。", "cover": "https://picsum.photos/seed/4l60qff25jqms75anw2/700/700", "images": [], "tone": "#454545", "titleEs": "Un Remanso de Agua Clara del Lago", "titleZh": "一汪澄净湖水", "imagesFull": []}, {"id": "1md6qdiivdnms75aicj", "year": 2025, "title": "A Faint Fragrance from Among the Blooms", "date": "Thu Jul 30 2026", "description": "点击这里填写作品介绍。", "cover": "https://picsum.photos/seed/cfw7bb11q2fms75aick/700/700", "images": [], "tone": "#454545", "titleEs": "Un Tenue Aroma entre las Flores", "titleZh": "丛中隐约的花香", "imagesFull": []}, {"id": "fjsk7henkrms75ad34", "year": 2025, "title": "A Face in the Night Fog", "date": "Thu Jul 30 2026", "description": "点击这里填写作品介绍。", "cover": "https://picsum.photos/seed/tax7txe9vvms75ad34/700/700", "images": [], "tone": "#454545", "titleEs": "Un Rostro en la Niebla Nocturna", "titleZh": "雾中的面容", "imagesFull": []}, {"id": "zi3hugavzjms759vk4", "year": 2025, "title": "As Cold as Frost", "date": "Thu Jul 30 2026", "description": "点击这里填写作品介绍。", "cover": "https://picsum.photos/seed/g8mh6x85z5wms759vk4/700/700", "images": [], "tone": "#454545", "titleEs": "Tan Frío como la Escarcha", "titleZh": "状似冷若冰霜", "imagesFull": []}, {"id": "5up6ytz7c24ms759pkh", "year": 2025, "title": "River", "date": "Thu Jul 30 2026", "description": "点击这里填写作品介绍。", "cover": "https://picsum.photos/seed/uykji1bqrzams759pkh/700/700", "images": [], "tone": "#454545", "titleEs": "Río", "titleZh": "河流", "imagesFull": []}, {"id": "owqlpd6eu2ams6eydhs", "year": 2025, "title": "Exaltation in Stillness", "date": "Wed Jul 29 2026", "description": "点击这里填写作品介绍。", "cover": "https://picsum.photos/seed/0hcy6ksrkktgms6eydhs/700/700", "images": [], "tone": "#454545", "titleEs": "Exaltación en la Aquietamiento", "titleZh": "昂扬的静待", "imagesFull": []}, {"id": "ws0dyi6qtoms6eycvc", "year": 2025, "title": "Nectar in the Center", "date": "Wed Jul 29 2026", "description": "点击这里填写作品介绍。", "cover": "https://picsum.photos/seed/47b47k24ktwms6eycvd/700/700", "images": [], "tone": "#454545", "titleEs": "Néctar en el Centro", "titleZh": "花心的蜜", "imagesFull": []}, {"id": "3jwikgpwuryms6eyc8g", "year": 2025, "title": "Sun Basking", "date": "Wed Jul 29 2026", "description": "点击这里填写作品介绍。", "cover": "https://picsum.photos/seed/26hte2ovzaems6eyc8h/700/700", "images": [], "tone": "#454545", "titleEs": "Tomando el Sol", "titleZh": "晒太阳", "imagesFull": []}, {"id": "7ql9pcwfupjms6eybme", "year": 2025, "title": "The Tenderness of Dewdrops", "date": "Wed Jul 29 2026", "description": "点击这里填写作品介绍。", "cover": "https://picsum.photos/seed/5rv4nz9700ems6eybme/700/700", "images": [], "tone": "#454545", "titleEs": "La Ternura de las Gotas de Rocío", "titleZh": "珠露的温存", "imagesFull": []}, {"id": "af8b4p0wdrams6eyb12", "year": 2025, "title": "A Gentle Breeze", "date": "Wed Jul 29 2026", "description": "点击这里填写作品介绍。", "cover": "https://picsum.photos/seed/7yws90vc4cms6eyb12/700/700", "images": [], "tone": "#454545", "titleEs": "Una Suave Brisa", "titleZh": "微风", "imagesFull": []}, {"id": "6shf15o6ms6exak7", "year": 2025, "title": "Swaying Softness", "date": "Wed Jul 29 2026", "description": "点击这里填写作品介绍。", "cover": "https://picsum.photos/seed/nondz3qhpnpms6exak7/700/700", "images": [], "tone": "#454545", "titleEs": "Suave Balanceo", "titleZh": "摇坠的柔软", "imagesFull": []}, {"id": "qhmuxvb580lms6ey9ki", "year": 2024, "title": "新作品标题", "date": "Wed Jul 29 2026", "description": "点击这里填写作品介绍。", "cover": "https://picsum.photos/seed/z0ql1tmqxxms6ey9ki/700/700", "images": [], "tone": "#454545", "imagesFull": []}, {"id": "uygbitwxrms6ey8vy", "year": 2024, "title": "新作品标题", "date": "Wed Jul 29 2026", "description": "点击这里填写作品介绍。", "cover": "https://picsum.photos/seed/3ut64abnr79ms6ey8vz/700/700", "images": [], "tone": "#454545", "imagesFull": []}, {"id": "9bpdtwobyfms6ey80q", "year": 2024, "title": "新作品标题", "date": "Wed Jul 29 2026", "description": "点击这里填写作品介绍。", "cover": "https://picsum.photos/seed/l1eh3v9qwmims6ey80q/700/700", "images": [], "tone": "#454545", "imagesFull": []}, {"id": "31sqr35iframs6ey6ed", "year": 2024, "title": "新作品标题", "date": "Wed Jul 29 2026", "description": "点击这里填写作品介绍。", "cover": "https://picsum.photos/seed/4ddlybwdofnms6ey6ed/700/700", "images": [], "tone": "#454545", "imagesFull": []}, {"id": "h9bi30yx4g7ms6ey5le", "year": 2024, "title": "新作品标题", "date": "Wed Jul 29 2026", "description": "点击这里填写作品介绍。", "cover": "https://picsum.photos/seed/58p3o0avy57ms6ey5le/700/700", "images": [], "tone": "#454545", "imagesFull": []}, {"id": "aw4l7ymdcmms6ewfl8", "year": 2024, "title": "新作品标题", "date": "Wed Jul 29 2026", "description": "点击这里填写作品介绍。", "cover": "https://picsum.photos/seed/dvhay7gz9tdms6ewfl8/700/700", "images": [], "tone": "#454545", "imagesFull": []}], "sidebarWidthOverride": 414, "typographyZh": {"artistName": {"fontSize": 40, "lineHeight": 1, "fontFamily": "ibm-plex-sans", "fontWeight": 700, "italic": false, "letterSpacing": -1, "fontWidth": 100}, "year": {"fontSize": 25, "lineHeight": 1.3, "fontFamily": "ibm-plex-sans", "fontWeight": 700, "italic": false, "letterSpacing": 0, "fontWidth": 100}, "workTitle": {"fontSize": 18, "lineHeight": 1, "fontFamily": "ibm-plex-sans", "fontWeight": 500, "italic": false, "letterSpacing": 0, "fontWidth": 100}, "detailTitle": {"fontSize": 40, "lineHeight": 1.2, "fontFamily": "ibm-plex-sans", "fontWeight": 700, "italic": false, "letterSpacing": 1, "fontWidth": 100}, "detailMaterials": {"fontSize": 20, "lineHeight": 1.6, "fontFamily": "ibm-plex-sans", "fontWeight": 400, "italic": false, "letterSpacing": 0, "fontWidth": 100}, "detailDimensions": {"fontSize": 25, "lineHeight": 1, "fontFamily": "ibm-plex-sans", "fontWeight": 600, "italic": false, "letterSpacing": 0, "fontWidth": 100}, "infoTitle": {"fontSize": 30, "lineHeight": 1.3, "fontFamily": "ibm-plex-sans", "fontWeight": 700, "italic": false, "letterSpacing": 0, "fontWidth": 100}, "indexNav": {"fontSize": 18, "lineHeight": 1.3, "fontFamily": "ibm-plex-sans", "fontWeight": 700, "italic": false, "letterSpacing": 0, "fontWidth": 100}, "footerLinks": {"fontSize": 13, "lineHeight": 1.5, "fontFamily": "source-han-sans-tc", "fontWeight": 400, "italic": false, "letterSpacing": 0, "fontWidth": 100}, "infoBodyInfo": {"fontSize": 20, "lineHeight": 1.7, "fontFamily": "ibm-plex-sans", "fontWeight": 400, "italic": false, "letterSpacing": 0, "fontWidth": 100}, "infoBodyExhibition": {"fontSize": 20, "lineHeight": 1.7, "fontFamily": "ibm-plex-sans", "fontWeight": 400, "italic": false, "letterSpacing": 0, "fontWidth": 100}}, "typographyMobileZh": {"artistName": {"fontSize": 46, "lineHeight": 1.15, "fontFamily": "ibm-plex-sans", "fontWeight": 700, "italic": false, "letterSpacing": 0, "fontWidth": 100}, "year": {"fontSize": 30, "lineHeight": 1.3, "fontFamily": "ibm-plex-sans", "fontWeight": 700, "italic": false, "letterSpacing": 0, "fontWidth": 100}, "workTitle": {"fontSize": 20, "lineHeight": 1, "fontFamily": "source-han-sans-tc", "fontWeight": 600, "italic": false, "letterSpacing": 0, "fontWidth": 100}, "detailTitle": {"fontSize": 35, "lineHeight": 1.2, "fontFamily": "ibm-plex-sans", "fontWeight": 700, "italic": false, "letterSpacing": 0, "fontWidth": 100}, "detailMaterials": {"fontSize": 18, "lineHeight": 1.6, "fontFamily": "ibm-plex-sans", "fontWeight": 400, "italic": false, "letterSpacing": 0, "fontWidth": 100}, "detailDimensions": {"fontSize": 22, "lineHeight": 1, "fontFamily": "ibm-plex-sans", "fontWeight": 600, "italic": false, "letterSpacing": 0, "fontWidth": 100}, "infoTitle": {"fontSize": 18, "lineHeight": 1.3, "fontFamily": "ibm-plex-sans", "fontWeight": 700, "italic": false, "letterSpacing": 0, "fontWidth": 100}, "indexNav": {"fontSize": 18, "lineHeight": 1.3, "fontFamily": "ibm-plex-sans", "fontWeight": 700, "italic": false, "letterSpacing": 0, "fontWidth": 100}, "footerLinks": {"fontSize": 12, "lineHeight": 1.5, "fontFamily": "ibm-plex-sans", "fontWeight": 400, "italic": false, "letterSpacing": 0, "fontWidth": 100}, "infoBodyInfo": {"fontSize": 16, "lineHeight": 1.7, "fontFamily": "ibm-plex-sans", "fontWeight": 400, "italic": false, "letterSpacing": 0, "fontWidth": 100}, "infoBodyExhibition": {"fontSize": 16, "lineHeight": 1.7, "fontFamily": "ibm-plex-sans", "fontWeight": 400, "italic": false, "letterSpacing": 0, "fontWidth": 100}}}}
+{
+  "typography": {
+    "artistName": {
+      "fontSize": 40,
+      "lineHeight": 1,
+      "fontFamily": "ibm-plex-sans",
+      "fontWeight": 700,
+      "italic": false,
+      "letterSpacing": -1,
+      "fontWidth": 100
+    },
+    "year": {
+      "fontSize": 25,
+      "lineHeight": 1.3,
+      "fontFamily": "ibm-plex-sans",
+      "fontWeight": 700,
+      "italic": false,
+      "letterSpacing": 0,
+      "fontWidth": 100
+    },
+    "workTitle": {
+      "fontSize": 18,
+      "lineHeight": 1,
+      "fontFamily": "ibm-plex-sans",
+      "fontWeight": 500,
+      "italic": false,
+      "letterSpacing": -0.5,
+      "fontWidth": 100
+    },
+    "detailTitle": {
+      "fontSize": 40,
+      "lineHeight": 1.2,
+      "fontFamily": "ibm-plex-sans",
+      "fontWeight": 700,
+      "italic": true,
+      "letterSpacing": 0,
+      "fontWidth": 100
+    },
+    "detailMaterials": {
+      "fontSize": 20,
+      "lineHeight": 1.6,
+      "fontFamily": "ibm-plex-sans",
+      "fontWeight": 400,
+      "italic": false,
+      "letterSpacing": 0,
+      "fontWidth": 100
+    },
+    "detailDimensions": {
+      "fontSize": 25,
+      "lineHeight": 1,
+      "fontFamily": "ibm-plex-sans",
+      "fontWeight": 600,
+      "italic": false,
+      "letterSpacing": 0,
+      "fontWidth": 100
+    },
+    "infoTitle": {
+      "fontSize": 30,
+      "lineHeight": 1.3,
+      "fontFamily": "ibm-plex-sans",
+      "fontWeight": 700,
+      "italic": false,
+      "letterSpacing": 0,
+      "fontWidth": 100
+    },
+    "indexNav": {
+      "fontSize": 18,
+      "lineHeight": 1.3,
+      "fontFamily": "ibm-plex-sans",
+      "fontWeight": 700,
+      "italic": false,
+      "letterSpacing": 0,
+      "fontWidth": 100
+    },
+    "footerLinks": {
+      "fontSize": 13,
+      "lineHeight": 1.5,
+      "fontFamily": "ibm-plex-sans",
+      "fontWeight": 400,
+      "italic": false,
+      "letterSpacing": 0,
+      "fontWidth": 100
+    },
+    "infoBodyInfo": {
+      "fontSize": 20,
+      "lineHeight": 1.5,
+      "fontFamily": "ibm-plex-sans",
+      "fontWeight": 400,
+      "italic": false,
+      "letterSpacing": -0.5,
+      "fontWidth": 100
+    },
+    "infoBodyExhibition": {
+      "fontSize": 18,
+      "lineHeight": 1,
+      "fontFamily": "ibm-plex-sans",
+      "fontWeight": 400,
+      "italic": false,
+      "letterSpacing": -0.5,
+      "fontWidth": 100
+    }
+  },
+  "data": {
+    "artistName": "YU TIANTIAN",
+    "typography": {
+      "artistName": {
+        "fontSize": 40,
+        "lineHeight": 1,
+        "fontFamily": "ibm-plex-sans",
+        "fontWeight": 700,
+        "italic": false,
+        "letterSpacing": -1,
+        "fontWidth": 100
+      },
+      "year": {
+        "fontSize": 25,
+        "lineHeight": 1.3,
+        "fontFamily": "ibm-plex-sans",
+        "fontWeight": 700,
+        "italic": false,
+        "letterSpacing": 0,
+        "fontWidth": 100
+      },
+      "workTitle": {
+        "fontSize": 18,
+        "lineHeight": 1,
+        "fontFamily": "ibm-plex-sans",
+        "fontWeight": 500,
+        "italic": false,
+        "letterSpacing": -0.5,
+        "fontWidth": 100
+      },
+      "detailTitle": {
+        "fontSize": 40,
+        "lineHeight": 1.2,
+        "fontFamily": "ibm-plex-sans",
+        "fontWeight": 700,
+        "italic": true,
+        "letterSpacing": 0,
+        "fontWidth": 100
+      },
+      "detailMaterials": {
+        "fontSize": 20,
+        "lineHeight": 1.6,
+        "fontFamily": "ibm-plex-sans",
+        "fontWeight": 400,
+        "italic": false,
+        "letterSpacing": 0,
+        "fontWidth": 100
+      },
+      "detailDimensions": {
+        "fontSize": 25,
+        "lineHeight": 1,
+        "fontFamily": "ibm-plex-sans",
+        "fontWeight": 600,
+        "italic": false,
+        "letterSpacing": 0,
+        "fontWidth": 100
+      },
+      "infoTitle": {
+        "fontSize": 30,
+        "lineHeight": 1.3,
+        "fontFamily": "ibm-plex-sans",
+        "fontWeight": 700,
+        "italic": false,
+        "letterSpacing": 0,
+        "fontWidth": 100
+      },
+      "indexNav": {
+        "fontSize": 18,
+        "lineHeight": 1.3,
+        "fontFamily": "ibm-plex-sans",
+        "fontWeight": 700,
+        "italic": false,
+        "letterSpacing": 0,
+        "fontWidth": 100
+      },
+      "footerLinks": {
+        "fontSize": 13,
+        "lineHeight": 1.5,
+        "fontFamily": "ibm-plex-sans",
+        "fontWeight": 400,
+        "italic": false,
+        "letterSpacing": 0,
+        "fontWidth": 100
+      },
+      "infoBodyInfo": {
+        "fontSize": 20,
+        "lineHeight": 1.5,
+        "fontFamily": "ibm-plex-sans",
+        "fontWeight": 400,
+        "italic": false,
+        "letterSpacing": -0.5,
+        "fontWidth": 100
+      },
+      "infoBodyExhibition": {
+        "fontSize": 18,
+        "lineHeight": 1,
+        "fontFamily": "ibm-plex-sans",
+        "fontWeight": 400,
+        "italic": false,
+        "letterSpacing": -0.5,
+        "fontWidth": 100
+      }
+    },
+    "typographyMobile": {
+      "artistName": {
+        "fontSize": 46,
+        "lineHeight": 1,
+        "fontFamily": "ibm-plex-sans",
+        "fontWeight": 700,
+        "italic": false,
+        "letterSpacing": -1,
+        "fontWidth": 100
+      },
+      "year": {
+        "fontSize": 30,
+        "lineHeight": 1.3,
+        "fontFamily": "ibm-plex-sans",
+        "fontWeight": 700,
+        "italic": false,
+        "letterSpacing": 0,
+        "fontWidth": 100
+      },
+      "workTitle": {
+        "fontSize": 20,
+        "lineHeight": 1,
+        "fontFamily": "ibm-plex-sans",
+        "fontWeight": 500,
+        "italic": false,
+        "letterSpacing": -0.5,
+        "fontWidth": 100
+      },
+      "detailTitle": {
+        "fontSize": 30,
+        "lineHeight": 1.2,
+        "fontFamily": "ibm-plex-sans",
+        "fontWeight": 700,
+        "italic": true,
+        "letterSpacing": 0,
+        "fontWidth": 100
+      },
+      "detailMaterials": {
+        "fontSize": 16,
+        "lineHeight": 1.6,
+        "fontFamily": "ibm-plex-sans",
+        "fontWeight": 400,
+        "italic": false,
+        "letterSpacing": 0,
+        "fontWidth": 100
+      },
+      "detailDimensions": {
+        "fontSize": 20,
+        "lineHeight": 1,
+        "fontFamily": "ibm-plex-sans",
+        "fontWeight": 600,
+        "italic": false,
+        "letterSpacing": 0,
+        "fontWidth": 100
+      },
+      "infoTitle": {
+        "fontSize": 30,
+        "lineHeight": 1.3,
+        "fontFamily": "ibm-plex-sans",
+        "fontWeight": 700,
+        "italic": false,
+        "letterSpacing": 0,
+        "fontWidth": 100
+      },
+      "indexNav": {
+        "fontSize": 18,
+        "lineHeight": 1.3,
+        "fontFamily": "ibm-plex-sans",
+        "fontWeight": 700,
+        "italic": false,
+        "letterSpacing": 0,
+        "fontWidth": 100
+      },
+      "footerLinks": {
+        "fontSize": 12,
+        "lineHeight": 1.5,
+        "fontFamily": "ibm-plex-sans",
+        "fontWeight": 400,
+        "italic": false,
+        "letterSpacing": 0,
+        "fontWidth": 100
+      },
+      "infoBodyInfo": {
+        "fontSize": 18,
+        "lineHeight": 1.5,
+        "fontFamily": "ibm-plex-sans",
+        "fontWeight": 400,
+        "italic": false,
+        "letterSpacing": 0,
+        "fontWidth": 100
+      },
+      "infoBodyExhibition": {
+        "fontSize": 18,
+        "lineHeight": 1.5,
+        "fontFamily": "ibm-plex-sans",
+        "fontWeight": 400,
+        "italic": false,
+        "letterSpacing": 0,
+        "fontWidth": 100
+      }
+    },
+    "infoSections": [
+      {
+        "id": "bio",
+        "title": "Biography",
+        "titleZh": "简介",
+        "titleEs": "Biografía",
+        "body": "Yu Tiantian&nbsp;is an experimental visual artist born in Heilongjiang, China, in 1996. She currently lives and works in Beijing. She received her bachelor's degree from the Central Academy of Fine Arts in 2018 and later went to Japan to study mineral pigments.<br>Tiantian&nbsp;has lived and worked across China, Japan, and the United States. During her undergraduate studies in Animation at CAFA, she worked as a producer and illustrator, contributing to several art documentaries and moving-image projects. She subsequently traveled to Japan to study traditional mineral pigments and pursued further studies in printmaking in the United States. These cross-cultural and interdisciplinary experiences form the material foundation of her practice.<br>Her practice moves between painting, printmaking, and mixed-media installation, using foraging and collecting as conceptual starting points. In her work, low-cost, mass-produced everyday disposables—found objects left on the street, children's toys, aluminum foil, plastic wrap, and various textiles—are juxtaposed and layered with traditional media laden with cultural memory, such as mineral pigments, ink, and antique silk, creating a realm where multiple temporal dimensions coexist.<br>Refusing to reduce materials to mere tools for expression, Tiantian&nbsp;regards them as extensions of the senses, exploring how the innate energy of matter manifests naturally through physical processes of layering, draping, and seepage. Her work revolves around materiality, identity, and transformation, continuously tracing material politics, cultural identity, and self-edification, while testing the possibilities of bodily perception as a methodology. Through processes of layering, transferring, and reconfiguring, she expands the boundaries of the marginalized and overlooked, giving form to works intertwined with themes of connection and change.",
+        "bodyZh": "于田田，实验视觉艺术家，1996年出生于中国黑龙江，现工作生活于北京。她于2018年毕业于中央美术学院并获得学士学位，后赴日本研习矿物颜料。\n\n于田田先后在中国、日本及美国学习与工作。在央美修读动画专业期间，她曾担任制片人与插画师，参与多部艺术纪录片与影像项目的制作；此后赴日研习传统矿物颜料，并于美国深造版画。这些跨越文化与媒介的履历，构成了其艺术实践的材料基底。\n\n她的创作游移于绘画、版画与混合媒介装置之间，常以“捡拾”与“采集”作为逻辑起点。在实践中，廉价且工业化量产的日常消耗品——街头遗落的拾得物、儿童玩具、锡纸、保鲜膜及各类织物——与矿物颜料、墨水、古绢等承载文化记忆的传统媒介被并置与叠加，构筑出多重时间维度共存的场域。\n\n于田田拒绝将材料简化为表达的工具，而是将其视为感官的延伸，探索物质自身的能量如何在叠层、悬垂与渗透的物理过程中自然显发。她的创作围绕材料性、身份与转变展开，持续追溯物质政治、文化身份与自我教化，并试炼“身体感知”作为创作方法论的可能性。通过叠加、转移与重构等工序，她不断拓宽那些被边缘化或被忽视之物的边界，呈现交织着联系与演变的主题。",
+        "bodyEs": "Yu Tiantian es una artista visual experimental nacida en Heilongjiang, China, en 1996. Actualmente vive y trabaja en Pekín. En 2018 obtuvo su licenciatura en la Academia Central de Bellas Artes (CAFA) y posteriormente viajó a Japón para estudiar pigmentos minerales.\n\nTiantian ha estudiado y trabajado en China, Japón y Estados Unidos. Durante sus estudios de grado en Animación en la CAFA, trabajó como productora e ilustradora, participando en la creación de múltiples documentales de arte y proyectos audiovisuales. Más tarde se trasladó a Japón para profundizar en los pigmentos minerales tradicionales y continuó su formación en grabado en los Estados Unidos. Esta trayectoria, que atraviesa distintas culturas y lenguajes artísticos, constituye la base material de su práctica.\n\nSu obra se desplaza entre la pintura, el grabado y las instalaciones de técnica mixta, tomando la recolección y el hallazgo de objetos como punto de partida conceptual. En su proceso creativo, materiales cotidianos de producción en masa y bajo costo —objetos encontrados en la calle, juguetes infantiles, papel de aluminio, film transparente y diversos tejidos— se yuxtaponen y superponen con medios tradicionales cargados de memoria cultural, como pigmentos minerales, tinta y seda antigua, configurando un espacio donde coexisten múltiples dimensiones temporales.\n\nRenuente a reducir la materia a un mero instrumento de expresión, Tiantian la concibe como una extensión de los sentidos, explorando cómo la energía intrínseca de los materiales se manifiesta de forma natural mediante procesos físicos de superposición, caída y permeación. Su práctica gira en torno a la materialidad, la identidad y la transformación, rastreando de manera continua la política de los materiales, la identidad cultural y la autoeducación, al tiempo que pone a prueba la percepción corporal como metodología de creación. A través de la superposición, la transferencia y la reconfiguración, la artista expande los límites de aquello que ha sido relegado a la periferia o ignorado, dando forma a obras que entrelazan temas de conexión y constante evolución.",
+        "columns": 1,
+        "category": "info"
+      },
+      {
+        "id": "exhibitions",
+        "title": "Solo Exhibitions",
+        "titleZh": "展览履历",
+        "titleEs": "Exposiciones",
+        "bodyZh": "点击这里编辑你的展览履历（中文版）。",
+        "bodyEs": "Haz clic aquí para editar tu trayectoria de exposiciones.",
+        "columns": 1,
+        "category": "exhibition",
+        "entries": [
+          {
+            "id": "fwo1nhtxka7ms7qhdsl",
+            "year": "2026",
+            "name": "<i>Cloudy to Clear, a Hint of Breeze</i>, SOOFA SUHE, Shanghai, China"
+          },
+          {
+            "id": "0qcwlq97vdxems7qhdsl",
+            "year": "2025",
+            "name": "<i>A Glimpse Admist Slender</i>, AYE gallery, Beijing, China"
+          },
+          {
+            "id": "gundxgd7maqms7qhdsl",
+            "year": "2024",
+            "name": "<i>Fragrance of the Mind</i>, Oumuamua Art Museum, Beijing, China"
+          }
+        ]
+      },
+      {
+        "id": "l2ycpwyuvhms7rfneu",
+        "category": "exhibition",
+        "title": "<h3 class=\"mb-3 block outline-dashed outline-1 outline-offset-2 outline-neutral-300 focus:outline-neutral-900 rounded cursor-text\" style=\"--tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ; font-size: 30px; font-weight: 700; outline: rgb(23, 23, 23) dashed 1px; letter-spacing: 0px; line-height: 1.3; overflow-wrap: break-word;\">Exhibitions/Events</h3>",
+        "entries": [
+          {
+            "id": "f4n8bnfl7m7ms7rfneu",
+            "year": "2026",
+            "name": "<i style=\"--tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ;\">Light Chaser: Special Exhibition for the Year of the Horse 2026</i>, Gravity Art Museum, Beijing, China"
+          },
+          {
+            "id": "6vjifik5g6sms7rhh4e",
+            "year": "2025",
+            "name": "<i style=\"--tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ;\">Planetarity: Friction, Fossils and the Future</i>, Glemgallery, Providence, USA"
+          },
+          {
+            "id": "rq4kjgh6aems7ri0ov",
+            "year": "2025",
+            "name": "<i style=\"--tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ;\">ART021 Shanghai Contemporary Art Fair</i>, Shanghai, China"
+          },
+          {
+            "id": "m7ga16szxylms7rieq7",
+            "year": "2025",
+            "name": "<i style=\"--tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ;\">Neither Anchor Nor Shore Anaya</i>, Qinhuangdao, China"
+          },
+          {
+            "id": "3hi39ln7s2xms7riu7j",
+            "year": "2024",
+            "name": "<i style=\"--tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ;\">Upright Walking</i>, Dongguli Art Park, Beijing, China"
+          },
+          {
+            "id": "8fphplk9tltms7rj7qn",
+            "year": "2023",
+            "name": "<i style=\"--tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ;\">Summer Art Festival</i>, Shibuya Fashion &amp;amp;amp; Art College, Tokyo, Japan"
+          }
+        ]
+      }
+    ],
+    "imageGap": 10,
+    "contact": {
+      "email": "847187284tina@gmail.com",
+      "instagram": "https://www.instagram.com/yutiantiano.o/",
+      "redNote": "https://www.xiaohongshu.com/user/profile/5620fff63397db266fe7c2d5",
+      "emailLabelEs": "Correo electrónico",
+      "informationLabelZh": "信息",
+      "emailLabelZh": "邮箱",
+      "redNoteLabelZh": "小红书",
+      "informationLabelEs": "Información"
+    },
+    "works": [
+      {
+        "id": "growth-marks",
+        "year": 2026,
+        "title": "Growth Marks",
+        "titleZh": "生长纹路",
+        "titleEs": "Marcas de Crecimiento",
+        "date": "Tue Jul 19 2022",
+        "materials": "Bamboo Strips, Metal Floral Ornaments, Plastic Pieces, Lead Weights, Fishing Line",
+        "materialsZh": "竹丝、铁质花、塑料片、铅块、鱼线",
+        "materialsEs": "Tiras de Bambú, Adornos Florales de Metal, Piezas de Plástico, Pesas de Plomo, Hilo de Pesca",
+        "dimensions": "Variable Dimensions",
+        "dimensionsZh": "尺寸可变",
+        "dimensionsEs": "Dimensiones Variables",
+        "cover": "https://picsum.photos/seed/growth-marks/700/900",
+        "images": [
+          "/images/growth-marks-img-0.jpg",
+          "/images/growth-marks-img-1.jpg",
+          "/images/growth-marks-img-2.jpg",
+          "/images/growth-marks-img-3.jpg"
+        ],
+        "tone": "#4a4a4a",
+        "imagesFull": [
+          "/images/growth-marks-full-0.jpg",
+          "/images/growth-marks-full-1.jpg",
+          "/images/growth-marks-full-2.jpg",
+          "/images/growth-marks-full-3.jpg"
+        ]
+      },
+      {
+        "id": "moment-of-stillness",
+        "year": 2026,
+        "title": "A Moment of Stillness",
+        "date": "Wed Aug 03 2022",
+        "materials": "Liquid Water-Light Gauze, Pins, Oil Painting Frame Purchased from Taobao; Branches, Pine Needles, US Dollar Coins, Newspapers Gathered in Providence; Various Screws Collected in RISD Printmaking Class; Kitchen Tin Foil, Medicine Leaflet Paper Boxes, Oil Painting Frame Purchased at A Japanese Art Supply Store",
+        "dimensions": "30 × 60 cm",
+        "cover": "https://picsum.photos/seed/stillness/700/500",
+        "images": [
+          "/images/moment-of-stillness-img-0.jpg",
+          "/images/moment-of-stillness-img-1.jpg",
+          "/images/moment-of-stillness-img-2.jpg",
+          "/images/moment-of-stillness-img-3.jpg",
+          "/images/moment-of-stillness-img-4.jpg",
+          "/images/moment-of-stillness-img-5.jpg",
+          "/images/moment-of-stillness-img-6.jpg",
+          "/images/moment-of-stillness-img-7.jpg"
+        ],
+        "tone": "#3f3f3f",
+        "materialsZh": "网购的液态水光纱、大头针、油画框，普罗维登斯捡拾的树枝、松树针、美元硬币、报纸，RISD版画课程中收集的各式螺丝钉，厨房用锡纸，药物说明纸盒，日本购得的油画框",
+        "dimensionsZh": "30 × 60 cm",
+        "titleZh": "片刻静谧",
+        "titleEs": "Un Momento de Calma",
+        "materialsEs": "Gasa Líquida Transparente de Agua, Alfileres, Marco de Pintura al Óleo Comprado en Taobao; Ramas, Agujas de Pino, Monedas de Dólar Estadounidense, Periódicos Recogidos en Providence; Varios Tornillos Recogidos en la Clase de Grabado de RISD; Papel de Aluminio de Cocina, Cajas de Papel de Prospectos de Medicamentos, Marco de Pintura al Óleo Comprado en una Tienda de Suministros de Arte Japonesa",
+        "imagesFull": [
+          "/images/moment-of-stillness-full-0.jpg",
+          "/images/moment-of-stillness-full-1.jpg",
+          "/images/moment-of-stillness-full-2.jpg",
+          "/images/moment-of-stillness-full-3.jpg",
+          "/images/moment-of-stillness-full-4.jpg",
+          "/images/moment-of-stillness-full-5.jpg",
+          "/images/moment-of-stillness-full-6.jpg",
+          "/images/moment-of-stillness-full-7.jpg"
+        ]
+      },
+      {
+        "id": "wedding-on-the-grass",
+        "year": 2026,
+        "title": "A Wedding on the Grass",
+        "date": "Fri Sep 02 2022",
+        "materials": "Pins, Glitter Sequins, Velvet Knit Fabric, Jacquard Silk Satin, Transparent UV Free Resin, Hot Glue Purchased from Taobao; Branches, Pine Needles, Newspapers Gathered in Providence; Kitchen Tin Foil, Medicine Leaflet Paper Boxes, Oil Painting Frame Purchased at A Japanese Art Supply Store",
+        "dimensions": "17.5 × 9 cm",
+        "cover": "https://picsum.photos/seed/wedding-grass/700/900",
+        "images": [
+          "/images/wedding-on-the-grass-img-0.jpg",
+          "/images/wedding-on-the-grass-img-1.jpg",
+          "/images/wedding-on-the-grass-img-2.jpg",
+          "/images/wedding-on-the-grass-img-3.jpg",
+          "/images/wedding-on-the-grass-img-4.jpg",
+          "/images/wedding-on-the-grass-img-5.jpg"
+        ],
+        "tone": "#454545",
+        "titleZh": "草地婚礼",
+        "titleEs": "Una Boda en el Césped",
+        "materialsEs": "Alfileres, Lentejuelas Brillantes, Tejido de Terciopelo de Punto, Satén de Seda Jacquard, Resina Transparente Resistente a los Rayos UV, Silicona Caliente Comprados en Taobao; Ramas, Agujas de Pino, Periódicos Recogidos en Providence; Papel de Aluminio de Cocina, Cajas de Papel de Prospectos de Medicamentos, Marco de Pintura al Óleo Comprado en una Tienda de Suministros de Arte Japonesa",
+        "materialsZh": "网购的大头针、闪光片、长绒针织布料、提花绸缎、透明UV自由树脂、热熔胶，普罗维登斯捡拾的树枝、松树针、报纸，厨房用锡纸，药物说明纸盒，日本购得的油画框",
+        "dimensionsZh": "17.5 × 9 cm",
+        "imagesFull": [
+          "/images/wedding-on-the-grass-full-0.jpg",
+          "/images/wedding-on-the-grass-full-1.jpg",
+          "/images/wedding-on-the-grass-full-2.jpg",
+          "/images/wedding-on-the-grass-full-3.jpg",
+          "/images/wedding-on-the-grass-full-4.jpg",
+          "/images/wedding-on-the-grass-full-5.jpg"
+        ]
+      },
+      {
+        "id": "8vl1win0rroms61wpjp",
+        "year": 2026,
+        "title": "Afterparty",
+        "date": "Wed Jul 29 2026",
+        "description": "点击这里填写作品介绍。",
+        "cover": "https://picsum.photos/seed/qb02wkf9cdpms61wpjp/700/700",
+        "images": [
+          "/images/8vl1win0rroms61wpjp-img-0.jpg",
+          "/images/8vl1win0rroms61wpjp-img-1.jpg",
+          "/images/8vl1win0rroms61wpjp-img-2.jpg",
+          "/images/8vl1win0rroms61wpjp-img-3.jpg",
+          "/images/8vl1win0rroms61wpjp-img-4.jpg",
+          "/images/8vl1win0rroms61wpjp-img-5.jpg"
+        ],
+        "tone": "#454545",
+        "titleZh": "之后的派对",
+        "titleEs": "Fiesta Posterior",
+        "materials": "Pins, Buttons, Artificial Pearls, Glitter Sequins, Crystal Glass Beads, Iron Beads, Plastic Beads, Transparent UV Free Resin, Hot Glue Purchased from Taobao; Dry Grass, Branches, US Dollar Coins, Newspapers Gathered in Providence; Various Screws Collected in RISD Printmaking Class; Woodblock Purchased at A Japanese Art Supply Store",
+        "materialsEs": "Alfileres, Botones, Perlas Artificiales, Lentejuelas Brillantes, Cuentas de Cristal de Vidrio, Cuentas de Hierro, Cuentas de Plástico, Resina Transparente Resistente a los Rayos UV, Silicona Caliente Comprados en Taobao; Hierba Seca, Ramas, Monedas de Dólar Estadounidense, Periódicos Recogidos en Providence; Varios Tornillos Recogidos en la Clase de Grabado de RISD; Xilografía Comprada en una Tienda de Suministros de Arte Japonesa",
+        "materialsZh": "网购的大头针、按钉、仿珍珠、闪光片、水晶玻璃珠、铁珠、塑料珠、透明UV自由树脂、热熔胶，普罗维登斯捡拾的干草、树枝、美元硬币、报纸，RISD课程中收集的各式螺丝钉，日本购得的版画木板",
+        "dimensions": "22 × 16 cm",
+        "imagesFull": [
+          "/images/8vl1win0rroms61wpjp-full-0.jpg",
+          "/images/8vl1win0rroms61wpjp-full-1.jpg",
+          "/images/8vl1win0rroms61wpjp-full-2.jpg",
+          "/images/8vl1win0rroms61wpjp-full-3.jpg",
+          "/images/8vl1win0rroms61wpjp-full-4.jpg",
+          "/images/8vl1win0rroms61wpjp-full-5.jpg"
+        ]
+      },
+      {
+        "id": "good-medicine-iii",
+        "year": 2026,
+        "series": "Good Medicine Tastes Bitter",
+        "seriesZh": "良药苦口",
+        "title": "Good Medicine Tastes Bitter III",
+        "date": "Mon Jan 12 2026",
+        "materials": "Stainless Steel Plate, Miniature House",
+        "dimensions": "6.5 × 6.5 × 1.5 cm",
+        "cover": "https://picsum.photos/seed/gmtb-3/700/700",
+        "images": [
+          "https://picsum.photos/seed/gmtb-3b/1400/1400"
+        ],
+        "tone": "#3e3e3e",
+        "seriesEs": "La Buena Medicina Sabe Amarga",
+        "titleZh": "良药苦口 III",
+        "titleEs": "La Buena Medicina Sabe Amarga III",
+        "materialsZh": "不锈钢盘、微缩房子",
+        "materialsEs": "Placa de Acero Inoxidable, Casa en Miniatura",
+        "dimensionsZh": "6.5 × 6.5 × 1.5 cm",
+        "imagesFull": []
+      },
+      {
+        "id": "good-medicine-iv",
+        "year": 2026,
+        "series": "Good Medicine Tastes Bitter",
+        "seriesZh": "良药苦口",
+        "title": "Good Medicine Tastes Bitter IV",
+        "date": "Thu Jan 29 2026",
+        "materials": "Portable Medicine Box, Miniature Horse, Miniature Pig, Tin Foil, Plush Ball for Cat Toys",
+        "dimensions": "11 × 13.5 × 8 cm (Approximately)",
+        "cover": "https://picsum.photos/seed/gmtb-4/700/900",
+        "images": [
+          "https://picsum.photos/seed/gmtb-4b/1200/1500"
+        ],
+        "tone": "#464646",
+        "seriesEs": "La Buena Medicina Sabe Amarga",
+        "titleZh": "良药苦口 IV",
+        "titleEs": "La Buena Medicina Sabe Amarga IV",
+        "materialsEs": "Caja de Medicamentos Portátil, Caballo en Miniatura, Cerdo en Miniatura, Papel de Aluminio, Bola de Peluche para Juguetes de Gato",
+        "materialsZh": "便携药盒、微缩马、微缩猪、锡纸、逗猫玩具毛绒球",
+        "dimensionsZh": "11 × 13.5 × 8 cm (约)",
+        "dimensionsEs": "11 × 13.5 × 8 cm (Aproximadamente)",
+        "imagesFull": []
+      },
+      {
+        "id": "good-medicine-v",
+        "year": 2026,
+        "series": "Good Medicine Tastes Bitter",
+        "seriesZh": "良药苦口",
+        "title": "Good Medicine Tastes Bitter V",
+        "date": "Tue Feb 17 2026",
+        "materials": "Tin Foil Mold Miniature Egg Tray, UV Transparent Resin Mold Miniature Egg Tray, Miniature Egg, Acrylic Beads",
+        "dimensions": "16 × 10 × 2 cm (Approximately)",
+        "cover": "https://picsum.photos/seed/gmtb-5/700/850",
+        "images": [
+          "https://picsum.photos/seed/gmtb-5b/1200/1450"
+        ],
+        "tone": "#414141",
+        "seriesEs": "La Buena Medicina Sabe Amarga",
+        "titleZh": "良药苦口 V",
+        "titleEs": "La Buena Medicina Sabe Amarga V",
+        "materialsEs": "Molde de Papel de Aluminio para Bandeja de Huevos en Miniatura, Molde de Resina Transparente UV para Bandeja de Huevos en Miniatura, Huevo en Miniatura, Cuentas de Acrílico",
+        "materialsZh": "锡纸翻模微缩鸡蛋托、UV透明树脂翻模微缩鸡蛋托、微缩蛋、亚克力珠子",
+        "dimensionsZh": "16 × 10 × 2 cm (约)",
+        "dimensionsEs": "16 × 10 × 2 cm (Aproximadamente)",
+        "imagesFull": []
+      },
+      {
+        "id": "good-medicine-vi",
+        "year": 2026,
+        "series": "Good Medicine Tastes Bitter",
+        "seriesZh": "良药苦口",
+        "title": "Good Medicine Tastes Bitter VI",
+        "date": "Fri Mar 06 2026",
+        "materials": "Medicine Dispenser, Miniature Egg, 1960s Blue Glazed Fruit Dish with Double-Fish and \"Double Happiness\" Character",
+        "dimensions": "26.5 × 26.5 × 9.5 cm",
+        "cover": "https://picsum.photos/seed/gmtb-6/700/600",
+        "images": [
+          "https://picsum.photos/seed/gmtb-6b/1400/1200"
+        ],
+        "tone": "#494949",
+        "seriesEs": "La Buena Medicina Sabe Amarga",
+        "titleZh": "良药苦口 VI",
+        "titleEs": "La Buena Medicina Sabe Amarga VI",
+        "materialsEs": "Dispensador de Medicamentos, Huevo en Miniatura, Frutero Azulado de los Años 60 con Doble Pez y Carácter de \"Doble Felicidad\"",
+        "materialsZh": "分药器、微缩蛋、60年代蓝琉璃双鱼喜字果盘",
+        "imagesFull": []
+      },
+      {
+        "id": "good-medicine-vii",
+        "year": 2026,
+        "series": "Good Medicine Tastes Bitter",
+        "seriesZh": "良药苦口",
+        "title": "Good Medicine Tastes Bitter VII",
+        "date": "Mon Mar 23 2026",
+        "materials": "Plastic Dustpan Toy, Miniature House",
+        "dimensions": "7 × 4 × 2 cm",
+        "cover": "https://picsum.photos/seed/gmtb-7/700/900",
+        "images": [
+          "https://picsum.photos/seed/gmtb-7b/1200/1500"
+        ],
+        "tone": "#444444",
+        "seriesEs": "La Buena Medicina Sabe Amarga",
+        "titleZh": "良药苦口 VII",
+        "titleEs": "La Buena Medicina Sabe Amarga VII",
+        "materialsZh": "塑料簸箕玩具、微缩房子",
+        "materialsEs": "Recogedor de Plástico de Juguete, Casa en Miniatura",
+        "imagesFull": []
+      },
+      {
+        "id": "b3lhylins9mms6245qv",
+        "year": 2026,
+        "title": "A Cluster of Small Flowers",
+        "date": "Wed Jul 29 2026",
+        "description": "点击这里填写作品介绍。",
+        "cover": "https://picsum.photos/seed/mu1hp0hdj4dms6245qv/700/700",
+        "images": [],
+        "tone": "#454545",
+        "titleZh": "一簇小花",
+        "titleEs": "Un Cúmulo de Flores Pequeñas",
+        "materials": "Wooden Plank, Nail, Tin Foil, Steel Wire Rope, Paper, Printing Ink, UV Clay",
+        "materialsEs": "Tabla de Madera, Clavo, Papel de Aluminio, Cable de Acero, Papel, Tinta de Impresión, Arcilla UV",
+        "materialsZh": "木板、钉子、锡箔、钢丝绳、纸、版画油墨、UV软树脂",
+        "imagesFull": []
+      },
+      {
+        "id": "1gz5x7d37nnims622tsk",
+        "year": 2026,
+        "series": "A Dead Letter",
+        "title": "A Dead Letter I",
+        "date": "Wed Jul 29 2026",
+        "description": "点击这里填写作品介绍。",
+        "cover": "https://picsum.photos/seed/e76wizc3miqms622tsk/700/700",
+        "images": [],
+        "tone": "#454545",
+        "seriesZh": "一纸空文",
+        "titleZh": "一纸空文 I",
+        "seriesEs": "Una Carta Muerta",
+        "titleEs": "Una Carta Muerta I",
+        "materials": "Glass, Pharmaceutical Packaging Paper, Stone, Glue",
+        "materialsEs": "Vidrio, Papel de Embalaje Farmacéutico, Piedra, Pegamento",
+        "materialsZh": "玻璃、药剂包装纸、石头、胶水",
+        "imagesFull": []
+      },
+      {
+        "id": "7m2levc26rims622tsk",
+        "year": 2026,
+        "series": "A Dead Letter",
+        "title": "A Dead Letter II",
+        "date": "Wed Jul 29 2026",
+        "description": "点击这里填写作品介绍。",
+        "cover": "https://picsum.photos/seed/a3z08ccjgbdms622tsk/700/700",
+        "images": [],
+        "tone": "#454545",
+        "seriesZh": "一纸空文",
+        "titleZh": "一纸空文 II",
+        "seriesEs": "Una Carta Muerta",
+        "titleEs": "Una Carta Muerta II",
+        "materials": "Glass, Medication Instruction, Stone, Glue",
+        "materialsEs": "Vidrio, Prospecto de Medicamentos, Piedra, Pegamento",
+        "materialsZh": "玻璃、药剂说明书、石头、胶水",
+        "imagesFull": []
+      },
+      {
+        "id": "d6qd3xnatr6ms62107f",
+        "year": 2026,
+        "series": "Honesty is the Best Policy",
+        "title": "Honesty is the Best Policy I",
+        "date": "Wed Jul 29 2026",
+        "description": "点击这里填写作品介绍。",
+        "cover": "https://picsum.photos/seed/a3bi3sgt884ms62107g/700/700",
+        "images": [],
+        "tone": "#454545",
+        "seriesZh": "拾金不昧",
+        "titleZh": "拾金不昧 I",
+        "seriesEs": "La Honestidad es la Mejor Política",
+        "titleEs": "La Honestidad es la Mejor Política I",
+        "materials": "US Dollar Bill, Hot Glue, Nail, Thumbtack, Wire, Fishing Line, Plastic Crystal Bead, Pine Branch, Bird Feather",
+        "materialsEs": "Billetes de Dólar Estadounidense, Silicona Caliente, Clavo, Chincheta, Alambre, Hilo de Pesca, Cuenta de Cristal de Plástico, Rama de Pino, Pluma de Ave",
+        "materialsZh": "美元纸币、热熔胶、钉子、大头针、铁丝、鱼线、塑料水晶珠、松树枝、鸟类羽毛",
+        "dimensionsZh": "6 × 11 × 3 cm",
+        "dimensions": "6 × 11 × 3 cm",
+        "imagesFull": []
+      },
+      {
+        "id": "trisflzkx2rms62107g",
+        "year": 2026,
+        "series": "Honesty is the Best Policy",
+        "title": "Honesty is the Best Policy II",
+        "date": "Wed Jul 29 2026",
+        "description": "点击这里填写作品介绍。",
+        "cover": "https://picsum.photos/seed/mz11ousm798ms62107g/700/700",
+        "images": [],
+        "tone": "#454545",
+        "seriesZh": "拾金不昧",
+        "titleZh": "拾金不昧 II",
+        "seriesEs": "La Honestidad es la Mejor Política",
+        "titleEs": "La Honestidad es la Mejor Política II",
+        "materials": "US Dollar Coins, Fragment of Cola Packaging, Hot Glue",
+        "materialsEs": "Monedas de Dólar Estadounidense, Fragmento de Envase de Refresco de Cola, Silicona Caliente",
+        "materialsZh": "美元硬币、可乐包装碎片、热熔胶",
+        "imagesFull": []
+      },
+      {
+        "id": "3k3wmco031lms623nha",
+        "year": 2026,
+        "title": "A Shadow Makes Two",
+        "date": "Wed Jul 29 2026",
+        "description": "点击这里填写作品介绍。",
+        "cover": "https://picsum.photos/seed/ql4ixmvu05pms623nha/700/700",
+        "images": [],
+        "tone": "#454545",
+        "titleZh": "对影成双",
+        "titleEs": "Una sombra hace dos",
+        "materials": "Tree Branches, Plastic Polarizing Film, UV Soft Resin, Hot-Melt Adhesive, Acrylic Balls, Pins, Screws, Silver Foil, Tin Foil, Wire",
+        "materialsEs": "Ramas de Árbol, Película Polarizadora de Plástico, Resina Blanda UV, Adhesivo Termofusible, Bolas de Acrílico, Alfileres, Tornillos, Papel de Plata, Papel de Aluminio, Alambre",
+        "materialsZh": "树枝、塑料偏光片，UV软树脂、热熔胶、亚克力球、大头针、螺丝钉、银箔、锡箔、铁丝",
+        "imagesFull": []
+      },
+      {
+        "id": "awatfu6b4ms623zsj",
+        "year": 2026,
+        "series": "Shelter of One's Arm",
+        "title": "Shelter of One's Arm I",
+        "date": "Wed Jul 29 2026",
+        "description": "点击这里填写作品介绍。",
+        "cover": "https://picsum.photos/seed/g3wxzsquosms623zsj/700/700",
+        "images": [],
+        "tone": "#454545",
+        "seriesZh": "臂弯",
+        "titleZh": "臂弯 I",
+        "seriesEs": "El Refugio de un Brazo",
+        "titleEs": "El Refugio de un Brazo I",
+        "materials": "Collected Fragments of a Concrete Sculpture, Wire, Bamboo Strips, Pine Branches, Hot-Melt Adhesive, Large-Headed Pins, Thumbtacks, Plastic Crystal Beads, Aluminum Foil, Printmaking Ink",
+        "materialsEs": "Fragmentos Recogidos de una Escultura de Hormigón, Alambre, Tiras de Bambú, Ramas de Pino, Adhesivo Termofusible, Alfileres de Cabeza Grande, Chinchetas, Cuentas de Cristal de Plástico, Papel de Aluminio, Tinta de Grabado",
+        "materialsZh": "捡拾的水泥雕塑块、铁丝、竹丝、松树枝、热熔胶、大头钉、按钉、塑料水晶珠、锡纸、版画油墨",
+        "imagesFull": []
+      },
+      {
+        "id": "5rh5uzb9bfms623zsj",
+        "year": 2026,
+        "series": "Shelter of One's Arm",
+        "title": "Shelter of One's Arm II",
+        "date": "Wed Jul 29 2026",
+        "description": "点击这里填写作品介绍。",
+        "cover": "https://picsum.photos/seed/4roo1qpk7lms623zsj/700/700",
+        "images": [],
+        "tone": "#454545",
+        "seriesZh": "臂弯",
+        "titleZh": "臂弯 II",
+        "seriesEs": "El Refugio de un Brazo",
+        "titleEs": "El Refugio de un Brazo II",
+        "materials": "Collected Fragments of a Concrete Sculpture, Wire, Bamboo Strips, Fishing Line, UV Soft Resin, Hot-Melt Adhesive, Mica Powder, Silver Leaf, Plastic Floral Beads, Plastic Polarizing Film",
+        "materialsEs": "Fragmentos Recogidos de una Escultura de Hormigón, Alambre, Tiras de Bambú, Hilo de Pesca, Resina Blanda UV, Adhesivo Termofusible, Polvo de Mica, Pan de Plata, Cuentas Florales de Plástico, Película Polarizadora de Plástico",
+        "materialsZh": "捡拾水泥雕塑块、铁丝、竹丝、鱼线、UV软树脂、热熔胶、云母粉、银箔、塑料花珠、塑料偏光片",
+        "imagesFull": []
+      },
+      {
+        "id": "flwk9vrfrzpms75deqb",
+        "year": 2025,
+        "title": "Triumphant in Spring's Breeze, Hooves Fly Fast (Series)",
+        "date": "Thu Jul 30 2026",
+        "description": "点击这里填写作品介绍。",
+        "cover": "https://picsum.photos/seed/4xlqqdq1iewms75deqc/700/700",
+        "images": [],
+        "tone": "#454545",
+        "titleEs": "Trunfos en la Brisa Primaveral, los Cascos Vuelan Rápidos (Serie)",
+        "titleZh": "春风得意马蹄疾 系列",
+        "imagesFull": []
+      },
+      {
+        "id": "pal85ge6ccbms75d579",
+        "year": 2025,
+        "title": "Silently Stretching Out (Series)",
+        "date": "Thu Jul 30 2026",
+        "description": "点击这里填写作品介绍。",
+        "cover": "https://picsum.photos/seed/s68mo7chqapms75d579/700/700",
+        "images": [],
+        "tone": "#454545",
+        "titleEs": "Estirándose en Silencio (Serie)",
+        "titleZh": "沉默地伸展 系列",
+        "imagesFull": []
+      },
+      {
+        "id": "xkn9f1glz8kms75cw8t",
+        "year": 2025,
+        "title": "Lay Bare (Series)",
+        "date": "Thu Jul 30 2026",
+        "description": "点击这里填写作品介绍。",
+        "cover": "https://picsum.photos/seed/3kxfp4kasq3ms75cw8t/700/700",
+        "images": [],
+        "tone": "#454545",
+        "titleEs": "Exponerse (Serie)",
+        "titleZh": "袒露 系列",
+        "imagesFull": []
+      },
+      {
+        "id": "8y3cqcibt9ams75cjar",
+        "year": 2025,
+        "title": "An Entwined Embrace (Series)",
+        "date": "Thu Jul 30 2026",
+        "description": "点击这里填写作品介绍。",
+        "cover": "https://picsum.photos/seed/37pzhzegryxms75cjar/700/700",
+        "images": [],
+        "tone": "#454545",
+        "titleEs": "Un Abrazo Entrelazado (Serie)",
+        "titleZh": "缠绕着拥抱 系列",
+        "imagesFull": []
+      },
+      {
+        "id": "upryx4vhqyms75c85o",
+        "year": 2025,
+        "title": "Small Flowers and Plants",
+        "date": "Thu Jul 30 2026",
+        "description": "点击这里填写作品介绍。",
+        "cover": "https://picsum.photos/seed/z7ja4ogs92lms75c85o/700/700",
+        "images": [],
+        "tone": "#454545",
+        "titleEs": "Flores y Plantas Pequeñas",
+        "titleZh": "小花草",
+        "imagesFull": []
+      },
+      {
+        "id": "kl1y3rg8c28ms75bzvu",
+        "year": 2025,
+        "series": "Good Medicine Tastes Bitter",
+        "title": "Good Medicine Tastes Bitter I",
+        "date": "Thu Jul 30 2026",
+        "description": "点击这里填写作品介绍。",
+        "cover": "https://picsum.photos/seed/ajua3com2zdms75bzvu/700/700",
+        "images": [],
+        "tone": "#454545",
+        "seriesEs": "La Buena Medicina Sabe Amarga",
+        "titleEs": "La Buena Medicina Sabe Amarga I",
+        "seriesZh": "良药苦口",
+        "titleZh": "良药苦口 I",
+        "imagesFull": []
+      },
+      {
+        "id": "w3eq8wwzqdhms75bzvu",
+        "year": 2025,
+        "series": "Good Medicine Tastes Bitter",
+        "title": "Good Medicine Tastes Bitter II",
+        "date": "Thu Jul 30 2026",
+        "description": "点击这里填写作品介绍。",
+        "cover": "https://picsum.photos/seed/i4w4vmdoy2kms75bzvu/700/700",
+        "images": [],
+        "tone": "#454545",
+        "seriesEs": "La Buena Medicina Sabe Amarga",
+        "titleEs": "La Buena Medicina Sabe Amarga II",
+        "seriesZh": "良药苦口",
+        "titleZh": "良药苦口 II",
+        "imagesFull": []
+      },
+      {
+        "id": "247dx3l6tscms75bo3h",
+        "year": 2025,
+        "series": "Suffocating Love",
+        "title": "Suffocating Love I",
+        "date": "Thu Jul 30 2026",
+        "description": "点击这里填写作品介绍。",
+        "cover": "https://picsum.photos/seed/l0tpx6ejmwms75bo3h/700/700",
+        "images": [],
+        "tone": "#454545",
+        "seriesEs": "Amor Asfixiante",
+        "titleEs": "Amor Asfixiante I",
+        "seriesZh": "窒息的爱",
+        "titleZh": "窒息的爱 I",
+        "imagesFull": []
+      },
+      {
+        "id": "738ek2bwp8xms75bo3h",
+        "year": 2025,
+        "series": "Suffocating Love",
+        "title": "Suffocating Love II",
+        "date": "Thu Jul 30 2026",
+        "description": "点击这里填写作品介绍。",
+        "cover": "https://picsum.photos/seed/ue7o3wroe8mms75bo3h/700/700",
+        "images": [],
+        "tone": "#454545",
+        "seriesEs": "Amor Asfixiante",
+        "titleEs": "Amor Asfixiante II",
+        "seriesZh": "窒息的爱",
+        "titleZh": "窒息的爱 II",
+        "imagesFull": []
+      },
+      {
+        "id": "0vole1owmdqms75bo3h",
+        "year": 2025,
+        "series": "Suffocating Love",
+        "title": "Suffocating Love III",
+        "date": "Thu Jul 30 2026",
+        "description": "点击这里填写作品介绍。",
+        "cover": "https://picsum.photos/seed/rqfwdzindjmms75bo3h/700/700",
+        "images": [],
+        "tone": "#454545",
+        "seriesEs": "Amor Asfixiante",
+        "titleEs": "Amor Asfixiante III",
+        "seriesZh": "窒息的爱",
+        "titleZh": "窒息的爱 III",
+        "imagesFull": []
+      },
+      {
+        "id": "dw7oo2nd6ipms75bo3h",
+        "year": 2025,
+        "series": "Suffocating Love",
+        "title": "Suffocating Love IV",
+        "date": "Thu Jul 30 2026",
+        "description": "点击这里填写作品介绍。",
+        "cover": "https://picsum.photos/seed/b1a0j40gi5pms75bo3h/700/700",
+        "images": [],
+        "tone": "#454545",
+        "seriesEs": "Amor Asfixiante",
+        "titleEs": "Amor Asfixiante IV",
+        "seriesZh": "窒息的爱",
+        "titleZh": "窒息的爱 IV",
+        "imagesFull": []
+      },
+      {
+        "id": "427i5eybhtwms75ba4p",
+        "year": 2025,
+        "series": "A Night Entangled",
+        "title": "A Night Entangled I",
+        "date": "Thu Jul 30 2026",
+        "description": "点击这里填写作品介绍。",
+        "cover": "https://picsum.photos/seed/ct1w4pz7ujbms75ba4p/700/700",
+        "images": [],
+        "tone": "#454545",
+        "seriesEs": "Una Noche Enredada",
+        "titleEs": "Una Noche Enredada I",
+        "seriesZh": "缠绕的夜",
+        "titleZh": "缠绕的夜 I",
+        "imagesFull": []
+      },
+      {
+        "id": "drffgm74sjjms75ba4p",
+        "year": 2025,
+        "series": "A Night Entangled",
+        "title": "A Night Entangled II",
+        "date": "Thu Jul 30 2026",
+        "description": "点击这里填写作品介绍。",
+        "cover": "https://picsum.photos/seed/sm6mu4q7puhms75ba4p/700/700",
+        "images": [],
+        "tone": "#454545",
+        "seriesEs": "Una Noche Enredada",
+        "titleEs": "Una Noche Enredada II",
+        "seriesZh": "缠绕的夜",
+        "titleZh": "缠绕的夜 II",
+        "imagesFull": []
+      },
+      {
+        "id": "t7yh9cersims75ba4p",
+        "year": 2025,
+        "series": "A Night Entangled",
+        "title": "A Night Entangled III",
+        "date": "Thu Jul 30 2026",
+        "description": "点击这里填写作品介绍。",
+        "cover": "https://picsum.photos/seed/yecj7et8pjcms75ba4p/700/700",
+        "images": [],
+        "tone": "#454545",
+        "seriesEs": "Una Noche Enredada",
+        "titleEs": "Una Noche Enredada III",
+        "seriesZh": "缠绕的夜",
+        "titleZh": "缠绕的夜 III",
+        "imagesFull": []
+      },
+      {
+        "id": "z9gbw2pfyt9ms75azft",
+        "year": 2025,
+        "title": "Swing",
+        "date": "Thu Jul 30 2026",
+        "description": "点击这里填写作品介绍。",
+        "cover": "https://picsum.photos/seed/088e5r65y8pjms75azft/700/700",
+        "images": [],
+        "tone": "#454545",
+        "titleEs": "Balancearse",
+        "titleZh": "秋千",
+        "imagesFull": []
+      },
+      {
+        "id": "bka6djp3g5mms75attk",
+        "year": 2025,
+        "title": "Attempting to Stand Solemnly",
+        "date": "Thu Jul 30 2026",
+        "description": "点击这里填写作品介绍。",
+        "cover": "https://picsum.photos/seed/ntawt1v4v9ms75attk/700/700",
+        "images": [],
+        "tone": "#454545",
+        "titleEs": "Intentando Mantenerse De Pie Solemnemente",
+        "titleZh": "企图肃立",
+        "imagesFull": []
+      },
+      {
+        "id": "ejh7b9jpiadms75anw2",
+        "year": 2025,
+        "title": "A Pool of Clear Lake Water",
+        "date": "Thu Jul 30 2026",
+        "description": "点击这里填写作品介绍。",
+        "cover": "https://picsum.photos/seed/4l60qff25jqms75anw2/700/700",
+        "images": [],
+        "tone": "#454545",
+        "titleEs": "Un Remanso de Agua Clara del Lago",
+        "titleZh": "一汪澄净湖水",
+        "imagesFull": []
+      },
+      {
+        "id": "1md6qdiivdnms75aicj",
+        "year": 2025,
+        "title": "A Faint Fragrance from Among the Blooms",
+        "date": "Thu Jul 30 2026",
+        "description": "点击这里填写作品介绍。",
+        "cover": "https://picsum.photos/seed/cfw7bb11q2fms75aick/700/700",
+        "images": [],
+        "tone": "#454545",
+        "titleEs": "Un Tenue Aroma entre las Flores",
+        "titleZh": "丛中隐约的花香",
+        "imagesFull": []
+      },
+      {
+        "id": "fjsk7henkrms75ad34",
+        "year": 2025,
+        "title": "A Face in the Night Fog",
+        "date": "Thu Jul 30 2026",
+        "description": "点击这里填写作品介绍。",
+        "cover": "https://picsum.photos/seed/tax7txe9vvms75ad34/700/700",
+        "images": [],
+        "tone": "#454545",
+        "titleEs": "Un Rostro en la Niebla Nocturna",
+        "titleZh": "雾中的面容",
+        "imagesFull": []
+      },
+      {
+        "id": "zi3hugavzjms759vk4",
+        "year": 2025,
+        "title": "As Cold as Frost",
+        "date": "Thu Jul 30 2026",
+        "description": "点击这里填写作品介绍。",
+        "cover": "https://picsum.photos/seed/g8mh6x85z5wms759vk4/700/700",
+        "images": [],
+        "tone": "#454545",
+        "titleEs": "Tan Frío como la Escarcha",
+        "titleZh": "状似冷若冰霜",
+        "imagesFull": []
+      },
+      {
+        "id": "5up6ytz7c24ms759pkh",
+        "year": 2025,
+        "title": "River",
+        "date": "Thu Jul 30 2026",
+        "description": "点击这里填写作品介绍。",
+        "cover": "https://picsum.photos/seed/uykji1bqrzams759pkh/700/700",
+        "images": [],
+        "tone": "#454545",
+        "titleEs": "Río",
+        "titleZh": "河流",
+        "imagesFull": []
+      },
+      {
+        "id": "owqlpd6eu2ams6eydhs",
+        "year": 2025,
+        "title": "Exaltation in Stillness",
+        "date": "Wed Jul 29 2026",
+        "description": "点击这里填写作品介绍。",
+        "cover": "https://picsum.photos/seed/0hcy6ksrkktgms6eydhs/700/700",
+        "images": [],
+        "tone": "#454545",
+        "titleEs": "Exaltación en la Aquietamiento",
+        "titleZh": "昂扬的静待",
+        "imagesFull": []
+      },
+      {
+        "id": "ws0dyi6qtoms6eycvc",
+        "year": 2025,
+        "title": "Nectar in the Center",
+        "date": "Wed Jul 29 2026",
+        "description": "点击这里填写作品介绍。",
+        "cover": "https://picsum.photos/seed/47b47k24ktwms6eycvd/700/700",
+        "images": [],
+        "tone": "#454545",
+        "titleEs": "Néctar en el Centro",
+        "titleZh": "花心的蜜",
+        "imagesFull": []
+      },
+      {
+        "id": "3jwikgpwuryms6eyc8g",
+        "year": 2025,
+        "title": "Sun Basking",
+        "date": "Wed Jul 29 2026",
+        "description": "点击这里填写作品介绍。",
+        "cover": "https://picsum.photos/seed/26hte2ovzaems6eyc8h/700/700",
+        "images": [],
+        "tone": "#454545",
+        "titleEs": "Tomando el Sol",
+        "titleZh": "晒太阳",
+        "imagesFull": []
+      },
+      {
+        "id": "7ql9pcwfupjms6eybme",
+        "year": 2025,
+        "title": "The Tenderness of Dewdrops",
+        "date": "Wed Jul 29 2026",
+        "description": "点击这里填写作品介绍。",
+        "cover": "https://picsum.photos/seed/5rv4nz9700ems6eybme/700/700",
+        "images": [],
+        "tone": "#454545",
+        "titleEs": "La Ternura de las Gotas de Rocío",
+        "titleZh": "珠露的温存",
+        "imagesFull": []
+      },
+      {
+        "id": "af8b4p0wdrams6eyb12",
+        "year": 2025,
+        "title": "A Gentle Breeze",
+        "date": "Wed Jul 29 2026",
+        "description": "点击这里填写作品介绍。",
+        "cover": "https://picsum.photos/seed/7yws90vc4cms6eyb12/700/700",
+        "images": [],
+        "tone": "#454545",
+        "titleEs": "Una Suave Brisa",
+        "titleZh": "微风",
+        "imagesFull": []
+      },
+      {
+        "id": "6shf15o6ms6exak7",
+        "year": 2025,
+        "title": "Swaying Softness",
+        "date": "Wed Jul 29 2026",
+        "description": "点击这里填写作品介绍。",
+        "cover": "https://picsum.photos/seed/nondz3qhpnpms6exak7/700/700",
+        "images": [],
+        "tone": "#454545",
+        "titleEs": "Suave Balanceo",
+        "titleZh": "摇坠的柔软",
+        "imagesFull": []
+      },
+      {
+        "id": "qhmuxvb580lms6ey9ki",
+        "year": 2024,
+        "title": "新作品标题",
+        "date": "Wed Jul 29 2026",
+        "description": "点击这里填写作品介绍。",
+        "cover": "https://picsum.photos/seed/z0ql1tmqxxms6ey9ki/700/700",
+        "images": [],
+        "tone": "#454545",
+        "imagesFull": []
+      },
+      {
+        "id": "uygbitwxrms6ey8vy",
+        "year": 2024,
+        "title": "新作品标题",
+        "date": "Wed Jul 29 2026",
+        "description": "点击这里填写作品介绍。",
+        "cover": "https://picsum.photos/seed/3ut64abnr79ms6ey8vz/700/700",
+        "images": [],
+        "tone": "#454545",
+        "imagesFull": []
+      },
+      {
+        "id": "9bpdtwobyfms6ey80q",
+        "year": 2024,
+        "title": "新作品标题",
+        "date": "Wed Jul 29 2026",
+        "description": "点击这里填写作品介绍。",
+        "cover": "https://picsum.photos/seed/l1eh3v9qwmims6ey80q/700/700",
+        "images": [],
+        "tone": "#454545",
+        "imagesFull": []
+      },
+      {
+        "id": "31sqr35iframs6ey6ed",
+        "year": 2024,
+        "title": "新作品标题",
+        "date": "Wed Jul 29 2026",
+        "description": "点击这里填写作品介绍。",
+        "cover": "https://picsum.photos/seed/4ddlybwdofnms6ey6ed/700/700",
+        "images": [],
+        "tone": "#454545",
+        "imagesFull": []
+      },
+      {
+        "id": "h9bi30yx4g7ms6ey5le",
+        "year": 2024,
+        "title": "新作品标题",
+        "date": "Wed Jul 29 2026",
+        "description": "点击这里填写作品介绍。",
+        "cover": "https://picsum.photos/seed/58p3o0avy57ms6ey5le/700/700",
+        "images": [],
+        "tone": "#454545",
+        "imagesFull": []
+      },
+      {
+        "id": "aw4l7ymdcmms6ewfl8",
+        "year": 2024,
+        "title": "新作品标题",
+        "date": "Wed Jul 29 2026",
+        "description": "点击这里填写作品介绍。",
+        "cover": "https://picsum.photos/seed/dvhay7gz9tdms6ewfl8/700/700",
+        "images": [],
+        "tone": "#454545",
+        "imagesFull": []
+      }
+    ],
+    "sidebarWidthOverride": 414,
+    "typographyZh": {
+      "artistName": {
+        "fontSize": 40,
+        "lineHeight": 1,
+        "fontFamily": "ibm-plex-sans",
+        "fontWeight": 700,
+        "italic": false,
+        "letterSpacing": -1,
+        "fontWidth": 100
+      },
+      "year": {
+        "fontSize": 25,
+        "lineHeight": 1.3,
+        "fontFamily": "ibm-plex-sans",
+        "fontWeight": 700,
+        "italic": false,
+        "letterSpacing": 0,
+        "fontWidth": 100
+      },
+      "workTitle": {
+        "fontSize": 18,
+        "lineHeight": 1,
+        "fontFamily": "ibm-plex-sans",
+        "fontWeight": 500,
+        "italic": false,
+        "letterSpacing": 0,
+        "fontWidth": 100
+      },
+      "detailTitle": {
+        "fontSize": 40,
+        "lineHeight": 1.2,
+        "fontFamily": "ibm-plex-sans",
+        "fontWeight": 700,
+        "italic": false,
+        "letterSpacing": 1,
+        "fontWidth": 100
+      },
+      "detailMaterials": {
+        "fontSize": 20,
+        "lineHeight": 1.6,
+        "fontFamily": "ibm-plex-sans",
+        "fontWeight": 400,
+        "italic": false,
+        "letterSpacing": 0,
+        "fontWidth": 100
+      },
+      "detailDimensions": {
+        "fontSize": 25,
+        "lineHeight": 1,
+        "fontFamily": "ibm-plex-sans",
+        "fontWeight": 600,
+        "italic": false,
+        "letterSpacing": 0,
+        "fontWidth": 100
+      },
+      "infoTitle": {
+        "fontSize": 30,
+        "lineHeight": 1.3,
+        "fontFamily": "ibm-plex-sans",
+        "fontWeight": 700,
+        "italic": false,
+        "letterSpacing": 0,
+        "fontWidth": 100
+      },
+      "indexNav": {
+        "fontSize": 18,
+        "lineHeight": 1.3,
+        "fontFamily": "ibm-plex-sans",
+        "fontWeight": 700,
+        "italic": false,
+        "letterSpacing": 0,
+        "fontWidth": 100
+      },
+      "footerLinks": {
+        "fontSize": 13,
+        "lineHeight": 1.5,
+        "fontFamily": "source-han-sans-tc",
+        "fontWeight": 400,
+        "italic": false,
+        "letterSpacing": 0,
+        "fontWidth": 100
+      },
+      "infoBodyInfo": {
+        "fontSize": 20,
+        "lineHeight": 1.7,
+        "fontFamily": "ibm-plex-sans",
+        "fontWeight": 400,
+        "italic": false,
+        "letterSpacing": 0,
+        "fontWidth": 100
+      },
+      "infoBodyExhibition": {
+        "fontSize": 20,
+        "lineHeight": 1.7,
+        "fontFamily": "ibm-plex-sans",
+        "fontWeight": 400,
+        "italic": false,
+        "letterSpacing": 0,
+        "fontWidth": 100
+      }
+    },
+    "typographyMobileZh": {
+      "artistName": {
+        "fontSize": 46,
+        "lineHeight": 1.15,
+        "fontFamily": "ibm-plex-sans",
+        "fontWeight": 700,
+        "italic": false,
+        "letterSpacing": 0,
+        "fontWidth": 100
+      },
+      "year": {
+        "fontSize": 30,
+        "lineHeight": 1.3,
+        "fontFamily": "ibm-plex-sans",
+        "fontWeight": 700,
+        "italic": false,
+        "letterSpacing": 0,
+        "fontWidth": 100
+      },
+      "workTitle": {
+        "fontSize": 20,
+        "lineHeight": 1,
+        "fontFamily": "source-han-sans-tc",
+        "fontWeight": 600,
+        "italic": false,
+        "letterSpacing": 0,
+        "fontWidth": 100
+      },
+      "detailTitle": {
+        "fontSize": 35,
+        "lineHeight": 1.2,
+        "fontFamily": "ibm-plex-sans",
+        "fontWeight": 700,
+        "italic": false,
+        "letterSpacing": 0,
+        "fontWidth": 100
+      },
+      "detailMaterials": {
+        "fontSize": 18,
+        "lineHeight": 1.6,
+        "fontFamily": "ibm-plex-sans",
+        "fontWeight": 400,
+        "italic": false,
+        "letterSpacing": 0,
+        "fontWidth": 100
+      },
+      "detailDimensions": {
+        "fontSize": 22,
+        "lineHeight": 1,
+        "fontFamily": "ibm-plex-sans",
+        "fontWeight": 600,
+        "italic": false,
+        "letterSpacing": 0,
+        "fontWidth": 100
+      },
+      "infoTitle": {
+        "fontSize": 18,
+        "lineHeight": 1.3,
+        "fontFamily": "ibm-plex-sans",
+        "fontWeight": 700,
+        "italic": false,
+        "letterSpacing": 0,
+        "fontWidth": 100
+      },
+      "indexNav": {
+        "fontSize": 18,
+        "lineHeight": 1.3,
+        "fontFamily": "ibm-plex-sans",
+        "fontWeight": 700,
+        "italic": false,
+        "letterSpacing": 0,
+        "fontWidth": 100
+      },
+      "footerLinks": {
+        "fontSize": 12,
+        "lineHeight": 1.5,
+        "fontFamily": "ibm-plex-sans",
+        "fontWeight": 400,
+        "italic": false,
+        "letterSpacing": 0,
+        "fontWidth": 100
+      },
+      "infoBodyInfo": {
+        "fontSize": 16,
+        "lineHeight": 1.7,
+        "fontFamily": "ibm-plex-sans",
+        "fontWeight": 400,
+        "italic": false,
+        "letterSpacing": 0,
+        "fontWidth": 100
+      },
+      "infoBodyExhibition": {
+        "fontSize": 16,
+        "lineHeight": 1.7,
+        "fontFamily": "ibm-plex-sans",
+        "fontWeight": 400,
+        "italic": false,
+        "letterSpacing": 0,
+        "fontWidth": 100
+      }
+    }
+  }
+}
