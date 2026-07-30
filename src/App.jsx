@@ -283,6 +283,26 @@ function Portfolio() {
   useLayoutEffect(() => {
     dataRef.current = data;
   }, [data]);
+
+  // 详情页里点开图片能看到的"高清大图"（imagesFull）单独存在另一个文件里，不算在
+  // 首次打开要下载的 content.json 里面——先用分辨率没那么高、但小得多的普通图把页面渲染出来，
+  // 高清图放到后台单独异步加载，加载完了再悄悄合并进数据里。加载完成之前点开大图看到的
+  // 还是普通分辨率的图（自动降级，不会出错、也不会空白），加载好了自动补上，用户不会感觉到卡顿。
+  useEffect(() => {
+    fetch("/content-images-full.json")
+      .then((res) => (res.ok ? res.json() : null))
+      .then((fullImagesMap) => {
+        if (!fullImagesMap || Object.keys(fullImagesMap).length === 0) return;
+        setData((prev) => ({
+          ...prev,
+          works: prev.works.map((w) =>
+            fullImagesMap[w.id] ? { ...w, imagesFull: fullImagesMap[w.id] } : w
+          ),
+        }));
+      })
+      .catch(() => {}); // 高清图没加载到就算了，详情页会自动退回用普通分辨率的图，不影响使用
+  }, []);
+
   const [hasUnexportedChanges, setHasUnexportedChanges] = useState(false);
   const [editMode, setEditMode] = useState(false);
   const [selectedId, setSelectedId] = useState(null);
@@ -562,18 +582,34 @@ function Portfolio() {
     setHasUnexportedChanges(true);
   }, []);
 
-  // 把当前内容导出成 content.json，下载下来直接替换项目里的 public/content.json 就行
+  // 把当前内容拆成两个文件导出：
+  // - content.json：不含"高清大图"（imagesFull），体积小很多，网站一打开就要下载这个
+  // - content-images-full.json：单独存放每件作品的高清大图，网站后台异步加载，不影响首次打开的速度
+  // 下载下来，两个都要放进项目的 public 文件夹（替换掉旧的）
   const exportContent = useCallback(() => {
-    const json = JSON.stringify({ typography: data.typography, data }, null, 2);
-    const blob = new Blob([json], { type: "application/json" });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "content.json";
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
-    URL.revokeObjectURL(url);
+    const worksWithoutFullImages = data.works.map(({ imagesFull, ...rest }) => rest);
+    const mainData = { ...data, works: worksWithoutFullImages };
+    const mainJson = JSON.stringify({ typography: data.typography, data: mainData }, null, 2);
+
+    const fullImagesMap = {};
+    data.works.forEach((w) => {
+      if (w.imagesFull && w.imagesFull.length > 0) fullImagesMap[w.id] = w.imagesFull;
+    });
+    const fullImagesJson = JSON.stringify(fullImagesMap, null, 2);
+
+    const download = (content, filename) => {
+      const blob = new Blob([content], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+    };
+    download(mainJson, "content.json");
+    download(fullImagesJson, "content-images-full.json");
     setHasUnexportedChanges(false);
   }, [data]);
 
@@ -1165,7 +1201,7 @@ function Portfolio() {
             <>
               <button
                 onClick={exportContent}
-                title="把当前内容导出成 content.json，下载后替换项目里的 public/content.json"
+                title="把当前内容导出成 content.json 和 content-images-full.json 两个文件，下载后都放进项目的 public 文件夹替换掉旧的"
                 className={`text-xs font-bold px-3 py-1.5 rounded-full transition-colors ${
                   hasUnexportedChanges
                     ? "bg-amber-100 text-amber-700 hover:bg-amber-200"
