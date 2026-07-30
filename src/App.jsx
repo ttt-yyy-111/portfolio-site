@@ -284,6 +284,33 @@ function Portfolio() {
     dataRef.current = data;
   }, [data]);
 
+  // 兼容旧数据：老版本的展览类段落，年份和展览名称是混在同一行文字里、靠空格拆开的
+  // （不靠谱，比如名称本身带空格就容易拆错）。现在改成年份、名称是真正分开存的两个字段，
+  // 这里做一次性自动迁移——老段落一加载就转换成新结构，不用重新编辑。
+  useEffect(() => {
+    setData((prev) => {
+      const sections = prev.infoSections || [];
+      const needsMigration = sections.some((s) => s.category === "exhibition" && !s.entries);
+      if (!needsMigration) return prev;
+      return {
+        ...prev,
+        infoSections: sections.map((s) => {
+          if (s.category !== "exhibition" || s.entries) return s;
+          const html = ensureHtmlBody(s.body);
+          const entries = html
+            .split(/<br\s*\/?>/i)
+            .filter((line) => line.replace(/<[^>]+>/g, "").trim() !== "")
+            .map((line) => {
+              const { yearHtml, nameHtml } = splitLeadingToken(line);
+              return { id: uid(), year: yearHtml.replace(/<[^>]+>/g, ""), name: nameHtml };
+            });
+          const { body, ...rest } = s;
+          return { ...rest, entries };
+        }),
+      };
+    });
+  }, []);
+
   const [hasUnexportedChanges, setHasUnexportedChanges] = useState(false);
   const [editMode, setEditMode] = useState(false);
   const [selectedId, setSelectedId] = useState(null);
@@ -1037,13 +1064,21 @@ function Portfolio() {
 
   // Information 页段落：每段有自己的标题+详细内容，详细内容可以选一栏或两栏显示
   const addInfoSection = (category = "info") => {
-    const newSection = {
-      id: uid(),
-      category,
-      title: category === "exhibition" ? "新展览" : "新段落标题",
-      body: "点击这里填写详细内容。",
-      columns: 1,
-    };
+    const newSection =
+      category === "exhibition"
+        ? {
+            id: uid(),
+            category,
+            title: "新展览",
+            entries: [{ id: uid(), year: "2026", name: "点击这里填写展览名称" }],
+          }
+        : {
+            id: uid(),
+            category,
+            title: "新段落标题",
+            body: "点击这里填写详细内容。",
+            columns: 1,
+          };
     updateData((prev) => ({
       ...prev,
       infoSections: [...(prev.infoSections || []), newSection],
@@ -1059,6 +1094,37 @@ function Portfolio() {
     updateData((prev) => ({
       ...prev,
       infoSections: (prev.infoSections || []).filter((s) => s.id !== id),
+    }));
+  };
+
+  // 展览类段落下面"年份 / 展览名称"这些条目的增删改——每一条都是独立的一行，
+  // 年份和名称是真正分开存的两个字段，不是靠空格从一整段文字里拆出来的
+  const updateInfoEntry = (sectionId, entryId, patch) => {
+    updateData((prev) => ({
+      ...prev,
+      infoSections: (prev.infoSections || []).map((s) =>
+        s.id === sectionId
+          ? { ...s, entries: (s.entries || []).map((e) => (e.id === entryId ? { ...e, ...patch } : e)) }
+          : s
+      ),
+    }));
+  };
+  const addInfoEntry = (sectionId) => {
+    updateData((prev) => ({
+      ...prev,
+      infoSections: (prev.infoSections || []).map((s) =>
+        s.id === sectionId
+          ? { ...s, entries: [...(s.entries || []), { id: uid(), year: "", name: "" }] }
+          : s
+      ),
+    }));
+  };
+  const deleteInfoEntry = (sectionId, entryId) => {
+    updateData((prev) => ({
+      ...prev,
+      infoSections: (prev.infoSections || []).map((s) =>
+        s.id === sectionId ? { ...s, entries: (s.entries || []).filter((e) => e.id !== entryId) } : s
+      ),
     }));
   };
 
@@ -2300,6 +2366,9 @@ function Portfolio() {
             onUpdateSection={updateInfoSection}
             onAddSection={addInfoSection}
             onDeleteSection={deleteInfoSection}
+            onUpdateEntry={updateInfoEntry}
+            onAddEntry={addInfoEntry}
+            onDeleteEntry={deleteInfoEntry}
             isMobile={isMobile}
           />
         ) : !selectedWork ? (
@@ -2834,6 +2903,28 @@ function splitLeadingToken(html) {
 // "加粗里面套斜体"这种叠加情况，不用自己写解析逻辑。
 function RichEditableField({ value, onChange, as: Tag = "p", editMode, className, style, lang }) {
   const ref = useRef(null);
+  const [formatState, setFormatState] = useState({ bold: false, italic: false });
+
+  // 只有传进来的内容跟 DOM 里现在的内容真的不一样时才去重设 innerHTML——
+  // 不然每次点完加粗/斜体按钮，React 重新渲染的时候会把内容"设置成同样的东西"，
+  // 这个动作本身会把浏览器当前的文字选区弄丢，导致选区莫名其妙被取消掉。
+  useLayoutEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const html = value || "";
+    if (el.innerHTML !== html) el.innerHTML = html;
+  }, [value]);
+
+  const updateFormatState = () => {
+    try {
+      setFormatState({
+        bold: document.queryCommandState("bold"),
+        italic: document.queryCommandState("italic"),
+      });
+    } catch (err) {
+      // 极少数浏览器可能不支持 queryCommandState，安静地忽略就好，不影响正常编辑
+    }
+  };
 
   const runCommand = (command) => {
     const el = ref.current;
@@ -2841,11 +2932,13 @@ function RichEditableField({ value, onChange, as: Tag = "p", editMode, className
     el.focus();
     document.execCommand(command, false, null);
     onChange(el.innerHTML);
+    updateFormatState();
   };
 
   const handleFocus = () => {
     // 让浏览器按 Enter 换行的时候用 <br>，不要用 <div>/<p> 包一层，这样换行判断更简单可靠
     document.execCommand("defaultParagraphSeparator", false, "br");
+    updateFormatState();
   };
 
   const handleBlur = () => {
@@ -2857,13 +2950,20 @@ function RichEditableField({ value, onChange, as: Tag = "p", editMode, className
     return <Tag className={className} style={style} lang={lang} dangerouslySetInnerHTML={{ __html: value || "" }} />;
   }
 
+  const btnClass = (active) =>
+    `text-[11px] w-6 h-6 rounded border transition-colors ${
+      active
+        ? "bg-neutral-900 text-white border-neutral-900"
+        : "border-neutral-300 text-neutral-600 hover:bg-neutral-100"
+    }`;
+
   return (
     <div>
       <div className="flex items-center gap-1 mb-1.5">
         <button
           onMouseDown={(e) => e.preventDefault()} // 防止点按钮的时候先把编辑框的焦点/选区弄丢了
           onClick={() => runCommand("bold")}
-          className="text-[11px] font-bold w-6 h-6 rounded border border-neutral-300 text-neutral-600 hover:bg-neutral-100 transition-colors"
+          className={btnClass(formatState.bold) + " font-bold"}
           title="加粗选中的文字"
         >
           B
@@ -2871,7 +2971,7 @@ function RichEditableField({ value, onChange, as: Tag = "p", editMode, className
         <button
           onMouseDown={(e) => e.preventDefault()}
           onClick={() => runCommand("italic")}
-          className="text-[11px] italic font-serif w-6 h-6 rounded border border-neutral-300 text-neutral-600 hover:bg-neutral-100 transition-colors"
+          className={btnClass(formatState.italic) + " italic font-serif"}
           title="斜体选中的文字"
         >
           I
@@ -2889,7 +2989,8 @@ function RichEditableField({ value, onChange, as: Tag = "p", editMode, className
         lang={lang}
         onFocus={handleFocus}
         onBlur={handleBlur}
-        dangerouslySetInnerHTML={{ __html: value || "" }}
+        onMouseUp={updateFormatState}
+        onKeyUp={updateFormatState}
       />
     </div>
   );
@@ -2910,6 +3011,9 @@ function InfoView({
   onUpdateSection,
   onAddSection,
   onDeleteSection,
+  onUpdateEntry,
+  onAddEntry,
+  onDeleteEntry,
   isMobile,
 }) {
   return (
@@ -2965,49 +3069,87 @@ function InfoView({
                 style={{ ...titleStyle, overflowWrap: "break-word" }}
                 lang={titleLang}
               />
-              {editMode ? (
+              {isExhibition ? (
+                editMode ? (
+                  // 展览类编辑：一行一个条目，年份和名称是两个真正分开的输入框，不是靠空格拆的
+                  <div className="space-y-3">
+                    {(section.entries || []).map((entry) => (
+                      <div key={entry.id} className="flex items-start gap-2">
+                        <input
+                          type="text"
+                          value={entry.year || ""}
+                          onChange={(e) => onUpdateEntry(section.id, entry.id, { year: e.target.value })}
+                          placeholder="年份"
+                          className="w-20 shrink-0 bg-transparent text-neutral-900 outline-dashed outline-1 outline-offset-2 outline-neutral-300 focus:outline-neutral-900 rounded px-1"
+                          style={{ ...bodyStyle }}
+                        />
+                        <div className="flex-1 min-w-0 flex items-start gap-2">
+                          <div className="flex-1 min-w-0">
+                            <RichEditableField
+                              as="span"
+                              value={ensureHtmlBody(tField(entry, "name"))}
+                              editMode={editMode}
+                              onChange={(v) => onUpdateEntry(section.id, entry.id, { [langKey("name")]: v })}
+                              className="block"
+                              style={{ ...bodyStyle, overflowWrap: "break-word" }}
+                              lang={bodyLang}
+                            />
+                          </div>
+                          <button
+                            onClick={() => onDeleteEntry(section.id, entry.id)}
+                            className="text-neutral-300 hover:text-red-500 text-xs shrink-0 mt-2"
+                            title="删除这一条展览"
+                          >
+                            ✕
+                          </button>
+                        </div>
+                      </div>
+                    ))}
+                    <button
+                      onClick={() => onAddEntry(section.id)}
+                      className="text-[11px] font-bold px-2.5 py-1 rounded-full bg-neutral-100 text-neutral-500 hover:bg-neutral-200 transition-colors"
+                    >
+                      + 添加一条展览
+                    </button>
+                  </div>
+                ) : (
+                  // 展览类展示：年份栏窄、名称栏宽，两栏之间留一点间距、真正按列对齐（不是靠空格拆的）；
+                  // 名称如果太长换行，条目内部的行距故意设得比"条目与条目之间"的间距更小，
+                  // 这样一眼就能看出哪几行是同一条展览、哪里是换到下一条了。
+                  <div
+                    className="font-medium text-neutral-900"
+                    style={{
+                      ...bodyStyle,
+                      overflowWrap: "break-word",
+                      display: "grid",
+                      gridTemplateColumns: "auto 1fr",
+                      columnGap: "1.5em",
+                      rowGap: `${
+                        (parseFloat(bodyStyle.fontSize) || 16) * (parseFloat(bodyStyle.lineHeight) || 1.5) * 0.7
+                      }px`,
+                    }}
+                    lang={bodyLang}
+                  >
+                    {(section.entries || []).map((entry) => (
+                      <React.Fragment key={entry.id}>
+                        <span style={{ lineHeight: 1.3 }}>{entry.year}</span>
+                        <span style={{ lineHeight: 1.3 }} dangerouslySetInnerHTML={{ __html: ensureHtmlBody(tField(entry, "name")) }} />
+                      </React.Fragment>
+                    ))}
+                  </div>
+                )
+              ) : editMode ? (
                 <RichEditableField
                   as="div"
                   value={ensureHtmlBody(tField(section, "body"))}
                   editMode={editMode}
                   onChange={(v) => onUpdateSection(section.id, { [langKey("body")]: v })}
                   className={`font-medium text-neutral-900 block ${
-                    isExhibition
-                      ? ""
-                      : !isMobile && section.columns === 2
-                      ? "sm:columns-2 sm:gap-x-16"
-                      : ""
+                    !isMobile && section.columns === 2 ? "sm:columns-2 sm:gap-x-16" : ""
                   }`}
                   style={{ ...bodyStyle, overflowWrap: "break-word" }}
                   lang={bodyLang}
                 />
-              ) : isExhibition ? (
-                // 展览类：每一行按"年份 + 空格 + 展览名称"拆成两栏对应显示，
-                // 年份栏窄、名称栏宽，两栏之间留一点间距；不额外加大段落间距，也不做首行缩进。
-                <div
-                  className="font-medium text-neutral-900"
-                  style={{
-                    ...bodyStyle,
-                    overflowWrap: "break-word",
-                    display: "grid",
-                    gridTemplateColumns: "auto 1fr",
-                    columnGap: "1.5em",
-                  }}
-                  lang={bodyLang}
-                >
-                  {ensureHtmlBody(tField(section, "body"))
-                    .split(/<br\s*\/?>/i)
-                    .filter((line) => line.replace(/<[^>]+>/g, "").trim() !== "")
-                    .map((line, i) => {
-                      const { yearHtml, nameHtml } = splitLeadingToken(line);
-                      return (
-                        <React.Fragment key={i}>
-                          <span dangerouslySetInnerHTML={{ __html: yearHtml }} />
-                          <span dangerouslySetInnerHTML={{ __html: nameHtml }} />
-                        </React.Fragment>
-                      );
-                    })}
-                </div>
               ) : (
                 <div
                   className={`font-medium text-neutral-900 ${
