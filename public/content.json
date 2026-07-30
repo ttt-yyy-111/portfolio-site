@@ -747,14 +747,24 @@
         "date": "Wed Jul 29 2026",
         "description": "点击这里填写作品介绍。",
         "cover": "https://picsum.photos/seed/ql4ixmvu05pms623nha/700/700",
-        "images": [],
+        "images": [
+          "/images/3k3wmco031lms623nha-img-0.jpg",
+          "/images/3k3wmco031lms623nha-img-1.jpg",
+          "/images/3k3wmco031lms623nha-img-2.jpg",
+          "/images/3k3wmco031lms623nha-img-3.jpg"
+        ],
         "tone": "#454545",
         "titleZh": "对影成双",
         "titleEs": "Una sombra hace dos",
         "materials": "Tree Branches, Plastic Polarizing Film, UV Soft Resin, Hot-Melt Adhesive, Acrylic Balls, Pins, Screws, Silver Foil, Tin Foil, Wire",
         "materialsEs": "Ramas de Árbol, Película Polarizadora de Plástico, Resina Blanda UV, Adhesivo Termofusible, Bolas de Acrílico, Alfileres, Tornillos, Papel de Plata, Papel de Aluminio, Alambre",
         "materialsZh": "树枝、塑料偏光片，UV软树脂、热熔胶、亚克力球、大头针、螺丝钉、银箔、锡箔、铁丝",
-        "imagesFull": []
+        "imagesFull": [
+          "/images/3k3wmco031lms623nha-full-0.jpg",
+          "/images/3k3wmco031lms623nha-full-1.jpg",
+          "/images/3k3wmco031lms623nha-full-2.jpg",
+          "/images/3k3wmco031lms623nha-full-3.jpg"
+        ]
       },
       {
         "id": "awatfu6b4ms623zsj",
