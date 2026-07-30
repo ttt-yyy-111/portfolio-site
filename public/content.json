@@ -295,8 +295,8 @@
         "fontWidth": 100
       },
       "infoBodyExhibition": {
-        "fontSize": 18,
-        "lineHeight": 1.5,
+        "fontSize": 16,
+        "lineHeight": 1,
         "fontFamily": "ibm-plex-sans",
         "fontWeight": 400,
         "italic": false,
