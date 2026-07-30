@@ -1114,7 +1114,11 @@
           "/images/ejh7b9jpiadms75anw2-img-0.jpg",
           "/images/ejh7b9jpiadms75anw2-img-1.jpg",
           "/images/ejh7b9jpiadms75anw2-img-2.jpg",
-          "/images/ejh7b9jpiadms75anw2-img-3.jpg"
+          "/images/ejh7b9jpiadms75anw2-img-3.jpg",
+          "/images/ejh7b9jpiadms75anw2-img-4.jpg",
+          "/images/ejh7b9jpiadms75anw2-img-5.jpg",
+          "/images/ejh7b9jpiadms75anw2-img-6.jpg",
+          "/images/ejh7b9jpiadms75anw2-img-7.jpg"
         ],
         "tone": "#454545",
         "titleEs": "Un Remanso de Agua Clara del Lago",
@@ -1123,7 +1127,11 @@
           "/images/ejh7b9jpiadms75anw2-full-0.jpg",
           "/images/ejh7b9jpiadms75anw2-full-1.jpg",
           "/images/ejh7b9jpiadms75anw2-full-2.jpg",
-          "/images/ejh7b9jpiadms75anw2-full-3.jpg"
+          "/images/ejh7b9jpiadms75anw2-full-3.jpg",
+          "/images/ejh7b9jpiadms75anw2-full-4.jpg",
+          "/images/ejh7b9jpiadms75anw2-full-5.jpg",
+          "/images/ejh7b9jpiadms75anw2-full-6.jpg",
+          "/images/ejh7b9jpiadms75anw2-full-7.jpg"
         ]
       },
       {
@@ -1133,11 +1141,25 @@
         "date": "Thu Jul 30 2026",
         "description": "点击这里填写作品介绍。",
         "cover": "https://picsum.photos/seed/cfw7bb11q2fms75aick/700/700",
-        "images": [],
+        "images": [
+          "/images/1md6qdiivdnms75aicj-img-0.jpg",
+          "/images/1md6qdiivdnms75aicj-img-1.jpg",
+          "/images/1md6qdiivdnms75aicj-img-2.jpg",
+          "/images/1md6qdiivdnms75aicj-img-3.jpg",
+          "/images/1md6qdiivdnms75aicj-img-4.jpg",
+          "/images/1md6qdiivdnms75aicj-img-5.jpg"
+        ],
         "tone": "#454545",
         "titleEs": "Un Tenue Aroma entre las Flores",
         "titleZh": "丛中隐约的花香",
-        "imagesFull": []
+        "imagesFull": [
+          "/images/1md6qdiivdnms75aicj-full-0.jpg",
+          "/images/1md6qdiivdnms75aicj-full-1.jpg",
+          "/images/1md6qdiivdnms75aicj-full-2.jpg",
+          "/images/1md6qdiivdnms75aicj-full-3.jpg",
+          "/images/1md6qdiivdnms75aicj-full-4.jpg",
+          "/images/1md6qdiivdnms75aicj-full-5.jpg"
+        ]
       },
       {
         "id": "fjsk7henkrms75ad34",
@@ -1146,11 +1168,21 @@
         "date": "Thu Jul 30 2026",
         "description": "点击这里填写作品介绍。",
         "cover": "https://picsum.photos/seed/tax7txe9vvms75ad34/700/700",
-        "images": [],
+        "images": [
+          "/images/fjsk7henkrms75ad34-img-0.jpg",
+          "/images/fjsk7henkrms75ad34-img-1.jpg",
+          "/images/fjsk7henkrms75ad34-img-2.jpg",
+          "/images/fjsk7henkrms75ad34-img-3.jpg"
+        ],
         "tone": "#454545",
         "titleEs": "Un Rostro en la Niebla Nocturna",
         "titleZh": "雾中的面容",
-        "imagesFull": []
+        "imagesFull": [
+          "/images/fjsk7henkrms75ad34-full-0.jpg",
+          "/images/fjsk7henkrms75ad34-full-1.jpg",
+          "/images/fjsk7henkrms75ad34-full-2.jpg",
+          "/images/fjsk7henkrms75ad34-full-3.jpg"
+        ]
       },
       {
         "id": "zi3hugavzjms759vk4",
@@ -1159,11 +1191,21 @@
         "date": "Thu Jul 30 2026",
         "description": "点击这里填写作品介绍。",
         "cover": "https://picsum.photos/seed/g8mh6x85z5wms759vk4/700/700",
-        "images": [],
+        "images": [
+          "/images/zi3hugavzjms759vk4-img-0.jpg",
+          "/images/zi3hugavzjms759vk4-img-1.jpg",
+          "/images/zi3hugavzjms759vk4-img-2.jpg",
+          "/images/zi3hugavzjms759vk4-img-3.jpg"
+        ],
         "tone": "#454545",
         "titleEs": "Tan Frío como la Escarcha",
         "titleZh": "状似冷若冰霜",
-        "imagesFull": []
+        "imagesFull": [
+          "/images/zi3hugavzjms759vk4-full-0.jpg",
+          "/images/zi3hugavzjms759vk4-full-1.jpg",
+          "/images/zi3hugavzjms759vk4-full-2.jpg",
+          "/images/zi3hugavzjms759vk4-full-3.jpg"
+        ]
       },
       {
         "id": "5up6ytz7c24ms759pkh",
@@ -1172,11 +1214,29 @@
         "date": "Thu Jul 30 2026",
         "description": "点击这里填写作品介绍。",
         "cover": "https://picsum.photos/seed/uykji1bqrzams759pkh/700/700",
-        "images": [],
+        "images": [
+          "/images/5up6ytz7c24ms759pkh-img-0.jpg",
+          "/images/5up6ytz7c24ms759pkh-img-1.jpg",
+          "/images/5up6ytz7c24ms759pkh-img-2.jpg",
+          "/images/5up6ytz7c24ms759pkh-img-3.jpg",
+          "/images/5up6ytz7c24ms759pkh-img-4.jpg",
+          "/images/5up6ytz7c24ms759pkh-img-5.jpg",
+          "/images/5up6ytz7c24ms759pkh-img-6.jpg",
+          "/images/5up6ytz7c24ms759pkh-img-7.jpg"
+        ],
         "tone": "#454545",
         "titleEs": "Río",
         "titleZh": "河流",
-        "imagesFull": []
+        "imagesFull": [
+          "/images/5up6ytz7c24ms759pkh-full-0.jpg",
+          "/images/5up6ytz7c24ms759pkh-full-1.jpg",
+          "/images/5up6ytz7c24ms759pkh-full-2.jpg",
+          "/images/5up6ytz7c24ms759pkh-full-3.jpg",
+          "/images/5up6ytz7c24ms759pkh-full-4.jpg",
+          "/images/5up6ytz7c24ms759pkh-full-5.jpg",
+          "/images/5up6ytz7c24ms759pkh-full-6.jpg",
+          "/images/5up6ytz7c24ms759pkh-full-7.jpg"
+        ]
       },
       {
         "id": "owqlpd6eu2ams6eydhs",
