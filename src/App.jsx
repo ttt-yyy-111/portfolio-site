@@ -1617,12 +1617,12 @@ function Portfolio() {
       {isMobile && (
         <div className="flex items-center justify-between px-3 py-3 flex-shrink-0 relative z-30 bg-white">
           {selectedWork ? (
-            <div className="flex items-center gap-1 -ml-2">
+            <div className="flex items-center gap-4 -ml-2">
               <button onClick={goBackToGallery} aria-label="返回" className="p-2">
                 <svg
                   viewBox="0 0 24 24"
-                  width="22"
-                  height="22"
+                  width="28"
+                  height="28"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="2.5"
@@ -1635,8 +1635,8 @@ function Portfolio() {
               <button onClick={goToGallery} aria-label="首页" className="p-2">
                 <svg
                   viewBox="0 0 24 24"
-                  width="20"
-                  height="20"
+                  width="26"
+                  height="26"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="2.5"
