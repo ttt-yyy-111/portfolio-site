@@ -434,8 +434,23 @@ function Portfolio() {
   useLayoutEffect(() => {
     if (!mainRef.current) return;
     if (!selectedId && !showInfo && restoreGalleryScrollRef.current) {
-      mainRef.current.scrollTop = galleryScrollRef.current;
+      const target = galleryScrollRef.current;
+      mainRef.current.scrollTop = target;
       restoreGalleryScrollRef.current = false;
+
+      // 画廊图片是陆续异步加载进来的：如果这时候图片还没加载完，页面实际能滚动的高度
+      // 可能还没到 target 这么高，刚设置的滚动位置会被浏览器直接钳制在当前能滚到的最大值；
+      // 等图片陆续加载完、页面变高了，也不会自动"补"回到原来想要的位置。
+      // 这里在接下来一小段时间内多补几次，确保图片加载完之后最终还是落在正确的位置上。
+      let attempts = 0;
+      const reinforce = () => {
+        attempts += 1;
+        if (mainRef.current && mainRef.current.scrollTop < target) {
+          mainRef.current.scrollTop = target;
+        }
+        if (attempts < 10) setTimeout(reinforce, 100);
+      };
+      setTimeout(reinforce, 100);
     } else {
       mainRef.current.scrollTop = 0;
     }
