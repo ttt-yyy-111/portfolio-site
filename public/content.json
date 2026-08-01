@@ -1420,11 +1420,33 @@
         "date": "Sat Aug 01 2026",
         "description": "点击这里填写作品介绍。",
         "cover": "https://picsum.photos/seed/nzmbojdrdumsa7m6ib/700/700",
-        "images": [],
+        "images": [
+          "/images/rp3oh0ctgnmsa7m6ib-img-0.jpg",
+          "/images/rp3oh0ctgnmsa7m6ib-img-1.jpg",
+          "/images/rp3oh0ctgnmsa7m6ib-img-2.jpg",
+          "/images/rp3oh0ctgnmsa7m6ib-img-3.jpg",
+          "/images/rp3oh0ctgnmsa7m6ib-img-4.jpg",
+          "/images/rp3oh0ctgnmsa7m6ib-img-5.jpg",
+          "/images/rp3oh0ctgnmsa7m6ib-img-6.jpg",
+          "/images/rp3oh0ctgnmsa7m6ib-img-7.jpg",
+          "/images/rp3oh0ctgnmsa7m6ib-img-8.jpg",
+          "/images/rp3oh0ctgnmsa7m6ib-img-9.jpg"
+        ],
         "tone": "#454545",
         "titleZh": "被湿漉发梢撩动的波纹",
         "titleEs": "Ondulaciones Agitadas por el Cabello Mojado",
-        "imagesFull": []
+        "imagesFull": [
+          "/images/rp3oh0ctgnmsa7m6ib-full-0.jpg",
+          "/images/rp3oh0ctgnmsa7m6ib-full-1.jpg",
+          "/images/rp3oh0ctgnmsa7m6ib-full-2.jpg",
+          "/images/rp3oh0ctgnmsa7m6ib-full-3.jpg",
+          "/images/rp3oh0ctgnmsa7m6ib-full-4.jpg",
+          "/images/rp3oh0ctgnmsa7m6ib-full-5.jpg",
+          "/images/rp3oh0ctgnmsa7m6ib-full-6.jpg",
+          "/images/rp3oh0ctgnmsa7m6ib-full-7.jpg",
+          "/images/rp3oh0ctgnmsa7m6ib-full-8.jpg",
+          "/images/rp3oh0ctgnmsa7m6ib-full-9.jpg"
+        ]
       },
       {
         "id": "1wd68pp5i8lmsa7lqpy",
