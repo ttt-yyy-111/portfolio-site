@@ -3294,45 +3294,21 @@ function DetailView({
   // 手机端左右滑动切换上一个/下一个作品：记录手指按下的位置，松手时算一下横向、纵向各移动了多少，
   // 横向移动明显大于纵向（说明是横滑不是在滚动页面）、而且超过一定距离才触发切换，
   // 避免正常上下滚动页面的时候不小心被判定成"切换作品"。
-  // 另外：如果手指是从屏幕最左边缘一段范围内开始按下、然后往右滑的，判定成"边缘滑动返回"，
-  // 效果等同于点左上角的 Back 按钮（不是切到上一件作品）。"切换作品"这个手势的起始点
-  // 要离开这块边缘区域才会生效，两个手势分开各管各的范围，不会互相干扰、抢touch事件。
-  const EDGE_ZONE = 32; // 屏幕最左边缘往右这么宽（像素）的范围内按下，才算边缘返回手势
   const touchStartRef = useRef(null);
   const handleTouchStart = (e) => {
     if (!isMobile || lightboxIndex !== null) return;
     const t = e.touches[0];
-    touchStartRef.current = { x: t.clientX, y: t.clientY, fromEdge: t.clientX <= EDGE_ZONE };
-  };
-  // 从边缘区域开始、看得出来是横向滑动的时候，主动挡住浏览器默认动作——
-  // 不然手机系统自己那套"边缘右滑返回上一页"的预览动画会先播一下，
-  // 跟咱们自己的返回逻辑前后叠在一起，看起来就像画面"闪"了一下再恢复正常。
-  const handleTouchMove = (e) => {
-    if (!isMobile || lightboxIndex !== null || !touchStartRef.current?.fromEdge) return;
-    const t = e.touches[0];
-    const dx = t.clientX - touchStartRef.current.x;
-    const dy = t.clientY - touchStartRef.current.y;
-    if (Math.abs(dx) > 10 && Math.abs(dx) > Math.abs(dy)) {
-      e.preventDefault();
-    }
+    touchStartRef.current = { x: t.clientX, y: t.clientY };
   };
   const handleTouchEnd = (e) => {
     if (!isMobile || lightboxIndex !== null || !touchStartRef.current) return;
     const t = e.changedTouches[0];
     const dx = t.clientX - touchStartRef.current.x;
     const dy = t.clientY - touchStartRef.current.y;
-    const fromEdge = touchStartRef.current.fromEdge;
     touchStartRef.current = null;
 
     const SWIPE_THRESHOLD = 60;
     if (Math.abs(dx) < SWIPE_THRESHOLD || Math.abs(dx) < Math.abs(dy) * 1.5) return;
-
-    if (fromEdge) {
-      // 从边缘区域开始的横滑，只处理"返回"这一种效果（往右滑触发），
-      // 往左滑就什么都不做——这块区域不参与"切换上一个/下一个作品"的判定。
-      if (dx > 0) onBack && onBack();
-      return;
-    }
 
     if (dx < 0 && nextWork) {
       onGoToWork(nextWork.id, "next");
@@ -3341,14 +3317,64 @@ function DetailView({
     }
   };
 
+  // 边缘滑动返回：单独做成一个贴在屏幕最左边的窄条，只在这一小块区域上响应，
+  // 不去动主内容区域的手势/touch-action 设置，避免影响到上面"切换作品"这个手势。
+  // 用手动 addEventListener 而不是 React 的 onTouchMove，是因为 React 有些情况下会把
+  // touchmove 事件注册成 passive（无法调用 preventDefault），这里手动指定
+  // { passive: false } 确保真的能拦住浏览器/系统自己的边缘返回预览动画，不然会跟
+  // 咱们自己触发的返回动作前后叠在一起，看起来像画面闪了一下。
+  const edgeStripRef = useRef(null);
+  const edgeTouchRef = useRef(null);
+  useEffect(() => {
+    const el = edgeStripRef.current;
+    if (!el || !isMobile) return undefined;
+
+    const onStart = (e) => {
+      if (lightboxIndex !== null) return;
+      const t = e.touches[0];
+      edgeTouchRef.current = { x: t.clientX, y: t.clientY };
+    };
+    const onMove = (e) => {
+      if (!edgeTouchRef.current) return;
+      const t = e.touches[0];
+      const dx = t.clientX - edgeTouchRef.current.x;
+      const dy = t.clientY - edgeTouchRef.current.y;
+      if (Math.abs(dx) > 10 && Math.abs(dx) > Math.abs(dy)) {
+        e.preventDefault();
+      }
+    };
+    const onEnd = (e) => {
+      if (!edgeTouchRef.current) return;
+      const t = e.changedTouches[0];
+      const dx = t.clientX - edgeTouchRef.current.x;
+      const dy = t.clientY - edgeTouchRef.current.y;
+      edgeTouchRef.current = null;
+      if (dx > 60 && Math.abs(dx) > Math.abs(dy) * 1.5) onBack && onBack();
+    };
+
+    el.addEventListener("touchstart", onStart, { passive: true });
+    el.addEventListener("touchmove", onMove, { passive: false });
+    el.addEventListener("touchend", onEnd, { passive: true });
+    return () => {
+      el.removeEventListener("touchstart", onStart);
+      el.removeEventListener("touchmove", onMove);
+      el.removeEventListener("touchend", onEnd);
+    };
+  }, [isMobile, lightboxIndex, onBack]);
+
   return (
     <div
       className="flex flex-col min-h-full"
       onTouchStart={handleTouchStart}
-      onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
-      style={isMobile ? { touchAction: "pan-y" } : undefined}
     >
+      {isMobile && (
+        <div
+          ref={edgeStripRef}
+          className="fixed left-0 top-0 bottom-0 z-30"
+          style={{ width: 24, touchAction: "pan-y" }}
+        />
+      )}
       <div
         key={work.id}
         className="px-3 md:px-10 max-w-6xl flex-1"
