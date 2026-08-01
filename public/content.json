@@ -1312,11 +1312,25 @@
         "date": "Wed Jul 29 2026",
         "description": "点击这里填写作品介绍。",
         "cover": "https://picsum.photos/seed/26hte2ovzaems6eyc8h/700/700",
-        "images": [],
+        "images": [
+          "/images/3jwikgpwuryms6eyc8g-img-0.jpg",
+          "/images/3jwikgpwuryms6eyc8g-img-1.jpg",
+          "/images/3jwikgpwuryms6eyc8g-img-2.jpg",
+          "/images/3jwikgpwuryms6eyc8g-img-3.jpg",
+          "/images/3jwikgpwuryms6eyc8g-img-4.jpg",
+          "/images/3jwikgpwuryms6eyc8g-img-5.jpg"
+        ],
         "tone": "#454545",
         "titleEs": "Tomando el Sol",
         "titleZh": "晒太阳",
-        "imagesFull": []
+        "imagesFull": [
+          "/images/3jwikgpwuryms6eyc8g-full-0.jpg",
+          "/images/3jwikgpwuryms6eyc8g-full-1.jpg",
+          "/images/3jwikgpwuryms6eyc8g-full-2.jpg",
+          "/images/3jwikgpwuryms6eyc8g-full-3.jpg",
+          "/images/3jwikgpwuryms6eyc8g-full-4.jpg",
+          "/images/3jwikgpwuryms6eyc8g-full-5.jpg"
+        ]
       },
       {
         "id": "7ql9pcwfupjms6eybme",
@@ -1325,11 +1339,25 @@
         "date": "Wed Jul 29 2026",
         "description": "点击这里填写作品介绍。",
         "cover": "https://picsum.photos/seed/5rv4nz9700ems6eybme/700/700",
-        "images": [],
+        "images": [
+          "/images/7ql9pcwfupjms6eybme-img-0.jpg",
+          "/images/7ql9pcwfupjms6eybme-img-1.jpg",
+          "/images/7ql9pcwfupjms6eybme-img-2.jpg",
+          "/images/7ql9pcwfupjms6eybme-img-3.jpg",
+          "/images/7ql9pcwfupjms6eybme-img-4.jpg",
+          "/images/7ql9pcwfupjms6eybme-img-5.jpg"
+        ],
         "tone": "#454545",
         "titleEs": "La Ternura de las Gotas de Rocío",
         "titleZh": "珠露的温存",
-        "imagesFull": []
+        "imagesFull": [
+          "/images/7ql9pcwfupjms6eybme-full-0.jpg",
+          "/images/7ql9pcwfupjms6eybme-full-1.jpg",
+          "/images/7ql9pcwfupjms6eybme-full-2.jpg",
+          "/images/7ql9pcwfupjms6eybme-full-3.jpg",
+          "/images/7ql9pcwfupjms6eybme-full-4.jpg",
+          "/images/7ql9pcwfupjms6eybme-full-5.jpg"
+        ]
       },
       {
         "id": "af8b4p0wdrams6eyb12",
@@ -1338,11 +1366,25 @@
         "date": "Wed Jul 29 2026",
         "description": "点击这里填写作品介绍。",
         "cover": "https://picsum.photos/seed/7yws90vc4cms6eyb12/700/700",
-        "images": [],
+        "images": [
+          "/images/af8b4p0wdrams6eyb12-img-0.jpg",
+          "/images/af8b4p0wdrams6eyb12-img-1.jpg",
+          "/images/af8b4p0wdrams6eyb12-img-2.jpg",
+          "/images/af8b4p0wdrams6eyb12-img-3.jpg",
+          "/images/af8b4p0wdrams6eyb12-img-4.jpg",
+          "/images/af8b4p0wdrams6eyb12-img-5.jpg"
+        ],
         "tone": "#454545",
         "titleEs": "Una Suave Brisa",
         "titleZh": "微风",
-        "imagesFull": []
+        "imagesFull": [
+          "/images/af8b4p0wdrams6eyb12-full-0.jpg",
+          "/images/af8b4p0wdrams6eyb12-full-1.jpg",
+          "/images/af8b4p0wdrams6eyb12-full-2.jpg",
+          "/images/af8b4p0wdrams6eyb12-full-3.jpg",
+          "/images/af8b4p0wdrams6eyb12-full-4.jpg",
+          "/images/af8b4p0wdrams6eyb12-full-5.jpg"
+        ]
       },
       {
         "id": "6shf15o6ms6exak7",
@@ -1351,11 +1393,25 @@
         "date": "Wed Jul 29 2026",
         "description": "点击这里填写作品介绍。",
         "cover": "https://picsum.photos/seed/nondz3qhpnpms6exak7/700/700",
-        "images": [],
+        "images": [
+          "/images/6shf15o6ms6exak7-img-0.jpg",
+          "/images/6shf15o6ms6exak7-img-1.jpg",
+          "/images/6shf15o6ms6exak7-img-2.jpg",
+          "/images/6shf15o6ms6exak7-img-3.jpg",
+          "/images/6shf15o6ms6exak7-img-4.jpg",
+          "/images/6shf15o6ms6exak7-img-5.jpg"
+        ],
         "tone": "#454545",
         "titleEs": "Suave Balanceo",
         "titleZh": "摇坠的柔软",
-        "imagesFull": []
+        "imagesFull": [
+          "/images/6shf15o6ms6exak7-full-0.jpg",
+          "/images/6shf15o6ms6exak7-full-1.jpg",
+          "/images/6shf15o6ms6exak7-full-2.jpg",
+          "/images/6shf15o6ms6exak7-full-3.jpg",
+          "/images/6shf15o6ms6exak7-full-4.jpg",
+          "/images/6shf15o6ms6exak7-full-5.jpg"
+        ]
       },
       {
         "id": "qhmuxvb580lms6ey9ki",
