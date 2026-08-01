@@ -514,9 +514,19 @@ function Portfolio() {
     setNavDirection(direction);
   };
   // 详情页左侧"返回"按钮专用：回到画廊，并恢复到进入详情页之前画廊滚动到的那个位置，
-  // 不是统一回到画廊顶部（这个跟点姓名/Index回首页的 goToGallery 是分开的，互不影响）
+  // 不是统一回到画廊顶部（这个跟点姓名/Index回首页的 goToGallery 是分开的，互不影响）。
+  // justRestoredGallery：这次是"返回"触发的，不是第一次进画廊——画廊图片本来有个
+  // 从下往上淡入的进场动画，如果每次"返回"都重新播放一遍，一大片图片同时淡入淡出，
+  // 看起来就跟闪烁一样，所以这种情况下要让图片跳过这个动画，直接以最终状态显示。
+  const [justRestoredGallery, setJustRestoredGallery] = useState(false);
+  useEffect(() => {
+    if (!justRestoredGallery) return undefined;
+    const t = setTimeout(() => setJustRestoredGallery(false), 500);
+    return () => clearTimeout(t);
+  }, [justRestoredGallery]);
   const goBackToGallery = () => {
     restoreGalleryScrollRef.current = true;
+    setJustRestoredGallery(true);
     setSelectedId(null);
     setShowInfo(false);
     setMobileMenuOpen(false);
@@ -2562,6 +2572,7 @@ function Portfolio() {
               onReplaceCover={replaceCover}
               imageGap={data.imageGap ?? 16}
               isMobile={isMobile}
+              skipReveal={justRestoredGallery}
             />
           </>
         ) : (
@@ -2760,11 +2771,14 @@ function getGalleryColumnCount(width) {
 // 通用的"滚动进入视野时向上渐隐出现"动画：元素刚进入可视范围时，从稍微偏下、透明的状态
 // 过渡到正常位置、完全不透明，只触发一次（滚回去不会消失，滚回来也不会重播）。
 // 页面刚打开时，一开始就在屏幕内的图片也会播放这个动画（因为它们本来就会被判定为"进入视野"）。
-function useRevealAnimation() {
+// skip 为 true 时（比如从详情页"返回"画廊，不是第一次看这些图片），直接以最终状态显示，
+// 不再重新播放一遍淡入动画——不然每次返回一大片图片同时淡入淡出，看起来跟闪烁一样。
+function useRevealAnimation(skip = false) {
   const ref = useRef(null);
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(skip);
 
   useEffect(() => {
+    if (skip) return undefined;
     const el = ref.current;
     if (!el) return undefined;
 
@@ -2779,14 +2793,14 @@ function useRevealAnimation() {
     );
     observer.observe(el);
     return () => observer.disconnect();
-  }, []);
+  }, [skip]);
 
   return {
     ref,
     style: {
       opacity: visible ? 1 : 0,
       transform: visible ? "translateY(0)" : "translateY(28px)",
-      transition: "opacity 700ms ease-out, transform 700ms ease-out",
+      transition: skip ? "none" : "opacity 700ms ease-out, transform 700ms ease-out",
     },
   };
 }
@@ -2797,7 +2811,7 @@ function distributeIntoColumns(items, numCols) {
   return cols;
 }
 
-function GalleryGrid({ works, editMode, onSelect, onReplaceCover, imageGap = 16, isMobile }) {
+function GalleryGrid({ works, editMode, onSelect, onReplaceCover, imageGap = 16, isMobile, skipReveal = false }) {
   const containerRef = useRef(null);
   const [columnCount, setColumnCount] = useState(3);
 
@@ -2838,6 +2852,7 @@ function GalleryGrid({ works, editMode, onSelect, onReplaceCover, imageGap = 16,
               editMode={editMode}
               onSelect={onSelect}
               onReplaceCover={onReplaceCover}
+              skipReveal={skipReveal}
             />
           ))}
         </div>
@@ -2846,8 +2861,8 @@ function GalleryGrid({ works, editMode, onSelect, onReplaceCover, imageGap = 16,
   );
 }
 
-function GalleryImage({ w, editMode, onSelect, onReplaceCover }) {
-  const { ref, style } = useRevealAnimation();
+function GalleryImage({ w, editMode, onSelect, onReplaceCover, skipReveal }) {
+  const { ref, style } = useRevealAnimation(skipReveal);
   return (
     <div ref={ref} style={style} className="relative w-full group">
       <button
