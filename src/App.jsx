@@ -3304,6 +3304,18 @@ function DetailView({
     const t = e.touches[0];
     touchStartRef.current = { x: t.clientX, y: t.clientY, fromEdge: t.clientX <= EDGE_ZONE };
   };
+  // 从边缘区域开始、看得出来是横向滑动的时候，主动挡住浏览器默认动作——
+  // 不然手机系统自己那套"边缘右滑返回上一页"的预览动画会先播一下，
+  // 跟咱们自己的返回逻辑前后叠在一起，看起来就像画面"闪"了一下再恢复正常。
+  const handleTouchMove = (e) => {
+    if (!isMobile || lightboxIndex !== null || !touchStartRef.current?.fromEdge) return;
+    const t = e.touches[0];
+    const dx = t.clientX - touchStartRef.current.x;
+    const dy = t.clientY - touchStartRef.current.y;
+    if (Math.abs(dx) > 10 && Math.abs(dx) > Math.abs(dy)) {
+      e.preventDefault();
+    }
+  };
   const handleTouchEnd = (e) => {
     if (!isMobile || lightboxIndex !== null || !touchStartRef.current) return;
     const t = e.changedTouches[0];
@@ -3333,7 +3345,9 @@ function DetailView({
     <div
       className="flex flex-col min-h-full"
       onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
+      style={isMobile ? { touchAction: "pan-y" } : undefined}
     >
       <div
         key={work.id}
