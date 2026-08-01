@@ -1616,19 +1616,82 @@ function Portfolio() {
       {/* ---------- 手机端顶部栏：姓名 + 语言切换 + 菜单按钮，只在窄屏时显示 ---------- */}
       {isMobile && (
         <div className="flex items-center justify-between px-3 py-3 flex-shrink-0 relative z-30 bg-white">
-          <div className="flex items-center gap-8 min-w-0">
-            <Editable
-              as="span"
-              editMode={editMode}
-              value={data.artistName}
-              onChange={(v) => updateData((prev) => ({ ...prev, artistName: v }))}
-              onClick={goToGallery}
-              className="font-bold tracking-tight whitespace-nowrap"
-              style={artistNameStyle}
-              lang={artistNameLang}
-            />
-          </div>
+          {selectedWork ? (
+            <div className="flex items-center gap-1 -ml-2">
+              <button onClick={goBackToGallery} aria-label="返回" className="p-2">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="22"
+                  height="22"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <polyline points="15 18 9 12 15 6" />
+                </svg>
+              </button>
+              <button onClick={goToGallery} aria-label="首页" className="p-2">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="20"
+                  height="20"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M3 10.5 12 3l9 7.5" />
+                  <path d="M5 9.5V21h14V9.5" />
+                </svg>
+              </button>
+            </div>
+          ) : (
+            <div className="flex items-center gap-8 min-w-0">
+              <Editable
+                as="span"
+                editMode={editMode}
+                value={data.artistName}
+                onChange={(v) => updateData((prev) => ({ ...prev, artistName: v }))}
+                onClick={goToGallery}
+                className="font-bold tracking-tight whitespace-nowrap"
+                style={artistNameStyle}
+                lang={artistNameLang}
+              />
+            </div>
+          )}
           <div className="flex items-center gap-2">
+            <div className="relative">
+              <button
+                onClick={() => setLanguageMenuOpen((v) => !v)}
+                data-language-toggle="true"
+                className="text-xs font-bold px-3 py-1.5 rounded-full bg-neutral-100 text-neutral-600"
+              >
+                {languageButtonLabel}
+              </button>
+              {languageMenuOpen && (
+                <div
+                  ref={languageMenuRef}
+                  className="absolute top-9 right-0 z-30 bg-white border border-neutral-200 rounded-lg shadow-lg py-1 w-28"
+                >
+                  {LANGUAGE_OPTIONS.map((opt) => (
+                    <button
+                      key={opt.code}
+                      onClick={() => selectLanguage(opt.code)}
+                      className={`w-full text-left text-xs px-3 py-1.5 transition-colors ${
+                        opt.code === language
+                          ? "font-bold text-neutral-900 bg-neutral-100"
+                          : "text-neutral-600 hover:bg-neutral-50"
+                      }`}
+                    >
+                      {opt.name}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
             {canEdit && !editMode && (
               <button
                 onClick={() => setEditMode(true)}
@@ -1731,45 +1794,14 @@ function Portfolio() {
             >
               {isZh ? "索引" : isEs ? "Índice" : "Index"}
             </span>
-            <div className="flex items-center gap-6">
-              <div className="relative">
-                <button
-                  onClick={() => setLanguageMenuOpen((v) => !v)}
-                  data-language-toggle="true"
-                  className="text-sm font-bold px-3.5 py-2 rounded-full bg-neutral-100 text-neutral-600"
-                >
-                  {languageButtonLabel}
-                </button>
-                {languageMenuOpen && (
-                  <div
-                    ref={languageMenuRef}
-                    className="absolute top-9 right-0 z-30 bg-white border border-neutral-200 rounded-lg shadow-lg py-1 w-32"
-                  >
-                    {LANGUAGE_OPTIONS.map((opt) => (
-                      <button
-                        key={opt.code}
-                        onClick={() => selectLanguage(opt.code)}
-                        className={`w-full text-left text-sm px-3 py-2 transition-colors ${
-                          opt.code === language
-                            ? "font-bold text-neutral-900 bg-neutral-100"
-                            : "text-neutral-600 hover:bg-neutral-50"
-                        }`}
-                      >
-                        {opt.name}
-                      </button>
-                    ))}
-                  </div>
-                )}
-              </div>
-              <button
-                onClick={() => setMobileMenuOpen(false)}
-                aria-label="关闭菜单"
-                className="relative p-2 -mr-2 w-12 h-12 flex items-center justify-center"
-              >
-                <span className="absolute w-7 h-0.5 bg-neutral-900 rotate-45" />
-                <span className="absolute w-7 h-0.5 bg-neutral-900 -rotate-45" />
-              </button>
-            </div>
+            <button
+              onClick={() => setMobileMenuOpen(false)}
+              aria-label="关闭菜单"
+              className="relative p-2 -mr-2 w-12 h-12 flex items-center justify-center"
+            >
+              <span className="absolute w-7 h-0.5 bg-neutral-900 rotate-45" />
+              <span className="absolute w-7 h-0.5 bg-neutral-900 -rotate-45" />
+            </button>
           </div>
         )}
 
