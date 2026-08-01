@@ -483,6 +483,13 @@ function Portfolio() {
     setSidebarWidth((prev) => (prev === next ? prev : next));
   }, []);
 
+  // 手机端详情页"返回"的滑出动画：detailOffsetX 是详情页当前往右偏移了多少像素
+  // （0 = 正常位置，屏幕宽度 = 完全滑出屏幕），detailOffsetAnimated 控制这次偏移变化
+  // 要不要过渡动画（手指拖拽跟手的时候不要，松手回弹/播放完成动画的时候才要）。
+  const [detailOffsetX, setDetailOffsetX] = useState(0);
+  const [detailOffsetAnimated, setDetailOffsetAnimated] = useState(false);
+  const DETAIL_EXIT_MS = 280;
+
   const goToGallery = () => {
     setSelectedId(null);
     setShowInfo(false);
@@ -500,8 +507,24 @@ function Portfolio() {
     setNavDirection(direction);
   };
   // 详情页左侧"返回"按钮专用：回到画廊，并恢复到进入详情页之前画廊滚动到的那个位置，
-  // 不是统一回到画廊顶部（这个跟点姓名/Index回首页的 goToGallery 是分开的，互不影响）
+  // 不是统一回到画廊顶部（这个跟点姓名/Index回首页的 goToGallery 是分开的，互不影响）。
+  // 手机端会先播放一段"整个页面往右滑出去"的动画，动画放完了再真正切回画廊；
+  // 电脑端布局不一样（没有整页可滑），维持原来的即时切换。
   const goBackToGallery = () => {
+    if (isMobile && selectedId) {
+      setDetailOffsetAnimated(true);
+      setDetailOffsetX(window.innerWidth);
+      setTimeout(() => {
+        restoreGalleryScrollRef.current = true;
+        setSelectedId(null);
+        setShowInfo(false);
+        setMobileMenuOpen(false);
+        setNavDirection(null);
+        setDetailOffsetX(0);
+        setDetailOffsetAnimated(false);
+      }, DETAIL_EXIT_MS);
+      return;
+    }
     restoreGalleryScrollRef.current = true;
     setSelectedId(null);
     setShowInfo(false);
@@ -2579,6 +2602,20 @@ function Portfolio() {
             isZh={isZh}
             isEs={isEs}
             onBack={goBackToGallery}
+            dragOffsetX={detailOffsetX}
+            dragOffsetAnimated={detailOffsetAnimated}
+            onDragProgress={(dx) => {
+              setDetailOffsetAnimated(false);
+              setDetailOffsetX(Math.max(0, dx));
+            }}
+            onDragRelease={(shouldCommit) => {
+              if (shouldCommit) {
+                goBackToGallery();
+              } else {
+                setDetailOffsetAnimated(true);
+                setDetailOffsetX(0);
+              }
+            }}
           />
         )}
       </main>
@@ -3281,6 +3318,10 @@ function DetailView({
   isZh,
   isEs,
   onBack,
+  dragOffsetX = 0,
+  dragOffsetAnimated = false,
+  onDragProgress,
+  onDragRelease,
 }) {
   const slideAnimation =
     navDirection === "next"
@@ -3323,6 +3364,9 @@ function DetailView({
   // touchmove 事件注册成 passive（无法调用 preventDefault），这里手动指定
   // { passive: false } 确保真的能拦住浏览器/系统自己的边缘返回预览动画，不然会跟
   // 咱们自己触发的返回动作前后叠在一起，看起来像画面闪了一下。
+  // 拖拽过程中整个页面跟着手指实时往右移动（像拖拽一样跟手），松手的时候：
+  // 往右滑得够多就继续滑完、真正返回；不够的话就弹回原位，取消这次返回。
+  const COMMIT_THRESHOLD = 100; // 松手时偏移量超过这个值（像素）就当作"确认要返回"
   const edgeStripRef = useRef(null);
   const edgeTouchRef = useRef(null);
   useEffect(() => {
@@ -3341,6 +3385,7 @@ function DetailView({
       const dy = t.clientY - edgeTouchRef.current.y;
       if (Math.abs(dx) > 10 && Math.abs(dx) > Math.abs(dy)) {
         e.preventDefault();
+        onDragProgress && onDragProgress(dx);
       }
     };
     const onEnd = (e) => {
@@ -3349,7 +3394,8 @@ function DetailView({
       const dx = t.clientX - edgeTouchRef.current.x;
       const dy = t.clientY - edgeTouchRef.current.y;
       edgeTouchRef.current = null;
-      if (dx > 60 && Math.abs(dx) > Math.abs(dy) * 1.5) onBack && onBack();
+      const isHorizontalDrag = Math.abs(dx) > Math.abs(dy) * 1.5;
+      onDragRelease && onDragRelease(isHorizontalDrag && dx > COMMIT_THRESHOLD);
     };
 
     el.addEventListener("touchstart", onStart, { passive: true });
@@ -3360,13 +3406,21 @@ function DetailView({
       el.removeEventListener("touchmove", onMove);
       el.removeEventListener("touchend", onEnd);
     };
-  }, [isMobile, lightboxIndex, onBack]);
+  }, [isMobile, lightboxIndex, onDragProgress, onDragRelease]);
 
   return (
     <div
       className="flex flex-col min-h-full"
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
+      style={
+        isMobile
+          ? {
+              transform: `translateX(${dragOffsetX}px)`,
+              transition: dragOffsetAnimated ? "transform 280ms ease-out" : "none",
+            }
+          : undefined
+      }
     >
       {isMobile && (
         <div
