@@ -2874,7 +2874,7 @@ function GalleryImage({ w, editMode, onSelect, onReplaceCover, skipReveal }) {
           src={w.images?.[0] || w.cover}
           alt={w.title}
           draggable={false}
-          loading="lazy"
+          loading={skipReveal ? "eager" : "lazy"}
           decoding="async"
           onContextMenu={(e) => !editMode && e.preventDefault()}
           onDragStart={(e) => e.preventDefault()}
