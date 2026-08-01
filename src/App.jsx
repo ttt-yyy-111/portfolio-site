@@ -3294,9 +3294,10 @@ function DetailView({
   // 手机端左右滑动切换上一个/下一个作品：记录手指按下的位置，松手时算一下横向、纵向各移动了多少，
   // 横向移动明显大于纵向（说明是横滑不是在滚动页面）、而且超过一定距离才触发切换，
   // 避免正常上下滚动页面的时候不小心被判定成"切换作品"。
-  // 另外：如果手指是从屏幕最左边缘一小段范围内开始按下、然后往右滑的，判定成"边缘滑动返回"，
-  // 效果等同于点左上角的 Back 按钮（不是切到上一件作品）。
-  const EDGE_ZONE = 24; // 屏幕最左边缘往右这么宽（像素）的范围内按下，才算边缘手势
+  // 另外：如果手指是从屏幕最左边缘一段范围内开始按下、然后往右滑的，判定成"边缘滑动返回"，
+  // 效果等同于点左上角的 Back 按钮（不是切到上一件作品）。"切换作品"这个手势的起始点
+  // 要离开这块边缘区域才会生效，两个手势分开各管各的范围，不会互相干扰、抢touch事件。
+  const EDGE_ZONE = 32; // 屏幕最左边缘往右这么宽（像素）的范围内按下，才算边缘返回手势
   const touchStartRef = useRef(null);
   const handleTouchStart = (e) => {
     if (!isMobile || lightboxIndex !== null) return;
@@ -3314,8 +3315,10 @@ function DetailView({
     const SWIPE_THRESHOLD = 60;
     if (Math.abs(dx) < SWIPE_THRESHOLD || Math.abs(dx) < Math.abs(dy) * 1.5) return;
 
-    if (fromEdge && dx > 0) {
-      onBack && onBack();
+    if (fromEdge) {
+      // 从边缘区域开始的横滑，只处理"返回"这一种效果（往右滑触发），
+      // 往左滑就什么都不做——这块区域不参与"切换上一个/下一个作品"的判定。
+      if (dx > 0) onBack && onBack();
       return;
     }
 
