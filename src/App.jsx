@@ -2813,7 +2813,7 @@ function distributeIntoColumns(items, numCols) {
 
 function GalleryGrid({ works, editMode, onSelect, onReplaceCover, imageGap = 16, isMobile, skipReveal = false }) {
   const containerRef = useRef(null);
-  const [columnCount, setColumnCount] = useState(3);
+  const [columnCount, setColumnCount] = useState(() => (isMobile ? 1 : 3));
 
   useEffect(() => {
     const el = containerRef.current;
