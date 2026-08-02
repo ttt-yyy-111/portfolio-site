@@ -2588,6 +2588,7 @@ function Portfolio() {
               imageGap={data.imageGap ?? 16}
               isMobile={isMobile}
               skipReveal={justRestoredGallery}
+              tField={tField}
             />
           </>
         ) : (
@@ -2826,7 +2827,16 @@ function distributeIntoColumns(items, numCols) {
   return cols;
 }
 
-function GalleryGrid({ works, editMode, onSelect, onReplaceCover, imageGap = 16, isMobile, skipReveal = false }) {
+function GalleryGrid({
+  works,
+  editMode,
+  onSelect,
+  onReplaceCover,
+  imageGap = 16,
+  isMobile,
+  skipReveal = false,
+  tField,
+}) {
   const containerRef = useRef(null);
   const [columnCount, setColumnCount] = useState(() => (isMobile ? 1 : 3));
 
@@ -2868,6 +2878,7 @@ function GalleryGrid({ works, editMode, onSelect, onReplaceCover, imageGap = 16,
               onSelect={onSelect}
               onReplaceCover={onReplaceCover}
               skipReveal={skipReveal}
+              tField={tField}
             />
           ))}
         </div>
@@ -2876,8 +2887,9 @@ function GalleryGrid({ works, editMode, onSelect, onReplaceCover, imageGap = 16,
   );
 }
 
-function GalleryImage({ w, editMode, onSelect, onReplaceCover, skipReveal }) {
+function GalleryImage({ w, editMode, onSelect, onReplaceCover, skipReveal, tField }) {
   const { ref, style } = useRevealAnimation(skipReveal);
+  const displayTitle = tField ? tField(w, "title") : w.title;
   return (
     <div ref={ref} style={style} className="relative w-full group">
       <button
@@ -2897,6 +2909,19 @@ function GalleryImage({ w, editMode, onSelect, onReplaceCover, skipReveal }) {
           style={{ WebkitTouchCallout: "none" }}
         />
       </button>
+      {!editMode && (
+        <div
+          className="absolute inset-x-0 bottom-0 rounded-b-xl px-3 py-2 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          style={{ background: "linear-gradient(to top, rgba(0,0,0,0.5), rgba(0,0,0,0))" }}
+        >
+          <span
+            className="block text-left text-white text-xs italic"
+            style={{ fontFamily: "'IBM Plex Sans', sans-serif", fontWeight: 400 }}
+          >
+            {displayTitle}
+          </span>
+        </div>
+      )}
       {editMode && (
         <label className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer text-white text-xs font-bold rounded-xl overflow-hidden">
           更换封面图
