@@ -1804,7 +1804,22 @@ function Portfolio() {
               } ${mobileMenuOpen ? "translate-x-0" : "translate-x-full pointer-events-none"}`
             : "relative flex-shrink-0 h-full flex flex-col"
         }
-        style={isMobile ? undefined : { width: sidebarWidth }}
+        style={
+          isMobile
+            ? {
+                // 这几条跟上面 className 里写的是同一件事，只是额外用内联样式再保险一遍——
+                // 网页刚打开的一瞬间，Tailwind 的样式表还没来得及生效，光靠上面那些
+                // class 名字是不会有任何视觉效果的，这个菜单本该"藏在屏幕右边看不见"，
+                // 那一瞬间就会变成正常显示在页面里，能看到内容"裸奔"一下。内联样式不用
+                // 等 Tailwind 编译，浏览器一读到就会立刻生效，从第一帧画面开始就是对的。
+                position: "fixed",
+                inset: 0,
+                zIndex: 40,
+                backgroundColor: "#fff",
+                transform: mobileMenuOpen ? "translateX(0)" : "translateX(100%)",
+              }
+            : { width: sidebarWidth }
+        }
       >
         {isMobile && (
           <div className="flex items-center justify-between px-3 py-3 flex-shrink-0">
