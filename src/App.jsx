@@ -2589,6 +2589,7 @@ function Portfolio() {
               isMobile={isMobile}
               skipReveal={justRestoredGallery}
               tField={tField}
+              isZh={isZh}
             />
           </>
         ) : (
@@ -2836,6 +2837,7 @@ function GalleryGrid({
   isMobile,
   skipReveal = false,
   tField,
+  isZh,
 }) {
   const containerRef = useRef(null);
   const [columnCount, setColumnCount] = useState(() => (isMobile ? 1 : 3));
@@ -2879,6 +2881,7 @@ function GalleryGrid({
               onReplaceCover={onReplaceCover}
               skipReveal={skipReveal}
               tField={tField}
+              isZh={isZh}
             />
           ))}
         </div>
@@ -2887,7 +2890,7 @@ function GalleryGrid({
   );
 }
 
-function GalleryImage({ w, editMode, onSelect, onReplaceCover, skipReveal, tField }) {
+function GalleryImage({ w, editMode, onSelect, onReplaceCover, skipReveal, tField, isZh }) {
   const { ref, style } = useRevealAnimation(skipReveal);
   const displayTitle = tField ? tField(w, "title") : w.title;
   return (
@@ -2915,7 +2918,7 @@ function GalleryImage({ w, editMode, onSelect, onReplaceCover, skipReveal, tFiel
           style={{ background: "linear-gradient(to top, rgba(0,0,0,0.5), rgba(0,0,0,0))" }}
         >
           <span
-            className="block text-left text-white text-xs italic"
+            className={`block text-left text-white text-xs ${isZh ? "" : "italic"}`}
             style={{ fontFamily: "'IBM Plex Sans', sans-serif", fontWeight: 400 }}
           >
             {displayTitle}
