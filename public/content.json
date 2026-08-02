@@ -1766,7 +1766,13 @@
         "tone": "#454545",
         "titleZh": "春天的微风",
         "titleEs": "Brisa de Primavera",
-        "imagesFull": []
+        "imagesFull": [],
+        "materials": "Transparent UV-Curing Resin, Hand-Blended Wool And Silk Yarn, Hand-Spun Feather Blend Yarn, Glass Thread, Crystal Glass Beads, Mica Powder, Mineral Pigment",
+        "dimensions": "Variable Dimensions  40 x 40 x 20 cm (Approximately)",
+        "materialsZh": "透明UV自由树脂、羊毛真丝手混线、羽毛手混线、玻璃线、 水晶玻璃珠、云母粉、矿物颜料",
+        "materialsEs": "Resina UV Transparente Curable, Hilo Mezcla de Lana y Seda Hilado a Mano, Hilo Mezcla de Plumas Hilado a Mano, Hilo de Vidrio, Cuentas de Cristal, Polvo de Mica, Pigmento Mineral",
+        "dimensionsZh": "尺寸可变   约 40 x 40 x 20 cm",
+        "dimensionsEs": "Dimensiones Variables  40 x 40 x 20 cm (Aproximadamente)"
       },
       {
         "id": "sou76db9qtemsa7k568",
@@ -1779,7 +1785,11 @@
         "tone": "#454545",
         "titleZh": "守好0.1平方米的土地",
         "titleEs": "Protegiendo los Últimos 0.1 Metros Cuadrados de Tierra",
-        "imagesFull": []
+        "imagesFull": [],
+        "materials": "Resin, Transparent UV-Curing Resin, Mica Powder, Crystal Glass Beads, Imitation Foil",
+        "dimensions": "13 x 6 x 3cm",
+        "materialsZh": "树脂、透明UV自由树脂、云母粉、水晶玻璃珠、仿制箔",
+        "materialsEs": "Resina, Resina UV Transparente Curable, Polvo de Mica, Cuentas de Cristal, Lámina de Imitación"
       },
       {
         "id": "j55k0904cumsa7jk7w",
@@ -1792,7 +1802,11 @@
         "tone": "#454545",
         "titleZh": "一本所见即所得的书",
         "titleEs": "Un Libro Bastante Directo",
-        "imagesFull": []
+        "imagesFull": [],
+        "materials": "Resin, Transparent UV Resin, Mica Powder, Jacquard Silk, Yuxian Paper Cutting",
+        "dimensions": "25× 21 × 3 cm",
+        "materialsZh": "树脂、透明UV树脂、云母粉、提花真丝布、蔚县剪纸",
+        "materialsEs": "Resina, Resina UV Transparente, Polvo de Mica, Seda Jacquard, Papel Cortado de Yuxian"
       },
       {
         "id": "rx2y5t7fy6gmsa7j0k7",
@@ -1805,7 +1819,11 @@
         "tone": "#454545",
         "titleZh": "细缝中的低语",
         "titleEs": "Susurros en Las Grietas",
-        "imagesFull": []
+        "imagesFull": [],
+        "materials": "Resin, Transparent UV Free Resin, Mica Powder, Crystal Glass Beads, Artificial Pearls",
+        "dimensions": "10.5 x 9 x 2 cm",
+        "materialsZh": "树脂、透明UV自由树脂、云母粉、水晶玻璃珠、仿制珍珠",
+        "materialsEs": "Resina, Resina UV Transparente Libre de Burbujas, Polvo de Mica, Cuentas de Cristal, Perlas Artificiales"
       },
       {
         "id": "b2dx4oqzzqumsa7espt",
