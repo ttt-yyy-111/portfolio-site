@@ -890,19 +890,40 @@
         "imagesFull": []
       },
       {
-        "id": "flwk9vrfrzpms75deqb",
+        "id": "87j3wu9j7jnmsbl78y3",
         "year": 2025,
-        "title": "Triumphant in Spring's Breeze, Hooves Fly Fast (Series)",
-        "date": "Thu Jul 30 2026",
+        "series": "Successful, Faster Runs Horse in Vernal Breeze",
+        "title": "Successful, Faster Runs Horse in Vernal Breeze I",
+        "date": "Sun Aug 02 2026",
         "description": "点击这里填写作品介绍。",
-        "cover": "https://picsum.photos/seed/4xlqqdq1iewms75deqc/700/700",
+        "cover": "https://picsum.photos/seed/cdqk7pajgyemsbl78y3/700/700",
         "images": [],
         "tone": "#454545",
-        "titleEs": "Trunfos en la Brisa Primaveral, los Cascos Vuelan Rápidos (Serie)",
-        "titleZh": "春风得意马蹄疾 系列",
-        "imagesFull": [],
-        "materials": "Free-Style Printing, Acrylic, Colored Sand, White Cardstock",
-        "dimensions": "10 × 15 cm"
+        "imagesFull": []
+      },
+      {
+        "id": "qer51sontpmsbl78y3",
+        "year": 2025,
+        "series": "Successful, Faster Runs Horse in Vernal Breeze",
+        "title": "Successful, Faster Runs Horse in Vernal Breeze II",
+        "date": "Sun Aug 02 2026",
+        "description": "点击这里填写作品介绍。",
+        "cover": "https://picsum.photos/seed/gs78umt58qnmsbl78y3/700/700",
+        "images": [],
+        "tone": "#454545",
+        "imagesFull": []
+      },
+      {
+        "id": "5838q6zc2wkmsbl78y3",
+        "year": 2025,
+        "series": "Successful, Faster Runs Horse in Vernal Breeze",
+        "title": "Successful, Faster Runs Horse in Vernal Breeze III",
+        "date": "Sun Aug 02 2026",
+        "description": "点击这里填写作品介绍。",
+        "cover": "https://picsum.photos/seed/1i8nx38dtlamsbl78y3/700/700",
+        "images": [],
+        "tone": "#454545",
+        "imagesFull": []
       },
       {
         "id": "xznd20yoi1jmsbkqrrs",
@@ -2386,7 +2407,7 @@
         "imagesFull": []
       }
     ],
-    "sidebarWidthOverride": 414,
+    "sidebarWidthOverride": 450,
     "typographyZh": {
       "artistName": {
         "fontSize": 40,
