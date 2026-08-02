@@ -806,103 +806,6 @@
         "imagesFull": []
       },
       {
-        "id": "flwk9vrfrzpms75deqb",
-        "year": 2025,
-        "title": "Triumphant in Spring's Breeze, Hooves Fly Fast (Series)",
-        "date": "Thu Jul 30 2026",
-        "description": "点击这里填写作品介绍。",
-        "cover": "https://picsum.photos/seed/4xlqqdq1iewms75deqc/700/700",
-        "images": [],
-        "tone": "#454545",
-        "titleEs": "Trunfos en la Brisa Primaveral, los Cascos Vuelan Rápidos (Serie)",
-        "titleZh": "春风得意马蹄疾 系列",
-        "imagesFull": []
-      },
-      {
-        "id": "pal85ge6ccbms75d579",
-        "year": 2025,
-        "title": "Silently Stretching Out (Series)",
-        "date": "Thu Jul 30 2026",
-        "description": "点击这里填写作品介绍。",
-        "cover": "https://picsum.photos/seed/s68mo7chqapms75d579/700/700",
-        "images": [],
-        "tone": "#454545",
-        "titleEs": "Estirándose en Silencio (Serie)",
-        "titleZh": "沉默地伸展 系列",
-        "imagesFull": []
-      },
-      {
-        "id": "xkn9f1glz8kms75cw8t",
-        "year": 2025,
-        "title": "Lay Bare (Series)",
-        "date": "Thu Jul 30 2026",
-        "description": "点击这里填写作品介绍。",
-        "cover": "https://picsum.photos/seed/3kxfp4kasq3ms75cw8t/700/700",
-        "images": [],
-        "tone": "#454545",
-        "titleEs": "Exponerse (Serie)",
-        "titleZh": "袒露 系列",
-        "imagesFull": []
-      },
-      {
-        "id": "8y3cqcibt9ams75cjar",
-        "year": 2025,
-        "title": "An Entwined Embrace (Series)",
-        "date": "Thu Jul 30 2026",
-        "description": "点击这里填写作品介绍。",
-        "cover": "https://picsum.photos/seed/37pzhzegryxms75cjar/700/700",
-        "images": [],
-        "tone": "#454545",
-        "titleEs": "Un Abrazo Entrelazado (Serie)",
-        "titleZh": "缠绕着拥抱 系列",
-        "imagesFull": []
-      },
-      {
-        "id": "upryx4vhqyms75c85o",
-        "year": 2025,
-        "title": "Small Flowers and Plants",
-        "date": "Thu Jul 30 2026",
-        "description": "点击这里填写作品介绍。",
-        "cover": "https://picsum.photos/seed/z7ja4ogs92lms75c85o/700/700",
-        "images": [],
-        "tone": "#454545",
-        "titleEs": "Flores y Plantas Pequeñas",
-        "titleZh": "小花草",
-        "imagesFull": []
-      },
-      {
-        "id": "kl1y3rg8c28ms75bzvu",
-        "year": 2025,
-        "series": "Good Medicine Tastes Bitter",
-        "title": "Good Medicine Tastes Bitter I",
-        "date": "Thu Jul 30 2026",
-        "description": "点击这里填写作品介绍。",
-        "cover": "https://picsum.photos/seed/ajua3com2zdms75bzvu/700/700",
-        "images": [],
-        "tone": "#454545",
-        "seriesEs": "La Buena Medicina Sabe Amarga",
-        "titleEs": "La Buena Medicina Sabe Amarga I",
-        "seriesZh": "良药苦口",
-        "titleZh": "良药苦口 I",
-        "imagesFull": []
-      },
-      {
-        "id": "w3eq8wwzqdhms75bzvu",
-        "year": 2025,
-        "series": "Good Medicine Tastes Bitter",
-        "title": "Good Medicine Tastes Bitter II",
-        "date": "Thu Jul 30 2026",
-        "description": "点击这里填写作品介绍。",
-        "cover": "https://picsum.photos/seed/i4w4vmdoy2kms75bzvu/700/700",
-        "images": [],
-        "tone": "#454545",
-        "seriesEs": "La Buena Medicina Sabe Amarga",
-        "titleEs": "La Buena Medicina Sabe Amarga II",
-        "seriesZh": "良药苦口",
-        "titleZh": "良药苦口 II",
-        "imagesFull": []
-      },
-      {
         "id": "247dx3l6tscms75bo3h",
         "year": 2025,
         "series": "Suffocating Love",
@@ -916,7 +819,9 @@
         "titleEs": "Amor Asfixiante I",
         "seriesZh": "窒息的爱",
         "titleZh": "窒息的爱 I",
-        "imagesFull": []
+        "imagesFull": [],
+        "materials": "Polymer Plate Printing, Aluminum Foil",
+        "dimensions": "65 × 23 cm"
       },
       {
         "id": "738ek2bwp8xms75bo3h",
@@ -932,7 +837,9 @@
         "titleEs": "Amor Asfixiante II",
         "seriesZh": "窒息的爱",
         "titleZh": "窒息的爱 II",
-        "imagesFull": []
+        "imagesFull": [],
+        "materials": "Polymer Plate Printing, Tissue Paper",
+        "dimensions": "45 × 23 cm"
       },
       {
         "id": "0vole1owmdqms75bo3h",
@@ -948,7 +855,9 @@
         "titleEs": "Amor Asfixiante III",
         "seriesZh": "窒息的爱",
         "titleZh": "窒息的爱 III",
-        "imagesFull": []
+        "imagesFull": [],
+        "materials": "Polymer Plate Printing, Paper",
+        "dimensions": "35 × 23 cm"
       },
       {
         "id": "dw7oo2nd6ipms75bo3h",
@@ -964,7 +873,198 @@
         "titleEs": "Amor Asfixiante IV",
         "seriesZh": "窒息的爱",
         "titleZh": "窒息的爱 IV",
+        "imagesFull": [],
+        "materials": "Polymer Plate Printing, Tissue Paper",
+        "dimensions": "35 × 23 cm"
+      },
+      {
+        "id": "zgenwq1yfeqmsbke5le",
+        "year": 2025,
+        "series": "Suffocating Love",
+        "title": "Suffocating Love V",
+        "date": "Sun Aug 02 2026",
+        "description": "点击这里填写作品介绍。",
+        "cover": "https://picsum.photos/seed/8wy8h019kermsbke5lf/700/700",
+        "images": [],
+        "tone": "#454545",
         "imagesFull": []
+      },
+      {
+        "id": "flwk9vrfrzpms75deqb",
+        "year": 2025,
+        "title": "Triumphant in Spring's Breeze, Hooves Fly Fast (Series)",
+        "date": "Thu Jul 30 2026",
+        "description": "点击这里填写作品介绍。",
+        "cover": "https://picsum.photos/seed/4xlqqdq1iewms75deqc/700/700",
+        "images": [],
+        "tone": "#454545",
+        "titleEs": "Trunfos en la Brisa Primaveral, los Cascos Vuelan Rápidos (Serie)",
+        "titleZh": "春风得意马蹄疾 系列",
+        "imagesFull": [],
+        "materials": "Free-Style Printing, Acrylic, Colored Sand, White Cardstock",
+        "dimensions": "10 × 15 cm"
+      },
+      {
+        "id": "xznd20yoi1jmsbkqrrs",
+        "year": 2025,
+        "series": "Silently Stretching Out",
+        "title": "Silently Stretching Out I",
+        "date": "Sun Aug 02 2026",
+        "description": "点击这里填写作品介绍。",
+        "cover": "https://picsum.photos/seed/wf1dex50ajmsbkqrrs/700/700",
+        "images": [],
+        "tone": "#454545",
+        "imagesFull": []
+      },
+      {
+        "id": "24evgo577v3hmsbkqrrt",
+        "year": 2025,
+        "series": "Silently Stretching Out",
+        "title": "Silently Stretching Out II",
+        "date": "Sun Aug 02 2026",
+        "description": "点击这里填写作品介绍。",
+        "cover": "https://picsum.photos/seed/jsufslpeyrmsbkqrrt/700/700",
+        "images": [],
+        "tone": "#454545",
+        "imagesFull": []
+      },
+      {
+        "id": "n3l04qhbfggmsbkp87w",
+        "year": 2025,
+        "series": "Lay Bare",
+        "title": "Lay Bare I",
+        "date": "Sun Aug 02 2026",
+        "description": "点击这里填写作品介绍。",
+        "cover": "https://picsum.photos/seed/2r3zpbco99msbkp87w/700/700",
+        "images": [],
+        "tone": "#454545",
+        "imagesFull": []
+      },
+      {
+        "id": "wgh4e9ohcahmsbkp87w",
+        "year": 2025,
+        "series": "Lay Bare",
+        "title": "Lay Bare II",
+        "date": "Sun Aug 02 2026",
+        "description": "点击这里填写作品介绍。",
+        "cover": "https://picsum.photos/seed/v52ejov925fmsbkp87w/700/700",
+        "images": [],
+        "tone": "#454545",
+        "imagesFull": []
+      },
+      {
+        "id": "e3kquq0pbprmsbkn8u2",
+        "year": 2025,
+        "series": "An Entwined Embrace",
+        "title": "An Entwined Embrace I",
+        "date": "Sun Aug 02 2026",
+        "description": "点击这里填写作品介绍。",
+        "cover": "https://picsum.photos/seed/qzfgcl2bg2nmsbkn8u2/700/700",
+        "images": [],
+        "tone": "#454545",
+        "imagesFull": []
+      },
+      {
+        "id": "a6z9acrz6f8msbkn8u2",
+        "year": 2025,
+        "series": "An Entwined Embrace",
+        "title": "An Entwined Embrace II",
+        "date": "Sun Aug 02 2026",
+        "description": "点击这里填写作品介绍。",
+        "cover": "https://picsum.photos/seed/jqdtvcyp7fhmsbkn8u2/700/700",
+        "images": [],
+        "tone": "#454545",
+        "imagesFull": []
+      },
+      {
+        "id": "txt5prjy2immsbkn8u2",
+        "year": 2025,
+        "series": "An Entwined Embrace",
+        "title": "An Entwined Embrace III",
+        "date": "Sun Aug 02 2026",
+        "description": "点击这里填写作品介绍。",
+        "cover": "https://picsum.photos/seed/6wfap2ry3q5msbkn8u2/700/700",
+        "images": [],
+        "tone": "#454545",
+        "imagesFull": []
+      },
+      {
+        "id": "lvewe2r12elmsbkn8u2",
+        "year": 2025,
+        "series": "An Entwined Embrace",
+        "title": "An Entwined Embrace IV",
+        "date": "Sun Aug 02 2026",
+        "description": "点击这里填写作品介绍。",
+        "cover": "https://picsum.photos/seed/8pfgipncdz5msbkn8u2/700/700",
+        "images": [],
+        "tone": "#454545",
+        "imagesFull": []
+      },
+      {
+        "id": "lu2f0elw7qrmsbkn8u2",
+        "year": 2025,
+        "series": "An Entwined Embrace",
+        "title": "An Entwined Embrace V",
+        "date": "Sun Aug 02 2026",
+        "description": "点击这里填写作品介绍。",
+        "cover": "https://picsum.photos/seed/a6hwkql2lemsbkn8u2/700/700",
+        "images": [],
+        "tone": "#454545",
+        "imagesFull": []
+      },
+      {
+        "id": "upryx4vhqyms75c85o",
+        "year": 2025,
+        "title": "Small Flowers and Plants",
+        "date": "Thu Jul 30 2026",
+        "description": "点击这里填写作品介绍。",
+        "cover": "https://picsum.photos/seed/z7ja4ogs92lms75c85o/700/700",
+        "images": [],
+        "tone": "#454545",
+        "titleEs": "Flores y Plantas Pequeñas",
+        "titleZh": "小花草",
+        "imagesFull": [],
+        "dimensions": "×  cm"
+      },
+      {
+        "id": "kl1y3rg8c28ms75bzvu",
+        "year": 2025,
+        "series": "Good Medicine Tastes Bitter",
+        "title": "Good Medicine Tastes Bitter I",
+        "date": "Thu Jul 30 2026",
+        "description": "点击这里填写作品介绍。",
+        "cover": "https://picsum.photos/seed/ajua3com2zdms75bzvu/700/700",
+        "images": [],
+        "tone": "#454545",
+        "seriesEs": "La Buena Medicina Sabe Amarga",
+        "titleEs": "La Buena Medicina Sabe Amarga I",
+        "seriesZh": "良药苦口",
+        "titleZh": "良药苦口 I",
+        "imagesFull": [],
+        "materials": "Transparent UV-Curable Resin, Transparent Glitter, Crystal Glass Beads, Acrylic Beads",
+        "dimensions": "13.5 × 10 × 8.5 cm",
+        "materialsZh": "透明UV自由树脂、透明亮片、水晶玻璃珠、亚克力圆珠",
+        "materialsEs": "Resina UV Transparente de Forma Libre, Lentejuelas Transparentes, Cuentas de Cristal, Cuentas de Acrílico Redondas"
+      },
+      {
+        "id": "w3eq8wwzqdhms75bzvu",
+        "year": 2025,
+        "series": "Good Medicine Tastes Bitter",
+        "title": "Good Medicine Tastes Bitter II",
+        "date": "Thu Jul 30 2026",
+        "description": "点击这里填写作品介绍。",
+        "cover": "https://picsum.photos/seed/i4w4vmdoy2kms75bzvu/700/700",
+        "images": [],
+        "tone": "#454545",
+        "seriesEs": "La Buena Medicina Sabe Amarga",
+        "titleEs": "La Buena Medicina Sabe Amarga II",
+        "seriesZh": "良药苦口",
+        "titleZh": "良药苦口 II",
+        "imagesFull": [],
+        "materials": "Medicine Pouch, Crystal Glass Beads, Acrylic Beads, Fishing Accessory Box",
+        "dimensions": "6.5 × 14 × 2.5 cm",
+        "materialsZh": "药囊、水晶玻璃珠、亚克力圆珠、钓鱼配件盒",
+        "materialsEs": "Bolsa de Medicina, Cuentas de Cristal, Cuentas de Acrílico Redondas, Caja de Accesorios de Pesca"
       },
       {
         "id": "427i5eybhtwms75ba4p",
@@ -994,7 +1094,11 @@
           "/images/427i5eybhtwms75ba4p-full-3.jpg",
           "/images/427i5eybhtwms75ba4p-full-4.jpg",
           "/images/427i5eybhtwms75ba4p-full-5.jpg"
-        ]
+        ],
+        "dimensions": "29 × 30 cm",
+        "materials": "Polymer Plate Printing, Cotton Fabric, Tree Branches, Weed Stalks and Leaves, Laser Glass Gauze, Tin Foil, Transparent UV Free Resin, Transparent Sequins, Crystal Glass Beads, Acrylic Beads",
+        "materialsZh": "聚合物板印刷、棉布、树枝、杂草杆叶、镭射玻璃纱、锡箔、透明uv自由树脂、透明亮片、水晶玻璃珠、亚克力圆珠",
+        "materialsEs": "Impresión en Placa de Polímero, Tela de Algodón, Ramas de Árbol, Tallos y Hojas de Maleza, Gasa de Cristal Láser, Papel de Aluminio, Resina UV Transparente de Forma Libre, Lentejuelas Transparentes, Cuentas de Cristal, Cuentas de Acrílico"
       },
       {
         "id": "drffgm74sjjms75ba4p",
@@ -1024,7 +1128,11 @@
           "/images/drffgm74sjjms75ba4p-full-3.jpg",
           "/images/drffgm74sjjms75ba4p-full-4.jpg",
           "/images/drffgm74sjjms75ba4p-full-5.jpg"
-        ]
+        ],
+        "materials": "Polymer Plate Printing, Cotton Fabric, Laser Glass Gauze, Silver Foil, Tin Foil, Transparent UV Free Resin, Transparent Sequins, Crystal Glass Beads, Acrylic Beads",
+        "dimensions": "27.5 × 27.5 cm",
+        "materialsZh": "聚合物板印刷、棉布、镭射玻璃纱、银箔、锡箔、透明UV自由树脂、透明亮片、水晶玻璃珠、亚克力圆珠",
+        "materialsEs": "Impresión en Placa de Polímero, Tela de Algodón, Gasa de Cristal Láser, Lámina de Plata, Papel de Aluminio, Resina UV Transparente de Forma Libre, Lentejuelas Transparentes, Cuentas de Cristal, Cuentas de Acrílico"
       },
       {
         "id": "t7yh9cersims75ba4p",
@@ -1058,7 +1166,11 @@
           "/images/t7yh9cersims75ba4p-full-5.jpg",
           "/images/t7yh9cersims75ba4p-full-6.jpg",
           "/images/t7yh9cersims75ba4p-full-7.jpg"
-        ]
+        ],
+        "materials": "Screen Printing, Film, Wool Felt, Laser Glass Gauze, Sequin Mesh Fabric, Gold Thread Jacquard Fabric, Tengujou Paper, Tin Foil, Transparent UV Free Resin, Transparent Sequins, Crystal Glass Beads, Acrylic Beads",
+        "dimensions": "45 × 45 cm",
+        "materialsZh": "丝网印刷、菲林片、羊毛毡、镭射玻璃纱、亮片网纱、镭射玻璃纱、金丝提花布、典具帖纸、锡箔、透明uv自由树脂、透明亮片、水晶玻璃珠、亚克力圆珠",
+        "materialsEs": "Impresión Serigráfica, Película, Fieltro de Lana, Gasa de Cristal Láser, Tela de Malla de Lentejuelas, Tela Jacquard con Hilo de Oro, Papel Tengujou, Papel de Aluminio, Resina UV Transparente de Forma Libre, Lentejuelas Transparentes, Cuentas de Cristal, Cuentas de Acrílico"
       },
       {
         "id": "z9gbw2pfyt9ms75azft",
@@ -1071,7 +1183,10 @@
         "tone": "#454545",
         "titleEs": "Balancearse",
         "titleZh": "秋千",
-        "imagesFull": []
+        "imagesFull": [],
+        "materials": "Screen Printing, Bark Fragments, 3D Printing, Plastic Wrap, Iridescent Glass Organza, Tin Foil, Fishing Line, Fishhooks, Clear UV-Curing Resin",
+        "materialsZh": "丝网印刷、树皮残块、3D打印、保鲜膜、镭射玻璃纱、锡箔、鱼线、鱼钩、透明UV自由树脂",
+        "materialsEs": "Impresión Serigráfica, Fragmentos de Corteza de Árbol, Impresión 3D, Film Transparente, Gasa de Cristal Láser, Papel de Aluminio, Hilo de Pescar, Anzuelo, Resina UV Transparente de Forma Libre"
       },
       {
         "id": "bka6djp3g5mms75attk",
