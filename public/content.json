@@ -700,14 +700,20 @@
         "date": "Wed Jul 29 2026",
         "description": "点击这里填写作品介绍。",
         "cover": "https://picsum.photos/seed/mu1hp0hdj4dms6245qv/700/700",
-        "images": [],
+        "images": [
+          "/images/b3lhylins9mms6245qv-img-0.jpg",
+          "/images/b3lhylins9mms6245qv-img-1.jpg"
+        ],
         "tone": "#454545",
         "titleZh": "一簇小花",
         "titleEs": "Un Cúmulo de Flores Pequeñas",
         "materials": "Wooden Plank, Nail, Tin Foil, Steel Wire Rope, Paper, Printing Ink, UV Clay",
         "materialsEs": "Tabla de Madera, Clavo, Papel de Aluminio, Cable de Acero, Papel, Tinta de Impresión, Arcilla UV",
         "materialsZh": "木板、钉子、锡箔、钢丝绳、纸、版画油墨、UV软树脂",
-        "imagesFull": []
+        "imagesFull": [
+          "/images/b3lhylins9mms6245qv-full-0.jpg",
+          "/images/b3lhylins9mms6245qv-full-1.jpg"
+        ]
       },
       {
         "id": "1gz5x7d37nnims622tsk",
@@ -717,7 +723,9 @@
         "date": "Wed Jul 29 2026",
         "description": "点击这里填写作品介绍。",
         "cover": "https://picsum.photos/seed/e76wizc3miqms622tsk/700/700",
-        "images": [],
+        "images": [
+          "/images/1gz5x7d37nnims622tsk-img-0.jpg"
+        ],
         "tone": "#454545",
         "seriesZh": "一纸空文",
         "titleZh": "一纸空文 I",
@@ -726,7 +734,9 @@
         "materials": "Glass, Pharmaceutical Packaging Paper, Stone, Glue",
         "materialsEs": "Vidrio, Papel de Embalaje Farmacéutico, Piedra, Pegamento",
         "materialsZh": "玻璃、药剂包装纸、石头、胶水",
-        "imagesFull": []
+        "imagesFull": [
+          "/images/1gz5x7d37nnims622tsk-full-0.jpg"
+        ]
       },
       {
         "id": "7m2levc26rims622tsk",
@@ -736,7 +746,10 @@
         "date": "Wed Jul 29 2026",
         "description": "点击这里填写作品介绍。",
         "cover": "https://picsum.photos/seed/a3z08ccjgbdms622tsk/700/700",
-        "images": [],
+        "images": [
+          "/images/7m2levc26rims622tsk-img-0.jpg",
+          "/images/7m2levc26rims622tsk-img-1.jpg"
+        ],
         "tone": "#454545",
         "seriesZh": "一纸空文",
         "titleZh": "一纸空文 II",
@@ -745,7 +758,10 @@
         "materials": "Glass, Medication Instruction, Stone, Glue",
         "materialsEs": "Vidrio, Prospecto de Medicamentos, Piedra, Pegamento",
         "materialsZh": "玻璃、药剂说明书、石头、胶水",
-        "imagesFull": []
+        "imagesFull": [
+          "/images/7m2levc26rims622tsk-full-0.jpg",
+          "/images/7m2levc26rims622tsk-full-1.jpg"
+        ]
       },
       {
         "id": "d6qd3xnatr6ms62107f",
@@ -755,7 +771,10 @@
         "date": "Wed Jul 29 2026",
         "description": "点击这里填写作品介绍。",
         "cover": "https://picsum.photos/seed/a3bi3sgt884ms62107g/700/700",
-        "images": [],
+        "images": [
+          "/images/d6qd3xnatr6ms62107f-img-0.jpg",
+          "/images/d6qd3xnatr6ms62107f-img-1.jpg"
+        ],
         "tone": "#454545",
         "seriesZh": "拾金不昧",
         "titleZh": "拾金不昧 I",
@@ -766,7 +785,10 @@
         "materialsZh": "美元纸币、热熔胶、钉子、大头针、铁丝、鱼线、塑料水晶珠、松树枝、鸟类羽毛",
         "dimensionsZh": "6 × 11 × 3 cm",
         "dimensions": "6 × 11 × 3 cm",
-        "imagesFull": []
+        "imagesFull": [
+          "/images/d6qd3xnatr6ms62107f-full-0.jpg",
+          "/images/d6qd3xnatr6ms62107f-full-1.jpg"
+        ]
       },
       {
         "id": "trisflzkx2rms62107g",
@@ -776,7 +798,10 @@
         "date": "Wed Jul 29 2026",
         "description": "点击这里填写作品介绍。",
         "cover": "https://picsum.photos/seed/mz11ousm798ms62107g/700/700",
-        "images": [],
+        "images": [
+          "/images/trisflzkx2rms62107g-img-0.jpg",
+          "/images/trisflzkx2rms62107g-img-1.jpg"
+        ],
         "tone": "#454545",
         "seriesZh": "拾金不昧",
         "titleZh": "拾金不昧 II",
@@ -785,7 +810,10 @@
         "materials": "US Dollar Coins, Fragment of Cola Packaging, Hot Glue",
         "materialsEs": "Monedas de Dólar Estadounidense, Fragmento de Envase de Refresco de Cola, Silicona Caliente",
         "materialsZh": "美元硬币、可乐包装碎片、热熔胶",
-        "imagesFull": []
+        "imagesFull": [
+          "/images/trisflzkx2rms62107g-full-0.jpg",
+          "/images/trisflzkx2rms62107g-full-1.jpg"
+        ]
       },
       {
         "id": "3k3wmco031lms623nha",
@@ -821,7 +849,12 @@
         "date": "Wed Jul 29 2026",
         "description": "点击这里填写作品介绍。",
         "cover": "https://picsum.photos/seed/g3wxzsquosms623zsj/700/700",
-        "images": [],
+        "images": [
+          "/images/awatfu6b4ms623zsj-img-0.jpg",
+          "/images/awatfu6b4ms623zsj-img-1.jpg",
+          "/images/awatfu6b4ms623zsj-img-2.jpg",
+          "/images/awatfu6b4ms623zsj-img-3.jpg"
+        ],
         "tone": "#454545",
         "seriesZh": "臂弯",
         "titleZh": "臂弯 I",
@@ -830,7 +863,12 @@
         "materials": "Collected Fragments of a Concrete Sculpture, Wire, Bamboo Strips, Pine Branches, Hot-Melt Adhesive, Large-Headed Pins, Thumbtacks, Plastic Crystal Beads, Aluminum Foil, Printmaking Ink",
         "materialsEs": "Fragmentos Recogidos de una Escultura de Hormigón, Alambre, Tiras de Bambú, Ramas de Pino, Adhesivo Termofusible, Alfileres de Cabeza Grande, Chinchetas, Cuentas de Cristal de Plástico, Papel de Aluminio, Tinta de Grabado",
         "materialsZh": "捡拾的水泥雕塑块、铁丝、竹丝、松树枝、热熔胶、大头钉、按钉、塑料水晶珠、锡纸、版画油墨",
-        "imagesFull": []
+        "imagesFull": [
+          "/images/awatfu6b4ms623zsj-full-0.jpg",
+          "/images/awatfu6b4ms623zsj-full-1.jpg",
+          "/images/awatfu6b4ms623zsj-full-2.jpg",
+          "/images/awatfu6b4ms623zsj-full-3.jpg"
+        ]
       },
       {
         "id": "5rh5uzb9bfms623zsj",
@@ -840,7 +878,12 @@
         "date": "Wed Jul 29 2026",
         "description": "点击这里填写作品介绍。",
         "cover": "https://picsum.photos/seed/4roo1qpk7lms623zsj/700/700",
-        "images": [],
+        "images": [
+          "/images/5rh5uzb9bfms623zsj-img-0.jpg",
+          "/images/5rh5uzb9bfms623zsj-img-1.jpg",
+          "/images/5rh5uzb9bfms623zsj-img-2.jpg",
+          "/images/5rh5uzb9bfms623zsj-img-3.jpg"
+        ],
         "tone": "#454545",
         "seriesZh": "臂弯",
         "titleZh": "臂弯 II",
@@ -849,7 +892,12 @@
         "materials": "Collected Fragments of a Concrete Sculpture, Wire, Bamboo Strips, Fishing Line, UV Soft Resin, Hot-Melt Adhesive, Mica Powder, Silver Leaf, Plastic Floral Beads, Plastic Polarizing Film",
         "materialsEs": "Fragmentos Recogidos de una Escultura de Hormigón, Alambre, Tiras de Bambú, Hilo de Pesca, Resina Blanda UV, Adhesivo Termofusible, Polvo de Mica, Pan de Plata, Cuentas Florales de Plástico, Película Polarizadora de Plástico",
         "materialsZh": "捡拾水泥雕塑块、铁丝、竹丝、鱼线、UV软树脂、热熔胶、云母粉、银箔、塑料花珠、塑料偏光片",
-        "imagesFull": []
+        "imagesFull": [
+          "/images/5rh5uzb9bfms623zsj-full-0.jpg",
+          "/images/5rh5uzb9bfms623zsj-full-1.jpg",
+          "/images/5rh5uzb9bfms623zsj-full-2.jpg",
+          "/images/5rh5uzb9bfms623zsj-full-3.jpg"
+        ]
       },
       {
         "id": "247dx3l6tscms75bo3h",
