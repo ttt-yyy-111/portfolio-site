@@ -548,7 +548,8 @@
         "dimensions": "6.5 × 6.5 × 1.5 cm",
         "cover": "https://picsum.photos/seed/gmtb-3/700/700",
         "images": [
-          "https://picsum.photos/seed/gmtb-3b/1400/1400"
+          "/images/good-medicine-iii-img-0.jpg",
+          "/images/good-medicine-iii-img-1.jpg"
         ],
         "tone": "#3e3e3e",
         "seriesEs": "La Buena Medicina Sabe Amarga",
@@ -557,7 +558,10 @@
         "materialsZh": "不锈钢盘、微缩房子",
         "materialsEs": "Placa de Acero Inoxidable, Casa en Miniatura",
         "dimensionsZh": "6.5 × 6.5 × 1.5 cm",
-        "imagesFull": []
+        "imagesFull": [
+          "/images/good-medicine-iii-full-0.jpg",
+          "/images/good-medicine-iii-full-1.jpg"
+        ]
       },
       {
         "id": "good-medicine-iv",
@@ -570,7 +574,16 @@
         "dimensions": "11 × 13.5 × 8 cm (Approximately)",
         "cover": "https://picsum.photos/seed/gmtb-4/700/900",
         "images": [
-          "https://picsum.photos/seed/gmtb-4b/1200/1500"
+          "/images/good-medicine-iv-img-0.jpg",
+          "/images/good-medicine-iv-img-1.jpg",
+          "/images/good-medicine-iv-img-2.jpg",
+          "/images/good-medicine-iv-img-3.jpg",
+          "/images/good-medicine-iv-img-4.jpg",
+          "/images/good-medicine-iv-img-5.jpg",
+          "/images/good-medicine-iv-img-6.jpg",
+          "/images/good-medicine-iv-img-7.jpg",
+          "/images/good-medicine-iv-img-8.jpg",
+          "/images/good-medicine-iv-img-9.jpg"
         ],
         "tone": "#464646",
         "seriesEs": "La Buena Medicina Sabe Amarga",
@@ -580,7 +593,18 @@
         "materialsZh": "便携药盒、微缩马、微缩猪、锡纸、逗猫玩具毛绒球",
         "dimensionsZh": "11 × 13.5 × 8 cm (约)",
         "dimensionsEs": "11 × 13.5 × 8 cm (Aproximadamente)",
-        "imagesFull": []
+        "imagesFull": [
+          "/images/good-medicine-iv-full-0.jpg",
+          "/images/good-medicine-iv-full-1.jpg",
+          "/images/good-medicine-iv-full-2.jpg",
+          "/images/good-medicine-iv-full-3.jpg",
+          "/images/good-medicine-iv-full-4.jpg",
+          "/images/good-medicine-iv-full-5.jpg",
+          "/images/good-medicine-iv-full-6.jpg",
+          "/images/good-medicine-iv-full-7.jpg",
+          "/images/good-medicine-iv-full-8.jpg",
+          "/images/good-medicine-iv-full-9.jpg"
+        ]
       },
       {
         "id": "good-medicine-v",
@@ -593,7 +617,10 @@
         "dimensions": "16 × 10 × 2 cm (Approximately)",
         "cover": "https://picsum.photos/seed/gmtb-5/700/850",
         "images": [
-          "https://picsum.photos/seed/gmtb-5b/1200/1450"
+          "/images/good-medicine-v-img-0.jpg",
+          "/images/good-medicine-v-img-1.jpg",
+          "/images/good-medicine-v-img-2.jpg",
+          "/images/good-medicine-v-img-3.jpg"
         ],
         "tone": "#414141",
         "seriesEs": "La Buena Medicina Sabe Amarga",
@@ -603,7 +630,12 @@
         "materialsZh": "锡纸翻模微缩鸡蛋托、UV透明树脂翻模微缩鸡蛋托、微缩蛋、亚克力珠子",
         "dimensionsZh": "16 × 10 × 2 cm (约)",
         "dimensionsEs": "16 × 10 × 2 cm (Aproximadamente)",
-        "imagesFull": []
+        "imagesFull": [
+          "/images/good-medicine-v-full-0.jpg",
+          "/images/good-medicine-v-full-1.jpg",
+          "/images/good-medicine-v-full-2.jpg",
+          "/images/good-medicine-v-full-3.jpg"
+        ]
       },
       {
         "id": "good-medicine-vi",
