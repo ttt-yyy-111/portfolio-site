@@ -648,7 +648,12 @@
         "dimensions": "26.5 × 26.5 × 9.5 cm",
         "cover": "https://picsum.photos/seed/gmtb-6/700/600",
         "images": [
-          "https://picsum.photos/seed/gmtb-6b/1400/1200"
+          "/images/good-medicine-vi-img-0.jpg",
+          "/images/good-medicine-vi-img-1.jpg",
+          "/images/good-medicine-vi-img-2.jpg",
+          "/images/good-medicine-vi-img-3.jpg",
+          "/images/good-medicine-vi-img-4.jpg",
+          "/images/good-medicine-vi-img-5.jpg"
         ],
         "tone": "#494949",
         "seriesEs": "La Buena Medicina Sabe Amarga",
@@ -656,7 +661,14 @@
         "titleEs": "La Buena Medicina Sabe Amarga VI",
         "materialsEs": "Dispensador de Medicamentos, Huevo en Miniatura, Frutero Azulado de los Años 60 con Doble Pez y Carácter de \"Doble Felicidad\"",
         "materialsZh": "分药器、微缩蛋、60年代蓝琉璃双鱼喜字果盘",
-        "imagesFull": []
+        "imagesFull": [
+          "/images/good-medicine-vi-full-0.jpg",
+          "/images/good-medicine-vi-full-1.jpg",
+          "/images/good-medicine-vi-full-2.jpg",
+          "/images/good-medicine-vi-full-3.jpg",
+          "/images/good-medicine-vi-full-4.jpg",
+          "/images/good-medicine-vi-full-5.jpg"
+        ]
       },
       {
         "id": "good-medicine-vii",
@@ -669,7 +681,7 @@
         "dimensions": "7 × 4 × 2 cm",
         "cover": "https://picsum.photos/seed/gmtb-7/700/900",
         "images": [
-          "https://picsum.photos/seed/gmtb-7b/1200/1500"
+          "/images/good-medicine-vii-img-0.jpg"
         ],
         "tone": "#444444",
         "seriesEs": "La Buena Medicina Sabe Amarga",
@@ -677,7 +689,9 @@
         "titleEs": "La Buena Medicina Sabe Amarga VII",
         "materialsZh": "塑料簸箕玩具、微缩房子",
         "materialsEs": "Recogedor de Plástico de Juguete, Casa en Miniatura",
-        "imagesFull": []
+        "imagesFull": [
+          "/images/good-medicine-vii-full-0.jpg"
+        ]
       },
       {
         "id": "b3lhylins9mms6245qv",
