@@ -1199,13 +1199,19 @@
         "date": "Thu Jul 30 2026",
         "description": "点击这里填写作品介绍。",
         "cover": "https://picsum.photos/seed/ajua3com2zdms75bzvu/700/700",
-        "images": [],
+        "images": [
+          "/images/kl1y3rg8c28ms75bzvu-img-0.jpg",
+          "/images/kl1y3rg8c28ms75bzvu-img-1.jpg"
+        ],
         "tone": "#454545",
         "seriesEs": "La Buena Medicina Sabe Amarga",
         "titleEs": "La Buena Medicina Sabe Amarga I",
         "seriesZh": "良药苦口",
         "titleZh": "良药苦口 I",
-        "imagesFull": [],
+        "imagesFull": [
+          "/images/kl1y3rg8c28ms75bzvu-full-0.jpg",
+          "/images/kl1y3rg8c28ms75bzvu-full-1.jpg"
+        ],
         "materials": "Transparent UV-Curable Resin, Transparent Glitter, Crystal Glass Beads, Acrylic Beads",
         "dimensions": "13.5 × 10 × 8.5 cm",
         "materialsZh": "透明UV自由树脂、透明亮片、水晶玻璃珠、亚克力圆珠",
@@ -1219,13 +1225,27 @@
         "date": "Thu Jul 30 2026",
         "description": "点击这里填写作品介绍。",
         "cover": "https://picsum.photos/seed/i4w4vmdoy2kms75bzvu/700/700",
-        "images": [],
+        "images": [
+          "/images/w3eq8wwzqdhms75bzvu-img-0.jpg",
+          "/images/w3eq8wwzqdhms75bzvu-img-1.jpg",
+          "/images/w3eq8wwzqdhms75bzvu-img-2.jpg",
+          "/images/w3eq8wwzqdhms75bzvu-img-3.jpg",
+          "/images/w3eq8wwzqdhms75bzvu-img-4.jpg",
+          "/images/w3eq8wwzqdhms75bzvu-img-5.jpg"
+        ],
         "tone": "#454545",
         "seriesEs": "La Buena Medicina Sabe Amarga",
         "titleEs": "La Buena Medicina Sabe Amarga II",
         "seriesZh": "良药苦口",
         "titleZh": "良药苦口 II",
-        "imagesFull": [],
+        "imagesFull": [
+          "/images/w3eq8wwzqdhms75bzvu-full-0.jpg",
+          "/images/w3eq8wwzqdhms75bzvu-full-1.jpg",
+          "/images/w3eq8wwzqdhms75bzvu-full-2.jpg",
+          "/images/w3eq8wwzqdhms75bzvu-full-3.jpg",
+          "/images/w3eq8wwzqdhms75bzvu-full-4.jpg",
+          "/images/w3eq8wwzqdhms75bzvu-full-5.jpg"
+        ],
         "materials": "Medicine Pouch, Crystal Glass Beads, Acrylic Beads, Fishing Accessory Box",
         "dimensions": "6.5 × 14 × 2.5 cm",
         "materialsZh": "药囊、水晶玻璃珠、亚克力圆珠、钓鱼配件盒",
