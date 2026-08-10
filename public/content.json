@@ -1995,9 +1995,9 @@
           "/images/rx2y5t7fy6gmsa7j0k7-full-3.jpg"
         ],
         "materials": "Resin, Transparent UV Free Resin, Mica Powder, Crystal Glass Beads, Artificial Pearls, Artificial Gold",
-        "dimensions": "10.5 x 9 x 2 cm",
+        "dimensions": "10.5 × 9 × 2 cm",
         "materialsZh": "树脂、透明UV自由树脂、云母粉、水晶玻璃珠、仿制珍珠、仿制金",
-        "materialsEs": "Resina, Resina UV Transparente Libre de Burbujas, Polvo de Mica, Cuentas de Cristal, Perlas Artificiales"
+        "materialsEs": "Resina, Resina UV Transparente Libre de Burbujas, Polvo de Mica, Cuentas de Cristal, Perlas Artificiales, Oro Artificial"
       },
       {
         "id": "b2dx4oqzzqumsa7espt",
@@ -2020,7 +2020,10 @@
           "/images/b2dx4oqzzqumsa7espt-full-1.jpg",
           "/images/b2dx4oqzzqumsa7espt-full-2.jpg",
           "/images/b2dx4oqzzqumsa7espt-full-3.jpg"
-        ]
+        ],
+        "materials": "Resin, Transparent UV-Curing Resin, Mica Powder, Iron Wire, Artificial Silver, Artificial Gold, Crystal Glass Beads",
+        "materialsZh": "树脂、透明UV自由树脂、云母粉、铁丝、仿制银、仿制金、水晶玻璃珠",
+        "materialsEs": "Resina, Resina UV Transparente Curable, Polvo de Mica, Alambre de Hierro, Plata Artificial, Oro Artificial, Cuentas de Cristal"
       },
       {
         "id": "5umaoq4a5lmmsa7eeja",
