@@ -1979,14 +1979,24 @@
         "date": "Sat Aug 01 2026",
         "description": "点击这里填写作品介绍。",
         "cover": "https://picsum.photos/seed/bc4hqfj4lsmsa7j0k7/700/700",
-        "images": [],
+        "images": [
+          "/images/rx2y5t7fy6gmsa7j0k7-img-0.jpg",
+          "/images/rx2y5t7fy6gmsa7j0k7-img-1.jpg",
+          "/images/rx2y5t7fy6gmsa7j0k7-img-2.jpg",
+          "/images/rx2y5t7fy6gmsa7j0k7-img-3.jpg"
+        ],
         "tone": "#454545",
         "titleZh": "细缝中的低语",
         "titleEs": "Susurros en Las Grietas",
-        "imagesFull": [],
-        "materials": "Resin, Transparent UV Free Resin, Mica Powder, Crystal Glass Beads, Artificial Pearls",
+        "imagesFull": [
+          "/images/rx2y5t7fy6gmsa7j0k7-full-0.jpg",
+          "/images/rx2y5t7fy6gmsa7j0k7-full-1.jpg",
+          "/images/rx2y5t7fy6gmsa7j0k7-full-2.jpg",
+          "/images/rx2y5t7fy6gmsa7j0k7-full-3.jpg"
+        ],
+        "materials": "Resin, Transparent UV Free Resin, Mica Powder, Crystal Glass Beads, Artificial Pearls, Artificial Gold",
         "dimensions": "10.5 x 9 x 2 cm",
-        "materialsZh": "树脂、透明UV自由树脂、云母粉、水晶玻璃珠、仿制珍珠",
+        "materialsZh": "树脂、透明UV自由树脂、云母粉、水晶玻璃珠、仿制珍珠、仿制金",
         "materialsEs": "Resina, Resina UV Transparente Libre de Burbujas, Polvo de Mica, Cuentas de Cristal, Perlas Artificiales"
       },
       {
@@ -1996,11 +2006,21 @@
         "date": "Sat Aug 01 2026",
         "description": "点击这里填写作品介绍。",
         "cover": "https://picsum.photos/seed/2glxztv54rjmsa7espt/700/700",
-        "images": [],
+        "images": [
+          "/images/b2dx4oqzzqumsa7espt-img-0.jpg",
+          "/images/b2dx4oqzzqumsa7espt-img-1.jpg",
+          "/images/b2dx4oqzzqumsa7espt-img-2.jpg",
+          "/images/b2dx4oqzzqumsa7espt-img-3.jpg"
+        ],
         "tone": "#454545",
         "titleZh": "偶然入耳的鸟啼",
         "titleEs": "Canto de Pájaros Escuchado por Casualidad",
-        "imagesFull": []
+        "imagesFull": [
+          "/images/b2dx4oqzzqumsa7espt-full-0.jpg",
+          "/images/b2dx4oqzzqumsa7espt-full-1.jpg",
+          "/images/b2dx4oqzzqumsa7espt-full-2.jpg",
+          "/images/b2dx4oqzzqumsa7espt-full-3.jpg"
+        ]
       },
       {
         "id": "5umaoq4a5lmmsa7eeja",
