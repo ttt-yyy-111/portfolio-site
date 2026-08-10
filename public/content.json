@@ -2032,11 +2032,28 @@
         "date": "Sat Aug 01 2026",
         "description": "点击这里填写作品介绍。",
         "cover": "https://picsum.photos/seed/b9fbu3mtefmsa7eeja/700/700",
-        "images": [],
+        "images": [
+          "/images/5umaoq4a5lmmsa7eeja-img-0.jpg",
+          "/images/5umaoq4a5lmmsa7eeja-img-1.jpg",
+          "/images/5umaoq4a5lmmsa7eeja-img-2.jpg",
+          "/images/5umaoq4a5lmmsa7eeja-img-3.jpg",
+          "/images/5umaoq4a5lmmsa7eeja-img-4.jpg",
+          "/images/5umaoq4a5lmmsa7eeja-img-5.jpg"
+        ],
         "tone": "#454545",
         "titleZh": "叶杆折断的气味",
         "titleEs": "El Olor de un Tallo Roto",
-        "imagesFull": []
+        "imagesFull": [
+          "/images/5umaoq4a5lmmsa7eeja-full-0.jpg",
+          "/images/5umaoq4a5lmmsa7eeja-full-1.jpg",
+          "/images/5umaoq4a5lmmsa7eeja-full-2.jpg",
+          "/images/5umaoq4a5lmmsa7eeja-full-3.jpg",
+          "/images/5umaoq4a5lmmsa7eeja-full-4.jpg",
+          "/images/5umaoq4a5lmmsa7eeja-full-5.jpg"
+        ],
+        "materials": "Transparent UV-Curing Resin, Silicone, Solid Oil Paint, Crystal Glass Beads, Plastic Sheets",
+        "materialsZh": "透明UV自由树脂、硅胶、固体油画颜料、水晶玻璃珠、塑料片",
+        "materialsEs": "Resina UV Transparente Curable, Silicona, Óleo Sólido, Cuentas de Cristal, Láminas de Plástico"
       },
       {
         "id": "2o2m0elqukzmsa7ckba",
