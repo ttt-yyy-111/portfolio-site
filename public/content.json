@@ -2412,7 +2412,11 @@
         "tone": "#454545",
         "imagesFull": [],
         "titleZh": "睫毛上的凉雾",
-        "titleEs": "Bruma Fresca en las Pestañas"
+        "titleEs": "Bruma Fresca en las Pestañas",
+        "materials": "Washi Paper, Tengujou Paper, Ramie Fabric, Brocade Satin, Wool Felt, Linen-Blend Greige Fabric, Pastel, Acrylic Paint, Ink, Mohair Yarn",
+        "materialsZh": "和纸、典具帖纸、苎麻布、织锦缎、羊毛毡、亚麻混纺胚布、色粉、丙烯、墨、马海毛线",
+        "dimensions": "70 × 40 cm",
+        "materialsEs": "Papel Washi, Papel Tengujou, Tela de Ramio, Satén Brocado, Fieltro de Lana, Tela Cruda de Mezcla de Lino, Pastel, Pintura Acrílica, Tinta, Hilo de Mohair"
       },
       {
         "id": "uygbitwxrms6ey8vy",
@@ -2425,7 +2429,11 @@
         "tone": "#454545",
         "imagesFull": [],
         "titleZh": "副驾驶位的晴天",
-        "titleEs": "Soleado en el Asiento del Copiloto"
+        "titleEs": "Soleado en el Asiento del Copiloto",
+        "materials": "Laser Sheer Organza, Snow Silk Satin Crepe, Faux Silk Double Palace Satin, Lace Sequin Sheer Mesh Fabric, Hand-Dyed Wool Yarn, Long-Haired Mohair Handspun Yarn, Silk Thread, Wool Felt, Acrylic Beads, Glass Beads, Textile Adhesive",
+        "dimensions": "61 × 31 cm",
+        "materialsZh": "镭射透视欧根纱、雪丝缎绉、仿真丝双宫缎、蕾丝亮片透视 网纺织布、手染毛线、海马长毛手编线、蚕丝线、羊毛毡、亚克力 珠、玻璃珠、布艺粘合剂",
+        "materialsEs": "Organza Traslúcida Láser, Crepé Satén de Seda Nieve, Satén Doble Palacio de Seda Sintética, Tela de Malla Traslúcida de Encaje con Lentejuelas, Hilo de Lana Teñido a Mano, Hilo Hilado a Mano de Mohair de Pelo Largo, Hilo de Seda, Fieltro de Lana, Cuentas de Acrílico, Cuentas de Vidrio, Adhesivo Textil"
       },
       {
         "id": "9bpdtwobyfms6ey80q",
@@ -2438,7 +2446,11 @@
         "tone": "#454545",
         "imagesFull": [],
         "titleZh": "无论走到哪里 青草和泥土的味道总是一样的",
-        "titleEs": "Petricor Familiar"
+        "titleEs": "Petricor Familiar",
+        "materials": "Qing Rough Silk, Qing Fine Silk, Silk, Pure Cotton Sparse Embryonic Cloth, Hand-Rolled Hemp Thread, Silk Chiffon Cloth Strips, Liquid Mercurial Yarn, Silk Thread, Printing Paper, Acrylic, Acrylic Medium, Photo Transfer Adhesive, Solid Oil Paint, Charcoal, Pencil, Gouache, Sully Alpaca Wool Hand-Mixed Thread, Photo Transfer, Silk Screen Printing",
+        "materialsZh": "清代粗绢、清代细绢、桑蚕真丝、纯棉稀疏胚布、手搓麻绳线 、真丝雪纺布条、液态水光纱、蚕丝线、打印纸、丙烯、丙烯媒介剂、照片转印胶、固体油画颜料、炭笔、铅笔、水粉、苏利羊驼毛手混线、照片转印、丝网印刷",
+        "dimensions": "246 × 228 cm",
+        "materialsEs": "Seda Gruesa de la Dinastía Qing, Seda Fina de la Dinastía Qing, Seda, Tela Cruda Rala de Algodón Puro, Hilo de Cánamo Enrollado a Mano, Tiras de Tela de Chifón de Seda, Hilo Mercurial Líquido, Hilo de Seda, Papel de Impresión, Acrílico, Medio Acrílico, Adhesivo para Transferencia Fotográfica, Óleo Sólido, Carboncillo, Lápiz, Gouache, Hilo Mezclado a Mano de Lana de Alpaca Sully, Transferencia Fotográfica, Serigrafía"
       },
       {
         "id": "31sqr35iframs6ey6ed",
@@ -2451,7 +2463,11 @@
         "tone": "#454545",
         "imagesFull": [],
         "titleZh": "茫然中的新生枝桠",
-        "titleEs": "Una Nueva Rama en un Aturdimiento"
+        "titleEs": "Una Nueva Rama en un Aturdimiento",
+        "materials": "Qing Rough Silk, Pastel, Japanese Mineral Pigment, Acrylic, MDF Frame",
+        "materialsZh": "清代粗绢、色粉、岩绘具、丙烯、密度木框",
+        "dimensions": "30 × 60 cm",
+        "materialsEs": "Seda Gruesa de la Dinastía Qing, Pastel, Pigmento Mineral Japonés, Acrílico, Marco de MDF"
       },
       {
         "id": "h9bi30yx4g7ms6ey5le",
@@ -2464,7 +2480,11 @@
         "tone": "#454545",
         "imagesFull": [],
         "titleZh": "思绪疯长时的脑雾",
-        "titleEs": "Niebla Mental cuando los Pensamientos se Desbocan"
+        "titleEs": "Niebla Mental cuando los Pensamientos se Desbocan",
+        "materials": "Mineral Pigment, Pencil, Pastel, Oil Pastel, Gold Clay, Modern Fine Raw Silk, Wooden Frame",
+        "dimensions": "80 × 60 cm",
+        "materialsZh": "矿物颜料、色粉、油画棒、金泥、现代细生绢、木框",
+        "materialsEs": "Pigmento Mineral, Lápiz, Pastel, Pastel al Óleo, Arcilla Dorada, Seda Cruda Fina Moderna, Marco de Madera"
       },
       {
         "id": "aw4l7ymdcmms6ewfl8",
@@ -2477,7 +2497,11 @@
         "tone": "#454545",
         "imagesFull": [],
         "titleZh": "偶发的灵光",
-        "titleEs": "Chispas Accidentales"
+        "titleEs": "Chispas Accidentales",
+        "dimensions": "223 × 181.2 cm",
+        "materials": "Mineral Pigment, Ink, Pencil, Gold Leaf, Acrylic, Qing Coarse Silk, Qing Fine Silk, Modern Silk, Kochi Mashi Paper, Tosa Tengujou Paper, Mino Paper, Wooden Frames, Wooden Board",
+        "materialsZh": "矿物颜料、墨、铅笔、金箔、丙烯、清代粗绢、清代细绢、现代绢、高知麻纸、土佐典具帖纸、美浓纸、木框、木板",
+        "materialsEs": "Pigmento Mineral, Tinta, Lápiz, Lámina de Oro, Acrílico, Seda Gruesa de la Dinastía Qing, Seda Fina de la Dinastía Qing, Seda Moderna, Papel Kochi Mashi, Papel Tosa Tengujou, Papel Mino, Marcos de Madera, Tabla de Madera"
       },
       {
         "id": "eiuaiqsq63msa8gzfg",
@@ -2490,7 +2514,11 @@
         "tone": "#454545",
         "titleZh": "眩晕的梦",
         "titleEs": "Un Sueño Vertiginoso",
-        "imagesFull": []
+        "imagesFull": [],
+        "materials": "Mineral Pigments, Mica, Clam Powder, Ink, Alum Glue, Tengujou Paper, Pencil, Kumohada Hemp Paper, Wooden Board",
+        "dimensions": "116.7 × 182 cm",
+        "materialsZh": "矿物颜料、云母、蛤粉、墨、胶矾、典具帖纸、铅笔、云肌麻纸、木板",
+        "materialsEs": "Pigmentos Minerales, Mica, Polvo de Almeja, Tinta, Cola de Alumbre, Papel Tengujou, Lápiz, Papel de Cánamo Kumohada, Tabla de Madera"
       },
       {
         "id": "m7hvlisui3omsa8hawt",
@@ -2503,7 +2531,11 @@
         "tone": "#454545",
         "titleZh": "悠荡的桨",
         "titleEs": "Remos de Remo",
-        "imagesFull": []
+        "imagesFull": [],
+        "materials": "Gold Clay, Ink, Silver Leaf, Pencil, Mineral Pigment, Qing Tough Silk, Wooden Frame",
+        "dimensions": "47 × 47 cm",
+        "materialsZh": "金泥、墨、银箔、铅笔、矿物颜料、清代粗绢、木框",
+        "materialsEs": "Arcilla Dorada, Tinta, Lámina de Plata, Lápiz, Pigmento Mineral, Seda Resistente de la Dinastía Qing, Marco de Madera"
       },
       {
         "id": "2v3x4oj9bdimsa8hg1k",
@@ -2516,7 +2548,11 @@
         "tone": "#454545",
         "titleZh": "甘愿",
         "titleEs": "Voluntariamente",
-        "imagesFull": []
+        "imagesFull": [],
+        "materials": "Qing Fine Silk, Bamboo Fiber, Washi Paper, Ink, Gensai Pigment, Pencil, Acrylic, Wooden Frame",
+        "dimensions": "40 × 30 cm",
+        "materialsZh": "清代细绢、竹丝、和纸、墨、岩绘具、铅笔、丙烯、木框",
+        "materialsEs": "Seda Fina de la Dinastía Qing, Fibra de Bambú, Papel Washi, Tinta, Pigmento Gensai, Lápiz, Acrílico, Marco de Madera"
       },
       {
         "id": "ob2qhgdx1jpmsa8hooq",
@@ -2529,7 +2565,11 @@
         "tone": "#454545",
         "titleZh": "思的发端",
         "titleEs": "El Comienzo de los Pensamientos",
-        "imagesFull": []
+        "imagesFull": [],
+        "materials": "Ink, Mineral Pigment, Pencil, Bamboo Fiber, Qing Fine Silk, Washi Paper, Wooden Frame",
+        "dimensions": "116.7 × 66 cm",
+        "materialsZh": "墨、矿物颜料、铅笔、竹丝、清代细绢、和纸、木框",
+        "materialsEs": "Tinta, Pigmento Mineral, Lápiz, Fibra de Bambú, Seda Fina de la Dinastía Qing, Papel Washi, Marco de Madera"
       },
       {
         "id": "ngenlkzrf0jmsa8i0rn",
@@ -2542,7 +2582,11 @@
         "tone": "#454545",
         "titleZh": "舒张的头脑脉动",
         "titleEs": "Pulsos Neuronales Expansivos",
-        "imagesFull": []
+        "imagesFull": [],
+        "materials": "Ink, Mineral Pigment, Pencil, Mica, Clam Powder, Qing Fine Silk, Washi Paper, Modern Fine Raw Silk, Wooden Frame",
+        "dimensions": "116.7 × 66 cm",
+        "materialsZh": "墨、矿物颜料、铅笔、云母、蛤粉、清代细绢、现代细生绢、木框",
+        "materialsEs": "Tinta, Pigmento Mineral, Lápiz, Mica, Polvo de Almeja, Seda Fina de la Dinastía Qing, Papel Washi, Seda Cruda Fina Moderna, Marco de Madera"
       },
       {
         "id": "ysoh927kzmmsa8my7x",
@@ -2555,7 +2599,12 @@
         "tone": "#454545",
         "titleZh": "心头间的无意之柳",
         "titleEs": "Sauce Involuntario del Corazón",
-        "imagesFull": []
+        "imagesFull": [],
+        "materials": "Qing Dynasty Fine Silk, Ink, Mineral Pigment, Pencil, Acrylic, Wooden Frame",
+        "materialsZh": "清代细绢、墨、矿物颜料、铅笔、丙烯、木框",
+        "dimensionsEs": "32 × 24 cm",
+        "dimensions": "32 × 24 cm",
+        "materialsEs": "Seda Fina de la Dinastía Qing, Tinta, Pigmento Mineral, Lápiz, Acrílico, Marco de Madera"
       },
       {
         "id": "harpo14685umsae7x2j",
@@ -2566,7 +2615,13 @@
         "cover": "https://picsum.photos/seed/8nrvgrs58xtmsae7x2j/700/700",
         "images": [],
         "tone": "#454545",
-        "imagesFull": []
+        "imagesFull": [],
+        "titleZh": "久在樊笼里",
+        "titleEs": "Largo Tiempo Enjaulado",
+        "materials": "Japanese Modern Round Fan, Mica, Ink, Pencil, Mineral Pigment",
+        "dimensions": "15 × 10 cm",
+        "materialsZh": "日本现代团扇、云母、墨、铅笔、矿物颜料",
+        "materialsEs": "Abanico Redondo Japonés Moderno, Mica, Tinta, Lápiz, Pigmento Mineral"
       },
       {
         "id": "bxjirqdj1iimsa8nhxq",
@@ -2579,7 +2634,11 @@
         "tone": "#454545",
         "titleZh": "臆想的晚风",
         "titleEs": "Brisa Vespertina de la Mente",
-        "imagesFull": []
+        "imagesFull": [],
+        "materials": "Japanese Fans, Colored Pencils",
+        "dimensions": "7 × 14 cm",
+        "materialsZh": "日本扇子、彩铅",
+        "materialsEs": "Abanicos Japoneses, Lápices de Colores"
       },
       {
         "id": "945qekya94msa8r8i4",
@@ -2592,7 +2651,11 @@
         "tone": "#454545",
         "titleZh": "梦的角落",
         "titleEs": "Recovecos Oníricos",
-        "imagesFull": []
+        "imagesFull": [],
+        "materials": "Clam Powder, Ink, Mineral Pigments, Textured Washi Paper, Kochi Hemp Paper, Wooden Board",
+        "dimensions": "18 × 18 cm",
+        "materialsZh": "蛤粉、墨、矿物颜料、肌理和纸、高知麻纸、木板",
+        "materialsEs": "Polvo de Almeja, Tinta, Pigmentos Minerales, Papel Washi Texturizado, Papel de Cánamo Kochi, Tabla de Madera"
       },
       {
         "id": "s55ao61vo9cmsa8rxs9",
@@ -2605,7 +2668,11 @@
         "tone": "#454545",
         "titleZh": "贲张",
         "titleEs": "Flujo Hemático",
-        "imagesFull": []
+        "imagesFull": [],
+        "materials": "Gold Clay, Silver Clay, Pencil, Ink, Mineral Pigments, Kochi Hemp Paper, Wooden Board",
+        "dimensions": "18 × 18 cm",
+        "materialsZh": "金泥、银泥、铅笔、墨、矿物颜料、高知麻纸、木板",
+        "materialsEs": "Arcilla Dorada, Arcilla de Plata, Lápiz, Tinta, Pigmentos Minerales, Papel de Cánamo Kochi, Tabla de Madera"
       },
       {
         "id": "gj6l60182x8msa8s66q",
@@ -2618,7 +2685,11 @@
         "tone": "#454545",
         "titleZh": "难以攻陷的堡垒",
         "titleEs": "Fortaleza Inexpugnable",
-        "imagesFull": []
+        "imagesFull": [],
+        "materials": "Silver Foil, Ink, Mineral Pigment, Clam Powder, Pencil, Kochi Hemp Paper, Wooden Board",
+        "dimensions": "18 × 14 cm",
+        "materialsZh": "银箔、墨、矿物颜料、蛤粉、铅笔、高知麻纸、木板",
+        "materialsEs": "Lámina de Plata, Tinta, Pigmento Mineral, Polvo de Almeja, Lápiz, Papel de Cánamo Kochi, Tabla de Madera"
       },
       {
         "id": "dtcwa6mppdbmsa8s9lo",
@@ -2631,7 +2702,11 @@
         "tone": "#454545",
         "titleZh": "试图共舞",
         "titleEs": "Intentando un Baile para Dos",
-        "imagesFull": []
+        "imagesFull": [],
+        "materials": "Ink, Mineral Pigment, Clam Powder, Pencil, Kumohada Hemp Paper, Wooden Board",
+        "dimensions": "18 × 14 cm",
+        "materialsZh": "墨、矿物颜料、蛤粉、铅笔、云肌麻纸、木板",
+        "materialsEs": "Tinta, Pigmento Mineral, Polvo de Almeja, Lápiz, Papel de Cánamo Kumohada, Tabla de Madera"
       },
       {
         "id": "xgf5zrrgppdmsa8t259",
@@ -2644,7 +2719,11 @@
         "tone": "#454545",
         "titleZh": "燥热肌肤上的水滴",
         "titleEs": "Gotas de Agua en Piel Sedienta",
-        "imagesFull": []
+        "imagesFull": [],
+        "materials": "Water-Dried Pigments, Mineral Pigments, Kochi Hemp Paper, Tengujou Paper, Wooden Board",
+        "dimensions": "53 × 53 cm",
+        "materialsZh": "水干颜料、矿物颜料、高知麻纸、典具帖纸、木板",
+        "materialsEs": "Pigmentos Secados al Agua, Pigmentos Minerales, Papel de Cánamo Kochi, Papel Tengujou, Tabla de Madera"
       },
       {
         "id": "3hdf53sgw5imsa8t605",
@@ -2657,7 +2736,11 @@
         "tone": "#454545",
         "titleZh": "属于暑假的夏天",
         "titleEs": "Vacaciones de Verano",
-        "imagesFull": []
+        "imagesFull": [],
+        "materials": "Mineral Pigments, Clam Powder, Textured Washi Paper, Kumohada Hemp Paper, Wooden Board",
+        "dimensions": "18 × 14 cm",
+        "materialsZh": "矿物颜料、蛤粉、肌理和纸、云肌麻纸、木板",
+        "materialsEs": "Pigmentos Minerales, Polvo de Almeja, Papel Washi Texturizado, Papel de Cánamo Kumohada, Tabla de Madera"
       },
       {
         "id": "ia55shxtlpgmsa8tf56",
@@ -2670,7 +2753,11 @@
         "tone": "#454545",
         "titleZh": "再靠近一点点",
         "titleEs": "Solo un Poco más Cerca",
-        "imagesFull": []
+        "imagesFull": [],
+        "materials": "Pencil, Water-Dried Pigment, Pastel, Textured Washi Paper, Kochi Hemp Paper, Wooden Board",
+        "dimensions": "27.4 × 27.4 cm",
+        "materialsZh": "铅笔、水干颜料、肌理和纸、高知麻纸、木板",
+        "materialsEs": "Lápiz, Pigmento Secado al Agua, Pastel, Papel Washi Texturizado, Papel de Cánamo Kochi, Tabla de Madera"
       },
       {
         "id": "yc84x21co69msa8tubv",
@@ -2683,7 +2770,11 @@
         "tone": "#454545",
         "titleZh": "隐匿",
         "titleEs": "Críptica",
-        "imagesFull": []
+        "imagesFull": [],
+        "materials": "Gold Clay, Silver Foil, Ink, Mineral Pigments, Textured Washi Paper, Japanese Fine Silk, Wooden Board",
+        "dimensions": "18 × 18 cm",
+        "materialsZh": "金泥、银箔、墨、矿物颜料、肌理和纸、日本细绢、木板",
+        "materialsEs": "Arcilla Dorada, Lámina de Plata, Tinta, Pigmentos Minerales, Papel Washi Texturizado, Seda Fina Japonesa, Tabla de Madera"
       },
       {
         "id": "rsm262fblymmsa8u2pr",
@@ -2696,7 +2787,11 @@
         "tone": "#454545",
         "titleZh": "不再追问的遗忘",
         "titleEs": "Olvido - Sin Más Preguntas",
-        "imagesFull": []
+        "imagesFull": [],
+        "materials": "Pencil, Ink, Textured Washi Paper",
+        "dimensions": "12 × 10 cm",
+        "materialsZh": "铅笔、墨、肌理和纸",
+        "materialsEs": "Lápiz, Tinta, Papel Washi Texturizado"
       },
       {
         "id": "ck55cj8fkfwmsa8v29n",
@@ -2712,7 +2807,11 @@
         "titleZh": "一夜无梦 I",
         "seriesEs": "Sueño sin Sueños",
         "titleEs": "Sueño sin Sueños I",
-        "imagesFull": []
+        "imagesFull": [],
+        "materials": "Mineral Pigments, Clam Powder, Gold Leaf, Textured Washi Paper, Kumohada Hemp Paper, Wooden Board, Watermarked Woodcuts",
+        "dimensions": "18 × 18 cm",
+        "materialsZh": "矿物颜料、蛤粉、金箔、肌理和纸、云肌麻纸、木板、水印木刻",
+        "materialsEs": "Pigmentos Minerales, Polvo de Almeja, Pan de Oro, Papel Washi Texturizado, Papel de Cánamo Kumohada, Tabla de Madera, Grabados en Madera con Marca de Agua"
       },
       {
         "id": "d766fyqrahumsa8v29n",
@@ -2728,7 +2827,11 @@
         "titleZh": "一夜无梦 II",
         "seriesEs": "Sueño sin Sueños",
         "titleEs": "Sueño sin Sueños II",
-        "imagesFull": []
+        "imagesFull": [],
+        "materials": "Mineral Pigments, Clam Powder, Gold Leaf, Japanese Fine Silk, Kochi Linen Paper, Wood Board, Ink, Pencil",
+        "dimensions": "18 × 14 cm",
+        "materialsZh": "矿物颜料、蛤粉、金箔、日本细绢、高知麻纸、木板、墨、铅笔",
+        "materialsEs": "Pigmentos Minerales, Polvo de Almeja, Pan de Oro, Seda Fina Japonesa, Papel de Lino Kochi, Tabla de Madera, Tinta, Lápiz"
       },
       {
         "id": "lajjwzt0tumsaa11bb",
