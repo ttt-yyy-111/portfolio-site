@@ -2063,13 +2063,15 @@
         "description": "点击这里填写作品介绍。",
         "cover": "https://picsum.photos/seed/ecuymygrytcmsa7ckba/700/700",
         "images": [
-          "/images/2o2m0elqukzmsa7ckba-img-0.jpg"
+          "/images/2o2m0elqukzmsa7ckba-img-0.jpg",
+          "/images/2o2m0elqukzmsa7ckba-img-1.jpg"
         ],
         "tone": "#454545",
         "titleZh": "呼啸而过的风",
         "titleEs": "El Viento Silbador",
         "imagesFull": [
-          "/images/2o2m0elqukzmsa7ckba-full-0.jpg"
+          "/images/2o2m0elqukzmsa7ckba-full-0.jpg",
+          "/images/2o2m0elqukzmsa7ckba-full-1.jpg"
         ],
         "materials": "Fragments of Qing Dynasty Wooden Boards, Hot Glue Sticks, Tin Foil, Artificial Pearls, Plastic Beads, Hemp Rope, Silver Foil",
         "materialsZh": "清代木板残片、热熔胶棒、锡纸、仿制珍珠、塑料珠片、麻绳、银箔",
@@ -2115,7 +2117,8 @@
         "description": "点击这里填写作品介绍。",
         "cover": "https://picsum.photos/seed/iqa09mdugycmsa7980p/700/700",
         "images": [
-          "/images/3dpqsgxojl2msa7980p-img-0.jpg"
+          "/images/3dpqsgxojl2msa7980p-img-0.jpg",
+          "/images/3dpqsgxojl2msa7980p-img-1.jpg"
         ],
         "tone": "#454545",
         "seriesZh": "婚纱",
@@ -2123,7 +2126,8 @@
         "seriesEs": "Vestido de Novia",
         "titleEs": "Vestido de Novia II",
         "imagesFull": [
-          "/images/3dpqsgxojl2msa7980p-full-0.jpg"
+          "/images/3dpqsgxojl2msa7980p-full-0.jpg",
+          "/images/3dpqsgxojl2msa7980p-full-1.jpg"
         ],
         "materials": "Qing Dynasty Wood Fragment, 1990s Wedding Anniversary Badge, Tin Foil, Mesh Fabric, Acrylic Beads, Glass Beads, Plastic Sequins",
         "dimensions": "16 × 9 cm",
@@ -2246,11 +2250,25 @@
         "date": "Sat Aug 01 2026",
         "description": "点击这里填写作品介绍。",
         "cover": "https://picsum.photos/seed/fadk3p8qmgqmsa73jdd/700/700",
-        "images": [],
+        "images": [
+          "/images/m0rmb150jcsmsa73jdd-img-0.jpg",
+          "/images/m0rmb150jcsmsa73jdd-img-1.jpg",
+          "/images/m0rmb150jcsmsa73jdd-img-2.jpg",
+          "/images/m0rmb150jcsmsa73jdd-img-3.jpg"
+        ],
         "tone": "#454545",
         "titleZh": "消散倦意的晨光",
         "titleEs": "Resplandor del Despertar",
-        "imagesFull": []
+        "imagesFull": [
+          "/images/m0rmb150jcsmsa73jdd-full-0.jpg",
+          "/images/m0rmb150jcsmsa73jdd-full-1.jpg",
+          "/images/m0rmb150jcsmsa73jdd-full-2.jpg",
+          "/images/m0rmb150jcsmsa73jdd-full-3.jpg"
+        ],
+        "materials": "Cotton-Linen Fabric, Qing Fine Silk Gauze, Liquid-Luster Organza, Laser Polarizing Organza, Ramie Fabric, Organza, Mohair Yarn, Hand-Dyed Wool Bouclé Yarn, Hand-Blended Wool and Silk Yarn, Silicone, Transparent UV-Curing Resin, Artificial Silver Foil",
+        "dimensions": "24 × 18.5 cm",
+        "materialsZh": "棉麻布、清代细绢、水光液态纱、镭射偏光纱、苎麻布、欧根纱、海马毛线、羊毛圈圈手染线、羊毛真丝手混线、硅胶、透明UV自由树脂、仿制银箔",
+        "materialsEs": "Tela de Algodón y Lino, Gasa Fina de Seda de la Dinastía Qing, Organza con Brillo Líquido, Organza Polarizada Láser, Tela de Ramio, Organza, Hilo de Mohair, Hilo Bouclé de Lana Teñido a Mano, Hilo Mezcla de Lana y Seda Hilado a Mano, Silicona, Resina UV Transparente Curable, Lámina de Plata Artificial"
       },
       {
         "id": "a8p19bud8tsmsa75m0o",
@@ -2260,13 +2278,53 @@
         "date": "Sat Aug 01 2026",
         "description": "点击这里填写作品介绍。",
         "cover": "https://picsum.photos/seed/wae520h2xtqmsa75m0o/700/700",
-        "images": [],
+        "images": [
+          "/images/a8p19bud8tsmsa75m0o-img-0.jpg",
+          "/images/a8p19bud8tsmsa75m0o-img-1.jpg",
+          "/images/a8p19bud8tsmsa75m0o-img-2.jpg",
+          "/images/a8p19bud8tsmsa75m0o-img-3.jpg",
+          "/images/a8p19bud8tsmsa75m0o-img-4.jpg",
+          "/images/a8p19bud8tsmsa75m0o-img-5.jpg",
+          "/images/a8p19bud8tsmsa75m0o-img-6.jpg",
+          "/images/a8p19bud8tsmsa75m0o-img-7.jpg",
+          "/images/a8p19bud8tsmsa75m0o-img-8.jpg",
+          "/images/a8p19bud8tsmsa75m0o-img-9.jpg",
+          "/images/a8p19bud8tsmsa75m0o-img-10.jpg",
+          "/images/a8p19bud8tsmsa75m0o-img-11.jpg",
+          "/images/a8p19bud8tsmsa75m0o-img-12.jpg",
+          "/images/a8p19bud8tsmsa75m0o-img-13.jpg",
+          "/images/a8p19bud8tsmsa75m0o-img-14.jpg",
+          "/images/a8p19bud8tsmsa75m0o-img-15.jpg"
+        ],
         "tone": "#454545",
         "seriesZh": "晃动的春日",
         "titleZh": "晃动的春日 I",
         "seriesEs": "Primavera Vibrante",
         "titleEs": "Primavera Vibrante I",
-        "imagesFull": []
+        "imagesFull": [
+          "/images/a8p19bud8tsmsa75m0o-full-0.jpg",
+          "/images/a8p19bud8tsmsa75m0o-full-1.jpg",
+          "/images/a8p19bud8tsmsa75m0o-full-2.jpg",
+          "/images/a8p19bud8tsmsa75m0o-full-3.jpg",
+          "/images/a8p19bud8tsmsa75m0o-full-4.jpg",
+          "/images/a8p19bud8tsmsa75m0o-full-5.jpg",
+          "/images/a8p19bud8tsmsa75m0o-full-6.jpg",
+          "/images/a8p19bud8tsmsa75m0o-full-7.jpg",
+          "/images/a8p19bud8tsmsa75m0o-full-8.jpg",
+          "/images/a8p19bud8tsmsa75m0o-full-9.jpg",
+          "/images/a8p19bud8tsmsa75m0o-full-10.jpg",
+          "/images/a8p19bud8tsmsa75m0o-full-11.jpg",
+          "/images/a8p19bud8tsmsa75m0o-full-12.jpg",
+          "/images/a8p19bud8tsmsa75m0o-full-13.jpg",
+          "/images/a8p19bud8tsmsa75m0o-full-14.jpg",
+          "/images/a8p19bud8tsmsa75m0o-full-15.jpg"
+        ],
+        "materials": "Liquid-Luster Organza, Gilded Irregular Openwork Mesh, Sandwashed Slub Cotton Crepe, Glassy Silk Satin, Organza, Hand-Dyed Wool Bouclé Yarn, Hand-Blended Wool and Silk Yarn, Hand-Spun Feather Blend Yarn, Golden Cocoon Mulberry Silk Roving, Acrylic Paint, Wool Felt, Glass Filament Thread, Multi-Strand Thread, Jade Thread",
+        "materialsZh": "液态水光纱、鎏金不规则镂空网纱、砂洗竹节棉绉布、玻璃丝缎 、欧根纱、羊毛圈圈手染线、羊毛真丝手混线、羽毛手混线、黄金茧桑 蚕丝条、丙烯、羊毛毡、玻璃线、股线、玉线",
+        "materialsEs": "Organza con Brillo Líquido, Malla Calada Irregular Dorada, Crepé de Algodón Flamé Lavado a la Arena, Satén de Seda Cristalino, Organza, Hilo Bouclé de Lana Teñido a Mano, Hilo Mezcla de Lana y Seda Hilado a Mano, Hilo Mezcla de Plumas Hilado a Mano, Mecha de Seda de Morera de Capullo Dorado, Pintura Acrílica, Fieltro de Lana, Hilo de Filamento de Vidrio, Hilo Multihebra, Hilo de Jade",
+        "dimensions": "Variable Dimensions",
+        "dimensionsZh": "尺寸可变",
+        "dimensionsEs": "Dimensiones Variables"
       },
       {
         "id": "74vij1no3pmsa75m0o",
@@ -2276,13 +2334,41 @@
         "date": "Sat Aug 01 2026",
         "description": "点击这里填写作品介绍。",
         "cover": "https://picsum.photos/seed/1b5bpqzqyupmsa75m0o/700/700",
-        "images": [],
+        "images": [
+          "/images/74vij1no3pmsa75m0o-img-0.jpg",
+          "/images/74vij1no3pmsa75m0o-img-1.jpg",
+          "/images/74vij1no3pmsa75m0o-img-2.jpg",
+          "/images/74vij1no3pmsa75m0o-img-3.jpg",
+          "/images/74vij1no3pmsa75m0o-img-4.jpg",
+          "/images/74vij1no3pmsa75m0o-img-5.jpg",
+          "/images/74vij1no3pmsa75m0o-img-6.jpg",
+          "/images/74vij1no3pmsa75m0o-img-7.jpg",
+          "/images/74vij1no3pmsa75m0o-img-8.jpg",
+          "/images/74vij1no3pmsa75m0o-img-9.jpg"
+        ],
         "tone": "#454545",
         "seriesZh": "晃动的春日",
         "titleZh": "晃动的春日 II",
         "seriesEs": "Primavera Vibrante",
         "titleEs": "Primavera Vibrante II",
-        "imagesFull": []
+        "imagesFull": [
+          "/images/74vij1no3pmsa75m0o-full-0.jpg",
+          "/images/74vij1no3pmsa75m0o-full-1.jpg",
+          "/images/74vij1no3pmsa75m0o-full-2.jpg",
+          "/images/74vij1no3pmsa75m0o-full-3.jpg",
+          "/images/74vij1no3pmsa75m0o-full-4.jpg",
+          "/images/74vij1no3pmsa75m0o-full-5.jpg",
+          "/images/74vij1no3pmsa75m0o-full-6.jpg",
+          "/images/74vij1no3pmsa75m0o-full-7.jpg",
+          "/images/74vij1no3pmsa75m0o-full-8.jpg",
+          "/images/74vij1no3pmsa75m0o-full-9.jpg"
+        ],
+        "materials": "Liquid-Luster Organza, Gilded Irregular Openwork Mesh, Sandwashed Slub Cotton Crepe, Glassy Silk Satin, Organza, Hand-Dyed Wool Bouclé Yarn, Hand-Blended Wool and Silk Yarn, Hand-Spun Feather Blend Yarn, Golden Cocoon Mulberry Silk Roving, Acrylic Paint, Wool Felt, Glass Filament Thread, Multi-Strand Thread, Jade Thread, Silkscreen Printing",
+        "materialsZh": "液态水光纱、鎏金不规则镂空网纱、砂洗竹节棉绉布、玻璃丝缎 、欧根纱、羊毛圈圈手染线、羊毛真丝手混线、羽毛手混线、黄金茧桑 蚕丝条、丙烯、羊毛毡、玻璃线、股线、玉线、丝网印刷",
+        "dimensionsEs": "Dimensiones Variables",
+        "dimensions": "Variable Dimensions",
+        "dimensionsZh": "尺寸可变",
+        "materialsEs": "Organza con Brillo Líquido, Malla Calada Irregular Dorada, Crepé de Algodón Flamé Lavado a la Arena, Satén de Seda Cristalino, Organza, Hilo Bouclé de Lana Teñido a Mano, Hilo Mezcla de Lana y Seda Hilado a Mano, Hilo Mezcla de Plumas Hilado a Mano, Mecha de Seda de Morera de Capullo Dorado, Pintura Acrílica, Fieltro de Lana, Hilo de Filamento de Vidrio, Hilo Multihebra, Hilo de Jade, Serigrafía"
       },
       {
         "id": "435v5k8z0khmsa73igz",
@@ -2291,11 +2377,29 @@
         "date": "Sat Aug 01 2026",
         "description": "点击这里填写作品介绍。",
         "cover": "https://picsum.photos/seed/kah2qglpa2msa73igz/700/700",
-        "images": [],
+        "images": [
+          "/images/435v5k8z0khmsa73igz-img-0.jpg",
+          "/images/435v5k8z0khmsa73igz-img-1.jpg",
+          "/images/435v5k8z0khmsa73igz-img-2.jpg",
+          "/images/435v5k8z0khmsa73igz-img-3.jpg",
+          "/images/435v5k8z0khmsa73igz-img-4.jpg",
+          "/images/435v5k8z0khmsa73igz-img-5.jpg"
+        ],
         "tone": "#454545",
         "titleZh": "于妈妈枕畔沉沉醒来的梦",
         "titleEs": "Despertar al Lado de Mamá",
-        "imagesFull": []
+        "imagesFull": [
+          "/images/435v5k8z0khmsa73igz-full-0.jpg",
+          "/images/435v5k8z0khmsa73igz-full-1.jpg",
+          "/images/435v5k8z0khmsa73igz-full-2.jpg",
+          "/images/435v5k8z0khmsa73igz-full-3.jpg",
+          "/images/435v5k8z0khmsa73igz-full-4.jpg",
+          "/images/435v5k8z0khmsa73igz-full-5.jpg"
+        ],
+        "materials": "Lightweight Cotton Gauze, Laser Sheer Organza, Snow Silk Satin Crepe, Faux Silk Double Palace Satin, Lace Sequin Sheer Mesh, Linen-Blend Greige Fabric, Hand-Dyed Wool and Silk Blend Yarn, Wool Felt",
+        "materialsZh": "纯棉稀疏纱、镭射透视欧根纱、雪丝缎绉、仿真丝双宫缎、蕾丝亮片透视网、亚麻混纺胚布、羊毛真丝混线手染毛线、羊毛毡",
+        "dimensions": "75 × 37 cm",
+        "materialsEs": "Gasa de Algodón Ligera, Organza Traslúcida Láser, Crepé Satén de Seda Nieve, Satén Doble Palacio de Seda Sintética, Malla Traslúcida de Encaje con Lentejuelas, Tela Cruda de Mezcla de Lino, Hilo Mezcla de Lana y Seda Teñido a Mano, Fieltro de Lana"
       },
       {
         "id": "qhmuxvb580lms6ey9ki",
