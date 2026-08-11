@@ -2062,11 +2062,18 @@
         "date": "Sat Aug 01 2026",
         "description": "点击这里填写作品介绍。",
         "cover": "https://picsum.photos/seed/ecuymygrytcmsa7ckba/700/700",
-        "images": [],
+        "images": [
+          "/images/2o2m0elqukzmsa7ckba-img-0.jpg"
+        ],
         "tone": "#454545",
         "titleZh": "呼啸而过的风",
         "titleEs": "El Viento Silbador",
-        "imagesFull": []
+        "imagesFull": [
+          "/images/2o2m0elqukzmsa7ckba-full-0.jpg"
+        ],
+        "materials": "Fragments of Qing Dynasty Wooden Boards, Hot Glue Sticks, Tin Foil, Artificial Pearls, Plastic Beads, Hemp Rope, Silver Foil",
+        "materialsZh": "清代木板残片、热熔胶棒、锡纸、仿制珍珠、塑料珠片、麻绳、银箔",
+        "materialsEs": "Fragmentos de Tablas de Madera de la Dinastía Qing, Barras de Pegamento Termofusible, Papel de Aluminio, Perlas Artificiales, Cuentas de Plástico, Cuerda de Cánamo, Lámina de Plata"
       },
       {
         "id": "3r48a3lmho6msa7980o",
@@ -2076,13 +2083,28 @@
         "date": "Sat Aug 01 2026",
         "description": "点击这里填写作品介绍。",
         "cover": "https://picsum.photos/seed/2m08b8dbdpymsa7980p/700/700",
-        "images": [],
+        "images": [
+          "/images/3r48a3lmho6msa7980o-img-0.jpg",
+          "/images/3r48a3lmho6msa7980o-img-1.jpg",
+          "/images/3r48a3lmho6msa7980o-img-2.jpg",
+          "/images/3r48a3lmho6msa7980o-img-3.jpg"
+        ],
         "tone": "#454545",
         "seriesZh": "婚纱",
         "titleZh": "婚纱 I",
         "seriesEs": "Vestido de Novia",
         "titleEs": "Vestido de Novia I",
-        "imagesFull": []
+        "imagesFull": [
+          "/images/3r48a3lmho6msa7980o-full-0.jpg",
+          "/images/3r48a3lmho6msa7980o-full-1.jpg",
+          "/images/3r48a3lmho6msa7980o-full-2.jpg",
+          "/images/3r48a3lmho6msa7980o-full-3.jpg"
+        ],
+        "materials": "Qing Dynasty Wood Fragment, Tin Foil, Liquid-Luster Organza, Acrylic Beads, Glass Beads, Plastic Sequins",
+        "materialsZh": "清代木板残片、锡纸、液态水光纱、亚克力珠、玻璃珠、塑料珠片",
+        "dimensionsZh": "33.5 × 5 cm",
+        "dimensions": "33.5 × 5 cm",
+        "materialsEs": "Fragmento de Madera de la Dinastía Qing, Papel de Aluminio, Organza con Brillo Líquido, Cuentas de Acrílico, Cuentas de Vidrio, Lentejuelas de Plástico"
       },
       {
         "id": "3dpqsgxojl2msa7980p",
@@ -2092,13 +2114,21 @@
         "date": "Sat Aug 01 2026",
         "description": "点击这里填写作品介绍。",
         "cover": "https://picsum.photos/seed/iqa09mdugycmsa7980p/700/700",
-        "images": [],
+        "images": [
+          "/images/3dpqsgxojl2msa7980p-img-0.jpg"
+        ],
         "tone": "#454545",
         "seriesZh": "婚纱",
         "titleZh": "婚纱 II",
         "seriesEs": "Vestido de Novia",
         "titleEs": "Vestido de Novia II",
-        "imagesFull": []
+        "imagesFull": [
+          "/images/3dpqsgxojl2msa7980p-full-0.jpg"
+        ],
+        "materials": "Qing Dynasty Wood Fragment, 1990s Wedding Anniversary Badge, Tin Foil, Mesh Fabric, Acrylic Beads, Glass Beads, Plastic Sequins",
+        "dimensions": "16 × 9 cm",
+        "materialsZh": "清代木板残片、90年代结婚纪念章、锡纸、网纱、亚克力珠、 玻璃珠、塑料珠片",
+        "materialsEs": "Fragmento de Madera de la Dinastía Qing, Insignia de Aniversario de Bodas de la Década de 1990, Papel de Aluminio, Tela de Malla, Cuentas de Acrílico, Cuentas de Vidrio, Lentejuelas de Plástico"
       },
       {
         "id": "tpn2vxje8qlmsa73n3s",
