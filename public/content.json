@@ -2137,11 +2137,25 @@
         "date": "Sat Aug 01 2026",
         "description": "点击这里填写作品介绍。",
         "cover": "https://picsum.photos/seed/jt169el6gtomsa73n3s/700/700",
-        "images": [],
+        "images": [
+          "/images/tpn2vxje8qlmsa73n3s-img-0.jpg",
+          "/images/tpn2vxje8qlmsa73n3s-img-1.jpg",
+          "/images/tpn2vxje8qlmsa73n3s-img-2.jpg",
+          "/images/tpn2vxje8qlmsa73n3s-img-3.jpg"
+        ],
         "tone": "#454545",
         "titleZh": "窥见一条裂缝",
         "titleEs": "Mirando en una Grieta",
-        "imagesFull": []
+        "imagesFull": [
+          "/images/tpn2vxje8qlmsa73n3s-full-0.jpg",
+          "/images/tpn2vxje8qlmsa73n3s-full-1.jpg",
+          "/images/tpn2vxje8qlmsa73n3s-full-2.jpg",
+          "/images/tpn2vxje8qlmsa73n3s-full-3.jpg"
+        ],
+        "materials": "Qing Dynasty Wood Fragment, Tin Foil, Artificial Pearls, Plastic Sequins, Gold Leaf",
+        "dimensions": "11 × 12.8 cm",
+        "materialsZh": "清代木板残片、锡纸、仿制珍珠、塑料珠片、金箔",
+        "materialsEs": "Fragmento de Madera de la Dinastía Qing, Papel de Aluminio, Perlas Artificiales, Lentejuelas de Plástico, Lámina de Oro"
       },
       {
         "id": "xqowzn7rm1msa73mcd",
@@ -2150,11 +2164,26 @@
         "date": "Sat Aug 01 2026",
         "description": "点击这里填写作品介绍。",
         "cover": "https://picsum.photos/seed/ccoqtq5rnq7msa73mcd/700/700",
-        "images": [],
+        "images": [
+          "/images/xqowzn7rm1msa73mcd-img-0.jpg",
+          "/images/xqowzn7rm1msa73mcd-img-1.jpg",
+          "/images/xqowzn7rm1msa73mcd-img-2.jpg",
+          "/images/xqowzn7rm1msa73mcd-img-3.jpg"
+        ],
         "tone": "#454545",
         "titleZh": "北方的雪",
         "titleEs": "Nieve del Norte",
-        "imagesFull": []
+        "imagesFull": [
+          "/images/xqowzn7rm1msa73mcd-full-0.jpg",
+          "/images/xqowzn7rm1msa73mcd-full-1.jpg",
+          "/images/xqowzn7rm1msa73mcd-full-2.jpg",
+          "/images/xqowzn7rm1msa73mcd-full-3.jpg"
+        ],
+        "materials": "Bamboo Fiber, Organza, Glass Thread, Jade Thread, Crystal Glass Beads, Glitter Flakes, Laser Glass Mesh, Qing Coarse Silk, Lightweight Cotton Greige Fabric, Glass Thread, Transparent UV-Curing Resin",
+        "materialsZh": "竹丝、欧根纱、玻璃线、玉线、水晶玻璃珠、闪光片、镭射 玻璃纱、清代粗绢、纯棉稀疏胚布、玻璃线、透明UV自由树脂",
+        "dimensionsZh": "90 × 33 cm",
+        "dimensions": "90 × 33 cm",
+        "materialsEs": "Fibra de Bambú, Organza, Hilo de Vidrio, Hilo de Jade, Cuentas de Cristal, Copos de Purpurina, Malla de Vidrio Láser, Seda Gruesa de la Dinastía Qing, Tela de Algodón Crudo Ligero, Hilo de Vidrio, Resina UV Transparente Curable"
       },
       {
         "id": "1ke8vq123f5msa73lie",
