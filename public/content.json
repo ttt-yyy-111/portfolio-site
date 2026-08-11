@@ -2192,11 +2192,25 @@
         "date": "Sat Aug 01 2026",
         "description": "点击这里填写作品介绍。",
         "cover": "https://picsum.photos/seed/ptn2i95y76msa73lie/700/700",
-        "images": [],
+        "images": [
+          "/images/1ke8vq123f5msa73lie-img-0.jpg",
+          "/images/1ke8vq123f5msa73lie-img-1.jpg",
+          "/images/1ke8vq123f5msa73lie-img-2.jpg",
+          "/images/1ke8vq123f5msa73lie-img-3.jpg"
+        ],
         "tone": "#454545",
         "titleZh": "傍晚散步",
         "titleEs": "Un Paseo por la Tarde",
-        "imagesFull": []
+        "imagesFull": [
+          "/images/1ke8vq123f5msa73lie-full-0.jpg",
+          "/images/1ke8vq123f5msa73lie-full-1.jpg",
+          "/images/1ke8vq123f5msa73lie-full-2.jpg",
+          "/images/1ke8vq123f5msa73lie-full-3.jpg"
+        ],
+        "materials": "Qing Wood Carving Fragment, Qing Antique Rough Silk, Wedding Satin, Linen Blend, Ramie Aged Yarn, Silk Chiffon, Ink, Mineral Pigment, Knitted Shaggy Stretch Band, Mohair Handknitting Thread, Silk Thread, Hot Glue, Solid Oil Paint, Photograph Transfer Paper, Tin Foil",
+        "dimensions": "31 × 45 cm",
+        "materialsEs": "Fragmento de Tallado en Madera de la Dinastía Qing, Seda Gruesa Antigua de la Dinastía Qing, Satén Nupcial, Mezcla de Lino, Hilo Envejecido de Ramio, Chifón de Seda, Tinta, Pigmento Mineral, Banda Elástica de Punto Afelpado, Hilo de Mohair para Tejer a Mano, Hilo de Seda, Pegamento Termofusible, Óleo Sólido, Papel de Transferencia Fotográfica, Papel de Aluminio",
+        "materialsZh": "清代木雕残片、清代古粗绢、婚纱缎、亚麻混纺胚布、苎麻做旧纱、真丝雪纺布、墨、矿物颜料、针织长毛弹力带、马海毛手编线、蚕丝线、热熔胶、固体油画颜料、照片转印纸、锡纸"
       },
       {
         "id": "8b9zk72tv5tmsa73jzb",
@@ -2205,11 +2219,25 @@
         "date": "Sat Aug 01 2026",
         "description": "点击这里填写作品介绍。",
         "cover": "https://picsum.photos/seed/srhzwwr1hmsa73jzb/700/700",
-        "images": [],
+        "images": [
+          "/images/8b9zk72tv5tmsa73jzb-img-0.jpg",
+          "/images/8b9zk72tv5tmsa73jzb-img-1.jpg",
+          "/images/8b9zk72tv5tmsa73jzb-img-2.jpg",
+          "/images/8b9zk72tv5tmsa73jzb-img-3.jpg"
+        ],
         "tone": "#454545",
         "titleZh": "初绽的少女心",
         "titleEs": "Despertar de Primavera",
-        "imagesFull": []
+        "imagesFull": [
+          "/images/8b9zk72tv5tmsa73jzb-full-0.jpg",
+          "/images/8b9zk72tv5tmsa73jzb-full-1.jpg",
+          "/images/8b9zk72tv5tmsa73jzb-full-2.jpg",
+          "/images/8b9zk72tv5tmsa73jzb-full-3.jpg"
+        ],
+        "materials": "Silk Organza, Knitted Shag Elastic Band, Mohair Hand Knitting Thread, Solid Oil Paint, Wool Felt, Transparent UV Free Resin, Hot Glue Stick, Silk Thread, Glass Fiber, Stranded Wire",
+        "materialsZh": "真丝欧根缎、针织长毛弹力带、马海毛手编线、固体油画颜料、羊毛毡、透明UV自由树脂、热熔胶棒、蚕丝线、玻璃线、股线",
+        "dimensions": "20 × 24 cm",
+        "materialsEs": "Organza de Seda, Banda Elástica de Punto Afelpado, Hilo de Mohair para Tejer a Mano, Óleo Sólido, Fieltro de Lana, Resina UV Transparente Libre de Burbujas, Barra de Pegamento Termofusible, Hilo de Seda, Fibra de Vidrio, Alambre Trenzado"
       },
       {
         "id": "m0rmb150jcsmsa73jdd",
