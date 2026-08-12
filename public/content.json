@@ -2844,7 +2844,11 @@
         "tone": "#454545",
         "titleZh": "山河之间",
         "titleEs": "Entre Montañas y Ríos",
-        "imagesFull": []
+        "imagesFull": [],
+        "materials": "Mineral Pigments, Clam Powder, Kumohada Hemp Paper, Silver Leaf, Gold Leaf, Textured Washi Paper, Wooden Panel",
+        "materialsZh": "矿物颜料、蛤粉、云肌麻纸、银箔、金箔、肌理和纸、木板",
+        "dimensions": "91 × 233.4 cm",
+        "materialsEs": "Pigmentos Minerales, Polvo de Almeja, Papel de Cánamo Kumohada, Pan de Plata, Pan de Oro, Papel Washi Texturizado, Tabla de Madera"
       },
       {
         "id": "g6gjjffxfvtmsa9zk0z",
@@ -2857,7 +2861,11 @@
         "tone": "#454545",
         "titleZh": "万相",
         "titleEs": "Miríada de Formas",
-        "imagesFull": []
+        "imagesFull": [],
+        "materials": "Mineral Pigments, Gold Foil, Advertising Paper, Kumohada Hemp Paper, Wood Board",
+        "dimensions": "116.7 × 364 cm",
+        "materialsZh": "矿物颜料、金箔、广告纸、云肌麻纸、木板",
+        "materialsEs": "Pigmentos Minerales, Lámina de Oro, Papel Publicitario, Papel de Cánamo Kumohada, Tabla de Madera"
       },
       {
         "id": "elzl8ctqiitmsa9xhgo",
@@ -2870,7 +2878,11 @@
         "tone": "#454545",
         "titleZh": "融入迷乱",
         "titleEs": "Fusionándose en el Caos",
-        "imagesFull": []
+        "imagesFull": [],
+        "materials": "Mineral Pigments, Silver Leaf, Kumohada Hemp Paper, Wood Board",
+        "dimensions": "33 × 33 cm",
+        "materialsZh": "矿物颜料、银箔、云肌麻纸、木板",
+        "materialsEs": "Pigmentos Minerales, Pan de Plata, Papel de Cánamo Kumohada, Tabla de Madera"
       },
       {
         "id": "x1qyzjthkasmsa9v2er",
@@ -2883,7 +2895,11 @@
         "tone": "#454545",
         "titleZh": "欲饮之水",
         "titleEs": "Agua que Se Anhela Beber",
-        "imagesFull": []
+        "imagesFull": [],
+        "materials": "Mineral Pigments, Silver Leaf, Kumohada Hemp Paper, Wood Board",
+        "materialsZh": "矿物颜料、银箔、云肌麻纸、木板",
+        "materialsEs": "Pigmentos Minerales, Pan de Plata, Papel de Cánamo Kumohada, Tabla de Madera",
+        "dimensions": "18 × 18 cm"
       },
       {
         "id": "kpyo9vvfwyqmsa9og2c",
@@ -2896,7 +2912,11 @@
         "tone": "#454545",
         "titleZh": "欲饮",
         "titleEs": "Al Borde de Beber",
-        "imagesFull": []
+        "imagesFull": [],
+        "materials": "Mineral Pigments, Gold Leaf, Clam Powder, Kumohada Hemp Paper, Wooden Board",
+        "dimensions": "15 × 10 cm",
+        "materialsZh": "矿物颜料、金箔、蛤粉、云肌麻纸、木板",
+        "materialsEs": "Pigmentos Minerales, Pan de Oro, Polvo de Almeja, Papel de Cánamo Kumohada, Tabla de Madera"
       },
       {
         "id": "fsldo1ihhslmsa9od04",
@@ -2909,7 +2929,11 @@
         "tone": "#454545",
         "titleZh": "臣服",
         "titleEs": "Sometimiento",
-        "imagesFull": []
+        "imagesFull": [],
+        "dimensions": "41.5 × 32 cm",
+        "materials": "Mineral Pigments, Gold Leaf, Clam Powder, Pastel, Kumohada Hemp Paper, Wooden Board",
+        "materialsZh": "矿物颜料、金箔、蛤粉、色粉、云肌麻纸、木板",
+        "materialsEs": "Pigmentos Minerales, Pan de Oro, Polvo de Almeja, Pastel, Papel de Cánamo Kumohada, Tabla de Madera"
       },
       {
         "id": "je2rpzh5l2msa9nzn4",
@@ -2922,20 +2946,11 @@
         "tone": "#454545",
         "titleZh": "奔",
         "titleEs": "Huida",
-        "imagesFull": []
-      },
-      {
-        "id": "r6is83art5msa9mqrw",
-        "year": 2022,
-        "title": "Reflected Red Blooms upon the Branches",
-        "date": "Sat Aug 01 2026",
-        "description": "点击这里填写作品介绍。",
-        "cover": "https://picsum.photos/seed/qrf6q03eplgmsa9mqrw/700/700",
-        "images": [],
-        "tone": "#454545",
-        "titleZh": "红花倒映枝条",
-        "titleEs": "Flores Rojas Reflejadas sobre las Ramas",
-        "imagesFull": []
+        "imagesFull": [],
+        "dimensions": "20 × 40 cm",
+        "materials": "Mineral Pigments, Gold Leaf, Clam Powder, Kumohada Hemp Paper, Wooden Board",
+        "materialsZh": "矿物颜料、金箔、蛤粉、云肌麻纸、木板",
+        "materialsEs": "Pigmentos Minerales, Pan de Oro, Polvo de Almeja, Papel de Cánamo Kumohada, Tabla de Madera"
       },
       {
         "id": "punt6vcdejmsa9khc7",
@@ -2951,7 +2966,11 @@
         "titleZh": "远方 I",
         "seriesEs": "Lejano",
         "titleEs": "Lejano I",
-        "imagesFull": []
+        "imagesFull": [],
+        "dimensions": "32 × 41 cm",
+        "materials": "Mineral Pigments, Clam Powder, Gold Leaf, Textured Washi Paper, Kumohada Hemp Paper, Wooden Board",
+        "materialsZh": "矿物颜料、蛤粉、金箔、肌理和纸、云肌麻纸、木板",
+        "materialsEs": "Pigmentos Minerales, Polvo de Almeja, Pan de Oro, Papel Washi Texturizado, Papel de Cánamo Kumohada, Tabla de Madera"
       },
       {
         "id": "04dw1zbfsfskmsa9khc7",
@@ -2967,7 +2986,11 @@
         "titleZh": "远方 II",
         "seriesEs": "Lejano",
         "titleEs": "Lejano II",
-        "imagesFull": []
+        "imagesFull": [],
+        "dimensions": "24.5 × 41 cm",
+        "materials": "Mineral Pigments, Pastel, Kumohada Hemp Paper, Textured Washi Paper, Wooden Board",
+        "materialsZh": "矿物颜料、色粉、云肌麻纸、肌理和纸、木板",
+        "materialsEs": "Pigmentos Minerales, Pastel, Papel de Cánamo Kumohada, Papel Washi Texturizado, Tabla de Madera"
       },
       {
         "id": "bj1so4il9plmsa9fzsg",
@@ -2980,7 +3003,11 @@
         "tone": "#454545",
         "titleZh": "朝拜",
         "titleEs": "Peregrinación",
-        "imagesFull": []
+        "imagesFull": [],
+        "dimensions": "20 × 30 cm",
+        "materials": "Mineral Pigments, Gold Leaf, Clam Powder, Kumohada Hemp Paper, Wooden Board",
+        "materialsZh": "矿物颜料、金箔、蛤粉、云肌麻纸、木板",
+        "materialsEs": "Pigmentos Minerales, Pan de Oro, Polvo de Almeja, Papel de Cánamo Kumohada, Tabla de Madera"
       },
       {
         "id": "png2reeotcamsa9fym1",
@@ -2993,7 +3020,11 @@
         "tone": "#454545",
         "titleZh": "万相生",
         "titleEs": "Todas las Formas Surgen",
-        "imagesFull": []
+        "imagesFull": [],
+        "dimensions": "32 × 41 cm",
+        "materials": "Mineral Pigments, Gold Leaf, Kumohada Hemp Paper, Wooden Board",
+        "materialsZh": "矿物颜料、金箔、云肌麻纸、木板",
+        "materialsEs": "Pigmentos Minerales, Pan de Oro, Papel de Cánamo Kumohada, Tabla de Madera"
       },
       {
         "id": "yuoymc9bdomsa9fgem",
@@ -3009,7 +3040,11 @@
         "titleZh": "唯一的道路 I",
         "seriesEs": "Camino Único",
         "titleEs": "Camino Único I",
-        "imagesFull": []
+        "imagesFull": [],
+        "dimensions": "30 × 30 cm",
+        "materials": "Mineral Pigments, Kumohada Hemp Paper, Wooden Board",
+        "materialsZh": "矿物颜料、云肌麻纸、木板",
+        "materialsEs": "Pigmentos Minerales, Papel de Cánamo Kumohada, Tabla de Madera"
       },
       {
         "id": "g61psdqm21msa9fgem",
@@ -3025,7 +3060,11 @@
         "titleZh": "唯一的道路 II",
         "seriesEs": "Camino Único",
         "titleEs": "Camino Único II",
-        "imagesFull": []
+        "imagesFull": [],
+        "dimensions": "30 × 40 cm",
+        "materials": "Mineral Pigments, Kumohada Hemp Paper, Wooden Board",
+        "materialsZh": "矿物颜料、云肌麻纸、木板",
+        "materialsEs": "Pigmentos Minerales, Papel de Cánamo Kumohada, Tabla de Madera"
       }
     ],
     "sidebarWidthOverride": 450,
