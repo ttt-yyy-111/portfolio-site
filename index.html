@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Yu Tiantian</title>
+    <title>Yu Tiantian | Visual Artist</title>
 
-    <!-- Google 搜索摘要配置（修改搜索结果下方的文字描述） -->
-    <meta name="description" content="Yu Tiantian is a visual artist and printmaker. Explore portfolio, printmaking artworks, and recent projects." />
+    <!-- Google 搜索摘要配置 -->
+    <meta name="description" content="Yu Tiantian is an experimental visual artist. Her practice moves between painting, printmaking, and mixed-media installation." />
 
-    <!-- Favicon 图标配置（兼容 Google 爬虫与各类浏览器） -->
+    <!-- Favicon 图标配置 -->
     <link rel="icon" type="image/png" href="/favicon-96x96.png?v=20260812" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=20260812" />
     <link rel="shortcut icon" href="/favicon.ico?v=20260812" />
@@ -16,13 +16,8 @@
     <meta name="apple-mobile-web-app-title" content="Yu Tiantian" />
     <link rel="manifest" href="/site.webmanifest?v=20260812" />
 
-    <!-- 用 CDN 引入 Tailwind，简单省事，不需要额外的构建配置 -->
+    <!-- 用 CDN 引入 Tailwind -->
     <script>
-      // 必须在加载 Tailwind 之前配置：让所有 hover: 样式（鼠标悬停变色/变灰这些）
-      // 只在真正支持"悬停"的设备（比如带鼠标的电脑）上生效。
-      // 手机是触屏，没有真正的悬停概念，浏览器会把"点一下"误判成"悬停"，
-      // 而且这个状态不会像鼠标移开那样自动清除，就会一直卡在"变灰"的样子——
-      // 加了这个配置之后，触屏设备完全不会触发 hover: 样式，从根上不会再卡住。
       window.tailwind = window.tailwind || {};
       tailwind.config = {
         future: {
@@ -58,9 +53,7 @@
           transform: translateX(0);
         }
       }
-      /* 图片保护：禁止拖拽把图片存到桌面、禁止选中、禁止手机长按弹出"保存图片"菜单。
-         提前说明：这只能挡住大部分"随手右键/长按存图"的情况，没有任何纯前端手段能
-         100% 防住截图或者用浏览器"开发者工具"看网络请求这类操作。 */
+      /* 图片保护 */
       img {
         -webkit-user-drag: none;
         -webkit-touch-callout: none;
