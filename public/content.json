@@ -910,8 +910,11 @@
         "tone": "#454545",
         "titleZh": "窒息的爱",
         "titleEs": "Amor Asfixiante",
-        "dimensions": "×  cm",
-        "imagesFull": []
+        "dimensions": "10 × 15 cm",
+        "imagesFull": [],
+        "materials": "Polymer Plate Printing, Aluminum Foil, Tissue Paper",
+        "materialsZh": "聚合物板印刷、锡纸、雪梨纸",
+        "materialsEs": "Impresión en Placa de Polímero, Papel de Aluminio, Papel de Seda"
       },
       {
         "id": "8tzje0k0ndemsssrcdu",
@@ -924,8 +927,11 @@
         "tone": "#454545",
         "titleEs": "Caballo Triunfante y Veloz en la Brisa Primaveral",
         "titleZh": "春风得意马蹄疾",
-        "dimensions": "×  cm",
-        "imagesFull": []
+        "dimensions": "10 × 15 cm",
+        "imagesFull": [],
+        "materials": "Free-Style Printing, Acrylic, Colored Sand, White Cardstock",
+        "materialsZh": "自由印刷、丙烯、彩砂、白色卡纸",
+        "materialsEs": "Impresión de Estilo Libre, Acrílico, Arena de Colores, Cartulina Blanca"
       },
       {
         "id": "ze1004bdgjnmsssrs3e",
@@ -938,8 +944,9 @@
         "tone": "#454545",
         "titleZh": "沉默的伸展",
         "titleEs": "Extendiéndose en Silencio",
-        "dimensions": "×  cm",
-        "imagesFull": []
+        "dimensions": "15 × 20 cm",
+        "imagesFull": [],
+        "materials": "Screen Printing, Tissue Paper"
       },
       {
         "id": "a5bkg5repj8mssssbvn",
@@ -952,8 +959,11 @@
         "tone": "#454545",
         "titleZh": "袒露",
         "titleEs": "Dejar al Descubierto",
-        "dimensions": "×  cm",
-        "imagesFull": []
+        "dimensions": "23 × 45 cm",
+        "imagesFull": [],
+        "materials": "Screen Printing, Gold Cardstock, Paper",
+        "materialsZh": "丝网印刷、金色卡纸、纸",
+        "materialsEs": "Serigrafía, Cartulina Dorada, Papel"
       },
       {
         "id": "akyrgvo5naqmssssufp",
@@ -966,22 +976,11 @@
         "tone": "#454545",
         "titleZh": "缠绕着拥抱",
         "titleEs": "Un Abrazo Entrelazado",
-        "dimensions": "×  cm",
-        "imagesFull": []
-      },
-      {
-        "id": "upryx4vhqyms75c85o",
-        "year": 2025,
-        "title": "Small Flowers and Plants",
-        "date": "Thu Jul 30 2026",
-        "description": "点击这里填写作品介绍。",
-        "cover": "https://picsum.photos/seed/z7ja4ogs92lms75c85o/700/700",
-        "images": [],
-        "tone": "#454545",
-        "titleEs": "Flores y Plantas Pequeñas",
-        "titleZh": "小花草",
+        "dimensions": "23 × 45 cm",
         "imagesFull": [],
-        "dimensions": "×  cm"
+        "materials": "Polymer Plate Printing, Screen Printing, Tin Foil, Tissue Paper, Film, Paper",
+        "materialsZh": "聚合物板印刷、丝网印刷、锡纸、雪梨纸、菲林片、纸",
+        "materialsEs": "Impresión en Placa de Polímero, Serigrafía, Papel de Aluminio, Papel de Seda, Película, Papel"
       },
       {
         "id": "kl1y3rg8c28ms75bzvu",
