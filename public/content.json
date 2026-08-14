@@ -906,12 +906,22 @@
         "date": "Fri Aug 14 2026",
         "description": "点击这里填写作品介绍。",
         "cover": "https://picsum.photos/seed/f1cxws5atvmsssqoeu/700/700",
-        "images": [],
+        "images": [
+          "/images/bw37df8zcjrmsssqoeu-img-0.jpg",
+          "/images/bw37df8zcjrmsssqoeu-img-1.jpg",
+          "/images/bw37df8zcjrmsssqoeu-img-2.jpg",
+          "/images/bw37df8zcjrmsssqoeu-img-3.jpg"
+        ],
         "tone": "#454545",
         "titleZh": "窒息的爱",
         "titleEs": "Amor Asfixiante",
-        "dimensions": "10 × 15 cm",
-        "imagesFull": [],
+        "dimensions": "65 × 23 cm / 45 × 23 cm / 35 × 23 cm / 35 × 23 cm",
+        "imagesFull": [
+          "/images/bw37df8zcjrmsssqoeu-full-0.jpg",
+          "/images/bw37df8zcjrmsssqoeu-full-1.jpg",
+          "/images/bw37df8zcjrmsssqoeu-full-2.jpg",
+          "/images/bw37df8zcjrmsssqoeu-full-3.jpg"
+        ],
         "materials": "Polymer Plate Printing, Aluminum Foil, Tissue Paper",
         "materialsZh": "聚合物板印刷、锡纸、雪梨纸",
         "materialsEs": "Impresión en Placa de Polímero, Papel de Aluminio, Papel de Seda"
@@ -923,12 +933,22 @@
         "date": "Fri Aug 14 2026",
         "description": "点击这里填写作品介绍。",
         "cover": "https://picsum.photos/seed/v8ej7rbtw1gmsssrcdu/700/700",
-        "images": [],
+        "images": [
+          "/images/8tzje0k0ndemsssrcdu-img-0.jpg",
+          "/images/8tzje0k0ndemsssrcdu-img-1.jpg",
+          "/images/8tzje0k0ndemsssrcdu-img-2.jpg",
+          "/images/8tzje0k0ndemsssrcdu-img-3.jpg"
+        ],
         "tone": "#454545",
         "titleEs": "Caballo Triunfante y Veloz en la Brisa Primaveral",
         "titleZh": "春风得意马蹄疾",
         "dimensions": "10 × 15 cm",
-        "imagesFull": [],
+        "imagesFull": [
+          "/images/8tzje0k0ndemsssrcdu-full-0.jpg",
+          "/images/8tzje0k0ndemsssrcdu-full-1.jpg",
+          "/images/8tzje0k0ndemsssrcdu-full-2.jpg",
+          "/images/8tzje0k0ndemsssrcdu-full-3.jpg"
+        ],
         "materials": "Free-Style Printing, Acrylic, Colored Sand, White Cardstock",
         "materialsZh": "自由印刷、丙烯、彩砂、白色卡纸",
         "materialsEs": "Impresión de Estilo Libre, Acrílico, Arena de Colores, Cartulina Blanca"
@@ -940,12 +960,18 @@
         "date": "Fri Aug 14 2026",
         "description": "点击这里填写作品介绍。",
         "cover": "https://picsum.photos/seed/xlzmlimqppmsssrs3e/700/700",
-        "images": [],
+        "images": [
+          "/images/ze1004bdgjnmsssrs3e-img-0.jpg",
+          "/images/ze1004bdgjnmsssrs3e-img-1.jpg"
+        ],
         "tone": "#454545",
         "titleZh": "沉默的伸展",
         "titleEs": "Extendiéndose en Silencio",
         "dimensions": "15 × 20 cm",
-        "imagesFull": [],
+        "imagesFull": [
+          "/images/ze1004bdgjnmsssrs3e-full-0.jpg",
+          "/images/ze1004bdgjnmsssrs3e-full-1.jpg"
+        ],
         "materials": "Screen Printing, Tissue Paper"
       },
       {
@@ -955,12 +981,18 @@
         "date": "Fri Aug 14 2026",
         "description": "点击这里填写作品介绍。",
         "cover": "https://picsum.photos/seed/fphfpd089omssssbvn/700/700",
-        "images": [],
+        "images": [
+          "/images/a5bkg5repj8mssssbvn-img-0.jpg",
+          "/images/a5bkg5repj8mssssbvn-img-1.jpg"
+        ],
         "tone": "#454545",
         "titleZh": "袒露",
         "titleEs": "Dejar al Descubierto",
         "dimensions": "23 × 45 cm",
-        "imagesFull": [],
+        "imagesFull": [
+          "/images/a5bkg5repj8mssssbvn-full-0.jpg",
+          "/images/a5bkg5repj8mssssbvn-full-1.jpg"
+        ],
         "materials": "Screen Printing, Gold Cardstock, Paper",
         "materialsZh": "丝网印刷、金色卡纸、纸",
         "materialsEs": "Serigrafía, Cartulina Dorada, Papel"
@@ -972,12 +1004,26 @@
         "date": "Fri Aug 14 2026",
         "description": "点击这里填写作品介绍。",
         "cover": "https://picsum.photos/seed/e29a25su9vqmssssufp/700/700",
-        "images": [],
+        "images": [
+          "/images/akyrgvo5naqmssssufp-img-0.jpg",
+          "/images/akyrgvo5naqmssssufp-img-1.jpg",
+          "/images/akyrgvo5naqmssssufp-img-2.jpg",
+          "/images/akyrgvo5naqmssssufp-img-3.jpg",
+          "/images/akyrgvo5naqmssssufp-img-4.jpg",
+          "/images/akyrgvo5naqmssssufp-img-5.jpg"
+        ],
         "tone": "#454545",
         "titleZh": "缠绕着拥抱",
         "titleEs": "Un Abrazo Entrelazado",
         "dimensions": "23 × 45 cm",
-        "imagesFull": [],
+        "imagesFull": [
+          "/images/akyrgvo5naqmssssufp-full-0.jpg",
+          "/images/akyrgvo5naqmssssufp-full-1.jpg",
+          "/images/akyrgvo5naqmssssufp-full-2.jpg",
+          "/images/akyrgvo5naqmssssufp-full-3.jpg",
+          "/images/akyrgvo5naqmssssufp-full-4.jpg",
+          "/images/akyrgvo5naqmssssufp-full-5.jpg"
+        ],
         "materials": "Polymer Plate Printing, Screen Printing, Tin Foil, Tissue Paper, Film, Paper",
         "materialsZh": "聚合物板印刷、丝网印刷、锡纸、雪梨纸、菲林片、纸",
         "materialsEs": "Impresión en Placa de Polímero, Serigrafía, Papel de Aluminio, Papel de Seda, Película, Papel"
