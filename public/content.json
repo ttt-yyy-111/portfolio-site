@@ -1201,14 +1201,21 @@
         "date": "Thu Jul 30 2026",
         "description": "点击这里填写作品介绍。",
         "cover": "https://picsum.photos/seed/088e5r65y8pjms75azft/700/700",
-        "images": [],
+        "images": [
+          "/images/z9gbw2pfyt9ms75azft-img-0.jpg",
+          "/images/z9gbw2pfyt9ms75azft-img-1.jpg"
+        ],
         "tone": "#454545",
         "titleEs": "Balancearse",
         "titleZh": "秋千",
-        "imagesFull": [],
+        "imagesFull": [
+          "/images/z9gbw2pfyt9ms75azft-full-0.jpg",
+          "/images/z9gbw2pfyt9ms75azft-full-1.jpg"
+        ],
         "materials": "Screen Printing, Bark Fragments, 3D Printing, Plastic Wrap, Iridescent Glass Organza, Tin Foil, Fishing Line, Fishhooks, Clear UV-Curing Resin",
         "materialsZh": "丝网印刷、树皮残块、3D打印、保鲜膜、镭射玻璃纱、锡箔、鱼线、鱼钩、透明UV自由树脂",
-        "materialsEs": "Impresión Serigráfica, Fragmentos de Corteza de Árbol, Impresión 3D, Film Transparente, Gasa de Cristal Láser, Papel de Aluminio, Hilo de Pescar, Anzuelo, Resina UV Transparente de Forma Libre"
+        "materialsEs": "Impresión Serigráfica, Fragmentos de Corteza de Árbol, Impresión 3D, Film Transparente, Gasa de Cristal Láser, Papel de Aluminio, Hilo de Pescar, Anzuelo, Resina UV Transparente de Forma Libre",
+        "dimensions": "35 × 8 cm"
       },
       {
         "id": "bka6djp3g5mms75attk",
