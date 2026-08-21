@@ -3281,18 +3281,24 @@ function InfoView({
                   {ensureHtmlBody(tField(section, "body"))
                     .split(/<br\s*\/?>/i)
                     .filter((para) => para.replace(/<[^>]+>/g, "").trim() !== "")
-                    .map((para, i) => (
+                    .map((para, i, arr) => (
                       <p
                         key={i}
                         style={
                           isZh
                             ? { textIndent: "2em" }
                             : {
-                                marginBottom: `${
-                                  (parseFloat(bodyStyle.fontSize) || 16) *
-                                  (parseFloat(bodyStyle.lineHeight) || 1.6) *
-                                  0.6
-                                }px`,
+                                // 英文 / 西班牙语排版习惯不用首行缩进，改用更明显的段间距来区分段落——
+                                // 间距按当前字号 × 行高的 1.5 倍来算，大致相当于多空出接近一整行的
+                                // 视觉留白，段落之间的分隔会比中文版清楚很多。最后一段不需要底部间距。
+                                marginBottom:
+                                  i === arr.length - 1
+                                    ? 0
+                                    : `${
+                                        (parseFloat(bodyStyle.fontSize) || 16) *
+                                        (parseFloat(bodyStyle.lineHeight) || 1.6) *
+                                        1.5
+                                      }px`,
                               }
                         }
                         dangerouslySetInnerHTML={{ __html: para }}
