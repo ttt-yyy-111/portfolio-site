@@ -1519,7 +1519,7 @@ function Portfolio() {
               content: "";
               position: absolute;
               right: 0;
-              bottom: 0;
+              bottom: -1px;
               left: 0;
               height: 2px;
               background: currentColor;
@@ -3045,7 +3045,7 @@ function WorkListItem({
         lang={bodyTextLang}
         className={`desktop-work-title text-left min-w-0 ${
           selectedId === w.id
-            ? "text-neutral-900 underline decoration-2 underline-offset-3"
+            ? "text-neutral-900 underline decoration-2 underline-offset-4"
             : "text-neutral-800"
         }`}
       >
