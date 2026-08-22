@@ -1487,8 +1487,8 @@ function Portfolio() {
             animation: language-menu-option-reveal 220ms ease-out both;
           }
           @keyframes language-menu-option-reveal {
-            from { opacity: 0; transform: translateX(-24px); }
-            to { opacity: 1; transform: translateX(0); }
+            from { transform: translateX(-24px); }
+            to { transform: translateX(0); }
           }
           @media (prefers-reduced-motion: reduce) {
             .sidebar-icon-hover-reveal,
