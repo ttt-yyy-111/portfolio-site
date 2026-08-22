@@ -1532,6 +1532,10 @@ function Portfolio() {
               transform: scaleX(1);
               transform-origin: left center;
             }
+            .desktop-work-title-active::after {
+              transform: scaleX(1);
+              transform-origin: left center;
+            }
           }
           @media (prefers-reduced-motion: reduce) {
             .sidebar-icon-hover-reveal,
@@ -3045,7 +3049,7 @@ function WorkListItem({
         lang={bodyTextLang}
         className={`desktop-work-title text-left min-w-0 ${
           selectedId === w.id
-            ? "text-neutral-900 underline underline-offset-2"
+            ? "text-neutral-900 underline underline-offset-2 md:decoration-transparent desktop-work-title-active"
             : "text-neutral-800"
         }`}
       >
