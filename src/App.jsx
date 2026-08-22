@@ -1480,8 +1480,8 @@ function Portfolio() {
             animation: language-menu-reveal 300ms ease-out both;
           }
           @keyframes language-menu-reveal {
-            from { clip-path: inset(0 0 100% 0); }
-            to { clip-path: inset(0 0 0 0); }
+            from { max-height: 0; }
+            to { max-height: 120px; }
           }
           .language-menu-option-reveal {
             animation: language-menu-option-reveal 220ms ease-out both;
