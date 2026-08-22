@@ -526,6 +526,7 @@ function Portfolio() {
     // 都一定能回到首页最上面，不用等状态变化才生效。
     if (mainRef.current) mainRef.current.scrollTop = 0;
     restoreGalleryScrollRef.current = false;
+    pushNavState({ selectedId: null, showInfo: false });
   };
   const goToWork = (id, direction = null) => {
     // 如果现在正在画廊页，先记一下画廊滚动到哪了，方便详情页的"返回"按钮能回到这个位置
@@ -536,6 +537,7 @@ function Portfolio() {
     setSelectedId(id);
     setMobileMenuOpen(false);
     setNavDirection(direction);
+    pushNavState({ selectedId: id, showInfo: false });
   };
   // 详情页左侧"返回"按钮专用：回到画廊，并恢复到进入详情页之前画廊滚动到的那个位置，
   // 不是统一回到画廊顶部（这个跟点姓名/Index回首页的 goToGallery 是分开的，互不影响）。
@@ -555,6 +557,7 @@ function Portfolio() {
     setShowInfo(false);
     setMobileMenuOpen(false);
     setNavDirection(null);
+    pushNavState({ selectedId: null, showInfo: false });
   };
   const goToInfo = () => {
     // 如果现在正在画廊页，先记一下画廊滚动到哪了，方便Information页的"返回"按钮能回到这个位置
@@ -565,7 +568,44 @@ function Portfolio() {
     setShowInfo(true);
     setMobileMenuOpen(false);
     setNavDirection(null);
+    pushNavState({ selectedId: null, showInfo: true });
   };
+
+  // ---------- 浏览器"后退/前进"支持 ----------
+  // 上面几个跳转函数本来只是切换 React 内部状态（selectedId / showInfo），浏览器地址栏、
+  // 前进后退键完全不知道页面"跳转"过。这里把每次跳转都记一笔到浏览器历史里（pushNavState），
+  // 并监听 popstate 事件：点后退/前进键时，从历史记录里取出当时的页面状态直接恢复，
+  // 这样后退键就能像普通网页一样，一步步退回到之前看过的页面。
+  const isPopNavRef = useRef(false); // 当前这次状态变化是不是"点了后退/前进"引起的——是的话就不用再重复 push 一次历史
+  const pushNavState = (state) => {
+    if (isPopNavRef.current || typeof window === "undefined") return;
+    window.history.pushState(state, "");
+  };
+  useEffect(() => {
+    if (typeof window === "undefined") return undefined;
+    // 页面刚打开时，把当前状态（首页画廊）记成历史里的第一条，后面每次跳转都在这条基础上往后叠加
+    window.history.replaceState({ selectedId: null, showInfo: false }, "");
+    const onPopState = (e) => {
+      isPopNavRef.current = true;
+      const state = e.state || { selectedId: null, showInfo: false };
+      if (!state.selectedId && !state.showInfo) {
+        // 后退回的是画廊页：跟点"返回"按钮的体验保持一致，恢复到之前画廊滚动到的位置，
+        // 而不是简单粗暴地跳回最顶部
+        restoreGalleryScrollRef.current = true;
+        setJustRestoredGallery(true);
+      }
+      setSelectedId(state.selectedId || null);
+      setShowInfo(!!state.showInfo);
+      setMobileMenuOpen(false);
+      setNavDirection(null);
+      // 状态恢复完成后再把标记复位，避免这次 popstate 引发的 setState 被误判成还需要再 push 一次历史
+      requestAnimationFrame(() => {
+        isPopNavRef.current = false;
+      });
+    };
+    window.addEventListener("popstate", onPopState);
+    return () => window.removeEventListener("popstate", onPopState);
+  }, []);
   const [typoPanelOpen, setTypoPanelOpen] = useState(false);
   const typoPanelRef = useRef(null);
   // 点击"Aa 文字样式"面板以外的地方（切换按钮本身除外，不然会跟按钮自己的开关逻辑打架）时，自动关闭面板
