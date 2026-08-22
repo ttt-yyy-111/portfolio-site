@@ -371,13 +371,25 @@ function Portfolio() {
   const languageMenuRef = useRef(null);
   const [hoveredLanguageOption, setHoveredLanguageOption] = useState(null);
   const [exitingLanguageOption, setExitingLanguageOption] = useState(null);
+  const resetLanguageOptionAnimation = () => {
+    setHoveredLanguageOption(null);
+    setExitingLanguageOption(null);
+  };
+  const closeLanguageMenu = () => {
+    setLanguageMenuOpen(false);
+    resetLanguageOptionAnimation();
+  };
+  const toggleLanguageMenu = () => {
+    resetLanguageOptionAnimation();
+    setLanguageMenuOpen((open) => !open);
+  };
   // 点击下拉菜单以外的地方（语言按钮本身除外）自动关闭菜单，跟"Aa 文字样式"面板是同一套逻辑
   useEffect(() => {
     if (!languageMenuOpen) return undefined;
     const onPointerDown = (e) => {
       if (e.target.closest("[data-language-toggle]")) return;
       if (languageMenuRef.current && !languageMenuRef.current.contains(e.target)) {
-        setLanguageMenuOpen(false);
+        closeLanguageMenu();
       }
     };
     document.addEventListener("mousedown", onPointerDown);
@@ -389,7 +401,7 @@ function Portfolio() {
   }, [languageMenuOpen]);
   const selectLanguage = (code) => {
     setLanguage(code);
-    setLanguageMenuOpen(false);
+    closeLanguageMenu();
   };
   // 语言按钮上显示的是当前语言（不是切换后的语言）
   const languageButtonLabel = LANGUAGE_OPTIONS.find((l) => l.code === language)?.label || "EN";
@@ -1585,7 +1597,7 @@ function Portfolio() {
           )}
           <div className="relative">
             <button
-              onClick={() => setLanguageMenuOpen((v) => !v)}
+              onClick={toggleLanguageMenu}
               data-language-toggle="true"
               className="language-toggle relative overflow-hidden text-xs font-bold px-3 py-1.5 rounded-full border border-black bg-white text-black"
             >
@@ -1931,7 +1943,7 @@ function Portfolio() {
           <div className="flex items-center gap-2">
             <div className="relative">
               <button
-                onClick={() => setLanguageMenuOpen((v) => !v)}
+                onClick={toggleLanguageMenu}
                 data-language-toggle="true"
                 className="language-toggle relative overflow-hidden text-xs font-bold px-3 py-1.5 rounded-full border border-black bg-white text-black"
               >
