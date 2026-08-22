@@ -2393,7 +2393,7 @@ function Portfolio() {
             </div>
           ) : (
             <div
-              className="px-6 py-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-neutral-500"
+              className="px-6 py-3 flex flex-wrap items-center gap-x-6 gap-y-3 text-neutral-500"
               style={footerLinksStyle}
               lang={footerLinksLang}
             >
@@ -2403,7 +2403,7 @@ function Portfolio() {
                 aria-label="CV"
                 title="CV"
               >
-                <img src="/icons/cv.svg" alt="" className="h-8 w-8" />
+                <img src="/icons/cv.svg" alt="" className="h-12 w-12" />
               </button>
 
               <div className="flex items-center gap-1">
@@ -2415,7 +2415,7 @@ function Portfolio() {
                     if (editMode) e.preventDefault();
                   }}
                 >
-                  <img src="/icons/email.svg" alt="" className="h-8 w-8" />
+                  <img src="/icons/email.svg" alt="" className="h-12 w-12" />
                 </a>
                 {editMode && (
                   <input
@@ -2444,7 +2444,7 @@ function Portfolio() {
                     if (editMode) e.preventDefault();
                   }}
                 >
-                  <img src="/icons/instagram.svg" alt="" className="h-8 w-8" />
+                  <img src="/icons/instagram.svg" alt="" className="h-12 w-12" />
                 </a>
                 {editMode && (
                   <input
@@ -2473,7 +2473,7 @@ function Portfolio() {
                     if (editMode) e.preventDefault();
                   }}
                 >
-                  <img src="/icons/rednote.svg" alt="" className="h-8 w-8" />
+                  <img src="/icons/rednote.svg" alt="" className="h-12 w-12" />
                 </a>
                 {editMode && (
                   <input
