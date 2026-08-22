@@ -277,6 +277,18 @@ function reorderList(list, fromIndex, toIndex) {
   return next;
 }
 
+// 电脑端侧栏图标：悬停时用从中心扩张的圆形，揭示对应的反白版本图标。
+function HoverRevealIcon({ src, hoverSrc }) {
+  return (
+    <span className="relative block h-8 w-8" aria-hidden="true">
+      <img src={src} alt="" className="block h-full w-full" />
+      <span className="sidebar-icon-hover-reveal absolute inset-0 pointer-events-none">
+        <img src={hoverSrc} alt="" className="block h-full w-full" />
+      </span>
+    </span>
+  );
+}
+
 function Portfolio() {
   const [data, setData] = useState(DEFAULT_DATA); // 直接用 content.json 里的内容做初始值，内存里编辑
   const dataRef = useRef(data);
@@ -1403,6 +1415,17 @@ function Portfolio() {
               悬浮按钮）就会被算到工具栏底下，肉眼完全看不到。100dvh 会跟着工具栏的展开/
               收起实时变化，永远贴合当前真正能看到的区域，不会被工具栏挡住。 */
           }
+          .sidebar-icon-hover-reveal {
+            clip-path: circle(0% at 50% 50%);
+            transition: clip-path 280ms ease-out;
+          }
+          .group:hover .sidebar-icon-hover-reveal,
+          .group:focus-visible .sidebar-icon-hover-reveal {
+            clip-path: circle(75% at 50% 50%);
+          }
+          @media (prefers-reduced-motion: reduce) {
+            .sidebar-icon-hover-reveal { transition: none; }
+          }
         `}</style>
       )}
       {googleFontFamilies.length > 0 && (
@@ -2399,23 +2422,24 @@ function Portfolio() {
             >
               <button
                 onClick={() => !editMode && goToInfo()}
-                className={showInfo ? "text-neutral-900 underline underline-offset-2" : ""}
+                className={`group ${showInfo ? "text-neutral-900 underline underline-offset-2" : ""}`}
                 aria-label="CV"
                 title="CV"
               >
-                <img src="/icons/cv.svg" alt="" className="h-8 w-8" />
+                <HoverRevealIcon src="/icons/cv.svg" hoverSrc="/icons/cv-hover.svg" />
               </button>
 
               <div className="flex items-center gap-1">
                 <a
                   href={editMode ? undefined : `mailto:${data.contact?.email || ""}`}
+                  className="group"
                   aria-label="Email"
                   title="Email"
                   onClick={(e) => {
                     if (editMode) e.preventDefault();
                   }}
                 >
-                  <img src="/icons/email.svg" alt="" className="h-8 w-8" />
+                  <HoverRevealIcon src="/icons/email.svg" hoverSrc="/icons/email-hover.svg" />
                 </a>
                 {editMode && (
                   <input
@@ -2436,6 +2460,7 @@ function Portfolio() {
               <div className="flex items-center gap-1">
                 <a
                   href={editMode ? undefined : data.contact?.instagram || "#"}
+                  className="group"
                   aria-label="Instagram"
                   title="Instagram"
                   target={editMode ? undefined : "_blank"}
@@ -2444,7 +2469,7 @@ function Portfolio() {
                     if (editMode) e.preventDefault();
                   }}
                 >
-                  <img src="/icons/instagram.svg" alt="" className="h-8 w-8" />
+                  <HoverRevealIcon src="/icons/instagram.svg" hoverSrc="/icons/instagram-hover.svg" />
                 </a>
                 {editMode && (
                   <input
@@ -2465,6 +2490,7 @@ function Portfolio() {
               <div className="flex items-center gap-1">
                 <a
                   href={editMode ? undefined : data.contact?.redNote || "#"}
+                  className="group"
                   aria-label="RedNote"
                   title="RedNote"
                   target={editMode ? undefined : "_blank"}
@@ -2473,7 +2499,7 @@ function Portfolio() {
                     if (editMode) e.preventDefault();
                   }}
                 >
-                  <img src="/icons/rednote.svg" alt="" className="h-8 w-8" />
+                  <HoverRevealIcon src="/icons/rednote.svg" hoverSrc="/icons/rednote-hover.svg" />
                 </a>
                 {editMode && (
                   <input
