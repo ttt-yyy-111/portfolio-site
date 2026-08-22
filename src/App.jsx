@@ -2368,7 +2368,7 @@ function Portfolio() {
                                 className="min-w-0"
                               />
                             ) : (
-                              <span className="min-w-0">{displaySeriesName}</span>
+                              <span className="desktop-work-title min-w-0">{displaySeriesName}</span>
                             )}
                           </button>
                           {editMode && (
