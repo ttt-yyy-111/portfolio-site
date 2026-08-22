@@ -1477,19 +1477,26 @@ function Portfolio() {
             to { transform: translateX(110%); }
           }
           .language-menu-reveal {
-            transform-origin: top;
-            animation: language-menu-reveal 220ms ease-out both;
+            animation: language-menu-reveal 300ms ease-out both;
           }
           @keyframes language-menu-reveal {
-            from { opacity: 0; transform: scaleY(0); }
-            to { opacity: 1; transform: scaleY(1); }
+            from { clip-path: inset(0 0 100% 0); }
+            to { clip-path: inset(0 0 0 0); }
+          }
+          .language-menu-option-reveal {
+            animation: language-menu-option-reveal 220ms ease-out both;
+          }
+          @keyframes language-menu-option-reveal {
+            from { opacity: 0; transform: translateX(-24px); }
+            to { opacity: 1; transform: translateX(0); }
           }
           @media (prefers-reduced-motion: reduce) {
             .sidebar-icon-hover-reveal,
             .language-toggle-hover-reveal { transition: none; }
             .language-menu-option-enter,
             .language-menu-option-exit,
-            .language-menu-reveal { animation-duration: 0ms; }
+            .language-menu-reveal,
+            .language-menu-option-reveal { animation-duration: 0ms; }
           }
         `}</style>
       )}
@@ -1622,9 +1629,10 @@ function Portfolio() {
                 ref={languageMenuRef}
                 className="language-menu-reveal absolute top-9 right-0 z-30 inline-flex w-max flex-col overflow-hidden rounded-[15px] border-2 border-black bg-white"
               >
-                {LANGUAGE_OPTIONS.map((opt) => (
+                {LANGUAGE_OPTIONS.map((opt, index) => (
                   <button
                     key={opt.code}
+                    style={{ animationDelay: `${index * 100}ms` }}
                     onClick={() => selectLanguage(opt.code)}
                     onMouseEnter={() => {
                       setHoveredLanguageOption(opt.code);
@@ -1636,7 +1644,7 @@ function Portfolio() {
                         prev.includes(opt.code) ? prev : [...prev, opt.code]
                       );
                     }}
-                    className={`relative px-[18px] py-[6px] text-left text-lg leading-none ${
+                    className={`language-menu-option-reveal relative px-[18px] py-[6px] text-left text-lg leading-none ${
                       opt.code === language
                         ? "font-bold"
                         : ""
@@ -1970,9 +1978,10 @@ function Portfolio() {
                   ref={languageMenuRef}
                   className="language-menu-reveal absolute top-9 right-0 z-30 inline-flex w-max flex-col overflow-hidden rounded-[15px] border-2 border-black bg-white"
                 >
-                  {LANGUAGE_OPTIONS.map((opt) => (
+                  {LANGUAGE_OPTIONS.map((opt, index) => (
                     <button
                       key={opt.code}
+                      style={{ animationDelay: `${index * 100}ms` }}
                       onClick={() => selectLanguage(opt.code)}
                       onMouseEnter={() => {
                         setHoveredLanguageOption(opt.code);
@@ -1984,7 +1993,7 @@ function Portfolio() {
                           prev.includes(opt.code) ? prev : [...prev, opt.code]
                         );
                       }}
-                      className={`relative px-[18px] py-[6px] text-left text-lg leading-none ${
+                      className={`language-menu-option-reveal relative px-[18px] py-[6px] text-left text-lg leading-none ${
                         opt.code === language
                           ? "font-bold"
                           : ""
