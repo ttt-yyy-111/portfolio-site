@@ -1597,7 +1597,7 @@ function Portfolio() {
             {languageMenuOpen && (
               <div
                 ref={languageMenuRef}
-                className="absolute top-9 right-0 z-30 w-28 rounded-lg border border-black bg-white py-1"
+                className="absolute top-9 right-0 z-30 w-42 rounded-xl border border-black bg-white py-1.5"
               >
                 {LANGUAGE_OPTIONS.map((opt) => (
                   <button
@@ -1611,19 +1611,17 @@ function Portfolio() {
                       setHoveredLanguageOption(null);
                       setExitingLanguageOption(opt.code);
                     }}
-                    className={`relative w-full overflow-hidden px-3 py-1.5 text-left text-xs text-black ${
+                    className={`relative w-full overflow-hidden px-[18px] py-[9px] text-left text-lg ${
                       opt.code === language
                         ? "font-bold"
                         : ""
                     }`}
                   >
-                    <span className="relative z-10">{opt.name}</span>
+                    <span className="relative z-30 text-white mix-blend-difference">{opt.name}</span>
                     <span
                       aria-hidden="true"
-                      className={`language-menu-option-hover pointer-events-none absolute inset-y-0 left-0 z-20 flex w-full items-center rounded-full bg-black px-3 text-white ${languageOptionHoverClass(opt.code)}`}
-                    >
-                      {opt.name}
-                    </span>
+                      className={`language-menu-option-hover pointer-events-none absolute inset-y-0 left-0 z-20 w-full rounded-full bg-black ${languageOptionHoverClass(opt.code)}`}
+                    />
                   </button>
                 ))}
               </div>
@@ -1945,7 +1943,7 @@ function Portfolio() {
               {languageMenuOpen && (
                 <div
                   ref={languageMenuRef}
-                  className="absolute top-9 right-0 z-30 w-28 rounded-lg border border-black bg-white py-1"
+                  className="absolute top-9 right-0 z-30 w-42 rounded-xl border border-black bg-white py-1.5"
                 >
                   {LANGUAGE_OPTIONS.map((opt) => (
                     <button
@@ -1959,19 +1957,17 @@ function Portfolio() {
                         setHoveredLanguageOption(null);
                         setExitingLanguageOption(opt.code);
                       }}
-                      className={`relative w-full overflow-hidden px-3 py-1.5 text-left text-xs text-black ${
+                      className={`relative w-full overflow-hidden px-[18px] py-[9px] text-left text-lg ${
                         opt.code === language
                           ? "font-bold"
                           : ""
                       }`}
                     >
-                      <span className="relative z-10">{opt.name}</span>
+                      <span className="relative z-30 text-white mix-blend-difference">{opt.name}</span>
                       <span
                         aria-hidden="true"
-                        className={`language-menu-option-hover pointer-events-none absolute inset-y-0 left-0 z-20 flex w-full items-center rounded-full bg-black px-3 text-white ${languageOptionHoverClass(opt.code)}`}
-                      >
-                        {opt.name}
-                      </span>
+                        className={`language-menu-option-hover pointer-events-none absolute inset-y-0 left-0 z-20 w-full rounded-full bg-black ${languageOptionHoverClass(opt.code)}`}
+                      />
                     </button>
                   ))}
                 </div>
