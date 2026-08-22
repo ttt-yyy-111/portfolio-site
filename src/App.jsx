@@ -2400,38 +2400,22 @@ function Portfolio() {
               <button
                 onClick={() => !editMode && goToInfo()}
                 className={showInfo ? "text-neutral-900 underline underline-offset-2" : ""}
+                aria-label="CV"
+                title="CV"
               >
-                <Editable
-                  as="span"
-                  editMode={editMode}
-                  value={tField(data.contact || {}, "informationLabel") || "Information"}
-                  onChange={(v) =>
-                    updateData((prev) => ({
-                      ...prev,
-                      contact: { ...(prev.contact || {}), [langKey("informationLabel")]: v },
-                    }))
-                  }
-                />
+                <img src="/icons/cv.svg" alt="" className="h-4 w-4" />
               </button>
 
               <div className="flex items-center gap-1">
                 <a
                   href={editMode ? undefined : `mailto:${data.contact?.email || ""}`}
+                  aria-label="Email"
+                  title="Email"
                   onClick={(e) => {
                     if (editMode) e.preventDefault();
                   }}
                 >
-                  <Editable
-                    as="span"
-                    editMode={editMode}
-                    value={tField(data.contact || {}, "emailLabel") || "Email"}
-                    onChange={(v) =>
-                      updateData((prev) => ({
-                        ...prev,
-                        contact: { ...(prev.contact || {}), [langKey("emailLabel")]: v },
-                      }))
-                    }
-                  />
+                  <img src="/icons/email.svg" alt="" className="h-4 w-4" />
                 </a>
                 {editMode && (
                   <input
@@ -2452,23 +2436,15 @@ function Portfolio() {
               <div className="flex items-center gap-1">
                 <a
                   href={editMode ? undefined : data.contact?.instagram || "#"}
+                  aria-label="Instagram"
+                  title="Instagram"
                   target={editMode ? undefined : "_blank"}
                   rel="noopener noreferrer"
                   onClick={(e) => {
                     if (editMode) e.preventDefault();
                   }}
                 >
-                  <Editable
-                    as="span"
-                    editMode={editMode}
-                    value={tField(data.contact || {}, "instagramLabel") || "Instagram"}
-                    onChange={(v) =>
-                      updateData((prev) => ({
-                        ...prev,
-                        contact: { ...(prev.contact || {}), [langKey("instagramLabel")]: v },
-                      }))
-                    }
-                  />
+                  <img src="/icons/instagram.svg" alt="" className="h-4 w-4" />
                 </a>
                 {editMode && (
                   <input
@@ -2489,23 +2465,15 @@ function Portfolio() {
               <div className="flex items-center gap-1">
                 <a
                   href={editMode ? undefined : data.contact?.redNote || "#"}
+                  aria-label="RedNote"
+                  title="RedNote"
                   target={editMode ? undefined : "_blank"}
                   rel="noopener noreferrer"
                   onClick={(e) => {
                     if (editMode) e.preventDefault();
                   }}
                 >
-                  <Editable
-                    as="span"
-                    editMode={editMode}
-                    value={tField(data.contact || {}, "redNoteLabel") || "RedNote"}
-                    onChange={(v) =>
-                      updateData((prev) => ({
-                        ...prev,
-                        contact: { ...(prev.contact || {}), [langKey("redNoteLabel")]: v },
-                      }))
-                    }
-                  />
+                  <img src="/icons/rednote.svg" alt="" className="h-4 w-4" />
                 </a>
                 {editMode && (
                   <input
