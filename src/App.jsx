@@ -1476,11 +1476,20 @@ function Portfolio() {
             from { transform: translateX(0); }
             to { transform: translateX(110%); }
           }
+          .language-menu-reveal {
+            transform-origin: top;
+            animation: language-menu-reveal 220ms ease-out both;
+          }
+          @keyframes language-menu-reveal {
+            from { opacity: 0; transform: scaleY(0); }
+            to { opacity: 1; transform: scaleY(1); }
+          }
           @media (prefers-reduced-motion: reduce) {
             .sidebar-icon-hover-reveal,
             .language-toggle-hover-reveal { transition: none; }
             .language-menu-option-enter,
-            .language-menu-option-exit { animation-duration: 0ms; }
+            .language-menu-option-exit,
+            .language-menu-reveal { animation-duration: 0ms; }
           }
         `}</style>
       )}
@@ -1611,7 +1620,7 @@ function Portfolio() {
             {languageMenuOpen && (
               <div
                 ref={languageMenuRef}
-                className="absolute top-9 right-0 z-30 inline-flex w-max flex-col overflow-hidden rounded-[15px] border-2 border-black bg-white"
+                className="language-menu-reveal absolute top-9 right-0 z-30 inline-flex w-max flex-col overflow-hidden rounded-[15px] border-2 border-black bg-white"
               >
                 {LANGUAGE_OPTIONS.map((opt) => (
                   <button
@@ -1959,7 +1968,7 @@ function Portfolio() {
               {languageMenuOpen && (
                 <div
                   ref={languageMenuRef}
-                  className="absolute top-9 right-0 z-30 inline-flex w-max flex-col overflow-hidden rounded-[15px] border-2 border-black bg-white"
+                  className="language-menu-reveal absolute top-9 right-0 z-30 inline-flex w-max flex-col overflow-hidden rounded-[15px] border-2 border-black bg-white"
                 >
                   {LANGUAGE_OPTIONS.map((opt) => (
                     <button
