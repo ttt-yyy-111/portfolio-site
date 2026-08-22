@@ -2953,11 +2953,27 @@ function GalleryImage({ w, editMode, onSelect, onReplaceCover, skipReveal, tFiel
 // "Fashion & Art" 这种带 & 的文字，转义过一次变成 "Fashion &amp; Art" 以后，
 // 再被当成"老格式"重新转义，就会变成错误的 "Fashion &amp;amp; Art"。
 // 否则就是没处理过的老格式，转义一下特殊字符、把 \n 换成 <br>，这样老内容不用重新编辑也能正常显示。
+// 有些浏览器（尤其是 Chrome）在 contentEditable 编辑框里按 Enter 换行时，不一定老实用 <br>，
+// 反而会把每一行各自包一层 <div>...</div>（有时候是 <p>...</p>）。这种结构肉眼看着也是正常换行，
+// 但后面"按 <br> 拆分段落"的逻辑完全识别不出来，会把整块内容误判成只有一段，导致段间距怎么调都没用。
+// 这里统一做一次标准化：把 <div>/<p> 的包裹去掉、换成 <br>，这样不管浏览器实际存的是哪种结构，
+// 只要肉眼看着是换行，程序都能正确当成"新的一段"来处理。
+function normalizeLineWrappers(html) {
+  return html
+    .replace(/<(?:div|p)[^>]*>/gi, "")
+    .replace(/<\/(?:div|p)>/gi, "<br>")
+    .replace(/(?:<br\s*\/?>\s*){2,}/gi, "<br>")
+    .replace(/^(?:<br\s*\/?>\s*)+/i, "")
+    .replace(/(?:<br\s*\/?>\s*)+$/i, "");
+}
+
 function ensureHtmlBody(raw) {
   if (!raw) return "";
-  if (/<[a-z][\s\S]*>/i.test(raw) || /&(amp|lt|gt|quot|#39|#\d+|#x[0-9a-f]+);/i.test(raw)) return raw;
+  if (/<[a-z][\s\S]*>/i.test(raw) || /&(amp|lt|gt|quot|#39|#\d+|#x[0-9a-f]+);/i.test(raw)) {
+    return normalizeLineWrappers(raw);
+  }
   const escaped = raw.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-  return escaped.replace(/\n/g, "<br>");
+  return normalizeLineWrappers(escaped.replace(/\n/g, "<br>"));
 }
 
 function splitLeadingToken(html) {
