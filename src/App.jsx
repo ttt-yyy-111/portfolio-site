@@ -2012,7 +2012,7 @@ function Portfolio() {
                           prev.includes(opt.code) ? prev : [...prev, opt.code]
                         );
                       }}
-                      className={`language-menu-option relative px-[18px] py-[6px] text-left text-lg leading-none ${
+                      className={`language-menu-option relative px-[14px] py-[6px] text-left text-lg leading-none ${
                         opt.code === language
                           ? "bg-black font-bold"
                           : ""
