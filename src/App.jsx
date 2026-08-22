@@ -3297,29 +3297,28 @@ function InfoView({
                   {ensureHtmlBody(tField(section, "body"))
                     .split(/<br\s*\/?>/i)
                     .filter((para) => para.replace(/<[^>]+>/g, "").trim() !== "")
-                    .map((para, i, arr) => (
-                      <p
-                        key={i}
-                        style={
-                          isZh
-                            ? { textIndent: "2em" }
-                            : {
-                                // 英文 / 西班牙语排版习惯不用首行缩进，改用更明显的段间距来区分段落——
-                                // 间距按当前字号 × 行高的 0.8 倍来算，比正常行距略宽出一截，
-                                // 分段效果清晰可辨但不会显得太空。最后一段不需要底部间距。
-                                marginBottom:
-                                  i === arr.length - 1
-                                    ? 0
-                                    : `${
-                                        (parseFloat(bodyStyle.fontSize) || 16) *
-                                        (parseFloat(bodyStyle.lineHeight) || 1.6) *
-                                        0.8
-                                      }px`,
-                              }
-                        }
-                        dangerouslySetInnerHTML={{ __html: para }}
-                      />
-                    ))}
+                    .map((para, i, arr) => {
+                      // 段间距统一按"当前字号 × 行高 × 0.8"来算，中英文共用同一套间距逻辑；
+                      // 中文额外保留首行缩进 2 字符（传统排版习惯），英文/西班牙语则不用缩进，
+                      // 完全靠段间距来区分段落。最后一段都不需要再留底部间距。
+                      const paragraphGap =
+                        i === arr.length - 1
+                          ? 0
+                          : (parseFloat(bodyStyle.fontSize) || 16) *
+                            (parseFloat(bodyStyle.lineHeight) || 1.6) *
+                            0.8;
+                      return (
+                        <p
+                          key={i}
+                          style={
+                            isZh
+                              ? { textIndent: "2em", marginBottom: `${paragraphGap}px` }
+                              : { marginBottom: `${paragraphGap}px` }
+                          }
+                          dangerouslySetInnerHTML={{ __html: para }}
+                        />
+                      );
+                    })}
                 </div>
               )}
             </div>
