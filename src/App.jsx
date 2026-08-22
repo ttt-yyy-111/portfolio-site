@@ -1623,7 +1623,7 @@ function Portfolio() {
                       setHoveredLanguageOption(null);
                       setExitingLanguageOption(opt.code);
                     }}
-                    className={`relative overflow-hidden px-[18px] py-[6px] text-left text-lg leading-none ${
+                    className={`relative px-[18px] py-[6px] text-left text-lg leading-none ${
                       opt.code === language
                         ? "font-bold"
                         : ""
@@ -1969,7 +1969,7 @@ function Portfolio() {
                         setHoveredLanguageOption(null);
                         setExitingLanguageOption(opt.code);
                       }}
-                      className={`relative overflow-hidden px-[18px] py-[6px] text-left text-lg leading-none ${
+                      className={`relative px-[18px] py-[6px] text-left text-lg leading-none ${
                         opt.code === language
                           ? "font-bold"
                           : ""
