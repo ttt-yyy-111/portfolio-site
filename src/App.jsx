@@ -1530,8 +1530,12 @@ function Portfolio() {
           .language-menu-option:focus-visible .language-menu-option-label {
             color: white;
           }
-          .desktop-scrollbar { scrollbar-width: none; }
-          .desktop-scrollbar::-webkit-scrollbar { width: 0; height: 0; }
+          .desktop-scrollbar {
+            scrollbar-width: thin;
+            scrollbar-color: transparent transparent;
+          }
+          .desktop-scrollbar::-webkit-scrollbar { width: 8px; height: 8px; }
+          .desktop-scrollbar::-webkit-scrollbar-thumb { background: transparent; }
           .desktop-scrollbar.desktop-scrollbar-scrolling {
             scrollbar-width: thin;
             scrollbar-color: rgba(0, 0, 0, 0.35) transparent;
