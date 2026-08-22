@@ -369,6 +369,8 @@ function Portfolio() {
   // 点击语言按钮弹出的下拉菜单是否展开
   const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
   const languageMenuRef = useRef(null);
+  const [hoveredLanguageOption, setHoveredLanguageOption] = useState(null);
+  const [exitingLanguageOption, setExitingLanguageOption] = useState(null);
   // 点击下拉菜单以外的地方（语言按钮本身除外）自动关闭菜单，跟"Aa 文字样式"面板是同一套逻辑
   useEffect(() => {
     if (!languageMenuOpen) return undefined;
@@ -391,6 +393,11 @@ function Portfolio() {
   };
   // 语言按钮上显示的是当前语言（不是切换后的语言）
   const languageButtonLabel = LANGUAGE_OPTIONS.find((l) => l.code === language)?.label || "EN";
+  const languageOptionHoverClass = (code) => {
+    if (hoveredLanguageOption === code) return "language-menu-option-enter";
+    if (exitingLanguageOption === code) return "language-menu-option-exit";
+    return "";
+  };
   // 取某个字段的当前语言版本：中文/西班牙语模式下优先用 xxxZh / xxxEs 字段，没填就自动退回英文原文，
   // 不会因为漏填翻译就显示空白。
   const tField = (obj, key) => {
@@ -1438,9 +1445,28 @@ function Portfolio() {
           .language-toggle:focus-visible .language-toggle-hover-reveal {
             clip-path: circle(90% at 50% 50%);
           }
+          .language-menu-option-hover {
+            transform: translateX(110%);
+          }
+          .language-menu-option-enter {
+            animation: language-menu-option-enter 240ms ease-out forwards;
+          }
+          .language-menu-option-exit {
+            animation: language-menu-option-exit 240ms ease-in forwards;
+          }
+          @keyframes language-menu-option-enter {
+            from { transform: translateX(-110%); }
+            to { transform: translateX(0); }
+          }
+          @keyframes language-menu-option-exit {
+            from { transform: translateX(0); }
+            to { transform: translateX(110%); }
+          }
           @media (prefers-reduced-motion: reduce) {
             .sidebar-icon-hover-reveal,
             .language-toggle-hover-reveal { transition: none; }
+            .language-menu-option-enter,
+            .language-menu-option-exit { animation-duration: 0ms; }
           }
         `}</style>
       )}
@@ -1571,19 +1597,33 @@ function Portfolio() {
             {languageMenuOpen && (
               <div
                 ref={languageMenuRef}
-                className="absolute top-9 right-0 z-30 bg-white border border-neutral-200 rounded-lg shadow-lg py-1 w-28"
+                className="absolute top-9 right-0 z-30 w-28 rounded-lg border border-black bg-white py-1"
               >
                 {LANGUAGE_OPTIONS.map((opt) => (
                   <button
                     key={opt.code}
                     onClick={() => selectLanguage(opt.code)}
-                    className={`w-full text-left text-xs px-3 py-1.5 transition-colors ${
+                    onMouseEnter={() => {
+                      setHoveredLanguageOption(opt.code);
+                      setExitingLanguageOption(null);
+                    }}
+                    onMouseLeave={() => {
+                      setHoveredLanguageOption(null);
+                      setExitingLanguageOption(opt.code);
+                    }}
+                    className={`relative w-full overflow-hidden px-3 py-1.5 text-left text-xs text-black ${
                       opt.code === language
-                        ? "font-bold text-neutral-900 bg-neutral-100"
-                        : "text-neutral-600 hover:bg-neutral-50"
+                        ? "font-bold"
+                        : ""
                     }`}
                   >
-                    {opt.name}
+                    <span className="relative z-10">{opt.name}</span>
+                    <span
+                      aria-hidden="true"
+                      className={`language-menu-option-hover pointer-events-none absolute inset-y-0 left-0 z-20 flex w-full items-center rounded-full bg-black px-3 text-white ${languageOptionHoverClass(opt.code)}`}
+                    >
+                      {opt.name}
+                    </span>
                   </button>
                 ))}
               </div>
@@ -1905,19 +1945,33 @@ function Portfolio() {
               {languageMenuOpen && (
                 <div
                   ref={languageMenuRef}
-                  className="absolute top-9 right-0 z-30 bg-white border border-neutral-200 rounded-lg shadow-lg py-1 w-28"
+                  className="absolute top-9 right-0 z-30 w-28 rounded-lg border border-black bg-white py-1"
                 >
                   {LANGUAGE_OPTIONS.map((opt) => (
                     <button
                       key={opt.code}
                       onClick={() => selectLanguage(opt.code)}
-                      className={`w-full text-left text-xs px-3 py-1.5 transition-colors ${
+                      onMouseEnter={() => {
+                        setHoveredLanguageOption(opt.code);
+                        setExitingLanguageOption(null);
+                      }}
+                      onMouseLeave={() => {
+                        setHoveredLanguageOption(null);
+                        setExitingLanguageOption(opt.code);
+                      }}
+                      className={`relative w-full overflow-hidden px-3 py-1.5 text-left text-xs text-black ${
                         opt.code === language
-                          ? "font-bold text-neutral-900 bg-neutral-100"
-                          : "text-neutral-600 hover:bg-neutral-50"
+                          ? "font-bold"
+                          : ""
                       }`}
                     >
-                      {opt.name}
+                      <span className="relative z-10">{opt.name}</span>
+                      <span
+                        aria-hidden="true"
+                        className={`language-menu-option-hover pointer-events-none absolute inset-y-0 left-0 z-20 flex w-full items-center rounded-full bg-black px-3 text-white ${languageOptionHoverClass(opt.code)}`}
+                      >
+                        {opt.name}
+                      </span>
                     </button>
                   ))}
                 </div>
