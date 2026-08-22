@@ -1609,7 +1609,7 @@ function Portfolio() {
             {languageMenuOpen && (
               <div
                 ref={languageMenuRef}
-                className="absolute top-9 right-0 z-30 inline-flex w-max flex-col rounded-full border border-black bg-white"
+                className="absolute top-9 right-0 z-30 inline-flex w-max flex-col rounded-xl border border-black bg-white"
               >
                 {LANGUAGE_OPTIONS.map((opt) => (
                   <button
@@ -1955,7 +1955,7 @@ function Portfolio() {
               {languageMenuOpen && (
                 <div
                   ref={languageMenuRef}
-                  className="absolute top-9 right-0 z-30 inline-flex w-max flex-col rounded-full border border-black bg-white"
+                  className="absolute top-9 right-0 z-30 inline-flex w-max flex-col rounded-xl border border-black bg-white"
                 >
                   {LANGUAGE_OPTIONS.map((opt) => (
                     <button
