@@ -2014,11 +2014,13 @@ function Portfolio() {
                       }}
                       className={`language-menu-option relative px-[18px] py-[6px] text-left text-lg leading-none ${
                         opt.code === language
-                          ? "font-bold"
+                          ? "bg-black font-bold"
                           : ""
                       }`}
                     >
-                      <span className="language-menu-option-label relative z-30 text-black">{opt.name}</span>
+                      <span className={`language-menu-option-label relative z-30 ${opt.code === language ? "text-white" : "text-black"}`}>
+                        {opt.name}
+                      </span>
                       <span
                         aria-hidden="true"
                         className={`language-menu-option-hover pointer-events-none absolute inset-y-0 z-20 rounded-full bg-black ${languageOptionHoverClass(opt.code)}`}
