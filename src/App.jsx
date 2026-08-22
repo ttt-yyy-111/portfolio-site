@@ -2280,6 +2280,7 @@ function Portfolio() {
                           editMode={editMode}
                           bodyTextStyle={workTitleStyle}
                           bodyTextLang={workTitleLang}
+                          underlineEnabled={!isMobile && (workTitleLang === "en" || workTitleLang === "es")}
                           onSelect={() => goToWork(w.id)}
                           onChangeTitle={(v) => updateWork(w.id, { [langKey("title")]: v })}
                           onDelete={() => deleteWork(w.id)}
@@ -2346,7 +2347,11 @@ function Portfolio() {
                                 className="min-w-0"
                               />
                             ) : (
-                              <span className="min-w-0">{displaySeriesName}</span>
+                              <AnimatedSidebarUnderline
+                                enabled={!isMobile && (workTitleLang === "en" || workTitleLang === "es")}
+                              >
+                                {displaySeriesName}
+                              </AnimatedSidebarUnderline>
                             )}
                           </button>
                           {editMode && (
@@ -2370,7 +2375,8 @@ function Portfolio() {
                                 selectedId={selectedId}
                                 editMode={editMode}
                                 bodyTextStyle={workTitleStyle}
-                          bodyTextLang={workTitleLang}
+                                bodyTextLang={workTitleLang}
+                                underlineEnabled={!isMobile && (workTitleLang === "en" || workTitleLang === "es")}
                                 onSelect={() => goToWork(w.id)}
                                 onChangeTitle={(v) => updateWork(w.id, { [langKey("title")]: v })}
                                 onDelete={() => deleteWork(w.id)}
@@ -2982,6 +2988,41 @@ function AccordionContent({ isOpen, children }) {
   );
 }
 
+function AnimatedSidebarUnderline({ children, active = false, enabled = false }) {
+  const [hovered, setHovered] = useState(false);
+
+  if (!enabled) return children;
+
+  const revealed = active || hovered;
+  const underlineTextStyle = {
+    position: "absolute",
+    inset: 0,
+    zIndex: 1,
+    pointerEvents: "none",
+    color: "inherit",
+    textDecorationLine: "underline",
+    textDecorationThickness: "2px",
+    textUnderlineOffset: "2px",
+    textDecorationSkipInk: "all",
+    WebkitTextDecorationSkip: "ink",
+    clipPath: revealed ? "inset(0 0 0 0)" : "inset(0 100% 0 0)",
+    transition: "clip-path 240ms ease-out",
+  };
+
+  return (
+    <span
+      className="relative inline-block"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
+      <span aria-hidden="true" style={underlineTextStyle}>
+        {children}
+      </span>
+      {children}
+    </span>
+  );
+}
+
 function WorkListItem({
   w,
   displayTitle,
@@ -2989,6 +3030,7 @@ function WorkListItem({
   editMode,
   bodyTextStyle,
   bodyTextLang,
+  underlineEnabled,
   onSelect,
   onChangeTitle,
   onDelete,
@@ -3030,7 +3072,12 @@ function WorkListItem({
         {editMode ? (
           <Editable value={displayTitle} editMode={editMode} onChange={onChangeTitle} />
         ) : (
-          displayTitle
+          <AnimatedSidebarUnderline
+            active={selectedId === w.id}
+            enabled={underlineEnabled}
+          >
+            {displayTitle}
+          </AnimatedSidebarUnderline>
         )}
       </button>
       {editMode && (
