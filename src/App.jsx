@@ -1511,26 +1511,29 @@ function Portfolio() {
           .language-menu-option:focus-visible .language-menu-option-label {
             color: white;
           }
+          .desktop-work-title-underline {
+            display: none;
+          }
           @media (min-width: 768px) and (hover: hover) {
             .desktop-work-title {
               position: relative;
+              display: inline-block;
             }
-            .desktop-work-title::after {
-              content: "";
+            .desktop-work-title-underline {
+              display: block;
               position: absolute;
-              right: 0;
-              bottom: -1px;
-              left: 0;
-              height: 2px;
-              background: currentColor;
-              transform: scaleX(0);
-              transform-origin: right center;
-              transition: transform 240ms ease-out;
+              inset: 0;
+              pointer-events: none;
+              text-decoration-line: underline;
+              text-decoration-thickness: 2px;
+              text-underline-offset: 4px;
+              text-decoration-skip-ink: auto;
+              clip-path: inset(0 100% 0 0);
+              transition: clip-path 240ms ease-out;
             }
-            .desktop-work-title:hover::after,
-            .desktop-work-title:focus-visible::after {
-              transform: scaleX(1);
-              transform-origin: left center;
+            .desktop-work-title:hover .desktop-work-title-underline,
+            .desktop-work-title:focus-visible .desktop-work-title-underline {
+              clip-path: inset(0 0 0 0);
             }
           }
           @media (prefers-reduced-motion: reduce) {
@@ -2368,7 +2371,7 @@ function Portfolio() {
                                 className="min-w-0"
                               />
                             ) : (
-                              <span className="desktop-work-title min-w-0">{displaySeriesName}</span>
+                              <AnimatedWorkTitle>{displaySeriesName}</AnimatedWorkTitle>
                             )}
                           </button>
                           {editMode && (
@@ -3004,6 +3007,17 @@ function AccordionContent({ isOpen, children }) {
   );
 }
 
+function AnimatedWorkTitle({ children }) {
+  return (
+    <span className="desktop-work-title">
+      <span className="desktop-work-title-underline" aria-hidden="true">
+        {children}
+      </span>
+      {children}
+    </span>
+  );
+}
+
 function WorkListItem({
   w,
   displayTitle,
@@ -3043,7 +3057,7 @@ function WorkListItem({
         onClick={() => !editMode && onSelect()}
         style={bodyTextStyle}
         lang={bodyTextLang}
-        className={`desktop-work-title text-left min-w-0 ${
+        className={`text-left min-w-0 ${
           selectedId === w.id
             ? "text-neutral-900 underline decoration-2 underline-offset-4"
             : "text-neutral-800"
@@ -3052,7 +3066,7 @@ function WorkListItem({
         {editMode ? (
           <Editable value={displayTitle} editMode={editMode} onChange={onChangeTitle} />
         ) : (
-          displayTitle
+          <AnimatedWorkTitle>{displayTitle}</AnimatedWorkTitle>
         )}
       </button>
       {editMode && (
