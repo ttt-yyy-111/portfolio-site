@@ -1524,7 +1524,9 @@ function Portfolio() {
               position: absolute;
               inset: 0;
               pointer-events: none;
+              color: inherit;
               text-decoration-line: underline;
+              text-decoration-color: currentColor;
               text-decoration-thickness: 2px;
               text-underline-offset: 4px;
               text-decoration-skip-ink: auto;
@@ -3007,9 +3009,13 @@ function AccordionContent({ isOpen, children }) {
   );
 }
 
-function AnimatedWorkTitle({ children }) {
+function AnimatedWorkTitle({ children, selected = false }) {
   return (
-    <span className="desktop-work-title">
+    <span
+      className={`desktop-work-title ${
+        selected ? "underline decoration-2 underline-offset-4" : ""
+      }`}
+    >
       <span className="desktop-work-title-underline" aria-hidden="true">
         {children}
       </span>
@@ -3059,14 +3065,14 @@ function WorkListItem({
         lang={bodyTextLang}
         className={`text-left min-w-0 ${
           selectedId === w.id
-            ? "text-neutral-900 underline decoration-2 underline-offset-4"
+            ? "text-neutral-900"
             : "text-neutral-800"
         }`}
       >
         {editMode ? (
           <Editable value={displayTitle} editMode={editMode} onChange={onChangeTitle} />
         ) : (
-          <AnimatedWorkTitle>{displayTitle}</AnimatedWorkTitle>
+          <AnimatedWorkTitle selected={selectedId === w.id}>{displayTitle}</AnimatedWorkTitle>
         )}
       </button>
       {editMode && (
