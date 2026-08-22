@@ -1430,8 +1430,17 @@ function Portfolio() {
           .group:focus-visible .sidebar-icon-hover-reveal {
             clip-path: circle(75% at 50% 50%);
           }
+          .language-toggle-hover-reveal {
+            clip-path: circle(0% at 50% 50%);
+            transition: clip-path 280ms ease-out;
+          }
+          .language-toggle:hover .language-toggle-hover-reveal,
+          .language-toggle:focus-visible .language-toggle-hover-reveal {
+            clip-path: circle(90% at 50% 50%);
+          }
           @media (prefers-reduced-motion: reduce) {
-            .sidebar-icon-hover-reveal { transition: none; }
+            .sidebar-icon-hover-reveal,
+            .language-toggle-hover-reveal { transition: none; }
           }
         `}</style>
       )}
@@ -1552,9 +1561,12 @@ function Portfolio() {
             <button
               onClick={() => setLanguageMenuOpen((v) => !v)}
               data-language-toggle="true"
-              className="text-xs font-bold px-3 py-1.5 rounded-full border border-black bg-white text-black hover:bg-neutral-100 transition-colors"
+              className="language-toggle relative overflow-hidden text-xs font-bold px-3 py-1.5 rounded-full border border-black bg-white text-black"
             >
-              {languageButtonLabel}
+              <span className="relative z-10">{languageButtonLabel}</span>
+              <span className="language-toggle-hover-reveal absolute inset-0 flex items-center justify-center bg-black text-white" aria-hidden="true">
+                {languageButtonLabel}
+              </span>
             </button>
             {languageMenuOpen && (
               <div
@@ -1883,9 +1895,12 @@ function Portfolio() {
               <button
                 onClick={() => setLanguageMenuOpen((v) => !v)}
                 data-language-toggle="true"
-                className="text-xs font-bold px-3 py-1.5 rounded-full border border-black bg-white text-black hover:bg-neutral-100 transition-colors"
+                className="language-toggle relative overflow-hidden text-xs font-bold px-3 py-1.5 rounded-full border border-black bg-white text-black"
               >
-                {languageButtonLabel}
+                <span className="relative z-10">{languageButtonLabel}</span>
+                <span className="language-toggle-hover-reveal absolute inset-0 flex items-center justify-center bg-black text-white" aria-hidden="true">
+                  {languageButtonLabel}
+                </span>
               </button>
               {languageMenuOpen && (
                 <div
