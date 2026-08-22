@@ -1601,7 +1601,7 @@ function Portfolio() {
             <button
               onClick={toggleLanguageMenu}
               data-language-toggle="true"
-              className="language-toggle relative overflow-hidden rounded-full border-2 border-black bg-white px-3 py-1.5 text-sm font-bold text-black"
+              className="language-toggle relative overflow-hidden rounded-full border-2 border-black bg-white px-[9px] py-px text-sm font-bold text-black"
             >
               <span className="relative z-10">{languageButtonLabel}</span>
               <span className="language-toggle-hover-reveal absolute inset-0 z-20 flex items-center justify-center bg-black text-white" aria-hidden="true">
@@ -1949,7 +1949,7 @@ function Portfolio() {
               <button
                 onClick={toggleLanguageMenu}
                 data-language-toggle="true"
-                className="language-toggle relative overflow-hidden rounded-full border-2 border-black bg-white px-3 py-1.5 text-sm font-bold text-black"
+                className="language-toggle relative overflow-hidden rounded-full border-2 border-black bg-white px-[9px] py-px text-sm font-bold text-black"
               >
                 <span className="relative z-10">{languageButtonLabel}</span>
                 <span className="language-toggle-hover-reveal absolute inset-0 z-20 flex items-center justify-center bg-black text-white" aria-hidden="true">
