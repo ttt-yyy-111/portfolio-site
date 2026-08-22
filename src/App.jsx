@@ -3726,64 +3726,12 @@ function DetailView({
     }
   };
 
-  // 边缘滑动返回：单独做成一个贴在屏幕最左边的窄条，只在这一小块区域上响应，
-  // 不去动主内容区域的手势/touch-action 设置，避免影响到上面"切换作品"这个手势。
-  // 用手动 addEventListener 而不是 React 的 onTouchMove，是因为 React 有些情况下会把
-  // touchmove 事件注册成 passive（无法调用 preventDefault），这里手动指定
-  // { passive: false } 确保真的能拦住浏览器/系统自己的边缘返回预览动画，不然会跟
-  // 咱们自己触发的返回动作前后叠在一起，看起来像画面闪了一下。
-  const edgeStripRef = useRef(null);
-  const edgeTouchRef = useRef(null);
-  useEffect(() => {
-    const el = edgeStripRef.current;
-    if (!el || !isMobile) return undefined;
-
-    const onStart = (e) => {
-      if (lightboxIndex !== null) return;
-      const t = e.touches[0];
-      edgeTouchRef.current = { x: t.clientX, y: t.clientY };
-    };
-    const onMove = (e) => {
-      if (!edgeTouchRef.current) return;
-      const t = e.touches[0];
-      const dx = t.clientX - edgeTouchRef.current.x;
-      const dy = t.clientY - edgeTouchRef.current.y;
-      if (Math.abs(dx) > 10 && Math.abs(dx) > Math.abs(dy)) {
-        e.preventDefault();
-      }
-    };
-    const onEnd = (e) => {
-      if (!edgeTouchRef.current) return;
-      const t = e.changedTouches[0];
-      const dx = t.clientX - edgeTouchRef.current.x;
-      const dy = t.clientY - edgeTouchRef.current.y;
-      edgeTouchRef.current = null;
-      if (dx > 60 && Math.abs(dx) > Math.abs(dy) * 1.5) onBack && onBack();
-    };
-
-    el.addEventListener("touchstart", onStart, { passive: true });
-    el.addEventListener("touchmove", onMove, { passive: false });
-    el.addEventListener("touchend", onEnd, { passive: true });
-    return () => {
-      el.removeEventListener("touchstart", onStart);
-      el.removeEventListener("touchmove", onMove);
-      el.removeEventListener("touchend", onEnd);
-    };
-  }, [isMobile, lightboxIndex, onBack]);
-
   return (
     <div
       className="flex flex-col min-h-full"
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
     >
-      {isMobile && (
-        <div
-          ref={edgeStripRef}
-          className="fixed left-0 top-0 bottom-0 z-30"
-          style={{ width: 24, touchAction: "pan-y" }}
-        />
-      )}
       <div
         key={work.id}
         className="px-3 md:px-10 max-w-6xl flex-1"
