@@ -341,7 +341,7 @@ function Portfolio() {
   // 下次重新打开网站时会自动恢复成上次看的那个语言，不用每次都重新选。
   const LANGUAGE_OPTIONS = [
     { code: "en", label: "EN", name: "English" },
-    { code: "zh", label: "中", name: "中文" },
+    { code: "zh", label: "中", name: "简体中文" },
     { code: "es", label: "ES", name: "Español" },
   ];
   const LANGUAGE_STORAGE_KEY = "portfolio-site:language";
@@ -1552,7 +1552,7 @@ function Portfolio() {
             <button
               onClick={() => setLanguageMenuOpen((v) => !v)}
               data-language-toggle="true"
-              className="text-xs font-bold px-3 py-1.5 rounded-full bg-neutral-100 text-neutral-600 hover:bg-neutral-200 transition-colors"
+              className="text-xs font-bold px-3 py-1.5 rounded-full border border-black bg-white text-black hover:bg-neutral-100 transition-colors"
             >
               {languageButtonLabel}
             </button>
@@ -1883,7 +1883,7 @@ function Portfolio() {
               <button
                 onClick={() => setLanguageMenuOpen((v) => !v)}
                 data-language-toggle="true"
-                className="text-xs font-bold px-3 py-1.5 rounded-full bg-neutral-100 text-neutral-600"
+                className="text-xs font-bold px-3 py-1.5 rounded-full border border-black bg-white text-black hover:bg-neutral-100 transition-colors"
               >
                 {languageButtonLabel}
               </button>
