@@ -325,13 +325,31 @@ function Portfolio() {
   });
 
   // ---------- 语言切换：英文 / 中文 / 西班牙语 ----------
-  // 每次打开网站都固定显示英文，不记住上次关闭时选的是哪个语言
+  // 第一次打开网站（浏览器里还没存过语言）默认显示英文；之后每次切换语言都会记到 localStorage 里，
+  // 下次重新打开网站时会自动恢复成上次看的那个语言，不用每次都重新选。
   const LANGUAGE_OPTIONS = [
     { code: "en", label: "EN", name: "English" },
     { code: "zh", label: "中", name: "中文" },
     { code: "es", label: "ES", name: "Español" },
   ];
-  const [language, setLanguage] = useState("en");
+  const LANGUAGE_STORAGE_KEY = "portfolio-site:language";
+  const [language, setLanguageState] = useState(() => {
+    if (typeof window === "undefined") return "en";
+    const saved = window.localStorage.getItem(LANGUAGE_STORAGE_KEY);
+    const validCodes = LANGUAGE_OPTIONS.map((l) => l.code);
+    return validCodes.includes(saved) ? saved : "en";
+  });
+  // 每次语言变化都同步写入 localStorage，下次打开网站时就能读到
+  const setLanguage = (code) => {
+    setLanguageState(code);
+    if (typeof window !== "undefined") {
+      try {
+        window.localStorage.setItem(LANGUAGE_STORAGE_KEY, code);
+      } catch {
+        // 隐私模式等场景下 localStorage 可能不可用，忽略即可，不影响当次浏览
+      }
+    }
+  };
   const isZh = language === "zh";
   const isEs = language === "es";
   // 内容字段（标题、材料、尺寸、简介、系列名称）用的语言后缀：中文是 Zh，西班牙语是 Es，英文没有后缀
@@ -502,6 +520,12 @@ function Portfolio() {
     setShowInfo(false);
     setMobileMenuOpen(false);
     setNavDirection(null);
+    // 如果点击时已经在首页画廊了（selectedId/showInfo 本来就是 null/false），上面几个
+    // setState 不会引起状态变化，下面那个"切页面就滚回顶部"的 useLayoutEffect 也就不会
+    // 被触发——这里直接强制把滚动条拉回顶部，保证不管当前在哪个状态，点了姓名/Index
+    // 都一定能回到首页最上面，不用等状态变化才生效。
+    if (mainRef.current) mainRef.current.scrollTop = 0;
+    restoreGalleryScrollRef.current = false;
   };
   const goToWork = (id, direction = null) => {
     // 如果现在正在画廊页，先记一下画廊滚动到哪了，方便详情页的"返回"按钮能回到这个位置
