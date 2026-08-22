@@ -1514,7 +1514,7 @@ function Portfolio() {
           .desktop-work-title-underline {
             display: none;
           }
-          @media (min-width: 768px) and (hover: hover) {
+          @media (min-width: 768px) {
             .desktop-work-title {
               position: relative;
               display: inline-block;
@@ -3012,9 +3012,17 @@ function AccordionContent({ isOpen, children }) {
 function AnimatedWorkTitle({ children, selected = false }) {
   return (
     <span
-      className={`desktop-work-title ${
-        selected ? "underline decoration-2 underline-offset-4" : ""
-      }`}
+      className="desktop-work-title"
+      style={
+        selected
+          ? {
+              textDecorationLine: "underline",
+              textDecorationThickness: "2px",
+              textUnderlineOffset: "4px",
+              textDecorationSkipInk: "auto",
+            }
+          : undefined
+      }
     >
       <span className="desktop-work-title-underline" aria-hidden="true">
         {children}
