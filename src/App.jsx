@@ -1511,34 +1511,6 @@ function Portfolio() {
           .language-menu-option:focus-visible .language-menu-option-label {
             color: white;
           }
-          .desktop-work-title-underline {
-            display: none;
-          }
-          @media (pointer: fine) {
-            .desktop-work-title {
-              position: relative;
-              display: inline-block;
-            }
-            .desktop-work-title-underline {
-              display: block;
-              position: absolute;
-              inset: 0;
-              pointer-events: none;
-              color: inherit;
-              text-decoration-line: underline;
-              text-decoration-color: currentColor;
-              text-decoration-thickness: 2px;
-              text-underline-offset: 4px;
-              text-decoration-skip-ink: all;
-              -webkit-text-decoration-skip: ink;
-              clip-path: inset(0 100% 0 0);
-              transition: clip-path 240ms ease-out;
-            }
-            .desktop-work-title:hover .desktop-work-title-underline,
-            .desktop-work-title:focus-visible .desktop-work-title-underline {
-              clip-path: inset(0 0 0 0);
-            }
-          }
           @media (prefers-reduced-motion: reduce) {
             .sidebar-icon-hover-reveal,
             .language-toggle-hover-reveal { transition: none; }
@@ -2374,7 +2346,7 @@ function Portfolio() {
                                 className="min-w-0"
                               />
                             ) : (
-                              <AnimatedWorkTitle>{displaySeriesName}</AnimatedWorkTitle>
+                              <span className="min-w-0">{displaySeriesName}</span>
                             )}
                           </button>
                           {editMode && (
@@ -3010,38 +2982,6 @@ function AccordionContent({ isOpen, children }) {
   );
 }
 
-function AnimatedWorkTitle({ children, selected = false }) {
-  const [isHovered, setIsHovered] = useState(false);
-
-  return (
-    <span
-      className="desktop-work-title"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      style={
-        selected
-          ? {
-              textDecorationLine: "underline",
-              textDecorationThickness: "2px",
-              textUnderlineOffset: "4px",
-              textDecorationSkipInk: "all",
-              WebkitTextDecorationSkip: "ink",
-            }
-          : undefined
-      }
-    >
-      <span
-        className="desktop-work-title-underline"
-        aria-hidden="true"
-        style={{ clipPath: isHovered ? "inset(0 0 0 0)" : "inset(0 100% 0 0)" }}
-      >
-        {children}
-      </span>
-      {children}
-    </span>
-  );
-}
-
 function WorkListItem({
   w,
   displayTitle,
@@ -3090,7 +3030,7 @@ function WorkListItem({
         {editMode ? (
           <Editable value={displayTitle} editMode={editMode} onChange={onChangeTitle} />
         ) : (
-          <AnimatedWorkTitle selected={selectedId === w.id}>{displayTitle}</AnimatedWorkTitle>
+          displayTitle
         )}
       </button>
       {editMode && (
