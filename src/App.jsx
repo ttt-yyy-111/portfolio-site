@@ -2403,7 +2403,7 @@ function Portfolio() {
                 aria-label="CV"
                 title="CV"
               >
-                <img src="/icons/cv.svg" alt="" className="h-12 w-12" />
+                <img src="/icons/cv.svg" alt="" className="h-8 w-8" />
               </button>
 
               <div className="flex items-center gap-1">
@@ -2415,7 +2415,7 @@ function Portfolio() {
                     if (editMode) e.preventDefault();
                   }}
                 >
-                  <img src="/icons/email.svg" alt="" className="h-12 w-12" />
+                  <img src="/icons/email.svg" alt="" className="h-8 w-8" />
                 </a>
                 {editMode && (
                   <input
@@ -2444,7 +2444,7 @@ function Portfolio() {
                     if (editMode) e.preventDefault();
                   }}
                 >
-                  <img src="/icons/instagram.svg" alt="" className="h-12 w-12" />
+                  <img src="/icons/instagram.svg" alt="" className="h-8 w-8" />
                 </a>
                 {editMode && (
                   <input
@@ -2473,7 +2473,7 @@ function Portfolio() {
                     if (editMode) e.preventDefault();
                   }}
                 >
-                  <img src="/icons/rednote.svg" alt="" className="h-12 w-12" />
+                  <img src="/icons/rednote.svg" alt="" className="h-8 w-8" />
                 </a>
                 {editMode && (
                   <input
