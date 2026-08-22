@@ -2534,7 +2534,7 @@ function Portfolio() {
 
         <div ref={sidebarFooterRef} className="flex-shrink-0 w-full bg-white">
           {isMobile ? (
-            <div className="flex items-center justify-center gap-x-8 px-3 py-3">
+            <div className="flex items-center justify-center gap-x-10 px-3 py-3">
               <button
                 onClick={goToInfo}
                 aria-label="CV"
