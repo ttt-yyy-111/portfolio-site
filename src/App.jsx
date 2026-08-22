@@ -2534,14 +2534,39 @@ function Portfolio() {
 
         <div ref={sidebarFooterRef} className="flex-shrink-0 w-full bg-white">
           {isMobile ? (
-            <div className="px-4 py-6 text-center">
+            <div className="flex items-center justify-center gap-x-6 px-4 py-6">
               <button
-                onClick={goToGallery}
-                className="font-bold text-neutral-900 text-3xl"
-                style={{ fontFamily: "'IBM Plex Sans', -apple-system, Arial, 'PingFang SC', sans-serif" }}
+                onClick={goToInfo}
+                aria-label="CV"
+                title="CV"
               >
-                Home
+                <img src="/icons/cv.svg" alt="" className="h-8 w-8" />
               </button>
+              <a
+                href={`mailto:${data.contact?.email || ""}`}
+                aria-label="Email"
+                title="Email"
+              >
+                <img src="/icons/email.svg" alt="" className="h-8 w-8" />
+              </a>
+              <a
+                href={data.contact?.instagram || "#"}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                title="Instagram"
+              >
+                <img src="/icons/instagram.svg" alt="" className="h-8 w-8" />
+              </a>
+              <a
+                href={data.contact?.redNote || "#"}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="RedNote"
+                title="RedNote"
+              >
+                <img src="/icons/rednote.svg" alt="" className="h-8 w-8" />
+              </a>
             </div>
           ) : (
             <div
