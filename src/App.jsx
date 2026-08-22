@@ -3010,9 +3010,13 @@ function AccordionContent({ isOpen, children }) {
 }
 
 function AnimatedWorkTitle({ children, selected = false }) {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
     <span
       className="desktop-work-title"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
       style={
         selected
           ? {
@@ -3024,7 +3028,11 @@ function AnimatedWorkTitle({ children, selected = false }) {
           : undefined
       }
     >
-      <span className="desktop-work-title-underline" aria-hidden="true">
+      <span
+        className="desktop-work-title-underline"
+        aria-hidden="true"
+        style={{ clipPath: isHovered ? "inset(0 0 0 0)" : "inset(0 100% 0 0)" }}
+      >
         {children}
       </span>
       {children}
