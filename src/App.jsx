@@ -370,10 +370,10 @@ function Portfolio() {
   const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
   const languageMenuRef = useRef(null);
   const [hoveredLanguageOption, setHoveredLanguageOption] = useState(null);
-  const [exitingLanguageOption, setExitingLanguageOption] = useState(null);
+  const [exitingLanguageOptions, setExitingLanguageOptions] = useState([]);
   const resetLanguageOptionAnimation = () => {
     setHoveredLanguageOption(null);
-    setExitingLanguageOption(null);
+    setExitingLanguageOptions([]);
   };
   const closeLanguageMenu = () => {
     setLanguageMenuOpen(false);
@@ -407,7 +407,7 @@ function Portfolio() {
   const languageButtonLabel = LANGUAGE_OPTIONS.find((l) => l.code === language)?.label || "EN";
   const languageOptionHoverClass = (code) => {
     if (hoveredLanguageOption === code) return "language-menu-option-enter";
-    if (exitingLanguageOption === code) return "language-menu-option-exit";
+    if (exitingLanguageOptions.includes(code)) return "language-menu-option-exit";
     return "";
   };
   // 取某个字段的当前语言版本：中文/西班牙语模式下优先用 xxxZh / xxxEs 字段，没填就自动退回英文原文，
@@ -1619,11 +1619,13 @@ function Portfolio() {
                     onClick={() => selectLanguage(opt.code)}
                     onMouseEnter={() => {
                       setHoveredLanguageOption(opt.code);
-                      setExitingLanguageOption(null);
+                      setExitingLanguageOptions((prev) => prev.filter((code) => code !== opt.code));
                     }}
                     onMouseLeave={() => {
                       setHoveredLanguageOption(null);
-                      setExitingLanguageOption(opt.code);
+                      setExitingLanguageOptions((prev) =>
+                        prev.includes(opt.code) ? prev : [...prev, opt.code]
+                      );
                     }}
                     className={`relative px-[18px] py-[6px] text-left text-lg leading-none ${
                       opt.code === language
@@ -1965,11 +1967,13 @@ function Portfolio() {
                       onClick={() => selectLanguage(opt.code)}
                       onMouseEnter={() => {
                         setHoveredLanguageOption(opt.code);
-                        setExitingLanguageOption(null);
+                        setExitingLanguageOptions((prev) => prev.filter((code) => code !== opt.code));
                       }}
                       onMouseLeave={() => {
                         setHoveredLanguageOption(null);
-                        setExitingLanguageOption(opt.code);
+                        setExitingLanguageOptions((prev) =>
+                          prev.includes(opt.code) ? prev : [...prev, opt.code]
+                        );
                       }}
                       className={`relative px-[18px] py-[6px] text-left text-lg leading-none ${
                         opt.code === language
