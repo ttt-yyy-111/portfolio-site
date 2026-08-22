@@ -385,7 +385,7 @@ function Portfolio() {
       setLanguageMenuClosing(false);
       resetLanguageOptionAnimation();
       languageMenuCloseTimerRef.current = null;
-    }, 300);
+    }, 180);
   };
   const toggleLanguageMenu = () => {
     if (languageMenuOpen && !languageMenuClosing) {
@@ -1494,14 +1494,14 @@ function Portfolio() {
             to { transform: translateX(110%); }
           }
           .language-menu-reveal {
-            animation: language-menu-reveal 300ms ease-out both;
+            animation: language-menu-reveal 180ms ease-out both;
           }
           @keyframes language-menu-reveal {
             from { max-height: 0; }
             to { max-height: 120px; }
           }
           .language-menu-retract {
-            animation: language-menu-retract 300ms ease-in both;
+            animation: language-menu-retract 180ms ease-in both;
           }
           @keyframes language-menu-retract {
             from { max-height: 120px; }
