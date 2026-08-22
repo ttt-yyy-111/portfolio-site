@@ -59,6 +59,34 @@
         -webkit-touch-callout: none;
         user-select: none;
       }
+      /* 电脑端左栏作品名称：用真实文字下划线，自动避开 g、y 等下伸字形。 */
+      .desktop-work-title-underline {
+        display: none;
+      }
+      @media (min-width: 768px) {
+        .desktop-work-title {
+          position: relative;
+          display: inline-block;
+        }
+        .desktop-work-title-underline {
+          display: block;
+          position: absolute;
+          inset: 0;
+          pointer-events: none;
+          color: inherit;
+          text-decoration-line: underline;
+          text-decoration-color: currentColor;
+          text-decoration-thickness: 2px;
+          text-underline-offset: 4px;
+          text-decoration-skip-ink: auto;
+          clip-path: inset(0 100% 0 0);
+          transition: clip-path 240ms ease-out;
+        }
+        .desktop-work-title:hover .desktop-work-title-underline,
+        .desktop-work-title:focus-visible .desktop-work-title-underline {
+          clip-path: inset(0 0 0 0);
+        }
+      }
     </style>
   </head>
   <body>
