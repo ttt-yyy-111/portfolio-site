@@ -446,28 +446,53 @@ function Portfolio() {
 
   // 切换到新的一页内容时（选了别的作品、进了信息页、回到画廊），把纵向滚动也重置回顶部，
   // 不然会保留上一屏的滚动位置，新页面看起来像是"从中间开始"的，还得自己往上滑。
-  // ——除了一种情况：详情页左侧的"返回"按钮，点了要恢复回画廊原来滚动到的位置，不是回到顶部。
+  // ——除了一种情况：详情页左侧的"返回"按钮（以及浏览器后退键），要恢复回画廊原来
+  // 滚动到的位置，不是回到顶部。
   const galleryScrollRef = useRef(0); // 离开画廊之前，记一下画廊滚动到哪了
-  const restoreGalleryScrollRef = useRef(false); // 这次回画廊是不是要恢复位置（点了"返回"才是true）
+  const restoreGalleryScrollRef = useRef(false); // 这次回画廊是不是要恢复位置（点了"返回"/浏览器后退才是true）
+  // 画面是不是正处在"恢复滚动位置"的过程中——这段时间内容会先隐藏起来，见下面的注释
+  const [restoringScroll, setRestoringScroll] = useState(false);
   useLayoutEffect(() => {
     if (!mainRef.current) return;
     if (!selectedId && !showInfo && restoreGalleryScrollRef.current) {
       const target = galleryScrollRef.current;
-      mainRef.current.scrollTop = target;
       restoreGalleryScrollRef.current = false;
 
       // 画廊图片是陆续异步加载进来的：如果这时候图片还没加载完，页面实际能滚动的高度
-      // 可能还没到 target 这么高，刚设置的滚动位置会被浏览器直接钳制在当前能滚到的最大值；
-      // 等图片陆续加载完、页面变高了，也不会自动"补"回到原来想要的位置。
-      // 这里隔一小段时间后再补一次（只补一次，不是连续频繁地补——频繁补会让画面看起来
-      // 一点点往下挪、跟闪烁似的，隔久一点补一次，图片大概率已经加载得差不多了，
-      // 视觉上只会有最多一次很轻微的校正，不会一直跳）。
-      const timer = setTimeout(() => {
-        if (mainRef.current && mainRef.current.scrollTop < target) {
-          mainRef.current.scrollTop = target;
+      // 可能还没到 target 这么高，直接设置滚动位置会被浏览器钳制在当前能滚到的最大值；
+      // 等图片陆续加载完、页面变高了，再补一次正确位置，肉眼看到的就是"先跳到中间某张图、
+      // 再跳回原来的位置"——这个跳动本身是可见的，体验很差。
+      // 解决办法不是让补偿更快/更准，而是干脆不让用户看到这个过程：先把内容隐身
+      // （opacity: 0），在背地里反复把滚动条顶到目标位置，直到页面真的已经长高到能
+      // 容纳这个滚动位置了（用 requestAnimationFrame 逐帧检查，不是隔固定时间猜一次），
+      // 或者等待太久兜底放弃，再把内容显示出来——用户看到的画面永远已经在正确位置上，
+      // 不会看到中间那一下跳动。
+      setRestoringScroll(true);
+      mainRef.current.scrollTop = target;
+
+      let rafId = null;
+      const startedAt = performance.now();
+      const MAX_WAIT_MS = 1500; // 兜底：真等太久（比如图片加载失败）也不能一直不显示内容
+      const trySettle = () => {
+        const el = mainRef.current;
+        if (!el) {
+          setRestoringScroll(false);
+          return;
         }
-      }, 400);
-      return () => clearTimeout(timer);
+        const maxScrollable = el.scrollHeight - el.clientHeight;
+        const heightIsEnough = maxScrollable >= target;
+        const timedOut = performance.now() - startedAt > MAX_WAIT_MS;
+        el.scrollTop = target;
+        if (heightIsEnough || timedOut) {
+          setRestoringScroll(false);
+          return;
+        }
+        rafId = requestAnimationFrame(trySettle);
+      };
+      rafId = requestAnimationFrame(trySettle);
+      return () => {
+        if (rafId) cancelAnimationFrame(rafId);
+      };
     } else {
       mainRef.current.scrollTop = 0;
     }
@@ -2484,6 +2509,12 @@ function Portfolio() {
         className={`flex-1 overflow-y-auto overflow-x-hidden min-w-0 ${
           isMobile ? "min-h-0 w-full" : "h-full"
         }`}
+        style={{
+          // 正在恢复画廊滚动位置的这一小段时间里先隐身，等确认真的定位到正确位置了
+          // 再快速淡入显示，避免用户看到"先跳到别的图片、再跳回来"的过程
+          opacity: restoringScroll ? 0 : 1,
+          transition: restoringScroll ? "none" : "opacity 150ms ease-out",
+        }}
       >
         {showInfo ? (
           <InfoView
