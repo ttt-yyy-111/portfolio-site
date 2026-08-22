@@ -452,6 +452,26 @@ function Portfolio() {
   const restoreGalleryScrollRef = useRef(false); // 这次回画廊是不是要恢复位置（点了"返回"/浏览器后退才是true）
   // 画面是不是正处在"恢复滚动位置"的过程中——这段时间内容会先隐藏起来，见下面的注释
   const [restoringScroll, setRestoringScroll] = useState(false);
+
+  // ---------- 画廊页"回到顶部"悬浮按钮 ----------
+  // 只在画廊页生效：往下滑超过一定距离后出现，点击后平滑滚回顶部（不是硬切）。
+  const [showBackToTop, setShowBackToTop] = useState(false);
+  useEffect(() => {
+    const el = mainRef.current;
+    if (!el) return undefined;
+    const BACK_TO_TOP_THRESHOLD = 480; // 大约一屏多一点的距离，滑太浅就出现按钮反而碍事
+    const onScroll = () => {
+      setShowBackToTop(el.scrollTop > BACK_TO_TOP_THRESHOLD);
+    };
+    el.addEventListener("scroll", onScroll, { passive: true });
+    onScroll(); // 切换页面（比如从详情页返回）时立刻按当前滚动位置校正一次按钮的显示状态
+    return () => el.removeEventListener("scroll", onScroll);
+  }, [selectedId, showInfo]);
+  const scrollGalleryToTop = () => {
+    if (mainRef.current) {
+      mainRef.current.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
   useLayoutEffect(() => {
     if (!mainRef.current) return;
     if (!selectedId && !showInfo && restoreGalleryScrollRef.current) {
@@ -1380,6 +1400,31 @@ function Portfolio() {
             .map((f) => `family=${f}`)
             .join("&")}&display=swap`}
         />
+      )}
+
+      {/* 画廊页"回到顶部"悬浮按钮：只在画廊页（不是详情页/Information页）且往下滑了一段
+          距离之后才出现，点击平滑滚回顶部。放在 appRoot 这一层（自带 relative + overflow-hidden），
+          这样手机预览的模拟边框里也会正确显示在边框内部，不会跑到边框外面去。 */}
+      {!selectedId && !showInfo && showBackToTop && (
+        <button
+          onClick={scrollGalleryToTop}
+          aria-label={isZh ? "回到顶部" : isEs ? "Volver arriba" : "Back to top"}
+          title={isZh ? "回到顶部" : isEs ? "Volver arriba" : "Back to top"}
+          className="absolute bottom-6 right-6 z-20 w-11 h-11 rounded-full flex items-center justify-center bg-neutral-900 text-white shadow-lg hover:bg-neutral-700 transition-colors"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            width="18"
+            height="18"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <polyline points="18 15 12 9 6 15" />
+          </svg>
+        </button>
       )}
 
       {/* 顶部工具按钮：中英文切换所有人都能看到；编辑相关的按钮只有网址带 ?edit=1 才会显示 */}
