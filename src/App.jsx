@@ -1511,6 +1511,28 @@ function Portfolio() {
           .language-menu-option:focus-visible .language-menu-option-label {
             color: white;
           }
+          @media (min-width: 768px) and (hover: hover) {
+            .desktop-work-title {
+              position: relative;
+            }
+            .desktop-work-title::after {
+              content: "";
+              position: absolute;
+              right: 0;
+              bottom: -2px;
+              left: 0;
+              height: 1px;
+              background: currentColor;
+              transform: scaleX(0);
+              transform-origin: right center;
+              transition: transform 240ms ease-out;
+            }
+            .desktop-work-title:hover::after,
+            .desktop-work-title:focus-visible::after {
+              transform: scaleX(1);
+              transform-origin: left center;
+            }
+          }
           @media (prefers-reduced-motion: reduce) {
             .sidebar-icon-hover-reveal,
             .language-toggle-hover-reveal { transition: none; }
@@ -3021,7 +3043,7 @@ function WorkListItem({
         onClick={() => !editMode && onSelect()}
         style={bodyTextStyle}
         lang={bodyTextLang}
-        className={`text-left min-w-0 ${
+        className={`desktop-work-title text-left min-w-0 ${
           selectedId === w.id
             ? "text-neutral-900 underline underline-offset-2"
             : "text-neutral-800"
