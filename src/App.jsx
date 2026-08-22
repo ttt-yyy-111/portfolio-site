@@ -1535,17 +1535,10 @@ function Portfolio() {
             scrollbar-color: transparent transparent;
           }
           .desktop-scrollbar::-webkit-scrollbar { width: 8px; height: 8px; }
-          .desktop-scrollbar::-webkit-scrollbar-thumb {
-            background: transparent;
-            transition: background-color 180ms ease-in-out;
-          }
+          .desktop-scrollbar::-webkit-scrollbar-thumb { background: transparent; }
           .desktop-scrollbar.desktop-scrollbar-scrolling {
             scrollbar-width: thin;
             scrollbar-color: rgba(0, 0, 0, 0.35) transparent;
-          }
-          .desktop-scrollbar.desktop-scrollbar-scrolling::-webkit-scrollbar {
-            width: 8px;
-            height: 8px;
           }
           .desktop-scrollbar.desktop-scrollbar-scrolling::-webkit-scrollbar-thumb {
             background-color: rgba(0, 0, 0, 0.35);
