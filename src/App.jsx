@@ -341,7 +341,7 @@ function Portfolio() {
   // 下次重新打开网站时会自动恢复成上次看的那个语言，不用每次都重新选。
   const LANGUAGE_OPTIONS = [
     { code: "en", label: "EN", name: "English" },
-    { code: "zh", label: "中", name: "简体中文" },
+    { code: "zh", label: "简", name: "简体中文" },
     { code: "es", label: "ES", name: "Español" },
   ];
   const LANGUAGE_STORAGE_KEY = "portfolio-site:language";
@@ -1601,7 +1601,7 @@ function Portfolio() {
             <button
               onClick={toggleLanguageMenu}
               data-language-toggle="true"
-              className="language-toggle relative overflow-hidden text-xs font-bold px-3 py-1.5 rounded-full border border-black bg-white text-black"
+              className="language-toggle relative overflow-hidden rounded-full border-2 border-black bg-white px-3 py-1.5 text-sm font-bold text-black"
             >
               <span className="relative z-10">{languageButtonLabel}</span>
               <span className="language-toggle-hover-reveal absolute inset-0 z-20 flex items-center justify-center bg-black text-white" aria-hidden="true">
@@ -1611,7 +1611,7 @@ function Portfolio() {
             {languageMenuOpen && (
               <div
                 ref={languageMenuRef}
-                className="absolute top-9 right-0 z-30 inline-flex w-max flex-col overflow-hidden rounded-[15px] border border-black bg-white"
+                className="absolute top-9 right-0 z-30 inline-flex w-max flex-col overflow-hidden rounded-[15px] border-2 border-black bg-white"
               >
                 {LANGUAGE_OPTIONS.map((opt) => (
                   <button
@@ -1949,7 +1949,7 @@ function Portfolio() {
               <button
                 onClick={toggleLanguageMenu}
                 data-language-toggle="true"
-                className="language-toggle relative overflow-hidden text-xs font-bold px-3 py-1.5 rounded-full border border-black bg-white text-black"
+                className="language-toggle relative overflow-hidden rounded-full border-2 border-black bg-white px-3 py-1.5 text-sm font-bold text-black"
               >
                 <span className="relative z-10">{languageButtonLabel}</span>
                 <span className="language-toggle-hover-reveal absolute inset-0 z-20 flex items-center justify-center bg-black text-white" aria-hidden="true">
@@ -1959,7 +1959,7 @@ function Portfolio() {
               {languageMenuOpen && (
                 <div
                   ref={languageMenuRef}
-                  className="absolute top-9 right-0 z-30 inline-flex w-max flex-col overflow-hidden rounded-[15px] border border-black bg-white"
+                  className="absolute top-9 right-0 z-30 inline-flex w-max flex-col overflow-hidden rounded-[15px] border-2 border-black bg-white"
                 >
                   {LANGUAGE_OPTIONS.map((opt) => (
                     <button
