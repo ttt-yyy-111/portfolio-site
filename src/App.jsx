@@ -368,7 +368,9 @@ function Portfolio() {
   const contentLangSuffix = isZh ? "Zh" : isEs ? "Es" : "";
   // 点击语言按钮弹出的下拉菜单是否展开
   const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
+  const [languageMenuClosing, setLanguageMenuClosing] = useState(false);
   const languageMenuRef = useRef(null);
+  const languageMenuCloseTimerRef = useRef(null);
   const [hoveredLanguageOption, setHoveredLanguageOption] = useState(null);
   const [exitingLanguageOptions, setExitingLanguageOptions] = useState([]);
   const resetLanguageOptionAnimation = () => {
@@ -376,12 +378,27 @@ function Portfolio() {
     setExitingLanguageOptions([]);
   };
   const closeLanguageMenu = () => {
-    setLanguageMenuOpen(false);
-    resetLanguageOptionAnimation();
+    if (!languageMenuOpen || languageMenuClosing) return;
+    setLanguageMenuClosing(true);
+    languageMenuCloseTimerRef.current = window.setTimeout(() => {
+      setLanguageMenuOpen(false);
+      setLanguageMenuClosing(false);
+      resetLanguageOptionAnimation();
+      languageMenuCloseTimerRef.current = null;
+    }, 300);
   };
   const toggleLanguageMenu = () => {
+    if (languageMenuOpen && !languageMenuClosing) {
+      closeLanguageMenu();
+      return;
+    }
+    if (languageMenuClosing && languageMenuCloseTimerRef.current) {
+      window.clearTimeout(languageMenuCloseTimerRef.current);
+      languageMenuCloseTimerRef.current = null;
+    }
     resetLanguageOptionAnimation();
-    setLanguageMenuOpen((open) => !open);
+    setLanguageMenuClosing(false);
+    setLanguageMenuOpen(true);
   };
   // 点击下拉菜单以外的地方（语言按钮本身除外）自动关闭菜单，跟"Aa 文字样式"面板是同一套逻辑
   useEffect(() => {
@@ -1483,6 +1500,13 @@ function Portfolio() {
             from { max-height: 0; }
             to { max-height: 120px; }
           }
+          .language-menu-retract {
+            animation: language-menu-retract 300ms ease-in both;
+          }
+          @keyframes language-menu-retract {
+            from { max-height: 120px; }
+            to { max-height: 0; }
+          }
           .language-menu-option:hover .language-menu-option-label,
           .language-menu-option:focus-visible .language-menu-option-label {
             color: white;
@@ -1492,7 +1516,8 @@ function Portfolio() {
             .language-toggle-hover-reveal { transition: none; }
             .language-menu-option-enter,
             .language-menu-option-exit,
-            .language-menu-reveal { animation-duration: 0ms; }
+            .language-menu-reveal,
+            .language-menu-retract { animation-duration: 0ms; }
           }
         `}</style>
       )}
@@ -1623,7 +1648,7 @@ function Portfolio() {
             {languageMenuOpen && (
               <div
                 ref={languageMenuRef}
-                className="language-menu-reveal absolute top-9 right-0 z-30 inline-flex w-max flex-col overflow-hidden rounded-[15px] border-2 border-black bg-white"
+                className={`${languageMenuClosing ? "language-menu-retract" : "language-menu-reveal"} absolute top-9 right-0 z-30 inline-flex w-max flex-col overflow-hidden rounded-[15px] border-2 border-black bg-white`}
               >
                 {LANGUAGE_OPTIONS.map((opt) => (
                   <button
@@ -1971,7 +1996,7 @@ function Portfolio() {
               {languageMenuOpen && (
                 <div
                   ref={languageMenuRef}
-                  className="language-menu-reveal absolute top-9 right-0 z-30 inline-flex w-max flex-col overflow-hidden rounded-[15px] border-2 border-black bg-white"
+                  className={`${languageMenuClosing ? "language-menu-retract" : "language-menu-reveal"} absolute top-9 right-0 z-30 inline-flex w-max flex-col overflow-hidden rounded-[15px] border-2 border-black bg-white`}
                 >
                   {LANGUAGE_OPTIONS.map((opt) => (
                     <button
