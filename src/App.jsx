@@ -2996,7 +2996,10 @@ function AnimatedSidebarUnderline({ children, active = false, enabled = false })
   const revealed = active || hovered;
   const underlineTextStyle = {
     position: "absolute",
-    inset: 0,
+    top: 0,
+    right: 0,
+    bottom: "-12px",
+    left: 0,
     zIndex: 1,
     pointerEvents: "none",
     color: "inherit",
