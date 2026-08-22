@@ -3305,15 +3305,15 @@ function InfoView({
                             ? { textIndent: "2em" }
                             : {
                                 // 英文 / 西班牙语排版习惯不用首行缩进，改用更明显的段间距来区分段落——
-                                // 间距按当前字号 × 行高的 1.5 倍来算，大致相当于多空出接近一整行的
-                                // 视觉留白，段落之间的分隔会比中文版清楚很多。最后一段不需要底部间距。
+                                // 间距按当前字号 × 行高的 0.8 倍来算，比正常行距略宽出一截，
+                                // 分段效果清晰可辨但不会显得太空。最后一段不需要底部间距。
                                 marginBottom:
                                   i === arr.length - 1
                                     ? 0
                                     : `${
                                         (parseFloat(bodyStyle.fontSize) || 16) *
                                         (parseFloat(bodyStyle.lineHeight) || 1.6) *
-                                        1.5
+                                        0.8
                                       }px`,
                               }
                         }
