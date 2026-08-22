@@ -1458,6 +1458,8 @@ function Portfolio() {
             clip-path: circle(90% at 50% 50%);
           }
           .language-menu-option-hover {
+            left: -15px;
+            width: calc(100% + 30px);
             transform: translateX(110%);
           }
           .language-menu-option-enter {
@@ -1632,7 +1634,7 @@ function Portfolio() {
                     <span className="relative z-30 text-white mix-blend-difference">{opt.name}</span>
                     <span
                       aria-hidden="true"
-                      className={`language-menu-option-hover pointer-events-none absolute inset-y-0 left-0 z-20 w-full rounded-full bg-black ${languageOptionHoverClass(opt.code)}`}
+                      className={`language-menu-option-hover pointer-events-none absolute inset-y-0 z-20 rounded-full bg-black ${languageOptionHoverClass(opt.code)}`}
                     />
                   </button>
                 ))}
@@ -1978,7 +1980,7 @@ function Portfolio() {
                       <span className="relative z-30 text-white mix-blend-difference">{opt.name}</span>
                       <span
                         aria-hidden="true"
-                        className={`language-menu-option-hover pointer-events-none absolute inset-y-0 left-0 z-20 w-full rounded-full bg-black ${languageOptionHoverClass(opt.code)}`}
+                        className={`language-menu-option-hover pointer-events-none absolute inset-y-0 z-20 rounded-full bg-black ${languageOptionHoverClass(opt.code)}`}
                       />
                     </button>
                   ))}
