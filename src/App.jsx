@@ -1597,7 +1597,7 @@ function Portfolio() {
             {languageMenuOpen && (
               <div
                 ref={languageMenuRef}
-                className="absolute top-9 right-0 z-30 w-42 rounded-xl border border-black bg-white py-1.5"
+                className="absolute top-9 right-0 z-30 w-[168px] rounded-xl border border-black bg-white py-1.5"
               >
                 {LANGUAGE_OPTIONS.map((opt) => (
                   <button
@@ -1943,7 +1943,7 @@ function Portfolio() {
               {languageMenuOpen && (
                 <div
                   ref={languageMenuRef}
-                  className="absolute top-9 right-0 z-30 w-42 rounded-xl border border-black bg-white py-1.5"
+                  className="absolute top-9 right-0 z-30 w-[168px] rounded-xl border border-black bg-white py-1.5"
                 >
                   {LANGUAGE_OPTIONS.map((opt) => (
                     <button
