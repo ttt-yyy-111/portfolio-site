@@ -3005,7 +3005,7 @@ function AnimatedSidebarUnderline({ children, active = false, enabled = false })
     color: "inherit",
     textDecorationLine: "underline",
     textDecorationColor: "#000",
-    textDecorationThickness: "4px",
+    textDecorationThickness: "2px",
     textUnderlineOffset: "2px",
     textDecorationSkipInk: "all",
     WebkitTextDecorationSkip: "ink",
