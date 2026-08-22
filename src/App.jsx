@@ -458,32 +458,43 @@ function Portfolio() {
       const target = galleryScrollRef.current;
       restoreGalleryScrollRef.current = false;
 
-      // 画廊图片是陆续异步加载进来的：如果这时候图片还没加载完，页面实际能滚动的高度
-      // 可能还没到 target 这么高，直接设置滚动位置会被浏览器钳制在当前能滚到的最大值；
-      // 等图片陆续加载完、页面变高了，再补一次正确位置，肉眼看到的就是"先跳到中间某张图、
-      // 再跳回原来的位置"——这个跳动本身是可见的，体验很差。
-      // 解决办法不是让补偿更快/更准，而是干脆不让用户看到这个过程：先把内容隐身
-      // （opacity: 0），在背地里反复把滚动条顶到目标位置，直到页面真的已经长高到能
-      // 容纳这个滚动位置了（用 requestAnimationFrame 逐帧检查，不是隔固定时间猜一次），
-      // 或者等待太久兜底放弃，再把内容显示出来——用户看到的画面永远已经在正确位置上，
-      // 不会看到中间那一下跳动。
+      // 画廊图片是并发异步加载进来的，谁先加载完全看网络情况，不一定按从上到下的顺序：
+      // 可能后面（更靠下）的某几张图片碰巧先加载完，让页面总高度"看起来"已经够滚到目标
+      // 位置了；但其实排在更靠上的某张图片其实还没加载完，一旦它稍后加载完成，会把下面
+      // 的内容再往下"顶"一截，画面已经显示出来之后又悄悄挪动了一点——这也是一种没处理
+      // 干净的跳动，只是比之前那种更轻微、更容易被忽略。
+      // 所以判断"是否可以放心显示"，不能只看"总高度是否达标"这一瞬间的快照，还要确认
+      // 页面高度已经连续稳定了一小段时间（没有新图片突然加载完撑高页面），才说明这一批
+      // 图片基本都尘埃落定了，不会再有后续的位移。
       setRestoringScroll(true);
       mainRef.current.scrollTop = target;
 
       let rafId = null;
       const startedAt = performance.now();
-      const MAX_WAIT_MS = 1500; // 兜底：真等太久（比如图片加载失败）也不能一直不显示内容
+      const MAX_WAIT_MS = 1800; // 兜底：真等太久（比如图片加载失败）也不能一直不显示内容
+      const STABLE_FRAMES_NEEDED = 8; // 高度连续这么多帧都没再变化，才认为图片加载基本稳定了
+      let lastHeight = -1;
+      let stableFrameCount = 0;
       const trySettle = () => {
         const el = mainRef.current;
         if (!el) {
           setRestoringScroll(false);
           return;
         }
-        const maxScrollable = el.scrollHeight - el.clientHeight;
+        const currentHeight = el.scrollHeight;
+        const maxScrollable = currentHeight - el.clientHeight;
         const heightIsEnough = maxScrollable >= target;
         const timedOut = performance.now() - startedAt > MAX_WAIT_MS;
         el.scrollTop = target;
-        if (heightIsEnough || timedOut) {
+
+        if (heightIsEnough && currentHeight === lastHeight) {
+          stableFrameCount += 1;
+        } else {
+          stableFrameCount = 0;
+        }
+        lastHeight = currentHeight;
+
+        if ((heightIsEnough && stableFrameCount >= STABLE_FRAMES_NEEDED) || timedOut) {
           setRestoringScroll(false);
           return;
         }
