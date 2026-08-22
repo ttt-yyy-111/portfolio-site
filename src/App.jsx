@@ -1519,7 +1519,7 @@ function Portfolio() {
               content: "";
               position: absolute;
               right: 0;
-              bottom: -2px;
+              bottom: 1px;
               left: 0;
               height: 1px;
               background: currentColor;
@@ -1529,10 +1529,6 @@ function Portfolio() {
             }
             .desktop-work-title:hover::after,
             .desktop-work-title:focus-visible::after {
-              transform: scaleX(1);
-              transform-origin: left center;
-            }
-            .desktop-work-title-active::after {
               transform: scaleX(1);
               transform-origin: left center;
             }
@@ -3049,7 +3045,7 @@ function WorkListItem({
         lang={bodyTextLang}
         className={`desktop-work-title text-left min-w-0 ${
           selectedId === w.id
-            ? "text-neutral-900 underline underline-offset-2 md:decoration-transparent desktop-work-title-active"
+            ? "text-neutral-900 underline underline-offset-2"
             : "text-neutral-800"
         }`}
       >
