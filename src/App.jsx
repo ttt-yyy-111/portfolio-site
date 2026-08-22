@@ -1514,7 +1514,7 @@ function Portfolio() {
           .desktop-work-title-underline {
             display: none;
           }
-          @media (min-width: 768px) {
+          @media (pointer: fine) {
             .desktop-work-title {
               position: relative;
               display: inline-block;
@@ -1529,7 +1529,8 @@ function Portfolio() {
               text-decoration-color: currentColor;
               text-decoration-thickness: 2px;
               text-underline-offset: 4px;
-              text-decoration-skip-ink: auto;
+              text-decoration-skip-ink: all;
+              -webkit-text-decoration-skip: ink;
               clip-path: inset(0 100% 0 0);
               transition: clip-path 240ms ease-out;
             }
@@ -3023,7 +3024,8 @@ function AnimatedWorkTitle({ children, selected = false }) {
               textDecorationLine: "underline",
               textDecorationThickness: "2px",
               textUnderlineOffset: "4px",
-              textDecorationSkipInk: "auto",
+              textDecorationSkipInk: "all",
+              WebkitTextDecorationSkip: "ink",
             }
           : undefined
       }
