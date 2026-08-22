@@ -1519,9 +1519,9 @@ function Portfolio() {
               content: "";
               position: absolute;
               right: 0;
-              bottom: 1px;
+              bottom: 0;
               left: 0;
-              height: 1px;
+              height: 2px;
               background: currentColor;
               transform: scaleX(0);
               transform-origin: right center;
@@ -3045,7 +3045,7 @@ function WorkListItem({
         lang={bodyTextLang}
         className={`desktop-work-title text-left min-w-0 ${
           selectedId === w.id
-            ? "text-neutral-900 underline underline-offset-2"
+            ? "text-neutral-900 underline decoration-2 underline-offset-3"
             : "text-neutral-800"
         }`}
       >
