@@ -462,6 +462,7 @@ function Portfolio() {
   // 滚动到的位置，不是回到顶部。
   const galleryScrollRef = useRef(0); // 离开画廊之前，记一下画廊滚动到哪了
   const restoreGalleryScrollRef = useRef(false); // 这次回画廊是不是要恢复位置（点了"返回"/浏览器后退才是true）
+  const smoothGalleryScrollToTopRef = useRef(false); // 点姓名回首页时，改用平滑滚回顶部
   // 画面是不是正处在"恢复滚动位置"的过程中——这段时间内容会先隐藏起来，见下面的注释
   const [restoringScroll, setRestoringScroll] = useState(false);
 
@@ -536,6 +537,9 @@ function Portfolio() {
       return () => {
         if (rafId) cancelAnimationFrame(rafId);
       };
+    } else if (!selectedId && !showInfo && smoothGalleryScrollToTopRef.current) {
+      smoothGalleryScrollToTopRef.current = false;
+      mainRef.current.scrollTo({ top: 0, behavior: "smooth" });
     } else {
       mainRef.current.scrollTop = 0;
     }
@@ -584,15 +588,18 @@ function Portfolio() {
   }, []);
 
   const goToGallery = () => {
+    const alreadyOnGallery = !selectedId && !showInfo;
+    if (alreadyOnGallery) {
+      // 已经在首页时没有页面切换可触发 useLayoutEffect，直接平滑回到顶部。
+      scrollGalleryToTop();
+    } else {
+      // 从作品详情或 Information 页面回首页时，等画廊渲染出来后再启动平滑滚动。
+      smoothGalleryScrollToTopRef.current = true;
+    }
     setSelectedId(null);
     setShowInfo(false);
     setMobileMenuOpen(false);
     setNavDirection(null);
-    // 如果点击时已经在首页画廊了（selectedId/showInfo 本来就是 null/false），上面几个
-    // setState 不会引起状态变化，下面那个"切页面就滚回顶部"的 useLayoutEffect 也就不会
-    // 被触发——这里直接强制把滚动条拉回顶部，保证不管当前在哪个状态，点了姓名/Index
-    // 都一定能回到首页最上面，不用等状态变化才生效。
-    if (mainRef.current) mainRef.current.scrollTop = 0;
     restoreGalleryScrollRef.current = false;
     pushNavState({ selectedId: null, showInfo: false });
   };
