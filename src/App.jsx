@@ -1609,7 +1609,7 @@ function Portfolio() {
             {languageMenuOpen && (
               <div
                 ref={languageMenuRef}
-                className="absolute top-9 right-0 z-30 inline-flex w-max flex-col rounded-xl border border-black bg-white py-1.5"
+                className="absolute top-9 right-0 z-30 inline-flex w-max flex-col rounded-xl border border-black bg-white"
               >
                 {LANGUAGE_OPTIONS.map((opt) => (
                   <button
@@ -1623,7 +1623,7 @@ function Portfolio() {
                       setHoveredLanguageOption(null);
                       setExitingLanguageOption(opt.code);
                     }}
-                    className={`relative overflow-hidden px-[18px] py-[9px] text-left text-lg ${
+                    className={`relative overflow-hidden px-[18px] py-[6px] text-left text-lg leading-none ${
                       opt.code === language
                         ? "font-bold"
                         : ""
@@ -1955,7 +1955,7 @@ function Portfolio() {
               {languageMenuOpen && (
                 <div
                   ref={languageMenuRef}
-                  className="absolute top-9 right-0 z-30 inline-flex w-max flex-col rounded-xl border border-black bg-white py-1.5"
+                  className="absolute top-9 right-0 z-30 inline-flex w-max flex-col rounded-xl border border-black bg-white"
                 >
                   {LANGUAGE_OPTIONS.map((opt) => (
                     <button
@@ -1969,7 +1969,7 @@ function Portfolio() {
                         setHoveredLanguageOption(null);
                         setExitingLanguageOption(opt.code);
                       }}
-                      className={`relative overflow-hidden px-[18px] py-[9px] text-left text-lg ${
+                      className={`relative overflow-hidden px-[18px] py-[6px] text-left text-lg leading-none ${
                         opt.code === language
                           ? "font-bold"
                           : ""
