@@ -506,6 +506,25 @@ function Portfolio() {
   // 只在画廊页生效：往下滑超过一定距离后出现，点击后平滑滚回顶部（不是硬切）。
   const [showBackToTop, setShowBackToTop] = useState(false);
   useEffect(() => {
+    if (isMobile) return undefined;
+    const scrollAreas = [sidebarContentRef.current, mainRef.current].filter(Boolean);
+    const timers = new Map();
+    const onScroll = (event) => {
+      const el = event.currentTarget;
+      el.classList.add("desktop-scrollbar-scrolling");
+      window.clearTimeout(timers.get(el));
+      timers.set(el, window.setTimeout(() => el.classList.remove("desktop-scrollbar-scrolling"), 700));
+    };
+    scrollAreas.forEach((el) => el.addEventListener("scroll", onScroll, { passive: true }));
+    return () => {
+      scrollAreas.forEach((el) => {
+        el.removeEventListener("scroll", onScroll);
+        window.clearTimeout(timers.get(el));
+        el.classList.remove("desktop-scrollbar-scrolling");
+      });
+    };
+  }, [isMobile]);
+  useEffect(() => {
     const el = mainRef.current;
     if (!el) return undefined;
     const BACK_TO_TOP_THRESHOLD = 480; // 大约一屏多一点的距离，滑太浅就出现按钮反而碍事
@@ -1511,6 +1530,20 @@ function Portfolio() {
           .language-menu-option:focus-visible .language-menu-option-label {
             color: white;
           }
+          .desktop-scrollbar { scrollbar-width: none; }
+          .desktop-scrollbar::-webkit-scrollbar { width: 0; height: 0; }
+          .desktop-scrollbar.desktop-scrollbar-scrolling {
+            scrollbar-width: thin;
+            scrollbar-color: rgba(0, 0, 0, 0.35) transparent;
+          }
+          .desktop-scrollbar.desktop-scrollbar-scrolling::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+          }
+          .desktop-scrollbar.desktop-scrollbar-scrolling::-webkit-scrollbar-thumb {
+            background: rgba(0, 0, 0, 0.35);
+            border-radius: 999px;
+          }
           @media (prefers-reduced-motion: reduce) {
             .sidebar-icon-hover-reveal,
             .language-toggle-hover-reveal { transition: none; }
@@ -2200,7 +2233,7 @@ function Portfolio() {
 
           <div
             ref={sidebarContentRef}
-            className={`flex-1 min-h-0 overflow-y-auto overflow-x-hidden pb-6 ${
+            className={`flex-1 min-h-0 overflow-y-auto overflow-x-hidden pb-6 ${!isMobile ? "desktop-scrollbar" : ""} ${
               isMobile ? "px-4 pt-2" : "pl-6 pr-2 pt-0"
             }`}
           >
@@ -2735,7 +2768,7 @@ function Portfolio() {
       {/* ---------- 右侧：画廊网格 / 详情页 / 艺术家信息（占剩余约 3/4 宽度） ---------- */}
       <main
         ref={mainRef}
-        className={`flex-1 overflow-y-auto overflow-x-hidden min-w-0 ${
+        className={`flex-1 overflow-y-auto overflow-x-hidden min-w-0 ${!isMobile ? "desktop-scrollbar" : ""} ${
           isMobile ? "min-h-0 w-full" : "h-full"
         }`}
         style={{
