@@ -1388,11 +1388,23 @@ function Portfolio() {
 
   const appRoot = (
     <div
-      className={`w-full ${showPhoneFrame ? "h-full" : "h-screen"} flex ${
+      className={`w-full ${showPhoneFrame ? "h-full" : "app-root-viewport-height"} flex ${
         isMobile ? "flex-col" : "flex-row"
       } bg-white text-neutral-900 overflow-hidden relative`}
       style={{ fontFamily: "-apple-system, 'Helvetica Neue', Arial, sans-serif" }}
     >
+      {!showPhoneFrame && (
+        <style>{`
+          .app-root-viewport-height {
+            height: 100vh; /* 不支持 100dvh 的老浏览器兜底，先按这个算 */
+            height: 100dvh; /* 手机浏览器（尤其是 Chrome）的地址栏/底部工具栏会动态收起展开，
+              100vh 只按"工具栏完全收起"时候的最大高度来算；工具栏还显示着的时候，页面实际
+              可视区域比 100vh 矮一截，靠 100vh 这个容器定位在底部的元素（比如"回到顶部"
+              悬浮按钮）就会被算到工具栏底下，肉眼完全看不到。100dvh 会跟着工具栏的展开/
+              收起实时变化，永远贴合当前真正能看到的区域，不会被工具栏挡住。 */
+          }
+        `}</style>
+      )}
       {googleFontFamilies.length > 0 && (
         <link
           rel="stylesheet"
@@ -1410,7 +1422,12 @@ function Portfolio() {
           onClick={scrollGalleryToTop}
           aria-label={isZh ? "回到顶部" : isEs ? "Volver arriba" : "Back to top"}
           title={isZh ? "回到顶部" : isEs ? "Volver arriba" : "Back to top"}
-          className="absolute bottom-6 right-6 z-20 w-11 h-11 rounded-full flex items-center justify-center bg-neutral-900 text-white shadow-lg hover:bg-neutral-700 transition-colors"
+          className="absolute right-6 z-20 w-11 h-11 rounded-full flex items-center justify-center bg-neutral-900 text-white shadow-lg hover:bg-neutral-700 transition-colors"
+          style={{
+            // 1.5rem 是原来 bottom-6 的间距，额外再叠加一层"安全区域"内边距——
+            // 部分全面屏手机底部有手势条，不加这个的话按钮贴边缘可能会跟手势条重叠
+            bottom: "calc(1.5rem + env(safe-area-inset-bottom, 0px))",
+          }}
         >
           <svg
             viewBox="0 0 24 24"
