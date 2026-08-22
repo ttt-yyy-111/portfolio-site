@@ -2590,17 +2590,19 @@ function Portfolio() {
               </button>
 
               <div className="flex items-center gap-1">
-                <a
-                  href={editMode ? undefined : `mailto:${data.contact?.email || ""}`}
+                <button
+                  type="button"
                   className="group"
                   aria-label="Email"
                   title="Email"
-                  onClick={(e) => {
-                    if (editMode) e.preventDefault();
+                  onClick={() => {
+                    if (!editMode && data.contact?.email) {
+                      window.location.href = `mailto:${data.contact.email}`;
+                    }
                   }}
                 >
                   <HoverRevealIcon src="/icons/email.svg" hoverSrc="/icons/email-hover.svg" />
-                </a>
+                </button>
                 {editMode && (
                   <input
                     type="text"
@@ -2618,19 +2620,19 @@ function Portfolio() {
               </div>
 
               <div className="flex items-center gap-1">
-                <a
-                  href={editMode ? undefined : data.contact?.instagram || "#"}
+                <button
+                  type="button"
                   className="group"
                   aria-label="Instagram"
                   title="Instagram"
-                  target={editMode ? undefined : "_blank"}
-                  rel="noopener noreferrer"
-                  onClick={(e) => {
-                    if (editMode) e.preventDefault();
+                  onClick={() => {
+                    if (!editMode && data.contact?.instagram) {
+                      window.open(data.contact.instagram, "_blank", "noopener,noreferrer");
+                    }
                   }}
                 >
                   <HoverRevealIcon src="/icons/instagram.svg" hoverSrc="/icons/instagram-hover.svg" />
-                </a>
+                </button>
                 {editMode && (
                   <input
                     type="text"
@@ -2648,19 +2650,19 @@ function Portfolio() {
               </div>
 
               <div className="flex items-center gap-1">
-                <a
-                  href={editMode ? undefined : data.contact?.redNote || "#"}
+                <button
+                  type="button"
                   className="group"
                   aria-label="RedNote"
                   title="RedNote"
-                  target={editMode ? undefined : "_blank"}
-                  rel="noopener noreferrer"
-                  onClick={(e) => {
-                    if (editMode) e.preventDefault();
+                  onClick={() => {
+                    if (!editMode && data.contact?.redNote) {
+                      window.open(data.contact.redNote, "_blank", "noopener,noreferrer");
+                    }
                   }}
                 >
                   <HoverRevealIcon src="/icons/rednote.svg" hoverSrc="/icons/rednote-hover.svg" />
-                </a>
+                </button>
                 {editMode && (
                   <input
                     type="text"
