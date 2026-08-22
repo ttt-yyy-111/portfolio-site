@@ -1483,20 +1483,16 @@ function Portfolio() {
             from { max-height: 0; }
             to { max-height: 120px; }
           }
-          .language-menu-option-reveal {
-            animation: language-menu-option-reveal 220ms ease-out both;
-          }
-          @keyframes language-menu-option-reveal {
-            from { transform: translateX(-24px); }
-            to { transform: translateX(0); }
+          .language-menu-option:hover .language-menu-option-label,
+          .language-menu-option:focus-visible .language-menu-option-label {
+            color: white;
           }
           @media (prefers-reduced-motion: reduce) {
             .sidebar-icon-hover-reveal,
             .language-toggle-hover-reveal { transition: none; }
             .language-menu-option-enter,
             .language-menu-option-exit,
-            .language-menu-reveal,
-            .language-menu-option-reveal { animation-duration: 0ms; }
+            .language-menu-reveal { animation-duration: 0ms; }
           }
         `}</style>
       )}
@@ -1629,10 +1625,9 @@ function Portfolio() {
                 ref={languageMenuRef}
                 className="language-menu-reveal absolute top-9 right-0 z-30 inline-flex w-max flex-col overflow-hidden rounded-[15px] border-2 border-black bg-white"
               >
-                {LANGUAGE_OPTIONS.map((opt, index) => (
+                {LANGUAGE_OPTIONS.map((opt) => (
                   <button
                     key={opt.code}
-                    style={{ animationDelay: `${index * 100}ms` }}
                     onClick={() => selectLanguage(opt.code)}
                     onMouseEnter={() => {
                       setHoveredLanguageOption(opt.code);
@@ -1644,13 +1639,13 @@ function Portfolio() {
                         prev.includes(opt.code) ? prev : [...prev, opt.code]
                       );
                     }}
-                    className={`language-menu-option-reveal relative px-[18px] py-[6px] text-left text-lg leading-none ${
+                    className={`language-menu-option relative px-[18px] py-[6px] text-left text-lg leading-none ${
                       opt.code === language
                         ? "font-bold"
                         : ""
                     }`}
                   >
-                    <span className="relative z-30 text-white mix-blend-difference">{opt.name}</span>
+                    <span className="language-menu-option-label relative z-30 text-black">{opt.name}</span>
                     <span
                       aria-hidden="true"
                       className={`language-menu-option-hover pointer-events-none absolute inset-y-0 z-20 rounded-full bg-black ${languageOptionHoverClass(opt.code)}`}
@@ -1978,10 +1973,9 @@ function Portfolio() {
                   ref={languageMenuRef}
                   className="language-menu-reveal absolute top-9 right-0 z-30 inline-flex w-max flex-col overflow-hidden rounded-[15px] border-2 border-black bg-white"
                 >
-                  {LANGUAGE_OPTIONS.map((opt, index) => (
+                  {LANGUAGE_OPTIONS.map((opt) => (
                     <button
                       key={opt.code}
-                      style={{ animationDelay: `${index * 100}ms` }}
                       onClick={() => selectLanguage(opt.code)}
                       onMouseEnter={() => {
                         setHoveredLanguageOption(opt.code);
@@ -1993,13 +1987,13 @@ function Portfolio() {
                           prev.includes(opt.code) ? prev : [...prev, opt.code]
                         );
                       }}
-                      className={`language-menu-option-reveal relative px-[18px] py-[6px] text-left text-lg leading-none ${
+                      className={`language-menu-option relative px-[18px] py-[6px] text-left text-lg leading-none ${
                         opt.code === language
                           ? "font-bold"
                           : ""
                       }`}
                     >
-                      <span className="relative z-30 text-white mix-blend-difference">{opt.name}</span>
+                      <span className="language-menu-option-label relative z-30 text-black">{opt.name}</span>
                       <span
                         aria-hidden="true"
                         className={`language-menu-option-hover pointer-events-none absolute inset-y-0 z-20 rounded-full bg-black ${languageOptionHoverClass(opt.code)}`}
