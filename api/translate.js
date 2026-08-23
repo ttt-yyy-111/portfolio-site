@@ -21,7 +21,7 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: "Method not allowed" });
   }
 
-  const { text, titleCase = false } = req.body || {};
+  const { text, titleCase = false, html = false } = req.body || {};
   if (typeof text !== "string" || !text.trim()) {
     return res.status(400).json({ error: "Text is required" });
   }
@@ -44,6 +44,7 @@ export default async function handler(req, res) {
     target_lang: "ES",
     preserve_formatting: "1",
   });
+  if (html) body.set("tag_handling", "html");
 
   try {
     const response = await fetch(endpoint, {

@@ -938,12 +938,12 @@ function Portfolio() {
   // 翻译请求只从英文编辑模式发起；密钥保留在 Vercel 的服务器环境变量中，
   // 浏览器只把需要翻译的文字交给同域的 /api/translate。
   const translationRequestRef = useRef(new Map());
-  const translateToSpanish = async (value, { titleCase = false } = {}) => {
+  const translateToSpanish = async (value, { titleCase = false, html = false } = {}) => {
     if (typeof value !== "string" || !value.trim()) return value;
     const response = await fetch("/api/translate", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ text: value, titleCase }),
+      body: JSON.stringify({ text: value, titleCase, html }),
     });
     if (!response.ok) throw new Error("Translation request failed");
     const result = await response.json();
@@ -974,6 +974,75 @@ function Portfolio() {
         .catch(() => {
           // 网络或额度暂时不可用时保留英文和现有西班牙语，不中断编辑。
         });
+    });
+  };
+
+  const syncInfoSectionSpanish = (id, patch) => {
+    if (language !== "en") return;
+    ["title", "body"].forEach((field) => {
+      if (typeof patch[field] !== "string") return;
+      const requestKey = `info-section:${id}:${field}`;
+      const requestId = Symbol(requestKey);
+      translationRequestRef.current.set(requestKey, requestId);
+      void translateToSpanish(patch[field], { html: true })
+        .then((translation) => {
+          if (translationRequestRef.current.get(requestKey) !== requestId) return;
+          updateData((prev) => ({
+            ...prev,
+            infoSections: (prev.infoSections || []).map((section) =>
+              section.id === id ? { ...section, [`${field}Es`]: translation } : section
+            ),
+          }));
+        })
+        .catch(() => {});
+    });
+  };
+
+  const syncInfoEntrySpanish = (sectionId, entryId, patch) => {
+    if (language !== "en" || typeof patch.name !== "string") return;
+    const requestKey = `info-entry:${sectionId}:${entryId}:name`;
+    const requestId = Symbol(requestKey);
+    translationRequestRef.current.set(requestKey, requestId);
+    void translateToSpanish(patch.name, { html: true })
+      .then((translation) => {
+        if (translationRequestRef.current.get(requestKey) !== requestId) return;
+        updateData((prev) => ({
+          ...prev,
+          infoSections: (prev.infoSections || []).map((section) =>
+            section.id === sectionId
+              ? {
+                  ...section,
+                  entries: (section.entries || []).map((entry) =>
+                    entry.id === entryId ? { ...entry, nameEs: translation } : entry
+                  ),
+                }
+              : section
+          ),
+        }));
+      })
+      .catch(() => {});
+  };
+
+  const updateContact = (patch) => {
+    updateData((prev) => ({
+      ...prev,
+      contact: { ...(prev.contact || {}), ...patch },
+    }));
+    if (language !== "en") return;
+    Object.entries(patch).forEach(([field, value]) => {
+      if (!field.endsWith("Label") || typeof value !== "string") return;
+      const requestKey = `contact:${field}`;
+      const requestId = Symbol(requestKey);
+      translationRequestRef.current.set(requestKey, requestId);
+      void translateToSpanish(value)
+        .then((translation) => {
+          if (translationRequestRef.current.get(requestKey) !== requestId) return;
+          updateData((prev) => ({
+            ...prev,
+            contact: { ...(prev.contact || {}), [`${field}Es`]: translation },
+          }));
+        })
+        .catch(() => {});
     });
   };
 
@@ -1427,6 +1496,7 @@ function Portfolio() {
       ...prev,
       infoSections: (prev.infoSections || []).map((s) => (s.id === id ? { ...s, ...patch } : s)),
     }));
+    syncInfoSectionSpanish(id, patch);
   };
   const deleteInfoSection = (id) => {
     updateData((prev) => ({
@@ -1446,6 +1516,7 @@ function Portfolio() {
           : s
       ),
     }));
+    syncInfoEntrySpanish(sectionId, entryId, patch);
   };
   const addInfoEntry = (sectionId) => {
     updateData((prev) => ({
@@ -2922,12 +2993,7 @@ function Portfolio() {
                     as="span"
                     editMode={editMode}
                     value={tField(data.contact || {}, "informationLabel") || "Information"}
-                    onChange={(v) =>
-                      updateData((prev) => ({
-                        ...prev,
-                        contact: { ...(prev.contact || {}), [langKey("informationLabel")]: v },
-                      }))
-                    }
+                    onChange={(v) => updateContact({ [langKey("informationLabel")]: v })}
                   />
                 </button>
                 <div className="flex items-center gap-2">
@@ -2943,12 +3009,7 @@ function Portfolio() {
                       as="span"
                       editMode={editMode}
                       value={tField(data.contact || {}, "emailLabel") || "Email"}
-                      onChange={(v) =>
-                        updateData((prev) => ({
-                          ...prev,
-                          contact: { ...(prev.contact || {}), [langKey("emailLabel")]: v },
-                        }))
-                      }
+                      onChange={(v) => updateContact({ [langKey("emailLabel")]: v })}
                     />
                   </a>
                   {editMode && (
@@ -2981,12 +3042,7 @@ function Portfolio() {
                       as="span"
                       editMode={editMode}
                       value={tField(data.contact || {}, "instagramLabel") || "Instagram"}
-                      onChange={(v) =>
-                        updateData((prev) => ({
-                          ...prev,
-                          contact: { ...(prev.contact || {}), [langKey("instagramLabel")]: v },
-                        }))
-                      }
+                      onChange={(v) => updateContact({ [langKey("instagramLabel")]: v })}
                     />
                   </a>
                   {editMode && (
@@ -3019,12 +3075,7 @@ function Portfolio() {
                       as="span"
                       editMode={editMode}
                       value={tField(data.contact || {}, "redNoteLabel") || "RedNote"}
-                      onChange={(v) =>
-                        updateData((prev) => ({
-                          ...prev,
-                          contact: { ...(prev.contact || {}), [langKey("redNoteLabel")]: v },
-                        }))
-                      }
+                      onChange={(v) => updateContact({ [langKey("redNoteLabel")]: v })}
                     />
                   </a>
                   {editMode && (
