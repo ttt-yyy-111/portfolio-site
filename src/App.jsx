@@ -3619,7 +3619,7 @@ function Portfolio() {
               borderRadius: 40,
             }}
           >
-            <div className="absolute inset-x-0 bottom-0 top-5">
+            <div className="absolute inset-x-0 bottom-0 top-10">
               {appRoot}
             </div>
           </div>
