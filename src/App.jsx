@@ -3564,7 +3564,7 @@ function Portfolio() {
               skipReveal={justRestoredGallery}
               tField={tField}
               isZh={isZh}
-              previewImageScale={showPhoneFrame ? 1.6 : 1}
+              phonePreview={showPhoneFrame}
             />
           </>
         ) : (
@@ -3875,7 +3875,7 @@ function GalleryGrid({
   skipReveal = false,
   tField,
   isZh,
-  previewImageScale = 1,
+  phonePreview = false,
 }) {
   const containerRef = useRef(null);
   const [columnCount, setColumnCount] = useState(() => (isMobile ? 1 : 3));
@@ -3905,7 +3905,7 @@ function GalleryGrid({
   return (
     <div
       ref={containerRef}
-      className="px-3 md:px-6 pb-6 flex"
+      className={`${phonePreview ? "px-0" : "px-3 md:px-6"} pb-6 flex`}
       style={{ paddingTop: isMobile ? 16 : 40, gap: effectiveGap }}
     >
       {columns.map((colWorks, colIdx) => (
@@ -3920,7 +3920,6 @@ function GalleryGrid({
               skipReveal={skipReveal}
               tField={tField}
               isZh={isZh}
-              previewImageScale={previewImageScale}
             />
           ))}
         </div>
@@ -3929,7 +3928,7 @@ function GalleryGrid({
   );
 }
 
-function GalleryImage({ w, editMode, onSelect, onReplaceCover, skipReveal, tField, isZh, previewImageScale }) {
+function GalleryImage({ w, editMode, onSelect, onReplaceCover, skipReveal, tField, isZh }) {
   const { ref, style } = useRevealAnimation(skipReveal);
   const displayTitle = tField ? tField(w, "title") : w.title;
   return (
@@ -3948,12 +3947,7 @@ function GalleryImage({ w, editMode, onSelect, onReplaceCover, skipReveal, tFiel
           onContextMenu={(e) => !editMode && e.preventDefault()}
           onDragStart={(e) => e.preventDefault()}
           className="w-full h-auto object-cover opacity-95 transition-opacity duration-300 select-none pointer-events-none"
-          style={{
-            WebkitTouchCallout: "none",
-            width: previewImageScale > 1 ? `${previewImageScale * 100}%` : "100%",
-            maxWidth: "none",
-            marginLeft: previewImageScale > 1 ? `${((1 - previewImageScale) / 2) * 100}%` : undefined,
-          }}
+          style={{ WebkitTouchCallout: "none" }}
         />
       </button>
       {!editMode && (
