@@ -375,12 +375,45 @@ function Portfolio() {
   const [showInfo, setShowInfo] = useState(false);
   const [navDirection, setNavDirection] = useState(null); // 'prev' | 'next' | null，只有点详情页的Previous/Next才会设置
 
-  // 只有网址带 ?edit=1 的时候才会显示编辑相关的按钮，这样正式访问网站的人看到的是干净的展示页面，
-  // 你自己想编辑的时候打开 你的网址/?edit=1 就行
-  const [canEdit] = useState(() => {
+  // ?edit=1 只会打开登录入口；编辑工具与翻译接口都要通过服务器端密码验证后才可使用。
+  const [editRequested] = useState(() => {
     if (typeof window === "undefined") return false;
     return new URLSearchParams(window.location.search).get("edit") === "1";
   });
+  const [editorAuth, setEditorAuth] = useState({ checking: editRequested, authenticated: false });
+  const [editorPassword, setEditorPassword] = useState("");
+  const [editorLoginError, setEditorLoginError] = useState("");
+  useEffect(() => {
+    if (!editRequested) return undefined;
+    let cancelled = false;
+    fetch("/api/editor-auth", { credentials: "same-origin" })
+      .then((response) => response.json().then((body) => ({ response, body })))
+      .then(({ response, body }) => {
+        if (!cancelled) setEditorAuth({ checking: false, authenticated: response.ok && body.authenticated === true });
+      })
+      .catch(() => {
+        if (!cancelled) setEditorAuth({ checking: false, authenticated: false });
+      });
+    return () => { cancelled = true; };
+  }, [editRequested]);
+  const submitEditorLogin = async (event) => {
+    event.preventDefault();
+    setEditorLoginError("");
+    try {
+      const response = await fetch("/api/editor-auth", {
+        method: "POST",
+        credentials: "same-origin",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ password: editorPassword }),
+      });
+      if (!response.ok) throw new Error("Incorrect password");
+      setEditorPassword("");
+      setEditorAuth({ checking: false, authenticated: true });
+    } catch {
+      setEditorLoginError("密码不正确，或编辑保护尚未配置。");
+    }
+  };
+  const canEdit = editRequested && editorAuth.authenticated;
 
   // ---------- 语言切换：八种语言，首次访问始终默认英文 ----------
   // 第一次打开网站（浏览器里还没存过语言）默认显示英文；之后每次切换语言都会记到 localStorage 里，
@@ -1960,6 +1993,33 @@ function Portfolio() {
       } bg-white text-neutral-900 overflow-hidden relative`}
       style={{ fontFamily: "-apple-system, 'Helvetica Neue', Arial, sans-serif" }}
     >
+      {editRequested && !editorAuth.authenticated && (
+        <div className="absolute inset-0 z-[100] flex items-center justify-center bg-white/95 px-6">
+          {editorAuth.checking ? (
+            <p className="text-sm text-neutral-500">正在验证编辑权限…</p>
+          ) : (
+            <form onSubmit={submitEditorLogin} className="w-full max-w-xs space-y-4">
+              <div>
+                <h2 className="text-xl font-bold">编辑登录</h2>
+                <p className="mt-1 text-sm text-neutral-500">请输入仅你本人使用的编辑密码。</p>
+              </div>
+              <input
+                type="password"
+                autoFocus
+                autoComplete="current-password"
+                value={editorPassword}
+                onChange={(event) => setEditorPassword(event.target.value)}
+                className="w-full rounded-full border-2 border-black px-4 py-2 text-sm outline-none"
+                placeholder="编辑密码"
+              />
+              {editorLoginError && <p className="text-xs text-red-600">{editorLoginError}</p>}
+              <button type="submit" className="w-full rounded-full bg-black px-4 py-2 text-sm font-bold text-white">
+                进入编辑页面
+              </button>
+            </form>
+          )}
+        </div>
+      )}
       {!showPhoneFrame && (
         <style>{`
           .app-root-viewport-height {

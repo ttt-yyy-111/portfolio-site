@@ -20,6 +20,9 @@ export default async function handler(req, res) {
     res.setHeader("Allow", "POST");
     return res.status(405).json({ error: "Method not allowed" });
   }
+  if (!isEditorAuthenticated(req)) {
+    return res.status(401).json({ error: "Editor authentication required" });
+  }
 
   const { text, sourceLang = "EN", targetLang = "ES", titleCase = false, html = false } = req.body || {};
   if (typeof text !== "string" || !text.trim()) {
@@ -76,3 +79,4 @@ export default async function handler(req, res) {
     return res.status(502).json({ error: "Unable to reach DeepL" });
   }
 }
+import { isEditorAuthenticated } from "./lib/editor-auth.js";
