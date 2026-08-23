@@ -2324,7 +2324,7 @@ function Portfolio() {
         <div
           ref={typoPanelRef}
           className={`${
-            showPhoneFrame ? "fixed top-6 right-6 z-[200]" : "absolute top-12 right-3 z-30"
+            showPhoneFrame ? "fixed top-32 right-6 z-[200]" : "absolute top-12 right-3 z-30"
           } w-72 max-h-[80vh] overflow-y-auto bg-white border border-neutral-200 rounded-xl shadow-lg p-4 space-y-4`}
         >
           <div className="text-xs font-bold px-2 py-1 rounded bg-neutral-100 text-neutral-600 inline-block">
@@ -2695,7 +2695,7 @@ function Portfolio() {
       {isMobile && canEdit && (
         <div
           className={`flex items-center gap-2 px-3 py-2 bg-neutral-50 overflow-x-auto ${
-            showPhoneFrame ? "fixed bottom-6 left-6 z-[200] rounded-xl shadow-lg" : "flex-shrink-0"
+            showPhoneFrame ? "fixed top-6 right-6 z-[200] rounded-xl shadow-lg" : "flex-shrink-0"
           }`}
         >
           <div className="flex items-center rounded-full bg-neutral-100 p-0.5 text-xs font-bold flex-shrink-0">
@@ -2726,6 +2726,14 @@ function Portfolio() {
           >
             导出内容{hasUnexportedChanges ? "（有改动）" : ""}
           </button>
+          {showPhoneFrame && !editMode && (
+            <button
+              onClick={() => setEditMode(true)}
+              className="text-xs font-bold px-3 py-1.5 rounded-full bg-neutral-900 text-white flex-shrink-0 whitespace-nowrap"
+            >
+              编辑页面
+            </button>
+          )}
         </div>
       )}
 
@@ -2734,7 +2742,7 @@ function Portfolio() {
       {isMobile && canEdit && editMode && (
         <div
           className={`flex items-center gap-2 px-3 py-2 bg-neutral-50 overflow-x-auto ${
-            showPhoneFrame ? "fixed bottom-20 left-6 z-[200] rounded-xl shadow-lg" : "flex-shrink-0"
+            showPhoneFrame ? "fixed top-20 right-6 z-[200] rounded-xl shadow-lg" : "flex-shrink-0"
           }`}
         >
           <button
