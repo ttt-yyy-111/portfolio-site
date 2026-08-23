@@ -309,20 +309,18 @@
         "id": "bio",
         "title": "Biography",
         "titleZh": "简介",
-        "titleEs": "Biografía",
         "body": "Yu Tiantian is an experimental visual artist born in Heilongjiang, China, in 1996. She currently lives and works in Beijing. She received her bachelor's degree from the Central Academy of Fine Arts in 2018 and later went to Japan to study mineral pigments. She will receive her MFA in Printmaking from the Rhode Island School of Design in 2027.<br>Tiantian has lived and worked across China, Japan, and the United States. She worked as a producer and illustrator, contributing to several art documentaries and moving-image projects. She subsequently traveled to Japan to study traditional mineral pigments and pursued further studies in printmaking in the United States. These cross-cultural and interdisciplinary experiences form the material foundation of her practice.<br>Her practice moves between painting, printmaking, and mixed-media installation, using foraging and collecting as conceptual starting points. In her work, low-cost, mass-produced everyday disposables—found objects left on the street, children's toys, aluminum foil, plastic wrap, and various textiles—are juxtaposed and layered with traditional media laden with cultural memory, such as mineral pigments, ink, and antique silk, creating a realm where multiple temporal dimensions coexist.<div><br></div><div>Refusing to reduce materials to mere tools for expression, Tiantian&nbsp;regards them as extensions of the senses, exploring how the innate energy of matter manifests naturally through physical processes of layering, draping, and seepage. Her work revolves around materiality, identity, and transformation, continuously tracing material politics, cultural identity, and self-edification, while testing the possibilities of bodily perception as a methodology. Through processes of layering, transferring, and reconfiguring, she expands the boundaries of the marginalized and overlooked, giving form to works intertwined with themes of connection and change.</div>",
         "bodyZh": "<div>于田田，实验视觉艺术家，1996年出生于中国黑龙江，现工作生活于北京。她于2018年毕业于中央美术学院并获得学士学位，后赴日本研习矿物颜料，将于2027年获得美国罗德岛设计学院版画硕士学位。</div><div>于田田先后在中国、日本及美国学习与工作。她曾担任制片人与插画师，参与多部艺术纪录片与影像项目的制作；而后赴日研习传统矿物颜料，并于美国深造版画。这些跨越文化与媒介的履历，构成了其艺术实践的材料基底。</div>她的创作游移于绘画、版画与混合媒介装置之间，常以“捡拾”与“采集”作为逻辑起点。在实践中，廉价且工业化量产的日常消耗品——街头遗落的拾得物、儿童玩具、锡纸、保鲜膜及各类织物——与矿物颜料、墨水、古绢等承载文化记忆的传统媒介被并置与叠加，构筑出多重时间维度共存的场域。<br>于田田拒绝将材料简化为表达的工具，而是将其视为感官的延伸，探索物质自身的能量如何在叠层、悬垂与渗透的物理过程中自然显发。她的创作围绕材料性、身份与转变展开，持续追溯物质政治、文化身份与自我教化，并试炼“身体感知”作为创作方法论的可能性。通过叠加、转移与重构等工序，她不断拓宽那些被边缘化或被忽视之物的边界，呈现交织着联系与演变的主题。",
-        "bodyEs": "<div>Yu Tiantian es una artista visual experimental nacida en Heilongjiang, China, en 1996. Actualmente vive y trabaja en Pekín. Se graduó en 2018 de la Academia Central de Bellas Artes con una licenciatura y posteriormente viajó a Japón para estudiar pigmentos minerales. Obtendrá su maestría en Grabado de la Escuela de Diseño de Rhode Island en 2027.</div><div>Tiantian ha vivido y trabajado en China, Japón y Estados Unidos. Se desempeñó como productora e ilustradora, participando en la producción de varios documentales artísticos y proyectos de imagen en movimiento. Posteriormente viajó a Japón para estudiar pigmentos minerales tradicionales y continuó su formación en grabado en Estados Unidos. Estas experiencias interculturales e interdisciplinarias constituyen la base material de su práctica artística.</div>Su obra se desplaza entre la pintura, el grabado y las instalaciones de técnica mixta, tomando la recolección y el hallazgo de objetos como punto de partida conceptual. En su proceso creativo, materiales cotidianos de producción en masa y bajo costo —objetos encontrados en la calle, juguetes infantiles, papel de aluminio, film transparente y diversos tejidos— se yuxtaponen y superponen con medios tradicionales cargados de memoria cultural, como pigmentos minerales, tinta y seda antigua, configurando un espacio donde coexisten múltiples dimensiones temporales.<br>Renuente a reducir la materia a un mero instrumento de expresión, Tiantian&nbsp;la concibe como una extensión de los sentidos, explorando cómo la energía intrínseca de los materiales se manifiesta de forma natural mediante procesos físicos de superposición, caída y permeación. Su práctica gira en torno a la materialidad, la identidad y la transformación, rastreando de manera continua la política de los materiales, la identidad cultural y la autoeducación, al tiempo que pone a prueba la percepción corporal como metodología de creación. A través de la superposición, la transferencia y la reconfiguración, la artista expande los límites de aquello que ha sido relegado a la periferia o ignorado, dando forma a obras que entrelazan temas de conexión y constante evolución.",
         "columns": 1,
-        "category": "info"
+        "category": "info",
+        "titleEs": "Biografía",
+        "bodyEs": "Yu Tiantian es una artista visual experimental nacida en Heilongjiang (China) en 1996. Actualmente vive y trabaja en Pekín. Se licenció en la Academia Central de Bellas Artes en 2018 y posteriormente se trasladó a Japón para estudiar pigmentos minerales. En 2027 obtendrá su máster en Grabado por la Escuela de Diseño de Rhode Island.<br>Tiantian ha vivido y trabajado en China, Japón y Estados Unidos. Ha trabajado como productora e ilustradora, colaborando en varios documentales sobre arte y proyectos de imagen en movimiento. Posteriormente, viajó a Japón para estudiar pigmentos minerales tradicionales y amplió sus estudios de grabado en Estados Unidos. Estas experiencias interculturales e interdisciplinares constituyen la base fundamental de su práctica artística.<br>Su obra se mueve entre la pintura, el grabado y la instalación de técnica mixta, utilizando la recolección y el hallazgo de objetos como puntos de partida conceptuales. En su obra, objetos cotidianos desechables, de bajo coste y producidos en masa —objetos encontrados abandonados en la calle, juguetes infantiles, papel de aluminio, film transparente y diversos tejidos— se yuxtaponen y se superponen con materiales tradicionales cargados de memoria cultural, como pigmentos minerales, tinta y seda antigua, creando un ámbito en el que coexisten múltiples dimensiones temporales.<div><br></div><div>Negándose a reducir los materiales a meras herramientas de expresión, Tiantian los considera extensiones de los sentidos y explora cómo la energía innata de la materia se manifiesta de forma natural a través de procesos físicos de superposición, drapeado y filtración. Su obra gira en torno a la materialidad, la identidad y la transformación, trazando continuamente la política de los materiales, la identidad cultural y la autoconstrucción, al tiempo que pone a prueba las posibilidades de la percepción corporal como metodología. A través de procesos de superposición, transferencia y reconfiguración, amplía los límites de lo marginado y lo ignorado, dando forma a obras entrelazadas con temas de conexión y cambio.</div>"
       },
       {
         "id": "exhibitions",
         "title": "Solo Exhibitions",
         "titleZh": "个展",
-        "titleEs": "Exposiciones Individuales",
         "bodyZh": "点击这里编辑你的展览履历（中文版）。",
-        "bodyEs": "Haz clic aquí para editar tu trayectoria de exposiciones.",
         "columns": 1,
         "category": "exhibition",
         "entries": [
@@ -331,23 +329,24 @@
             "year": "2026",
             "name": "<i>Cloudy to Clear, a Hint of Breeze</i>, SOOFA SUHE, Shanghai, China",
             "nameZh": "《多云转晴，似有微风》，SOOFA SUHE，上海，中国",
-            "nameEs": "<i>De nublado a despejado, ligera brisa</i>, SOOFA SUHE, Shanghai, China"
+            "nameEs": "<i>Nublado con claros, una ligera brisa</i>, SOOFA SUHE, Shanghái, China"
           },
           {
             "id": "0qcwlq97vdxems7qhdsl",
             "year": "2025",
             "name": "<i>A Glimpse Admist Slender</i>, AYE Gallery, Beijing, China",
             "nameZh": "《窥见于纤弱之间》，AYE Gallery，北京，中国",
-            "nameEs": "<i>Un vistazo a Admist Slender</i>, Galería AYE, Beijing, China"
+            "nameEs": "<i>«A Glimpse Admitten Slender»</i>, Galería AYE, Pekín, China"
           },
           {
             "id": "gundxgd7maqms7qhdsl",
             "year": "2024",
             "name": "<i>Fragrance of the Mind</i>, Oumuamua Art Museum, Beijing, China",
             "nameZh": "《臆想的芬芳》，奥木木美术馆，北京，中国",
-            "nameEs": "<i>Fragancia de la mente</i>, Museo de Arte Oumuamua, Beijing, China"
+            "nameEs": "<i>«Fragancia de la mente</i>», Museo de Arte Oumuamua, Pekín, China"
           }
-        ]
+        ],
+        "titleEs": "Exposiciones individuales"
       },
       {
         "id": "72re4y9xz4oms7zwgco",
@@ -359,46 +358,46 @@
             "year": "2026",
             "name": "<i style=\"--tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ;\">Light Chaser: Special Exhibition for the Year of the Horse 2026</i>, Gravity Art Museum, Beijing, China",
             "nameZh": "《逐光：2026丙午马年特展》，重美术馆，北京，中国",
-            "nameEs": "<i>Light Chaser: Exposición especial para el año del caballo 2026</i>, Gravity Art Museum, Beijing, China"
+            "nameEs": "<i style=\"--tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ;\">«Light Chaser»: Exposición especial con motivo del Año del Caballo 2026</i>, Museo de Arte Gravity, Pekín, China"
           },
           {
             "id": "jcnfcmkwj7qms7zxg5s",
             "year": "2025",
             "name": "<i style=\"--tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ;\">Planetarity: Friction, Fossils and the Future</i>, Gelman Gallery, Providence, USA",
             "nameZh": "《行星性：摩擦、化石与未来》，盖尔曼画廊，普罗维登斯，美国",
-            "nameEs": "<i>Planetariedad: fricción, fósiles y el futuro</i>, Galería Gelman, Providence, EE. UU"
+            "nameEs": "<i style=\"--tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ;\">«Planetarity: Fricción, fósiles y el futuro</i>», Galería Gelman, Providence, EE. UU."
           },
           {
             "id": "9i288qzxqnqms7zxuov",
             "year": "2025",
             "name": "<i style=\"--tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ;\">ART021 Shanghai Contemporary Art Fair</i>, Shanghai, China",
             "nameZh": "ART021上海廿一当代艺术博览会，上海，中国",
-            "nameEs": "<i style=\"--tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ;\">ART021 Feria de Arte Contemporáneo de Shanghai</i>, Shanghai, China"
+            "nameEs": "<i style=\"--tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ;\">ART021 Feria de Arte Contemporáneo de Shanghái</i>, Shanghái, China"
           },
           {
             "id": "jixnesbllztms7zy7hh",
             "year": "2025",
             "name": "<i style=\"--tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ;\">Neither Anchor Nor Shore aranya</i>, Qinhuangdao, China",
             "nameZh": "《随波逐流》阿那亚，秦皇岛，中国",
-            "nameEs": "<i style=\"--tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ;\">Ni ancla ni orilla aranya</i>, Qinhuangdao, China"
+            "nameEs": "<i style=\"--tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ;\">Ni ancla ni orilla</i>, <i style=\"--tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ;\">Aranya</i>, Qinhuangdao, China"
           },
           {
             "id": "hex2oks8658ms7zylut",
             "year": "2024",
             "name": "<i style=\"--tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ;\">Upright Walking</i>, Dongguli Art Park, Beijing, China",
             "nameZh": "《直立行走》，东古里艺术园区，北京，中国",
-            "nameEs": "<i>Caminata erguida</i>, Parque de Arte Dongguli, Beijing, China"
+            "nameEs": "<i style=\"--tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ;\">«Upright Walking»</i>, Parque Artístico de Dongguli, Pekín, China"
           },
           {
             "id": "dvqihwv7vg7ms7zyyjh",
             "year": "2023",
             "name": "<i style=\"--tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ;\">Summer Art Festival</i>, Shibuya Fashion &amp; Art College, Tokyo, Japan",
             "nameZh": "《夏の芸术祭》，渋谷ファッション＆アート専門学校，东京，日本",
-            "nameEs": "<i>Festival de Arte de Verano</i>, Shibuya Fashion &amp; Art College, Tokio, Japón"
+            "nameEs": "<i style=\"--tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ;\">Festival de Arte de Verano</i>, Escuela Superior de Moda y Arte de Shibuya, Tokio, Japón"
           }
         ],
-        "titleEs": "<h3 class=\"mb-3 block\" style=\"--tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ; font-size: 30px; font-weight: 700; letter-spacing: 0px; line-height: 1.3; overflow-wrap: break-word;\"><div _ngcontent-ng-c64613157=\"\" inline-copy-host=\"\" class=\"markdown markdown-main-panel md-content enable-luminous-fast-follows enable-updated-hr-color stronger\" id=\"model-response-message-contentr_e1c87c13e0c930b2\" aria-busy=\"false\" aria-live=\"polite\" dir=\"ltr\" style=\"--animation-duration: 400ms; --fade-animation-function: ease-out; animation: auto ease 0s 1 normal none running none; appearance: none; background: none 0% 0% / auto repeat scroll padding-box border-box rgba(0, 0, 0, 0); border-style: none; border-color: rgb(31, 31, 31); border-image: initial; inset: auto; clear: none; clip: auto; color: rgb(31, 31, 31); columns: auto; contain: none; container: none; content: normal; cursor: auto; cx: 0px; cy: 0px; d: none; direction: ltr; fill: rgb(0, 0, 0); filter: none; flex: 0 1 auto; flex-direction: row; float: none; gap: normal; hyphens: manual; interactivity: auto; isolation: auto; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; marker: none; mask: none; offset: normal; opacity: 1; order: 0; outline: rgb(31, 31, 31) none 1.5px; overlay: none; padding: 0px; page: auto; perspective: none; position: static; quotes: auto; r: 0px; resize: none; rotate: none; rx: auto; ry: auto; scale: none; speak: normal; stroke: none; transform: none; transition: all; translate: none; visibility: visible; x: 0px; y: 0px; zoom: 1; margin-top: 0px !important; font-family: &quot;Google Sans Text&quot;, sans-serif !important; line-height: 1.15 !important;\"><div style=\"animation: auto ease 0s 1 normal none running none; appearance: none; background: none 0% 0% / auto repeat scroll padding-box border-box rgba(0, 0, 0, 0); border-style: none; border-color: rgb(31, 31, 31); border-image: initial; inset: auto; clear: none; clip: auto; columns: auto; contain: none; container: none; content: normal; cursor: auto; cx: 0px; cy: 0px; d: none; direction: ltr; fill: rgb(0, 0, 0); filter: none; flex: 0 1 auto; flex-direction: row; float: none; gap: normal; hyphens: manual; interactivity: auto; isolation: auto; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; marker: none; mask: none; offset: normal; opacity: 1; order: 0; outline: rgb(31, 31, 31) none 1.5px; overlay: none; padding: 0px; page: auto; perspective: none; position: static; quotes: auto; r: 0px; resize: none; rotate: none; rx: auto; ry: auto; scale: none; speak: normal; stroke: none; transform: none; transition: all; translate: none; visibility: visible; x: 0px; y: 0px; zoom: 1; margin-top: 0px !important; line-height: 1.15 !important;\">Exposiciones Colectivas</div></div></h3>",
-        "titleZh": "<h3 class=\"mb-3 block\" style=\"--tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ; font-size: 30px; font-weight: 700; letter-spacing: 0px; line-height: 1.3; overflow-wrap: break-word;\">群展</h3>"
+        "titleZh": "<h3 class=\"mb-3 block\" style=\"--tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ; font-size: 30px; font-weight: 700; letter-spacing: 0px; line-height: 1.3; overflow-wrap: break-word;\">群展</h3>",
+        "titleEs": "<h3 class=\"mb-3 block\" style=\"--tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ; font-size: 30px; font-weight: 700; letter-spacing: 0px; line-height: 1.3; overflow-wrap: break-word;\">Exposiciones colectivas</h3>"
       }
     ],
     "imageGap": 10,
@@ -406,12 +405,11 @@
       "email": "847187284tina@gmail.com",
       "instagram": "https://www.instagram.com/yutiantiano.o/",
       "redNote": "https://www.xiaohongshu.com/user/profile/5620fff63397db266fe7c2d5",
-      "emailLabelEs": "Correo electrónico",
       "informationLabelZh": "信息",
       "emailLabelZh": "邮箱",
       "redNoteLabelZh": "小红书",
-      "informationLabelEs": "Información",
-      "informationLabel": "CV"
+      "informationLabel": "CV",
+      "informationLabelEs": "Currículum vitae"
     },
     "works": [
       {
@@ -419,14 +417,11 @@
         "year": 2026,
         "title": "Growth Marks",
         "titleZh": "生长纹路",
-        "titleEs": "Marcas de Crecimiento",
         "date": "Tue Jul 19 2022",
         "materials": "Bamboo Strips, Metal Floral Ornaments, Plastic Pieces, Lead Weights, Fishing Line",
         "materialsZh": "竹丝、铁质花、塑料片、铅块、鱼线",
-        "materialsEs": "Tiras de Bambú, Adornos Florales de Metal, Piezas de Plástico, Pesas de Plomo, Hilo de Pesca",
         "dimensions": "Variable Dimensions",
         "dimensionsZh": "尺寸可变",
-        "dimensionsEs": "Dimensiones Variables",
         "cover": "https://picsum.photos/seed/growth-marks/700/900",
         "images": [
           "/images/growth-marks-img-0.jpg",
@@ -440,7 +435,10 @@
           "/images/growth-marks-full-1.jpg",
           "/images/growth-marks-full-2.jpg",
           "/images/growth-marks-full-3.jpg"
-        ]
+        ],
+        "titleEs": "Marcas de Crecimiento",
+        "materialsEs": "Tiras de Bambú, Adornos Florales de Metal, Piezas de Plástico, Lastres de Plomo, Hilo de Pescar",
+        "dimensionsEs": "Dimensiones variables"
       },
       {
         "id": "moment-of-stillness",
@@ -464,8 +462,6 @@
         "materialsZh": "网购的液态水光纱、大头针、油画框，普罗维登斯捡拾的树枝、松树针、美元硬币、报纸，RISD版画课程中收集的各式螺丝钉，厨房用锡纸，药物说明纸盒，日本购得的油画框",
         "dimensionsZh": "30 × 60 cm",
         "titleZh": "片刻静谧",
-        "titleEs": "Un Momento de Calma",
-        "materialsEs": "Gasa Líquida Transparente de Agua, Alfileres, Marco de Pintura al Óleo Comprado en Taobao; Ramas, Agujas de Pino, Monedas de Dólar Estadounidense, Periódicos Recogidos en Providence; Varios Tornillos Recogidos en la Clase de Grabado de RISD; Papel de Aluminio de Cocina, Cajas de Papel de Prospectos de Medicamentos, Marco de Pintura al Óleo Comprado en una Tienda de Suministros de Arte Japonesa",
         "imagesFull": [
           "/images/moment-of-stillness-full-0.jpg",
           "/images/moment-of-stillness-full-1.jpg",
@@ -475,7 +471,10 @@
           "/images/moment-of-stillness-full-5.jpg",
           "/images/moment-of-stillness-full-6.jpg",
           "/images/moment-of-stillness-full-7.jpg"
-        ]
+        ],
+        "titleEs": "Un Momento de Quietud",
+        "materialsEs": "Agua Líquida, Gasa Ligera, Alfileres y Marco para Pintura al Óleo Comprados en Taobao; Ramas, Agujas de Pino, Monedas de Dólar Estadounidense y Periódicos Recogidos en Providence; Tornillos Diversos Recogidos en la Clase de Grabado de la Risd; Papel de Aluminio de Cocina, Cajas de Papel de Prospectos de Medicamentos y Marco para Pintura al Óleo Comprados en una Tienda Japonesa de Materiales Artísticos",
+        "dimensionsEs": "30 × 60 cm"
       },
       {
         "id": "wedding-on-the-grass",
@@ -495,8 +494,6 @@
         ],
         "tone": "#454545",
         "titleZh": "草地婚礼",
-        "titleEs": "Una Boda en el Césped",
-        "materialsEs": "Alfileres, Lentejuelas Brillantes, Tejido de Terciopelo de Punto, Satén de Seda Jacquard, Resina Transparente Resistente a los Rayos UV, Silicona Caliente Comprados en Taobao; Ramas, Agujas de Pino, Periódicos Recogidos en Providence; Papel de Aluminio de Cocina, Cajas de Papel de Prospectos de Medicamentos, Marco de Pintura al Óleo Comprado en una Tienda de Suministros de Arte Japonesa",
         "materialsZh": "网购的大头针、闪光片、长绒针织布料、提花绸缎、透明UV自由树脂、热熔胶，普罗维登斯捡拾的树枝、松树针、报纸，厨房用锡纸，药物说明纸盒，日本购得的油画框",
         "dimensionsZh": "17.5 × 9 cm",
         "imagesFull": [
@@ -506,7 +503,10 @@
           "/images/wedding-on-the-grass-full-3.jpg",
           "/images/wedding-on-the-grass-full-4.jpg",
           "/images/wedding-on-the-grass-full-5.jpg"
-        ]
+        ],
+        "titleEs": "Una Boda en el Césped",
+        "materialsEs": "Alfileres, Lentejuelas Brillantes, Tejido de Punto de Terciopelo, Satén de Seda Jacquard, Resina Transparente sin Rayos Uv y Pegamento Termofusible Comprados en Taobao; Ramas, Agujas de Pino y Periódicos Recogidos en Providence; Papel de Aluminio de Cocina, Cajas de Papel de Prospectos de Medicamentos y un Marco para Pintura al Óleo Comprados en una Tienda Japonesa de Materiales Artísticos.",
+        "dimensionsEs": "17,5 × 9 cm"
       },
       {
         "id": "8vl1win0rroms61wpjp",
@@ -525,9 +525,7 @@
         ],
         "tone": "#454545",
         "titleZh": "之后的派对",
-        "titleEs": "Fiesta Posterior",
         "materials": "Pins, Buttons, Artificial Pearls, Glitter Sequins, Crystal Glass Beads, Iron Beads, Plastic Beads, Transparent UV Free Resin, Hot Glue Purchased from Taobao; Dry Grass, Branches, US Dollar Coins, Newspapers Gathered in Providence; Various Screws Collected in RISD Printmaking Class; Woodblock Purchased at A Japanese Art Supply Store",
-        "materialsEs": "Alfileres, Botones, Perlas Artificiales, Lentejuelas Brillantes, Cuentas de Cristal de Vidrio, Cuentas de Hierro, Cuentas de Plástico, Resina Transparente Resistente a los Rayos UV, Silicona Caliente Comprados en Taobao; Hierba Seca, Ramas, Monedas de Dólar Estadounidense, Periódicos Recogidos en Providence; Varios Tornillos Recogidos en la Clase de Grabado de RISD; Xilografía Comprada en una Tienda de Suministros de Arte Japonesa",
         "materialsZh": "网购的大头针、按钉、仿珍珠、闪光片、水晶玻璃珠、铁珠、塑料珠、透明UV自由树脂、热熔胶，普罗维登斯捡拾的干草、树枝、美元硬币、报纸，RISD课程中收集的各式螺丝钉，日本购得的版画木板",
         "dimensions": "22 × 16 cm",
         "imagesFull": [
@@ -537,7 +535,11 @@
           "/images/8vl1win0rroms61wpjp-full-3.jpg",
           "/images/8vl1win0rroms61wpjp-full-4.jpg",
           "/images/8vl1win0rroms61wpjp-full-5.jpg"
-        ]
+        ],
+        "titleEs": "Fiesta Posterior",
+        "materialsEs": "Alfileres, Botones, Perlas Artificiales, Lentejuelas Brillantes, Cuentas de Cristal, Cuentas de Hierro, Cuentas de Plástico, Resina Transparente sin Uv, Pegamento Termofusible Comprado en Taobao; Hierba Seca, Ramas, Monedas de Dólar Estadounidense y Periódicos Recogidos en Providence; Diversos Tornillos Recogidos en la Clase de Grabado de la Risd; Bloque de Madera Comprado en una Tienda Japonesa de Materiales Artísticos",
+        "dimensionsEs": "22 × 16 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra."
       },
       {
         "id": "good-medicine-iii",
@@ -554,16 +556,17 @@
           "/images/good-medicine-iii-img-1.jpg"
         ],
         "tone": "#3e3e3e",
-        "seriesEs": "La Buena Medicina Sabe Amarga",
         "titleZh": "良药苦口 III",
-        "titleEs": "La Buena Medicina Sabe Amarga III",
         "materialsZh": "不锈钢盘、微缩房子",
-        "materialsEs": "Placa de Acero Inoxidable, Casa en Miniatura",
         "dimensionsZh": "6.5 × 6.5 × 1.5 cm",
         "imagesFull": [
           "/images/good-medicine-iii-full-0.jpg",
           "/images/good-medicine-iii-full-1.jpg"
-        ]
+        ],
+        "titleEs": "La Medicina Buena Sabe Amarga III",
+        "materialsEs": "Placa de Acero Inoxidable, Casita en Miniatura",
+        "dimensionsEs": "6,5 × 6,5 × 1,5 cm",
+        "seriesEs": "La Medicina Buena Sabe Amarga"
       },
       {
         "id": "good-medicine-iv",
@@ -588,13 +591,9 @@
           "/images/good-medicine-iv-img-9.jpg"
         ],
         "tone": "#464646",
-        "seriesEs": "La Buena Medicina Sabe Amarga",
         "titleZh": "良药苦口 IV",
-        "titleEs": "La Buena Medicina Sabe Amarga IV",
-        "materialsEs": "Caja de Medicamentos Portátil, Caballo en Miniatura, Cerdo en Miniatura, Papel de Aluminio, Bola de Peluche para Juguetes de Gato",
         "materialsZh": "便携药盒、微缩马、微缩猪、锡纸、逗猫玩具毛绒球",
         "dimensionsZh": "11 × 13.5 × 8 cm (约)",
-        "dimensionsEs": "11 × 13.5 × 8 cm (Aproximadamente)",
         "imagesFull": [
           "/images/good-medicine-iv-full-0.jpg",
           "/images/good-medicine-iv-full-1.jpg",
@@ -606,7 +605,11 @@
           "/images/good-medicine-iv-full-7.jpg",
           "/images/good-medicine-iv-full-8.jpg",
           "/images/good-medicine-iv-full-9.jpg"
-        ]
+        ],
+        "titleEs": "La Medicina Buena Sabe Amarga IV",
+        "materialsEs": "Botiquín Portátil, Caballo Miniatura, Cerdo Miniatura, Papel de Aluminio, Pelota de Felpa para Juguetes de Gato",
+        "dimensionsEs": "11 × 13,5 × 8 cm (aproximadamente)",
+        "seriesEs": "La Medicina Buena Sabe Amarga"
       },
       {
         "id": "good-medicine-v",
@@ -625,19 +628,19 @@
           "/images/good-medicine-v-img-3.jpg"
         ],
         "tone": "#414141",
-        "seriesEs": "La Buena Medicina Sabe Amarga",
         "titleZh": "良药苦口 V",
-        "titleEs": "La Buena Medicina Sabe Amarga V",
-        "materialsEs": "Molde de Papel de Aluminio para Bandeja de Huevos en Miniatura, Molde de Resina Transparente UV para Bandeja de Huevos en Miniatura, Huevo en Miniatura, Cuentas de Acrílico",
         "materialsZh": "锡纸翻模微缩鸡蛋托、UV透明树脂翻模微缩鸡蛋托、微缩蛋、亚克力珠子",
         "dimensionsZh": "16 × 10 × 2 cm (约)",
-        "dimensionsEs": "16 × 10 × 2 cm (Aproximadamente)",
         "imagesFull": [
           "/images/good-medicine-v-full-0.jpg",
           "/images/good-medicine-v-full-1.jpg",
           "/images/good-medicine-v-full-2.jpg",
           "/images/good-medicine-v-full-3.jpg"
-        ]
+        ],
+        "titleEs": "La Medicina Buena Sabe Amarga V",
+        "materialsEs": "Molde de Papel de Aluminio para Bandeja de Huevos en Miniatura, Molde de Resina Transparente a los Rayos Uv para Bandeja de Huevos en Miniatura, Huevo en Miniatura, Cuentas Acrílicas",
+        "dimensionsEs": "16 × 10 × 2 cm (aproximadamente)",
+        "seriesEs": "La Medicina Buena Sabe Amarga"
       },
       {
         "id": "good-medicine-vi",
@@ -658,10 +661,7 @@
           "/images/good-medicine-vi-img-5.jpg"
         ],
         "tone": "#494949",
-        "seriesEs": "La Buena Medicina Sabe Amarga",
         "titleZh": "良药苦口 VI",
-        "titleEs": "La Buena Medicina Sabe Amarga VI",
-        "materialsEs": "Dispensador de Medicamentos, Huevo en Miniatura, Frutero Azulado de los Años 60 con Doble Pez y Carácter de \"Doble Felicidad\"",
         "materialsZh": "分药器、微缩蛋、60年代蓝琉璃双鱼喜字果盘",
         "imagesFull": [
           "/images/good-medicine-vi-full-0.jpg",
@@ -670,7 +670,11 @@
           "/images/good-medicine-vi-full-3.jpg",
           "/images/good-medicine-vi-full-4.jpg",
           "/images/good-medicine-vi-full-5.jpg"
-        ]
+        ],
+        "titleEs": "La Medicina Buena Sabe Amarga VI",
+        "materialsEs": "Dispensador de Medicamentos, Huevo en Miniatura, Fuente para Fruta Esmaltada en Azul de la Década de 1960 con Dos Peces y el Carácter «Doble Felicidad»",
+        "dimensionsEs": "26,5 × 26,5 × 9,5 cm",
+        "seriesEs": "La Medicina Buena Sabe Amarga"
       },
       {
         "id": "good-medicine-vii",
@@ -686,14 +690,15 @@
           "/images/good-medicine-vii-img-0.jpg"
         ],
         "tone": "#444444",
-        "seriesEs": "La Buena Medicina Sabe Amarga",
         "titleZh": "良药苦口 VII",
-        "titleEs": "La Buena Medicina Sabe Amarga VII",
         "materialsZh": "塑料簸箕玩具、微缩房子",
-        "materialsEs": "Recogedor de Plástico de Juguete, Casa en Miniatura",
         "imagesFull": [
           "/images/good-medicine-vii-full-0.jpg"
-        ]
+        ],
+        "titleEs": "La Medicina Buena Sabe Amarga VII",
+        "materialsEs": "Juguete de Plástico con Recogedor, Casita en Miniatura",
+        "dimensionsEs": "7 × 4 × 2 cm",
+        "seriesEs": "La Medicina Buena Sabe Amarga"
       },
       {
         "id": "b3lhylins9mms6245qv",
@@ -708,14 +713,15 @@
         ],
         "tone": "#454545",
         "titleZh": "一簇小花",
-        "titleEs": "Un Cúmulo de Flores Pequeñas",
         "materials": "Wooden Plank, Nail, Tin Foil, Steel Wire Rope, Paper, Printing Ink, UV Clay",
-        "materialsEs": "Tabla de Madera, Clavo, Papel de Aluminio, Cable de Acero, Papel, Tinta de Impresión, Arcilla UV",
         "materialsZh": "木板、钉子、锡箔、钢丝绳、纸、版画油墨、UV软树脂",
         "imagesFull": [
           "/images/b3lhylins9mms6245qv-full-0.jpg",
           "/images/b3lhylins9mms6245qv-full-1.jpg"
-        ]
+        ],
+        "titleEs": "Un Racimo de Flores Pequeñas",
+        "materialsEs": "Tablón de Madera, Clavo, Papel de Aluminio, Cable de Acero, Papel, Tinta de Imprenta, Arcilla Uv",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra."
       },
       {
         "id": "1gz5x7d37nnims622tsk",
@@ -731,14 +737,15 @@
         "tone": "#454545",
         "seriesZh": "一纸空文",
         "titleZh": "一纸空文 I",
-        "seriesEs": "Una Carta Muerta",
-        "titleEs": "Una Carta Muerta I",
         "materials": "Glass, Pharmaceutical Packaging Paper, Stone, Glue",
-        "materialsEs": "Vidrio, Papel de Embalaje Farmacéutico, Piedra, Pegamento",
         "materialsZh": "玻璃、药剂包装纸、石头、胶水",
         "imagesFull": [
           "/images/1gz5x7d37nnims622tsk-full-0.jpg"
-        ]
+        ],
+        "titleEs": "Una Carta Perdida I",
+        "materialsEs": "Vidrio, Papel para Envases Farmacéuticos, Piedra, Pegamento",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra.",
+        "seriesEs": "Una Carta Perdida"
       },
       {
         "id": "7m2levc26rims622tsk",
@@ -755,15 +762,16 @@
         "tone": "#454545",
         "seriesZh": "一纸空文",
         "titleZh": "一纸空文 II",
-        "seriesEs": "Una Carta Muerta",
-        "titleEs": "Una Carta Muerta II",
         "materials": "Glass, Medication Instruction, Stone, Glue",
-        "materialsEs": "Vidrio, Prospecto de Medicamentos, Piedra, Pegamento",
         "materialsZh": "玻璃、药剂说明书、石头、胶水",
         "imagesFull": [
           "/images/7m2levc26rims622tsk-full-0.jpg",
           "/images/7m2levc26rims622tsk-full-1.jpg"
-        ]
+        ],
+        "titleEs": "Una Carta Perdida II",
+        "materialsEs": "Vidrio, Instrucciones de Uso de Medicamentos, Piedra, Pegamento",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra.",
+        "seriesEs": "Una Carta Perdida"
       },
       {
         "id": "d6qd3xnatr6ms62107f",
@@ -780,17 +788,19 @@
         "tone": "#454545",
         "seriesZh": "拾金不昧",
         "titleZh": "拾金不昧 I",
-        "seriesEs": "La Honestidad es la Mejor Política",
-        "titleEs": "La Honestidad es la Mejor Política I",
         "materials": "US Dollar Bill, Hot Glue, Nail, Thumbtack, Wire, Fishing Line, Plastic Crystal Bead, Pine Branch, Bird Feather",
-        "materialsEs": "Billetes de Dólar Estadounidense, Silicona Caliente, Clavo, Chincheta, Alambre, Hilo de Pesca, Cuenta de Cristal de Plástico, Rama de Pino, Pluma de Ave",
         "materialsZh": "美元纸币、热熔胶、钉子、大头针、铁丝、鱼线、塑料水晶珠、松树枝、鸟类羽毛",
         "dimensionsZh": "6 × 11 × 3 cm",
         "dimensions": "6 × 11 × 3 cm",
         "imagesFull": [
           "/images/d6qd3xnatr6ms62107f-full-0.jpg",
           "/images/d6qd3xnatr6ms62107f-full-1.jpg"
-        ]
+        ],
+        "titleEs": "La Honestidad Es la Mejor Política I",
+        "materialsEs": "Billete de Dólar Estadounidense, Pegamento Caliente, Clavo, Chincheta, Alambre, Hilo de Pescar, Cuenta de Plástico Transparente, Rama de Pino, Pluma de Pájaro",
+        "dimensionsEs": "6 × 11 × 3 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra.",
+        "seriesEs": "La Honestidad Es la Mejor Política"
       },
       {
         "id": "trisflzkx2rms62107g",
@@ -807,15 +817,16 @@
         "tone": "#454545",
         "seriesZh": "拾金不昧",
         "titleZh": "拾金不昧 II",
-        "seriesEs": "La Honestidad es la Mejor Política",
-        "titleEs": "La Honestidad es la Mejor Política II",
         "materials": "US Dollar Coins, Fragment of Cola Packaging, Hot Glue",
-        "materialsEs": "Monedas de Dólar Estadounidense, Fragmento de Envase de Refresco de Cola, Silicona Caliente",
         "materialsZh": "美元硬币、可乐包装碎片、热熔胶",
         "imagesFull": [
           "/images/trisflzkx2rms62107g-full-0.jpg",
           "/images/trisflzkx2rms62107g-full-1.jpg"
-        ]
+        ],
+        "titleEs": "La Honestidad Es la Mejor Política II",
+        "materialsEs": "Monedas de Dólar Estadounidense, Trozo de Envase de Refresco de Cola, Pegamento Caliente",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra.",
+        "seriesEs": "La Honestidad Es la Mejor Política"
       },
       {
         "id": "3k3wmco031lms623nha",
@@ -832,16 +843,17 @@
         ],
         "tone": "#454545",
         "titleZh": "对影成双",
-        "titleEs": "Una sombra hace dos",
         "materials": "Tree Branches, Plastic Polarizing Film, UV Soft Resin, Hot-Melt Adhesive, Acrylic Balls, Pins, Screws, Silver Foil, Tin Foil, Wire",
-        "materialsEs": "Ramas de Árbol, Película Polarizadora de Plástico, Resina Blanda UV, Adhesivo Termofusible, Bolas de Acrílico, Alfileres, Tornillos, Papel de Plata, Papel de Aluminio, Alambre",
         "materialsZh": "树枝、塑料偏光片，UV软树脂、热熔胶、亚克力球、大头针、螺丝钉、银箔、锡箔、铁丝",
         "imagesFull": [
           "/images/3k3wmco031lms623nha-full-0.jpg",
           "/images/3k3wmco031lms623nha-full-1.jpg",
           "/images/3k3wmco031lms623nha-full-2.jpg",
           "/images/3k3wmco031lms623nha-full-3.jpg"
-        ]
+        ],
+        "titleEs": "Una Sombra Hace Dos",
+        "materialsEs": "Ramas de Árbol, Lámina Polarizadora de Plástico, Resina Blanda Resistente a los Rayos Uv, Adhesivo Termofusible, Bolas de Acrílico, Alfileres, Tornillos, Lámina de Plata, Papel de Aluminio, Alambre",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra."
       },
       {
         "id": "awatfu6b4ms623zsj",
@@ -860,17 +872,18 @@
         "tone": "#454545",
         "seriesZh": "臂弯",
         "titleZh": "臂弯 I",
-        "seriesEs": "El Refugio de un Brazo",
-        "titleEs": "El Refugio de un Brazo I",
         "materials": "Collected Fragments of a Concrete Sculpture, Wire, Bamboo Strips, Pine Branches, Hot-Melt Adhesive, Large-Headed Pins, Thumbtacks, Plastic Crystal Beads, Aluminum Foil, Printmaking Ink",
-        "materialsEs": "Fragmentos Recogidos de una Escultura de Hormigón, Alambre, Tiras de Bambú, Ramas de Pino, Adhesivo Termofusible, Alfileres de Cabeza Grande, Chinchetas, Cuentas de Cristal de Plástico, Papel de Aluminio, Tinta de Grabado",
         "materialsZh": "捡拾的水泥雕塑块、铁丝、竹丝、松树枝、热熔胶、大头钉、按钉、塑料水晶珠、锡纸、版画油墨",
         "imagesFull": [
           "/images/awatfu6b4ms623zsj-full-0.jpg",
           "/images/awatfu6b4ms623zsj-full-1.jpg",
           "/images/awatfu6b4ms623zsj-full-2.jpg",
           "/images/awatfu6b4ms623zsj-full-3.jpg"
-        ]
+        ],
+        "titleEs": "El Refugio del Propio Brazo I",
+        "materialsEs": "Fragmentos Recogidos de una Escultura de Hormigón, Alambre, Tiras de Bambú, Ramas de Pino, Adhesivo Termofusible, Alfileres de Cabeza Grande, Tachuelas, Cuentas de Cristal de Plástico, Papel de Aluminio, Tinta para Grabado",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra.",
+        "seriesEs": "El Refugio del Propio Brazo"
       },
       {
         "id": "5rh5uzb9bfms623zsj",
@@ -889,17 +902,18 @@
         "tone": "#454545",
         "seriesZh": "臂弯",
         "titleZh": "臂弯 II",
-        "seriesEs": "El Refugio de un Brazo",
-        "titleEs": "El Refugio de un Brazo II",
         "materials": "Collected Fragments of a Concrete Sculpture, Wire, Bamboo Strips, Fishing Line, UV Soft Resin, Hot-Melt Adhesive, Mica Powder, Silver Leaf, Plastic Floral Beads, Plastic Polarizing Film",
-        "materialsEs": "Fragmentos Recogidos de una Escultura de Hormigón, Alambre, Tiras de Bambú, Hilo de Pesca, Resina Blanda UV, Adhesivo Termofusible, Polvo de Mica, Pan de Plata, Cuentas Florales de Plástico, Película Polarizadora de Plástico",
         "materialsZh": "捡拾水泥雕塑块、铁丝、竹丝、鱼线、UV软树脂、热熔胶、云母粉、银箔、塑料花珠、塑料偏光片",
         "imagesFull": [
           "/images/5rh5uzb9bfms623zsj-full-0.jpg",
           "/images/5rh5uzb9bfms623zsj-full-1.jpg",
           "/images/5rh5uzb9bfms623zsj-full-2.jpg",
           "/images/5rh5uzb9bfms623zsj-full-3.jpg"
-        ]
+        ],
+        "titleEs": "El Refugio del Propio Brazo II",
+        "materialsEs": "Fragmentos Recopilados de una Escultura de Hormigón, Alambre, Tiras de Bambú, Hilo de Pescar, Resina Blanda Uv, Adhesivo Termofusible, Polvo de Mica, Pan de Plata, Cuentas Florales de Plástico, Lámina Polarizante de Plástico",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra.",
+        "seriesEs": "El Refugio del Propio Brazo"
       },
       {
         "id": "8tzje0k0ndemsssrcdu",
@@ -915,7 +929,6 @@
           "/images/8tzje0k0ndemsssrcdu-img-3.jpg"
         ],
         "tone": "#454545",
-        "titleEs": "Caballo Triunfante y Veloz en la Brisa Primaveral",
         "titleZh": "春风得意马蹄疾",
         "dimensions": "10 × 15 cm",
         "imagesFull": [
@@ -926,7 +939,10 @@
         ],
         "materials": "Free-Style Printing, Acrylic, Colored Sand, White Cardstock",
         "materialsZh": "自由印刷、丙烯、彩砂、白色卡纸",
-        "materialsEs": "Impresión de Estilo Libre, Acrílico, Arena de Colores, Cartulina Blanca"
+        "titleEs": "El Caballo Corre con Éxito y Mayor Velocidad en Vernal Breeze",
+        "materialsEs": "Impresión Libre, Acrílico, Arena de Colores, Cartulina Blanca",
+        "dimensionsEs": "10 × 15 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra."
       },
       {
         "id": "kl1y3rg8c28ms75bzvu",
@@ -941,8 +957,6 @@
           "/images/kl1y3rg8c28ms75bzvu-img-1.jpg"
         ],
         "tone": "#454545",
-        "seriesEs": "La Buena Medicina Sabe Amarga",
-        "titleEs": "La Buena Medicina Sabe Amarga I",
         "seriesZh": "良药苦口",
         "titleZh": "良药苦口 I",
         "imagesFull": [
@@ -952,7 +966,11 @@
         "materials": "Transparent UV-Curable Resin, Transparent Glitter, Crystal Glass Beads, Acrylic Beads",
         "dimensions": "13.5 × 10 × 8.5 cm",
         "materialsZh": "透明UV自由树脂、透明亮片、水晶玻璃珠、亚克力圆珠",
-        "materialsEs": "Resina UV Transparente de Forma Libre, Lentejuelas Transparentes, Cuentas de Cristal, Cuentas de Acrílico Redondas"
+        "titleEs": "La Medicina Buena Sabe Amarga I",
+        "materialsEs": "Resina Transparente Curable con Rayos Uv, Purpurina Transparente, Cuentas de Cristal, Cuentas Acrílicas",
+        "dimensionsEs": "13,5 × 10 × 8,5 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra.",
+        "seriesEs": "La Medicina Buena Sabe Amarga"
       },
       {
         "id": "w3eq8wwzqdhms75bzvu",
@@ -971,8 +989,6 @@
           "/images/w3eq8wwzqdhms75bzvu-img-5.jpg"
         ],
         "tone": "#454545",
-        "seriesEs": "La Buena Medicina Sabe Amarga",
-        "titleEs": "La Buena Medicina Sabe Amarga II",
         "seriesZh": "良药苦口",
         "titleZh": "良药苦口 II",
         "imagesFull": [
@@ -986,7 +1002,11 @@
         "materials": "Medicine Pouch, Crystal Glass Beads, Acrylic Beads, Fishing Accessory Box",
         "dimensions": "6.5 × 14 × 2.5 cm",
         "materialsZh": "药囊、水晶玻璃珠、亚克力圆珠、钓鱼配件盒",
-        "materialsEs": "Bolsa de Medicina, Cuentas de Cristal, Cuentas de Acrílico Redondas, Caja de Accesorios de Pesca"
+        "titleEs": "La Medicina Buena Sabe Amarga II",
+        "materialsEs": "Bolsa para Medicamentos, Cuentas de Cristal, Cuentas Acrílicas, Caja de Accesorios de Pesca",
+        "dimensionsEs": "6,5 × 14 × 2,5 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra.",
+        "seriesEs": "La Medicina Buena Sabe Amarga"
       },
       {
         "id": "427i5eybhtwms75ba4p",
@@ -1005,8 +1025,6 @@
           "/images/427i5eybhtwms75ba4p-img-5.jpg"
         ],
         "tone": "#454545",
-        "seriesEs": "Una Noche Enredada",
-        "titleEs": "Una Noche Enredada I",
         "seriesZh": "缠绕的夜",
         "titleZh": "缠绕的夜 I",
         "imagesFull": [
@@ -1020,7 +1038,11 @@
         "dimensions": "29 × 30 cm",
         "materials": "Polymer Plate Printing, Cotton Fabric, Tree Branches, Weed Stalks and Leaves, Laser Glass Gauze, Tin Foil, Transparent UV Free Resin, Transparent Sequins, Crystal Glass Beads, Acrylic Beads",
         "materialsZh": "聚合物板印刷、棉布、树枝、杂草杆叶、镭射玻璃纱、锡箔、透明uv自由树脂、透明亮片、水晶玻璃珠、亚克力圆珠",
-        "materialsEs": "Impresión en Placa de Polímero, Tela de Algodón, Ramas de Árbol, Tallos y Hojas de Maleza, Gasa de Cristal Láser, Papel de Aluminio, Resina UV Transparente de Forma Libre, Lentejuelas Transparentes, Cuentas de Cristal, Cuentas de Acrílico"
+        "titleEs": "Una Noche Enredada I",
+        "materialsEs": "Impresión sobre Placa de Polímero, Tejido de Algodón, Ramas de Árbol, Tallos y Hojas de Malas Hierbas, Gasa de Cristal Cortada con Láser, Papel de Aluminio, Resina Transparente sin Uv, Lentejuelas Transparentes, Cuentas de Cristal, Cuentas Acrílicas",
+        "dimensionsEs": "29 × 30 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra.",
+        "seriesEs": "Una Noche Enredada"
       },
       {
         "id": "drffgm74sjjms75ba4p",
@@ -1039,8 +1061,6 @@
           "/images/drffgm74sjjms75ba4p-img-5.jpg"
         ],
         "tone": "#454545",
-        "seriesEs": "Una Noche Enredada",
-        "titleEs": "Una Noche Enredada II",
         "seriesZh": "缠绕的夜",
         "titleZh": "缠绕的夜 II",
         "imagesFull": [
@@ -1054,7 +1074,11 @@
         "materials": "Polymer Plate Printing, Cotton Fabric, Laser Glass Gauze, Silver Foil, Tin Foil, Transparent UV Free Resin, Transparent Sequins, Crystal Glass Beads, Acrylic Beads",
         "dimensions": "27.5 × 27.5 cm",
         "materialsZh": "聚合物板印刷、棉布、镭射玻璃纱、银箔、锡箔、透明UV自由树脂、透明亮片、水晶玻璃珠、亚克力圆珠",
-        "materialsEs": "Impresión en Placa de Polímero, Tela de Algodón, Gasa de Cristal Láser, Lámina de Plata, Papel de Aluminio, Resina UV Transparente de Forma Libre, Lentejuelas Transparentes, Cuentas de Cristal, Cuentas de Acrílico"
+        "titleEs": "Una Noche Enredada II",
+        "materialsEs": "Impresión sobre Placas de Polímero, Tejido de Algodón, Gasa de Cristal Cortada con Láser, Lámina de Plata, Papel de Aluminio, Resina Transparente sin Uv, Lentejuelas Transparentes, Cuentas de Cristal, Cuentas Acrílicas",
+        "dimensionsEs": "27,5 × 27,5 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra.",
+        "seriesEs": "Una Noche Enredada"
       },
       {
         "id": "t7yh9cersims75ba4p",
@@ -1075,8 +1099,6 @@
           "/images/t7yh9cersims75ba4p-img-7.jpg"
         ],
         "tone": "#454545",
-        "seriesEs": "Una Noche Enredada",
-        "titleEs": "Una Noche Enredada III",
         "seriesZh": "缠绕的夜",
         "titleZh": "缠绕的夜 III",
         "imagesFull": [
@@ -1092,7 +1114,11 @@
         "materials": "Screen Printing, Film, Wool Felt, Laser Glass Gauze, Sequin Mesh Fabric, Gold Thread Jacquard Fabric, Tengujou Paper, Tin Foil, Transparent UV Free Resin, Transparent Sequins, Crystal Glass Beads, Acrylic Beads",
         "dimensions": "45 × 45 cm",
         "materialsZh": "丝网印刷、菲林片、羊毛毡、镭射玻璃纱、亮片网纱、镭射玻璃纱、金丝提花布、典具帖纸、锡箔、透明uv自由树脂、透明亮片、水晶玻璃珠、亚克力圆珠",
-        "materialsEs": "Impresión Serigráfica, Película, Fieltro de Lana, Gasa de Cristal Láser, Tela de Malla de Lentejuelas, Tela Jacquard con Hilo de Oro, Papel Tengujou, Papel de Aluminio, Resina UV Transparente de Forma Libre, Lentejuelas Transparentes, Cuentas de Cristal, Cuentas de Acrílico"
+        "titleEs": "Una Noche Enredada III",
+        "materialsEs": "Serigrafía, Película, Fieltro de Lana, Gasa de Cristal Cortada con Láser, Tejido de Malla con Lentejuelas, Tejido Jacquard con Hilo Dorado, Papel Tengujou, Papel de Aluminio, Resina Transparente sin Rayos Uv, Lentejuelas Transparentes, Cuentas de Cristal, Cuentas Acrílicas",
+        "dimensionsEs": "45 × 45 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra.",
+        "seriesEs": "Una Noche Enredada"
       },
       {
         "id": "bw37df8zcjrmsssqoeu",
@@ -1109,7 +1135,6 @@
         ],
         "tone": "#454545",
         "titleZh": "窒息的爱",
-        "titleEs": "Amor Asfixiante",
         "dimensions": "65 × 23 cm / 45 × 23 cm / 35 × 23 cm / 35 × 23 cm",
         "imagesFull": [
           "/images/bw37df8zcjrmsssqoeu-full-0.jpg",
@@ -1119,7 +1144,10 @@
         ],
         "materials": "Polymer Plate Printing, Aluminum Foil, Tissue Paper",
         "materialsZh": "聚合物板印刷、锡纸、雪梨纸",
-        "materialsEs": "Impresión en Placa de Polímero, Papel de Aluminio, Papel de Seda"
+        "titleEs": "Amor Asfixiante",
+        "materialsEs": "Impresión en Planchas de Polímero, Papel de Aluminio, Papel de Seda",
+        "dimensionsEs": "65 × 23 cm / 45 × 23 cm / 35 × 23 cm / 35 × 23 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra."
       },
       {
         "id": "ze1004bdgjnmsssrs3e",
@@ -1134,13 +1162,16 @@
         ],
         "tone": "#454545",
         "titleZh": "沉默的伸展",
-        "titleEs": "Extendiéndose en Silencio",
         "dimensions": "15 × 20 cm",
         "imagesFull": [
           "/images/ze1004bdgjnmsssrs3e-full-0.jpg",
           "/images/ze1004bdgjnmsssrs3e-full-1.jpg"
         ],
-        "materials": "Screen Printing, Tissue Paper"
+        "materials": "Screen Printing, Tissue Paper",
+        "titleEs": "Estirándose en Silencio",
+        "materialsEs": "Serigrafía, Papel de Seda",
+        "dimensionsEs": "15 × 20 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra."
       },
       {
         "id": "a5bkg5repj8mssssbvn",
@@ -1155,7 +1186,6 @@
         ],
         "tone": "#454545",
         "titleZh": "袒露",
-        "titleEs": "Dejar al Descubierto",
         "dimensions": "23 × 45 cm",
         "imagesFull": [
           "/images/a5bkg5repj8mssssbvn-full-0.jpg",
@@ -1163,7 +1193,10 @@
         ],
         "materials": "Screen Printing, Gold Cardstock, Paper",
         "materialsZh": "丝网印刷、金色卡纸、纸",
-        "materialsEs": "Serigrafía, Cartulina Dorada, Papel"
+        "titleEs": "Poner al Descubierto",
+        "materialsEs": "Serigrafía, Cartulina Dorada, Papel",
+        "dimensionsEs": "23 × 45 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra."
       },
       {
         "id": "akyrgvo5naqmssssufp",
@@ -1182,7 +1215,6 @@
         ],
         "tone": "#454545",
         "titleZh": "缠绕着拥抱",
-        "titleEs": "Un Abrazo Entrelazado",
         "dimensions": "23 × 45 cm",
         "imagesFull": [
           "/images/akyrgvo5naqmssssufp-full-0.jpg",
@@ -1194,7 +1226,10 @@
         ],
         "materials": "Polymer Plate Printing, Screen Printing, Tin Foil, Tissue Paper, Film, Paper",
         "materialsZh": "聚合物板印刷、丝网印刷、锡纸、雪梨纸、菲林片、纸",
-        "materialsEs": "Impresión en Placa de Polímero, Serigrafía, Papel de Aluminio, Papel de Seda, Película, Papel"
+        "titleEs": "Un Abrazo Entrelazado",
+        "materialsEs": "Impresión con Planchas de Polímero, Serigrafía, Papel de Aluminio, Papel de Seda, Película, Papel",
+        "dimensionsEs": "23 × 45 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra."
       },
       {
         "id": "z9gbw2pfyt9ms75azft",
@@ -1208,7 +1243,6 @@
           "/images/z9gbw2pfyt9ms75azft-img-1.jpg"
         ],
         "tone": "#454545",
-        "titleEs": "Balancearse (Co-creado con Karen Hu)",
         "titleZh": "秋千（与Karen Hu共创）",
         "imagesFull": [
           "/images/z9gbw2pfyt9ms75azft-full-0.jpg",
@@ -1216,8 +1250,11 @@
         ],
         "materials": "Screen Printing, Bark Fragments, 3D Printing, Plastic Wrap, Iridescent Glass Organza, Tin Foil, Fishing Line, Fishhooks, Clear UV-Curing Resin",
         "materialsZh": "丝网印刷、树皮残块、3D打印、保鲜膜、镭射玻璃纱、锡箔、鱼线、鱼钩、透明UV自由树脂",
-        "materialsEs": "Impresión Serigráfica, Fragmentos de Corteza de Árbol, Impresión 3D, Film Transparente, Gasa de Cristal Láser, Papel de Aluminio, Hilo de Pescar, Anzuelo, Resina UV Transparente de Forma Libre",
-        "dimensions": "35 × 8 cm"
+        "dimensions": "35 × 8 cm",
+        "titleEs": "Swing (Creado en Colaboración con Karen Hu)",
+        "materialsEs": "Serigrafía, Fragmentos de Corteza, Impresión 3d, Film Transparente, Organza de Cristal Iridiscente, Papel de Aluminio, Hilo de Pescar, Anzuelos, Resina Transparente de Curado Uv",
+        "dimensionsEs": "35 × 8 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra."
       },
       {
         "id": "bka6djp3g5mms75attk",
@@ -1237,7 +1274,6 @@
           "/images/bka6djp3g5mms75attk-img-7.jpg"
         ],
         "tone": "#454545",
-        "titleEs": "Intentando Mantenerse De Pie Solemnemente",
         "titleZh": "企图肃立",
         "imagesFull": [
           "/images/bka6djp3g5mms75attk-full-0.jpg",
@@ -1252,7 +1288,10 @@
         "materials": "Liquid Water-Sheen Yarn, Iridescent Glass Yarn, Mica Powder, Clear UV Resin, Washi Paper, Multi-Strand Thread, Pins, Transparent Sequins, Crystal Glass Beads, Acrylic Rhinestones, Acrylic Round Beads",
         "dimensions": "20 × 15 cm",
         "materialsZh": "液态水光纱、镭射玻璃纱、云母粉、透明UV自由树脂、和纸、股线、大头针、透明亮片、水晶玻璃珠、亚克力钻石、亚克力圆珠",
-        "materialsEs": "Hilo de Brillo de Agua Líquido, Hilo de Cristal Iridiscente, Polvo de Mica, Resina UV Transparente, Papel Washi, Hilo Multihebra, Alfileres, Lentejuelas Transparentes, Cuentas de Cristal, Pedrería de Acrílico, Cuentas de Acrílico Redondas"
+        "titleEs": "Intentando Mantener una Postura Solemne",
+        "materialsEs": "Hilo «Water-Sheen» Líquido, Hilo de Cristal Iridiscente, Polvo de Mica, Resina Uv Transparente, Papel Washi, Hilo de Varios Hilos, Alfileres, Lentejuelas Transparentes, Cuentas de Cristal, Pedrería Acrílica, Cuentas Redondas Acrílicas",
+        "dimensionsEs": "20 × 15 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra."
       },
       {
         "id": "ejh7b9jpiadms75anw2",
@@ -1272,7 +1311,6 @@
           "/images/ejh7b9jpiadms75anw2-img-7.jpg"
         ],
         "tone": "#454545",
-        "titleEs": "Un Remanso de Agua Clara del Lago",
         "titleZh": "一汪澄净湖水",
         "imagesFull": [
           "/images/ejh7b9jpiadms75anw2-full-0.jpg",
@@ -1287,8 +1325,11 @@
         "materials": "Pure Cotton Sparse Greige Fabric, Organza, Liquid Water-Light Gauze, Mesh Fabric, Laser Glass Gauze, Transparent UV Free Resin, Wool Yarn, Acrylic Square Tubes, Sequins, Glass Thread, Tin Foil, Silver Foil, Iron Wire, Acrylic Rhinestones, Mica Powder, Film, Wooden Frame, Bamboo Strips",
         "materialsZh": "纯棉稀疏胚布、欧根纱、液态水光纱、网纱、镭射玻璃纱、透明uv自由树脂、毛线、亚克力方管、亮片、玻璃线、锡箔、银箔、铁丝、亚克力钻石、云母粉、菲林片、木框、竹丝",
         "dimensionsZh": "105 × 80 cm",
-        "materialsEs": "Tela de Algodón Puro Ligero y Poroso, Organza, Gasa Líquida con Brillo de Agua, Tela de Malla, Gasa de Cristal Láser, Resina UV Transparente de Forma Libre, Hilo de Lana, Tubos Cuadrados de Acrílico, Lentejuelas, Hilo de Vidrio, Papel de Aluminio, Lámina de Plata, Alambre de Hierro, Pedrería de Acrílico, Polvo de Mica, Película, Marco de Madera, Tiras de Bambú",
-        "dimensions": "105 × 80 cm"
+        "dimensions": "105 × 80 cm",
+        "titleEs": "Un Charco de Agua del Lago Clear",
+        "materialsEs": "Tejido Crudo de Algodón Puro de Trama Rala, Organza, Gasa Líquida y Ligera Como el Agua, Tejido de Malla, Gasa de Cristal Cortada con Láser, Resina Transparente sin Rayos Uv, Hilo de Lana, Tubos Cuadrados Acrílicos, Lentejuelas, Hilo de Cristal, Papel de Aluminio, Lámina de Plata, Alambre de Hierro, Pedrería Acrílica, Polvo de Mica, Película, Marco de Madera, Tiras de Bambú",
+        "dimensionsEs": "105 × 80 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra."
       },
       {
         "id": "1md6qdiivdnms75aicj",
@@ -1306,7 +1347,6 @@
           "/images/1md6qdiivdnms75aicj-img-5.jpg"
         ],
         "tone": "#454545",
-        "titleEs": "Un Tenue Aroma entre las Flores",
         "titleZh": "丛中隐约的花香",
         "imagesFull": [
           "/images/1md6qdiivdnms75aicj-full-0.jpg",
@@ -1320,7 +1360,10 @@
         "materialsZh": "素描纸、纯棉稀疏胚布、欧根纱、液态水光纱、亮片网纱、和纸、版画油墨、相框",
         "dimensionsZh": "20.5 × 20.5 cm",
         "dimensions": "20.5 × 20.5 cm",
-        "materialsEs": "Papel de Boceto, Tela de Algodón Puro Ligero y Poroso, Organza, Tela Transparente con Efecto de Brillo Líquido, Malla con Lentejuelas, Papel Washi, Tinta de Grabado, Marco de Fotos"
+        "titleEs": "Un Suave Aroma entre las Flores",
+        "materialsEs": "Papel de Bocetos, Tela de Algodón Cruda Transparente, Organza, Tela Transparente Brillante con Efecto Líquido, Malla con Lentejuelas, Papel Washi, Tinta para Grabado, Marco de Fotos",
+        "dimensionsEs": "20,5 × 20,5 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra."
       },
       {
         "id": "fjsk7henkrms75ad34",
@@ -1336,7 +1379,6 @@
           "/images/fjsk7henkrms75ad34-img-3.jpg"
         ],
         "tone": "#454545",
-        "titleEs": "Un Rostro en la Niebla Nocturna",
         "titleZh": "雾中的面容",
         "imagesFull": [
           "/images/fjsk7henkrms75ad34-full-0.jpg",
@@ -1347,7 +1389,10 @@
         "materials": "Sketch Paper, Thumbtacks, Liquid Water-Gloss Medium, Printmaking Ink, Picture Frame",
         "dimensions": "20.5 × 20.5 cm",
         "materialsZh": "素描纸、大头钉、液态水光纱、版画油墨、相框",
-        "materialsEs": "Papel de Boceto, Chinches, Medio de Brillo de Agua Líquido, Tinta de Grabado, Marco de Fotos"
+        "titleEs": "Un Rostro en la Niebla Nocturna",
+        "materialsEs": "Papel de Dibujo, Chinchetas, Medio Líquido de Brillo al Agua, Tinta para Grabado, Marco de Fotos",
+        "dimensionsEs": "20,5 × 20,5 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra."
       },
       {
         "id": "zi3hugavzjms759vk4",
@@ -1363,7 +1408,6 @@
           "/images/zi3hugavzjms759vk4-img-3.jpg"
         ],
         "tone": "#454545",
-        "titleEs": "Tan Frío como la Escarcha",
         "titleZh": "状似冷若冰霜",
         "imagesFull": [
           "/images/zi3hugavzjms759vk4-full-0.jpg",
@@ -1374,7 +1418,10 @@
         "materials": "Cotton Muslin, Sketch Paper, Organza, Ink, Silver Leaf, Gold Leaf, Washi Paper, Printmaking Ink, Picture Frames",
         "dimensions": "10.5 × 13 cm",
         "materialsZh": "纯棉稀疏胚布、素描纸、欧根纱、墨、银箔、金箔、和纸、版画油墨、相框",
-        "materialsEs": "Muselina de Algodón, Papel de Boceto, Organza, Tinta, Lámina de Plata, Lámina de Oro, Papel Washi, Tinta de Grabado, Marcos de Fotos"
+        "titleEs": "Tan Frío Como la Escarcha",
+        "materialsEs": "Muselina de Algodón, Papel de Boceto, Organza, Tinta, Pan de Plata, Pan de Oro, Papel Washi, Tinta para Grabado, Marcos para Cuadros",
+        "dimensionsEs": "10,5 × 13 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra."
       },
       {
         "id": "5up6ytz7c24ms759pkh",
@@ -1394,7 +1441,6 @@
           "/images/5up6ytz7c24ms759pkh-img-7.jpg"
         ],
         "tone": "#454545",
-        "titleEs": "Río",
         "titleZh": "河流",
         "imagesFull": [
           "/images/5up6ytz7c24ms759pkh-full-0.jpg",
@@ -1409,7 +1455,10 @@
         "materials": "Jacquard Silk, Jacquard Cotton Fabric, Gold-Thread Jacquard Fabric, Holographic Glass Organza, Cotton Embroidered Lace Tulle, Lightweight Open-Weave Raw Cotton Fabric, Organza, Sully Hand-Spun Yarn, Glass Thread, Gold Leaf, Mica Powder, Transparent UV-Curable Resin, Epoxy Resin",
         "dimensions": "170 × 70 cm",
         "materialsZh": "提花真丝、提花棉布、金丝提花布、镭射玻璃纱、棉刺绣蕾丝网纱、纯棉稀疏胚布、欧根纱、苏利手混线、玻璃线、金箔、云母粉、透明UV自由树脂、滴胶",
-        "materialsEs": "Seda Jacquard, Tela de Algodón Jacquard, Tela Jacquard con Hilo de Oro, Organza de Cristal Holográfica, Tul de Encaje de Algodón Bordado, Tela de Algodón Crudo Ligera y Porosa, Organza, Hilo de Alpaca Suri Hilado a Mano, Hilo de Vidrio, Lámina de Oro, Polvo de Mica, Resina UV Transparente Curable, Resina Epoxi"
+        "titleEs": "Río",
+        "materialsEs": "Seda Jacquard, Tejido de Algodón Jacquard, Tejido Jacquard con Hilo Dorado, Organza Holográfica de Cristal, Tul de Encaje Bordado de Algodón, Tejido Ligero de Algodón en Bruto de Trama Abierta, Organza, Hilo Hilado a Mano «Sully», Hilo de Cristal, Pan de Oro, Polvo de Mica, Resina Transparente Curable por Uv, Resina Epoxi",
+        "dimensionsEs": "170 × 70 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra."
       },
       {
         "id": "owqlpd6eu2ams6eydhs",
@@ -1429,7 +1478,6 @@
           "/images/owqlpd6eu2ams6eydhs-img-7.jpg"
         ],
         "tone": "#454545",
-        "titleEs": "Exaltación en la Aquietamiento",
         "titleZh": "昂扬的静待",
         "imagesFull": [
           "/images/owqlpd6eu2ams6eydhs-full-0.jpg",
@@ -1444,7 +1492,10 @@
         "materials": "Snow Silk Crepe Satin, Faux Silk Satin, 100% Cotton Plain-Weave Poplin, Gold-Thread Jacquard Fabric, Holographic Glass Organza, Cotton Embroidered Lace Tulle, Sequined Mesh Tulle, Lightweight Open-Weave Raw Cotton Fabric, Sully Hand-Spun Alpaca Yarn, Ultra-Fine Ice Silk Thread, Plied Thread, Electroplated Silver Bead Chain, Transparent Sequins, Straight Pins, Thumbtacks, Crystal Glass Beads, Acrylic Rhinestones, Acrylic Round Beads, Electroplated Metal Beads, Silver Leaf, Raw Silk Thread, Washi Paper, Transparent UV-Curable Resin, Acrylic Paint, Wooden Board",
         "dimensions": "60 × 50 cm",
         "materialsZh": "雪丝缎绉、仿真丝色丁缎、全棉平纹府绸、金丝提花布、镭射玻璃纱、棉刺绣蕾丝网纱、亮片网纱、纯棉稀疏胚布、苏利羊驼毛手混线、特细冰丝线、股线、电镀银珠链、透明亮片、大头针、按钉、水晶玻璃珠、亚克力钻石、亚克力圆珠、金属电镀珠、银箔、生丝蚕丝线、和纸、透明UV自由树脂、丙烯、木板",
-        "materialsEs": "Seda Crepé Satén Nieve, Satén de Seda Sintética, Popelina de Tejido Plano 100% Algodón, Tela Jacquard con Hilo de Oro, Organza de Cristal Holográfica, Tul de Encaje de Algodón Bordado, Tul de Malla con Lentejuelas, Tela de Algodón Crudo Ligera y Porosa, Hilo de Alpaca Suri Hilado a Mano, Hilo de Seda de Hielo Ultrafino, Hilo Retorcido, Cadena de Cuentas de Plata Galvanizada, Lentejuelas Transparentes, Alfileres Rectos, Chinches, Cuentas de Cristal, Pedrería de Acrílico, Cuentas de Acrílico Redondas, Cuentas de Metal Galvanizado, Lámina de Plata, Hilo de Seda Cruda, Papel Washi, Resina UV Transparente Curable, Pintura Acrílica, Tabla de Madera"
+        "titleEs": "La Exaltación en la Quietud",
+        "materialsEs": "Satinado de Crepé de Seda «Snow», Satén de Imitación de Seda, Popelín de Tejido Liso 100 % Algodón, Tejido Jacquard con Hilos Dorados, Organza de Cristal Holográfica, Tul de Encaje Bordado de Algodón, Tul de Malla con Lentejuelas, Tejido Ligero de Algodón Crudo de Trama Abierta, Hilo de Alpaca Hilado a Mano «Sully», Hilo de Seda «Ice» Ultrafino, Hilo Retorcido, Cadena de Cuentas de Plata Galvanizada, Lentejuelas Transparentes, Alfileres, Tachuelas, Cuentas de Cristal, Pedrería Acrílica, Cuentas Redondas Acrílicas, Cuentas Metálicas Galvanizadas, Pan de Plata, Hilo de Seda Cruda, Papel Washi, Resina Transparente Curable por Uv, Pintura Acrílica, Tabla de Madera",
+        "dimensionsEs": "60 × 50 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra."
       },
       {
         "id": "ws0dyi6qtoms6eycvc",
@@ -1466,7 +1517,6 @@
           "/images/ws0dyi6qtoms6eycvc-img-9.jpg"
         ],
         "tone": "#454545",
-        "titleEs": "Néctar en el Centro",
         "titleZh": "花心的蜜",
         "imagesFull": [
           "/images/ws0dyi6qtoms6eycvc-full-0.jpg",
@@ -1483,7 +1533,10 @@
         "materials": "Wool Felt, Sequined Mesh Tulle, Gold-Thread Jacquard Fabric, Holographic Glass Organza, Cotton Embroidered Lace Tulle, Transparent Sequins, Straight Pins, Thumbtacks, Crystal Glass Beads, Electroplated Metal Beads, Raw Silk Thread, Tengujou Paper, Transparent UV-Curable Resin, Acrylic, Wooden Board",
         "dimensions": "80 × 60 cm",
         "materialsZh": "羊毛毡、亮片网纱、金丝提花布、镭射玻璃纱、棉刺绣蕾丝网纱、透明亮片、大头针、按钉、水晶玻璃珠、金属电镀珠、生丝蚕丝线、典具帖纸、透明UV自由树脂、丙烯、木板",
-        "materialsEs": "Fieltro de Lana, Tul de Malla con Lentejuelas, Tela Jacquard con Hilo de Oro, Organza de Cristal Holográfica, Tul de Encaje de Algodón Bordado, Lentejuelas Transparentes, Alfileres Rectos, Chinches, Cuentas de Cristal, Cuentas de Metal Galvanizado, Hilo de Seda Cruda, Papel Tengujou, Resina UV Transparente Curable, Acrílico, Tabla de Madera"
+        "titleEs": "Néctar en el Centro",
+        "materialsEs": "Fieltro de Lana, Tul de Malla con Lentejuelas, Tejido Jacquard con Hilo Dorado, Organza de Cristal Holográfica, Tul de Encaje Bordado de Algodón, Lentejuelas Transparentes, Alfileres, Tachuelas, Cuentas de Cristal, Cuentas de Metal Galvanizado, Hilo de Seda Cruda, Papel Tengujou, Resina Transparente Curable por Uv, Acrílico, Tabla de Madera",
+        "dimensionsEs": "80 × 60 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra."
       },
       {
         "id": "3jwikgpwuryms6eyc8g",
@@ -1501,7 +1554,6 @@
           "/images/3jwikgpwuryms6eyc8g-img-5.jpg"
         ],
         "tone": "#454545",
-        "titleEs": "Tomando el Sol",
         "titleZh": "晒太阳",
         "imagesFull": [
           "/images/3jwikgpwuryms6eyc8g-full-0.jpg",
@@ -1511,11 +1563,13 @@
           "/images/3jwikgpwuryms6eyc8g-full-4.jpg",
           "/images/3jwikgpwuryms6eyc8g-full-5.jpg"
         ],
-        "materialsEs": "Tela Tejida de Hilo de Fibra Larga, Tela de Algodón Crudo Ligera y Porosa, Tela de Verano Vintage de Ramio, Transferencia Fotográfica sobre Textil de Mezcla de Lino Crudo, Resina UV Transparente Curable, Alambre Fino de Cobre, Alfileres Rectos, Cuentas de Cristal, Cuentas de Metal Galvanizado, Tabla de Madera",
-        "dimensionsEs": "16 × 21.5 cm",
         "materials": "Long-Staple Yarn Knitted Fabric, Lightweight Open-Weave Raw Cotton Fabric, Vintage Ramie Summer Cloth, Photo Transfer On Raw Linen Blend Textile, Transparent UV-Curable Resin, Fine Copper Wire, Straight Pins, Crystal Glass Beads, Electroplated Metal Beads, Wooden Board",
         "dimensions": "16 × 21.5 cm",
-        "materialsZh": "长绒针织布料、纯棉稀疏胚布、苎麻老夏布、照片转印于亚麻混纺胚布、透明UV自由树脂、铜丝线、大头针、水晶玻璃珠、金属电镀珠、木板"
+        "materialsZh": "长绒针织布料、纯棉稀疏胚布、苎麻老夏布、照片转印于亚麻混纺胚布、透明UV自由树脂、铜丝线、大头针、水晶玻璃珠、金属电镀珠、木板",
+        "titleEs": "Tomar el Sol",
+        "materialsEs": "Tejido de Punto de Hilo de Fibra Larga, Tejido Ligero de Algodón sin Teñir de Trama Abierta, Tela de Verano Vintage de Ramio, Transferencia Fotográfica sobre Tejido de Mezcla de Lino sin Teñir, Resina Transparente Curable por Uv, Alambre Fino de Cobre, Alfileres Rectos, Cuentas de Cristal, Cuentas Metálicas Galvanizadas, Tabla de Madera",
+        "dimensionsEs": "16 × 21,5 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra."
       },
       {
         "id": "7ql9pcwfupjms6eybme",
@@ -1533,7 +1587,6 @@
           "/images/7ql9pcwfupjms6eybme-img-5.jpg"
         ],
         "tone": "#454545",
-        "titleEs": "La Ternura de las Gotas de Rocío",
         "titleZh": "珠露的温存",
         "imagesFull": [
           "/images/7ql9pcwfupjms6eybme-full-0.jpg",
@@ -1546,7 +1599,10 @@
         "materials": "Loosely Woven Cotton Greige Fabric, Liquid-Effect Glossy Yarn, Wool Felt, Sequined Mesh, Transparent Colored Sequins, Iridescent Glass Organza, Organza, Clear UV Resin, Crystal Glass Beads, Glass Thread, Yarn, Wooden Board",
         "dimensions": "20.8 × 25 cm",
         "materialsZh": "纯棉稀疏胚布、液态水光纱、羊毛毡、亮片网纱、透明彩色亮片、镭射玻璃纱、欧根纱、透明UV自由树脂、水晶玻璃珠、玻璃线、毛线、木板",
-        "materialsEs": "Tela de Algodón Crudo Suelta y Porosa, Hilo de Brillo con Efecto Líquido, Fieltro de Lana, Malla con Lentejuelas, Lentejuelas Transparentes de Colores, Organza de Cristal Iridiscente, Organza, Resina UV Transparente, Cuentas de Cristal, Hilo de Vidrio, Hilo, Tabla de Madera"
+        "titleEs": "La Ternura de las Gotas de Rocío",
+        "materialsEs": "Tejido de Algodón Crudo de Trama Suelta, Hilo Brillante con Efecto Líquido, Fieltro de Lana, Malla con Lentejuelas, Lentejuelas Transparentes de Colores, Organza de Cristal Iridiscente, Organza, Resina Uv Transparente, Cuentas de Cristal, Hilo de Cristal, Hilo, Tabla de Madera",
+        "dimensionsEs": "20,8 × 25 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la ficha de la obra."
       },
       {
         "id": "af8b4p0wdrams6eyb12",
@@ -1564,7 +1620,6 @@
           "/images/af8b4p0wdrams6eyb12-img-5.jpg"
         ],
         "tone": "#454545",
-        "titleEs": "Una Suave Brisa",
         "titleZh": "微风",
         "imagesFull": [
           "/images/af8b4p0wdrams6eyb12-full-0.jpg",
@@ -1577,7 +1632,10 @@
         "materials": "Liquid-Sheen Satin-Finish Bridal Fabric, High-Density Organza With A Dewy Sheen, Wool Felt, Iridescent Glass Organza, Sheer Raw Cotton Fabric, Pins, Silver Leaf, Raw Silk Thread, Washi Paper, Fiber Pulp Paper, Clear UV Resin, Wooden Board",
         "dimensions": "35 × 60 cm",
         "materialsZh": "婚纱锻液态水光纱、水光纱加密欧根纱、羊毛毡、镭射玻璃纱、纯棉稀疏胚布、大头针、银箔、生丝蚕丝线、和纸、纤维浆纸、透明UV自由树脂、木板",
-        "materialsEs": "Tela Nupcial Satén con Brillo Líquido, Organza de Alta Densidad con Brillo Rocioso, Fieltro de Lana, Organza de Cristal Iridiscente, Tela de Algodón Crudo Transparente, Alfileres, Lámina de Plata, Hilo de Seda Cruda, Papel Washi, Papel de Pulpa de Fibra, Resina UV Transparente, Tabla de Madera"
+        "titleEs": "Una Suave Brisa",
+        "materialsEs": "Tejido Nupcial «Liquid-Sheen» con Acabado Satinado, Organza de Alta Densidad con Brillo Húmedo, Fieltro de Lana, Organza de Cristal Iridiscente, Tejido de Algodón Crudo Transparente, Alfileres, Pan de Plata, Hilo de Seda Cruda, Papel Washi, Papel de Pulpa de Fibra, Resina Uv Transparente, Tabla de Madera",
+        "dimensionsEs": "35 × 60 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra."
       },
       {
         "id": "6shf15o6ms6exak7",
@@ -1595,7 +1653,6 @@
           "/images/6shf15o6ms6exak7-img-5.jpg"
         ],
         "tone": "#454545",
-        "titleEs": "Suave Balanceo",
         "titleZh": "摇坠的柔软",
         "imagesFull": [
           "/images/6shf15o6ms6exak7-full-0.jpg",
@@ -1608,7 +1665,10 @@
         "materials": "Liquid Gloss Organza, Wool Felt, Sequined Mesh Tulle, Gold-Thread Jacquard Fabric, Jacquard Silk, Transparent Sequins, Straight Pins, Crystal Glass Beads, Washi Paper, Transparent UV-Curable Resin, Wooden Board",
         "dimensions": "30 × 60 cm",
         "materialsZh": "液态水光纱、羊毛毡、亮片网纱、金丝提花布、提花绸、透明亮片、大头针、水晶玻璃珠、和纸、透明UV自由树脂、木板",
-        "materialsEs": "Organza con Brillo Líquido, Fieltro de Lana, Tul de Malla con Lentejuelas, Tela Jacquard con Hilo de Oro, Seda Jacquard, Lentejuelas Transparentes, Alfileres Rectos, Cuentas de Cristal, Papel Washi, Resina UV Transparente Curable, Tabla de Madera"
+        "titleEs": "Suavidad Ondulante",
+        "materialsEs": "Organza con Brillo Líquido, Fieltro de Lana, Tul de Malla con Lentejuelas, Tejido Jacquard con Hilos Dorados, Seda Jacquard, Lentejuelas Transparentes, Alfileres Rectos, Cuentas de Cristal, Papel Washi, Resina Transparente Curable por Uv, Tabla de Madera",
+        "dimensionsEs": "30 × 60 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra."
       },
       {
         "id": "rp3oh0ctgnmsa7m6ib",
@@ -1631,7 +1691,6 @@
         ],
         "tone": "#454545",
         "titleZh": "被湿漉发梢撩动的波纹",
-        "titleEs": "Ondulaciones Agitadas por el Cabello Mojado",
         "imagesFull": [
           "/images/rp3oh0ctgnmsa7m6ib-full-0.jpg",
           "/images/rp3oh0ctgnmsa7m6ib-full-1.jpg",
@@ -1647,7 +1706,10 @@
         "materials": "Liquid-Luster Organza, Iridescent Sequin Wave Mesh, Hand-Dyed Wool Bouclé Yarn, Hand-Blended Wool and Silk Yarn, Hand-Spun Feather Blend Yarn, Hand-Blended Sully Alpaca Yarn, Transparent Colored Sequins, Bamboo Fiber, Iron Wire, Wood, Transparent UV-Curable Resin, Resin",
         "dimensions": "120 × 81 cm",
         "materialsZh": "液态水光纱、鱼鳞亮片波浪纱、羊毛圈圈手染线、羊毛真丝手混线、羽毛手混线、苏利羊驼毛手混线 、透明彩色亮片、竹丝、铁丝、木头、透明UV自由树脂、树脂",
-        "materialsEs": "Organza de Brillo Líquido, Malla Ondulada de Lentejuelas Iridiscentes, Hilo Bouclé de Lana Teñido a Mano, Hilo de Lana y Seda Mezclado a Mano, Hilo de Mezcla de Plumas Hilado a Mano, Hilo de Alpaca Suri Mezclado a Mano, Lentejuelas Transparentes de Colores, Fibra de Bambú, Alambre de Hierro, Madera, Resina Curable por UV Transparente, Resina"
+        "titleEs": "Las Ondas Que Forma el Pelo Mojado",
+        "materialsEs": "Organza «Liquid-Luster», Malla Ondulada con Lentejuelas Iridiscentes, Hilo de Lana Bouclé Teñido a Mano, Hilo de Lana y Seda Mezclado a Mano, Hilo de Mezcla de Plumas Hilado a Mano, Hilo de Alpaca «Sully» Mezclado a Mano, Lentejuelas de Colores Transparentes, Fibra de Bambú, Alambre de Hierro, Madera, Resina Transparente Curable por Uv, Resina",
+        "dimensionsEs": "120 × 81 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra."
       },
       {
         "id": "1wd68pp5i8lmsa7lqpy",
@@ -1668,7 +1730,6 @@
         ],
         "tone": "#454545",
         "titleZh": "缱绻 伸展",
-        "titleEs": "Abrazo Lánguido",
         "imagesFull": [
           "/images/1wd68pp5i8lmsa7lqpy-full-0.jpg",
           "/images/1wd68pp5i8lmsa7lqpy-full-1.jpg",
@@ -1682,7 +1743,10 @@
         "materials": "Qing Fine Silk, Iron Wire, Wood, Gold Thread Brocade Fabric, Liquid-Luster Organza, Resin-Cast Woodcarving Replica, Transparent UV-Curing Resin, Silicone-Cast Woodcarving Replica, Thumbtacks, Imitation Foil",
         "dimensions": "90 × 120 cm",
         "materialsZh": "清代细绢、铁丝、木头、金丝提花布、液态水光纱、树脂 木雕翻模、透明UV自由树脂、硅胶木雕翻模、按钉、仿制箔",
-        "materialsEs": "Seda Fina de la Dinastía Qing, Alambre de Hierro, Madera, Tela Jacquard con Hilo de Oro, Gasa con Brillo Líquido, Molde de Escultura en Madera de Resina, Resina UV Transparente de Forma Libre, Molde de Escultura en Madera de Silicona, Chinches, Pan de Oro Sintético"
+        "titleEs": "Abrazo Lánguido",
+        "materialsEs": "Seda Fina de la Dinastía Qing, Alambre de Hierro, Madera, Tejido de Brocado con Hilos de Oro, Organza con Brillo Líquido, Réplica de Talla en Madera Moldeada en Resina, Resina Transparente de Curado Uv, Réplica de Talla en Madera Moldeada en Silicona, Chinchetas, Lámina de Imitación",
+        "dimensionsEs": "90 × 120 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra."
       },
       {
         "id": "pw9f00zr7ksmsa7l1qz",
@@ -1701,7 +1765,6 @@
         ],
         "tone": "#454545",
         "titleZh": "完美中的伤痕",
-        "titleEs": "Cicatrices que Brillan",
         "imagesFull": [
           "/images/pw9f00zr7ksmsa7l1qz-full-0.jpg",
           "/images/pw9f00zr7ksmsa7l1qz-full-1.jpg",
@@ -1713,7 +1776,10 @@
         "materials": "Bamboo Fiber, Iron Wire, Wood, Imitation Foil, Mulberry Silk, Artificial Pearls, Crystal Glass Beads, Transparent UV-Curing Resin, Liquid-Luster Organza",
         "dimensions": "39.3 × 30.5 cm",
         "materialsZh": "竹丝、铁丝、木头、仿制箔、蚕丝真丝、仿制珍珠、水晶玻 璃珠、透明UV自由树脂、液态水光纱",
-        "materialsEs": "Fibra de Bambú, Alambre de Hierro, Madera, Lámina de Imitación, Seda de Morera, Perlas Artificiales, Cuentas de Cristal, Resina UV Transparente Curable, Organza con Brillo Líquido"
+        "titleEs": "Cicatrices Que Brillan",
+        "materialsEs": "Fibra de Bambú, Alambre de Hierro, Madera, Lámina Imitación Metal, Seda de Morera, Perlas Artificiales, Cuentas de Cristal, Resina Transparente de Curado Uv, Organza con Brillo Líquido",
+        "dimensionsEs": "39,3 × 30,5 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra."
       },
       {
         "id": "sex2vjf2bammsa7kkqo",
@@ -1732,7 +1798,6 @@
         ],
         "tone": "#454545",
         "titleZh": "春天的微风",
-        "titleEs": "Brisa de Primavera",
         "imagesFull": [
           "/images/sex2vjf2bammsa7kkqo-full-0.jpg",
           "/images/sex2vjf2bammsa7kkqo-full-1.jpg",
@@ -1744,9 +1809,11 @@
         "materials": "Transparent UV-Curing Resin, Hand-Blended Wool And Silk Yarn, Hand-Spun Feather Blend Yarn, Glass Thread, Crystal Glass Beads, Mica Powder, Mineral Pigment",
         "dimensions": "Variable Dimensions  40 x 40 x 20 cm (Approximately)",
         "materialsZh": "透明UV自由树脂、羊毛真丝手混线、羽毛手混线、玻璃线、 水晶玻璃珠、云母粉、矿物颜料",
-        "materialsEs": "Resina UV Transparente Curable, Hilo Mezcla de Lana y Seda Hilado a Mano, Hilo Mezcla de Plumas Hilado a Mano, Hilo de Vidrio, Cuentas de Cristal, Polvo de Mica, Pigmento Mineral",
         "dimensionsZh": "尺寸可变   约 40 x 40 x 20 cm",
-        "dimensionsEs": "Dimensiones Variables  40 x 40 x 20 cm (Aproximadamente)"
+        "titleEs": "Brisa Primaveral",
+        "materialsEs": "Resina Transparente de Curado por Uv, Hilo de Lana y Seda Mezclado a Mano, Hilo de Mezcla de Plumas Hilado a Mano, Hilo de Vidrio, Cuentas de Cristal, Polvo de Mica, Pigmento Mineral",
+        "dimensionsEs": "Dimensiones variables: 40 x 40 x 20 cm (aproximadamente)",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra."
       },
       {
         "id": "sou76db9qtemsa7k568",
@@ -1767,7 +1834,6 @@
         ],
         "tone": "#454545",
         "titleZh": "守好0.1平方米的土地",
-        "titleEs": "Protegiendo los Últimos 0.1 Metros Cuadrados de Tierra",
         "imagesFull": [
           "/images/sou76db9qtemsa7k568-full-0.jpg",
           "/images/sou76db9qtemsa7k568-full-1.jpg",
@@ -1781,7 +1847,10 @@
         "materials": "Resin, Transparent UV-Curing Resin, Mica Powder, Crystal Glass Beads, Imitation Foil",
         "dimensions": "13 x 6 x 3cm",
         "materialsZh": "树脂、透明UV自由树脂、云母粉、水晶玻璃珠、仿制箔",
-        "materialsEs": "Resina, Resina UV Transparente Curable, Polvo de Mica, Cuentas de Cristal, Lámina de Imitación"
+        "titleEs": "Defendiendo los Últimos 0,1 Metros Cuadrados de Terreno",
+        "materialsEs": "Resina, Resina Transparente de Curado Uv, Polvo de Mica, Perlas de Cristal, Lámina Imitación",
+        "dimensionsEs": "13 x 6 x 3 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra."
       },
       {
         "id": "j55k0904cumsa7jk7w",
@@ -1802,7 +1871,6 @@
         ],
         "tone": "#454545",
         "titleZh": "一本所见即所得的书",
-        "titleEs": "Un Libro Bastante Directo",
         "imagesFull": [
           "/images/j55k0904cumsa7jk7w-full-0.jpg",
           "/images/j55k0904cumsa7jk7w-full-1.jpg",
@@ -1816,7 +1884,10 @@
         "materials": "Resin, Transparent UV Resin, Mica Powder, Jacquard Silk, Yuxian Paper Cutting",
         "dimensions": "25× 21 × 3 cm",
         "materialsZh": "树脂、透明UV树脂、云母粉、提花真丝布、蔚县剪纸",
-        "materialsEs": "Resina, Resina UV Transparente, Polvo de Mica, Seda Jacquard, Papel Cortado de Yuxian"
+        "titleEs": "Un Libro Bastante Sencillo",
+        "materialsEs": "Resina, Resina Uv Transparente, Polvo de Mica, Seda Jacquard, Papel Recortado de Yuxian",
+        "dimensionsEs": "25 × 21 × 3 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra."
       },
       {
         "id": "rx2y5t7fy6gmsa7j0k7",
@@ -1833,7 +1904,6 @@
         ],
         "tone": "#454545",
         "titleZh": "细缝中的低语",
-        "titleEs": "Susurros en Las Grietas",
         "imagesFull": [
           "/images/rx2y5t7fy6gmsa7j0k7-full-0.jpg",
           "/images/rx2y5t7fy6gmsa7j0k7-full-1.jpg",
@@ -1843,7 +1913,10 @@
         "materials": "Resin, Transparent UV Free Resin, Mica Powder, Crystal Glass Beads, Artificial Pearls, Artificial Gold",
         "dimensions": "10.5 × 9 × 2 cm",
         "materialsZh": "树脂、透明UV自由树脂、云母粉、水晶玻璃珠、仿制珍珠、仿制金",
-        "materialsEs": "Resina, Resina UV Transparente Libre de Burbujas, Polvo de Mica, Cuentas de Cristal, Perlas Artificiales, Oro Artificial"
+        "titleEs": "Susurros entre las Grietas",
+        "materialsEs": "Resina, Resina Transparente sin Rayos Uv, Polvo de Mica, Cuentas de Cristal, Perlas Artificiales, Oro Artificial",
+        "dimensionsEs": "10,5 × 9 × 2 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la ficha de la obra."
       },
       {
         "id": "b2dx4oqzzqumsa7espt",
@@ -1860,7 +1933,6 @@
         ],
         "tone": "#454545",
         "titleZh": "偶然入耳的鸟啼",
-        "titleEs": "Canto de Pájaros Escuchado por Casualidad",
         "imagesFull": [
           "/images/b2dx4oqzzqumsa7espt-full-0.jpg",
           "/images/b2dx4oqzzqumsa7espt-full-1.jpg",
@@ -1869,7 +1941,9 @@
         ],
         "materials": "Resin, Transparent UV-Curing Resin, Mica Powder, Iron Wire, Artificial Silver, Artificial Gold, Crystal Glass Beads",
         "materialsZh": "树脂、透明UV自由树脂、云母粉、铁丝、仿制银、仿制金、水晶玻璃珠",
-        "materialsEs": "Resina, Resina UV Transparente Curable, Polvo de Mica, Alambre de Hierro, Plata Artificial, Oro Artificial, Cuentas de Cristal"
+        "titleEs": "Canto de Pájaros Que Se Oye de Pasada",
+        "materialsEs": "Resina, Resina Transparente de Curado Uv, Polvo de Mica, Alambre de Hierro, Plata Artificial, Oro Artificial, Cuentas de Cristal",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra."
       },
       {
         "id": "5umaoq4a5lmmsa7eeja",
@@ -1888,7 +1962,6 @@
         ],
         "tone": "#454545",
         "titleZh": "叶杆折断的气味",
-        "titleEs": "El Olor de un Tallo Roto",
         "imagesFull": [
           "/images/5umaoq4a5lmmsa7eeja-full-0.jpg",
           "/images/5umaoq4a5lmmsa7eeja-full-1.jpg",
@@ -1899,7 +1972,9 @@
         ],
         "materials": "Transparent UV-Curing Resin, Silicone, Solid Oil Paint, Crystal Glass Beads, Plastic Sheets",
         "materialsZh": "透明UV自由树脂、硅胶、固体油画颜料、水晶玻璃珠、塑料片",
-        "materialsEs": "Resina UV Transparente Curable, Silicona, Óleo Sólido, Cuentas de Cristal, Láminas de Plástico"
+        "titleEs": "El Aroma de un Tallo Roto",
+        "materialsEs": "Resina Transparente de Curado Uv-C, Silicona, Pintura al Óleo Sólida, Perlas de Cristal, Láminas de Plástico",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra."
       },
       {
         "id": "2o2m0elqukzmsa7ckba",
@@ -1914,14 +1989,15 @@
         ],
         "tone": "#454545",
         "titleZh": "呼啸而过的风",
-        "titleEs": "El Viento Silbador",
         "imagesFull": [
           "/images/2o2m0elqukzmsa7ckba-full-0.jpg",
           "/images/2o2m0elqukzmsa7ckba-full-1.jpg"
         ],
         "materials": "Fragments of Qing Dynasty Wooden Boards, Hot Glue Sticks, Tin Foil, Artificial Pearls, Plastic Beads, Hemp Rope, Silver Foil",
         "materialsZh": "清代木板残片、热熔胶棒、锡纸、仿制珍珠、塑料珠片、麻绳、银箔",
-        "materialsEs": "Fragmentos de Tablas de Madera de la Dinastía Qing, Barras de Pegamento Termofusible, Papel de Aluminio, Perlas Artificiales, Cuentas de Plástico, Cuerda de Cánamo, Lámina de Plata"
+        "titleEs": "El Viento Silbante",
+        "materialsEs": "Fragmentos de Tablas de Madera de la Dinastía Qing, Barras de Pegamento Caliente, Papel de Aluminio, Perlas Artificiales, Cuentas de Plástico, Cuerda de Cáñamo, Lámina de Plata",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra."
       },
       {
         "id": "3r48a3lmho6msa7980o",
@@ -1940,8 +2016,6 @@
         "tone": "#454545",
         "seriesZh": "婚纱",
         "titleZh": "婚纱 I",
-        "seriesEs": "Vestido de Novia",
-        "titleEs": "Vestido de Novia I",
         "imagesFull": [
           "/images/3r48a3lmho6msa7980o-full-0.jpg",
           "/images/3r48a3lmho6msa7980o-full-1.jpg",
@@ -1952,7 +2026,11 @@
         "materialsZh": "清代木板残片、锡纸、液态水光纱、亚克力珠、玻璃珠、塑料珠片",
         "dimensionsZh": "33.5 × 5 cm",
         "dimensions": "33.5 × 5 cm",
-        "materialsEs": "Fragmento de Madera de la Dinastía Qing, Papel de Aluminio, Organza con Brillo Líquido, Cuentas de Acrílico, Cuentas de Vidrio, Lentejuelas de Plástico"
+        "titleEs": "Vestido de Novia I",
+        "materialsEs": "Fragmento de Madera de la Dinastía Qing, Papel de Aluminio, Organza con Brillo Líquido, Cuentas Acrílicas, Cuentas de Cristal, Lentejuelas de Plástico",
+        "dimensionsEs": "33,5 × 5 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra.",
+        "seriesEs": "Vestido de Novia"
       },
       {
         "id": "3dpqsgxojl2msa7980p",
@@ -1969,8 +2047,6 @@
         "tone": "#454545",
         "seriesZh": "婚纱",
         "titleZh": "婚纱 II",
-        "seriesEs": "Vestido de Novia",
-        "titleEs": "Vestido de Novia II",
         "imagesFull": [
           "/images/3dpqsgxojl2msa7980p-full-0.jpg",
           "/images/3dpqsgxojl2msa7980p-full-1.jpg"
@@ -1978,7 +2054,11 @@
         "materials": "Qing Dynasty Wood Fragment, 1990s Wedding Anniversary Badge, Tin Foil, Mesh Fabric, Acrylic Beads, Glass Beads, Plastic Sequins",
         "dimensions": "16 × 9 cm",
         "materialsZh": "清代木板残片、90年代结婚纪念章、锡纸、网纱、亚克力珠、 玻璃珠、塑料珠片",
-        "materialsEs": "Fragmento de Madera de la Dinastía Qing, Insignia de Aniversario de Bodas de la Década de 1990, Papel de Aluminio, Tela de Malla, Cuentas de Acrílico, Cuentas de Vidrio, Lentejuelas de Plástico"
+        "titleEs": "Vestido de Novia II",
+        "materialsEs": "Fragmento de Madera de la Dinastía Qing, Insignia de Aniversario de Boda de la Década de 1990, Papel de Aluminio, Tejido de Malla, Cuentas Acrílicas, Cuentas de Cristal y Lentejuelas de Plástico",
+        "dimensionsEs": "16 × 9 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra.",
+        "seriesEs": "Vestido de Novia"
       },
       {
         "id": "tpn2vxje8qlmsa73n3s",
@@ -1995,7 +2075,6 @@
         ],
         "tone": "#454545",
         "titleZh": "窥见一条裂缝",
-        "titleEs": "Mirando en una Grieta",
         "imagesFull": [
           "/images/tpn2vxje8qlmsa73n3s-full-0.jpg",
           "/images/tpn2vxje8qlmsa73n3s-full-1.jpg",
@@ -2005,7 +2084,10 @@
         "materials": "Qing Dynasty Wood Fragment, Tin Foil, Artificial Pearls, Plastic Sequins, Gold Leaf",
         "dimensions": "11 × 12.8 cm",
         "materialsZh": "清代木板残片、锡纸、仿制珍珠、塑料珠片、金箔",
-        "materialsEs": "Fragmento de Madera de la Dinastía Qing, Papel de Aluminio, Perlas Artificiales, Lentejuelas de Plástico, Lámina de Oro"
+        "titleEs": "Asomarse por una Rendija",
+        "materialsEs": "Fragmento de Madera de la Dinastía Qing, Papel de Aluminio, Perlas Artificiales, Lentejuelas de Plástico, Pan de Oro",
+        "dimensionsEs": "11 × 12,8 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra."
       },
       {
         "id": "xqowzn7rm1msa73mcd",
@@ -2022,7 +2104,6 @@
         ],
         "tone": "#454545",
         "titleZh": "北方的雪",
-        "titleEs": "Nieve del Norte",
         "imagesFull": [
           "/images/xqowzn7rm1msa73mcd-full-0.jpg",
           "/images/xqowzn7rm1msa73mcd-full-1.jpg",
@@ -2033,7 +2114,10 @@
         "materialsZh": "竹丝、欧根纱、玻璃线、玉线、水晶玻璃珠、闪光片、镭射 玻璃纱、清代粗绢、纯棉稀疏胚布、玻璃线、透明UV自由树脂",
         "dimensionsZh": "90 × 33 cm",
         "dimensions": "90 × 33 cm",
-        "materialsEs": "Fibra de Bambú, Organza, Hilo de Vidrio, Hilo de Jade, Cuentas de Cristal, Copos de Purpurina, Malla de Vidrio Láser, Seda Gruesa de la Dinastía Qing, Tela de Algodón Crudo Ligero, Hilo de Vidrio, Resina UV Transparente Curable"
+        "titleEs": "Nieve del Norte",
+        "materialsEs": "Fibra de Bambú, Organza, Hilo de Cristal, Hilo de Jade, Cuentas de Cristal, Purpurina, Malla de Cristal Cortada con Láser, Seda Gruesa Qing, Tejido de Algodón Crudo Ligero, Hilo de Cristal, Resina Transparente de Curado Uv",
+        "dimensionsEs": "90 × 33 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra."
       },
       {
         "id": "1ke8vq123f5msa73lie",
@@ -2050,7 +2134,6 @@
         ],
         "tone": "#454545",
         "titleZh": "傍晚散步",
-        "titleEs": "Un Paseo por la Tarde",
         "imagesFull": [
           "/images/1ke8vq123f5msa73lie-full-0.jpg",
           "/images/1ke8vq123f5msa73lie-full-1.jpg",
@@ -2059,8 +2142,11 @@
         ],
         "materials": "Qing Wood Carving Fragment, Qing Antique Rough Silk, Wedding Satin, Linen Blend, Ramie Aged Yarn, Silk Chiffon, Ink, Mineral Pigment, Knitted Shaggy Stretch Band, Mohair Handknitting Thread, Silk Thread, Hot Glue, Solid Oil Paint, Photograph Transfer Paper, Tin Foil",
         "dimensions": "31 × 45 cm",
-        "materialsEs": "Fragmento de Tallado en Madera de la Dinastía Qing, Seda Gruesa Antigua de la Dinastía Qing, Satén Nupcial, Mezcla de Lino, Hilo Envejecido de Ramio, Chifón de Seda, Tinta, Pigmento Mineral, Banda Elástica de Punto Afelpado, Hilo de Mohair para Tejer a Mano, Hilo de Seda, Pegamento Termofusible, Óleo Sólido, Papel de Transferencia Fotográfica, Papel de Aluminio",
-        "materialsZh": "清代木雕残片、清代古粗绢、婚纱缎、亚麻混纺胚布、苎麻做旧纱、真丝雪纺布、墨、矿物颜料、针织长毛弹力带、马海毛手编线、蚕丝线、热熔胶、固体油画颜料、照片转印纸、锡纸"
+        "materialsZh": "清代木雕残片、清代古粗绢、婚纱缎、亚麻混纺胚布、苎麻做旧纱、真丝雪纺布、墨、矿物颜料、针织长毛弹力带、马海毛手编线、蚕丝线、热熔胶、固体油画颜料、照片转印纸、锡纸",
+        "titleEs": "Un Paseo al Atardecer",
+        "materialsEs": "Fragmento de Tallado en Madera de la Dinastía Qing, Seda Antigua y Rugosa de la Dinastía Qing, Satén de Boda, Mezcla de Lino, Hilo de Ramio Envejecido, Gasa de Seda, Tinta, Pigmento Mineral, Cinta Elástica de Punto Peludo, Hilo de Mohair para Tejer a Mano, Hilo de Seda, Pegamento Caliente, Pintura al Óleo Sólida, Papel de Transferencia Fotográfica, Papel de Aluminio",
+        "dimensionsEs": "31 × 45 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra."
       },
       {
         "id": "8b9zk72tv5tmsa73jzb",
@@ -2077,7 +2163,6 @@
         ],
         "tone": "#454545",
         "titleZh": "初绽的少女心",
-        "titleEs": "Despertar de Primavera",
         "imagesFull": [
           "/images/8b9zk72tv5tmsa73jzb-full-0.jpg",
           "/images/8b9zk72tv5tmsa73jzb-full-1.jpg",
@@ -2087,7 +2172,10 @@
         "materials": "Silk Organza, Knitted Shag Elastic Band, Mohair Hand Knitting Thread, Solid Oil Paint, Wool Felt, Transparent UV Free Resin, Hot Glue Stick, Silk Thread, Glass Fiber, Stranded Wire",
         "materialsZh": "真丝欧根缎、针织长毛弹力带、马海毛手编线、固体油画颜料、羊毛毡、透明UV自由树脂、热熔胶棒、蚕丝线、玻璃线、股线",
         "dimensions": "20 × 24 cm",
-        "materialsEs": "Organza de Seda, Banda Elástica de Punto Afelpado, Hilo de Mohair para Tejer a Mano, Óleo Sólido, Fieltro de Lana, Resina UV Transparente Libre de Burbujas, Barra de Pegamento Termofusible, Hilo de Seda, Fibra de Vidrio, Alambre Trenzado"
+        "titleEs": "El Despertar de la Primavera",
+        "materialsEs": "Organza de Seda, Cinta Elástica de Punto Peludo, Hilo de Mohair para Tejer a Mano, Pintura al Óleo Opaca, Fieltro de Lana, Resina Transparente sin Rayos Uv, Barra de Pegamento Caliente, Hilo de Seda, Fibra de Vidrio, Alambre Trenzado",
+        "dimensionsEs": "20 × 24 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra."
       },
       {
         "id": "m0rmb150jcsmsa73jdd",
@@ -2104,7 +2192,6 @@
         ],
         "tone": "#454545",
         "titleZh": "消散倦意的晨光",
-        "titleEs": "Resplandor del Despertar",
         "imagesFull": [
           "/images/m0rmb150jcsmsa73jdd-full-0.jpg",
           "/images/m0rmb150jcsmsa73jdd-full-1.jpg",
@@ -2114,7 +2201,10 @@
         "materials": "Cotton-Linen Fabric, Qing Fine Silk Gauze, Liquid-Luster Organza, Laser Polarizing Organza, Ramie Fabric, Organza, Mohair Yarn, Hand-Dyed Wool Bouclé Yarn, Hand-Blended Wool and Silk Yarn, Silicone, Transparent UV-Curing Resin, Artificial Silver Foil",
         "dimensions": "24 × 18.5 cm",
         "materialsZh": "棉麻布、清代细绢、水光液态纱、镭射偏光纱、苎麻布、欧根纱、海马毛线、羊毛圈圈手染线、羊毛真丝手混线、硅胶、透明UV自由树脂、仿制银箔",
-        "materialsEs": "Tela de Algodón y Lino, Gasa Fina de Seda de la Dinastía Qing, Organza con Brillo Líquido, Organza Polarizada Láser, Tela de Ramio, Organza, Hilo de Mohair, Hilo Bouclé de Lana Teñido a Mano, Hilo Mezcla de Lana y Seda Hilado a Mano, Silicona, Resina UV Transparente Curable, Lámina de Plata Artificial"
+        "titleEs": "Resplandor del Despertar",
+        "materialsEs": "Tejido de Algodón y Lino, Gasa Fina de Seda Qing, Organza con Brillo Líquido, Organza Polarizada con Láser, Tejido de Ramio, Organza, Hilo de Mohair, Hilo Bouclé de Lana Teñido a Mano, Hilo de Lana y Seda Mezclado a Mano, Silicona, Resina Transparente de Curado Uv, Lámina de Plata Artificial",
+        "dimensionsEs": "24 × 18,5 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra."
       },
       {
         "id": "a8p19bud8tsmsa75m0o",
@@ -2145,8 +2235,6 @@
         "tone": "#454545",
         "seriesZh": "晃动的春日",
         "titleZh": "晃动的春日 I",
-        "seriesEs": "Primavera Vibrante",
-        "titleEs": "Primavera Vibrante I",
         "imagesFull": [
           "/images/a8p19bud8tsmsa75m0o-full-0.jpg",
           "/images/a8p19bud8tsmsa75m0o-full-1.jpg",
@@ -2167,10 +2255,13 @@
         ],
         "materials": "Liquid-Luster Organza, Gilded Irregular Openwork Mesh, Sandwashed Slub Cotton Crepe, Glassy Silk Satin, Organza, Hand-Dyed Wool Bouclé Yarn, Hand-Blended Wool and Silk Yarn, Hand-Spun Feather Blend Yarn, Golden Cocoon Mulberry Silk Roving, Acrylic Paint, Wool Felt, Glass Filament Thread, Multi-Strand Thread, Jade Thread",
         "materialsZh": "液态水光纱、鎏金不规则镂空网纱、砂洗竹节棉绉布、玻璃丝缎 、欧根纱、羊毛圈圈手染线、羊毛真丝手混线、羽毛手混线、黄金茧桑 蚕丝条、丙烯、羊毛毡、玻璃线、股线、玉线",
-        "materialsEs": "Organza con Brillo Líquido, Malla Calada Irregular Dorada, Crepé de Algodón Flamé Lavado a la Arena, Satén de Seda Cristalino, Organza, Hilo Bouclé de Lana Teñido a Mano, Hilo Mezcla de Lana y Seda Hilado a Mano, Hilo Mezcla de Plumas Hilado a Mano, Mecha de Seda de Morera de Capullo Dorado, Pintura Acrílica, Fieltro de Lana, Hilo de Filamento de Vidrio, Hilo Multihebra, Hilo de Jade",
         "dimensions": "Variable Dimensions",
         "dimensionsZh": "尺寸可变",
-        "dimensionsEs": "Dimensiones Variables"
+        "titleEs": "Resorte Vibratorio I",
+        "materialsEs": "Organza «Liquid-Luster», Malla Calada Irregular Dorada, Crepé de Algodón con Efecto de Hilado Irregular Lavado a la Arena, Satén de Seda Brillante, Organza, Hilo de Bouclé de Lana Teñido a Mano, Hilo de Lana y Seda Mezclado a Mano, Hilo de Mezcla de Plumas Hilado a Mano, Mecha de Seda de Morera de Capullo Dorado, Pintura Acrílica, Fieltro de Lana, Hilo de Filamento de Vidrio, Hilo Multifilamento, Hilo de Jade",
+        "dimensionsEs": "Dimensiones variables",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra.",
+        "seriesEs": "Resorte Vibratorio"
       },
       {
         "id": "74vij1no3pmsa75m0o",
@@ -2195,8 +2286,6 @@
         "tone": "#454545",
         "seriesZh": "晃动的春日",
         "titleZh": "晃动的春日 II",
-        "seriesEs": "Primavera Vibrante",
-        "titleEs": "Primavera Vibrante II",
         "imagesFull": [
           "/images/74vij1no3pmsa75m0o-full-0.jpg",
           "/images/74vij1no3pmsa75m0o-full-1.jpg",
@@ -2211,10 +2300,13 @@
         ],
         "materials": "Liquid-Luster Organza, Gilded Irregular Openwork Mesh, Sandwashed Slub Cotton Crepe, Glassy Silk Satin, Organza, Hand-Dyed Wool Bouclé Yarn, Hand-Blended Wool and Silk Yarn, Hand-Spun Feather Blend Yarn, Golden Cocoon Mulberry Silk Roving, Acrylic Paint, Wool Felt, Glass Filament Thread, Multi-Strand Thread, Jade Thread, Silkscreen Printing",
         "materialsZh": "液态水光纱、鎏金不规则镂空网纱、砂洗竹节棉绉布、玻璃丝缎 、欧根纱、羊毛圈圈手染线、羊毛真丝手混线、羽毛手混线、黄金茧桑 蚕丝条、丙烯、羊毛毡、玻璃线、股线、玉线、丝网印刷",
-        "dimensionsEs": "Dimensiones Variables",
         "dimensions": "Variable Dimensions",
         "dimensionsZh": "尺寸可变",
-        "materialsEs": "Organza con Brillo Líquido, Malla Calada Irregular Dorada, Crepé de Algodón Flamé Lavado a la Arena, Satén de Seda Cristalino, Organza, Hilo Bouclé de Lana Teñido a Mano, Hilo Mezcla de Lana y Seda Hilado a Mano, Hilo Mezcla de Plumas Hilado a Mano, Mecha de Seda de Morera de Capullo Dorado, Pintura Acrílica, Fieltro de Lana, Hilo de Filamento de Vidrio, Hilo Multihebra, Hilo de Jade, Serigrafía"
+        "titleEs": "Resorte Vibratorio II",
+        "materialsEs": "Organza «Liquid-Luster», Malla Calada Irregular Dorada, Crepé de Algodón con Efecto de Hilos Gruesos Lavado a la Arena, Satén de Seda Vidrioso, Organza, Hilo Bouclé de Lana Teñido a Mano, Hilo de Lana y Seda Mezclado a Mano, Hilo de Mezcla de Plumas Hilado a Mano, Mecha de Seda de Morera «Golden Cocoon», Pintura Acrílica, Fieltro de Lana, Hilo de Filamento de Vidrio, Hilo de Varios Hilos, Hilo de Jade, Serigrafía",
+        "dimensionsEs": "Dimensiones variables",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra.",
+        "seriesEs": "Resorte Vibratorio"
       },
       {
         "id": "435v5k8z0khmsa73igz",
@@ -2233,7 +2325,6 @@
         ],
         "tone": "#454545",
         "titleZh": "于妈妈枕畔沉沉醒来的梦",
-        "titleEs": "Despertar al Lado de Mamá",
         "imagesFull": [
           "/images/435v5k8z0khmsa73igz-full-0.jpg",
           "/images/435v5k8z0khmsa73igz-full-1.jpg",
@@ -2245,7 +2336,10 @@
         "materials": "Lightweight Cotton Gauze, Laser Sheer Organza, Snow Silk Satin Crepe, Faux Silk Double Palace Satin, Lace Sequin Sheer Mesh, Linen-Blend Greige Fabric, Hand-Dyed Wool and Silk Blend Yarn, Wool Felt",
         "materialsZh": "纯棉稀疏纱、镭射透视欧根纱、雪丝缎绉、仿真丝双宫缎、蕾丝亮片透视网、亚麻混纺胚布、羊毛真丝混线手染毛线、羊毛毡",
         "dimensions": "75 × 37 cm",
-        "materialsEs": "Gasa de Algodón Ligera, Organza Traslúcida Láser, Crepé Satén de Seda Nieve, Satén Doble Palacio de Seda Sintética, Malla Traslúcida de Encaje con Lentejuelas, Tela Cruda de Mezcla de Lino, Hilo Mezcla de Lana y Seda Teñido a Mano, Fieltro de Lana"
+        "titleEs": "Despertarme Junto a Mamá",
+        "materialsEs": "Gasa de Algodón Ligera, Organza Transparente Cortada con Láser, Crepé de Seda «Snow», Satén «Double Palace» de Imitación de Seda, Malla Transparente de Encaje con Lentejuelas, Tejido «Greige» de Mezcla de Lino, Hilo de Mezcla de Lana y Seda Teñido a Mano, Fieltro de Lana",
+        "dimensionsEs": "75 × 37 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra."
       },
       {
         "id": "qhmuxvb580lms6ey9ki",
@@ -2268,11 +2362,13 @@
           "/images/qhmuxvb580lms6ey9ki-full-3.jpg"
         ],
         "titleZh": "睫毛上的凉雾",
-        "titleEs": "Bruma Fresca en las Pestañas",
         "materials": "Washi Paper, Tengujou Paper, Ramie Fabric, Brocade Satin, Wool Felt, Linen-Blend Greige Fabric, Pastel, Acrylic Paint, Ink, Mohair Yarn",
         "materialsZh": "和纸、典具帖纸、苎麻布、织锦缎、羊毛毡、亚麻混纺胚布、色粉、丙烯、墨、马海毛线",
         "dimensions": "70 × 40 cm",
-        "materialsEs": "Papel Washi, Papel Tengujou, Tela de Ramio, Satén Brocado, Fieltro de Lana, Tela Cruda de Mezcla de Lino, Pastel, Pintura Acrílica, Tinta, Hilo de Mohair"
+        "titleEs": "Un Poco de Vapor Fresco en las Pestañas",
+        "materialsEs": "Papel Washi, Papel Tengujou, Tela de Ramio, Satén Brocado, Fieltro de Lana, Tela Cruda de Mezcla de Lino, Colores Pastel, Pintura Acrílica, Tinta, Hilo de Mohair",
+        "dimensionsEs": "70 × 40 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra."
       },
       {
         "id": "uygbitwxrms6ey8vy",
@@ -2299,11 +2395,13 @@
           "/images/uygbitwxrms6ey8vy-full-5.jpg"
         ],
         "titleZh": "副驾驶位的晴天",
-        "titleEs": "Soleado en el Asiento del Copiloto",
         "materials": "Laser Sheer Organza, Snow Silk Satin Crepe, Faux Silk Double Palace Satin, Lace Sequin Sheer Mesh Fabric, Hand-Dyed Wool Yarn, Long-Haired Mohair Handspun Yarn, Silk Thread, Wool Felt, Acrylic Beads, Glass Beads, Textile Adhesive",
         "dimensions": "61 × 31 cm",
         "materialsZh": "镭射透视欧根纱、雪丝缎绉、仿真丝双宫缎、蕾丝亮片透视 网纺织布、手染毛线、海马长毛手编线、蚕丝线、羊毛毡、亚克力 珠、玻璃珠、布艺粘合剂",
-        "materialsEs": "Organza Traslúcida Láser, Crepé Satén de Seda Nieve, Satén Doble Palacio de Seda Sintética, Tela de Malla Traslúcida de Encaje con Lentejuelas, Hilo de Lana Teñido a Mano, Hilo Hilado a Mano de Mohair de Pelo Largo, Hilo de Seda, Fieltro de Lana, Cuentas de Acrílico, Cuentas de Vidrio, Adhesivo Textil"
+        "titleEs": "Sunny en el Asiento del Copiloto",
+        "materialsEs": "Organza Transparente con Efecto Láser, Crepé de Satén de Seda «Snow», Satén «Double Palace» de Imitación de Seda, Tejido de Malla Transparente con Encaje y Lentejuelas, Hilo de Lana Teñido a Mano, Hilo de Mohair de Pelo Largo Hilado a Mano, Hilo de Seda, Fieltro de Lana, Cuentas Acrílicas, Cuentas de Cristal, Adhesivo Textil",
+        "dimensionsEs": "61 × 31 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra."
       },
       {
         "id": "9bpdtwobyfms6ey80q",
@@ -2334,11 +2432,13 @@
           "/images/9bpdtwobyfms6ey80q-full-7.jpg"
         ],
         "titleZh": "无论走到哪里 青草和泥土的味道总是一样的",
-        "titleEs": "Petricor Familiar",
         "materials": "Qing Rough Silk, Qing Fine Silk, Silk, Pure Cotton Sparse Embryonic Cloth, Hand-Rolled Hemp Thread, Silk Chiffon Cloth Strips, Liquid Mercurial Yarn, Silk Thread, Printing Paper, Acrylic, Acrylic Medium, Photo Transfer Adhesive, Solid Oil Paint, Charcoal, Pencil, Gouache, Sully Alpaca Wool Hand-Mixed Thread, Photo Transfer, Silk Screen Printing",
         "materialsZh": "清代粗绢、清代细绢、桑蚕真丝、纯棉稀疏胚布、手搓麻绳线 、真丝雪纺布条、液态水光纱、蚕丝线、打印纸、丙烯、丙烯媒介剂、照片转印胶、固体油画颜料、炭笔、铅笔、水粉、苏利羊驼毛手混线、照片转印、丝网印刷",
         "dimensions": "246 × 228 cm",
-        "materialsEs": "Seda Gruesa de la Dinastía Qing, Seda Fina de la Dinastía Qing, Seda, Tela Cruda Rala de Algodón Puro, Hilo de Cánamo Enrollado a Mano, Tiras de Tela de Chifón de Seda, Hilo Mercurial Líquido, Hilo de Seda, Papel de Impresión, Acrílico, Medio Acrílico, Adhesivo para Transferencia Fotográfica, Óleo Sólido, Carboncillo, Lápiz, Gouache, Hilo Mezclado a Mano de Lana de Alpaca Sully, Transferencia Fotográfica, Serigrafía"
+        "titleEs": "Familiar del Petricor",
+        "materialsEs": "Seda Gruesa de la Dinastía Qing, Seda Fina de la Dinastía Qing, Seda, Tela Embrionaria de Algodón Puro Poco Densa, Hilo de Cáñamo Enrollado a Mano, Tiras de Tela de Gasa de Seda, Hilo de Mercurio Líquido, Hilo de Seda, Papel de Impresión, Acrílico, Medio Acrílico, Adhesivo para Transferencia Fotográfica, Pintura al Óleo Sólida, Carboncillo, Lápiz, Gouache, Hilo de Lana de Alpaca Sully Mezclado a Mano, Transferencia Fotográfica, Serigrafía",
+        "dimensionsEs": "246 × 228 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra."
       },
       {
         "id": "31sqr35iframs6ey6ed",
@@ -2361,11 +2461,13 @@
           "/images/31sqr35iframs6ey6ed-full-3.jpg"
         ],
         "titleZh": "茫然中的新生枝桠",
-        "titleEs": "Una Nueva Rama en un Aturdimiento",
         "materials": "Qing Rough Silk, Pastel, Japanese Mineral Pigment, Acrylic, MDF Frame",
         "materialsZh": "清代粗绢、色粉、岩绘具、丙烯、密度木框",
         "dimensions": "30 × 60 cm",
-        "materialsEs": "Seda Gruesa de la Dinastía Qing, Pastel, Pigmento Mineral Japonés, Acrílico, Marco de MDF"
+        "titleEs": "Una Nueva Sucursal en Medio del Aturdimiento",
+        "materialsEs": "Seda Rugosa Qing, Colores Pastel, Pigmentos Minerales Japoneses, Acrílico, Marco de Mdf",
+        "dimensionsEs": "30 × 60 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra."
       },
       {
         "id": "h9bi30yx4g7ms6ey5le",
@@ -2388,11 +2490,13 @@
           "/images/h9bi30yx4g7ms6ey5le-full-3.jpg"
         ],
         "titleZh": "思绪疯长时的脑雾",
-        "titleEs": "Niebla Mental cuando los Pensamientos se Desbocan",
         "materials": "Mineral Pigment, Pencil, Pastel, Oil Pastel, Gold Clay, Modern Fine Raw Silk, Wooden Frame",
         "dimensions": "80 × 60 cm",
         "materialsZh": "矿物颜料、色粉、油画棒、金泥、现代细生绢、木框",
-        "materialsEs": "Pigmento Mineral, Lápiz, Pastel, Pastel al Óleo, Arcilla Dorada, Seda Cruda Fina Moderna, Marco de Madera"
+        "titleEs": "Confusión Mental Cuando los Pensamientos Se Descontrolan",
+        "materialsEs": "Pigmento Mineral, Lápiz, Pastel, Pastel al Óleo, Arcilla Dorada, Seda Cruda Fina Moderna, Marco de Madera",
+        "dimensionsEs": "80 × 60 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra."
       },
       {
         "id": "aw4l7ymdcmms6ewfl8",
@@ -2447,11 +2551,13 @@
           "/images/aw4l7ymdcmms6ewfl8-full-19.jpg"
         ],
         "titleZh": "偶发的灵光",
-        "titleEs": "Chispas Accidentales",
         "dimensions": "223 × 181.2 cm",
         "materials": "Mineral Pigment, Ink, Pencil, Gold Leaf, Acrylic, Qing Coarse Silk, Qing Fine Silk, Modern Silk, Kochi Mashi Paper, Tosa Tengujou Paper, Mino Paper, Wooden Frames, Wooden Board",
         "materialsZh": "矿物颜料、墨、铅笔、金箔、丙烯、清代粗绢、清代细绢、现代绢、高知麻纸、土佐典具帖纸、美浓纸、木框、木板",
-        "materialsEs": "Pigmento Mineral, Tinta, Lápiz, Lámina de Oro, Acrílico, Seda Gruesa de la Dinastía Qing, Seda Fina de la Dinastía Qing, Seda Moderna, Papel Kochi Mashi, Papel Tosa Tengujou, Papel Mino, Marcos de Madera, Tabla de Madera"
+        "titleEs": "Chispas Accidentales",
+        "materialsEs": "Pigmentos Minerales, Tinta, Lápiz, Pan de Oro, Acrílico, Seda Gruesa de la Dinastía Qing, Seda Fina de la Dinastía Qing, Seda Moderna, Papel Kochi Mashi, Papel Tosa Tengujou, Papel Mino, Marcos de Madera, Tablero de Madera",
+        "dimensionsEs": "223 × 181,2 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra."
       },
       {
         "id": "eiuaiqsq63msa8gzfg",
@@ -2469,7 +2575,6 @@
         ],
         "tone": "#454545",
         "titleZh": "眩晕的梦",
-        "titleEs": "Un Sueño Vertiginoso",
         "imagesFull": [
           "/images/eiuaiqsq63msa8gzfg-full-0.jpg",
           "/images/eiuaiqsq63msa8gzfg-full-1.jpg",
@@ -2480,7 +2585,10 @@
         "materials": "Mineral Pigments, Mica, Clam Powder, Ink, Alum Glue, Tengujou Paper, Pencil, Kumohada Hemp Paper, Wooden Board",
         "dimensions": "116.7 × 182 cm",
         "materialsZh": "矿物颜料、云母、蛤粉、墨、胶矾、典具帖纸、铅笔、云肌麻纸、木板",
-        "materialsEs": "Pigmentos Minerales, Mica, Polvo de Almeja, Tinta, Cola de Alumbre, Papel Tengujou, Lápiz, Papel de Cánamo Kumohada, Tabla de Madera"
+        "titleEs": "Un Sueño Vertiginoso",
+        "materialsEs": "Pigmentos Minerales, Mica, Polvo de Almeja, Tinta, Cola de Alumbre, Papel Tengujou, Lápiz, Papel de Cáñamo Kumohada, Tabla de Madera",
+        "dimensionsEs": "116,7 × 182 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la ficha de la obra."
       },
       {
         "id": "m7hvlisui3omsa8hawt",
@@ -2499,7 +2607,6 @@
         ],
         "tone": "#454545",
         "titleZh": "悠荡的桨",
-        "titleEs": "Remos de Remo",
         "imagesFull": [
           "/images/m7hvlisui3omsa8hawt-full-0.jpg",
           "/images/m7hvlisui3omsa8hawt-full-1.jpg",
@@ -2511,7 +2618,10 @@
         "materials": "Gold Clay, Ink, Silver Leaf, Pencil, Mineral Pigment, Qing Tough Silk, Wooden Frame",
         "dimensions": "47 × 47 cm",
         "materialsZh": "金泥、墨、银箔、铅笔、矿物颜料、清代粗绢、木框",
-        "materialsEs": "Arcilla Dorada, Tinta, Lámina de Plata, Lápiz, Pigmento Mineral, Seda Resistente de la Dinastía Qing, Marco de Madera"
+        "titleEs": "Remos",
+        "materialsEs": "Arcilla Dorada, Tinta, Pan de Plata, Lápiz, Pigmento Mineral, Seda Resistente «Qing», Marco de Madera",
+        "dimensionsEs": "47 × 47 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra."
       },
       {
         "id": "2v3x4oj9bdimsa8hg1k",
@@ -2530,7 +2640,6 @@
         ],
         "tone": "#454545",
         "titleZh": "甘愿",
-        "titleEs": "Voluntariamente",
         "imagesFull": [
           "/images/2v3x4oj9bdimsa8hg1k-full-0.jpg",
           "/images/2v3x4oj9bdimsa8hg1k-full-1.jpg",
@@ -2542,7 +2651,10 @@
         "materials": "Qing Fine Silk, Bamboo Fiber, Washi Paper, Ink, Gensai Pigment, Pencil, Acrylic, Wooden Frame",
         "dimensions": "40 × 30 cm",
         "materialsZh": "清代细绢、竹丝、和纸、墨、岩绘具、铅笔、丙烯、木框",
-        "materialsEs": "Seda Fina de la Dinastía Qing, Fibra de Bambú, Papel Washi, Tinta, Pigmento Gensai, Lápiz, Acrílico, Marco de Madera"
+        "titleEs": "De Buena Gana",
+        "materialsEs": "Seda Fina Qing, Fibra de Bambú, Papel Washi, Tinta, Pigmento Gensai, Lápiz, Acrílico, Marco de Madera",
+        "dimensionsEs": "40 × 30 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra."
       },
       {
         "id": "ob2qhgdx1jpmsa8hooq",
@@ -2561,7 +2673,6 @@
         ],
         "tone": "#454545",
         "titleZh": "思的发端",
-        "titleEs": "El Comienzo de los Pensamientos",
         "imagesFull": [
           "/images/ob2qhgdx1jpmsa8hooq-full-0.jpg",
           "/images/ob2qhgdx1jpmsa8hooq-full-1.jpg",
@@ -2573,7 +2684,10 @@
         "materials": "Ink, Mineral Pigment, Pencil, Bamboo Fiber, Qing Fine Silk, Washi Paper, Wooden Frame",
         "dimensions": "116.7 × 66 cm",
         "materialsZh": "墨、矿物颜料、铅笔、竹丝、清代细绢、和纸、木框",
-        "materialsEs": "Tinta, Pigmento Mineral, Lápiz, Fibra de Bambú, Seda Fina de la Dinastía Qing, Papel Washi, Marco de Madera"
+        "titleEs": "El Origen de los Pensamientos",
+        "materialsEs": "Tinta, Pigmento Mineral, Lápiz, Fibra de Bambú, Seda Fina Qing, Papel Washi, Marco de Madera",
+        "dimensionsEs": "116,7 × 66 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la ficha de la obra."
       },
       {
         "id": "ngenlkzrf0jmsa8i0rn",
@@ -2594,7 +2708,6 @@
         ],
         "tone": "#454545",
         "titleZh": "舒张的头脑脉动",
-        "titleEs": "Pulsos Neuronales Expansivos",
         "imagesFull": [
           "/images/ngenlkzrf0jmsa8i0rn-full-0.jpg",
           "/images/ngenlkzrf0jmsa8i0rn-full-1.jpg",
@@ -2608,7 +2721,10 @@
         "materials": "Ink, Mineral Pigment, Pencil, Mica, Clam Powder, Qing Fine Silk, Washi Paper, Modern Fine Raw Silk, Wooden Frame",
         "dimensions": "116.7 × 66 cm",
         "materialsZh": "墨、矿物颜料、铅笔、云母、蛤粉、清代细绢、现代细生绢、木框",
-        "materialsEs": "Tinta, Pigmento Mineral, Lápiz, Mica, Polvo de Almeja, Seda Fina de la Dinastía Qing, Papel Washi, Seda Cruda Fina Moderna, Marco de Madera"
+        "titleEs": "Impulsos Neuronales en Expansión",
+        "materialsEs": "Tinta, Pigmento Mineral, Lápiz, Mica, Polvo de Almeja, Seda Fina de Qing, Papel Washi, Seda Cruda Fina Moderna, Marco de Madera",
+        "dimensionsEs": "116,7 × 66 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra."
       },
       {
         "id": "ysoh927kzmmsa8my7x",
@@ -2627,7 +2743,6 @@
         ],
         "tone": "#454545",
         "titleZh": "心头间的无意之柳",
-        "titleEs": "Sauce Involuntario del Corazón",
         "imagesFull": [
           "/images/ysoh927kzmmsa8my7x-full-0.jpg",
           "/images/ysoh927kzmmsa8my7x-full-1.jpg",
@@ -2638,9 +2753,11 @@
         ],
         "materials": "Qing Dynasty Fine Silk, Ink, Mineral Pigment, Pencil, Acrylic, Wooden Frame",
         "materialsZh": "清代细绢、墨、矿物颜料、铅笔、丙烯、木框",
-        "dimensionsEs": "32 × 24 cm",
         "dimensions": "32 × 24 cm",
-        "materialsEs": "Seda Fina de la Dinastía Qing, Tinta, Pigmento Mineral, Lápiz, Acrílico, Marco de Madera"
+        "titleEs": "El Sauce Involuntario del Corazón",
+        "materialsEs": "Seda Fina de la Dinastía Qing, Tinta, Pigmentos Minerales, Lápiz, Acrílico, Marco de Madera",
+        "dimensionsEs": "32 × 24 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra."
       },
       {
         "id": "harpo14685umsae7x2j",
@@ -2663,11 +2780,13 @@
           "/images/harpo14685umsae7x2j-full-3.jpg"
         ],
         "titleZh": "久在樊笼里",
-        "titleEs": "Largo Tiempo Enjaulado",
         "materials": "Japanese Modern Round Fan, Mica, Ink, Pencil, Mineral Pigment",
         "dimensions": "15 × 10 cm",
         "materialsZh": "日本现代团扇、云母、墨、铅笔、矿物颜料",
-        "materialsEs": "Abanico Redondo Japonés Moderno, Mica, Tinta, Lápiz, Pigmento Mineral"
+        "titleEs": "Enjaulado durante Mucho Tiempo",
+        "materialsEs": "Abanico Redondo Japonés Moderno, Mica, Tinta, Lápiz y Pigmentos Minerales",
+        "dimensionsEs": "15 × 10 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra."
       },
       {
         "id": "bxjirqdj1iimsa8nhxq",
@@ -2682,7 +2801,6 @@
         ],
         "tone": "#454545",
         "titleZh": "臆想的晚风",
-        "titleEs": "Brisa Vespertina de la Mente",
         "imagesFull": [
           "/images/bxjirqdj1iimsa8nhxq-full-0.jpg",
           "/images/bxjirqdj1iimsa8nhxq-full-1.jpg"
@@ -2690,7 +2808,10 @@
         "materials": "Japanese Fans, Colored Pencils",
         "dimensions": "7 × 14 cm",
         "materialsZh": "日本扇子、彩铅",
-        "materialsEs": "Abanicos Japoneses, Lápices de Colores"
+        "titleEs": "La Brisa Vespertina de la Mente",
+        "materialsEs": "Abanicos Japoneses, Lápices de Colores",
+        "dimensionsEs": "7 × 14 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la ficha de la obra."
       },
       {
         "id": "945qekya94msa8r8i4",
@@ -2713,7 +2834,6 @@
         ],
         "tone": "#454545",
         "titleZh": "梦的角落",
-        "titleEs": "Recovecos Oníricos",
         "imagesFull": [
           "/images/945qekya94msa8r8i4-full-0.jpg",
           "/images/945qekya94msa8r8i4-full-1.jpg",
@@ -2729,7 +2849,10 @@
         "materials": "Clam Powder, Ink, Mineral Pigments, Textured Washi Paper, Kochi Hemp Paper, Wooden Board",
         "dimensions": "18 × 18 cm",
         "materialsZh": "蛤粉、墨、矿物颜料、肌理和纸、高知麻纸、木板",
-        "materialsEs": "Polvo de Almeja, Tinta, Pigmentos Minerales, Papel Washi Texturizado, Papel de Cánamo Kochi, Tabla de Madera"
+        "titleEs": "Rincones Oníricos",
+        "materialsEs": "Polvo de Almeja, Tinta, Pigmentos Minerales, Papel Washi Texturizado, Papel de Cáñamo de Kochi, Tabla de Madera",
+        "dimensionsEs": "18 × 18 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra."
       },
       {
         "id": "s55ao61vo9cmsa8rxs9",
@@ -2743,14 +2866,16 @@
         ],
         "tone": "#454545",
         "titleZh": "贲张",
-        "titleEs": "Flujo Hemático",
         "imagesFull": [
           "/images/s55ao61vo9cmsa8rxs9-full-0.jpg"
         ],
         "materials": "Gold Clay, Silver Clay, Pencil, Ink, Mineral Pigments, Kochi Hemp Paper, Wooden Board",
         "dimensions": "18 × 18 cm",
         "materialsZh": "金泥、银泥、铅笔、墨、矿物颜料、高知麻纸、木板",
-        "materialsEs": "Arcilla Dorada, Arcilla de Plata, Lápiz, Tinta, Pigmentos Minerales, Papel de Cánamo Kochi, Tabla de Madera"
+        "titleEs": "Flujo Hematológico",
+        "materialsEs": "Arcilla Dorada, Arcilla Plateada, Lápiz, Tinta, Pigmentos Minerales, Papel de Cáñamo de Kochi, Tabla de Madera",
+        "dimensionsEs": "18 × 18 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra."
       },
       {
         "id": "gj6l60182x8msa8s66q",
@@ -2764,14 +2889,16 @@
         ],
         "tone": "#454545",
         "titleZh": "难以攻陷的堡垒",
-        "titleEs": "Fortaleza Inexpugnable",
         "imagesFull": [
           "/images/gj6l60182x8msa8s66q-full-0.jpg"
         ],
         "materials": "Silver Foil, Ink, Mineral Pigment, Clam Powder, Pencil, Kochi Hemp Paper, Wooden Board",
         "dimensions": "18 × 14 cm",
         "materialsZh": "银箔、墨、矿物颜料、蛤粉、铅笔、高知麻纸、木板",
-        "materialsEs": "Lámina de Plata, Tinta, Pigmento Mineral, Polvo de Almeja, Lápiz, Papel de Cánamo Kochi, Tabla de Madera"
+        "titleEs": "Fortaleza Inexpugnable",
+        "materialsEs": "Lámina de Plata, Tinta, Pigmento Mineral, Polvo de Almeja, Lápiz, Papel de Cáñamo de Kochi, Tabla de Madera",
+        "dimensionsEs": "18 × 14 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra."
       },
       {
         "id": "dtcwa6mppdbmsa8s9lo",
@@ -2786,7 +2913,6 @@
         ],
         "tone": "#454545",
         "titleZh": "试图共舞",
-        "titleEs": "Intentando un Baile para Dos",
         "imagesFull": [
           "/images/dtcwa6mppdbmsa8s9lo-full-0.jpg",
           "/images/dtcwa6mppdbmsa8s9lo-full-1.jpg"
@@ -2794,7 +2920,10 @@
         "materials": "Ink, Mineral Pigment, Clam Powder, Pencil, Kumohada Hemp Paper, Wooden Board",
         "dimensions": "18 × 14 cm",
         "materialsZh": "墨、矿物颜料、蛤粉、铅笔、云肌麻纸、木板",
-        "materialsEs": "Tinta, Pigmento Mineral, Polvo de Almeja, Lápiz, Papel de Cánamo Kumohada, Tabla de Madera"
+        "titleEs": "Intentando Bailar en Pareja",
+        "materialsEs": "Tinta, Pigmento Mineral, Polvo de Almeja, Lápiz, Papel de Cáñamo Kumohada, Tabla de Madera",
+        "dimensionsEs": "18 × 14 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra."
       },
       {
         "id": "xgf5zrrgppdmsa8t259",
@@ -2813,7 +2942,6 @@
         ],
         "tone": "#454545",
         "titleZh": "燥热肌肤上的水滴",
-        "titleEs": "Gotas de Agua en Piel Sedienta",
         "imagesFull": [
           "/images/xgf5zrrgppdmsa8t259-full-0.jpg",
           "/images/xgf5zrrgppdmsa8t259-full-1.jpg",
@@ -2825,7 +2953,10 @@
         "materials": "Water-Dried Pigments, Mineral Pigments, Kochi Hemp Paper, Tengujou Paper, Wooden Board",
         "dimensions": "53 × 53 cm",
         "materialsZh": "水干颜料、矿物颜料、高知麻纸、典具帖纸、木板",
-        "materialsEs": "Pigmentos Secados al Agua, Pigmentos Minerales, Papel de Cánamo Kochi, Papel Tengujou, Tabla de Madera"
+        "titleEs": "Gotas de Agua sobre la Piel Reseca",
+        "materialsEs": "Pigmentos Secados al Aire, Pigmentos Minerales, Papel de Cáñamo de Kochi, Papel Tengujou, Tabla de Madera",
+        "dimensionsEs": "53 × 53 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la ficha de la obra."
       },
       {
         "id": "3hdf53sgw5imsa8t605",
@@ -2839,14 +2970,16 @@
         ],
         "tone": "#454545",
         "titleZh": "属于暑假的夏天",
-        "titleEs": "Vacaciones de Verano",
         "imagesFull": [
           "/images/3hdf53sgw5imsa8t605-full-0.jpg"
         ],
         "materials": "Mineral Pigments, Clam Powder, Textured Washi Paper, Kumohada Hemp Paper, Wooden Board",
         "dimensions": "18 × 14 cm",
         "materialsZh": "矿物颜料、蛤粉、肌理和纸、云肌麻纸、木板",
-        "materialsEs": "Pigmentos Minerales, Polvo de Almeja, Papel Washi Texturizado, Papel de Cánamo Kumohada, Tabla de Madera"
+        "titleEs": "Vacaciones de Verano",
+        "materialsEs": "Pigmentos Minerales, Polvo de Almeja, Papel Washi Texturizado, Papel de Cáñamo Kumohada, Tabla de Madera",
+        "dimensionsEs": "18 × 14 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra."
       },
       {
         "id": "ia55shxtlpgmsa8tf56",
@@ -2860,14 +2993,16 @@
         ],
         "tone": "#454545",
         "titleZh": "再靠近一点点",
-        "titleEs": "Solo un Poco más Cerca",
         "imagesFull": [
           "/images/ia55shxtlpgmsa8tf56-full-0.jpg"
         ],
         "materials": "Pencil, Water-Dried Pigment, Pastel, Textured Washi Paper, Kochi Hemp Paper, Wooden Board",
         "dimensions": "27.4 × 27.4 cm",
         "materialsZh": "铅笔、水干颜料、肌理和纸、高知麻纸、木板",
-        "materialsEs": "Lápiz, Pigmento Secado al Agua, Pastel, Papel Washi Texturizado, Papel de Cánamo Kochi, Tabla de Madera"
+        "titleEs": "Solo un Poco Más Cerca",
+        "materialsEs": "Lápiz, Pigmento Secado al Aire, Pastel, Papel Washi Texturizado, Papel de Cáñamo de Kochi, Tabla de Madera",
+        "dimensionsEs": "27,4 × 27,4 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra."
       },
       {
         "id": "yc84x21co69msa8tubv",
@@ -2881,14 +3016,16 @@
         ],
         "tone": "#454545",
         "titleZh": "隐匿",
-        "titleEs": "Críptica",
         "imagesFull": [
           "/images/yc84x21co69msa8tubv-full-0.jpg"
         ],
         "materials": "Gold Clay, Silver Foil, Ink, Mineral Pigments, Textured Washi Paper, Japanese Fine Silk, Wooden Board",
         "dimensions": "18 × 18 cm",
         "materialsZh": "金泥、银箔、墨、矿物颜料、肌理和纸、日本细绢、木板",
-        "materialsEs": "Arcilla Dorada, Lámina de Plata, Tinta, Pigmentos Minerales, Papel Washi Texturizado, Seda Fina Japonesa, Tabla de Madera"
+        "titleEs": "Cryptica",
+        "materialsEs": "Arcilla Dorada, Lámina de Plata, Tinta, Pigmentos Minerales, Papel Washi Texturizado, Seda Fina Japonesa, Tabla de Madera",
+        "dimensionsEs": "18 × 18 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra."
       },
       {
         "id": "rsm262fblymmsa8u2pr",
@@ -2902,14 +3039,16 @@
         ],
         "tone": "#454545",
         "titleZh": "不再追问的遗忘",
-        "titleEs": "Olvido - Sin Más Preguntas",
         "imagesFull": [
           "/images/rsm262fblymmsa8u2pr-full-0.jpg"
         ],
         "materials": "Pencil, Ink, Textured Washi Paper",
         "dimensions": "12 × 10 cm",
         "materialsZh": "铅笔、墨、肌理和纸",
-        "materialsEs": "Lápiz, Tinta, Papel Washi Texturizado"
+        "titleEs": "Oblivion: No Hay Más Preguntas",
+        "materialsEs": "Lápiz, Tinta, Papel Washi Texturizado",
+        "dimensionsEs": "12 × 10 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra."
       },
       {
         "id": "ck55cj8fkfwmsa8v29n",
@@ -2925,15 +3064,17 @@
         "tone": "#454545",
         "seriesZh": "一夜无梦",
         "titleZh": "一夜无梦 I",
-        "seriesEs": "Sueño sin Sueños",
-        "titleEs": "Sueño sin Sueños I",
         "imagesFull": [
           "/images/ck55cj8fkfwmsa8v29n-full-0.jpg"
         ],
         "materials": "Mineral Pigments, Clam Powder, Gold Leaf, Textured Washi Paper, Kumohada Hemp Paper, Wooden Board, Watermarked Woodcuts",
         "dimensions": "18 × 18 cm",
         "materialsZh": "矿物颜料、蛤粉、金箔、肌理和纸、云肌麻纸、木板、水印木刻",
-        "materialsEs": "Pigmentos Minerales, Polvo de Almeja, Pan de Oro, Papel Washi Texturizado, Papel de Cánamo Kumohada, Tabla de Madera, Grabados en Madera con Marca de Agua"
+        "titleEs": "Sueño sin Sueños I",
+        "materialsEs": "Pigmentos Minerales, Polvo de Almeja, Pan de Oro, Papel Washi Texturizado, Papel de Cáñamo Kumohada, Tabla de Madera, Xilografías con Marca de Agua",
+        "dimensionsEs": "18 × 18 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra.",
+        "seriesEs": "Sueño sin Sueños"
       },
       {
         "id": "d766fyqrahumsa8v29n",
@@ -2949,15 +3090,17 @@
         "tone": "#454545",
         "seriesZh": "一夜无梦",
         "titleZh": "一夜无梦 II",
-        "seriesEs": "Sueño sin Sueños",
-        "titleEs": "Sueño sin Sueños II",
         "imagesFull": [
           "/images/d766fyqrahumsa8v29n-full-0.jpg"
         ],
         "materials": "Mineral Pigments, Clam Powder, Gold Leaf, Japanese Fine Silk, Kochi Linen Paper, Wood Board, Ink, Pencil",
         "dimensions": "18 × 14 cm",
         "materialsZh": "矿物颜料、蛤粉、金箔、日本细绢、高知麻纸、木板、墨、铅笔",
-        "materialsEs": "Pigmentos Minerales, Polvo de Almeja, Pan de Oro, Seda Fina Japonesa, Papel de Lino Kochi, Tabla de Madera, Tinta, Lápiz"
+        "titleEs": "Sueño sin Sueños II",
+        "materialsEs": "Pigmentos Minerales, Polvo de Almeja, Pan de Oro, Seda Fina Japonesa, Papel de Lino de Kochi, Cartón de Madera, Tinta, Lápiz",
+        "dimensionsEs": "18 × 14 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra.",
+        "seriesEs": "Sueño sin Sueños"
       },
       {
         "id": "lajjwzt0tumsaa11bb",
@@ -2978,7 +3121,6 @@
         ],
         "tone": "#454545",
         "titleZh": "山河之间",
-        "titleEs": "Entre Montañas y Ríos",
         "imagesFull": [
           "/images/lajjwzt0tumsaa11bb-full-0.jpg",
           "/images/lajjwzt0tumsaa11bb-full-1.jpg",
@@ -2992,7 +3134,10 @@
         "materials": "Mineral Pigments, Clam Powder, Kumohada Hemp Paper, Silver Leaf, Gold Leaf, Textured Washi Paper, Wooden Panel",
         "materialsZh": "矿物颜料、蛤粉、云肌麻纸、银箔、金箔、肌理和纸、木板",
         "dimensions": "91 × 233.4 cm",
-        "materialsEs": "Pigmentos Minerales, Polvo de Almeja, Papel de Cánamo Kumohada, Pan de Plata, Pan de Oro, Papel Washi Texturizado, Tabla de Madera"
+        "titleEs": "Entre Montañas y Ríos",
+        "materialsEs": "Pigmentos Minerales, Polvo de Almeja, Papel de Cáñamo Kumohada, Pan de Plata, Pan de Oro, Papel Washi Texturizado, Panel de Madera",
+        "dimensionsEs": "91 × 233,4 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra."
       },
       {
         "id": "g6gjjffxfvtmsa9zk0z",
@@ -3015,7 +3160,6 @@
         ],
         "tone": "#454545",
         "titleZh": "万相",
-        "titleEs": "Miríada de Formas",
         "imagesFull": [
           "/images/g6gjjffxfvtmsa9zk0z-full-0.jpg",
           "/images/g6gjjffxfvtmsa9zk0z-full-1.jpg",
@@ -3031,7 +3175,10 @@
         "materials": "Mineral Pigments, Gold Foil, Advertising Paper, Kumohada Hemp Paper, Wood Board",
         "dimensions": "116.7 × 364 cm",
         "materialsZh": "矿物颜料、金箔、广告纸、云肌麻纸、木板",
-        "materialsEs": "Pigmentos Minerales, Lámina de Oro, Papel Publicitario, Papel de Cánamo Kumohada, Tabla de Madera"
+        "titleEs": "Infinidad de Formas",
+        "materialsEs": "Pigmentos Minerales, Lámina de Oro, Papel Publicitario, Papel de Cáñamo Kumohada, Tablero de Madera",
+        "dimensionsEs": "116,7 × 364 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra."
       },
       {
         "id": "elzl8ctqiitmsa9xhgo",
@@ -3045,14 +3192,16 @@
         ],
         "tone": "#454545",
         "titleZh": "融入迷乱",
-        "titleEs": "Fusionándose en el Caos",
         "imagesFull": [
           "/images/elzl8ctqiitmsa9xhgo-full-0.jpg"
         ],
         "materials": "Mineral Pigments, Silver Leaf, Kumohada Hemp Paper, Wood Board",
         "dimensions": "33 × 33 cm",
         "materialsZh": "矿物颜料、银箔、云肌麻纸、木板",
-        "materialsEs": "Pigmentos Minerales, Pan de Plata, Papel de Cánamo Kumohada, Tabla de Madera"
+        "titleEs": "Fundiéndose en el Caos",
+        "materialsEs": "Pigmentos Minerales, Pan de Plata, Papel de Cáñamo Kumohada, Tablero de Madera",
+        "dimensionsEs": "33 × 33 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra."
       },
       {
         "id": "x1qyzjthkasmsa9v2er",
@@ -3066,14 +3215,16 @@
         ],
         "tone": "#454545",
         "titleZh": "欲饮之水",
-        "titleEs": "Agua que Se Anhela Beber",
         "imagesFull": [
           "/images/x1qyzjthkasmsa9v2er-full-0.jpg"
         ],
         "materials": "Mineral Pigments, Silver Leaf, Kumohada Hemp Paper, Wood Board",
         "materialsZh": "矿物颜料、银箔、云肌麻纸、木板",
-        "materialsEs": "Pigmentos Minerales, Pan de Plata, Papel de Cánamo Kumohada, Tabla de Madera",
-        "dimensions": "18 × 18 cm"
+        "dimensions": "18 × 18 cm",
+        "titleEs": "El Agua Que Uno Anhela Beber",
+        "materialsEs": "Pigmentos Minerales, Pan de Plata, Papel de Cáñamo Kumohada, Tablero de Madera",
+        "dimensionsEs": "18 × 18 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra."
       },
       {
         "id": "kpyo9vvfwyqmsa9og2c",
@@ -3087,14 +3238,16 @@
         ],
         "tone": "#454545",
         "titleZh": "欲饮",
-        "titleEs": "Al Borde de Beber",
         "imagesFull": [
           "/images/kpyo9vvfwyqmsa9og2c-full-0.jpg"
         ],
         "materials": "Mineral Pigments, Gold Leaf, Clam Powder, Kumohada Hemp Paper, Wooden Board",
         "dimensions": "15 × 10 cm",
         "materialsZh": "矿物颜料、金箔、蛤粉、云肌麻纸、木板",
-        "materialsEs": "Pigmentos Minerales, Pan de Oro, Polvo de Almeja, Papel de Cánamo Kumohada, Tabla de Madera"
+        "titleEs": "A Punto de Beber",
+        "materialsEs": "Pigmentos Minerales, Pan de Oro, Polvo de Almeja, Papel de Cáñamo Kumohada, Tabla de Madera",
+        "dimensionsEs": "15 × 10 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra."
       },
       {
         "id": "fsldo1ihhslmsa9od04",
@@ -3108,14 +3261,16 @@
         ],
         "tone": "#454545",
         "titleZh": "臣服",
-        "titleEs": "Sometimiento",
         "imagesFull": [
           "/images/fsldo1ihhslmsa9od04-full-0.jpg"
         ],
         "dimensions": "41.5 × 32 cm",
         "materials": "Mineral Pigments, Gold Leaf, Clam Powder, Pastel, Kumohada Hemp Paper, Wooden Board",
         "materialsZh": "矿物颜料、金箔、蛤粉、色粉、云肌麻纸、木板",
-        "materialsEs": "Pigmentos Minerales, Pan de Oro, Polvo de Almeja, Pastel, Papel de Cánamo Kumohada, Tabla de Madera"
+        "titleEs": "Envío",
+        "materialsEs": "Pigmentos Minerales, Pan de Oro, Polvo de Almeja, Pasteles, Papel de Cáñamo Kumohada, Tabla de Madera",
+        "dimensionsEs": "41,5 × 32 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra."
       },
       {
         "id": "je2rpzh5l2msa9nzn4",
@@ -3129,14 +3284,16 @@
         ],
         "tone": "#454545",
         "titleZh": "奔",
-        "titleEs": "Huida",
         "imagesFull": [
           "/images/je2rpzh5l2msa9nzn4-full-0.jpg"
         ],
         "dimensions": "20 × 40 cm",
         "materials": "Mineral Pigments, Gold Leaf, Clam Powder, Kumohada Hemp Paper, Wooden Board",
         "materialsZh": "矿物颜料、金箔、蛤粉、云肌麻纸、木板",
-        "materialsEs": "Pigmentos Minerales, Pan de Oro, Polvo de Almeja, Papel de Cánamo Kumohada, Tabla de Madera"
+        "titleEs": "Correr",
+        "materialsEs": "Pigmentos Minerales, Pan de Oro, Polvo de Almeja, Papel de Cáñamo Kumohada, Tabla de Madera",
+        "dimensionsEs": "20 × 40 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra."
       },
       {
         "id": "punt6vcdejmsa9khc7",
@@ -3153,8 +3310,6 @@
         "tone": "#454545",
         "seriesZh": "远方",
         "titleZh": "远方 I",
-        "seriesEs": "Lejano",
-        "titleEs": "Lejano I",
         "imagesFull": [
           "/images/punt6vcdejmsa9khc7-full-0.jpg",
           "/images/punt6vcdejmsa9khc7-full-1.jpg"
@@ -3162,7 +3317,11 @@
         "dimensions": "32 × 41 cm",
         "materials": "Mineral Pigments, Clam Powder, Gold Leaf, Textured Washi Paper, Kumohada Hemp Paper, Wooden Board",
         "materialsZh": "矿物颜料、蛤粉、金箔、肌理和纸、云肌麻纸、木板",
-        "materialsEs": "Pigmentos Minerales, Polvo de Almeja, Pan de Oro, Papel Washi Texturizado, Papel de Cánamo Kumohada, Tabla de Madera"
+        "titleEs": "Lejos I",
+        "materialsEs": "Pigmentos Minerales, Polvo de Almeja, Pan de Oro, Papel Washi Texturizado, Papel de Cáñamo Kumohada, Tabla de Madera",
+        "dimensionsEs": "32 × 41 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra.",
+        "seriesEs": "Lejos"
       },
       {
         "id": "04dw1zbfsfskmsa9khc7",
@@ -3178,15 +3337,17 @@
         "tone": "#454545",
         "seriesZh": "远方",
         "titleZh": "远方 II",
-        "seriesEs": "Lejano",
-        "titleEs": "Lejano II",
         "imagesFull": [
           "/images/04dw1zbfsfskmsa9khc7-full-0.jpg"
         ],
         "dimensions": "24.5 × 41 cm",
         "materials": "Mineral Pigments, Pastel, Kumohada Hemp Paper, Textured Washi Paper, Wooden Board",
         "materialsZh": "矿物颜料、色粉、云肌麻纸、肌理和纸、木板",
-        "materialsEs": "Pigmentos Minerales, Pastel, Papel de Cánamo Kumohada, Papel Washi Texturizado, Tabla de Madera"
+        "titleEs": "Lejos II",
+        "materialsEs": "Pigmentos Minerales, Pasteles, Papel de Cáñamo Kumohada, Papel Washi Texturizado, Tabla de Madera",
+        "dimensionsEs": "24,5 × 41 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la ficha descriptiva de la obra.",
+        "seriesEs": "Lejos"
       },
       {
         "id": "bj1so4il9plmsa9fzsg",
@@ -3200,14 +3361,16 @@
         ],
         "tone": "#454545",
         "titleZh": "朝拜",
-        "titleEs": "Peregrinación",
         "imagesFull": [
           "/images/bj1so4il9plmsa9fzsg-full-0.jpg"
         ],
         "dimensions": "20 × 30 cm",
         "materials": "Mineral Pigments, Gold Leaf, Clam Powder, Kumohada Hemp Paper, Wooden Board",
         "materialsZh": "矿物颜料、金箔、蛤粉、云肌麻纸、木板",
-        "materialsEs": "Pigmentos Minerales, Pan de Oro, Polvo de Almeja, Papel de Cánamo Kumohada, Tabla de Madera"
+        "titleEs": "Peregrinación",
+        "materialsEs": "Pigmentos Minerales, Pan de Oro, Polvo de Almeja, Papel de Cáñamo Kumohada, Tabla de Madera",
+        "dimensionsEs": "20 × 30 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra."
       },
       {
         "id": "png2reeotcamsa9fym1",
@@ -3221,14 +3384,16 @@
         ],
         "tone": "#454545",
         "titleZh": "万相生",
-        "titleEs": "Todas las Formas Surgen",
         "imagesFull": [
           "/images/png2reeotcamsa9fym1-full-0.jpg"
         ],
         "dimensions": "32 × 41 cm",
         "materials": "Mineral Pigments, Gold Leaf, Kumohada Hemp Paper, Wooden Board",
         "materialsZh": "矿物颜料、金箔、云肌麻纸、木板",
-        "materialsEs": "Pigmentos Minerales, Pan de Oro, Papel de Cánamo Kumohada, Tabla de Madera"
+        "titleEs": "Todas las Formas Surgen",
+        "materialsEs": "Pigmentos Minerales, Pan de Oro, Papel de Cáñamo Kumohada, Tabla de Madera",
+        "dimensionsEs": "32 × 41 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra."
       },
       {
         "id": "yuoymc9bdomsa9fgem",
@@ -3244,15 +3409,17 @@
         "tone": "#454545",
         "seriesZh": "唯一的道路",
         "titleZh": "唯一的道路 I",
-        "seriesEs": "Camino Único",
-        "titleEs": "Camino Único I",
         "imagesFull": [
           "/images/yuoymc9bdomsa9fgem-full-0.jpg"
         ],
         "dimensions": "30 × 30 cm",
         "materials": "Mineral Pigments, Kumohada Hemp Paper, Wooden Board",
         "materialsZh": "矿物颜料、云肌麻纸、木板",
-        "materialsEs": "Pigmentos Minerales, Papel de Cánamo Kumohada, Tabla de Madera"
+        "titleEs": "Camino Único I",
+        "materialsEs": "Pigmentos Minerales, Papel de Cáñamo Kumohada, Tabla de Madera",
+        "dimensionsEs": "30 × 30 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra.",
+        "seriesEs": "Camino Único"
       },
       {
         "id": "g61psdqm21msa9fgem",
@@ -3268,15 +3435,17 @@
         "tone": "#454545",
         "seriesZh": "唯一的道路",
         "titleZh": "唯一的道路 II",
-        "seriesEs": "Camino Único",
-        "titleEs": "Camino Único II",
         "imagesFull": [
           "/images/g61psdqm21msa9fgem-full-0.jpg"
         ],
         "dimensions": "30 × 40 cm",
         "materials": "Mineral Pigments, Kumohada Hemp Paper, Wooden Board",
         "materialsZh": "矿物颜料、云肌麻纸、木板",
-        "materialsEs": "Pigmentos Minerales, Papel de Cánamo Kumohada, Tabla de Madera"
+        "titleEs": "Camino Único II",
+        "materialsEs": "Pigmentos Minerales, Papel de Cáñamo Kumohada, Tabla de Madera",
+        "dimensionsEs": "30 × 40 cm",
+        "descriptionEs": "Haz clic aquí para rellenar la descripción de la obra.",
+        "seriesEs": "Camino Único"
       }
     ],
     "sidebarWidthOverride": 450,
