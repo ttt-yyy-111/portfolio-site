@@ -2341,7 +2341,7 @@ function Portfolio() {
                           editMode={editMode}
                           bodyTextStyle={workTitleStyle}
                           bodyTextLang={workTitleLang}
-                          underlineEnabled={!isMobile && (language === "en" || language === "es")}
+                          underlineEnabled={!isMobile}
                           onSelect={() => goToWork(w.id)}
                           onChangeTitle={(v) => updateWork(w.id, { [langKey("title")]: v })}
                           onDelete={() => deleteWork(w.id)}
@@ -2409,7 +2409,7 @@ function Portfolio() {
                               />
                             ) : (
                               <AnimatedSidebarUnderline
-                                enabled={!isMobile && (language === "en" || language === "es")}
+                                enabled={!isMobile}
                               >
                                 {displaySeriesName}
                               </AnimatedSidebarUnderline>
@@ -2437,7 +2437,7 @@ function Portfolio() {
                                 editMode={editMode}
                                 bodyTextStyle={workTitleStyle}
                                 bodyTextLang={workTitleLang}
-                                underlineEnabled={!isMobile && (language === "en" || language === "es")}
+                                underlineEnabled={!isMobile}
                                 onSelect={() => goToWork(w.id)}
                                 onChangeTitle={(v) => updateWork(w.id, { [langKey("title")]: v })}
                                 onDelete={() => deleteWork(w.id)}
