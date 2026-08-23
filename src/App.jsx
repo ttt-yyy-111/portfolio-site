@@ -2055,8 +2055,7 @@ function Portfolio() {
           )}
         </div>
       )}
-      {!showPhoneFrame && (
-        <style>{`
+      <style>{`
           .app-root-viewport-height {
             height: 100vh; /* 不支持 100dvh 的老浏览器兜底，先按这个算 */
             height: 100dvh; /* 手机浏览器（尤其是 Chrome）的地址栏/底部工具栏会动态收起展开，
@@ -2156,7 +2155,6 @@ function Portfolio() {
             .language-menu-retract { animation-duration: 0ms; }
           }
         `}</style>
-      )}
       {googleFontFamilies.length > 0 && (
         <link
           rel="stylesheet"
