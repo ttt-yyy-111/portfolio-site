@@ -1595,7 +1595,7 @@ function Portfolio() {
 
       {/* 顶部工具按钮：中英文切换所有人都能看到；编辑相关的按钮只有网址带 ?edit=1 才会显示 */}
       {!isMobile && (
-        <div className="absolute top-3 right-3 z-20 flex items-center gap-2">
+        <div className="absolute top-3 right-3 z-50 flex items-center gap-2">
           {canEdit && editMode && (
             <>
               <button
@@ -3791,9 +3791,17 @@ function DetailView({
     const size = parseFloat(titleStyle?.fontSize);
     return {
       ...titleStyle,
-      fontSize: Number.isFinite(size) ? `${size / 2}px` : "0.5em",
+      fontSize: Number.isFinite(size) ? `${size * 0.6}px` : "0.6em",
     };
   }, [titleStyle]);
+  const compactHeaderYearStyle = useMemo(() => {
+    const weight = parseFloat(titleStyle?.fontWeight);
+    return {
+      ...compactHeaderStyle,
+      fontWeight: Number.isFinite(weight) ? Math.max(100, weight - 100) : 400,
+      fontStyle: "normal",
+    };
+  }, [compactHeaderStyle, titleStyle]);
 
   useEffect(() => {
     if (isMobile) {
@@ -3852,9 +3860,9 @@ function DetailView({
               showCompactHeader ? "translate-y-0" : "-translate-y-full"
             }`}
           >
-            <span style={compactHeaderStyle} lang={titleLang}>
-              {displayTitle}
-              {"\u00A0".repeat(4)}
+            <span style={compactHeaderStyle} lang={titleLang}>{displayTitle}</span>
+            <span aria-hidden>{"\u00A0".repeat(4)}</span>
+            <span style={compactHeaderYearStyle} lang={yearLang}>
               {work.year}
             </span>
           </div>
