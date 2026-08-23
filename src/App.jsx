@@ -2575,7 +2575,7 @@ function Portfolio() {
 
       {/* ---------- 手机端顶部栏：姓名 + 语言切换 + 菜单按钮，只在窄屏时显示 ---------- */}
       {isMobile && (
-        <div className="flex items-center justify-between px-3 py-3 flex-shrink-0 relative z-30 bg-white">
+        <div className="flex items-center justify-between px-2 py-3 flex-shrink-0 relative z-30 bg-white">
           {selectedWork ? (
             <div className="flex items-center gap-8 -ml-2">
               <button onClick={goBackToGallery} aria-label="返回" className="p-2">
@@ -3619,7 +3619,7 @@ function Portfolio() {
               borderRadius: 40,
             }}
           >
-            <div className="absolute inset-x-0 bottom-0 top-10">
+            <div className="absolute inset-x-0 bottom-0 top-12">
               {appRoot}
             </div>
           </div>
@@ -3903,7 +3903,7 @@ function GalleryGrid({
   return (
     <div
       ref={containerRef}
-      className="px-3 md:px-6 pb-6 flex"
+      className="px-2 md:px-6 pb-6 flex"
       style={{ paddingTop: isMobile ? 16 : 40, gap: effectiveGap }}
     >
       {columns.map((colWorks, colIdx) => (
