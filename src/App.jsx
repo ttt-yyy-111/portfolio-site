@@ -1034,7 +1034,7 @@ function Portfolio() {
 
   const syncFieldTranslations = (requestBase, value, options, applyTranslation) => {
     Object.entries(TRANSLATION_TARGETS)
-      .filter(([, target]) => target.source === language)
+      .filter(([, target]) => (target.source === "zh" ? isZh : target.source === language))
       .forEach(([code, target]) => {
         const requestKey = `${requestBase}:${code}`;
         const requestId = Symbol(requestKey);
@@ -1051,7 +1051,7 @@ function Portfolio() {
   const syncWorkTranslations = (id, patch) => {
     const translatableFields = ["title", "materials", "dimensions", "description"];
     translatableFields.forEach((field) => {
-      const sourceField = language === "zh" ? `${field}Zh` : field;
+      const sourceField = isZh ? `${field}Zh` : field;
       if (typeof patch[sourceField] !== "string") return;
       const titleCase = field === "title" || field === "materials";
       syncFieldTranslations(`work:${id}:${field}`, patch[sourceField], { titleCase }, (suffix, translation) => {
@@ -1067,7 +1067,7 @@ function Portfolio() {
 
   const syncInfoSectionTranslations = (id, patch) => {
     ["title", "body"].forEach((field) => {
-      const sourceField = language === "zh" ? `${field}Zh` : field;
+      const sourceField = isZh ? `${field}Zh` : field;
       if (typeof patch[sourceField] !== "string") return;
       syncFieldTranslations(`info-section:${id}:${field}`, patch[sourceField], { html: true }, (suffix, translation) => {
           updateData((prev) => ({
@@ -1082,7 +1082,7 @@ function Portfolio() {
 
   const syncInfoEntryTranslations = (sectionId, entryId, patch) => {
     ["name", "location"].forEach((field) => {
-    const sourceField = language === "zh" ? `${field}Zh` : field;
+    const sourceField = isZh ? `${field}Zh` : field;
     if (typeof patch[sourceField] !== "string") return;
     syncFieldTranslations(`info-entry:${sectionId}:${entryId}:${field}`, patch[sourceField], { html: true }, (suffix, translation) => {
         updateData((prev) => ({
@@ -1108,7 +1108,7 @@ function Portfolio() {
       contact: { ...(prev.contact || {}), ...patch },
     }));
     Object.entries(patch).forEach(([field, value]) => {
-      const sourceField = language === "zh" ? field.replace(/Zh$/, "") : field;
+      const sourceField = isZh ? field.replace(/Zh$/, "") : field;
       if (!sourceField.endsWith("Label") || typeof value !== "string") return;
       syncFieldTranslations(`contact:${sourceField}`, value, {}, (suffix, translation) => {
           updateData((prev) => ({
@@ -1530,7 +1530,7 @@ function Portfolio() {
         return { ...rest, [newKey]: val };
       });
     }
-    if (language === "en" || language === "zh") {
+    if (language === "en" || isZh) {
       syncFieldTranslations(`series:${year}:${oldSeriesName}`, newName, { titleCase: true }, (suffix, translation) => {
           const seriesKey = language === "en" ? newName : oldSeriesName;
           updateData((prev) => ({
