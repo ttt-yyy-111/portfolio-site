@@ -2171,17 +2171,6 @@ function Portfolio() {
         <div className="absolute top-3 right-3 z-50 flex items-center gap-2">
           {canEdit && editMode && (
             <>
-              <button
-                onClick={exportContent}
-                title="把当前内容导出成一个 zip 压缩包（content.json + images 文件夹），解压后放进项目的 public 文件夹替换掉旧的"
-                className={`text-xs font-bold px-3 py-1.5 rounded-full transition-colors ${
-                  hasUnexportedChanges
-                    ? "bg-amber-100 text-amber-700 hover:bg-amber-200"
-                    : "bg-neutral-100 text-neutral-500 hover:bg-neutral-200"
-                }`}
-              >
-                导出内容{hasUnexportedChanges ? "（有改动）" : ""}
-              </button>
               <div ref={translationMenuRef} className="relative">
                 <button
                   onClick={() => setTranslationMenuOpen((open) => !open)}
@@ -2221,6 +2210,19 @@ function Portfolio() {
             </>
           )}
           {canEdit && (
+            <button
+              onClick={exportContent}
+              title="把当前内容导出成一个 zip 压缩包（content.json + images 文件夹），解压后放进项目的 public 文件夹替换掉旧的"
+              className={`text-xs font-bold px-3 py-1.5 rounded-full transition-colors ${
+                hasUnexportedChanges
+                  ? "bg-amber-100 text-amber-700 hover:bg-amber-200"
+                  : "bg-neutral-100 text-neutral-500 hover:bg-neutral-200"
+              }`}
+            >
+              导出内容{hasUnexportedChanges ? "（有改动）" : ""}
+            </button>
+          )}
+          {canEdit && editMode && (
             <button
               onClick={() => setTypoPanelOpen((v) => !v)}
               data-typo-toggle="true"
@@ -2688,7 +2690,7 @@ function Portfolio() {
         </div>
       )}
 
-      {isMobile && canEdit && !editMode && (
+      {isMobile && canEdit && (
         <div className="flex items-center gap-2 px-3 py-2 flex-shrink-0 bg-neutral-50 overflow-x-auto">
           <div className="flex items-center rounded-full bg-neutral-100 p-0.5 text-xs font-bold flex-shrink-0">
             <button
@@ -2708,6 +2710,16 @@ function Portfolio() {
               手机预览
             </button>
           </div>
+          <button
+            onClick={exportContent}
+            className={`text-xs font-bold px-3 py-1.5 rounded-full transition-colors flex-shrink-0 whitespace-nowrap ${
+              hasUnexportedChanges
+                ? "bg-amber-100 text-amber-700"
+                : "bg-neutral-100 text-neutral-500"
+            }`}
+          >
+            导出内容{hasUnexportedChanges ? "（有改动）" : ""}
+          </button>
         </div>
       )}
 
@@ -2715,24 +2727,6 @@ function Portfolio() {
           只有编辑模式下才出现，平时访客看到的手机端顶部栏跟以前一样干净。 */}
       {isMobile && canEdit && editMode && (
         <div className="flex items-center gap-2 px-3 py-2 flex-shrink-0 bg-neutral-50 overflow-x-auto">
-          <div className="flex items-center rounded-full bg-neutral-100 p-0.5 text-xs font-bold flex-shrink-0">
-            <button
-              onClick={() => setEditPreviewMode("desktop")}
-              className={`px-2.5 py-1 rounded-full transition-colors whitespace-nowrap ${
-                isMobile ? "text-neutral-500" : "bg-neutral-900 text-white"
-              }`}
-            >
-              电脑预览
-            </button>
-            <button
-              onClick={() => setEditPreviewMode("mobile")}
-              className={`px-2.5 py-1 rounded-full transition-colors whitespace-nowrap ${
-                isMobile ? "bg-neutral-900 text-white" : "text-neutral-500"
-              }`}
-            >
-              手机预览
-            </button>
-          </div>
           <button
             onClick={() => setTypoPanelOpen((v) => !v)}
             data-typo-toggle="true"
@@ -2743,16 +2737,6 @@ function Portfolio() {
             }`}
           >
             Aa 文字样式
-          </button>
-          <button
-            onClick={exportContent}
-            className={`text-xs font-bold px-3 py-1.5 rounded-full transition-colors flex-shrink-0 whitespace-nowrap ${
-              hasUnexportedChanges
-                ? "bg-amber-100 text-amber-700"
-                : "bg-neutral-100 text-neutral-500"
-            }`}
-          >
-            导出内容{hasUnexportedChanges ? "（有改动）" : ""}
           </button>
           <select
             value=""
