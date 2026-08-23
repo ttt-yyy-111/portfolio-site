@@ -369,6 +369,8 @@ function Portfolio() {
   const [hasUnexportedChanges, setHasUnexportedChanges] = useState(false);
   const [editMode, setEditMode] = useState(false);
   const [translationRegeneration, setTranslationRegeneration] = useState(null);
+  const [translationMenuOpen, setTranslationMenuOpen] = useState(false);
+  const translationMenuRef = useRef(null);
   const [selectedId, setSelectedId] = useState(null);
   const [showInfo, setShowInfo] = useState(false);
   const [navDirection, setNavDirection] = useState(null); // 'prev' | 'next' | null，只有点详情页的Previous/Next才会设置
@@ -421,6 +423,14 @@ function Portfolio() {
     es: { suffix: "Es", source: "en", sourceLang: "EN", targetLang: "ES", titleCase: true },
     ja: { suffix: "Ja", source: "zh", sourceLang: "ZH", targetLang: "JA", titleCase: false },
   };
+  const TRANSLATION_MENU_OPTIONS = [
+    { codes: ["de", "es", "fr", "it", "ja"], label: "全部语言" },
+    { codes: ["de"], label: "德语" },
+    { codes: ["es"], label: "西班牙语" },
+    { codes: ["fr"], label: "法语" },
+    { codes: ["it"], label: "意大利语" },
+    { codes: ["ja"], label: "日语" },
+  ];
   const [traditionalConverter, setTraditionalConverter] = useState(null);
   useEffect(() => {
     if (!isTraditional || traditionalConverter) return undefined;
@@ -484,6 +494,20 @@ function Portfolio() {
       document.removeEventListener("touchstart", onPointerDown);
     };
   }, [languageMenuOpen]);
+  useEffect(() => {
+    if (!translationMenuOpen) return undefined;
+    const closeMenu = (event) => {
+      if (translationMenuRef.current && !translationMenuRef.current.contains(event.target)) {
+        setTranslationMenuOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", closeMenu);
+    document.addEventListener("touchstart", closeMenu);
+    return () => {
+      document.removeEventListener("mousedown", closeMenu);
+      document.removeEventListener("touchstart", closeMenu);
+    };
+  }, [translationMenuOpen]);
   const selectLanguage = (code) => {
     setLanguage(code);
     closeLanguageMenu();
@@ -1187,9 +1211,13 @@ function Portfolio() {
     setSpanishRegeneration(null);
   };
 
-  const rebuildAllTranslations = async () => {
+  const rebuildAllTranslations = async (selectedCodes = Object.keys(TRANSLATION_TARGETS)) => {
     if (translationRegeneration) return;
-    if (!window.confirm("这会删除当前所有自动翻译内容，并从英文与简体中文重新生成。要继续吗？")) return;
+    const targets = Object.entries(TRANSLATION_TARGETS)
+      .filter(([code]) => selectedCodes.includes(code))
+      .map(([, target]) => target);
+    if (targets.length === 0) return;
+    if (!window.confirm("这会删除所选语言的现有翻译，并从英文或简体中文重新生成。要继续吗？")) return;
 
     const sourceValue = (item, field, target) =>
       target.source === "zh" ? item?.[`${field}Zh`] : item?.[field];
@@ -1197,7 +1225,7 @@ function Portfolio() {
     const plainWorkFields = ["title", "materials", "dimensions", "description"];
     const oldData = data;
 
-    Object.values(TRANSLATION_TARGETS).forEach((target) => {
+    targets.forEach((target) => {
       (oldData.works || []).forEach((work) => {
         plainWorkFields.forEach((field) => {
           const text = sourceValue(work, field, target);
@@ -1280,7 +1308,7 @@ function Portfolio() {
       });
     });
 
-    const suffixes = Object.values(TRANSLATION_TARGETS).map((target) => target.suffix);
+    const suffixes = targets.map((target) => target.suffix);
     translationRequestRef.current.clear();
     updateData((prev) => ({
       ...prev,
@@ -2072,15 +2100,35 @@ function Portfolio() {
               >
                 导出内容{hasUnexportedChanges ? "（有改动）" : ""}
               </button>
-              <button
-                onClick={rebuildAllTranslations}
-                disabled={!!translationRegeneration}
-                className="text-xs font-bold px-3 py-1.5 rounded-full bg-neutral-100 text-neutral-600 hover:bg-neutral-200 disabled:opacity-50"
-              >
-                {translationRegeneration
-                  ? `翻译中 ${translationRegeneration.done}/${translationRegeneration.total}`
-                  : "重新生成翻译"}
-              </button>
+              <div ref={translationMenuRef} className="relative">
+                <button
+                  onClick={() => setTranslationMenuOpen((open) => !open)}
+                  disabled={!!translationRegeneration}
+                  className="text-xs font-bold px-3 py-1.5 rounded-full bg-neutral-100 text-neutral-600 hover:bg-neutral-200 disabled:opacity-50"
+                >
+                  {translationRegeneration
+                    ? `翻译中 ${translationRegeneration.done}/${translationRegeneration.total}`
+                    : "重新生成翻译 ▾"}
+                </button>
+                {translationMenuOpen && !translationRegeneration && (
+                  <div className="absolute right-0 top-full mt-1 z-50 min-w-32 overflow-hidden rounded-lg border border-black bg-white text-left">
+                    {TRANSLATION_MENU_OPTIONS.map((option, index) => (
+                      <button
+                        key={option.label}
+                        onClick={() => {
+                          setTranslationMenuOpen(false);
+                          rebuildAllTranslations(option.codes);
+                        }}
+                        className={`block w-full px-3 py-2 text-left text-xs font-bold text-black hover:bg-black hover:text-white ${
+                          index === 1 ? "border-t border-black" : ""
+                        }`}
+                      >
+                        {option.label}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
               <button
                 onClick={resetToDefaultData}
                 title="清空当前内容，恢复成最初的示例数据"
@@ -2599,15 +2647,24 @@ function Portfolio() {
           >
             导出内容{hasUnexportedChanges ? "（有改动）" : ""}
           </button>
-          <button
-            onClick={rebuildAllTranslations}
+          <select
+            value=""
             disabled={!!translationRegeneration}
-            className="text-xs font-bold px-3 py-1.5 rounded-full bg-neutral-100 text-neutral-600 disabled:opacity-50 flex-shrink-0 whitespace-nowrap"
+            onChange={(event) => {
+              const option = TRANSLATION_MENU_OPTIONS.find((item) => item.label === event.target.value);
+              if (option) rebuildAllTranslations(option.codes);
+            }}
+            className="text-xs font-bold px-3 py-1.5 rounded-full bg-neutral-100 text-neutral-600 disabled:opacity-50 flex-shrink-0 whitespace-nowrap appearance-none"
           >
-            {translationRegeneration
-              ? `翻译中 ${translationRegeneration.done}/${translationRegeneration.total}`
-              : "重新生成翻译"}
-          </button>
+            <option value="" disabled>
+              {translationRegeneration
+                ? `翻译中 ${translationRegeneration.done}/${translationRegeneration.total}`
+                : "重新生成翻译 ▾"}
+            </option>
+            {TRANSLATION_MENU_OPTIONS.map((option) => (
+              <option key={option.label} value={option.label}>{option.label}</option>
+            ))}
+          </select>
           <button
             onClick={() => {
               setEditMode(false);
