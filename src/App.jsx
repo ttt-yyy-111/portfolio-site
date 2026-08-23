@@ -4382,6 +4382,52 @@ function InfoView({
                   // 展览类展示：年份栏窄、名称栏宽，两栏之间留一点间距、真正按列对齐（不是靠空格拆的）；
                   // 名称如果太长换行，条目内部的行距故意设得比"条目与条目之间"的间距更小，
                   // 这样一眼就能看出哪几行是同一条展览、哪里是换到下一条了。
+                  isMobile ? (
+                    <div
+                      className="font-medium text-neutral-900"
+                      style={{
+                        ...bodyStyle,
+                        overflowWrap: "break-word",
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: `${
+                          (parseFloat(bodyStyle.fontSize) || 16) * (parseFloat(bodyStyle.lineHeight) || 1.5) * 0.7
+                        }px`,
+                      }}
+                      lang={bodyLang}
+                    >
+                      {(section.entries || []).map((entry) => {
+                        const entryParts = splitExhibitionNameAndLocation(
+                          tField(entry, "name"),
+                          tField(entry, "location")
+                        );
+                        return (
+                          <div
+                            key={entry.id}
+                            className="grid"
+                            style={{ gridTemplateColumns: "5rem minmax(0, 1fr)", columnGap: "1.5em", rowGap: "2px" }}
+                          >
+                            <span style={{ lineHeight: 1.3 }}>{entry.year}</span>
+                            <span
+                              style={{ ...exhibitionNameStyle, lineHeight: 1.3 }}
+                              lang={exhibitionNameLang}
+                              dangerouslySetInnerHTML={{ __html: entryParts.name }}
+                            />
+                            {entryParts.location && (
+                              <>
+                                <span aria-hidden="true" />
+                                <span
+                                  style={{ ...exhibitionLocationStyle, lineHeight: 1.3 }}
+                                  lang={exhibitionLocationLang}
+                                  dangerouslySetInnerHTML={{ __html: entryParts.location }}
+                                />
+                              </>
+                            )}
+                          </div>
+                        );
+                      })}
+                    </div>
+                  ) : (
                   <div
                     className="font-medium text-neutral-900"
                     style={{
@@ -4426,6 +4472,7 @@ function InfoView({
                       );
                     })}
                   </div>
+                  )
                 )
               ) : editMode ? (
                 <RichEditableField
