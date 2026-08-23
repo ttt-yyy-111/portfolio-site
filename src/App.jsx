@@ -3608,7 +3608,7 @@ function Portfolio() {
   if (showPhoneFrame) {
     return (
       <div className="w-full h-screen flex items-center justify-center bg-neutral-200 overflow-auto py-6">
-        <div className="relative h-[1004px] w-[540px] flex-shrink-0">
+        <div className="relative h-[1023px] w-[550px] flex-shrink-0">
           <div
             className="absolute z-10 overflow-hidden bg-white"
             style={{
@@ -3619,7 +3619,7 @@ function Portfolio() {
               borderRadius: 40,
             }}
           >
-            <div className="absolute inset-x-0 bottom-0 top-[52px]">
+            <div className="absolute inset-x-0 bottom-0 top-[53px]">
               {appRoot}
             </div>
           </div>
