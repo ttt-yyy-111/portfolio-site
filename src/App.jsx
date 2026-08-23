@@ -380,6 +380,12 @@ function Portfolio() {
     if (typeof window === "undefined") return false;
     return new URLSearchParams(window.location.search).get("edit") === "1";
   });
+  // Vite 本机开发时不经过 Vercel 的服务器接口，允许 localhost 直接进入编辑模式；
+  // 这个判断会在正式构建时被移除，线上域名始终需要密码登录。
+  const isLocalDevelopment =
+    import.meta.env.DEV &&
+    typeof window !== "undefined" &&
+    ["localhost", "127.0.0.1"].includes(window.location.hostname);
   const [editorAuth, setEditorAuth] = useState({ checking: editRequested, authenticated: false });
   const [editorPassword, setEditorPassword] = useState("");
   const [editorLoginError, setEditorLoginError] = useState("");
@@ -413,7 +419,7 @@ function Portfolio() {
       setEditorLoginError("密码不正确，或编辑保护尚未配置。");
     }
   };
-  const canEdit = editRequested && editorAuth.authenticated;
+  const canEdit = editRequested && (isLocalDevelopment || editorAuth.authenticated);
 
   // ---------- 语言切换：八种语言，首次访问始终默认英文 ----------
   // 第一次打开网站（浏览器里还没存过语言）默认显示英文；之后每次切换语言都会记到 localStorage 里，
@@ -1993,7 +1999,7 @@ function Portfolio() {
       } bg-white text-neutral-900 overflow-hidden relative`}
       style={{ fontFamily: "-apple-system, 'Helvetica Neue', Arial, sans-serif" }}
     >
-      {editRequested && !editorAuth.authenticated && (
+      {editRequested && !isLocalDevelopment && !editorAuth.authenticated && (
         <div className="absolute inset-0 z-[100] flex items-center justify-center bg-white/95 px-6">
           {editorAuth.checking ? (
             <p className="text-sm text-neutral-500">正在验证编辑权限…</p>
@@ -3944,6 +3950,25 @@ function ensureHtmlBody(raw) {
   return normalizeLineWrappers(escaped.replace(/\n/g, "<br>"));
 }
 
+// Information / CV 中的标题和正文都由 Aa 面板统一控制字号、字重、字距与行距。
+// 旧内容或从其他地方粘贴进来的 HTML 可能带有 style、font、h1-h6 等固定排版，
+// 会覆盖面板设置；这里清除这些固定排版，但保留加粗、斜体和换行。
+function normalizeInfoTypography(raw, { title = false } = {}) {
+  let html = ensureHtmlBody(raw);
+  html = html
+    .replace(/\s(?:style|size|face|color)\s*=\s*("[^"]*"|'[^']*'|[^\s>]+)/gi, "")
+    .replace(/<font\b[^>]*>/gi, "")
+    .replace(/<\/font>/gi, "");
+  if (title) {
+    html = html.replace(/<\/?h[1-6]\b[^>]*>/gi, "");
+  } else {
+    html = html
+      .replace(/<h[1-6]\b[^>]*>/gi, "")
+      .replace(/<\/h[1-6]>/gi, "<br>");
+  }
+  return normalizeLineWrappers(html);
+}
+
 function splitLeadingToken(html) {
   const container = document.createElement("div");
   container.innerHTML = html;
@@ -4129,6 +4154,8 @@ function InfoView({
           const isExhibition = section.category === "exhibition";
           const bodyStyle = isExhibition ? bodyExhibitionStyle : bodyInfoStyle;
           const bodyLang = isExhibition ? bodyExhibitionLang : bodyInfoLang;
+          const titleHtml = normalizeInfoTypography(tField(section, "title"), { title: true });
+          const bodyHtml = normalizeInfoTypography(tField(section, "body"));
           return (
             <div key={section.id} className="group relative">
               {editMode && (
@@ -4165,9 +4192,9 @@ function InfoView({
               <RichEditableField
                 key={`title-${editMode}`}
                 as="h3"
-                value={ensureHtmlBody(tField(section, "title"))}
+                value={titleHtml}
                 editMode={editMode}
-                onChange={(v) => onUpdateSection(section.id, { [langKey("title")]: v })}
+                onChange={(v) => onUpdateSection(section.id, { [langKey("title")]: normalizeInfoTypography(v, { title: true }) })}
                 className="mb-3 block"
                 style={{ ...titleStyle, overflowWrap: "break-word" }}
                 lang={titleLang}
@@ -4191,9 +4218,9 @@ function InfoView({
                           <div className="flex-1 min-w-0">
                             <RichEditableField
                               as="span"
-                              value={ensureHtmlBody(tField(entry, "name"))}
+                              value={normalizeInfoTypography(tField(entry, "name"))}
                               editMode={editMode}
-                              onChange={(v) => onUpdateEntry(section.id, entry.id, { [langKey("name")]: v })}
+                              onChange={(v) => onUpdateEntry(section.id, entry.id, { [langKey("name")]: normalizeInfoTypography(v) })}
                               className="block"
                               style={{ ...bodyStyle, overflowWrap: "break-word" }}
                               lang={bodyLang}
@@ -4237,7 +4264,7 @@ function InfoView({
                     {(section.entries || []).map((entry) => (
                       <React.Fragment key={entry.id}>
                         <span style={{ lineHeight: 1.3 }}>{entry.year}</span>
-                        <span style={{ lineHeight: 1.3 }} dangerouslySetInnerHTML={{ __html: ensureHtmlBody(tField(entry, "name")) }} />
+                        <span style={{ lineHeight: 1.3 }} dangerouslySetInnerHTML={{ __html: normalizeInfoTypography(tField(entry, "name")) }} />
                       </React.Fragment>
                     ))}
                   </div>
@@ -4245,9 +4272,9 @@ function InfoView({
               ) : editMode ? (
                 <RichEditableField
                   as="div"
-                  value={ensureHtmlBody(tField(section, "body"))}
+                  value={bodyHtml}
                   editMode={editMode}
-                  onChange={(v) => onUpdateSection(section.id, { [langKey("body")]: v })}
+                  onChange={(v) => onUpdateSection(section.id, { [langKey("body")]: normalizeInfoTypography(v) })}
                   className={`font-medium text-neutral-900 block ${
                     !isMobile && section.columns === 2 ? "sm:columns-2 sm:gap-x-16" : ""
                   }`}
@@ -4262,7 +4289,7 @@ function InfoView({
                   style={{ ...bodyStyle, overflowWrap: "break-word" }}
                   lang={bodyLang}
                 >
-                  {ensureHtmlBody(tField(section, "body"))
+                  {bodyHtml
                     .split(/<br\s*\/?>/i)
                     .filter((para) => para.replace(/<[^>]+>/g, "").trim() !== "")
                     .map((para, i, arr) => {
