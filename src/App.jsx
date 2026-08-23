@@ -289,6 +289,49 @@ function HoverRevealIcon({ src, hoverSrc }) {
   );
 }
 
+function CircleRevealArrowButton({ direction, onClick, ariaLabel, title, className = "", style }) {
+  const points = direction === "up" ? "18 15 12 9 6 15" : "15 18 9 12 15 6";
+  const strokeWidth = direction === "up" ? "2.5" : "3";
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      aria-label={ariaLabel}
+      title={title}
+      className={`group relative flex h-11 w-11 flex-shrink-0 items-center justify-center overflow-hidden rounded-full border-2 border-black bg-white text-black ${className}`}
+      style={style}
+    >
+      <svg
+        className="relative z-10"
+        viewBox="0 0 24 24"
+        width="18"
+        height="18"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={strokeWidth}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <polyline points={points} />
+      </svg>
+      <span className="sidebar-icon-hover-reveal absolute inset-0 flex items-center justify-center bg-black text-white pointer-events-none">
+        <svg
+          viewBox="0 0 24 24"
+          width="18"
+          height="18"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth={strokeWidth}
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <polyline points={points} />
+        </svg>
+      </span>
+    </button>
+  );
+}
+
 function Portfolio() {
   const [data, setData] = useState(DEFAULT_DATA); // 直接用 content.json 里的内容做初始值，内存里编辑
   const dataRef = useRef(data);
@@ -1567,30 +1610,28 @@ function Portfolio() {
           距离之后才出现，点击平滑滚回顶部。放在 appRoot 这一层（自带 relative + overflow-hidden），
           这样手机预览的模拟边框里也会正确显示在边框内部，不会跑到边框外面去。 */}
       {!selectedId && !showInfo && showBackToTop && (
-        <button
-          onClick={scrollGalleryToTop}
-          aria-label={isZh ? "回到顶部" : isEs ? "Volver arriba" : "Back to top"}
-          title={isZh ? "回到顶部" : isEs ? "Volver arriba" : "Back to top"}
-          className="absolute right-6 z-20 w-11 h-11 rounded-full flex items-center justify-center bg-neutral-900 text-white shadow-lg hover:bg-neutral-700 transition-colors"
-          style={{
-            // 1.5rem 是原来 bottom-6 的间距，额外再叠加一层"安全区域"内边距——
-            // 部分全面屏手机底部有手势条，不加这个的话按钮贴边缘可能会跟手势条重叠
-            bottom: "calc(1.5rem + env(safe-area-inset-bottom, 0px))",
-          }}
-        >
-          <svg
-            viewBox="0 0 24 24"
-            width="18"
-            height="18"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
+        isMobile ? (
+          <button
+            onClick={scrollGalleryToTop}
+            aria-label={isZh ? "回到顶部" : isEs ? "Volver arriba" : "Back to top"}
+            title={isZh ? "回到顶部" : isEs ? "Volver arriba" : "Back to top"}
+            className="absolute right-6 z-20 w-11 h-11 rounded-full flex items-center justify-center bg-neutral-900 text-white shadow-lg"
+            style={{ bottom: "calc(1.5rem + env(safe-area-inset-bottom, 0px))" }}
           >
-            <polyline points="18 15 12 9 6 15" />
-          </svg>
-        </button>
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="18 15 12 9 6 15" />
+            </svg>
+          </button>
+        ) : (
+          <CircleRevealArrowButton
+            direction="up"
+            onClick={scrollGalleryToTop}
+            ariaLabel={isZh ? "回到顶部" : isEs ? "Volver arriba" : "Back to top"}
+            title={isZh ? "回到顶部" : isEs ? "Volver arriba" : "Back to top"}
+            className="absolute right-6 z-20"
+            style={{ bottom: "calc(1.5rem + env(safe-area-inset-bottom, 0px))" }}
+          />
+        )
       )}
 
       {/* 顶部工具按钮：中英文切换所有人都能看到；编辑相关的按钮只有网址带 ?edit=1 才会显示 */}
@@ -2207,25 +2248,12 @@ function Portfolio() {
                 data-measure-line="true"
               />
               {(selectedWork || showInfo) && (
-                <button
+                <CircleRevealArrowButton
+                  direction="back"
                   onClick={goBackToGallery}
-                  aria-label={isZh ? "返回" : isEs ? "Atrás" : "Back"}
+                  ariaLabel={isZh ? "返回" : isEs ? "Atrás" : "Back"}
                   title={isZh ? "返回" : isEs ? "Atrás" : "Back"}
-                  className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center bg-neutral-900 text-white hover:bg-neutral-700 transition-colors"
-                >
-                  <svg
-                    viewBox="0 0 24 24"
-                    width="16"
-                    height="16"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="3"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <polyline points="15 18 9 12 15 6" />
-                  </svg>
-                </button>
+                />
               )}
             </div>
           </div>
