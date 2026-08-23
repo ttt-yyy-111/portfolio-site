@@ -4392,6 +4392,17 @@ function InfoView({
                               style={{ ...entryNameStyle, overflowWrap: "break-word" }}
                               lang={entryNameLang}
                             />
+                            {!isMobile && (
+                              <RichEditableField
+                                as="span"
+                                value={entryParts.location}
+                                editMode={editMode}
+                                onChange={(v) => onUpdateEntry(section.id, entry.id, { [langKey("location")]: normalizeInfoTypography(v) })}
+                                className="block mt-1"
+                                style={{ ...bodyStyle, overflowWrap: "break-word" }}
+                                lang={bodyLang}
+                              />
+                            )}
                           </div>
                           <button
                             onClick={() => onDeleteEntry(section.id, entry.id)}
