@@ -2575,7 +2575,7 @@ function Portfolio() {
 
       {/* ---------- 手机端顶部栏：姓名 + 语言切换 + 菜单按钮，只在窄屏时显示 ---------- */}
       {isMobile && (
-        <div className="flex items-center justify-between px-2 py-3 flex-shrink-0 relative z-30 bg-white">
+        <div className="flex items-center justify-between px-3 py-3 flex-shrink-0 relative z-30 bg-white">
           {selectedWork ? (
             <div className="flex items-center gap-8 -ml-2">
               <button onClick={goBackToGallery} aria-label="返回" className="p-2">
@@ -3608,7 +3608,7 @@ function Portfolio() {
   if (showPhoneFrame) {
     return (
       <div className="w-full h-screen flex items-center justify-center bg-neutral-200 overflow-auto py-6">
-        <div className="relative h-[930px] w-[500px] flex-shrink-0">
+        <div className="relative h-[1004px] w-[540px] flex-shrink-0">
           <div
             className="absolute z-10 overflow-hidden bg-white"
             style={{
@@ -3619,7 +3619,7 @@ function Portfolio() {
               borderRadius: 40,
             }}
           >
-            <div className="absolute inset-x-0 bottom-0 top-12">
+            <div className="absolute inset-x-0 bottom-0 top-[52px]">
               {appRoot}
             </div>
           </div>
@@ -3903,7 +3903,7 @@ function GalleryGrid({
   return (
     <div
       ref={containerRef}
-      className="px-2 md:px-6 pb-6 flex"
+      className="px-3 md:px-6 pb-6 flex"
       style={{ paddingTop: isMobile ? 16 : 40, gap: effectiveGap }}
     >
       {columns.map((colWorks, colIdx) => (
@@ -3918,7 +3918,6 @@ function GalleryGrid({
               skipReveal={skipReveal}
               tField={tField}
               isZh={isZh}
-              isMobile={isMobile}
             />
           ))}
         </div>
@@ -3927,15 +3926,11 @@ function GalleryGrid({
   );
 }
 
-function GalleryImage({ w, editMode, onSelect, onReplaceCover, skipReveal, tField, isZh, isMobile }) {
+function GalleryImage({ w, editMode, onSelect, onReplaceCover, skipReveal, tField, isZh }) {
   const { ref, style } = useRevealAnimation(skipReveal);
   const displayTitle = tField ? tField(w, "title") : w.title;
   return (
-    <div
-      ref={ref}
-      style={{ ...style, ...(isMobile ? { zoom: 1.04 } : {}) }}
-      className="relative w-full group"
-    >
+    <div ref={ref} style={style} className="relative w-full group">
       <button
         onClick={() => !editMode && onSelect(w.id)}
         style={{ backgroundColor: w.tone }}
