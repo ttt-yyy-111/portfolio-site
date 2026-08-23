@@ -2323,7 +2323,9 @@ function Portfolio() {
       {typoPanelOpen && (
         <div
           ref={typoPanelRef}
-          className="absolute top-12 right-3 z-30 w-72 max-h-[80vh] overflow-y-auto bg-white border border-neutral-200 rounded-xl shadow-lg p-4 space-y-4"
+          className={`${
+            showPhoneFrame ? "fixed top-6 right-6 z-[200]" : "absolute top-12 right-3 z-30"
+          } w-72 max-h-[80vh] overflow-y-auto bg-white border border-neutral-200 rounded-xl shadow-lg p-4 space-y-4`}
         >
           <div className="text-xs font-bold px-2 py-1 rounded bg-neutral-100 text-neutral-600 inline-block">
             {zhText("正在编辑：")}{isMobile ? zhText("手机端") : zhText("电脑端")} · {isZh ? zhText("中文") : "英文"}
