@@ -3619,13 +3619,15 @@ function Portfolio() {
               borderRadius: 40,
             }}
           >
-            {appRoot}
+            <div className="absolute inset-x-0 bottom-0 top-3">
+              {appRoot}
+            </div>
           </div>
           <img
             src="/iphone.svg"
             alt=""
             aria-hidden="true"
-            className="pointer-events-none absolute inset-0 h-full w-full"
+            className="pointer-events-none absolute inset-0 z-[210] h-full w-full"
           />
         </div>
       </div>
