@@ -560,6 +560,11 @@ function Portfolio() {
     if (exitingLanguageOptions.includes(code)) return "language-menu-option-exit";
     return "";
   };
+  const languageOptionWhiteTextClass = (code) => {
+    if (hoveredLanguageOption === code) return "language-menu-option-white-enter";
+    if (exitingLanguageOptions.includes(code)) return "language-menu-option-white-exit";
+    return "";
+  };
   // 取某个字段的当前语言版本：日语优先回退到简体中文，其他翻译优先回退英文。
   const tField = (obj, key) => {
     if (!obj) return "";
@@ -2087,6 +2092,20 @@ function Portfolio() {
             from { transform: translateX(0); }
             to { transform: translateX(110%); }
           }
+          .language-menu-option-white-enter {
+            animation: language-menu-option-white-enter 240ms ease-out forwards;
+          }
+          .language-menu-option-white-exit {
+            animation: language-menu-option-white-exit 240ms ease-in forwards;
+          }
+          @keyframes language-menu-option-white-enter {
+            from { clip-path: inset(0 100% 0 0); }
+            to { clip-path: inset(0 0 0 0); }
+          }
+          @keyframes language-menu-option-white-exit {
+            from { clip-path: inset(0 0 0 0); }
+            to { clip-path: inset(0 0 0 100%); }
+          }
           .language-menu-reveal {
             animation: language-menu-reveal 300ms cubic-bezier(0.16, 1, 0.3, 1) both;
           }
@@ -2100,10 +2119,6 @@ function Portfolio() {
           @keyframes language-menu-retract {
             from { max-height: 280px; }
             to { max-height: 0; }
-          }
-          .language-menu-option:hover .language-menu-option-label,
-          .language-menu-option:focus-visible .language-menu-option-label {
-            color: white;
           }
           .desktop-scrollbar {
             scrollbar-width: thin;
@@ -2124,6 +2139,8 @@ function Portfolio() {
             .language-toggle-hover-reveal { transition: none; }
             .language-menu-option-enter,
             .language-menu-option-exit,
+            .language-menu-option-white-enter,
+            .language-menu-option-white-exit,
             .language-menu-reveal,
             .language-menu-retract { animation-duration: 0ms; }
           }
@@ -2306,9 +2323,15 @@ function Portfolio() {
                         ? "font-bold"
                         : ""
                     }`}
-                  >
-                    <span className="language-menu-option-label relative z-30 text-black">{opt.name}</span>
-                    <span
+                    >
+                      <span className="language-menu-option-label relative z-30 text-black">{opt.name}</span>
+                      <span
+                        aria-hidden="true"
+                        className={`language-menu-option-white-label pointer-events-none absolute inset-0 z-40 flex items-center px-[18px] text-white ${languageOptionWhiteTextClass(opt.code)}`}
+                      >
+                        {opt.name}
+                      </span>
+                      <span
                       aria-hidden="true"
                       className={`language-menu-option-hover pointer-events-none absolute inset-y-0 z-20 rounded-full bg-black ${languageOptionHoverClass(opt.code)}`}
                     />
@@ -2660,6 +2683,12 @@ function Portfolio() {
                       }`}
                     >
                       <span className={`language-menu-option-label relative z-30 ${opt.code === language ? "text-white" : "text-black"}`}>
+                        {opt.name}
+                      </span>
+                      <span
+                        aria-hidden="true"
+                        className={`language-menu-option-white-label pointer-events-none absolute inset-0 z-40 flex items-center px-[14px] text-white ${languageOptionWhiteTextClass(opt.code)}`}
+                      >
                         {opt.name}
                       </span>
                       <span
