@@ -3791,14 +3791,14 @@ function DetailView({
     const size = parseFloat(titleStyle?.fontSize);
     return {
       ...titleStyle,
-      fontSize: Number.isFinite(size) ? `${size * 0.6}px` : "0.6em",
+      fontSize: Number.isFinite(size) ? `${size * 0.7}px` : "0.7em",
     };
   }, [titleStyle]);
   const compactHeaderYearStyle = useMemo(() => {
     const weight = parseFloat(titleStyle?.fontWeight);
     return {
       ...compactHeaderStyle,
-      fontWeight: Number.isFinite(weight) ? Math.max(100, weight - 100) : 400,
+      fontWeight: Number.isFinite(weight) ? Math.max(100, weight - 200) : 300,
       fontStyle: "normal",
     };
   }, [compactHeaderStyle, titleStyle]);
