@@ -2078,6 +2078,9 @@ function Portfolio() {
             width: calc(100% + 30px);
             transform: translateX(110%);
           }
+          .language-menu-option-white-label {
+            clip-path: inset(0 100% 0 0);
+          }
           .language-menu-option-enter {
             animation: language-menu-option-enter 240ms ease-out forwards;
           }
