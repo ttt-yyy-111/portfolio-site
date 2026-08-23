@@ -932,6 +932,49 @@ function Portfolio() {
       ...prev,
       works: prev.works.map((w) => (w.id === id ? { ...w, ...patch } : w)),
     }));
+    syncWorkSpanish(id, patch);
+  };
+
+  // 翻译请求只从英文编辑模式发起；密钥保留在 Vercel 的服务器环境变量中，
+  // 浏览器只把需要翻译的文字交给同域的 /api/translate。
+  const translationRequestRef = useRef(new Map());
+  const translateToSpanish = async (value, { titleCase = false } = {}) => {
+    if (typeof value !== "string" || !value.trim()) return value;
+    const response = await fetch("/api/translate", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ text: value, titleCase }),
+    });
+    if (!response.ok) throw new Error("Translation request failed");
+    const result = await response.json();
+    return typeof result.translation === "string" ? result.translation : value;
+  };
+
+  const syncWorkSpanish = (id, patch) => {
+    // 西班牙语版本只跟随英文原文更新；在其他语言里手动编辑不会触发翻译。
+    if (language !== "en") return;
+    const translatableFields = ["title", "materials", "dimensions", "description"];
+    translatableFields.forEach((field) => {
+      if (typeof patch[field] !== "string") return;
+      const requestKey = `work:${id}:${field}`;
+      const requestId = Symbol(requestKey);
+      translationRequestRef.current.set(requestKey, requestId);
+      const titleCase = field === "title" || field === "materials";
+      void translateToSpanish(patch[field], { titleCase })
+        .then((translation) => {
+          // 如果用户已经再次编辑过同一个字段，丢弃较早返回的翻译，避免旧内容覆盖新内容。
+          if (translationRequestRef.current.get(requestKey) !== requestId) return;
+          updateData((prev) => ({
+            ...prev,
+            works: prev.works.map((w) =>
+              w.id === id ? { ...w, [`${field}Es`]: translation } : w
+            ),
+          }));
+        })
+        .catch(() => {
+          // 网络或额度暂时不可用时保留英文和现有西班牙语，不中断编辑。
+        });
+    });
   };
 
   const updateTypography = (targetKey, patch) => {
@@ -1057,6 +1100,24 @@ function Portfolio() {
         const { [oldKey]: val, ...rest } = prev;
         return { ...rest, [newKey]: val };
       });
+    }
+    if (language === "en") {
+      const requestKey = `series:${year}:${oldSeriesName}`;
+      const requestId = Symbol(requestKey);
+      translationRequestRef.current.set(requestKey, requestId);
+      void translateToSpanish(newName, { titleCase: true })
+        .then((translation) => {
+          if (translationRequestRef.current.get(requestKey) !== requestId) return;
+          updateData((prev) => ({
+            ...prev,
+            works: prev.works.map((w) =>
+              w.year === year && w.series === newName ? { ...w, seriesEs: translation } : w
+            ),
+          }));
+        })
+        .catch(() => {
+          // 翻译失败不影响已经保存的英文系列名。
+        });
     }
   };
 
