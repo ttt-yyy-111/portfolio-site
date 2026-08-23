@@ -3597,6 +3597,7 @@ function Portfolio() {
             navDirection={navDirection}
             isZh={isZh}
             isEs={isEs}
+            language={language}
             zhText={zhText}
             onBack={goBackToGallery}
           />
@@ -4577,6 +4578,7 @@ function DetailView({
   navDirection,
   isZh,
   isEs,
+  language,
   zhText,
   onBack,
 }) {
@@ -4586,6 +4588,17 @@ function DetailView({
       : navDirection === "prev"
       ? "slideInFromLeft"
       : "none";
+  const detailNavigationLabels = {
+    en: { previous: "Previous", next: "Next" },
+    zh: { previous: "上一个", next: "下一个" },
+    zhHant: { previous: zhText("上一个"), next: zhText("下一个") },
+    de: { previous: "Vorherige", next: "Nächste" },
+    es: { previous: "Anterior", next: "Siguiente" },
+    fr: { previous: "Précédent", next: "Suivant" },
+    it: { previous: "Precedente", next: "Successivo" },
+    ja: { previous: "前へ", next: "次へ" },
+  };
+  const detailNavigation = detailNavigationLabels[language] || detailNavigationLabels.en;
 
   const [lightboxIndex, setLightboxIndex] = useState(null);
   const metadataRef = useRef(null);
@@ -4807,7 +4820,7 @@ function DetailView({
           >
             <polyline points="15 6 9 12 15 18" />
           </svg>
-          {isZh ? zhText("上一个") : isEs ? "Anterior" : "Previous"}
+          {detailNavigation.previous}
         </button>
         <button
           onClick={() => nextWork && onGoToWork(nextWork.id, "next")}
@@ -4816,7 +4829,7 @@ function DetailView({
             nextWork ? "text-neutral-900" : "text-neutral-300 cursor-not-allowed"
           }`}
         >
-          {isZh ? zhText("下一个") : isEs ? "Siguiente" : "Next"}
+          {detailNavigation.next}
           <svg
             viewBox="0 0 24 24"
             width="14"
