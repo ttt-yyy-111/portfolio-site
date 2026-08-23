@@ -423,7 +423,7 @@ function Portfolio() {
   };
   const canEdit = editRequested && (isLocalDevelopment || editorAuth.authenticated);
 
-  // ---------- 语言切换：八种语言，首次访问始终默认英文 ----------
+  // ---------- 语言切换：九种语言，首次访问始终默认英文 ----------
   // 第一次打开网站（浏览器里还没存过语言）默认显示英文；之后每次切换语言都会记到 localStorage 里，
   // 下次重新打开网站时会自动恢复成上次看的那个语言，不用每次都重新选。
   const LANGUAGE_OPTIONS = [
@@ -434,6 +434,7 @@ function Portfolio() {
     { code: "es", label: "ES", name: "Español" },
     { code: "fr", label: "FR", name: "Français" },
     { code: "it", label: "IT", name: "Italiano" },
+    { code: "ko", label: "한", name: "한국어" },
     { code: "ja", label: "日", name: "日本語" },
   ];
   const LANGUAGE_STORAGE_KEY = "portfolio-site:language";
@@ -462,14 +463,16 @@ function Portfolio() {
     fr: { suffix: "Fr", source: "en", sourceLang: "EN", targetLang: "FR", titleCase: false },
     it: { suffix: "It", source: "en", sourceLang: "EN", targetLang: "IT", titleCase: false },
     es: { suffix: "Es", source: "en", sourceLang: "EN", targetLang: "ES", titleCase: true },
+    ko: { suffix: "Ko", source: "zh", sourceLang: "ZH", targetLang: "KO", titleCase: false },
     ja: { suffix: "Ja", source: "zh", sourceLang: "ZH", targetLang: "JA", titleCase: false },
   };
   const TRANSLATION_MENU_OPTIONS = [
-    { codes: ["de", "es", "fr", "it", "ja"], label: "全部语言" },
+    { codes: ["de", "es", "fr", "it", "ko", "ja"], label: "全部语言" },
     { codes: ["de"], label: "德语" },
     { codes: ["es"], label: "西班牙语" },
     { codes: ["fr"], label: "法语" },
     { codes: ["it"], label: "意大利语" },
+    { codes: ["ko"], label: "韩语" },
     { codes: ["ja"], label: "日语" },
   ];
   const [traditionalConverter, setTraditionalConverter] = useState(null);
@@ -568,7 +571,7 @@ function Portfolio() {
   // 取某个字段的当前语言版本：日语优先回退到简体中文，其他翻译优先回退英文。
   const tField = (obj, key) => {
     if (!obj) return "";
-    const fallback = language === "ja" ? obj[`${key}Zh`] || obj[key] || "" : obj[key] || "";
+    const fallback = ["ja", "ko"].includes(language) ? obj[`${key}Zh`] || obj[key] || "" : obj[key] || "";
     const value = contentLangSuffix ? obj[`${key}${contentLangSuffix}`] || fallback : fallback;
     return isTraditional && traditionalConverter && typeof value === "string"
       ? traditionalConverter(value)
@@ -1939,6 +1942,7 @@ function Portfolio() {
     const t = typography[targetKey] || DEFAULT_TYPOGRAPHY[targetKey] || typography.infoBodyExhibition || DEFAULT_TYPOGRAPHY.infoBodyExhibition;
     if (isZh) return isTraditional ? "zh-Hant" : CJK_LANG_BY_FONT_ID[t.fontFamily];
     if (language === "ja") return CJK_LANG_BY_FONT_ID[t.fontFamily] || "ja";
+    if (language === "ko") return "ko";
     return undefined;
   };
 
@@ -2114,13 +2118,13 @@ function Portfolio() {
           }
           @keyframes language-menu-reveal {
             from { max-height: 0; }
-            to { max-height: 280px; }
+            to { max-height: 320px; }
           }
           .language-menu-retract {
             animation: language-menu-retract 300ms cubic-bezier(0.7, 0, 0.84, 0) both;
           }
           @keyframes language-menu-retract {
-            from { max-height: 280px; }
+            from { max-height: 320px; }
             to { max-height: 0; }
           }
           .desktop-scrollbar {
@@ -4628,6 +4632,7 @@ function DetailView({
     es: { previous: "Anterior", next: "Siguiente" },
     fr: { previous: "Précédent", next: "Suivant" },
     it: { previous: "Precedente", next: "Successivo" },
+    ko: { previous: "이전", next: "다음" },
     ja: { previous: "前へ", next: "次へ" },
   };
   const detailNavigation = detailNavigationLabels[language] || detailNavigationLabels.en;
