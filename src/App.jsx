@@ -185,11 +185,11 @@ const TYPOGRAPHY_TARGETS = [
   { key: "detailTitle", label: "详情页标题" },
   { key: "detailMaterials", label: "详情页材料" },
   { key: "detailDimensions", label: "详情页尺寸 / 年份" },
-  { key: "infoTitle", label: "Information 页段落标题" },
-  { key: "infoBodyInfo", label: "Information 页详细内容 · 信息类" },
-  { key: "infoBodyExhibition", label: "Information 页详细内容 · 展览类" },
-  { key: "infoExhibitionName", label: "Information 页详细内容 · 展览名称", mobileOnly: true },
-  { key: "infoExhibitionLocation", label: "Information 页详细内容 · 展览地点", mobileOnly: true },
+  { key: "infoTitle", label: "CV 页段落标题" },
+  { key: "infoBodyInfo", label: "CV 页详细内容 · 信息类" },
+  { key: "infoBodyExhibition", label: "CV 页详细内容 · 展览类" },
+  { key: "infoExhibitionName", label: "CV 页详细内容 · 展览名称", mobileOnly: true },
+  { key: "infoExhibitionLocation", label: "CV 页详细内容 · 展览地点", mobileOnly: true },
   { key: "footerLinks", label: "Information / Email / Instagram" },
 ];
 
