@@ -3564,7 +3564,7 @@ function Portfolio() {
               skipReveal={justRestoredGallery}
               tField={tField}
               isZh={isZh}
-              previewImageScale={showPhoneFrame ? 1.2 : 1}
+              previewImageScale={showPhoneFrame ? 1.4 : 1}
             />
           </>
         ) : (
