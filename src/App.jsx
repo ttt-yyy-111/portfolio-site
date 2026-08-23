@@ -2998,9 +2998,7 @@ function Portfolio() {
                     // entry.type === "series"：可折叠的系列分组
                     const seriesKey = `${group.year}::${entry.series}`;
                     const isOpen = !!expandedSeries[seriesKey];
-                    const displaySeriesName = contentLangSuffix
-                      ? entry.works[0]?.[`series${contentLangSuffix}`] || entry.series
-                      : entry.series;
+                    const displaySeriesName = tField(entry.works[0], "series");
                     const { isDragOver: headerIsDragOver, ...headerDragProps } =
                       makeEntryDragHandlers(group.year, entryIndex);
                     return (
