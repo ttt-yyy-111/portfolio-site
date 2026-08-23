@@ -353,20 +353,22 @@
             "year": "2025",
             "name": "<i>A Glimpse Admist Slender</i>, AYE Gallery, Beijing, China",
             "nameZh": "《窥见于纤弱之间》，AYE Gallery，北京，中国",
-            "nameEs": "<i>«A Glimpse Admitten Slender»</i>, Galería AYE, Pekín, China",
+            "nameEs": "<i>A Glimpse Admitten Slender</i>",
             "nameJa": "<span>「</span>繊細さの間に垣間見る」",
             "locationJa": "<span>AYE Gallery、北京、中国</span>",
-            "nameKo": "《연약함 속에서 엿보다》, AYE Gallery, 베이징, 중국"
+            "nameKo": "《연약함 속에서 엿보다》, AYE Gallery, 베이징, 중국",
+            "locationEs": "Galería AYE, Pekín, China"
           },
           {
             "id": "gundxgd7maqms7qhdsl",
             "year": "2024",
             "name": "<i>Fragrance of the Mind</i>, Oumuamua Art Museum, Beijing, China",
             "nameZh": "《臆想的芬芳》，奥木木美术馆，北京，中国",
-            "nameEs": "<i>«Fragancia de la mente</i>», Museo de Arte Oumuamua, Pekín, China",
+            "nameEs": "<i>Fragancia de la mente</i>",
             "nameJa": "<span>「</span>想像の香り」",
             "locationJa": "<span>オウムー美術館、北京、中国</span>",
-            "nameKo": "《상상의 향기》, 아우무무 미술관, 베이징, 중국"
+            "nameKo": "《상상의 향기》, 아우무무 미술관, 베이징, 중국",
+            "locationEs": "Museo de Arte Oumuamua, Pekín, China"
           }
         ],
         "titleEs": "Exposiciones individuales",
@@ -396,8 +398,8 @@
             "year": "2025",
             "name": "<i style=\"--tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ;\">Planetarity: Friction, Fossils and the Future</i>, Gelman Gallery, Providence, USA",
             "nameZh": "《行星性：摩擦、化石与未来》，盖尔曼画廊，普罗维登斯，美国",
-            "nameEs": "<i>Planetarity: Fricción</i>",
-            "locationEs": "fósiles y el futuro</i>», Galería Gelman, Providence, EE. UU.",
+            "nameEs": "<i>Planetarity: Fricción&nbsp;</i>fósiles y el futuro",
+            "locationEs": "Galería Gelman, Providence, EE. UU.",
             "nameJa": "<span>「</span>プラネタリー：摩擦、化石、そして未来<span>」</span>",
             "locationJa": "<span>ゲルマン・ギャラリー、プロビデンス、米国</span>",
             "nameKo": "《행성성: 마찰, 화석, 그리고 미래》, 게일만 갤러리, 프로비던스, 미국"
