@@ -2006,7 +2006,7 @@ function Portfolio() {
   // 内置预设里如果标了 googleFont，就去 Google Fonts 加载对应的字重
   const googleFontFamilies = FONT_PRESETS.filter((f) => f.googleFont).map((f) => f.googleFont);
 
-  const showPhoneFrame = canEdit && editMode && editPreviewMode === "mobile";
+  const showPhoneFrame = canEdit && editPreviewMode === "mobile";
 
   const appRoot = (
     <div
@@ -2233,7 +2233,7 @@ function Portfolio() {
               Aa 文字样式
             </button>
           )}
-          {canEdit && editMode && (
+          {canEdit && (
             <div className="flex items-center rounded-full bg-neutral-100 p-0.5 text-xs font-bold">
               <button
                 onClick={() => setEditPreviewMode("desktop")}
@@ -2683,6 +2683,29 @@ function Portfolio() {
               <span className="block w-5 h-0.5 bg-neutral-900" />
               <span className="block w-5 h-0.5 bg-neutral-900" />
               <span className="block w-5 h-0.5 bg-neutral-900" />
+            </button>
+          </div>
+        </div>
+      )}
+
+      {isMobile && canEdit && !editMode && (
+        <div className="flex items-center gap-2 px-3 py-2 flex-shrink-0 bg-neutral-50 overflow-x-auto">
+          <div className="flex items-center rounded-full bg-neutral-100 p-0.5 text-xs font-bold flex-shrink-0">
+            <button
+              onClick={() => setEditPreviewMode("desktop")}
+              className={`px-2.5 py-1 rounded-full transition-colors whitespace-nowrap ${
+                isMobile ? "text-neutral-500" : "bg-neutral-900 text-white"
+              }`}
+            >
+              电脑预览
+            </button>
+            <button
+              onClick={() => setEditPreviewMode("mobile")}
+              className={`px-2.5 py-1 rounded-full transition-colors whitespace-nowrap ${
+                isMobile ? "bg-neutral-900 text-white" : "text-neutral-500"
+              }`}
+            >
+              手机预览
             </button>
           </div>
         </div>
