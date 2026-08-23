@@ -21,12 +21,17 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: "Method not allowed" });
   }
 
-  const { text, titleCase = false, html = false } = req.body || {};
+  const { text, sourceLang = "EN", targetLang = "ES", titleCase = false, html = false } = req.body || {};
   if (typeof text !== "string" || !text.trim()) {
     return res.status(400).json({ error: "Text is required" });
   }
   if (text.length > 10000) {
     return res.status(413).json({ error: "Text is too long" });
+  }
+  const supportedPairs = new Set(["EN:DE", "EN:FR", "EN:IT", "EN:ES", "ZH:JA"]);
+  const languagePair = `${sourceLang}:${targetLang}`;
+  if (!supportedPairs.has(languagePair)) {
+    return res.status(400).json({ error: "Unsupported language pair" });
   }
 
   const apiKey = process.env.DEEPL_API_KEY;
@@ -40,8 +45,8 @@ export default async function handler(req, res) {
     : "https://api.deepl.com/v2/translate";
   const body = new URLSearchParams({
     text,
-    source_lang: "EN",
-    target_lang: "ES",
+    source_lang: sourceLang,
+    target_lang: targetLang,
     preserve_formatting: "1",
   });
   if (html) body.set("tag_handling", "html");

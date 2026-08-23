@@ -368,7 +368,7 @@ function Portfolio() {
 
   const [hasUnexportedChanges, setHasUnexportedChanges] = useState(false);
   const [editMode, setEditMode] = useState(false);
-  const [spanishRegeneration, setSpanishRegeneration] = useState(null);
+  const [translationRegeneration, setTranslationRegeneration] = useState(null);
   const [selectedId, setSelectedId] = useState(null);
   const [showInfo, setShowInfo] = useState(false);
   const [navDirection, setNavDirection] = useState(null); // 'prev' | 'next' | null，只有点详情页的Previous/Next才会设置
@@ -380,14 +380,18 @@ function Portfolio() {
     return new URLSearchParams(window.location.search).get("edit") === "1";
   });
 
-  // ---------- 语言切换：英文 / 中文 / 西班牙语 ----------
+  // ---------- 语言切换：八种语言，首次访问始终默认英文 ----------
   // 第一次打开网站（浏览器里还没存过语言）默认显示英文；之后每次切换语言都会记到 localStorage 里，
   // 下次重新打开网站时会自动恢复成上次看的那个语言，不用每次都重新选。
   const LANGUAGE_OPTIONS = [
+    { code: "de", label: "DE", name: "Deutsch" },
     { code: "en", label: "EN", name: "English" },
+    { code: "fr", label: "FR", name: "Français" },
+    { code: "it", label: "IT", name: "Italiano" },
+    { code: "ja", label: "日", name: "日本語" },
+    { code: "es", label: "ES", name: "Español" },
     { code: "zh", label: "简", name: "简体中文" },
     { code: "zhHant", label: "繁", name: "繁體中文" },
-    { code: "es", label: "ES", name: "Español" },
   ];
   const LANGUAGE_STORAGE_KEY = "portfolio-site:language";
   const [language, setLanguageState] = useState(() => {
@@ -410,6 +414,13 @@ function Portfolio() {
   const isTraditional = language === "zhHant";
   const isZh = language === "zh" || isTraditional;
   const isEs = language === "es";
+  const TRANSLATION_TARGETS = {
+    de: { suffix: "De", source: "en", sourceLang: "EN", targetLang: "DE", titleCase: false },
+    fr: { suffix: "Fr", source: "en", sourceLang: "EN", targetLang: "FR", titleCase: false },
+    it: { suffix: "It", source: "en", sourceLang: "EN", targetLang: "IT", titleCase: false },
+    es: { suffix: "Es", source: "en", sourceLang: "EN", targetLang: "ES", titleCase: true },
+    ja: { suffix: "Ja", source: "zh", sourceLang: "ZH", targetLang: "JA", titleCase: false },
+  };
   const [traditionalConverter, setTraditionalConverter] = useState(null);
   useEffect(() => {
     if (!isTraditional || traditionalConverter) return undefined;
@@ -421,8 +432,8 @@ function Portfolio() {
       cancelled = true;
     };
   }, [isTraditional, traditionalConverter]);
-  // 内容字段（标题、材料、尺寸、简介、系列名称）用的语言后缀：中文是 Zh，西班牙语是 Es，英文没有后缀
-  const contentLangSuffix = isZh ? "Zh" : isEs ? "Es" : "";
+  // 内容字段（标题、材料、尺寸、简介、系列名称）用语言后缀；繁体与简体共用 Zh 源文本。
+  const contentLangSuffix = isZh ? "Zh" : TRANSLATION_TARGETS[language]?.suffix || "";
   // 点击语言按钮弹出的下拉菜单是否展开
   const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
   const [languageMenuClosing, setLanguageMenuClosing] = useState(false);
@@ -484,11 +495,11 @@ function Portfolio() {
     if (exitingLanguageOptions.includes(code)) return "language-menu-option-exit";
     return "";
   };
-  // 取某个字段的当前语言版本：中文/西班牙语模式下优先用 xxxZh / xxxEs 字段，没填就自动退回英文原文，
-  // 不会因为漏填翻译就显示空白。
+  // 取某个字段的当前语言版本：日语优先回退到简体中文，其他翻译优先回退英文。
   const tField = (obj, key) => {
     if (!obj) return "";
-    const value = contentLangSuffix ? obj[`${key}${contentLangSuffix}`] || obj[key] || "" : obj[key] || "";
+    const fallback = language === "ja" ? obj[`${key}Zh`] || obj[key] || "" : obj[key] || "";
+    const value = contentLangSuffix ? obj[`${key}${contentLangSuffix}`] || fallback : fallback;
     return isTraditional && traditionalConverter && typeof value === "string"
       ? traditionalConverter(value)
       : value;
@@ -933,80 +944,76 @@ function Portfolio() {
       ...prev,
       works: prev.works.map((w) => (w.id === id ? { ...w, ...patch } : w)),
     }));
-    syncWorkSpanish(id, patch);
+    syncWorkTranslations(id, patch);
   };
 
-  // 翻译请求只从英文编辑模式发起；密钥保留在 Vercel 的服务器环境变量中，
+  // 翻译请求只从英文或简体中文编辑模式发起；密钥保留在 Vercel 的服务器环境变量中，
   // 浏览器只把需要翻译的文字交给同域的 /api/translate。
   const translationRequestRef = useRef(new Map());
-  const translateToSpanish = async (value, { titleCase = false, html = false } = {}) => {
+  const translateText = async (value, target, { titleCase = false, html = false } = {}) => {
     if (typeof value !== "string" || !value.trim()) return value;
     const response = await fetch("/api/translate", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ text: value, titleCase, html }),
+      body: JSON.stringify({ text: value, sourceLang: target.sourceLang, targetLang: target.targetLang, titleCase, html }),
     });
     if (!response.ok) throw new Error("Translation request failed");
     const result = await response.json();
     return typeof result.translation === "string" ? result.translation : value;
   };
 
-  const syncWorkSpanish = (id, patch) => {
-    // 西班牙语版本只跟随英文原文更新；在其他语言里手动编辑不会触发翻译。
-    if (language !== "en") return;
+  const syncFieldTranslations = (requestBase, value, options, applyTranslation) => {
+    Object.entries(TRANSLATION_TARGETS)
+      .filter(([, target]) => target.source === language)
+      .forEach(([code, target]) => {
+        const requestKey = `${requestBase}:${code}`;
+        const requestId = Symbol(requestKey);
+        translationRequestRef.current.set(requestKey, requestId);
+        void translateText(value, target, { ...options, titleCase: !!options.titleCase && target.titleCase })
+          .then((translation) => {
+            if (translationRequestRef.current.get(requestKey) !== requestId) return;
+            applyTranslation(target.suffix, translation);
+          })
+          .catch(() => {});
+      });
+  };
+
+  const syncWorkTranslations = (id, patch) => {
     const translatableFields = ["title", "materials", "dimensions", "description"];
     translatableFields.forEach((field) => {
-      if (typeof patch[field] !== "string") return;
-      const requestKey = `work:${id}:${field}`;
-      const requestId = Symbol(requestKey);
-      translationRequestRef.current.set(requestKey, requestId);
+      const sourceField = language === "zh" ? `${field}Zh` : field;
+      if (typeof patch[sourceField] !== "string") return;
       const titleCase = field === "title" || field === "materials";
-      void translateToSpanish(patch[field], { titleCase })
-        .then((translation) => {
-          // 如果用户已经再次编辑过同一个字段，丢弃较早返回的翻译，避免旧内容覆盖新内容。
-          if (translationRequestRef.current.get(requestKey) !== requestId) return;
+      syncFieldTranslations(`work:${id}:${field}`, patch[sourceField], { titleCase }, (suffix, translation) => {
           updateData((prev) => ({
             ...prev,
             works: prev.works.map((w) =>
-              w.id === id ? { ...w, [`${field}Es`]: translation } : w
+              w.id === id ? { ...w, [`${field}${suffix}`]: translation } : w
             ),
           }));
-        })
-        .catch(() => {
-          // 网络或额度暂时不可用时保留英文和现有西班牙语，不中断编辑。
-        });
+      });
     });
   };
 
-  const syncInfoSectionSpanish = (id, patch) => {
-    if (language !== "en") return;
+  const syncInfoSectionTranslations = (id, patch) => {
     ["title", "body"].forEach((field) => {
-      if (typeof patch[field] !== "string") return;
-      const requestKey = `info-section:${id}:${field}`;
-      const requestId = Symbol(requestKey);
-      translationRequestRef.current.set(requestKey, requestId);
-      void translateToSpanish(patch[field], { html: true })
-        .then((translation) => {
-          if (translationRequestRef.current.get(requestKey) !== requestId) return;
+      const sourceField = language === "zh" ? `${field}Zh` : field;
+      if (typeof patch[sourceField] !== "string") return;
+      syncFieldTranslations(`info-section:${id}:${field}`, patch[sourceField], { html: true }, (suffix, translation) => {
           updateData((prev) => ({
             ...prev,
             infoSections: (prev.infoSections || []).map((section) =>
-              section.id === id ? { ...section, [`${field}Es`]: translation } : section
+              section.id === id ? { ...section, [`${field}${suffix}`]: translation } : section
             ),
           }));
-        })
-        .catch(() => {});
+      });
     });
   };
 
-  const syncInfoEntrySpanish = (sectionId, entryId, patch) => {
-    if (language !== "en" || typeof patch.name !== "string") return;
-    const requestKey = `info-entry:${sectionId}:${entryId}:name`;
-    const requestId = Symbol(requestKey);
-    translationRequestRef.current.set(requestKey, requestId);
-    void translateToSpanish(patch.name, { html: true })
-      .then((translation) => {
-        if (translationRequestRef.current.get(requestKey) !== requestId) return;
+  const syncInfoEntryTranslations = (sectionId, entryId, patch) => {
+    const sourceField = language === "zh" ? "nameZh" : "name";
+    if (typeof patch[sourceField] !== "string") return;
+    syncFieldTranslations(`info-entry:${sectionId}:${entryId}:name`, patch[sourceField], { html: true }, (suffix, translation) => {
         updateData((prev) => ({
           ...prev,
           infoSections: (prev.infoSections || []).map((section) =>
@@ -1014,14 +1021,13 @@ function Portfolio() {
               ? {
                   ...section,
                   entries: (section.entries || []).map((entry) =>
-                    entry.id === entryId ? { ...entry, nameEs: translation } : entry
+                    entry.id === entryId ? { ...entry, [`name${suffix}`]: translation } : entry
                   ),
                 }
               : section
           ),
         }));
-      })
-      .catch(() => {});
+    });
   };
 
   const updateContact = (patch) => {
@@ -1029,21 +1035,15 @@ function Portfolio() {
       ...prev,
       contact: { ...(prev.contact || {}), ...patch },
     }));
-    if (language !== "en") return;
     Object.entries(patch).forEach(([field, value]) => {
-      if (!field.endsWith("Label") || typeof value !== "string") return;
-      const requestKey = `contact:${field}`;
-      const requestId = Symbol(requestKey);
-      translationRequestRef.current.set(requestKey, requestId);
-      void translateToSpanish(value)
-        .then((translation) => {
-          if (translationRequestRef.current.get(requestKey) !== requestId) return;
+      const sourceField = language === "zh" ? field.replace(/Zh$/, "") : field;
+      if (!sourceField.endsWith("Label") || typeof value !== "string") return;
+      syncFieldTranslations(`contact:${sourceField}`, value, {}, (suffix, translation) => {
           updateData((prev) => ({
             ...prev,
-            contact: { ...(prev.contact || {}), [`${field}Es`]: translation },
+            contact: { ...(prev.contact || {}), [`${sourceField}${suffix}`]: translation },
           }));
-        })
-        .catch(() => {});
+      });
     });
   };
 
@@ -1187,6 +1187,142 @@ function Portfolio() {
     setSpanishRegeneration(null);
   };
 
+  const rebuildAllTranslations = async () => {
+    if (translationRegeneration) return;
+    if (!window.confirm("这会删除当前所有自动翻译内容，并从英文与简体中文重新生成。要继续吗？")) return;
+
+    const sourceValue = (item, field, target) =>
+      target.source === "zh" ? item?.[`${field}Zh`] : item?.[field];
+    const jobs = [];
+    const plainWorkFields = ["title", "materials", "dimensions", "description"];
+    const oldData = data;
+
+    Object.values(TRANSLATION_TARGETS).forEach((target) => {
+      (oldData.works || []).forEach((work) => {
+        plainWorkFields.forEach((field) => {
+          const text = sourceValue(work, field, target);
+          if (typeof text !== "string" || !text.trim()) return;
+          jobs.push({
+            text,
+            target,
+            titleCase: field === "title" || field === "materials",
+            apply: (translation) => updateData((prev) => ({
+              ...prev,
+              works: prev.works.map((item) =>
+                item.id === work.id ? { ...item, [`${field}${target.suffix}`]: translation } : item
+              ),
+            })),
+          });
+        });
+      });
+
+      const seenSeries = new Set();
+      (oldData.works || []).forEach((work) => {
+        const text = sourceValue(work, "series", target);
+        const groupKey = target.source === "zh" ? work.series : text;
+        if (!text || seenSeries.has(groupKey)) return;
+        seenSeries.add(groupKey);
+        jobs.push({
+          text,
+          target,
+          titleCase: true,
+          apply: (translation) => updateData((prev) => ({
+            ...prev,
+            works: prev.works.map((item) =>
+              item.series === work.series ? { ...item, [`series${target.suffix}`]: translation } : item
+            ),
+          })),
+        });
+      });
+
+      (oldData.infoSections || []).forEach((section) => {
+        ["title", "body"].forEach((field) => {
+          const text = sourceValue(section, field, target);
+          if (typeof text !== "string" || !text.trim()) return;
+          jobs.push({
+            text, target, html: true,
+            apply: (translation) => updateData((prev) => ({
+              ...prev,
+              infoSections: (prev.infoSections || []).map((item) =>
+                item.id === section.id ? { ...item, [`${field}${target.suffix}`]: translation } : item
+              ),
+            })),
+          });
+        });
+        (section.entries || []).forEach((entry) => {
+          const text = sourceValue(entry, "name", target);
+          if (typeof text !== "string" || !text.trim()) return;
+          jobs.push({
+            text, target, html: true,
+            apply: (translation) => updateData((prev) => ({
+              ...prev,
+              infoSections: (prev.infoSections || []).map((item) => item.id === section.id ? {
+                ...item,
+                entries: (item.entries || []).map((currentEntry) =>
+                  currentEntry.id === entry.id ? { ...currentEntry, [`name${target.suffix}`]: translation } : currentEntry
+                ),
+              } : item),
+            })),
+          });
+        });
+      });
+
+      ["informationLabel", "emailLabel", "instagramLabel", "redNoteLabel"].forEach((field) => {
+        const text = sourceValue(oldData.contact, field, target);
+        if (typeof text !== "string" || !text.trim()) return;
+        jobs.push({
+          text, target,
+          apply: (translation) => updateData((prev) => ({
+            ...prev,
+            contact: { ...(prev.contact || {}), [`${field}${target.suffix}`]: translation },
+          })),
+        });
+      });
+    });
+
+    const suffixes = Object.values(TRANSLATION_TARGETS).map((target) => target.suffix);
+    translationRequestRef.current.clear();
+    updateData((prev) => ({
+      ...prev,
+      works: prev.works.map((work) => {
+        const next = { ...work };
+        suffixes.forEach((suffix) => ["title", "materials", "dimensions", "description", "series"].forEach((field) => delete next[`${field}${suffix}`]));
+        return next;
+      }),
+      infoSections: (prev.infoSections || []).map((section) => {
+        const next = { ...section };
+        suffixes.forEach((suffix) => { delete next[`title${suffix}`]; delete next[`body${suffix}`]; });
+        next.entries = (next.entries || []).map((entry) => {
+          const nextEntry = { ...entry };
+          suffixes.forEach((suffix) => delete nextEntry[`name${suffix}`]);
+          return nextEntry;
+        });
+        return next;
+      }),
+      contact: Object.fromEntries(Object.entries(prev.contact || {}).filter(([key]) =>
+        !suffixes.some((suffix) => key.endsWith(`Label${suffix}`))
+      )),
+    }));
+
+    setLanguage("en");
+    setTranslationRegeneration({ done: 0, total: jobs.length });
+    let done = 0;
+    for (const job of jobs) {
+      try {
+        const translation = await translateText(job.text, job.target, {
+          titleCase: !!job.titleCase && job.target.titleCase,
+          html: !!job.html,
+        });
+        job.apply(translation);
+      } catch {
+        // 单条失败不会影响后续翻译；重新执行即可补齐。
+      }
+      done += 1;
+      setTranslationRegeneration({ done, total: jobs.length });
+    }
+    setTranslationRegeneration(null);
+  };
+
   const updateTypography = (targetKey, patch) => {
     const fieldKey = `typography${isMobile ? "Mobile" : ""}${isZh ? "Zh" : ""}`;
     const deviceBaseKey = isMobile ? "typographyMobile" : "typography";
@@ -1311,23 +1447,16 @@ function Portfolio() {
         return { ...rest, [newKey]: val };
       });
     }
-    if (language === "en") {
-      const requestKey = `series:${year}:${oldSeriesName}`;
-      const requestId = Symbol(requestKey);
-      translationRequestRef.current.set(requestKey, requestId);
-      void translateToSpanish(newName, { titleCase: true })
-        .then((translation) => {
-          if (translationRequestRef.current.get(requestKey) !== requestId) return;
+    if (language === "en" || language === "zh") {
+      syncFieldTranslations(`series:${year}:${oldSeriesName}`, newName, { titleCase: true }, (suffix, translation) => {
+          const seriesKey = language === "en" ? newName : oldSeriesName;
           updateData((prev) => ({
             ...prev,
             works: prev.works.map((w) =>
-              w.year === year && w.series === newName ? { ...w, seriesEs: translation } : w
+              w.year === year && w.series === seriesKey ? { ...w, [`series${suffix}`]: translation } : w
             ),
           }));
-        })
-        .catch(() => {
-          // 翻译失败不影响已经保存的英文系列名。
-        });
+      });
     }
   };
 
@@ -1637,7 +1766,7 @@ function Portfolio() {
       ...prev,
       infoSections: (prev.infoSections || []).map((s) => (s.id === id ? { ...s, ...patch } : s)),
     }));
-    syncInfoSectionSpanish(id, patch);
+    syncInfoSectionTranslations(id, patch);
   };
   const deleteInfoSection = (id) => {
     updateData((prev) => ({
@@ -1657,7 +1786,7 @@ function Portfolio() {
           : s
       ),
     }));
-    syncInfoEntrySpanish(sectionId, entryId, patch);
+    syncInfoEntryTranslations(sectionId, entryId, patch);
   };
   const addInfoEntry = (sectionId) => {
     updateData((prev) => ({
@@ -1725,7 +1854,9 @@ function Portfolio() {
   };
   const langFor = (targetKey) => {
     const t = typography[targetKey] || DEFAULT_TYPOGRAPHY[targetKey];
-    return isZh ? (isTraditional ? "zh-Hant" : CJK_LANG_BY_FONT_ID[t.fontFamily]) : undefined;
+    if (isZh) return isTraditional ? "zh-Hant" : CJK_LANG_BY_FONT_ID[t.fontFamily];
+    if (language === "ja") return CJK_LANG_BY_FONT_ID[t.fontFamily] || "ja";
+    return undefined;
   };
 
   const styleFor = (targetKey) => {
@@ -1851,13 +1982,13 @@ function Portfolio() {
           }
           @keyframes language-menu-reveal {
             from { max-height: 0; }
-            to { max-height: 140px; }
+            to { max-height: 280px; }
           }
           .language-menu-retract {
             animation: language-menu-retract 300ms cubic-bezier(0.7, 0, 0.84, 0) both;
           }
           @keyframes language-menu-retract {
-            from { max-height: 140px; }
+            from { max-height: 280px; }
             to { max-height: 0; }
           }
           .language-menu-option:hover .language-menu-option-label,
@@ -1942,13 +2073,13 @@ function Portfolio() {
                 导出内容{hasUnexportedChanges ? "（有改动）" : ""}
               </button>
               <button
-                onClick={rebuildSpanishFromEnglish}
-                disabled={!!spanishRegeneration}
+                onClick={rebuildAllTranslations}
+                disabled={!!translationRegeneration}
                 className="text-xs font-bold px-3 py-1.5 rounded-full bg-neutral-100 text-neutral-600 hover:bg-neutral-200 disabled:opacity-50"
               >
-                {spanishRegeneration
-                  ? `翻译中 ${spanishRegeneration.done}/${spanishRegeneration.total}`
-                  : "重新生成西班牙语"}
+                {translationRegeneration
+                  ? `翻译中 ${translationRegeneration.done}/${translationRegeneration.total}`
+                  : "重新生成翻译"}
               </button>
               <button
                 onClick={resetToDefaultData}
@@ -2469,13 +2600,13 @@ function Portfolio() {
             导出内容{hasUnexportedChanges ? "（有改动）" : ""}
           </button>
           <button
-            onClick={rebuildSpanishFromEnglish}
-            disabled={!!spanishRegeneration}
+            onClick={rebuildAllTranslations}
+            disabled={!!translationRegeneration}
             className="text-xs font-bold px-3 py-1.5 rounded-full bg-neutral-100 text-neutral-600 disabled:opacity-50 flex-shrink-0 whitespace-nowrap"
           >
-            {spanishRegeneration
-              ? `翻译中 ${spanishRegeneration.done}/${spanishRegeneration.total}`
-              : "重新生成西班牙语"}
+            {translationRegeneration
+              ? `翻译中 ${translationRegeneration.done}/${translationRegeneration.total}`
+              : "重新生成翻译"}
           </button>
           <button
             onClick={() => {
