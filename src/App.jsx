@@ -304,8 +304,8 @@ function CircleRevealArrowButton({ direction, onClick, ariaLabel, title, classNa
       <svg
         className="relative z-10"
         viewBox="0 0 24 24"
-        width="18"
-        height="18"
+        width="22"
+        height="22"
         fill="none"
         stroke="currentColor"
         strokeWidth={strokeWidth}
@@ -317,8 +317,8 @@ function CircleRevealArrowButton({ direction, onClick, ariaLabel, title, classNa
       <span className="sidebar-icon-hover-reveal absolute inset-0 z-20 flex items-center justify-center bg-black text-white pointer-events-none">
         <svg
           viewBox="0 0 24 24"
-          width="18"
-          height="18"
+          width="22"
+          height="22"
           fill="none"
           stroke="currentColor"
           strokeWidth={strokeWidth}
