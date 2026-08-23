@@ -495,7 +495,9 @@
       "redNoteLabelKo": "샤오홍슈",
       "informationLabelDe": "Lebenslauf",
       "emailLabelDe": "E-Mail-Adresse",
-      "redNoteLabelDe": "Xiaohongshu"
+      "redNoteLabelDe": "Xiaohongshu",
+      "emailLabelEs": "Email",
+      "redNoteLabelEs": "Xiaohongshu"
     },
     "works": [
       {
