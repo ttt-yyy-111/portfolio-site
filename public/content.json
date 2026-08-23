@@ -3606,7 +3606,7 @@
         "fontWidth": 100
       },
       "infoTitle": {
-        "fontSize": 18,
+        "fontSize": 30,
         "lineHeight": 1.3,
         "fontFamily": "ibm-plex-sans",
         "fontWeight": 700,
