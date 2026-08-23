@@ -384,14 +384,14 @@ function Portfolio() {
   // 第一次打开网站（浏览器里还没存过语言）默认显示英文；之后每次切换语言都会记到 localStorage 里，
   // 下次重新打开网站时会自动恢复成上次看的那个语言，不用每次都重新选。
   const LANGUAGE_OPTIONS = [
-    { code: "de", label: "DE", name: "Deutsch" },
     { code: "en", label: "EN", name: "English" },
+    { code: "zh", label: "简", name: "简体中文" },
+    { code: "zhHant", label: "繁", name: "繁體中文" },
+    { code: "de", label: "DE", name: "Deutsch" },
+    { code: "es", label: "ES", name: "Español" },
     { code: "fr", label: "FR", name: "Français" },
     { code: "it", label: "IT", name: "Italiano" },
     { code: "ja", label: "日", name: "日本語" },
-    { code: "es", label: "ES", name: "Español" },
-    { code: "zh", label: "简", name: "简体中文" },
-    { code: "zhHant", label: "繁", name: "繁體中文" },
   ];
   const LANGUAGE_STORAGE_KEY = "portfolio-site:language";
   const [language, setLanguageState] = useState(() => {
