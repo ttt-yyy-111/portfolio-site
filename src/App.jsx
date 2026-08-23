@@ -3447,7 +3447,7 @@ function Portfolio() {
                   onClick={() => !editMode && goToInfo()}
                   className="flex items-center gap-2 font-bold text-neutral-900 text-left"
                 >
-                  <span aria-hidden>→</span>
+                  <MobileLinkArrow />
                   <Editable
                     as="span"
                     editMode={editMode}
@@ -3463,7 +3463,7 @@ function Portfolio() {
                     }}
                     className="flex items-center gap-2 font-bold text-neutral-900"
                   >
-                    <span aria-hidden>→</span>
+                    <MobileLinkArrow />
                     <Editable
                       as="span"
                       editMode={editMode}
@@ -3496,7 +3496,7 @@ function Portfolio() {
                     }}
                     className="flex items-center gap-2 font-bold text-neutral-900"
                   >
-                    <span aria-hidden>↗</span>
+                    <MobileLinkArrow external />
                     <Editable
                       as="span"
                       editMode={editMode}
@@ -3529,7 +3529,7 @@ function Portfolio() {
                     }}
                     className="flex items-center gap-2 font-bold text-neutral-900"
                   >
-                    <span aria-hidden>↗</span>
+                    <MobileLinkArrow external />
                     <Editable
                       as="span"
                       editMode={editMode}
@@ -3639,6 +3639,20 @@ function Portfolio() {
 }
 
 // 可编辑文本：非编辑模式下就是普通文字，编辑模式下点击即可修改，失焦自动保存
+function MobileLinkArrow({ external = false }) {
+  return external ? (
+    <svg aria-hidden="true" viewBox="0 0 24 24" className="h-6 w-6 flex-none" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M5 19 19 5" />
+      <path d="M11 5h8v8" />
+    </svg>
+  ) : (
+    <svg aria-hidden="true" viewBox="0 0 24 24" className="h-6 w-6 flex-none" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M3 12h17" />
+      <path d="m14 6 6 6-6 6" />
+    </svg>
+  );
+}
+
 // 侧边栏里单个作品条目：普通列表和系列手风琴展开后都复用这个组件
 // 手风琴展开内容：用 grid-template-rows 从 0fr 到 1fr 做平滑的高度过渡（配合透明度），
 // 下面的内容会跟着一起顺滑地让位/回位，不会突然跳一下。
