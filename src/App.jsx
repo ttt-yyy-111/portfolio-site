@@ -3435,6 +3435,7 @@ function Portfolio() {
             onAddEntry={addInfoEntry}
             onDeleteEntry={deleteInfoEntry}
             isMobile={isMobile}
+            phonePreview={showPhoneFrame}
           />
         ) : !selectedWork ? (
           <>
@@ -4253,9 +4254,10 @@ function InfoView({
   onAddEntry,
   onDeleteEntry,
   isMobile,
+  phonePreview = false,
 }) {
   return (
-    <div className="px-3 md:px-10 max-w-6xl pb-10" style={{ paddingTop: isMobile ? 24 : 40 }}>
+    <div className={`${phonePreview ? "px-[10px]" : "px-3 md:px-10"} max-w-6xl pb-10`} style={{ paddingTop: isMobile ? 24 : 40 }}>
       {sections.length === 0 && !editMode && (
         <p className="text-neutral-400 text-sm">还没有添加任何内容。</p>
       )}
