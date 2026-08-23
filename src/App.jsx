@@ -3933,7 +3933,7 @@ function GalleryImage({ w, editMode, onSelect, onReplaceCover, skipReveal, tFiel
   const { ref, style } = useRevealAnimation(skipReveal);
   const displayTitle = tField ? tField(w, "title") : w.title;
   return (
-    <div ref={ref} style={{ ...style, zoom: previewImageScale }} className="relative w-full group">
+    <div ref={ref} style={style} className="relative w-full group">
       <button
         onClick={() => !editMode && onSelect(w.id)}
         style={{ backgroundColor: w.tone }}
@@ -3948,7 +3948,11 @@ function GalleryImage({ w, editMode, onSelect, onReplaceCover, skipReveal, tFiel
           onContextMenu={(e) => !editMode && e.preventDefault()}
           onDragStart={(e) => e.preventDefault()}
           className="w-full h-auto object-cover opacity-95 transition-opacity duration-300 select-none pointer-events-none"
-          style={{ WebkitTouchCallout: "none" }}
+          style={{
+            WebkitTouchCallout: "none",
+            transform: previewImageScale > 1 ? `scale(${previewImageScale})` : undefined,
+            transformOrigin: "center center",
+          }}
         />
       </button>
       {!editMode && (
