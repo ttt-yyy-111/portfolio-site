@@ -2778,7 +2778,6 @@ function Portfolio() {
             onClick={() => {
               setEditMode(false);
               setTypoPanelOpen(false);
-              setEditPreviewMode(null);
             }}
             className="text-xs font-bold px-3 py-1.5 rounded-full bg-neutral-900 text-white flex-shrink-0 whitespace-nowrap"
           >
@@ -3609,11 +3608,25 @@ function Portfolio() {
   if (showPhoneFrame) {
     return (
       <div className="w-full h-screen flex items-center justify-center bg-neutral-200 overflow-auto py-6">
-        <div
-          className="bg-white shadow-2xl overflow-hidden flex-shrink-0"
-          style={{ width: 430, height: 900, borderRadius: 36, border: "10px solid #1a1a1a" }}
-        >
-          {appRoot}
+        <div className="relative h-[930px] w-[500px] flex-shrink-0">
+          <div
+            className="absolute z-10 overflow-hidden bg-white"
+            style={{
+              left: "9.25%",
+              top: "2.18%",
+              width: "81.5%",
+              height: "95.64%",
+              borderRadius: 40,
+            }}
+          >
+            {appRoot}
+          </div>
+          <img
+            src="/iphone.svg"
+            alt=""
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 h-full w-full"
+          />
         </div>
       </div>
     );
