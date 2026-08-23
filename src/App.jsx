@@ -2671,7 +2671,7 @@ function Portfolio() {
                 </div>
               )}
             </div>
-            {canEdit && !editMode && (
+            {canEdit && !editMode && !showPhoneFrame && (
               <button
                 onClick={() => setEditMode(true)}
                 className="text-xs font-bold px-2.5 py-1 rounded-full bg-neutral-100 text-neutral-600 whitespace-nowrap"
@@ -2693,7 +2693,11 @@ function Portfolio() {
       )}
 
       {isMobile && canEdit && (
-        <div className="flex items-center gap-2 px-3 py-2 flex-shrink-0 bg-neutral-50 overflow-x-auto">
+        <div
+          className={`flex items-center gap-2 px-3 py-2 bg-neutral-50 overflow-x-auto ${
+            showPhoneFrame ? "fixed bottom-6 left-6 z-[200] rounded-xl shadow-lg" : "flex-shrink-0"
+          }`}
+        >
           <div className="flex items-center rounded-full bg-neutral-100 p-0.5 text-xs font-bold flex-shrink-0">
             <button
               onClick={() => setEditPreviewMode("desktop")}
@@ -2728,7 +2732,11 @@ function Portfolio() {
       {/* 手机端编辑工具栏：单独占一行，走正常的文档流，不会跟顶部栏重叠盖住按钮。
           只有编辑模式下才出现，平时访客看到的手机端顶部栏跟以前一样干净。 */}
       {isMobile && canEdit && editMode && (
-        <div className="flex items-center gap-2 px-3 py-2 flex-shrink-0 bg-neutral-50 overflow-x-auto">
+        <div
+          className={`flex items-center gap-2 px-3 py-2 bg-neutral-50 overflow-x-auto ${
+            showPhoneFrame ? "fixed bottom-20 left-6 z-[200] rounded-xl shadow-lg" : "flex-shrink-0"
+          }`}
+        >
           <button
             onClick={() => setTypoPanelOpen((v) => !v)}
             data-typo-toggle="true"
