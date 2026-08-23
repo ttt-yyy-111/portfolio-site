@@ -3564,7 +3564,7 @@ function Portfolio() {
               skipReveal={justRestoredGallery}
               tField={tField}
               isZh={isZh}
-              previewImageScale={showPhoneFrame ? 1.4 : 1}
+              previewImageScale={showPhoneFrame ? 1.6 : 1}
             />
           </>
         ) : (
@@ -3950,8 +3950,9 @@ function GalleryImage({ w, editMode, onSelect, onReplaceCover, skipReveal, tFiel
           className="w-full h-auto object-cover opacity-95 transition-opacity duration-300 select-none pointer-events-none"
           style={{
             WebkitTouchCallout: "none",
-            transform: previewImageScale > 1 ? `scale(${previewImageScale})` : undefined,
-            transformOrigin: "center center",
+            width: previewImageScale > 1 ? `${previewImageScale * 100}%` : "100%",
+            maxWidth: "none",
+            marginLeft: previewImageScale > 1 ? `${((1 - previewImageScale) / 2) * 100}%` : undefined,
           }}
         />
       </button>
