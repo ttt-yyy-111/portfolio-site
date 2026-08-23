@@ -2998,7 +2998,12 @@ function Portfolio() {
                     // entry.type === "series"：可折叠的系列分组
                     const seriesKey = `${group.year}::${entry.series}`;
                     const isOpen = !!expandedSeries[seriesKey];
-                    const displaySeriesName = tField(entry.works[0], "series");
+                    const chineseSeriesName =
+                      entry.works.find((work) => typeof work.seriesZh === "string" && work.seriesZh.trim())?.seriesZh ||
+                      entry.series;
+                    const displaySeriesName = isTraditional
+                      ? zhText(chineseSeriesName)
+                      : tField(entry.works[0], "series");
                     const { isDragOver: headerIsDragOver, ...headerDragProps } =
                       makeEntryDragHandlers(group.year, entryIndex);
                     return (
