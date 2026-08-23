@@ -3905,7 +3905,7 @@ function GalleryGrid({
   return (
     <div
       ref={containerRef}
-      className={`${phonePreview ? "px-[6px]" : "px-3 md:px-6"} pb-6 flex`}
+      className={`${phonePreview ? "px-[10px]" : "px-3 md:px-6"} pb-6 flex`}
       style={{ paddingTop: isMobile ? 16 : 40, gap: effectiveGap }}
     >
       {columns.map((colWorks, colIdx) => (
