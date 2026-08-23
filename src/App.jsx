@@ -1639,13 +1639,13 @@ function Portfolio() {
           }
           @keyframes language-menu-reveal {
             from { max-height: 0; }
-            to { max-height: 120px; }
+            to { max-height: 140px; }
           }
           .language-menu-retract {
             animation: language-menu-retract 300ms cubic-bezier(0.7, 0, 0.84, 0) both;
           }
           @keyframes language-menu-retract {
-            from { max-height: 120px; }
+            from { max-height: 140px; }
             to { max-height: 0; }
           }
           .language-menu-option:hover .language-menu-option-label,
@@ -1817,7 +1817,7 @@ function Portfolio() {
                         prev.includes(opt.code) ? prev : [...prev, opt.code]
                       );
                     }}
-                    className={`language-menu-option relative px-[18px] py-[6px] text-left text-lg leading-none ${
+                    className={`language-menu-option relative flex h-[34px] items-center px-[18px] text-left text-lg leading-none ${
                       opt.code === language
                         ? "font-bold"
                         : ""
@@ -2165,7 +2165,7 @@ function Portfolio() {
                           prev.includes(opt.code) ? prev : [...prev, opt.code]
                         );
                       }}
-                      className={`language-menu-option relative px-[14px] py-[6px] text-left text-lg leading-none ${
+                      className={`language-menu-option relative flex h-[34px] items-center px-[14px] text-left text-lg leading-none ${
                         opt.code === language
                           ? "bg-black font-bold"
                           : ""
