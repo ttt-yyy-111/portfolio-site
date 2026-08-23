@@ -368,6 +368,7 @@ function Portfolio() {
 
   const [hasUnexportedChanges, setHasUnexportedChanges] = useState(false);
   const [editMode, setEditMode] = useState(false);
+  const [spanishRegeneration, setSpanishRegeneration] = useState(null);
   const [selectedId, setSelectedId] = useState(null);
   const [showInfo, setShowInfo] = useState(false);
   const [navDirection, setNavDirection] = useState(null); // 'prev' | 'next' | null，只有点详情页的Previous/Next才会设置
@@ -1044,6 +1045,146 @@ function Portfolio() {
         })
         .catch(() => {});
     });
+  };
+
+  // 清空旧的西班牙语字段后，以英文作为唯一来源重新翻译。翻译完成后仍需照常导出内容，
+  // 才会把新生成的内容写回项目里的 content.json。
+  const rebuildSpanishFromEnglish = async () => {
+    if (spanishRegeneration) return;
+    if (!window.confirm("这会删除当前所有西班牙语内容，并根据英文重新翻译。要继续吗？")) return;
+
+    const jobs = [];
+    const plainWorkFields = ["title", "materials", "dimensions", "description"];
+    const oldData = data;
+    (oldData.works || []).forEach((work) => {
+      plainWorkFields.forEach((field) => {
+        if (typeof work[field] !== "string" || !work[field].trim()) return;
+        jobs.push({
+          text: work[field],
+          titleCase: field === "title" || field === "materials",
+          apply: (translation) =>
+            updateData((prev) => ({
+              ...prev,
+              works: prev.works.map((item) =>
+                item.id === work.id ? { ...item, [`${field}Es`]: translation } : item
+              ),
+            })),
+        });
+      });
+    });
+
+    const seenSeries = new Set();
+    (oldData.works || []).forEach((work) => {
+      if (!work.series || seenSeries.has(work.series)) return;
+      seenSeries.add(work.series);
+      jobs.push({
+        text: work.series,
+        titleCase: true,
+        apply: (translation) =>
+          updateData((prev) => ({
+            ...prev,
+            works: prev.works.map((item) =>
+              item.series === work.series ? { ...item, seriesEs: translation } : item
+            ),
+          })),
+      });
+    });
+
+    (oldData.infoSections || []).forEach((section) => {
+      ["title", "body"].forEach((field) => {
+        if (typeof section[field] !== "string" || !section[field].trim()) return;
+        jobs.push({
+          text: section[field],
+          html: true,
+          apply: (translation) =>
+            updateData((prev) => ({
+              ...prev,
+              infoSections: (prev.infoSections || []).map((item) =>
+                item.id === section.id ? { ...item, [`${field}Es`]: translation } : item
+              ),
+            })),
+        });
+      });
+      (section.entries || []).forEach((entry) => {
+        if (typeof entry.name !== "string" || !entry.name.trim()) return;
+        jobs.push({
+          text: entry.name,
+          html: true,
+          apply: (translation) =>
+            updateData((prev) => ({
+              ...prev,
+              infoSections: (prev.infoSections || []).map((item) =>
+                item.id === section.id
+                  ? {
+                      ...item,
+                      entries: (item.entries || []).map((currentEntry) =>
+                        currentEntry.id === entry.id ? { ...currentEntry, nameEs: translation } : currentEntry
+                      ),
+                    }
+                  : item
+              ),
+            })),
+        });
+      });
+    });
+
+    ["informationLabel", "emailLabel", "instagramLabel", "redNoteLabel"].forEach((field) => {
+      const value = oldData.contact?.[field];
+      if (typeof value !== "string" || !value.trim()) return;
+      jobs.push({
+        text: value,
+        apply: (translation) =>
+          updateData((prev) => ({
+            ...prev,
+            contact: { ...(prev.contact || {}), [`${field}Es`]: translation },
+          })),
+      });
+    });
+
+    // 先彻底删掉旧译文。翻译过程中的空白处会自动回退显示英文，不会显示旧内容。
+    translationRequestRef.current.clear();
+    updateData((prev) => ({
+      ...prev,
+      works: prev.works.map((work) => {
+        const next = { ...work };
+        ["titleEs", "materialsEs", "dimensionsEs", "descriptionEs", "seriesEs"].forEach((key) => delete next[key]);
+        return next;
+      }),
+      infoSections: (prev.infoSections || []).map((section) => {
+        const next = { ...section };
+        delete next.titleEs;
+        delete next.bodyEs;
+        if (next.entries) {
+          next.entries = next.entries.map((entry) => {
+            const nextEntry = { ...entry };
+            delete nextEntry.nameEs;
+            return nextEntry;
+          });
+        }
+        return next;
+      }),
+      contact: Object.fromEntries(
+        Object.entries(prev.contact || {}).filter(([key]) => !key.endsWith("LabelEs"))
+      ),
+    }));
+
+    setLanguage("en");
+    setSpanishRegeneration({ done: 0, total: jobs.length });
+    let done = 0;
+    for (const job of jobs) {
+      try {
+        const translation = await translateToSpanish(job.text, {
+          titleCase: !!job.titleCase,
+          html: !!job.html,
+        });
+        job.apply(translation);
+      } catch {
+        // 单条失败不会中断其余内容；失败字段会保持英文回退，方便稍后再次执行。
+      }
+      done += 1;
+      setSpanishRegeneration({ done, total: jobs.length });
+    }
+    setSpanishRegeneration(null);
   };
 
   const updateTypography = (targetKey, patch) => {
@@ -1801,6 +1942,15 @@ function Portfolio() {
                 导出内容{hasUnexportedChanges ? "（有改动）" : ""}
               </button>
               <button
+                onClick={rebuildSpanishFromEnglish}
+                disabled={!!spanishRegeneration}
+                className="text-xs font-bold px-3 py-1.5 rounded-full bg-neutral-100 text-neutral-600 hover:bg-neutral-200 disabled:opacity-50"
+              >
+                {spanishRegeneration
+                  ? `翻译中 ${spanishRegeneration.done}/${spanishRegeneration.total}`
+                  : "重新生成西班牙语"}
+              </button>
+              <button
                 onClick={resetToDefaultData}
                 title="清空当前内容，恢复成最初的示例数据"
                 className="text-xs font-bold px-3 py-1.5 rounded-full bg-neutral-100 text-neutral-500 hover:bg-red-50 hover:text-red-500 transition-colors"
@@ -2317,6 +2467,15 @@ function Portfolio() {
             }`}
           >
             导出内容{hasUnexportedChanges ? "（有改动）" : ""}
+          </button>
+          <button
+            onClick={rebuildSpanishFromEnglish}
+            disabled={!!spanishRegeneration}
+            className="text-xs font-bold px-3 py-1.5 rounded-full bg-neutral-100 text-neutral-600 disabled:opacity-50 flex-shrink-0 whitespace-nowrap"
+          >
+            {spanishRegeneration
+              ? `翻译中 ${spanishRegeneration.done}/${spanishRegeneration.total}`
+              : "重新生成西班牙语"}
           </button>
           <button
             onClick={() => {
