@@ -342,8 +342,8 @@
             "name": "<i>Cloudy to Clear, a Hint of Breeze</i>, SOOFA SUHE, Shanghai, China",
             "nameZh": "《多云转晴，似有微风》，SOOFA SUHE，上海，中国",
             "nameEs": "<i>Nublado con claros, una ligera brisa</i>, SOOFA SUHE, Shanghái, China",
-            "nameJa": "<span>「</span>曇りから晴れへ、微風が吹いているようだ」、SOOFA SUHE、上海、中国",
-            "locationJa": ""
+            "nameJa": "<span>「</span>曇りから晴れへ、微風が吹いているようだ」",
+            "locationJa": "<span>SOOFA SUHE、上海、中国</span>"
           },
           {
             "id": "0qcwlq97vdxems7qhdsl",
@@ -351,8 +351,8 @@
             "name": "<i>A Glimpse Admist Slender</i>, AYE Gallery, Beijing, China",
             "nameZh": "《窥见于纤弱之间》，AYE Gallery，北京，中国",
             "nameEs": "<i>«A Glimpse Admitten Slender»</i>, Galería AYE, Pekín, China",
-            "nameJa": "<span>「</span>繊細さの間に垣間見る」、AYE Gallery、北京、中国",
-            "locationJa": ""
+            "nameJa": "<span>「</span>繊細さの間に垣間見る」",
+            "locationJa": "<span>AYE Gallery、北京、中国</span>"
           },
           {
             "id": "gundxgd7maqms7qhdsl",
@@ -360,8 +360,8 @@
             "name": "<i>Fragrance of the Mind</i>, Oumuamua Art Museum, Beijing, China",
             "nameZh": "《臆想的芬芳》，奥木木美术馆，北京，中国",
             "nameEs": "<i>«Fragancia de la mente</i>», Museo de Arte Oumuamua, Pekín, China",
-            "nameJa": "<span>「</span>想像の香り」、オウムー美術館、北京、中国",
-            "locationJa": ""
+            "nameJa": "<span>「</span>想像の香り」",
+            "locationJa": "<span>オウムー美術館、北京、中国</span>"
           }
         ],
         "titleEs": "Exposiciones individuales",
@@ -380,8 +380,8 @@
             "nameZh": "《逐光：2026丙午马年特展》，重美术馆，北京，中国",
             "nameEs": "<i>Light Chaser: Exposición especial con motivo del Año del Caballo 2026</i>",
             "locationEs": "Museo de Arte Gravity, Pekín, China",
-            "nameJa": "<span>「</span>光を追って：2026年丙午（うま）年特別展<span>」</span>、重美術館、北京、中国",
-            "locationJa": ""
+            "nameJa": "<span>「</span>光を追って：2026年丙午（うま）年特別展<span>」</span>",
+            "locationJa": "<span>重美術館、北京、中国</span>"
           },
           {
             "id": "jcnfcmkwj7qms7zxg5s",
@@ -390,8 +390,8 @@
             "nameZh": "《行星性：摩擦、化石与未来》，盖尔曼画廊，普罗维登斯，美国",
             "nameEs": "<i>Planetarity: Fricción</i>",
             "locationEs": "fósiles y el futuro</i>», Galería Gelman, Providence, EE. UU.",
-            "nameJa": "<span>「</span>プラネタリー：摩擦、化石、そして未来<span>」</span>、ゲルマン・ギャラリー、プロビデンス、米国",
-            "locationJa": ""
+            "nameJa": "<span>「</span>プラネタリー：摩擦、化石、そして未来<span>」</span>",
+            "locationJa": "<span>ゲルマン・ギャラリー、プロビデンス、米国</span>"
           },
           {
             "id": "9i288qzxqnqms7zxuov",
@@ -409,8 +409,8 @@
             "name": "<i style=\"--tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ;\">Neither Anchor Nor Shore aranya</i>, Qinhuangdao, China",
             "nameZh": "《随波逐流》阿那亚，秦皇岛，中国",
             "nameEs": "<i style=\"--tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ;\">Ni ancla ni orilla</i>, <i style=\"--tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ;\">Aranya</i>, Qinhuangdao, China",
-            "nameJa": "<span>「</span>流れに身を任せて<span>」</span>アナヤ、秦皇島、中国",
-            "locationJa": ""
+            "nameJa": "<span>「</span>流れに身を任せて<span>」</span>アナヤ",
+            "locationJa": "<span>秦皇島、中国</span>"
           },
           {
             "id": "hex2oks8658ms7zylut",
@@ -419,8 +419,8 @@
             "nameZh": "《直立行走》，东古里艺术园区，北京，中国",
             "nameEs": "<i>Upright Walking</i>",
             "locationEs": "Parque Artístico de Dongguli, Pekín, China",
-            "nameJa": "<span>「</span>直立歩行<span>」</span>、東古里アートパーク、北京、中国",
-            "locationJa": ""
+            "nameJa": "<span>「</span>直立歩行<span>」</span>",
+            "locationJa": "<span>東古里アートパーク、北京、中国</span>"
           },
           {
             "id": "dvqihwv7vg7ms7zyyjh",
@@ -428,8 +428,8 @@
             "name": "<i style=\"--tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ;\">Summer Art Festival</i>, Shibuya Fashion &amp; Art College, Tokyo, Japan",
             "nameZh": "《夏の芸术祭》，渋谷ファッション＆アート専門学校，东京，日本",
             "nameEs": "<i style=\"--tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ;\">Festival de Arte de Verano</i>, Escuela Superior de Moda y Arte de Shibuya, Tokio, Japón",
-            "nameJa": "<span>「</span>夏の芸術祭<span>」</span>、渋谷ファッション＆アート専門学校、東京、日本",
-            "locationJa": ""
+            "nameJa": "<span>「</span>夏の芸術祭<span>」</span>",
+            "locationJa": "<span>渋谷ファッション＆アート専門学校、東京、日本</span>"
           }
         ],
         "titleZh": "<h3 class=\"mb-3 block\" style=\"--tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ; font-size: 30px; font-weight: 700; letter-spacing: 0px; line-height: 1.3; overflow-wrap: break-word;\">群展</h3>",
