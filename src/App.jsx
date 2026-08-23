@@ -3785,6 +3785,33 @@ function DetailView({
       : "none";
 
   const [lightboxIndex, setLightboxIndex] = useState(null);
+  const metadataRef = useRef(null);
+  const [showCompactHeader, setShowCompactHeader] = useState(false);
+  const compactHeaderStyle = useMemo(() => {
+    const size = parseFloat(titleStyle?.fontSize);
+    return {
+      ...titleStyle,
+      fontSize: Number.isFinite(size) ? `${size / 2}px` : "0.5em",
+    };
+  }, [titleStyle]);
+
+  useEffect(() => {
+    if (isMobile) {
+      setShowCompactHeader(false);
+      return undefined;
+    }
+    const metadata = metadataRef.current;
+    const scroller = metadata?.closest("main");
+    if (!metadata || !scroller) return undefined;
+    const updateHeader = () => {
+      const metadataBottom = metadata.getBoundingClientRect().bottom;
+      const scrollerTop = scroller.getBoundingClientRect().top;
+      setShowCompactHeader(metadataBottom <= scrollerTop);
+    };
+    scroller.addEventListener("scroll", updateHeader, { passive: true });
+    updateHeader();
+    return () => scroller.removeEventListener("scroll", updateHeader);
+  }, [isMobile, work.id]);
 
   // 手机端左右滑动切换上一个/下一个作品：记录手指按下的位置，松手时算一下横向、纵向各移动了多少，
   // 横向移动明显大于纵向（说明是横滑不是在滚动页面）、而且超过一定距离才触发切换，
@@ -3818,6 +3845,21 @@ function DetailView({
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
     >
+      {!isMobile && (
+        <div className="sticky top-0 z-20 h-0 overflow-visible pointer-events-none">
+          <div
+            className={`w-full bg-white px-10 py-3 text-black transition-transform duration-300 ease-out ${
+              showCompactHeader ? "translate-y-0" : "-translate-y-full"
+            }`}
+          >
+            <span style={compactHeaderStyle} lang={titleLang}>
+              {displayTitle}
+              {"\u00A0".repeat(4)}
+              {work.year}
+            </span>
+          </div>
+        </div>
+      )}
       <div
         key={work.id}
         className="px-3 md:px-10 max-w-6xl flex-1"
@@ -3827,21 +3869,22 @@ function DetailView({
           animation: `${slideAnimation} 350ms ease-out both`,
         }}
       >
-        <div className="mb-6">
-          <Editable
-            as="h2"
-            value={displayTitle}
-            editMode={editMode}
-            onChange={(v) => onUpdate({ [langKey("title")]: v })}
-            style={{ ...titleStyle, overflowWrap: "break-word" }}
-            lang={titleLang}
-          />
-        </div>
+        <div ref={metadataRef}>
+          <div className="mb-6">
+            <Editable
+              as="h2"
+              value={displayTitle}
+              editMode={editMode}
+              onChange={(v) => onUpdate({ [langKey("title")]: v })}
+              style={{ ...titleStyle, overflowWrap: "break-word" }}
+              lang={titleLang}
+            />
+          </div>
 
-        {/* 材料 / 尺寸 / 年份：三个各自独立可编辑、独立调整字号字体行距的文字块，左对齐，
-            不设置 max-width，宽度跟下面的图片网格对齐到同一个边缘。 */}
-        <div className="mb-10">
-          <Editable
+          {/* 材料 / 尺寸 / 年份：三个各自独立可编辑、独立调整字号字体行距的文字块，左对齐，
+              不设置 max-width，宽度跟下面的图片网格对齐到同一个边缘。 */}
+          <div className="mb-10">
+            <Editable
             as="p"
             value={displayMaterials}
             editMode={editMode}
@@ -3850,7 +3893,7 @@ function DetailView({
             style={{ ...materialsStyle, overflowWrap: "break-word" }}
             lang={materialsLang}
           />
-          <Editable
+            <Editable
             as="p"
             value={displayDimensions}
             editMode={editMode}
@@ -3859,7 +3902,7 @@ function DetailView({
             style={{ ...dimensionsStyle, overflowWrap: "break-word" }}
             lang={dimensionsLang}
           />
-          <Editable
+            <Editable
             as="p"
             value={String(work.year)}
             editMode={editMode}
@@ -3870,7 +3913,8 @@ function DetailView({
             className="text-neutral-900 block"
             style={{ ...yearStyle, overflowWrap: "break-word" }}
             lang={yearLang}
-          />
+            />
+          </div>
         </div>
 
         {isMobile ? (
