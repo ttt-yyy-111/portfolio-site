@@ -31,7 +31,7 @@ export default async function handler(req, res) {
   if (text.length > 10000) {
     return res.status(413).json({ error: "Text is too long" });
   }
-  const supportedPairs = new Set(["EN:DE", "EN:FR", "EN:IT", "EN:ES", "ZH:KO", "ZH:JA"]);
+  const supportedPairs = new Set(["ZH:DE", "ZH:FR", "ZH:IT", "ZH:ES", "ZH:KO", "ZH:JA"]);
   const languagePair = `${sourceLang}:${targetLang}`;
   if (!supportedPairs.has(languagePair)) {
     return res.status(400).json({ error: "Unsupported language pair" });

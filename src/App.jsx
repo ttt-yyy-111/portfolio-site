@@ -459,10 +459,10 @@ function Portfolio() {
   const isZh = language === "zh" || isTraditional;
   const isEs = language === "es";
   const TRANSLATION_TARGETS = {
-    de: { suffix: "De", source: "en", sourceLang: "EN", targetLang: "DE", titleCase: false },
-    fr: { suffix: "Fr", source: "en", sourceLang: "EN", targetLang: "FR", titleCase: false },
-    it: { suffix: "It", source: "en", sourceLang: "EN", targetLang: "IT", titleCase: false },
-    es: { suffix: "Es", source: "en", sourceLang: "EN", targetLang: "ES", titleCase: true },
+    de: { suffix: "De", source: "zh", sourceLang: "ZH", targetLang: "DE", titleCase: false },
+    fr: { suffix: "Fr", source: "zh", sourceLang: "ZH", targetLang: "FR", titleCase: false },
+    it: { suffix: "It", source: "zh", sourceLang: "ZH", targetLang: "IT", titleCase: false },
+    es: { suffix: "Es", source: "zh", sourceLang: "ZH", targetLang: "ES", titleCase: true },
     ko: { suffix: "Ko", source: "zh", sourceLang: "ZH", targetLang: "KO", titleCase: false },
     ja: { suffix: "Ja", source: "zh", sourceLang: "ZH", targetLang: "JA", titleCase: false },
   };
@@ -571,7 +571,7 @@ function Portfolio() {
   // 取某个字段的当前语言版本：日语优先回退到简体中文，其他翻译优先回退英文。
   const tField = (obj, key) => {
     if (!obj) return "";
-    const fallback = ["ja", "ko"].includes(language) ? obj[`${key}Zh`] || obj[key] || "" : obj[key] || "";
+    const fallback = language !== "en" ? obj[`${key}Zh`] || obj[key] || "" : obj[key] || "";
     const value = contentLangSuffix ? obj[`${key}${contentLangSuffix}`] || fallback : fallback;
     return isTraditional && traditionalConverter && typeof value === "string"
       ? traditionalConverter(value)
@@ -1020,7 +1020,7 @@ function Portfolio() {
     syncWorkTranslations(id, patch);
   };
 
-  // 翻译请求只从英文或简体中文编辑模式发起；密钥保留在 Vercel 的服务器环境变量中，
+  // 翻译请求只从简体中文（繁体编辑共用同一份中文源）编辑模式发起；密钥保留在 Vercel 的服务器环境变量中，
   // 浏览器只把需要翻译的文字交给同域的 /api/translate。
   const translationRequestRef = useRef(new Map());
   const translateText = async (value, target, { titleCase = false, html = false } = {}) => {
@@ -1268,7 +1268,7 @@ function Portfolio() {
       .filter(([code]) => selectedCodes.includes(code))
       .map(([, target]) => target);
     if (targets.length === 0) return;
-    if (!window.confirm("这会删除所选语言的现有翻译，并从英文或简体中文重新生成。要继续吗？")) return;
+    if (!window.confirm("这会删除所选语言的现有翻译，并从简体中文重新生成。要继续吗？")) return;
 
     const sourceValue = (item, field, target) =>
       target.source === "zh" ? item?.[`${field}Zh`] : item?.[field];
