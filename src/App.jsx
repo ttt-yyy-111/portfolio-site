@@ -289,7 +289,7 @@ function HoverRevealIcon({ src, hoverSrc }) {
   );
 }
 
-function CircleRevealArrowButton({ direction, onClick, ariaLabel, title, className = "", style }) {
+function CircleRevealArrowButton({ direction, onClick, ariaLabel, title, className = "relative", style }) {
   const points = direction === "up" ? "18 15 12 9 6 15" : "15 18 9 12 15 6";
   const strokeWidth = direction === "up" ? "2.5" : "3";
   return (
@@ -298,7 +298,7 @@ function CircleRevealArrowButton({ direction, onClick, ariaLabel, title, classNa
       onClick={onClick}
       aria-label={ariaLabel}
       title={title}
-      className={`group relative flex h-11 w-11 flex-shrink-0 items-center justify-center overflow-hidden rounded-full border-2 border-black bg-white text-black ${className}`}
+      className={`group flex h-11 w-11 flex-shrink-0 items-center justify-center overflow-hidden rounded-full border-2 border-black bg-white text-black ${className}`}
       style={style}
     >
       <svg
@@ -314,7 +314,7 @@ function CircleRevealArrowButton({ direction, onClick, ariaLabel, title, classNa
       >
         <polyline points={points} />
       </svg>
-      <span className="sidebar-icon-hover-reveal absolute inset-0 flex items-center justify-center bg-black text-white pointer-events-none">
+      <span className="sidebar-icon-hover-reveal absolute inset-0 z-20 flex items-center justify-center bg-black text-white pointer-events-none">
         <svg
           viewBox="0 0 24 24"
           width="18"
