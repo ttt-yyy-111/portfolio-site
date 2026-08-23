@@ -3918,6 +3918,7 @@ function GalleryGrid({
               skipReveal={skipReveal}
               tField={tField}
               isZh={isZh}
+              isMobile={isMobile}
             />
           ))}
         </div>
@@ -3926,11 +3927,15 @@ function GalleryGrid({
   );
 }
 
-function GalleryImage({ w, editMode, onSelect, onReplaceCover, skipReveal, tField, isZh }) {
+function GalleryImage({ w, editMode, onSelect, onReplaceCover, skipReveal, tField, isZh, isMobile }) {
   const { ref, style } = useRevealAnimation(skipReveal);
   const displayTitle = tField ? tField(w, "title") : w.title;
   return (
-    <div ref={ref} style={style} className="relative w-full group">
+    <div
+      ref={ref}
+      style={{ ...style, ...(isMobile ? { zoom: 1.04 } : {}) }}
+      className="relative w-full group"
+    >
       <button
         onClick={() => !editMode && onSelect(w.id)}
         style={{ backgroundColor: w.tone }}
