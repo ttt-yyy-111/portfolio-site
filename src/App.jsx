@@ -190,7 +190,7 @@ const TYPOGRAPHY_TARGETS = [
   { key: "infoBodyExhibition", label: "CV 页详细内容 · 展览类" },
   { key: "infoExhibitionName", label: "CV 页详细内容 · 展览名称", mobileOnly: true },
   { key: "infoExhibitionLocation", label: "CV 页详细内容 · 展览地点", mobileOnly: true },
-  { key: "footerLinks", label: "Information / Email / Instagram" },
+  { key: "footerLinks", label: "CV / Email / Instagram / RedNote" },
 ];
 
 // 不再需要 STORAGE_KEY —— 内容改动只存在浏览器内存里，靠"导出内容"按钮导出成 content.json
