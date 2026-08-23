@@ -3564,6 +3564,7 @@ function Portfolio() {
               skipReveal={justRestoredGallery}
               tField={tField}
               isZh={isZh}
+              previewImageScale={showPhoneFrame ? 1.2 : 1}
             />
           </>
         ) : (
@@ -3608,7 +3609,7 @@ function Portfolio() {
   if (showPhoneFrame) {
     return (
       <div className="w-full h-screen flex items-center justify-center bg-neutral-200 overflow-auto py-6">
-        <div className="relative h-[1116px] w-[600px] flex-shrink-0">
+        <div className="relative h-[930px] w-[500px] flex-shrink-0">
           <div
             className="absolute z-10 overflow-hidden bg-white"
             style={{
@@ -3619,7 +3620,7 @@ function Portfolio() {
               borderRadius: 40,
             }}
           >
-            <div className="absolute inset-x-0 bottom-0 top-[58px]">
+            <div className="absolute inset-x-0 bottom-0 top-12">
               {appRoot}
             </div>
           </div>
@@ -3874,6 +3875,7 @@ function GalleryGrid({
   skipReveal = false,
   tField,
   isZh,
+  previewImageScale = 1,
 }) {
   const containerRef = useRef(null);
   const [columnCount, setColumnCount] = useState(() => (isMobile ? 1 : 3));
@@ -3918,6 +3920,7 @@ function GalleryGrid({
               skipReveal={skipReveal}
               tField={tField}
               isZh={isZh}
+              previewImageScale={previewImageScale}
             />
           ))}
         </div>
@@ -3926,11 +3929,11 @@ function GalleryGrid({
   );
 }
 
-function GalleryImage({ w, editMode, onSelect, onReplaceCover, skipReveal, tField, isZh }) {
+function GalleryImage({ w, editMode, onSelect, onReplaceCover, skipReveal, tField, isZh, previewImageScale }) {
   const { ref, style } = useRevealAnimation(skipReveal);
   const displayTitle = tField ? tField(w, "title") : w.title;
   return (
-    <div ref={ref} style={style} className="relative w-full group">
+    <div ref={ref} style={{ ...style, zoom: previewImageScale }} className="relative w-full group">
       <button
         onClick={() => !editMode && onSelect(w.id)}
         style={{ backgroundColor: w.tone }}
