@@ -4366,7 +4366,7 @@ function InfoView({
                               editMode={editMode}
                               onChange={(v) => onUpdateEntry(section.id, entry.id, { [langKey("location")]: normalizeInfoTypography(v) })}
                               className="block"
-                              style={{ ...exhibitionLocationStyle, overflowWrap: "break-word" }}
+                              style={{ ...exhibitionLocationStyle, color: "rgba(0, 0, 0, 0.7)", overflowWrap: "break-word" }}
                               lang={exhibitionLocationLang}
                             />
                           </>
@@ -4420,7 +4420,7 @@ function InfoView({
                               <>
                                 <span aria-hidden="true" />
                                 <span
-                                  style={{ ...exhibitionLocationStyle, lineHeight: 1.3 }}
+                                  style={{ ...exhibitionLocationStyle, color: "rgba(0, 0, 0, 0.7)", lineHeight: 1.3 }}
                                   lang={exhibitionLocationLang}
                                   dangerouslySetInnerHTML={{ __html: entryParts.location }}
                                 />
