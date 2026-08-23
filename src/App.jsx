@@ -188,6 +188,8 @@ const TYPOGRAPHY_TARGETS = [
   { key: "infoTitle", label: "Information 页段落标题" },
   { key: "infoBodyInfo", label: "Information 页详细内容 · 信息类" },
   { key: "infoBodyExhibition", label: "Information 页详细内容 · 展览类" },
+  { key: "infoExhibitionName", label: "Information 页详细内容 · 展览名称", mobileOnly: true },
+  { key: "infoExhibitionLocation", label: "Information 页详细内容 · 展览地点", mobileOnly: true },
   { key: "footerLinks", label: "Information / Email / Instagram" },
 ];
 
@@ -1074,9 +1076,10 @@ function Portfolio() {
   };
 
   const syncInfoEntryTranslations = (sectionId, entryId, patch) => {
-    const sourceField = language === "zh" ? "nameZh" : "name";
+    ["name", "location"].forEach((field) => {
+    const sourceField = language === "zh" ? `${field}Zh` : field;
     if (typeof patch[sourceField] !== "string") return;
-    syncFieldTranslations(`info-entry:${sectionId}:${entryId}:name`, patch[sourceField], { html: true }, (suffix, translation) => {
+    syncFieldTranslations(`info-entry:${sectionId}:${entryId}:${field}`, patch[sourceField], { html: true }, (suffix, translation) => {
         updateData((prev) => ({
           ...prev,
           infoSections: (prev.infoSections || []).map((section) =>
@@ -1084,12 +1087,13 @@ function Portfolio() {
               ? {
                   ...section,
                   entries: (section.entries || []).map((entry) =>
-                    entry.id === entryId ? { ...entry, [`name${suffix}`]: translation } : entry
+                    entry.id === entryId ? { ...entry, [`${field}${suffix}`]: translation } : entry
                   ),
                 }
               : section
           ),
         }));
+    });
     });
   };
 
@@ -1317,19 +1321,21 @@ function Portfolio() {
           });
         });
         (section.entries || []).forEach((entry) => {
-          const text = sourceValue(entry, "name", target);
-          if (typeof text !== "string" || !text.trim()) return;
-          jobs.push({
-            text, target, html: true,
-            apply: (translation) => updateData((prev) => ({
-              ...prev,
-              infoSections: (prev.infoSections || []).map((item) => item.id === section.id ? {
-                ...item,
-                entries: (item.entries || []).map((currentEntry) =>
-                  currentEntry.id === entry.id ? { ...currentEntry, [`name${target.suffix}`]: translation } : currentEntry
-                ),
-              } : item),
-            })),
+          ["name", "location"].forEach((field) => {
+            const text = sourceValue(entry, field, target);
+            if (typeof text !== "string" || !text.trim()) return;
+            jobs.push({
+              text, target, html: true,
+              apply: (translation) => updateData((prev) => ({
+                ...prev,
+                infoSections: (prev.infoSections || []).map((item) => item.id === section.id ? {
+                  ...item,
+                  entries: (item.entries || []).map((currentEntry) =>
+                    currentEntry.id === entry.id ? { ...currentEntry, [`${field}${target.suffix}`]: translation } : currentEntry
+                  ),
+                } : item),
+              })),
+            });
           });
         });
       });
@@ -1361,7 +1367,10 @@ function Portfolio() {
         suffixes.forEach((suffix) => { delete next[`title${suffix}`]; delete next[`body${suffix}`]; });
         next.entries = (next.entries || []).map((entry) => {
           const nextEntry = { ...entry };
-          suffixes.forEach((suffix) => delete nextEntry[`name${suffix}`]);
+          suffixes.forEach((suffix) => {
+            delete nextEntry[`name${suffix}`];
+            delete nextEntry[`location${suffix}`];
+          });
           return nextEntry;
         });
         return next;
@@ -1398,7 +1407,9 @@ function Portfolio() {
       // 而不是从系统默认值开始（这样调整起来更连贯，不会突然跳回默认大小）
       const basisTypography = prev[deviceBaseKey] || DEFAULT_TYPOGRAPHY;
       const prevTypography = prev[fieldKey] || basisTypography;
-      const prevTarget = prevTypography[targetKey] || basisTypography[targetKey] || DEFAULT_TYPOGRAPHY[targetKey];
+      const exhibitionFallback =
+        prevTypography.infoBodyExhibition || basisTypography.infoBodyExhibition || DEFAULT_TYPOGRAPHY.infoBodyExhibition;
+      const prevTarget = prevTypography[targetKey] || basisTypography[targetKey] || DEFAULT_TYPOGRAPHY[targetKey] || exhibitionFallback;
       return {
         ...prev,
         [fieldKey]: {
@@ -1814,7 +1825,7 @@ function Portfolio() {
             id: uid(),
             category,
             title: "新展览",
-            entries: [{ id: uid(), year: "2026", name: "点击这里填写展览名称" }],
+            entries: [{ id: uid(), year: "2026", name: "点击这里填写展览名称", location: "点击这里填写展览地点" }],
           }
         : {
             id: uid(),
@@ -1860,7 +1871,7 @@ function Portfolio() {
       ...prev,
       infoSections: (prev.infoSections || []).map((s) =>
         s.id === sectionId
-          ? { ...s, entries: [...(s.entries || []), { id: uid(), year: "", name: "" }] }
+          ? { ...s, entries: [...(s.entries || []), { id: uid(), year: "", name: "", location: "" }] }
           : s
       ),
     }));
@@ -1920,14 +1931,14 @@ function Portfolio() {
     "source-han-serif-jp": "ja",
   };
   const langFor = (targetKey) => {
-    const t = typography[targetKey] || DEFAULT_TYPOGRAPHY[targetKey];
+    const t = typography[targetKey] || DEFAULT_TYPOGRAPHY[targetKey] || typography.infoBodyExhibition || DEFAULT_TYPOGRAPHY.infoBodyExhibition;
     if (isZh) return isTraditional ? "zh-Hant" : CJK_LANG_BY_FONT_ID[t.fontFamily];
     if (language === "ja") return CJK_LANG_BY_FONT_ID[t.fontFamily] || "ja";
     return undefined;
   };
 
   const styleFor = (targetKey) => {
-    const t = typography[targetKey] || DEFAULT_TYPOGRAPHY[targetKey];
+    const t = typography[targetKey] || DEFAULT_TYPOGRAPHY[targetKey] || typography.infoBodyExhibition || DEFAULT_TYPOGRAPHY.infoBodyExhibition;
     const preset = fontOptions.find((f) => f.id === t.fontFamily) || fontOptions[0];
 
     // 中文模式下的字体规则：
@@ -1980,10 +1991,15 @@ function Portfolio() {
   const infoBodyInfoLang = langFor("infoBodyInfo");
   const infoBodyExhibitionStyle = styleFor("infoBodyExhibition");
   const infoBodyExhibitionLang = langFor("infoBodyExhibition");
+  const infoExhibitionNameStyle = styleFor("infoExhibitionName");
+  const infoExhibitionNameLang = langFor("infoExhibitionName");
+  const infoExhibitionLocationStyle = styleFor("infoExhibitionLocation");
+  const infoExhibitionLocationLang = langFor("infoExhibitionLocation");
   const footerLinksStyle = styleFor("footerLinks");
   const footerLinksLang = langFor("footerLinks");
 
-  const activeTypoValue = typography[activeTypoTarget] || DEFAULT_TYPOGRAPHY[activeTypoTarget];
+  const activeTypoValue =
+    typography[activeTypoTarget] || DEFAULT_TYPOGRAPHY[activeTypoTarget] || typography.infoBodyExhibition || DEFAULT_TYPOGRAPHY.infoBodyExhibition;
   const activeTypoPreset =
     fontOptions.find((f) => f.id === activeTypoValue.fontFamily) || fontOptions[0];
 
@@ -2317,7 +2333,9 @@ function Portfolio() {
               onChange={(e) => setActiveTypoTarget(e.target.value)}
               className="w-full text-sm px-2 py-1.5 rounded-md border border-neutral-300 bg-white"
             >
-              {TYPOGRAPHY_TARGETS.map((t) => (
+              {TYPOGRAPHY_TARGETS.filter((t) =>
+                (isMobile || !t.mobileOnly) && !(isMobile && t.key === "infoBodyExhibition")
+              ).map((t) => (
                 <option key={t.key} value={t.key}>
                   {t.label}
                 </option>
@@ -3379,6 +3397,10 @@ function Portfolio() {
             bodyInfoLang={infoBodyInfoLang}
             bodyExhibitionStyle={infoBodyExhibitionStyle}
             bodyExhibitionLang={infoBodyExhibitionLang}
+            exhibitionNameStyle={infoExhibitionNameStyle}
+            exhibitionNameLang={infoExhibitionNameLang}
+            exhibitionLocationStyle={infoExhibitionLocationStyle}
+            exhibitionLocationLang={infoExhibitionLocationLang}
             isZh={isZh}
             tField={tField}
             langKey={langKey}
@@ -3969,6 +3991,34 @@ function normalizeInfoTypography(raw, { title = false } = {}) {
   return normalizeLineWrappers(html);
 }
 
+// 旧展览数据把“展览名称、地点”写在同一个 name 字段里。移动端需要两行时，
+// 优先使用新 location 字段；旧数据则尽量在斜体标题或书名号后的第一个逗号处分开。
+function splitExhibitionNameAndLocation(rawName, rawLocation) {
+  const name = normalizeInfoTypography(rawName);
+  const location = normalizeInfoTypography(rawLocation);
+  if (location) return { name, location };
+
+  let splitAt = -1;
+  const italicEnd = name.lastIndexOf("</i>");
+  if (italicEnd >= 0) {
+    const match = /^[，,]\s*/.exec(name.slice(italicEnd + 4));
+    if (match) splitAt = italicEnd + 4;
+  }
+  if (splitAt < 0) {
+    const bracketMatch = /》[，,]\s*/.exec(name);
+    if (bracketMatch) splitAt = bracketMatch.index + 1;
+  }
+  if (splitAt < 0) splitAt = name.search(/[，,]/);
+  if (splitAt < 0) return { name, location: "" };
+
+  const separator = /^[，,]\s*/.exec(name.slice(splitAt));
+  const locationStart = splitAt + (separator ? separator[0].length : 1);
+  return {
+    name: name.slice(0, splitAt),
+    location: name.slice(locationStart),
+  };
+}
+
 function splitLeadingToken(html) {
   const container = document.createElement("div");
   container.innerHTML = html;
@@ -4132,6 +4182,10 @@ function InfoView({
   bodyInfoLang,
   bodyExhibitionStyle,
   bodyExhibitionLang,
+  exhibitionNameStyle,
+  exhibitionNameLang,
+  exhibitionLocationStyle,
+  exhibitionLocationLang,
   isZh,
   tField,
   langKey,
@@ -4204,8 +4258,15 @@ function InfoView({
                 editMode ? (
                   // 展览类编辑：一行一个条目，年份和名称是两个真正分开的输入框，不是靠空格拆的
                   <div className="space-y-3">
-                    {(section.entries || []).map((entry) => (
-                      <div key={entry.id} className="flex items-start gap-2">
+                    {(section.entries || []).map((entry) => {
+                      const entryParts = splitExhibitionNameAndLocation(
+                        tField(entry, "name"),
+                        tField(entry, "location")
+                      );
+                      const entryNameStyle = isMobile ? exhibitionNameStyle : bodyStyle;
+                      const entryNameLang = isMobile ? exhibitionNameLang : bodyLang;
+                      return (
+                      <div key={entry.id} className={isMobile ? "grid grid-cols-[5rem_minmax(0,1fr)] gap-x-2 gap-y-1" : "flex items-start gap-2"}>
                         <input
                           type="text"
                           value={entry.year || ""}
@@ -4218,12 +4279,15 @@ function InfoView({
                           <div className="flex-1 min-w-0">
                             <RichEditableField
                               as="span"
-                              value={normalizeInfoTypography(tField(entry, "name"))}
+                              value={entryParts.name}
                               editMode={editMode}
-                              onChange={(v) => onUpdateEntry(section.id, entry.id, { [langKey("name")]: normalizeInfoTypography(v) })}
+                              onChange={(v) => onUpdateEntry(section.id, entry.id, {
+                                [langKey("name")]: normalizeInfoTypography(v),
+                                [langKey("location")]: entryParts.location,
+                              })}
                               className="block"
-                              style={{ ...bodyStyle, overflowWrap: "break-word" }}
-                              lang={bodyLang}
+                              style={{ ...entryNameStyle, overflowWrap: "break-word" }}
+                              lang={entryNameLang}
                             />
                           </div>
                           <button
@@ -4234,8 +4298,23 @@ function InfoView({
                             ✕
                           </button>
                         </div>
+                        {isMobile && (
+                          <>
+                            <span aria-hidden="true" />
+                            <RichEditableField
+                              as="span"
+                              value={entryParts.location}
+                              editMode={editMode}
+                              onChange={(v) => onUpdateEntry(section.id, entry.id, { [langKey("location")]: normalizeInfoTypography(v) })}
+                              className="block"
+                              style={{ ...exhibitionLocationStyle, overflowWrap: "break-word" }}
+                              lang={exhibitionLocationLang}
+                            />
+                          </>
+                        )}
                       </div>
-                    ))}
+                      );
+                    })}
                     <button
                       onClick={() => onAddEntry(section.id)}
                       className="text-[11px] font-bold px-2.5 py-1 rounded-full bg-neutral-100 text-neutral-500 hover:bg-neutral-200 transition-colors"
@@ -4261,12 +4340,35 @@ function InfoView({
                     }}
                     lang={bodyLang}
                   >
-                    {(section.entries || []).map((entry) => (
-                      <React.Fragment key={entry.id}>
-                        <span style={{ lineHeight: 1.3 }}>{entry.year}</span>
-                        <span style={{ lineHeight: 1.3 }} dangerouslySetInnerHTML={{ __html: normalizeInfoTypography(tField(entry, "name")) }} />
-                      </React.Fragment>
-                    ))}
+                    {(section.entries || []).map((entry) => {
+                      const entryParts = splitExhibitionNameAndLocation(
+                        tField(entry, "name"),
+                        tField(entry, "location")
+                      );
+                      const desktopEntryHtml = entryParts.location
+                        ? `${entryParts.name}, ${entryParts.location}`
+                        : entryParts.name;
+                      return (
+                        <React.Fragment key={entry.id}>
+                          <span style={{ lineHeight: 1.3 }}>{entry.year}</span>
+                          <span
+                            style={{ ...(isMobile ? exhibitionNameStyle : bodyStyle), lineHeight: 1.3 }}
+                            lang={isMobile ? exhibitionNameLang : bodyLang}
+                            dangerouslySetInnerHTML={{ __html: isMobile ? entryParts.name : desktopEntryHtml }}
+                          />
+                          {isMobile && entryParts.location && (
+                            <>
+                              <span aria-hidden="true" />
+                              <span
+                                style={{ ...exhibitionLocationStyle, lineHeight: 1.3 }}
+                                lang={exhibitionLocationLang}
+                                dangerouslySetInnerHTML={{ __html: entryParts.location }}
+                              />
+                            </>
+                          )}
+                        </React.Fragment>
+                      );
+                    })}
                   </div>
                 )
               ) : editMode ? (
