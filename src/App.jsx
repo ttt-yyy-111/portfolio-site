@@ -3796,8 +3796,10 @@ function DetailView({
   }, [titleStyle]);
   const compactHeaderYearStyle = useMemo(() => {
     const weight = parseFloat(titleStyle?.fontWeight);
+    const size = parseFloat(compactHeaderStyle.fontSize);
     return {
       ...compactHeaderStyle,
+      fontSize: Number.isFinite(size) ? `${size * 0.8}px` : "0.8em",
       fontWeight: Number.isFinite(weight) ? Math.max(100, weight - 200) : 300,
       fontStyle: "normal",
     };
@@ -3861,7 +3863,7 @@ function DetailView({
             }`}
           >
             <span style={compactHeaderStyle} lang={titleLang}>{displayTitle}</span>
-            <span aria-hidden>{"\u00A0".repeat(4)}</span>
+            <span aria-hidden>{"\u00A0".repeat(6)}</span>
             <span style={compactHeaderYearStyle} lang={yearLang}>
               {work.year}
             </span>
