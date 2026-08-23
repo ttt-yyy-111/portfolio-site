@@ -2792,7 +2792,7 @@ function Portfolio() {
       <aside
         className={
           isMobile
-            ? `fixed inset-0 z-40 bg-white flex flex-col ${
+            ? `${showPhoneFrame ? "absolute" : "fixed"} inset-0 z-40 bg-white flex flex-col ${
                 hasMounted ? "transition-transform duration-300 ease-in-out" : ""
               } ${mobileMenuOpen ? "translate-x-0" : "translate-x-full pointer-events-none"}`
             : "relative flex-shrink-0 h-full flex flex-col"
@@ -2805,7 +2805,7 @@ function Portfolio() {
                 // class 名字是不会有任何视觉效果的，这个菜单本该"藏在屏幕右边看不见"，
                 // 那一瞬间就会变成正常显示在页面里，能看到内容"裸奔"一下。内联样式不用
                 // 等 Tailwind 编译，浏览器一读到就会立刻生效，从第一帧画面开始就是对的。
-                position: "fixed",
+                position: showPhoneFrame ? "absolute" : "fixed",
                 inset: 0,
                 zIndex: 40,
                 backgroundColor: "#fff",
