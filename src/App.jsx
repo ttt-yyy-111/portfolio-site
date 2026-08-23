@@ -4408,7 +4408,7 @@ function InfoView({
                           <div
                             key={entry.id}
                             className="grid"
-                            style={{ gridTemplateColumns: "4rem minmax(0, 1fr)", columnGap: "0.4em", rowGap: "2px" }}
+                            style={{ gridTemplateColumns: "3.5rem minmax(0, 1fr)", columnGap: "0.25em", rowGap: "2px" }}
                           >
                             <span style={{ lineHeight: 1.3 }}>{entry.year}</span>
                             <span
