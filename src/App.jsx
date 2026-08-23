@@ -385,6 +385,7 @@ function Portfolio() {
   const LANGUAGE_OPTIONS = [
     { code: "en", label: "EN", name: "English" },
     { code: "zh", label: "简", name: "简体中文" },
+    { code: "zhHant", label: "繁", name: "繁體中文" },
     { code: "es", label: "ES", name: "Español" },
   ];
   const LANGUAGE_STORAGE_KEY = "portfolio-site:language";
@@ -405,8 +406,20 @@ function Portfolio() {
       }
     }
   };
-  const isZh = language === "zh";
+  const isTraditional = language === "zhHant";
+  const isZh = language === "zh" || isTraditional;
   const isEs = language === "es";
+  const [traditionalConverter, setTraditionalConverter] = useState(null);
+  useEffect(() => {
+    if (!isTraditional || traditionalConverter) return undefined;
+    let cancelled = false;
+    import("opencc-js/cn2t").then(({ default: OpenCC }) => {
+      if (!cancelled) setTraditionalConverter(() => OpenCC.Converter({ from: "cn", to: "tw" }));
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [isTraditional, traditionalConverter]);
   // 内容字段（标题、材料、尺寸、简介、系列名称）用的语言后缀：中文是 Zh，西班牙语是 Es，英文没有后缀
   const contentLangSuffix = isZh ? "Zh" : isEs ? "Es" : "";
   // 点击语言按钮弹出的下拉菜单是否展开
@@ -474,9 +487,12 @@ function Portfolio() {
   // 不会因为漏填翻译就显示空白。
   const tField = (obj, key) => {
     if (!obj) return "";
-    if (contentLangSuffix) return obj[`${key}${contentLangSuffix}`] || obj[key] || "";
-    return obj[key] || "";
+    const value = contentLangSuffix ? obj[`${key}${contentLangSuffix}`] || obj[key] || "" : obj[key] || "";
+    return isTraditional && traditionalConverter && typeof value === "string"
+      ? traditionalConverter(value)
+      : value;
   };
+  const zhText = (value) => (isTraditional && traditionalConverter ? traditionalConverter(value) : value);
   // 编辑模式下，根据当前语言决定这次改动要写回哪个字段（英文原文字段，还是对应的 xxxZh / xxxEs 字段）
   const langKey = (key) => (contentLangSuffix ? `${key}${contentLangSuffix}` : key);
 
@@ -1436,7 +1452,7 @@ function Portfolio() {
   };
   const langFor = (targetKey) => {
     const t = typography[targetKey] || DEFAULT_TYPOGRAPHY[targetKey];
-    return isZh ? CJK_LANG_BY_FONT_ID[t.fontFamily] : undefined;
+    return isZh ? (isTraditional ? "zh-Hant" : CJK_LANG_BY_FONT_ID[t.fontFamily]) : undefined;
   };
 
   const styleFor = (targetKey) => {
@@ -1451,7 +1467,9 @@ function Portfolio() {
     //   不做任何覆盖。英文/西班牙语模式同样完全按选中的字体显示。
     let fontFamily = preset.family;
     if (isZh && preset.id === "source-han-sans-sc") {
-      fontFamily = "'Source Han Sans SC Punctuation', 'Source Han Sans SC Full', sans-serif";
+      fontFamily = isTraditional
+        ? "'Source Han Sans SC Punctuation', 'Source Han Sans TC Full', sans-serif"
+        : "'Source Han Sans SC Punctuation', 'Source Han Sans SC Full', sans-serif";
     } else if (isZh && preset.id === "source-han-sans-tc") {
       fontFamily = "'Source Han Sans SC Punctuation', 'Source Han Sans TC Full', sans-serif";
     }
@@ -1613,8 +1631,8 @@ function Portfolio() {
         isMobile ? (
           <button
             onClick={scrollGalleryToTop}
-            aria-label={isZh ? "回到顶部" : isEs ? "Volver arriba" : "Back to top"}
-            title={isZh ? "回到顶部" : isEs ? "Volver arriba" : "Back to top"}
+          aria-label={isZh ? zhText("回到顶部") : isEs ? "Volver arriba" : "Back to top"}
+          title={isZh ? zhText("回到顶部") : isEs ? "Volver arriba" : "Back to top"}
             className="absolute right-6 z-20 w-11 h-11 rounded-full flex items-center justify-center bg-neutral-900 text-white shadow-lg"
             style={{ bottom: "calc(1.5rem + env(safe-area-inset-bottom, 0px))" }}
           >
@@ -1626,8 +1644,8 @@ function Portfolio() {
           <CircleRevealArrowButton
             direction="up"
             onClick={scrollGalleryToTop}
-            ariaLabel={isZh ? "回到顶部" : isEs ? "Volver arriba" : "Back to top"}
-            title={isZh ? "回到顶部" : isEs ? "Volver arriba" : "Back to top"}
+            ariaLabel={isZh ? zhText("回到顶部") : isEs ? "Volver arriba" : "Back to top"}
+            title={isZh ? zhText("回到顶部") : isEs ? "Volver arriba" : "Back to top"}
             className="absolute right-6 z-20"
             style={{ bottom: "calc(1.5rem + env(safe-area-inset-bottom, 0px))" }}
           />
@@ -1763,7 +1781,7 @@ function Portfolio() {
           className="absolute top-12 right-3 z-30 w-72 max-h-[80vh] overflow-y-auto bg-white border border-neutral-200 rounded-xl shadow-lg p-4 space-y-4"
         >
           <div className="text-xs font-bold px-2 py-1 rounded bg-neutral-100 text-neutral-600 inline-block">
-            正在编辑：{isMobile ? "手机端" : "电脑端"} · {isZh ? "中文" : "英文"}
+            {zhText("正在编辑：")}{isMobile ? zhText("手机端") : zhText("电脑端")} · {isZh ? zhText("中文") : "英文"}
           </div>
           <div>
             <div className="text-xs text-neutral-500 mb-2">调整对象</div>
@@ -2219,7 +2237,7 @@ function Portfolio() {
                   : "'IBM Plex Sans', -apple-system, Arial, 'PingFang SC', sans-serif",
               }}
             >
-              {isZh ? "索引" : isEs ? "Índice" : "Index"}
+              {isZh ? zhText("索引") : isEs ? "Índice" : "Index"}
             </span>
             <button
               onClick={() => setMobileMenuOpen(false)}
@@ -2251,8 +2269,8 @@ function Portfolio() {
                 <CircleRevealArrowButton
                   direction="back"
                   onClick={goBackToGallery}
-                  ariaLabel={isZh ? "返回" : isEs ? "Atrás" : "Back"}
-                  title={isZh ? "返回" : isEs ? "Atrás" : "Back"}
+                  ariaLabel={isZh ? zhText("返回") : isEs ? "Atrás" : "Back"}
+                  title={isZh ? zhText("返回") : isEs ? "Atrás" : "Back"}
                 />
               )}
             </div>
@@ -3005,6 +3023,7 @@ function Portfolio() {
             navDirection={navDirection}
             isZh={isZh}
             isEs={isEs}
+            zhText={zhText}
             onBack={goBackToGallery}
           />
         )}
@@ -3803,6 +3822,7 @@ function DetailView({
   navDirection,
   isZh,
   isEs,
+  zhText,
   onBack,
 }) {
   const slideAnimation =
@@ -4032,7 +4052,7 @@ function DetailView({
           >
             <polyline points="15 6 9 12 15 18" />
           </svg>
-          {isZh ? "上一个" : isEs ? "Anterior" : "Previous"}
+          {isZh ? zhText("上一个") : isEs ? "Anterior" : "Previous"}
         </button>
         <button
           onClick={() => nextWork && onGoToWork(nextWork.id, "next")}
@@ -4041,7 +4061,7 @@ function DetailView({
             nextWork ? "text-neutral-900" : "text-neutral-300 cursor-not-allowed"
           }`}
         >
-          {isZh ? "下一个" : isEs ? "Siguiente" : "Next"}
+          {isZh ? zhText("下一个") : isEs ? "Siguiente" : "Next"}
           <svg
             viewBox="0 0 24 24"
             width="14"
