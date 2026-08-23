@@ -1298,7 +1298,9 @@ function Portfolio() {
       const seenSeries = new Set();
       (oldData.works || []).forEach((work) => {
         const text = sourceValue(work, "series", target);
-        const groupKey = target.source === "zh" ? work.series : text;
+        // 系列由「年份 + 英文分组键」确定；同名系列出现在不同年份时，
+        // 也要分别翻译，不能被去重逻辑跳过。
+        const groupKey = `${work.year}::${work.series}`;
         if (!text || seenSeries.has(groupKey)) return;
         seenSeries.add(groupKey);
         jobs.push({
@@ -1308,7 +1310,9 @@ function Portfolio() {
           apply: (translation) => updateData((prev) => ({
             ...prev,
             works: prev.works.map((item) =>
-              item.series === work.series ? { ...item, [`series${target.suffix}`]: translation } : item
+              item.year === work.year && item.series === work.series
+                ? { ...item, [`series${target.suffix}`]: translation }
+                : item
             ),
           })),
         });
