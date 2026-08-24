@@ -3974,6 +3974,7 @@ function GalleryGrid({
               tField={tField}
               isZh={isZh}
               isCjkLanguage={isCjkLanguage}
+              isMobile={isMobile}
             />
           ))}
         </div>
@@ -3982,12 +3983,60 @@ function GalleryGrid({
   );
 }
 
-function GalleryImage({ w, editMode, onSelect, onReplaceCover, skipReveal, tField, isZh, isCjkLanguage = false }) {
+function GalleryImage({
+  w,
+  editMode,
+  onSelect,
+  onReplaceCover,
+  skipReveal,
+  tField,
+  isZh,
+  isCjkLanguage = false,
+  isMobile = false,
+}) {
   const { ref, style } = useRevealAnimation(skipReveal);
+  const imageRef = useRef(null);
+  const [mobileCaptionVisible, setMobileCaptionVisible] = useState(false);
   const displayTitle = tField ? tField(w, "title") : w.title;
+
+  useEffect(() => {
+    if (!isMobile || editMode) {
+      setMobileCaptionVisible(false);
+      return undefined;
+    }
+
+    const el = imageRef.current;
+    if (!el) return undefined;
+
+    let previousScrollY = window.scrollY;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        const currentScrollY = window.scrollY;
+        const scrollingUp = currentScrollY < previousScrollY;
+        previousScrollY = currentScrollY;
+        const visibleRatio = entry.intersectionRatio;
+
+        if (visibleRatio <= 0.01) {
+          setMobileCaptionVisible(false);
+        } else if (scrollingUp) {
+          // 上滑时，图片露出约三分之一便显示；少于三分之一则收回。
+          setMobileCaptionVisible(visibleRatio >= 0.33);
+        } else if (visibleRatio >= 0.98) {
+          // 下滑时，等整张图片出现才显示，之后直到图片离开视野才收回。
+          setMobileCaptionVisible(true);
+        }
+      },
+      { threshold: [0, 0.01, 0.33, 0.98, 1] }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [editMode, isMobile]);
+
   return (
     <div ref={ref} style={style} className="relative w-full group">
       <button
+        ref={imageRef}
         onClick={() => !editMode && onSelect(w.id)}
         style={{ backgroundColor: w.tone }}
         className="block w-full rounded-xl overflow-hidden focus:outline-none"
@@ -4006,7 +4055,13 @@ function GalleryImage({ w, editMode, onSelect, onReplaceCover, skipReveal, tFiel
       </button>
       {!editMode && (
         <div
-          className="absolute inset-x-0 bottom-0 rounded-b-xl px-3 py-2 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          className={`absolute inset-x-0 bottom-0 rounded-b-xl px-3 py-2 pointer-events-none transition-all duration-300 ${
+            isMobile
+              ? mobileCaptionVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-4"
+              : "opacity-0 group-hover:opacity-100"
+          }`}
           style={{ background: "linear-gradient(to top, rgba(0,0,0,0.5), rgba(0,0,0,0))" }}
         >
     <span
