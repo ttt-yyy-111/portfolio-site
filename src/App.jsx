@@ -4062,7 +4062,11 @@ function GalleryImage({
                 : "opacity-0 translate-y-4"
               : "opacity-0 group-hover:opacity-100"
           }`}
-          style={{ background: "linear-gradient(to top, rgba(0,0,0,0.5), rgba(0,0,0,0))" }}
+          style={{
+            background: isMobile
+              ? "linear-gradient(to top, rgba(0,0,0,0.25), rgba(0,0,0,0))"
+              : "linear-gradient(to top, rgba(0,0,0,0.5), rgba(0,0,0,0))",
+          }}
         >
     <span
       className="block text-left text-white text-xs"
