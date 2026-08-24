@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useLayoutEffect, useRef, useMemo, useCallback } from "react";
+import OpenCC from "opencc-js/cn2t";
 
 // 网站的实际内容（文字、图片）不再直接打包进这个 JS 文件里了——之前图片全是以数据的形式
 // 直接写在 content.js 里，作品一多这个文件会涨到十几 MB，手机打开的时候要先把这么大一个文件
@@ -7,6 +8,8 @@ import React, { useState, useEffect, useLayoutEffect, useRef, useMemo, useCallba
 // 手机端体验会好很多。这两个变量在数据加载完成之前是空的，Portfolio 组件要等加载完了才会挂载。
 let DEFAULT_TYPOGRAPHY = {};
 let DEFAULT_DATA = {};
+// 繁体页面必须在首帧就能转换，不能等待异步分包加载；否则部分设备会短暂或持续显示简体。
+const TRADITIONAL_CONVERTER = OpenCC.Converter({ from: "cn", to: "tw" });
 
 const SIDEBAR_MIN_WIDTH = 260; // 左栏最小宽度（像素）
 
@@ -475,17 +478,7 @@ function Portfolio() {
     { codes: ["ko"], label: "韩语" },
     { codes: ["ja"], label: "日语" },
   ];
-  const [traditionalConverter, setTraditionalConverter] = useState(null);
-  useEffect(() => {
-    if (!isTraditional || traditionalConverter) return undefined;
-    let cancelled = false;
-    import("opencc-js/cn2t").then(({ default: OpenCC }) => {
-      if (!cancelled) setTraditionalConverter(() => OpenCC.Converter({ from: "cn", to: "tw" }));
-    });
-    return () => {
-      cancelled = true;
-    };
-  }, [isTraditional, traditionalConverter]);
+  const traditionalConverter = isTraditional ? TRADITIONAL_CONVERTER : null;
   // 内容字段（标题、材料、尺寸、简介、系列名称）用语言后缀；繁体与简体共用 Zh 源文本。
   const contentLangSuffix = isZh ? "Zh" : TRANSLATION_TARGETS[language]?.suffix || "";
   // 点击语言按钮弹出的下拉菜单是否展开
