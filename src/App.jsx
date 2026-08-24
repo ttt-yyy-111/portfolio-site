@@ -4006,12 +4006,14 @@ function GalleryImage({ w, editMode, onSelect, onReplaceCover, skipReveal, tFiel
           className="absolute inset-x-0 bottom-0 rounded-b-xl px-3 py-2 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           style={{ background: "linear-gradient(to top, rgba(0,0,0,0.5), rgba(0,0,0,0))" }}
         >
-          <span
-            className={`block text-left text-white text-xs ${isZh ? "" : "italic"}`}
-            style={{ fontFamily: "'IBM Plex Sans', sans-serif", fontWeight: 400 }}
-          >
-            {displayTitle}
-          </span>
+    <span
+      className="block text-left text-white text-xs"
+      style={{ fontFamily: "'IBM Plex Sans', sans-serif", fontWeight: 400 }}
+    >
+      <span className={isZh ? "" : "italic"}>{displayTitle}</span>
+      {"\u00A0".repeat(4)}
+      <span className="not-italic" style={{ fontStyle: "normal" }}>{w.year}</span>
+    </span>
         </div>
       )}
       {editMode && (
