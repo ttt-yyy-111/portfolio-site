@@ -3599,6 +3599,7 @@ function Portfolio() {
               skipReveal={justRestoredGallery}
               tField={tField}
               isZh={isZh}
+              isCjkLanguage={isZh || language === "ja" || language === "ko"}
               phonePreview={showPhoneFrame}
             />
           </>
@@ -3926,6 +3927,7 @@ function GalleryGrid({
   skipReveal = false,
   tField,
   isZh,
+  isCjkLanguage = false,
   phonePreview = false,
 }) {
   const containerRef = useRef(null);
@@ -3971,6 +3973,7 @@ function GalleryGrid({
               skipReveal={skipReveal}
               tField={tField}
               isZh={isZh}
+              isCjkLanguage={isCjkLanguage}
             />
           ))}
         </div>
@@ -3979,7 +3982,7 @@ function GalleryGrid({
   );
 }
 
-function GalleryImage({ w, editMode, onSelect, onReplaceCover, skipReveal, tField, isZh }) {
+function GalleryImage({ w, editMode, onSelect, onReplaceCover, skipReveal, tField, isZh, isCjkLanguage = false }) {
   const { ref, style } = useRevealAnimation(skipReveal);
   const displayTitle = tField ? tField(w, "title") : w.title;
   return (
@@ -4010,7 +4013,7 @@ function GalleryImage({ w, editMode, onSelect, onReplaceCover, skipReveal, tFiel
       className="block text-left text-white text-xs"
       style={{ fontFamily: "'IBM Plex Sans', sans-serif", fontWeight: 400 }}
     >
-      <span className={isZh ? "" : "italic"}>{displayTitle}</span>
+      <span className={isCjkLanguage ? "" : "italic"}>{displayTitle}</span>
       {"\u00A0".repeat(4)}
       <span className="not-italic" style={{ fontStyle: "normal" }}>{w.year}</span>
     </span>
