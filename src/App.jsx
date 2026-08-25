@@ -5392,8 +5392,13 @@ export default function App() {
 
   if (status === "loading") {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-white text-neutral-400 text-sm">
-        Loading…
+      <div className="site-loader" role="status" aria-label="Loading">
+        <span>Loading</span>
+        <div className="site-loader-dots" aria-hidden="true">
+          <span className="site-loader-dot" />
+          <span className="site-loader-dot" />
+          <span className="site-loader-dot" />
+        </div>
       </div>
     );
   }

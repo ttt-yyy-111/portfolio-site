@@ -64,6 +64,47 @@
     </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+      html,
+      body,
+      #root {
+        width: 100%;
+        min-height: 100%;
+        margin: 0;
+      }
+      body {
+        background: #fff;
+      }
+      .site-loader {
+        min-height: 100vh;
+        min-height: 100dvh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        background: #fff;
+        color: #111;
+        font: 400 14px/1.2 Arial, sans-serif;
+      }
+      .site-loader-dots {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        height: 12px;
+      }
+      .site-loader-dot {
+        width: 5px;
+        height: 5px;
+        border-radius: 999px;
+        background: currentColor;
+        animation: site-loader-dot-pulse 900ms ease-in-out infinite;
+      }
+      .site-loader-dot:nth-child(2) { animation-delay: 150ms; }
+      .site-loader-dot:nth-child(3) { animation-delay: 300ms; }
+      @keyframes site-loader-dot-pulse {
+        0%, 100% { transform: scale(0.65); opacity: 0.35; }
+        50% { transform: scale(1.35); opacity: 1; }
+      }
       /* 去掉手机浏览器点击时自带的灰色高亮提示 */
       * {
         -webkit-tap-highlight-color: transparent;
@@ -99,7 +140,16 @@
     </style>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <div class="site-loader" role="status" aria-label="Loading">
+        <span>Loading</span>
+        <div class="site-loader-dots" aria-hidden="true">
+          <span class="site-loader-dot"></span>
+          <span class="site-loader-dot"></span>
+          <span class="site-loader-dot"></span>
+        </div>
+      </div>
+    </div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
