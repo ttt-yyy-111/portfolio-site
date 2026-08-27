@@ -3483,8 +3483,9 @@ function Portfolio() {
             isMobile={isMobile}
             phonePreview={showPhoneFrame}
           />
-        ) : !selectedWork ? (
+        ) : (
           <>
+          <div className={selectedWork ? "hidden" : ""}>
             {isMobile && (
               <div
                 className="px-3 pt-5 pb-10 flex flex-col gap-1 text-2xl"
@@ -3614,8 +3615,8 @@ function Portfolio() {
               isCjkLanguage={isZh || language === "ja" || language === "ko"}
               phonePreview={showPhoneFrame}
             />
-          </>
-        ) : (
+          </div>
+          {selectedWork && (
           <DetailView
             work={selectedWork}
             displayTitle={tField(selectedWork, "title")}
@@ -3648,6 +3649,8 @@ function Portfolio() {
             zhText={zhText}
             onBack={goBackToGallery}
           />
+          )}
+          </>
         )}
       </main>
     </div>
