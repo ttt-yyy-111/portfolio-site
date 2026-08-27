@@ -4010,6 +4010,12 @@ function GalleryImage({
   const imageRef = useRef(null);
   const [mobileCaptionVisible, setMobileCaptionVisible] = useState(false);
   const displayTitle = tField ? tField(w, "title") : w.title;
+  const originalCoverSrc = w.images?.[0] || w.cover;
+  // 首页只显示预览图；详情页仍然保留原始作品图片。这样从详情页返回画廊时，
+  // 手机不必再次解码数百 MB 的原始图像。
+  const galleryCoverSrc = originalCoverSrc?.startsWith("/images/")
+    ? originalCoverSrc.replace("/images/", "/images/gallery/")
+    : originalCoverSrc;
 
   useEffect(() => {
     if (!isMobile || editMode) {
@@ -4054,13 +4060,17 @@ function GalleryImage({
         className="block w-full rounded-xl overflow-hidden focus:outline-none"
       >
         <img
-          src={w.images?.[0] || w.cover}
+          src={galleryCoverSrc}
           alt={w.title}
           draggable={false}
           loading={skipReveal ? "eager" : "lazy"}
           decoding="async"
           onContextMenu={(e) => !editMode && e.preventDefault()}
           onDragStart={(e) => e.preventDefault()}
+          onError={(e) => {
+            // 新添加、尚未生成缩略图的作品仍可正常显示原图。
+            if (galleryCoverSrc !== originalCoverSrc) e.currentTarget.src = originalCoverSrc;
+          }}
           className="w-full h-auto object-cover opacity-95 transition-opacity duration-300 select-none pointer-events-none"
           style={{ WebkitTouchCallout: "none" }}
         />
