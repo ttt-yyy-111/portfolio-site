@@ -683,6 +683,15 @@ function Portfolio() {
       const target = galleryScrollRef.current;
       restoreGalleryScrollRef.current = false;
 
+      // 手机浏览器的“后退”手势本身就会在主线程上做页面恢复动画。这里若再连续多帧
+      // 读取高度、强制写入 scrollTop，会和系统手势互相抢占，表现为返回后数秒不能点击、
+      // 也不能继续滑动。移动端直接恢复一次位置，不隐藏画廊，也不做后续的逐帧校正。
+      if (isMobile) {
+        setRestoringScroll(false);
+        mainRef.current.scrollTop = target;
+        return undefined;
+      }
+
       // 画廊图片是并发异步加载进来的，谁先加载完全看网络情况，不一定按从上到下的顺序：
       // 可能后面（更靠下）的某几张图片碰巧先加载完，让页面总高度"看起来"已经够滚到目标
       // 位置了；但其实排在更靠上的某张图片其实还没加载完，一旦它稍后加载完成，会把下面
@@ -735,7 +744,7 @@ function Portfolio() {
     } else {
       mainRef.current.scrollTop = 0;
     }
-  }, [selectedId, showInfo]);
+  }, [isMobile, selectedId, showInfo]);
 
   const recalcSidebarWidth = useCallback(() => {
     // 如果之前手动拖拽调整过宽度、并且保存下来了，就一直用这个手动设置的宽度，不再自动测量
