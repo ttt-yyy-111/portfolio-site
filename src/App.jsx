@@ -920,12 +920,15 @@ function Portfolio() {
   // 用 useLayoutEffect 而不是 useEffect，是为了在浏览器画出这一帧之前就把宽度算好、
   // 改好，这样手风琴展开动画播放的时候，宽度已经是对的，不会出现"先窄一下再变宽"的闪烁。
   useLayoutEffect(() => {
+    // 手机端没有固定左栏；返回页面时若仍同步测量抽屉中全部作品文字，会阻塞首帧交互。
+    if (isMobile) return;
     recalcSidebarWidth();
-  }, [data, editMode, showInfo, selectedId, expandedSeries, recalcSidebarWidth]);
+  }, [data, editMode, isMobile, showInfo, selectedId, expandedSeries, recalcSidebarWidth]);
 
   // 内容区域自身尺寸变化时（比如字体异步加载完成后文字变宽）也重新量一次，
   // 窗口大小变化时重新量一次 1/4 比例应该是多宽
   useEffect(() => {
+    if (isMobile) return undefined;
     const headerEl = sidebarHeaderRef.current;
     const contentEl = sidebarContentRef.current;
     const footerEl = sidebarFooterRef.current;
@@ -943,7 +946,7 @@ function Portfolio() {
       ro.disconnect();
       window.removeEventListener("resize", recalcSidebarWidth);
     };
-  }, [recalcSidebarWidth]);
+  }, [isMobile, recalcSidebarWidth]);
 
   // ---------- 修改只存在内存里，标记一下"有改动还没导出" ----------
   const updateData = useCallback((updater) => {
