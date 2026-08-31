@@ -32,7 +32,7 @@
       "lineHeight": 1.2,
       "fontFamily": "ibm-plex-sans",
       "fontWeight": 700,
-      "italic": false,
+      "italic": true,
       "letterSpacing": 1,
       "fontWidth": 100
     },
@@ -135,7 +135,7 @@
         "lineHeight": 1.2,
         "fontFamily": "ibm-plex-sans",
         "fontWeight": 700,
-        "italic": false,
+        "italic": true,
         "letterSpacing": 1,
         "fontWidth": 100
       },
