@@ -1888,7 +1888,7 @@ function Portfolio() {
       ...prev,
       infoSections: (prev.infoSections || []).map((s) =>
         s.id === sectionId
-          ? { ...s, entries: [...(s.entries || []), { id: uid(), year: "", name: "", location: "" }] }
+          ? { ...s, entries: [{ id: uid(), year: "", name: "", location: "" }, ...(s.entries || [])] }
           : s
       ),
     }));

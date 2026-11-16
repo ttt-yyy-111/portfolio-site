@@ -345,6 +345,26 @@
         "category": "exhibition",
         "entries": [
           {
+            "id": "pghku0iigecmwiwv6xc",
+            "year": "2026",
+            "name": "<b><i>Cool Mist on Eyelashes</i></b>",
+            "location": "L.L. Contemporary, Richmond Hill (Greater Toronto Area), Canada",
+            "nameZh": "<b>睫毛上的凉雾</b>",
+            "locationZh": "L.L. Contemporary，列治文山，加拿大",
+            "locationDe": "L.L. Contemporary, Richmond Hill (Großraum Toronto), Kanada",
+            "nameDe": "<b>Kühler Nebel auf den Wimpern</b>",
+            "nameEs": "<b><i>Un poco de vapor fresco en las pestañas</i></b>",
+            "locationEs": "L.L. Contemporary, Richmond Hill (Área Metropolitana de Toronto), Canadá",
+            "nameFr": "<b><i>Une brume rafraîchissante sur les cils</i></b>",
+            "locationFr": "L.L. Contemporary, Richmond Hill (région du Grand Toronto), Canada",
+            "nameIt": "<b><i>Una nebbiolina fresca sulle ciglia</i></b>",
+            "locationIt": "L.L. Contemporary, Richmond Hill (area metropolitana di Toronto), Canada",
+            "nameKo": "<b>속눈썹에 내려앉은 서늘한 안개</b>",
+            "locationKo": "L.L. Contemporary, 리치먼드 힐 (토론토 광역권), 캐나다",
+            "nameJa": "<b>まつげに漂う涼やかな霧</b>",
+            "locationJa": "L.L. Contemporary、リッチモンド・ヒル（トロント大都市圏）、カナダ"
+          },
+          {
             "id": "fwo1nhtxka7ms7qhdsl",
             "year": "2026",
             "name": "<i><b>Cloudy to Clear, a Hint of Breeze</b></i>",
