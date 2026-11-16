@@ -376,8 +376,15 @@ function Portfolio() {
   const [translationRegeneration, setTranslationRegeneration] = useState(null);
   const [translationMenuOpen, setTranslationMenuOpen] = useState(false);
   const translationMenuRef = useRef(null);
-  const [selectedId, setSelectedId] = useState(null);
-  const [showInfo, setShowInfo] = useState(false);
+  const [initialNavState] = useState(() =>
+    typeof window !== "undefined" ? window.history.state || {} : {}
+  );
+  const [selectedId, setSelectedId] = useState(() =>
+    DEFAULT_DATA.works?.some((work) => work.id === initialNavState.selectedId)
+      ? initialNavState.selectedId
+      : null
+  );
+  const [showInfo, setShowInfo] = useState(() => !!initialNavState.showInfo);
   const [navDirection, setNavDirection] = useState(null); // 'prev' | 'next' | null，只有点详情页的Previous/Next才会设置
 
   // ?edit=1 只会打开登录入口；编辑工具与翻译接口都要通过服务器端密码验证后才可使用。
@@ -633,7 +640,10 @@ function Portfolio() {
   // 不然会保留上一屏的滚动位置，新页面看起来像是"从中间开始"的，还得自己往上滑。
   // ——除了一种情况：详情页左侧的"返回"按钮（以及浏览器后退键），要恢复回画廊原来
   // 滚动到的位置，不是回到顶部。
-  const galleryScrollRef = useRef(0); // 离开画廊之前，记一下画廊滚动到哪了
+  const galleryScrollRef = useRef(initialNavState.galleryScrollTop || 0); // 离开画廊之前，记一下画廊滚动到哪了
+  const initialPageScrollRef = useRef(
+    Number.isFinite(initialNavState.scrollTop) ? initialNavState.scrollTop : null
+  );
   const restoreGalleryScrollRef = useRef(false); // 这次回画廊是不是要恢复位置（点了"返回"/浏览器后退才是true）
   const smoothGalleryScrollToTopRef = useRef(false); // 点姓名回首页时，改用平滑滚回顶部
   // 画面是不是正处在"恢复滚动位置"的过程中——这段时间内容会先隐藏起来，见下面的注释
@@ -679,6 +689,29 @@ function Portfolio() {
   };
   useLayoutEffect(() => {
     if (!mainRef.current) return;
+    if (initialPageScrollRef.current !== null) {
+      const el = mainRef.current;
+      const target = initialPageScrollRef.current;
+      initialPageScrollRef.current = null;
+      el.scrollTop = target;
+      if (el.scrollTop >= target || target === 0) return;
+      // 刷新后图片可能尚未撑开页面；图片加载时继续尝试恢复位置。
+      const restoreAfterImageLoad = () => {
+        el.scrollTop = target;
+        if (el.scrollTop >= target) cleanup();
+      };
+      const cleanup = () => {
+        el.removeEventListener("load", restoreAfterImageLoad, true);
+        el.removeEventListener("touchstart", cleanup);
+        el.removeEventListener("wheel", cleanup);
+        window.clearTimeout(timeout);
+      };
+      el.addEventListener("load", restoreAfterImageLoad, true);
+      el.addEventListener("touchstart", cleanup, { passive: true });
+      el.addEventListener("wheel", cleanup, { passive: true });
+      const timeout = window.setTimeout(cleanup, 3000);
+      return cleanup;
+    }
     if (!selectedId && !showInfo && restoreGalleryScrollRef.current) {
       const target = galleryScrollRef.current;
       restoreGalleryScrollRef.current = false;
@@ -853,17 +886,29 @@ function Portfolio() {
   // 并监听 popstate 事件：点后退/前进键时，从历史记录里取出当时的页面状态直接恢复，
   // 这样后退键就能像普通网页一样，一步步退回到之前看过的页面。
   const isPopNavRef = useRef(false); // 当前这次状态变化是不是"点了后退/前进"引起的——是的话就不用再重复 push 一次历史
+  const saveCurrentScrollState = () => {
+    window.history.replaceState({
+      ...window.history.state,
+      scrollTop: mainRef.current?.scrollTop || 0,
+      galleryScrollTop: galleryScrollRef.current,
+    }, "");
+  };
   const pushNavState = (state) => {
     if (isPopNavRef.current || typeof window === "undefined") return;
-    window.history.pushState(state, "");
+    saveCurrentScrollState();
+    window.history.pushState({ ...state, scrollTop: 0, galleryScrollTop: galleryScrollRef.current }, "");
   };
   useEffect(() => {
     if (typeof window === "undefined") return undefined;
-    // 页面刚打开时，把当前状态（首页画廊）记成历史里的第一条，后面每次跳转都在这条基础上往后叠加
-    window.history.replaceState({ selectedId: null, showInfo: false }, "");
+    // 保留刷新前的历史状态；首次打开时才创建首页记录。
+    if (!window.history.state) {
+      window.history.replaceState({ selectedId: null, showInfo: false, scrollTop: 0, galleryScrollTop: 0 }, "");
+    }
+    window.addEventListener("pagehide", saveCurrentScrollState);
     const onPopState = (e) => {
       isPopNavRef.current = true;
       const state = e.state || { selectedId: null, showInfo: false };
+      if (Number.isFinite(state.galleryScrollTop)) galleryScrollRef.current = state.galleryScrollTop;
       if (!state.selectedId && !state.showInfo) {
         // 后退回的是画廊页：跟点"返回"按钮的体验保持一致，恢复到之前画廊滚动到的位置，
         // 而不是简单粗暴地跳回最顶部
@@ -880,7 +925,10 @@ function Portfolio() {
       });
     };
     window.addEventListener("popstate", onPopState);
-    return () => window.removeEventListener("popstate", onPopState);
+    return () => {
+      window.removeEventListener("popstate", onPopState);
+      window.removeEventListener("pagehide", saveCurrentScrollState);
+    };
   }, []);
   const [typoPanelOpen, setTypoPanelOpen] = useState(false);
   const typoPanelRef = useRef(null);
